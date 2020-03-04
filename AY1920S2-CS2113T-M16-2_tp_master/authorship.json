@@ -1,0 +1,4062 @@
+[
+  {
+    "path": "docs/AboutUs.md",
+    "fileType": "md",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "# About us"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Display | Name | Github Profile | Portfolio "
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "--------|:----:|:--------------:|:---------:"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "cheongisabella"
+        },
+        "content": "![](https://via.placeholder.com/100.png?text\u003dPhoto) | Jin Fa | [Github](https://github.com/jinfayap) | [Portfolio](docs/team/jinfa.md)"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "cheongisabella"
+        },
+        "content": "![](https://via.placeholder.com/100.png?text\u003dPhoto) | Jin Xing | [Github](https://github.com/) | [Portfolio](docs/team/jinxing.md)"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "cheongisabella"
+        },
+        "content": "![](https://via.placeholder.com/100.png?text\u003dPhoto) | Isabella | [Github](https://github.com/) | [Portfolio](docs/team/isabella.md)"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "![](https://via.placeholder.com/100.png?text\u003dPhoto) | Lim Yan Ting| [Github](https://github.com/yantingsanity) | [Portfolio](docs/team/yanting.md)"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "cheongisabella"
+        },
+        "content": "![](https://via.placeholder.com/100.png?text\u003dPhoto) | Hui Zhen | [Github](https://github.com/alwayshuizhen) | [Portfolio](docs/team/huizhen.md)"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "zi-hui"
+        },
+        "content": "![](https://via.placeholder.com/100.png?text\u003dPhoto) | Zi Hui | [Github](https://github.com/zi-hui) | [Portfolio](docs/team/zihui.md)"
+      }
+    ],
+    "authorContributionMap": {
+      "zi-hui": 1,
+      "yantingsanity": 2,
+      "cheongisabella": 4,
+      "-": 4
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/KitchenHelper.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "import seedu.kitchenhelper.command.Command;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "import seedu.kitchenhelper.command.CommandResult;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "import seedu.kitchenhelper.command.ExitCommand;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "import seedu.kitchenhelper.object.Chore;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "import seedu.kitchenhelper.object.Recipe;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "import seedu.kitchenhelper.object.ingredient.Ingredient;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "import seedu.kitchenhelper.parser.Parser;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "import seedu.kitchenhelper.ui.Ui;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "public class KitchenHelper {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private ArrayList\u003cIngredient\u003e ingredientList \u003d new ArrayList\u003c\u003e();"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private ArrayList\u003cRecipe\u003e recipeList \u003d new ArrayList\u003c\u003e();"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private ArrayList\u003cChore\u003e choreList \u003d new ArrayList\u003c\u003e();"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    /* Hi pls, look at this main program."
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * https://github.com/nus-cs2113-AY1920S2/personbook/blob/master/src/main/java/seedu/personbook/Main.java */"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private Ui ui;"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private void start() {"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        ui \u003d new Ui();"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        ui.showWelcomeMessage();"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private void run() {"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        start();"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        runCommandLoopUntilExitCommand();"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        exit();"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private void exit() {"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        System.exit(0);"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private void runCommandLoopUntilExitCommand() {"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        Command command;"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        String userCommandInput;"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        do {"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "            userCommandInput \u003d ui.getUserCommand();"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "            command \u003d new Parser().parseUserCommand(userCommandInput);"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "            CommandResult result \u003d executeCommand(command);"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "            ui.showResultToUser(result);"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        } while (!userCommandInput.equalsIgnoreCase(ExitCommand.COMMAND_WORD));"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public static void main(String[] args) {"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        new KitchenHelper().run();"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private CommandResult executeCommand(Command command) {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "            CommandResult result \u003d command.execute();"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "            return result;"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        } catch (Exception e) {"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "            throw new RuntimeException(e);"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "jinfayap": 63
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/command/AddCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "public class AddCommand extends Command {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public static final String COMMAND_WORD \u003d \"add\";"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public void addIngredients(String attributes) {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public void addRecipe(String attributes) {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public void addChores(String attributes) {"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public CommandResult execute() {"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        return super.execute();"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "jinfayap": 23
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/command/Command.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "public abstract class Command {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private String actionType; //add, delete, list"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private String objectType; //ingredient, recipe, chore"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private String objectVariables;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public Command() {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public CommandResult execute() {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        throw new UnsupportedOperationException();"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "jinfayap": 16
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/command/CommandResult.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "public class CommandResult {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public final String feedbackToUser;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public CommandResult(String feedbackToUser) {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        this.feedbackToUser \u003d feedbackToUser;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "jinfayap": 11
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/command/DeleteCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "public class DeleteCommand extends Command {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public static final String COMMAND_WORD \u003d \"delete\";"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public void deleteIngredients(String attributes) {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public void deleteRecipe(String attributes) {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public void deleteChores(String attributes) {"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public CommandResult execute() {"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        return super.execute();"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "jinfayap": 23
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/command/ExitCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "public class ExitCommand extends Command {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public static final String COMMAND_WORD \u003d \"exit\";"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public static final String MESSAGE_EXIT \u003d \"Exiting KitchenHelper as requested ...\";"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public CommandResult execute() {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        return new CommandResult(MESSAGE_EXIT);"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "jinfayap": 12
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/command/HelpCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "public class HelpCommand extends Command {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public static final String COMMAND_WORD \u003d \"help\";"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "jinfayap": 7
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/command/InvalidCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "public class InvalidCommand extends Command {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private static final String MESSAGE_INVALID \u003d \"Invalid Command\";"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public CommandResult execute() {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        return new CommandResult(MESSAGE_INVALID);"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "jinfayap": 11
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/command/ListCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "public class ListCommand extends Command {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public static final String COMMAND_WORD \u003d \"list\";"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public void listIngredients(String attributes) {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public void listRecipe(String attributes) {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public void listChores(String attributes) {"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public CommandResult execute() {"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        return super.execute();"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "jinfayap": 23
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/exception/KitchenHelperException.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.exception;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": " * Signals that some given data does not fulfill some constraints."
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "public class KitchenHelperException extends Exception {"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * Constructor for KitchenHelperException."
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @param message contain relevant information on the failed constraints."
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public KitchenHelperException(String message) {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        super(message);"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "jinfayap": 15
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/object/Chore.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.object;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "public class Chore {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "jinfayap": 5
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/object/Recipe.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.object;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "public class Recipe {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "jinfayap": 5
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/object/ingredient/Dairy.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.object.ingredient;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "public class Dairy extends Ingredient {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "    public Dairy(String ingredientName, String categoryName, int quantity, double price, String expiryDate) {"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "        super(ingredientName, categoryName, quantity, price, expiryDate);"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "yantingsanity": 6,
+      "jinfayap": 2
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/object/ingredient/Drink.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.object.ingredient;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "public class Drink extends Ingredient {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "    public Drink(String ingredientName, String categoryName, int quantity, double price, String expiryDate) {"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "        super(ingredientName, categoryName, quantity, price, expiryDate);"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "yantingsanity": 6,
+      "jinfayap": 2
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/object/ingredient/Fruit.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.object.ingredient;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "public class Fruit extends Ingredient {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "    public Fruit(String ingredientName, String categoryName, int quantity, double price, String expiryDate) {"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "        super(ingredientName, categoryName, quantity, price, expiryDate);"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "yantingsanity": 6,
+      "jinfayap": 2
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/object/ingredient/Ingredient.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.object.ingredient;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": " * Represent an Ingredient object."
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "public abstract class Ingredient {"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private String ingredientName;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private String categoryName;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private int quantity;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private double price;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private String expiryDate;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * Constructor for Ingredient."
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @param ingredientName name of the ingredient."
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @param categoryName   category of the ingredient."
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @param quantity       quantity of the ingredient."
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @param price          price of the ingredient."
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @param expiryDate     expiry date of the ingredient."
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public Ingredient(String ingredientName, String categoryName, int quantity, double price, String expiryDate) {"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        this.ingredientName \u003d ingredientName;"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        this.categoryName \u003d categoryName;"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        this.quantity \u003d quantity;"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        this.price \u003d price;"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        this.expiryDate \u003d expiryDate;"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * Getters for ingredient name."
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @return ingredient name."
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public String getIngredientName() {"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        return ingredientName;"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * Getters for category name."
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @return category name."
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public String getCategoryName() {"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        return categoryName;"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * Getters for quantity."
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @return quantity."
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public int getQuantity() {"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        return quantity;"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * Getters for price."
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @return price."
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public double getPrice() {"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        return price;"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * Getters for expiry date."
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @return expiry date."
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public String getExpiryDate() {"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        return expiryDate;"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "jinfayap": 75
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/object/ingredient/Meat.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.object.ingredient;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "public class Meat extends Ingredient {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "    public Meat(String ingredientName, String categoryName, int quantity, double price, String expiryDate) {"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "        super(ingredientName, categoryName, quantity, price, expiryDate);"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "yantingsanity": 6,
+      "jinfayap": 2
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/object/ingredient/Miscellaneous.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.object.ingredient;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "public class Miscellaneous extends Ingredient {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "    public Miscellaneous(String ingredientName, String categoryName, int quantity, double price, String expiryDate) {"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "        super(ingredientName, categoryName, quantity, price, expiryDate);"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "yantingsanity": 6,
+      "jinfayap": 2
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/object/ingredient/Staple.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.object.ingredient;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "public class Staple extends Ingredient {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "    public Staple(String ingredientName, String categoryName, int quantity, double price, String expiryDate) {"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "        super(ingredientName, categoryName, quantity, price, expiryDate);"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "yantingsanity": 6,
+      "jinfayap": 2
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/object/ingredient/Vegetable.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.object.ingredient;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "public class Vegetable extends Ingredient {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "    public Vegetable(String ingredientName, String categoryName, int quantity, double price, String expiryDate) {"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "        super(ingredientName, categoryName, quantity, price, expiryDate);"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "yantingsanity"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "yantingsanity": 6,
+      "jinfayap": 2
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/parser/Parser.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.parser;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "import seedu.kitchenhelper.command.Command;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "import seedu.kitchenhelper.command.AddCommand;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "import seedu.kitchenhelper.command.ListCommand;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "import seedu.kitchenhelper.command.DeleteCommand;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "import seedu.kitchenhelper.command.HelpCommand;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "import seedu.kitchenhelper.command.ExitCommand;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "import seedu.kitchenhelper.command.InvalidCommand;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": " * Parse user input."
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "public class Parser {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * Parses user input into command for execution."
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @param input full user input string."
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @return the command based on the user input."
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public Command parseUserCommand(String input) {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        String[] userInputs \u003d splitInputLine(input, \" \");"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        final String commandWord \u003d userInputs[0];"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        final String parameters \u003d userInputs[1];"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        switch (commandWord.toLowerCase()) {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        case AddCommand.COMMAND_WORD:"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "            return new AddCommand();"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        case ListCommand.COMMAND_WORD:"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "            return new ListCommand();"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        case DeleteCommand.COMMAND_WORD:"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "            return new DeleteCommand();"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        case HelpCommand.COMMAND_WORD:"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "            return new HelpCommand();"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        case ExitCommand.COMMAND_WORD:"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "            return new ExitCommand();"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        default:"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "            return new InvalidCommand();"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    //@@author AY1920S2-CS2113T-M16-2-reused"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    //Reused from"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    //https://github.com/nus-cs2113-AY1920S2/contacts/blob/master/src/main/java/Contacts1.java"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * Split the user input into two parts with a specific regex."
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @param rawUserInput full user input string."
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @param regex        the quantifier to separate the string."
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @return an array of size 2 separated by the quantifier."
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public static String[] splitInputLine(String rawUserInput, String regex) {"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        String[] split \u003d rawUserInput.trim().split(regex, 2);"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        return split.length \u003d\u003d 2 ? split : new String[]{split[0], \"\"}; // else no parameters"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    //@@author"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "jinfayap": 56,
+      "-": 2
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/storage/Storage.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.storage;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "public class Storage {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "jinfayap": 5
+    }
+  },
+  {
+    "path": "src/main/java/seedu/kitchenhelper/ui/Ui.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.ui;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "import seedu.kitchenhelper.command.CommandResult;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "import java.io.InputStream;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "import java.io.PrintStream;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "import java.util.Scanner;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": " * UI of the application."
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "public class Ui {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private static final String LS \u003d System.lineSeparator();"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private static final String DIVIDER \u003d \"\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\";"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * Format of a comment input line. Comment lines are silently consumed when reading user input."
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private static final String COMMENT_LINE_FORMAT_REGEX \u003d \"#.*\";"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private static final String WELCOME_MESSAGE \u003d \"Hello! I\u0027m KitchenHelper here\" + LS + \"What can I do for you?\";"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private final Scanner in;"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private final PrintStream out;"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public Ui() {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        this(System.in, System.out);"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public Ui(InputStream in, PrintStream out) {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        this.in \u003d new Scanner(in);"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        this.out \u003d out;"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    //@@author AY1920S2-CS2113T-M16-2-reused"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    //Reused from"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    //https://github.com/nus-cs2113-AY1920S2/personbook/blob/master/src/main/java/seedu/personbook/ui/TextUi.java"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * Returns true if the user input line should be ignored."
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * Input should be ignored if it is parsed as a comment, is only whitespace, or is empty."
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @param rawInputLine full raw user input line."
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @return true if the entire user input line should be ignored."
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private boolean shouldIgnore(String rawInputLine) {"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        return rawInputLine.trim().isEmpty() || isCommentLine(rawInputLine);"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    //@@author"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    //@@author AY1920S2-CS2113T-M16-2-reused"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    //Reused from"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    //https://github.com/nus-cs2113-AY1920S2/personbook/blob/master/src/main/java/seedu/personbook/ui/TextUi.java"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * Returns true if the user input line is a comment line."
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @param rawInputLine full raw user input line."
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @return true if input line is a comment."
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private boolean isCommentLine(String rawInputLine) {"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        return rawInputLine.trim().matches(COMMENT_LINE_FORMAT_REGEX);"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    //@@author"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * Display the welcome message during startup."
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public void showWelcomeMessage() {"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        showToConsole(DIVIDER, WELCOME_MESSAGE, DIVIDER);"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    //@@author AY1920S2-CS2113T-M16-2-reused"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    //Reused from"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    //https://github.com/nus-cs2113-AY1920S2/personbook/blob/master/src/main/java/seedu/personbook/ui/TextUi.java"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * Get the user command."
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @return the input line string"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public String getUserCommand() {"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        String fullInputLine \u003d in.nextLine().trim();"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        //silently consume all ignored lines"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        while (shouldIgnore(fullInputLine)) {"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "            fullInputLine \u003d in.nextLine();"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        out.println(fullInputLine);"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        return fullInputLine;"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    //@@author"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * A method that can take in a variable number of arguments."
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @param message the argument."
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    private void showToConsole(String... message) {"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        for (String m : message) {"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "            out.println(m);"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * Shows the results of the command to the user."
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     * @param result the CommandResult object."
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    public void showResultToUser(CommandResult result) {"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "        showToConsole(result.feedbackToUser);"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "jinfayap": 109,
+      "-": 6
+    }
+  },
+  {
+    "path": "src/test/java/seedu/kitchenhelper/KitchenHelperTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "class KitchenHelperTest {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void sampleTest() {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertTrue(true);"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "jinfayap": 2,
+      "-": 10
+    }
+  }
+]
