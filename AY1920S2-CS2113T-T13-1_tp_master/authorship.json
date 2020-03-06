@@ -82,5 +82,1611 @@
       "-": 4,
       "trishaangelica": 1
     }
+  },
+  {
+    "path": "src/main/java/seedu/duke/Duke.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "package seedu.duke;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "import seedu.duke.commands.Command;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "import seedu.duke.commands.CommandResult;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "import seedu.duke.commands.ExitCommand;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "import seedu.duke.parser.Parser;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import java.util.Scanner;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "public class Duke {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * Main entry-point for the java.duke.Duke application."
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public static void main(String[] args) {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        new Duke().run();"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    /** Runs the program until termination.  */"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    public void run() {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        start();"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        runCommandLoopUntilExitCommand();"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        exit();"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     * Sets up the required objects, loads up the data from the storage file, and prints the welcome message."
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    private void start() {"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        System.out.println(\"HELLO\");"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    /** Prints the Goodbye message and exits. */"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    private void exit() {"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        System.out.println(\"BYE\");"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        System.exit(0);"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    /** Reads the user command and executes it, until the user issues the exit command.  */"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    private void runCommandLoopUntilExitCommand() {"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        Command command;"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        do {"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            String userCommandText \u003d readCommand();"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            command \u003d new Parser().parseCommand(userCommandText);"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            CommandResult result \u003d executeCommand(command);"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            System.out.println(result.feedbackToUser);"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        } while (!ExitCommand.isExit(command));"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    public String readCommand(){"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        Scanner in \u003d new Scanner(System.in);"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        String input \u003d \"\";"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        while(input.isEmpty()){"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            input \u003d in.nextLine();"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            input \u003d input.trim();"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        return input;"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     * Executes the command and returns the result."
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     * @param command user command"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     * @return result of the command"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    private CommandResult executeCommand(Command command) {"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            CommandResult result \u003d command.execute();"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            return result;"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        } catch (Exception e) {"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            System.out.println(e.getMessage());"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            throw new RuntimeException(e);"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "-": 15,
+      "trishaangelica": 64
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/commands/Command.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "package seedu.duke.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "public class Command {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     * Executes the command and returns the result."
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    public CommandResult execute() {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        throw new UnsupportedOperationException(\"This method is to be implemented by child classes\");"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    };"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "trishaangelica": 10
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/commands/CommandResult.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "package seedu.duke.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "import seedu.duke.data.Item;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "public class CommandResult {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    /** The feedback message to be shown to the user. Contains a description of the execution result */"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    public final String feedbackToUser;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    public final ArrayList\u003cItem\u003e items;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    public CommandResult(String feedbackToUser) {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        this.feedbackToUser \u003d feedbackToUser;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        this.items \u003d null;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    public CommandResult(String feedbackToUser, ArrayList\u003cItem\u003e items) {"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        this.feedbackToUser \u003d feedbackToUser;"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        this.items \u003d items;"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "trishaangelica": 21
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/commands/ExitCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "package seedu.duke.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "public class ExitCommand extends Command {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    public static final String MESSAGE_EXIT_ACKNOWLEDGEMENT \u003d \"Exiting SHOCO as requested ...\";"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    public CommandResult execute() {"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        return new CommandResult(MESSAGE_EXIT_ACKNOWLEDGEMENT);"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    public static boolean isExit(Command command) {"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        return command instanceof ExitCommand; // instanceof returns false if it is null"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "trishaangelica": 13
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/data/Budget.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "package seedu.duke.data;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "public class Budget {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "trishaangelica": 4
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/data/Item.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "package seedu.duke.data;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "public class Item {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    private double price;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    private String description;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    public Item(double price, String description) {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        this.price \u003d price;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        this.description \u003d description;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    public Item(String description) {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        this.price \u003d 0.0;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        this.description \u003d description;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    public void setPrice(double price) {"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        this.price \u003d price;"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    public double getPrice() {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        return price;"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    public void setDescription(String description) {"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        this.description \u003d description;"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    public String getDescription() {"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        return description;"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    public String toString() {"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        return description + \" $\" + price;"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "trishaangelica": 39
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/data/ShoppingList.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "package seedu.duke.data;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "public class ShoppingList {"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    private static ArrayList\u003cItem\u003e items \u003d new ArrayList\u003c\u003e();"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    private static double budget;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    private static double cost;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    public ShoppingList(){"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "trishaangelica": 16
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/parser/Parser.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "package seedu.duke.parser;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "import seedu.duke.commands.Command;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "import seedu.duke.commands.ExitCommand;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "public class Parser {"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     * Parses user input into command for execution."
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     * @param userInput full user input string"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     * @return the command based on the user input"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    public Command parseCommand(String userInput) {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        switch (commandWord) {"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        case AddCommand.COMMAND_WORD:"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            return prepareAdd(arguments);"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        case DeleteCommand.COMMAND_WORD:"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            return prepareDelete(arguments);"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        case ClearCommand.COMMAND_WORD:"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            return new ClearCommand();"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        case ListCommand.COMMAND_WORD:"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            return new ListCommand();"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        case \"bye\":"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            return new ExitCommand();"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        case HelpCommand.COMMAND_WORD: // Fallthrough"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        default:"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            return new HelpCommand();"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "trishaangelica": 37
+    }
   }
 ]
