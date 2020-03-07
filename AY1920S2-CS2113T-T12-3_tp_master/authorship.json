@@ -69,429 +69,1729 @@
     }
   },
   {
-    "path": "src/main/java/Location.java",
-    "fileType": "java",
+    "path": "library/locations.txt",
+    "fileType": "txt",
     "lines": [
       {
         "lineNumber": 1,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "public class Location {"
+        "content": "MacCommons  2 College Ave West Education Resource Centre  -  true  true  5"
       },
       {
         "lineNumber": 2,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "    private String name;"
+        "content": "OCBC  2 College Ave West, Stephen Riady Centre  -  true  false  2"
+      }
+    ],
+    "authorContributionMap": {
+      "terrytay": 2
+    }
+  },
+  {
+    "path": "src/main/java/event/Event.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "package event;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
       },
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "    private String address;"
+        "content": "import java.time.LocalDate;"
       },
       {
         "lineNumber": 4,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "    private String faculty;"
+        "content": "import java.time.LocalTime;"
       },
       {
         "lineNumber": 5,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "    private boolean hasPort;"
+        "content": "import java.time.format.DateTimeParseException;"
       },
       {
         "lineNumber": 6,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "    private boolean isIndoor;"
+        "content": ""
       },
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "    private int maxPax;"
+        "content": "/**"
       },
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": ""
+        "content": " * Represents an event and contains the related functions."
       },
       {
         "lineNumber": 9,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "    /**"
+        "content": " */"
       },
       {
         "lineNumber": 10,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "     * Constructs a Location class for a study area location with its information"
+        "content": "public class Event {"
       },
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "     * Precondition: \u0027All variables have to be filled."
+        "content": ""
       },
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "     *"
+        "content": "    private String description;"
       },
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "     * @param name name of study location"
+        "content": "    private LocalDate date;"
       },
       {
         "lineNumber": 14,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "     * @param address address of study location"
+        "content": "    private LocalTime startTime;"
       },
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "     * @param faculty faculty of study location"
+        "content": "    private LocalTime endTime;"
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "     * @param hasPort true for availability of ports, else false"
+        "content": "    private int priority;"
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "     * @param isIndoor true for indoor, else false"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "     * @param maxPax maximum number of seats for this study area"
+        "content": "    /**"
       },
       {
         "lineNumber": 19,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "     *"
+        "content": "     * Constructor for Event Class."
       },
       {
         "lineNumber": 20,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "     * @throws Exception when not all variables are filled"
+        "content": "     *"
       },
       {
         "lineNumber": 21,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "     */"
+        "content": "     * @param description Description of the event."
       },
       {
         "lineNumber": 22,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "    public Location(String name, String address, String faculty, boolean hasPort,"
+        "content": "     * @param date Date of specified Event."
       },
       {
         "lineNumber": 23,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "                    boolean isIndoor, int maxPax) throws Exception {"
+        "content": "     * @param startTime Start time of specified event."
       },
       {
         "lineNumber": 24,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "        try {"
+        "content": "     * @param endTime End time of specified event."
       },
       {
         "lineNumber": 25,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "            this.name \u003d name;"
+        "content": "     * @param priority Priority of specified event."
       },
       {
         "lineNumber": 26,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "            this.address \u003d address;"
+        "content": "     * @throws DateTimeParseException If wrong format is used for date, time fields."
       },
       {
         "lineNumber": 27,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "            this.faculty \u003d faculty;"
+        "content": "     */"
       },
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "            this.hasPort \u003d hasPort;"
+        "content": "    public Event(String description, String date, String startTime, String endTime, String priority)"
       },
       {
         "lineNumber": 29,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "            this.isIndoor \u003d isIndoor;"
+        "content": "            throws DateTimeParseException {"
       },
       {
         "lineNumber": 30,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "            this.maxPax \u003d maxPax;"
+        "content": "        this.description \u003d description;"
       },
       {
         "lineNumber": 31,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "        } catch (Exception e) {"
+        "content": "        this.date \u003d LocalDate.parse(date.strip());"
       },
       {
         "lineNumber": 32,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "            System.out.println(e.getMessage());"
+        "content": "        this.startTime \u003d LocalTime.parse(startTime.strip());"
       },
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "        }"
+        "content": "        this.endTime \u003d LocalTime.parse(endTime.strip());"
       },
       {
         "lineNumber": 34,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "    }"
+        "content": "        this.priority \u003d Integer.parseInt(priority.strip());"
       },
       {
         "lineNumber": 35,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 36,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "    public String getName() {"
+        "content": ""
       },
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "        return name;"
+        "content": "    /**"
       },
       {
         "lineNumber": 38,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "    }"
+        "content": "     * Returns the information related to information in form of a string."
       },
       {
         "lineNumber": 39,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": ""
+        "content": "     *"
       },
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "    public String getAddress() {"
+        "content": "     * @return eventInfo Contains information related to the event."
       },
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "        return address;"
+        "content": "     */"
       },
       {
         "lineNumber": 42,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "    }"
+        "content": "    public String getEventInformation() {"
       },
       {
         "lineNumber": 43,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": ""
+        "content": "        String eventInfo \u003d description + \" at \" + date.toString() + \" from \" + startTime.toString()"
       },
       {
         "lineNumber": 44,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "    public String getFaculty() {"
+        "content": "                + \" to \" + endTime.toString();"
       },
       {
         "lineNumber": 45,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "        return faculty;"
+        "content": "        return eventInfo;"
       },
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
         "content": "    }"
       },
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
         "content": ""
       },
       {
         "lineNumber": 48,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "    public boolean hasPort() {"
+        "content": "    /**"
       },
       {
         "lineNumber": 49,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "        return hasPort;"
+        "content": "     * Returns the priority of the specified event."
       },
       {
         "lineNumber": 50,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "    }"
+        "content": "     *"
       },
       {
         "lineNumber": 51,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": ""
+        "content": "     * @return Priority of event."
       },
       {
         "lineNumber": 52,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "    public boolean isIndoor() {"
+        "content": "     */"
       },
       {
         "lineNumber": 53,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "        return isIndoor;"
+        "content": "    public int getPriority() {"
       },
       {
         "lineNumber": 54,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "    }"
+        "content": "        return priority;"
       },
       {
         "lineNumber": 55,
         "author": {
-          "gitId": "terrytay"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 56,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": "    public int getMaxPax() {"
-      },
-      {
-        "lineNumber": 57,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": "        return maxPax;"
-      },
-      {
-        "lineNumber": 58,
-        "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
         },
         "content": "    }"
       },
       {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     * Returns the date of the event."
+      },
+      {
         "lineNumber": 59,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     * @return Date of event."
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public LocalDate getDate() {"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        return date;"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     * Used to identify if the string contains the keyword specified in its description."
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     * @param keyword The keyword to be matched with the description."
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     * @return containsKeyword Indicates the presence/absence of keyword in the event\u0027s description."
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public boolean hasKeyword(String keyword) {"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        boolean containsKeyword \u003d description.contains(keyword);"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        return containsKeyword;"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
         },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "terrytay": 59
+      "GanapathySanathBalaji": 77
     }
   },
   {
-    "path": "src/test/java/LocationTest.java",
+    "path": "src/main/java/event/EventList.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "package event;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "import java.time.format.DateTimeParseException;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "import java.util.Collections;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "import java.util.Comparator;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "import ui.Ui;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": " * Handles all functions related to the list of events."
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "public class EventList {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    Ui ui \u003d new Ui();"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    /** Stores the event information. */"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    private ArrayList\u003cEvent\u003e events;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     * Constructor for the EventList class."
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public EventList() {"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        events \u003d new ArrayList\u003cEvent\u003e();"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     * Adds a new event to the list."
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     * @param newEvent Event represents the new event tot be added."
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public void addEvent(Event newEvent) {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "       "
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        events.add(newEvent);"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        System.out.println(\"A new event with the following information has been added.\");"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        System.out.println(newEvent.getEventInformation());"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     * Displays the current list of events."
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public void listEvents() {"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        System.out.println(\"Here is the list of events added so far:\");"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        int eventNumber \u003d 1;"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        for (Event event: events) {"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            System.out.println(eventNumber + \") \" + event.getEventInformation());"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            eventNumber++;"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     * Deletes the event at the specified index."
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     * @param index The index (1-based) of the event to be deleted."
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public void deleteEvent(int index) {"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            events.remove(index - 1);"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            ui.printLine();"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            System.out.println(\"The event at the mentioned index has been deleted\");"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            ui.printLine();"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        } catch (IndexOutOfBoundsException e) {"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            ui.printLine();"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            System.out.println(\"Enter a valid index\");"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            ui.printLine();"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     * Clears all the events currently stored."
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public void clearEvents() {"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        events.clear();"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        System.out.println(\"The list of events is cleared.\");"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     * Lists all the tasks sorted by their priority."
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public void priorityView() {"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        ArrayList\u003cEvent\u003e eventsSortedByPriority \u003d events;"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        eventsSortedByPriority.sort(Comparator.comparingInt(Event::getPriority));"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        Collections.reverse(eventsSortedByPriority);"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        int eventNumber \u003d 1;"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        for (Event event:eventsSortedByPriority) {"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            System.out.println(eventNumber + \") \" + event.getEventInformation());"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            eventNumber++;"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        if (eventNumber \u003d\u003d 1) {"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            System.out.println(\"The list is empty.\");"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     * Lists all the tasks sorted by date along with the days remaining."
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public void countdownView() {"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        ArrayList\u003cEvent\u003e eventsSortedByDate \u003d events;"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        eventsSortedByDate.sort(Comparator.comparing(Event::getDate));"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        int eventNumber \u003d 1;"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        for (Event event:eventsSortedByDate) {"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            System.out.println(eventNumber + \") \" + event.getEventInformation());"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            eventNumber++;"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        if (eventNumber \u003d\u003d 1) {"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            System.out.println(\"The list is empty.\");"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     * Displays the list of events containing the keyword."
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     * @param keyword The keyword to be searched for."
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public void searchEvents(String keyword) {"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        int eventNumber \u003d 1;"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        for (Event event:events) {"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            if (event.hasKeyword(keyword)) {"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                System.out.println(eventNumber + \") \" + event.getEventInformation());"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                eventNumber++;"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        if (eventNumber \u003d\u003d 1) {"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            System.out.println(\"The list is empty.\");"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     * Adds a new event to the list by parsing information from the user given string"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     * and calling {@link #addEvent(Event)} if the information is given in the correct format"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     * to add the event."
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     * @param eventDetails Contains all the information related to the event as provided by the user."
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public void add(String eventDetails) {"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            String[] details \u003d eventDetails.split(\" \",2)[1].split(\"/\");"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            String description \u003d details[0];"
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            String date \u003d details[1].substring(2);"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            String startTime \u003d details[2].substring(2);"
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            String endTime \u003d details[3].substring(2);"
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            String priority \u003d details[4].substring(2);"
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            Event newEvent \u003d  new Event(description,date,startTime,endTime,priority);"
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            addEvent(newEvent);"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        } catch (IndexOutOfBoundsException | DateTimeParseException | NullPointerException e) {"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            ui.printLine();"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            System.out.println(\"Wrong format to add events\");"
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            ui.printLine();"
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "terrytay": 2,
+      "GanapathySanathBalaji": 161
+    }
+  },
+  {
+    "path": "src/main/java/resourceloader/Loader.java",
     "fileType": "java",
     "lines": [
       {
@@ -499,56 +1799,184 @@
         "author": {
           "gitId": "terrytay"
         },
-        "content": "import org.junit.jupiter.api.BeforeEach;"
+        "content": "package resourceloader;"
       },
       {
         "lineNumber": 2,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "import org.junit.jupiter.api.Test;"
+        "content": ""
       },
       {
         "lineNumber": 3,
         "author": {
           "gitId": "terrytay"
         },
-        "content": ""
+        "content": "import java.io.File;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+        "content": "import java.io.FileNotFoundException;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "terrytay"
         },
-        "content": ""
+        "content": "import java.io.IOException;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "class LocationTest {"
+        "content": ""
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "terrytay"
         },
-        "content": ""
+        "content": "/**"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "    Location location1 \u003d new Location(\"mac commons\", \"utown\", \"nil\", true, true, 5);"
+        "content": " * Loader is a resource loader for all the external data that is within our java program."
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": " * Examples of resources will be task data, study locations etc.."
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": " * Loader is an interface that enables subsequent loaders to be made and disciplined,"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": " * i.e. locationsLoader, organiserLoader.."
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "public interface Loader {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    public void loadFile() throws FileNotFoundException;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    public File getFile();"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "terrytay": 17
+    }
+  },
+  {
+    "path": "src/main/java/resourceloader/LocationLoader.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "package resourceloader;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "import studyarea.Location;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "import java.io.File;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "import java.io.FileNotFoundException;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "import java.util.Scanner;"
       },
       {
         "lineNumber": 9,
@@ -562,7 +1990,2263 @@
         "author": {
           "gitId": "terrytay"
         },
+        "content": "public class LocationLoader implements Loader {"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    private static final String DIVIDER \u003d \"  \";"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    private final String url;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    private File file;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    public LocationLoader(String url) throws FileNotFoundException {"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        this.url \u003d url;"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        loadFile();"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    public void loadFile() throws FileNotFoundException {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "            file \u003d new File(url);"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        } catch (Exception e) {"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "            throw new FileNotFoundException(\"File not found.\");"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    public File getFile() {"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        return this.file;"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     * Return the imported study area file as an ArrayList for the main controller"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     * to add it to its database."
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     * @return buffer ArrayList of Location from study area file"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     * @throws Exception to be edited"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    public ArrayList\u003cLocation\u003e pushToDatabase() throws Exception {"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        ArrayList\u003cLocation\u003e buffer \u003d new ArrayList\u003c\u003e();"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        Scanner input \u003d new Scanner(file);"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        while (input.hasNextLine()) {"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "            String detailsOfLocation \u003d input.nextLine();"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "            String[] detailsBuffer \u003d detailsOfLocation.split(DIVIDER);"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "            Location location \u003d new Location(detailsBuffer[0], detailsBuffer[1], detailsBuffer[2],"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "                    Boolean.parseBoolean(detailsBuffer[3]), Boolean.parseBoolean(detailsBuffer[4]),"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "                    Integer.parseInt(detailsBuffer[5]));"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "            buffer.add(location);"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        return buffer;"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "terrytay": 54
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/Duke.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "package seedu.duke;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "import event.EventList;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "import ui.Ui;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import java.util.Scanner;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "public class Duke {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public static Ui ui \u003d new Ui();"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public static final String ADD_COMMAND \u003d \"add\";"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public static final String VIEW_COMMAND \u003d \"view\";"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public static final String PRIORITY_VIEW_COMMAND \u003d \"priority_view\";"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public static final String COUNTDOWN_VIEW_COMMAND \u003d \"countdown\";"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public static final String CLEAR_COMMAND \u003d \"clear\";"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public static final String SEARCH_COMMAND \u003d \"search\";"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public static final String DELETE_COMMAND \u003d \"delete\";"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public static final String INVALID_INDEX_MESSAGE \u003d \"Enter a valid index\";"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public static final String INVALID_COMMAND_MESSAGE \u003d \"Enter a valid command\";"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public static final String BYE_COMMAND \u003d \"bye\";"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public static final String BYE_MESSAGE \u003d \"Bye!!!!!!\";"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    static EventList eventList \u003d new EventList();"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * Main entry-point for the java.duke.Duke application."
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    public static void main(String[] args) throws Exception {"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        String logo \u003d \" ____        _        \\n\""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                + \"|  _ \\\\ _   _| | _____ \\n\""
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                + \"| | | | | | | |/ / _ \\\\\\n\""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                + \"| |_| | |_| |   \u003c  __/\\n\""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                + \"|____/ \\\\__,_|_|\\\\_\\\\___|\\n\";"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        System.out.println(\"Hello from\\n\" + logo);"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        System.out.println(\"What is your name?\");"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        Scanner in \u003d new Scanner(System.in);"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        System.out.println(\"Hello \" + in.nextLine());"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        runCommands();"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    private static void runCommands() {"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        Scanner in \u003d new Scanner(System.in);"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        String command;"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        command \u003d in.nextLine();"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        while (!command.equals(BYE_COMMAND)) {"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            try {"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                String commandType \u003d command.split(\" \")[0];"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                switch (commandType) {"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                case ADD_COMMAND:"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                    eventList.add(command);"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                    break;"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                case VIEW_COMMAND:"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                    eventList.listEvents();"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                    break;"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                case PRIORITY_VIEW_COMMAND:"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                    eventList.priorityView();"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                    break;"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                case COUNTDOWN_VIEW_COMMAND:"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                    eventList.countdownView();"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                    break;"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                case CLEAR_COMMAND:"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                    eventList.clearEvents();"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                    break;"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                case SEARCH_COMMAND:"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                    eventList.searchEvents(command.split(\" \", 2)[1]);"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                    break;"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                case DELETE_COMMAND:"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                    eventList.deleteEvent(Integer.parseInt(command.split(\" \", 2)[1]));"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                    break;"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                default:"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                    ui.printLine();"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                    System.out.println(INVALID_COMMAND_MESSAGE);"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                    ui.printLine();"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                    break;"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            } catch (NumberFormatException e) {"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                ui.printLine();"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                System.out.println(INVALID_INDEX_MESSAGE);"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                ui.printLine();"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            } catch (IndexOutOfBoundsException e) {"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                ui.printLine();"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                System.out.println(INVALID_COMMAND_MESSAGE);"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "                ui.printLine();"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "            command \u003d in.nextLine();"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        System.out.println(BYE_MESSAGE);"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "terrytay": 2,
+      "GanapathySanathBalaji": 68,
+      "-": 20
+    }
+  },
+  {
+    "path": "src/main/java/studyarea/Location.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "package studyarea;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "public class Location {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    private String name;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    private String address;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    private String faculty;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    private boolean hasPort;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    private boolean isIndoor;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    private int maxPax;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     * Constructs a Location class for a study area location with its information"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     * Precondition: \u0027All variables have to be filled."
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     * @param name name of study location"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     * @param address address of study location"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     * @param faculty faculty of study location"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     * @param hasPort true for availability of ports, else false"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     * @param isIndoor true for indoor, else false"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     * @param maxPax maximum number of seats for this study area"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     * @throws Exception when not all variables are filled"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    public Location(String name, String address, String faculty, boolean hasPort,"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "                    boolean isIndoor, int maxPax) throws Exception {"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "            this.name \u003d name;"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "            this.address \u003d address;"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "            this.faculty \u003d faculty;"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "            this.hasPort \u003d hasPort;"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "            this.isIndoor \u003d isIndoor;"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "            this.maxPax \u003d maxPax;"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        } catch (Exception e) {"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "            System.out.println(e.getMessage());"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    public String getName() {"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        return name;"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    public String getAddress() {"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        return address;"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    public String getFaculty() {"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        return faculty;"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    public boolean hasPort() {"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        return hasPort;"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    public boolean isIndoor() {"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        return isIndoor;"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    public int getMaxPax() {"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        return maxPax;"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "terrytay": 61
+    }
+  },
+  {
+    "path": "src/main/java/studyarea/StudyArea.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "package studyarea;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "import resourceloader.LocationLoader;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "import java.io.FileNotFoundException;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "public class StudyArea {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    private ArrayList\u003cLocation\u003e locations;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     * Setups a resource loader to import the file by creating a new"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     * LocationLoader class. The file is then load onto the software and then"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     * parsed as an ArrayList to be stored in location in this StudyArea class."
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     * @throws Exception to be edited"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    public StudyArea() throws Exception {"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        LocationLoader locationLoader \u003d new LocationLoader(\"library/locations.txt\");"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        locationLoader.loadFile();"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        locations \u003d locationLoader.pushToDatabase();"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    public ArrayList\u003cLocation\u003e getLocationsList() {"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        return locations;"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "terrytay": 27
+    }
+  },
+  {
+    "path": "src/main/java/ui/Ui.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "package ui;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": " * Contains functions used to interact with the user."
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "public class Ui {"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     * Prints a line made up of \u0027_\u0027."
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    public void printLine() {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "        System.out.println(\"____________________________________________________________________________________\");"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "GanapathySanathBalaji"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "GanapathySanathBalaji": 15
+    }
+  },
+  {
+    "path": "src/test/java/resourceloader/LocationLoaderTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "package resourceloader;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "import java.io.File;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "import java.io.FileNotFoundException;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "class LocationLoaderTest {"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    LocationLoader locationLoader \u003d new LocationLoader(\"library/locations.txt\");"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    LocationLoaderTest() throws FileNotFoundException {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    void getFile() throws FileNotFoundException {"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        locationLoader.loadFile();"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        assertEquals(new File(\"library/locations.txt\"), locationLoader.getFile());"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "terrytay": 22
+    }
+  },
+  {
+    "path": "src/test/java/studyarea/LocationTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "package studyarea;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "import studyarea.Location;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "class LocationTest {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    Location location1 \u003d new Location(\"mac commons\", \"utown\", \"nil\", true, true, 5);"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "terrytay"
+        },
         "content": "    LocationTest() throws Exception {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    void getName() {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        assertEquals(\"mac commons\", location1.getName());"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    void getAddress() {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        assertEquals(\"utown\", location1.getAddress());"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    void getFaculty() {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        assertEquals(\"nil\", location1.getFaculty());"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    void hasPort() {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        assertEquals(true, location1.hasPort());"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    void isIndoor() {"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        assertEquals(true, location1.isIndoor());"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    void getMaxPax() {"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "        assertEquals(5, location1.getMaxPax());"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "terrytay": 44
+    }
+  },
+  {
+    "path": "src/test/java/studyarea/StudyAreaTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "package studyarea;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "class StudyAreaTest {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    StudyArea studyArea \u003d new StudyArea();"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "terrytay"
+        },
+        "content": "    StudyAreaTest() throws Exception {"
       },
       {
         "lineNumber": 11,
@@ -590,199 +4274,38 @@
         "author": {
           "gitId": "terrytay"
         },
-        "content": "    void getName() {"
+        "content": "    void getLocationList() throws Exception {"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "        assertEquals(\"mac commons\", location1.getName());"
+        "content": "        assertEquals(new Location(\"OCBC\",\"2 College Ave West, Stephen Riady Centre\","
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "    }"
+        "content": "                \"-\",true,false,2).getAddress(),"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "terrytay"
         },
-        "content": ""
+        "content": "                studyArea.getLocationsList().get(1).getAddress());"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "    @Test"
+        "content": "    }"
       },
       {
         "lineNumber": 19,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": "    void getAddress() {"
-      },
-      {
-        "lineNumber": 20,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": "        assertEquals(\"utown\", location1.getAddress());"
-      },
-      {
-        "lineNumber": 21,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 22,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 23,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": "    @Test"
-      },
-      {
-        "lineNumber": 24,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": "    void getFaculty() {"
-      },
-      {
-        "lineNumber": 25,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": "        assertEquals(\"nil\", location1.getFaculty());"
-      },
-      {
-        "lineNumber": 26,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 27,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 28,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": "    @Test"
-      },
-      {
-        "lineNumber": 29,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": "    void hasPort() {"
-      },
-      {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": "        assertEquals(true, location1.hasPort());"
-      },
-      {
-        "lineNumber": 31,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 32,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 33,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": "    @Test"
-      },
-      {
-        "lineNumber": 34,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": "    void isIndoor() {"
-      },
-      {
-        "lineNumber": 35,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": "        assertEquals(true, location1.isIndoor());"
-      },
-      {
-        "lineNumber": 36,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 37,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 38,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": "    @Test"
-      },
-      {
-        "lineNumber": 39,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": "    void getMaxPax() {"
-      },
-      {
-        "lineNumber": 40,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": "        assertEquals(5, location1.getMaxPax());"
-      },
-      {
-        "lineNumber": 41,
-        "author": {
-          "gitId": "terrytay"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 42,
         "author": {
           "gitId": "terrytay"
         },
@@ -790,7 +4313,7 @@
       }
     ],
     "authorContributionMap": {
-      "terrytay": 42
+      "terrytay": 19
     }
   }
 ]
