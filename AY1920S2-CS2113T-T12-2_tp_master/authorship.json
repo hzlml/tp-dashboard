@@ -192,5 +192,3507 @@
     "authorContributionMap": {
       "sitinadiah25": 2
     }
+  },
+  {
+    "path": "src/main/java/seedu/happypills/HappyPills.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "package seedu.happypills;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "import seedu.happypills.commands.AddCommand;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "import seedu.happypills.commands.Command;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "import seedu.happypills.commands.HelpCommand;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "import seedu.happypills.commands.ListCommand;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "import seedu.happypills.data.PatientList;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "import seedu.happypills.exception.HappyPillsException;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "import seedu.happypills.ui.TextUi;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "import java.util.Scanner;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": " * Main entry-point for the java.duke.Duke application."
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "public class HappyPills {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    private TextUi ui;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    private PatientList patients;"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Sets up the required objects, loads up the data from the storage file."
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    public HappyPills() {"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        ui \u003d new TextUi();"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        patients \u003d new PatientList();"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Main entry-point for the java.duke.Duke application."
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    public static void main(String[] args) {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "            new HappyPills().run();"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        } catch (HappyPillsException hpe) {"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "            hpe.getMessage();"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Runs the program until termination."
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    private void run() throws HappyPillsException {"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        ui.printWelcomeMessage();"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        Scanner in \u003d new Scanner(System.in);"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        while (true) {"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "            String fullCommand \u003d in.nextLine();"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "            System.out.println(ui.DIVIDER);"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "            Command c \u003d parse(fullCommand);"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "            c.execute(patients);"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Parses user input."
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    private Command parse(String fullCommand) throws HappyPillsException {"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        String[] userCommand \u003d fullCommand.split(\" \", 2);"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        if (userCommand[0].equalsIgnoreCase(\"list\")) {"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "            return new ListCommand();"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        } else if (userCommand[0].equalsIgnoreCase(\"add\")) {"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "            if (userCommand.length \u003d\u003d 1 || userCommand[1].trim().isEmpty()) {"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "                throw new HappyPillsException(\"lenght is empty\");"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "            String[] patientDetail \u003d userCommand[1].split(\",\");"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "            return new AddCommand(patientDetail[0], patientDetail[1],"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "                    Integer.parseInt(patientDetail[2]), patientDetail[3],"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "                    patientDetail[4], patientDetail[5], patientDetail[6]);"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        } else if (userCommand[0].equalsIgnoreCase(\"help\")) {"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "            return new HelpCommand();"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "            throw new HappyPillsException(\"Invalid Command\");"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "NyanWunPaing": 76
+    }
+  },
+  {
+    "path": "src/main/java/seedu/happypills/commands/AddCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "package seedu.happypills.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "import seedu.happypills.data.Patient;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "import seedu.happypills.data.PatientList;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "import seedu.happypills.ui.TextUi;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "public class AddCommand extends Command {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    protected String name;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    protected String nric;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    protected int phoneNumber;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    protected String dateOfBirth;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    protected String bloodType;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    protected String allergies;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    protected String remarks;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Constructor for AddCommand Class."
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * It creates a new AddCommand Object with the information provided."
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @param name        Contains the name of the patient."
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @param nric        Contains the nric of the patient."
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @param phoneNumber Contains the phone number of the patient."
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    public AddCommand(String name, String nric, int phoneNumber, String dateOfBirth,"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "                      String bloodType, String allergies, String remarks) {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.name \u003d name;"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.nric \u003d nric;"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.phoneNumber \u003d phoneNumber;"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.dateOfBirth \u003d dateOfBirth;"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.bloodType \u003d bloodType;"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.allergies \u003d allergies;"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.remarks \u003d remarks;"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Adds a new task to the list with the information provided by calling."
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * {} (or) {}"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * (or) {} as require"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @param patients Contains the list of tasks on which the commands are executed on."
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    public void execute(PatientList patients) {"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        int patientNum \u003d patients.size();"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        patients.add(new Patient(name, nric, phoneNumber, dateOfBirth, bloodType, allergies, remarks));"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        TextUi.printPatient(patients.get(patientNum), patientNum);"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "NyanWunPaing": 49
+    }
+  },
+  {
+    "path": "src/main/java/seedu/happypills/commands/Command.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "package seedu.happypills.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "import seedu.happypills.data.PatientList;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "import seedu.happypills.exception.HappyPillsException;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": " * Used for execution of commands."
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": " * Contains both the information related to user commands and methods to execute them."
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": " * Implementation is done on child classes."
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "public abstract class Command {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Contain boolean to check for exit condition."
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    protected boolean isExit;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Constructor for Command Class."
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Set isExit to false as default"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    protected Command() {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        isExit \u003d false;"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Executes the command based on the information provided by the user."
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @param patients Contains the list of tasks on which the commands are executed on."
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @throws HappyPillsException If issues are found during execution of command."
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    public void execute(PatientList patients) throws HappyPillsException {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Returns exit condition."
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @return isExit Contains information that allow the program to exit."
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    public boolean isExit() {"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        return isExit;"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "}"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      }
+    ],
+    "authorContributionMap": {
+      "NyanWunPaing": 42,
+      "itskesin": 1
+    }
+  },
+  {
+    "path": "src/main/java/seedu/happypills/commands/HelpCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "package seedu.happypills.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "import seedu.happypills.data.PatientList;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "import seedu.happypills.ui.TextUi;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": " * Displays full help instructions for every command."
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "public class HelpCommand extends Command {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "    public void execute(PatientList patients) {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "        TextUi.printHelp();"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "itskesin": 14
+    }
+  },
+  {
+    "path": "src/main/java/seedu/happypills/commands/ListCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "package seedu.happypills.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "import seedu.happypills.data.PatientList;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "import seedu.happypills.ui.TextUi;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": " * Lists all patients to the user."
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "public class ListCommand extends Command {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "    public void execute(PatientList patients) {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "        TextUi.printList(patients);"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "itskesin": 15
+    }
+  },
+  {
+    "path": "src/main/java/seedu/happypills/data/Patient.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "package seedu.happypills.data;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": " * Represents a task."
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": " * It also functions as base class from which specialised tasks are inherited from."
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "public class Patient {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Stores the description of the patient."
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    protected String name;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    protected String nric;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    protected int phoneNumber;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    protected String dateOfBirth;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    protected String bloodType;"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    protected String allergies \u003d null;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    protected String remarks \u003d null;"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Constructor for Task Class."
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * It creates a new task with the description provided by the user."
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * It also sets isDone to false as it is a newly created task."
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @param name Name of the patient."
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @param nric NRIC of the patient."
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    public Patient(String name, String nric, int phoneNumber, String dateOfBirth,"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "                   String bloodType, String allergies, String remarks) {"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.name \u003d name;"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.nric \u003d nric;"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.phoneNumber \u003d phoneNumber;"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.dateOfBirth \u003d dateOfBirth;"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.bloodType \u003d bloodType;"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.allergies \u003d allergies;"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.remarks \u003d remarks;"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Constructor for Task Class."
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * It creates a new task with the description provided by the user."
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * It also sets isDone to false as it is a newly created task."
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @param name Name of the patient."
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @param nric NRIC of the patient."
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    public Patient(String name, String nric, int phoneNumber, String dateOfBirth,"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "                   String bloodType, String allergies) {"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.name \u003d name;"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.nric \u003d nric;"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.phoneNumber \u003d phoneNumber;"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.dateOfBirth \u003d dateOfBirth;"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.bloodType \u003d bloodType;"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.allergies \u003d allergies;"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Constructor for Task Class."
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * It creates a new task with the description provided by the user."
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * It also sets isDone to false as it is a newly created task."
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @param name Name of the patient."
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @param nric NRIC of the patient."
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    public Patient(String name, String nric, String dateOfBirth,"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "                   int phoneNumber, String bloodType, String remarks) {"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.name \u003d name;"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.nric \u003d nric;"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.phoneNumber \u003d phoneNumber;"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.dateOfBirth \u003d dateOfBirth;"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.bloodType \u003d bloodType;"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.remarks \u003d remarks;"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Constructor for Task Class."
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * It creates a new task with the description provided by the user."
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * It also sets isDone to false as it is a newly created task."
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @param name Name of the patient."
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @param nric NRIC of the patient."
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    public Patient(String name, String nric, String dateOfBirth,"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "                   int phoneNumber, String bloodType) {"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.name \u003d name;"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.nric \u003d nric;"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.phoneNumber \u003d phoneNumber;"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.dateOfBirth \u003d dateOfBirth;"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.bloodType \u003d bloodType;"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Returns the status of the task in form of an icon."
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * \"\\u2713\" is returned to denote that the task is complete."
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * \"\\u2718\" is returned to denote that the task is incomplete."
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @return statusIcon Represents the current status of the task as described above."
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    public String getName() {"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        return this.name;"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Returns the nric of the patient."
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @return nric Represents the nric of the patient."
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    public String getNric() {"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        return this.nric;"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Returns the phone number of the patient."
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @return phoneNumber Represents the phone number of the patient."
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    public int getPhoneNumber() {"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        return this.phoneNumber;"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Returns the date of birth of the patient."
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @return phoneNumber Represents the date of birth of the patient."
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    public String getDateOfBirth() {"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        return this.dateOfBirth;"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Returns the blood type of the patient."
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @return phoneNumber Represents the blood type of the patient."
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    public String getBloodType() {"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        return this.bloodType;"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Returns the allergies of the patient."
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @return allergies Represents the allergies of the patient."
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    public String getAllergies() {"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        return this.allergies;"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Returns the remarks of the patient."
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @return remarks Represents the remarks of the patient."
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    public String getRemarks() {"
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        return this.remarks;"
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    public String toString() {"
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        String text \u003d \"        Name : \" + this.name + \"\\n\""
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "                + \"        NRIC : \" + this.nric + \"\\n\""
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "                + \"        Phone Number : \" + this.phoneNumber + \"\\n\""
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "                + \"        DOB : \" + this.dateOfBirth + \"\\n\""
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "                + \"        Blood Type : \" + this.bloodType + \"\\n\""
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "                + \"        Allergies : \" + this.allergies + \"\\n\""
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "                + \"        Remarks : \" + this.remarks + \"\\n\";"
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        return text;"
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 169,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "NyanWunPaing": 169
+    }
+  },
+  {
+    "path": "src/main/java/seedu/happypills/data/PatientList.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "package seedu.happypills.data;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "public class PatientList extends ArrayList\u003cPatient\u003e {"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Stores all the tasks provided."
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    private ArrayList\u003cPatient\u003e patients;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Constructor for TaskList Class."
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * It creates a new TaskList."
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    public PatientList() {"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        this.patients \u003d new ArrayList\u003cPatient\u003e();"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Instructs {} to list the tasks with the search keyword"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * if the correct format is used."
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @param patients Current list of tasks.."
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @param keyword  The word used for search."
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    public boolean findKeyword(String keyword, PatientList patients) {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        for (Patient patient : patients) {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "            if (patient.getName().contains(keyword)) {"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "                return true;"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        return false;"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "NyanWunPaing": 34
+    }
+  },
+  {
+    "path": "src/main/java/seedu/happypills/exception/HappyPillsException.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "package seedu.happypills.exception;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": " * Signals that some given data does not fulfill some constraints."
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "public class HappyPillsException extends Exception {"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Updates Exception message."
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * @param message Contain relevant information on the failed constraint(s)"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    public HappyPillsException(String message) {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        super(message);"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "NyanWunPaing": 14
+    }
+  },
+  {
+    "path": "src/main/java/seedu/happypills/ui/TextUi.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "package seedu.happypills.ui;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "import seedu.happypills.data.Patient;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "import seedu.happypills.data.PatientList;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "public class TextUi {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "    public static final String DIVIDER \u003d \"    \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\";"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "     * Shows a list of patients\u0027 name and their NRIC to the user, formatted as an indexed list."
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "    public static void printList(PatientList patients) {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "        for (Patient patient : patients) {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "            System.out.println(\"    \" + patient.getName() + \" | \" + patient.getNric());"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "        System.out.println(DIVIDER);"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "     * Generates and prints the list of commands."
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "    public static void printHelp() {"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "        String helpMessage \u003d \"Shows program usage instructions.\\n\""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "                + \" add NAME, NRIC, PHONE_NUMBER, DOB, BLOOD_TYPE, [ALLERGIES], [REMARKS]\\n\""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "                + \" list \\n\""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "                + \" open NRIC\\n\""
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "                + \" edit phone/allergies/remarks INPUT\\n\""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "                + \" close\\n\""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "                + \" delete NRIC\\n\""
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "                + \" help\\n\""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "                + \" exit\";"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        System.out.println(helpMessage);"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "        System.out.println(DIVIDER);"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "     * Generates and prints the welcome message upon the start of the application."
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "    public void printWelcomeMessage() {"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "        String logo \u003d \"\\n\""
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "                + \" __   __  _______  _______  _______  __   __  _______  ___   ___      ___      _______ \\n\""
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "                + \"|  | |  ||   _   ||       ||       ||  | |  ||       ||   | |   |    |   |    |       |\\n\""
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "                + \"|  |_|  ||  |_|  ||    _  ||    _  ||  |_|  ||    _  ||   | |   |    |   |    |  _____|\\n\""
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "                + \"|       ||       ||   |_| ||   |_| ||       ||   |_| ||   | |   |    |   |    | |_____ \\n\""
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "                + \"|       ||       ||    ___||    ___||_     _||    ___||   | |   |___ |   |___ |_____  |\\n\""
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "                + \"|   _   ||   _   ||   |    |   |      |   |  |   |    |   | |       ||       | _____| |\\n\""
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "                + \"|__| |__||__| |__||___|    |___|      |___|  |___|    |___| |_______||_______||_______|\\n\";"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "        System.out.println(\"Hello from\" + logo);"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     * Generates and prints the welcome message upon the start of the application."
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    public static void printPatient(Patient patient, int patientNum) {"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        System.out.println(\"    Got it! I\u0027ve added this patient:\");"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        System.out.println(patient + DIVIDER);"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "NyanWunPaing": 14,
+      "itskesin": 47
+    }
+  },
+  {
+    "path": "src/test/java/seedu/happypills/HappyPillsTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "package seedu.happypills;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "class HappyPillsTest {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void sampleTest() {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertTrue(true);"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "NyanWunPaing": 2,
+      "-": 10
+    }
   }
 ]
