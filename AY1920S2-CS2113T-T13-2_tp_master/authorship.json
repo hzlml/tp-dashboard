@@ -55,9 +55,9 @@
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "-"
+          "gitId": "A11riseforme"
         },
-        "content": "group \u0027seedu.duke\u0027"
+        "content": "group \u0027seedu.nuke\u0027"
       },
       {
         "lineNumber": 9,
@@ -181,9 +181,9 @@
       {
         "lineNumber": 26,
         "author": {
-          "gitId": "-"
+          "gitId": "A11riseforme"
         },
-        "content": "    mainClassName \u003d \"seedu.duke.Duke\""
+        "content": "    mainClassName \u003d \"seedu.nuke.Nuke\""
       },
       {
         "lineNumber": 27,
@@ -209,9 +209,9 @@
       {
         "lineNumber": 30,
         "author": {
-          "gitId": "-"
+          "gitId": "A11riseforme"
         },
-        "content": "    archiveBaseName \u003d \"duke\""
+        "content": "    archiveBaseName \u003d \"nuke\""
       },
       {
         "lineNumber": 31,
@@ -300,7 +300,8 @@
     ],
     "authorContributionMap": {
       "wangqinNick": 2,
-      "-": 40
+      "A11riseforme": 3,
+      "-": 37
     }
   },
   {
@@ -373,15 +374,15 @@
     }
   },
   {
-    "path": "src/main/java/seedu/duke/Duke.java",
+    "path": "src/main/java/seedu/nuke/Nuke.java",
     "fileType": "java",
     "lines": [
       {
         "lineNumber": 1,
         "author": {
-          "gitId": "-"
+          "gitId": "A11riseforme"
         },
-        "content": "package seedu.duke;"
+        "content": "package seedu.nuke;"
       },
       {
         "lineNumber": 2,
@@ -414,14 +415,393 @@
       {
         "lineNumber": 6,
         "author": {
-          "gitId": "-"
+          "gitId": "wangqinNick"
         },
-        "content": "import java.util.Scanner;"
+        "content": "import static org.fusesource.jansi.Ansi.ansi;"
       },
       {
         "lineNumber": 7,
         "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "public class Nuke {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
           "gitId": "-"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * Main entry-point for the java.duke.Duke application."
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public static void main(String[] args) {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        AnsiConsole.systemInstall();"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        ansi().reset();"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        System.out.println(ansi().bold().fg(Ansi.Color.RED).a(\"Hello from NUKE.\").reset());"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        //System.out.println(ansi().bold().fg(Ansi.Color.BLUE).a(logo).reset());"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        System.out.println(ansi().bold().fg(Ansi.Color.MAGENTA).a(\"Hope to see you soon.\").reset());"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        AnsiConsole.systemUninstall();"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "wangqinNick": 11,
+      "A11riseforme": 2,
+      "-": 7
+    }
+  },
+  {
+    "path": "src/main/java/seedu/nuke/command/Command.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "package seedu.nuke.command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "import seedu.nuke.task.Task;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "public abstract class Command {"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public abstract CommandResult execute () ;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "wangqinNick": 9
+    }
+  },
+  {
+    "path": "src/main/java/seedu/nuke/command/CommandResult.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "package seedu.nuke.command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "/*"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    construct the feedback to user String"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "public class CommandResult {"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public final String feedbackToUser;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     * @parameter: Execute feedback to user"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public CommandResult(String feedbackToUser) {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        this.feedbackToUser \u003d feedbackToUser;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        //display result"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        /*"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        if (feedbackToUser!\u003d null)"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "            TextUi.showResult(this.feedbackToUser);"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        **/"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "wangqinNick": 21
+    }
+  },
+  {
+    "path": "src/main/java/seedu/nuke/command/EditCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "package seedu.nuke.command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "/*"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    edit-type command"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "public abstract class EditCommand extends Command{"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "wangqinNick"
         },
         "content": ""
       },
@@ -430,7 +810,7 @@
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "import static org.fusesource.jansi.Ansi.ansi;"
+        "content": "    protected String taskDescription;"
       },
       {
         "lineNumber": 9,
@@ -442,89 +822,2044 @@
       {
         "lineNumber": 10,
         "author": {
-          "gitId": "-"
-        },
-        "content": "public class Duke {"
-      },
-      {
-        "lineNumber": 11,
-        "author": {
-          "gitId": "-"
+          "gitId": "wangqinNick"
         },
         "content": "    /**"
       },
       {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     * set the deadline of a task"
+      },
+      {
         "lineNumber": 12,
         "author": {
-          "gitId": "-"
+          "gitId": "wangqinNick"
         },
-        "content": "     * Main entry-point for the java.duke.Duke application."
+        "content": "     * @param taskDescription full command args string"
       },
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "-"
+          "gitId": "wangqinNick"
         },
         "content": "     */"
       },
       {
         "lineNumber": 14,
         "author": {
-          "gitId": "-"
+          "gitId": "wangqinNick"
         },
-        "content": "    public static void main(String[] args) {"
+        "content": "    public EditCommand(String taskDescription) {"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        AnsiConsole.systemInstall();"
+        "content": "        this.taskDescription \u003d taskDescription;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        ansi().reset();"
+        "content": "    }"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        System.out.println(ansi().bold().fg(Ansi.Color.RED).a(\"Hello from NUKE.\").reset());"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        //System.out.println(ansi().bold().fg(Ansi.Color.BLUE).a(logo).reset());"
+        "content": "    @Override"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        System.out.println(ansi().bold().fg(Ansi.Color.MAGENTA).a(\"Hope to see you soon.\").reset());"
+        "content": "    public abstract CommandResult execute();"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        AnsiConsole.systemUninstall();"
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "wangqinNick": 20
+    }
+  },
+  {
+    "path": "src/main/java/seedu/nuke/command/EditDeadlineCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "package seedu.nuke.command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "/*"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    edit the deadline of the task"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "public class EditDeadlineCommand extends EditCommand {"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public static final String COMMAND_WORD \u003d \"editDeadline\";"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public static final String MESSAGE_USAGE_1 \u003d COMMAND_WORD + \"task description \"+\": Edit the deadline of a task.\";"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public static final String MESSAGE_USAGE_2 \u003d \"      Example: \" + COMMAND_WORD+ \" read a book\" + \"YYYY-MM-DD hh:mm:ss\";"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     * set the deadline"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     * @param toEdit full command args string"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public EditDeadlineCommand(String toEdit) {"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        super(toEdit);"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public CommandResult execute() {"
       },
       {
         "lineNumber": 21,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        return null;"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "wangqinNick": 24
+    }
+  },
+  {
+    "path": "src/main/java/seedu/nuke/common/Constants.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "package seedu.nuke.common;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "public class Constants {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    public static final String YES_ICON \u003d \"[Y]\";"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    public static final String NO_ICON \u003d \"[N]\";"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "A11riseforme": 6
+    }
+  },
+  {
+    "path": "src/main/java/seedu/nuke/data/TaskList.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "package seedu.nuke.data;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "import seedu.nuke.task.Task;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "import java.util.Iterator;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "import java.util.Spliterator;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "import java.util.function.Consumer;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "public class TaskList {"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    ArrayList\u003cTask\u003e internalList \u003d new ArrayList\u003c\u003e();"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     * Constructs empty task list."
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public TaskList() {}"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     * todo add check same function"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     * Checks if the list contains an equivalent task as the given description."
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     * @param toCheck the task to-check"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     * @return true if the task exists"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public boolean contains(Task toCheck) {"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        return false;"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "wangqinNick": 27
+    }
+  },
+  {
+    "path": "src/main/java/seedu/nuke/module/Module.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "package seedu.nuke.module;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "import seedu.nuke.task.Task;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "public class Module {"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    private String moduleCode;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    private String title;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    private String description;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    private ModuleTaskList taskList;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    public Module(String moduleCode, String title, String description) {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        this.moduleCode \u003d moduleCode;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        this.title \u003d title;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        this.description \u003d description;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        this.taskList \u003d new ModuleTaskList();"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    public String getModuleCode() {"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        return moduleCode;"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    public String getTitle() {"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        return title;"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    public String getDescription() {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        return description;"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public ModuleTaskList getTaskList() {"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "        return taskList;"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    public void addTask(Task task) {"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "        taskList.add(task);"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "wangqinNick": 3,
+      "A11riseforme": 32,
+      "iceclementi": 2
+    }
+  },
+  {
+    "path": "src/main/java/seedu/nuke/module/ModuleTaskList.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "package seedu.nuke.module;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "import seedu.nuke.task.Task;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "public class ModuleTaskList {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "    ArrayList\u003cTask\u003e taskList;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public ModuleTaskList() {"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "        taskList \u003d new ArrayList\u003c\u003e();"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "    public void add(Task task) {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "        taskList.add(task);"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "    public void delete(int index) {"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "        taskList.remove(index);"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "    public void delete(Task taskToDelete) {"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "        taskList.remove(taskToDelete);"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "    public boolean delete(String taskName) {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "        for (Task task : taskList) {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "            if (task.getDescription().equals(taskName)) {"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "                taskList.remove(task);"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "                return true;"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "        return false;"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "wangqinNick": 2,
+      "iceclementi": 34
+    }
+  },
+  {
+    "path": "src/main/java/seedu/nuke/task/Assignment.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "package seedu.nuke.task;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "import java.time.LocalDateTime;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "public class Assignment extends Task {"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    public Assignment(String description, ArrayList\u003cString\u003e files, LocalDateTime dateTime, int priority) {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        super(description, files, dateTime, priority);"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "A11riseforme": 10
+    }
+  },
+  {
+    "path": "src/main/java/seedu/nuke/task/Lab.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "package seedu.nuke.task;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "import java.time.LocalDateTime;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "public class Lab extends Task {"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    public Lab(String description, ArrayList\u003cString\u003e files, LocalDateTime dateTime, int priority) {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        super(description, files, dateTime, priority);"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "A11riseforme": 10
+    }
+  },
+  {
+    "path": "src/main/java/seedu/nuke/task/Lecture.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "package seedu.nuke.task;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "import java.time.LocalDateTime;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "public class Lecture extends Task {"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    public Lecture(String description, ArrayList\u003cString\u003e files, LocalDateTime dateTime, int priority) {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        super(description, files, dateTime, priority);"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "A11riseforme": 10
+    }
+  },
+  {
+    "path": "src/main/java/seedu/nuke/task/Task.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "package seedu.nuke.task;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "import java.time.LocalDateTime;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "import static seedu.nuke.common.Constants.NO_ICON;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "import static seedu.nuke.common.Constants.YES_ICON;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "public class Task {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    protected String description;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    protected boolean isDone;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    protected ArrayList\u003cString\u003e files;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    protected LocalDateTime deadline;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    protected int priority;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    public Task(String description, ArrayList\u003cString\u003e files, LocalDateTime dateTime, int priority) {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        this.description \u003d description;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        this.files \u003d new ArrayList\u003cString\u003e();"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        for (String file: files) {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "            this.files.add(file);"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        this.deadline \u003d dateTime;"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        this.priority \u003d priority;"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        this.isDone \u003d false;"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    public String getDescription() {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        return description;"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    public LocalDateTime getDeadline() {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        return deadline;"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    public int getPriority() {"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        return priority;"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    public String getStatusIcon() {"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        return (isDone ? YES_ICON : NO_ICON);"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    public ArrayList\u003cString\u003e getFiles() {"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        return files;"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    public String toString() {"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        StringBuilder printOut \u003d new StringBuilder(getStatusIcon() + \" \" + getDescription() + \" by \" + getDeadline());"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        for (String file: files) {"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "            printOut.append(\" \").append(file);"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        return printOut.toString();"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public void setDeadline(LocalDateTime deadline) {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        this.deadline \u003d deadline;"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "wangqinNick": 4,
+      "A11riseforme": 54
+    }
+  },
+  {
+    "path": "src/main/java/seedu/nuke/task/Tutorial.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "package seedu.nuke.task;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "import java.time.LocalDateTime;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "public class Tutorial extends Task {"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    public Tutorial(String description, ArrayList\u003cString\u003e files, LocalDateTime dateTime, int priority) {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        super(description, files, dateTime, priority);"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "A11riseforme": 10
+    }
+  },
+  {
+    "path": "src/main/java/seedu/nuke/ui/Ui.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "package seedu.nuke.ui;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "import java.util.Scanner;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "public class Ui {"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    private Scanner in;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    public Ui() {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        in \u003d new Scanner(System.in);"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    public String readCommand() {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        return in.nextLine();"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "A11riseforme": 15
+    }
+  },
+  {
+    "path": "src/main/java/seedu/nuke/util/Storage.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "package seedu.nuke.util;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "public class Storage {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    private String dataFileName;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    public Storage(String dataFileName) {"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        this.dataFileName \u003d dataFileName;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "A11riseforme": 9
+    }
+  },
+  {
+    "path": "src/test/java/seedu/nuke/DukeTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "package seedu.nuke;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "class DukeTest {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public void sampleTest() {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        assertTrue(true);"
+      },
+      {
+        "lineNumber": 11,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 22,
+        "lineNumber": 12,
         "author": {
           "gitId": "-"
         },
@@ -532,7 +2867,7 @@
       }
     ],
     "authorContributionMap": {
-      "wangqinNick": 11,
+      "A11riseforme": 1,
       "-": 11
     }
   }
