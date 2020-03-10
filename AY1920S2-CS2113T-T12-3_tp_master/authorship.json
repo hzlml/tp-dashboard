@@ -1154,6 +1154,2054 @@
     }
   },
   {
+    "path": "src/main/java/deadline/Deadline.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "package deadline;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "import java.time.LocalDate;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "import java.time.LocalTime;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "import java.time.format.DateTimeFormatter;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "import java.time.format.DateTimeParseException;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": " * Represents an deadline and contains the related functions."
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "public class Deadline {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    private String description;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    private LocalDate date;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    private LocalTime dueTime;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    private int priority;"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * Constructor for Deadline"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     *Class."
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * @param description Description of the deadline."
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * @param date Date of specified Deadline"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * @param dueTime Due time of specified deadline."
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * @param priority Priority of specified deadline."
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * @throws Exception If wrong format is used for date, time fields."
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    public Deadline(String description, String date, String dueTime, String priority) throws Exception {"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        parseDescription(description);"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        parseDate(date);"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        parseDueTime(dueTime);"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        parsePriority(priority);"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    private void parsePriority(String priority) throws Exception {"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            this.priority \u003d Integer.parseInt(priority.strip());"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        } catch (NumberFormatException e) {"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            throw new Exception(\"Priority should be an integer\");"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    private void parseDueTime(String dueTime) throws Exception {"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            this.dueTime \u003d LocalTime.parse(dueTime.strip());"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        } catch (DateTimeParseException e) {"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            throw new Exception(\"Due time provided is invalid or in wrong format (Should be HH:MM)\");"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    private void parseDate(String date) throws Exception {"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            this.date \u003d LocalDate.parse(date.strip());"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        } catch (DateTimeParseException e) {"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            throw new Exception(\"Date provided is invalid or is in wrong format (Should be YYYY-MM-DD)\");"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    private void parseDescription(String description) {"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        this.description \u003d description;"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * Returns the information related to information in form of a string."
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * @return deadlineInfo Contains information related to the deadline."
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    public String getDeadlineInformation() {"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        String deadlineInfo \u003d description + \" on \" + date.format(DateTimeFormatter.ofPattern(\"MMM d yyyy\")) + \" at \""
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "                + dueTime.toString();"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        return deadlineInfo;"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * Returns the priority of the specified deadline."
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * @return Priority of deadline."
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    public int getPriority() {"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        return priority;"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * Returns the date of the deadline."
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * @return Date of deadline."
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    public LocalDate getDate() {"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        return date;"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * Used to identify if the string contains the keyword specified in its description."
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * @param keyword The keyword to be matched with the description."
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * @return containsKeyword Indicates the presence/absence of keyword in the deadline\u0027s description."
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * @throws Exception If no keyword is entered."
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    public boolean hasKeyword(String keyword) throws Exception {"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        if (keyword.equals(\"\")) {"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            throw new Exception(\"Keyword is empty\");"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        boolean containsKeyword \u003d description.contains(keyword);"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        return containsKeyword;"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * Returns the deadline in the format used to store it in the data file."
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * @return formattedDeadlineDetails Contains the deadline details in the required format."
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    public String getFormattedDetails() {"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        String formattedDeadlineDetails \u003d description + \"#\" + date + \"#\" + dueTime + \"#\" + priority;"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        return formattedDeadlineDetails;"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "hongquan448": 117
+    }
+  },
+  {
+    "path": "src/main/java/deadline/DeadlineList.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "package deadline;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "import java.time.format.DateTimeParseException;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "import java.util.Collections;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "import java.util.Comparator;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "import ui.Ui;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": " * Handles all functions related to the list of deadlines."
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "public class DeadlineList {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    Ui ui \u003d new Ui();"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    /** Stores the deadline information. */"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    public ArrayList\u003cDeadline\u003e deadlines;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * Constructor for the DeadlineList class."
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    public DeadlineList() {"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        deadlines \u003d new ArrayList\u003cDeadline\u003e();"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    public DeadlineList(ArrayList\u003cDeadline\u003e deadlines) {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        this.deadlines \u003d deadlines;"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * Adds a new deadline to the list."
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * @param newDeadline Deadline represents the new deadline tot be added."
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    public void addDeadline(Deadline newDeadline) {"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        deadlines.add(newDeadline);"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        ui.printWithIndentation(\"A new deadline with the following information has been added.\");"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        ui.printWithIndentation(newDeadline.getDeadlineInformation());"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * Displays the current list of deadlines."
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    public void listDeadlines() {"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        System.out.println(\"Here is the list of deadlines added so far:\");"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        int deadlineNumber \u003d 1;"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        for (Deadline deadline: deadlines) {"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            ui.printWithIndentation(deadlineNumber + \") \" + deadline.getDeadlineInformation());"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            deadlineNumber++;"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * Deletes the deadline at the specified index."
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * @param index The index (1-based) of the deadline to be deleted."
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    public void deleteDeadline(int index) {"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            deadlines.remove(index - 1);"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            ui.printLine();"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            ui.printWithIndentation(\"The deadline at the mentioned index has been deleted\");"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            ui.printLine();"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        } catch (IndexOutOfBoundsException e) {"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            ui.printLine();"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            ui.printWithIndentation(\"Enter a valid index\");"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            ui.printLine();"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * Clears all the deadlines currently stored."
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    public void clearDeadlines() {"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        deadlines.clear();"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        ui.printWithIndentation(\"The list of deadlines is cleared.\");"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * Lists all the tasks sorted by their priority."
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    public void priorityView() {"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        ArrayList\u003cDeadline\u003e deadlinesSortedByPriority \u003d deadlines;"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        deadlinesSortedByPriority.sort(Comparator.comparingInt(Deadline::getPriority));"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        Collections.reverse(deadlinesSortedByPriority);"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        int deadlineNumber \u003d 1;"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        for (Deadline deadline:deadlinesSortedByPriority) {"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            ui.printWithIndentation(deadlineNumber + \") \" + deadline.getDeadlineInformation());"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            deadlineNumber++;"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        if (deadlineNumber \u003d\u003d 1) {"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            ui.printWithIndentation(\"The list is empty.\");"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * Lists all the tasks sorted by date along with the days remaining."
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    public void countdownView() {"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        ArrayList\u003cDeadline\u003e deadlinesSortedByDate \u003d deadlines;"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        deadlinesSortedByDate.sort(Comparator.comparing(Deadline::getDate));"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        int deadlineNumber \u003d 1;"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        for (Deadline deadline:deadlinesSortedByDate) {"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            ui.printWithIndentation(deadlineNumber + \") \" + deadline.getDeadlineInformation());"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            deadlineNumber++;"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        if (deadlineNumber \u003d\u003d 1) {"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            ui.printWithIndentation(\"The list is empty.\");"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * Displays the list of deadlines containing the keyword."
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * @param keyword The keyword to be searched for."
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    public void searchDeadlines(String keyword) {"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        int deadlineNumber \u003d 1;"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        for (Deadline deadline:deadlines) {"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            try {"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "                if (deadline.hasKeyword(keyword)) {"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "                    ui.printWithIndentation(deadlineNumber + \") \" + deadline.getDeadlineInformation());"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "                    deadlineNumber++;"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            } catch (Exception e) {"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "                e.printStackTrace();"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        if (deadlineNumber \u003d\u003d 1) {"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            ui.printWithIndentation(\"The list is empty.\");"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        ui.printLine();"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * Adds a new deadline to the list by parsing information from the user given string"
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * and calling {@link #addDeadline(Deadline)} if the information is given in the correct format"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * to add the deadline."
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * @param deadlineDetails Contains all the information related to the deadline as provided by the user."
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    public void add(String deadlineDetails) {"
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            String[] details \u003d deadlineDetails.split(\" \",2)[1].split(\"/\");"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            String description \u003d details[0];"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            String date \u003d details[1].substring(2);"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            String dueTime \u003d details[2].substring(2);"
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            String priority \u003d details[3].substring(2);"
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            Deadline newDeadline \u003d  new Deadline(description,date,dueTime, priority);"
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            addDeadline(newDeadline);"
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        } catch (IndexOutOfBoundsException | DateTimeParseException | NullPointerException e) {"
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            ui.printLine();"
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            ui.printWithIndentation(\"Wrong format to add deadlines\");"
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            ui.printLine();"
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        } catch (Exception e) {"
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            ui.printLine();"
+      },
+      {
+        "lineNumber": 169,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            ui.printWithIndentation(e.getMessage());"
+      },
+      {
+        "lineNumber": 170,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "            ui.printLine();"
+      },
+      {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "hongquan448": 173
+    }
+  },
+  {
     "path": "src/main/java/driver/Driver.java",
     "fileType": "java",
     "lines": [
@@ -4937,14 +6985,14 @@
       {
         "lineNumber": 4,
         "author": {
-          "gitId": "-"
+          "gitId": "hongquan448"
         },
-        "content": "import java.util.Scanner;"
+        "content": "import ui.Ui;"
       },
       {
         "lineNumber": 5,
         "author": {
-          "gitId": "-"
+          "gitId": "hongquan448"
         },
         "content": ""
       },
@@ -4953,91 +7001,91 @@
         "author": {
           "gitId": "-"
         },
-        "content": "public class Duke {"
+        "content": "import java.util.Scanner;"
       },
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "GanapathySanathBalaji"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "-"
+          "gitId": "hongquan448"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "-"
         },
-        "content": "     * Main entry-point for the java.duke.Duke application."
+        "content": "public class Duke {"
       },
       {
         "lineNumber": 10,
         "author": {
-          "gitId": "-"
+          "gitId": "GanapathySanathBalaji"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "hongquan448"
         },
-        "content": "    public static void main(String[] args) throws Exception {"
+        "content": "    private static Ui ui \u003d new Ui();"
       },
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "-"
+          "gitId": "hongquan448"
         },
-        "content": "        String logo \u003d \" ____        _        \\n\""
+        "content": ""
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "-"
         },
-        "content": "                + \"|  _ \\\\ _   _| | _____ \\n\""
+        "content": "    /**"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "-"
         },
-        "content": "                + \"| | | | | | | |/ / _ \\\\\\n\""
+        "content": "     * Main entry-point for the java.duke.Duke application."
       },
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "-"
+          "gitId": "hongquan448"
         },
-        "content": "                + \"| |_| | |_| |   \u003c  __/\\n\""
+        "content": "     * @param args Commandline argument"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "-"
         },
-        "content": "                + \"|____/ \\\\__,_|_|\\\\_\\\\___|\\n\";"
+        "content": "     */"
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "-"
+          "gitId": "terrytay"
         },
-        "content": "        System.out.println(\"Hello from\\n\" + logo);"
+        "content": "    public static void main(String[] args) throws Exception {"
       },
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "-"
+          "gitId": "hongquan448"
         },
-        "content": "        System.out.println(\"What is your name?\");"
+        "content": "        ui.printWelcomeMessage();"
       },
       {
         "lineNumber": 19,
@@ -5175,8 +7223,9 @@
     ],
     "authorContributionMap": {
       "terrytay": 14,
+      "hongquan448": 7,
       "GanapathySanathBalaji": 3,
-      "-": 20
+      "-": 13
     }
   },
   {
@@ -6924,6 +8973,134 @@
     }
   },
   {
+    "path": "src/main/java/task/TaskList.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "package task;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "public abstract class TaskList {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * TaskList is an abstract class that oversees all task-related classes."
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * The current task-related classes are events, deadlines, assignments"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * TaskList stores all tasks in one large array, allowing the user to access the priorityView and countdownView of"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * all tasks"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    public abstract void priorityView();"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    public abstract void countdownView();"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    public abstract void searchTasks();"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "hongquan448": 17
+    }
+  },
+  {
     "path": "src/main/java/ui/Ui.java",
     "fileType": "java",
     "lines": [
@@ -7392,166 +9569,418 @@
       {
         "lineNumber": 67,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "hongquan448"
         },
-        "content": "     * This method ensures that the message printed is within the standard\u003cbr\u003e"
+        "content": "     * This method ensures that the message printed is within the standard length."
       },
       {
         "lineNumber": 68,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "hongquan448"
         },
-        "content": "     * length."
+        "content": "     * @param message is the String that we intend to format to a standard length per line."
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "     * @param message is the String that we intend to format to a standard length\u003cbr\u003e"
+        "content": "     * @param maxLength This is the standard length intended to be formatted."
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "     *                per line.\u003cbr\u003e"
+        "content": "     * @return String of standard length per line"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "     * @param maxLength This is the standard length intended to be formatted."
+        "content": "     */"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "     * @return String of standard length per line"
+        "content": ""
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "     */"
+        "content": "    public static String formatMessage(String message, int maxLength) {"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "terrytay"
         },
-        "content": ""
+        "content": "        StringTokenizer token \u003d new StringTokenizer(message, SPACE);"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "    public static String formatMessage(String message, int maxLength) {"
+        "content": "        StringBuilder standardLengthMessage \u003d new StringBuilder(message.length());"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "        StringTokenizer token \u003d new StringTokenizer(message, SPACE);"
+        "content": "        int lineLength \u003d 0;"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "        StringBuilder standardLengthMessage \u003d new StringBuilder(message.length());"
+        "content": "        while (token.hasMoreTokens()) {"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "        int lineLength \u003d 0;"
+        "content": "            String word \u003d token.nextToken();"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "        while (token.hasMoreTokens()) {"
+        "content": "            if (lineLength + word.length() \u003e maxLength) {"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "            String word \u003d token.nextToken();"
+        "content": "                standardLengthMessage.append(\"\\n\\t \");"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "            if (lineLength + word.length() \u003e maxLength) {"
+        "content": "                lineLength \u003d 0;"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "                standardLengthMessage.append(\"\\n\\t \");"
+        "content": "            }"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "                lineLength \u003d 0;"
+        "content": "            standardLengthMessage.append(word).append(SPACE);"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "            }"
+        "content": "            lineLength +\u003d word.length() + 1;"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "            standardLengthMessage.append(word).append(SPACE);"
+        "content": "        }"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "terrytay"
         },
-        "content": "            lineLength +\u003d word.length() + 1;"
+        "content": "        return TAB + standardLengthMessage.toString().stripTrailing();"
       },
       {
         "lineNumber": 87,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "hongquan448"
         },
-        "content": "        }"
+        "content": "    }"
       },
       {
         "lineNumber": 88,
         "author": {
-          "gitId": "terrytay"
+          "gitId": "hongquan448"
         },
-        "content": "        return TAB + standardLengthMessage.toString().stripTrailing();"
+        "content": ""
       },
       {
         "lineNumber": 89,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * Display the list of supported commands."
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    public void printHelp() {"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        printLine();"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        System.out.println(\"OrgaNice! Supports the following commands\");"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        System.out.println(\"Please enter the keywords followed by the information shown in the brackets\");"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        System.out.println(\"add \u003cevent details\u003e /d \u003cdate\u003e /s \u003cstart time\u003e /e \u003cend time\u003e /p \u003cpriority of event\u003e\");"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        System.out.println(\"------------------------------------------- Create a new event\");"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        System.out.println(\"view -------------------------------------- View existing events\");"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        System.out.println(\"priority_view ----------------------------- View existing events based on priority\");"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        System.out.println(\"countdown --------------------------------- View existing events based on days left\");"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        System.out.println(\"clear ------------------------------------- Delete all events\");"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        System.out.println(\"search \u003ckeyword found in event\u003e ----------- View existing events that contains \""
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "                + \"the keyword\");"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        System.out.println(\"delete \u003cindex number of event\u003e ------------ Delete the event\");"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        System.out.println(\"bye --------------------------------------- Terminate program\");"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        System.out.println(\"Notes:\");"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        System.out.println(\"*All dates should follow YYYY-MM-DD format\");"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        System.out.println(\"*All timing should follow 24 hour clock\");"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        System.out.println(\"*There are 4 levels of priority, with 1 being the most urgent, and 4 being the \""
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "                + \"least urgent\");"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        printLine();"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     * Display welcome message."
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "    public void printWelcomeMessage() {"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        String logo \u003d \" ____        _        \\n\""
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "                + \"|  _ \\\\ _   _| | _____ \\n\""
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "                + \"| | | | | | | |/ / _ \\\\\\n\""
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "                + \"| |_| | |_| |   \u003c  __/\\n\""
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "                + \"|____/ \\\\__,_|_|\\\\_\\\\___|\\n\";"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        System.out.println(\"Hello from\\n\" + logo);"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "hongquan448"
+        },
+        "content": "        System.out.println(\"What is your name?\");"
+      },
+      {
+        "lineNumber": 125,
         "author": {
           "gitId": "terrytay"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 90,
+        "lineNumber": 126,
         "author": {
           "gitId": "GanapathySanathBalaji"
         },
@@ -7559,8 +9988,9 @@
       }
     ],
     "authorContributionMap": {
-      "terrytay": 74,
-      "GanapathySanathBalaji": 16
+      "terrytay": 70,
+      "GanapathySanathBalaji": 16,
+      "hongquan448": 40
     }
   },
   {

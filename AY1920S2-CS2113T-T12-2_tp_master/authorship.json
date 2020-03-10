@@ -1294,472 +1294,430 @@
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "    protected String name;"
+        "content": "    protected String nric;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "    protected String nric;"
+        "content": "    protected String editField;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "    protected int phoneNumber;"
+        "content": "    protected String newContent;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "    protected String dateOfBirth;"
+        "content": ""
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "    protected String bloodType;"
+        "content": "    /**"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "    protected String allergies;"
+        "content": "     * Constructor for EditCommand Class."
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "    protected String remarks;"
+        "content": "     * It creates a new EditCommand Object with the information provided."
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "    protected String editField;"
+        "content": "     *"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "    protected String newContent;"
+        "content": "     * @param nric Contains the nric of the patient that is to be retrieved."
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": ""
+        "content": "     * @param editField Contains the attribute that is to be edited."
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "    /**"
+        "content": "     * @param newContent Contains the string that the attribute is to be updated to."
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "     * Constructor for EditCommand Class."
+        "content": "     */"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "     * It creates a new EditCommand Object with the information provided."
+        "content": "    public EditCommand(String nric, String editField, String newContent) {"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "     *"
+        "content": "        this.nric \u003d nric;"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "     * @param nric Contains the nric of the patient that is to be retrieved."
+        "content": "        this.editField \u003d editField;"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "     * @param editField Contains the attribute that is to be edited."
+        "content": "        this.newContent \u003d newContent;"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "     * @param newContent Contains the string that the attribute is to be updated to."
+        "content": "    }"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "    public EditCommand(String nric, String editField, String newContent) {"
+        "content": "    /**"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "        this.nric \u003d nric;"
+        "content": "     * Edit the attribute of the patient according to the given attribute."
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "        this.editField \u003d editField;"
+        "content": "     *"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "        this.newContent \u003d newContent;"
+        "content": "     * @param patients Contains the list of tasks on which the commands are executed on."
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "    }"
+        "content": "     * @throws HappyPillsException Throws an exception if patient does not exist in patient list."
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "    /**"
+        "content": "    private void editChanges(PatientList patients) throws HappyPillsException {"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "     * Edit the attribute of the patient according to the given attribute."
+        "content": "        boolean inList \u003d false;"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "     *"
+        "content": "        for (Patient patient : patients) {"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "     * @param patients Contains the list of tasks on which the commands are executed on."
+        "content": "            if (patient.getNric().equals(nric)) {"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "     * @throws HappyPillsException Throws an exception if patient does not exist in patient list."
+        "content": "                inList \u003d true;"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "     */"
+        "content": "                if (editField.equals(\"phone\")) {"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "    private void editChanges(PatientList patients) throws HappyPillsException {"
+        "content": "                    patient.setPhoneNumber(Integer.parseInt(newContent));"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "        boolean inList \u003d false;"
+        "content": "                } else if (editField.equals(\"allergies\")) {"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "        for (Patient patient : patients) {"
+        "content": "                    patient.setAllergies(newContent);"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "            if (patient.getNric().equals(nric)) {"
+        "content": "                } else if (editField.equals(\"remarks\")) {"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "                inList \u003d true;"
+        "content": "                    patient.setRemarks(newContent);"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "                if (editField.equals(\"phone\")) {"
+        "content": "                }"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "                    patient.setPhoneNumber(Integer.parseInt(newContent));"
+        "content": "                TextUi.printEditSuccess(patient);"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "                } else if (editField.equals(\"allergies\")) {"
+        "content": "                break;"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "                    patient.setAllergies(newContent);"
+        "content": "            }"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "                } else if (editField.equals(\"remarks\")) {"
+        "content": "        }"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "                    patient.setRemarks(newContent);"
+        "content": "        if (!inList) {"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "                }"
+        "content": "            throw new HappyPillsException(\"NRIC not in patient list.\");"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "                TextUi.printEditSuccess(patient);"
+        "content": "        }"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "                break;"
+        "content": "    }"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "        }"
+        "content": "    /**"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "        if (!inList) {"
+        "content": "     * Adds a new task to the list with the information provided by calling."
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "            throw new HappyPillsException(\"NRIC not in patient list.\");"
+        "content": "     * {} (or) {}"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "        }"
+        "content": "     * (or) {} as require"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "    }"
+        "content": "     *"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": ""
+        "content": "     * @param patients Contains the list of tasks on which the commands are executed on."
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "    /**"
+        "content": "     * @throws HappyPillsException Throws an exception if the edit field is not valid."
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "     * Adds a new task to the list with the information provided by calling."
+        "content": "     */"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "     * {} (or) {}"
+        "content": "    @Override"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "     * (or) {} as require"
+        "content": "    public void execute(PatientList patients) throws HappyPillsException {"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "     *"
+        "content": "        if (editField.equals(\"phone\") || editField.equals(\"allergies\") || editField.equals(\"remarks\")) {"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "     * @param patients Contains the list of tasks on which the commands are executed on."
+        "content": "            editChanges(patients);"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "     * @throws HappyPillsException Throws an exception if the edit field is not valid."
+        "content": "        } else {"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "     */"
+        "content": "            throw new HappyPillsException(\"Edit field is not valid.\");"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "    @Override"
+        "content": "        }"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "    public void execute(PatientList patients) throws HappyPillsException {"
-      },
-      {
-        "lineNumber": 71,
-        "author": {
-          "gitId": "sitinadiah25"
-        },
-        "content": "        if (editField.equals(\"phone\") || editField.equals(\"allergies\") || editField.equals(\"remarks\")) {"
-      },
-      {
-        "lineNumber": 72,
-        "author": {
-          "gitId": "sitinadiah25"
-        },
-        "content": "            editChanges(patients);"
-      },
-      {
-        "lineNumber": 73,
-        "author": {
-          "gitId": "sitinadiah25"
-        },
-        "content": "        } else {"
-      },
-      {
-        "lineNumber": 74,
-        "author": {
-          "gitId": "sitinadiah25"
-        },
-        "content": "            throw new HappyPillsException(\"Edit field is not valid.\");"
-      },
-      {
-        "lineNumber": 75,
-        "author": {
-          "gitId": "sitinadiah25"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 76,
-        "author": {
-          "gitId": "sitinadiah25"
-        },
         "content": "    }"
       },
       {
-        "lineNumber": 77,
+        "lineNumber": 71,
         "author": {
           "gitId": "sitinadiah25"
         },
@@ -1767,7 +1725,184 @@
       }
     ],
     "authorContributionMap": {
-      "sitinadiah25": 77
+      "sitinadiah25": 71
+    }
+  },
+  {
+    "path": "src/main/java/seedu/happypills/commands/ExitCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "package seedu.happypills.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "import seedu.happypills.data.Patient;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "import seedu.happypills.data.PatientList;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "import seedu.happypills.ui.TextUi;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "public class ExitCommand extends Command {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "    public ExitCommand() {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "     * Adds a new task to the list with the information provided by calling."
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "     * {} (or) {}"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "     * (or) {} as require"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "     * @param patients Contains the list of tasks on which the commands are executed on."
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "    public void execute(PatientList patients) {"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "        TextUi.printExit();"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "        System.exit(0);"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "sitinadiah25": 24
     }
   },
   {
@@ -3892,14 +4027,14 @@
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "import seedu.happypills.commands.RetrieveCommand;"
+        "content": "import seedu.happypills.commands.EditCommand;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "import seedu.happypills.commands.HelpCommand;"
+        "content": "import seedu.happypills.commands.ExitCommand;"
       },
       {
         "lineNumber": 6,
@@ -3913,7 +4048,7 @@
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "import seedu.happypills.commands.EditCommand;"
+        "content": "import seedu.happypills.commands.HelpCommand;"
       },
       {
         "lineNumber": 8,
@@ -3925,278 +4060,320 @@
       {
         "lineNumber": 9,
         "author": {
-          "gitId": "NyanWunPaing"
+          "gitId": "sitinadiah25"
         },
-        "content": "import seedu.happypills.exception.HappyPillsException;"
+        "content": "import seedu.happypills.commands.RetrieveCommand;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": ""
+        "content": "import seedu.happypills.exception.HappyPillsException;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": " * Parses user input."
+        "content": "/**"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": " */"
+        "content": " * Parses user input."
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "public class Parser {"
+        "content": " */"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "    /**"
+        "content": "public class Parser {"
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "NyanWunPaing"
+          "gitId": "sitinadiah25"
         },
-        "content": "     * Parses user input into command for execution."
+        "content": "    protected boolean isExit \u003d false;"
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "NyanWunPaing"
+          "gitId": "sitinadiah25"
         },
-        "content": "     *"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "     * @param fullCommand Full user input string"
+        "content": "    /**"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "     * @return the command Based on the user input"
+        "content": "     * Parses user input into command for execution."
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "     * @throws HappyPillsException Errors base on invalid input or insufficient input"
+        "content": "     *"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "     */"
+        "content": "     * @param fullCommand Full user input string"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "    public static Command parse(String fullCommand) throws HappyPillsException {"
+        "content": "     * @return the command Based on the user input"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "        String[] userCommand \u003d fullCommand.split(\" \", 2);"
+        "content": "     * @throws HappyPillsException Errors base on invalid input or insufficient input"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "        if (userCommand[0].equalsIgnoreCase(\"list\")) {"
+        "content": "    public static Command parse(String fullCommand) throws HappyPillsException {"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "            return new ListCommand();"
+        "content": "        String[] userCommand \u003d fullCommand.split(\" \", 2);"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "        } else if (userCommand[0].equalsIgnoreCase(\"add\")) {"
+        "content": ""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "            if (userCommand.length \u003d\u003d 1 || userCommand[1].trim().isEmpty()) {"
+        "content": "        if (userCommand[0].equalsIgnoreCase(\"list\")) {"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "                throw new HappyPillsException(\"    detail is empty\");"
+        "content": "            return new ListCommand();"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "            }"
+        "content": "        } else if (userCommand[0].equalsIgnoreCase(\"add\")) {"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "            String[] patientDetail \u003d userCommand[1].split(\",\");"
+        "content": "            if (userCommand.length \u003d\u003d 1 || userCommand[1].trim().isEmpty()) {"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "            if (patientDetail.length !\u003d 7) {"
+        "content": "                throw new HappyPillsException(\"    detail is empty\");"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "                throw new HappyPillsException(\"    please ensure to input your details\");"
+        "content": "            }"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "            }"
+        "content": "            String[] patientDetail \u003d userCommand[1].split(\",\");"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "            return new AddCommand(patientDetail[0], patientDetail[1],"
+        "content": "            if (patientDetail.length !\u003d 7) {"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "                    Integer.parseInt(patientDetail[2]), patientDetail[3],"
+        "content": "                throw new HappyPillsException(\"    please ensure to input your details\");"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "                    patientDetail[4], patientDetail[5], patientDetail[6]);"
+        "content": "            }"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "        } else if (userCommand[0].equalsIgnoreCase(\"help\")) {"
+        "content": "            return new AddCommand(patientDetail[0], patientDetail[1],"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "            return new HelpCommand();"
+        "content": "                    Integer.parseInt(patientDetail[2]), patientDetail[3],"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "        } else if (userCommand[0].equalsIgnoreCase(\"get\")) {"
+        "content": "                    patientDetail[4], patientDetail[5], patientDetail[6]);"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "            return new RetrieveCommand(userCommand[1]);"
+        "content": "        } else if (userCommand[0].equalsIgnoreCase(\"help\")) {"
       },
       {
         "lineNumber": 42,
         "author": {
-          "gitId": "sitinadiah25"
+          "gitId": "NyanWunPaing"
         },
-        "content": "        } else if (userCommand[0].equalsIgnoreCase(\"edit\")) {"
+        "content": "            return new HelpCommand();"
       },
       {
         "lineNumber": 43,
         "author": {
-          "gitId": "sitinadiah25"
+          "gitId": "NyanWunPaing"
         },
-        "content": "            return new EditCommand(userCommand[1], userCommand[2], userCommand[3]);"
+        "content": "        } else if (userCommand[0].equalsIgnoreCase(\"get\")) {"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "        } else {"
+        "content": "            return new RetrieveCommand(userCommand[1]);"
       },
       {
         "lineNumber": 45,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "        } else if (userCommand[0].equalsIgnoreCase(\"edit\")) {"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "            String[] edit \u003d fullCommand.split(\" \", 4);"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "            return new EditCommand(edit[1], edit[2], edit[3]);"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "        } else if (userCommand[0].equalsIgnoreCase(\"exit\")) {"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "            return new ExitCommand();"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 51,
         "author": {
           "gitId": "NyanWunPaing"
         },
         "content": "            throw new HappyPillsException(\"    Invalid Command\");"
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 52,
         "author": {
           "gitId": "NyanWunPaing"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 53,
         "author": {
           "gitId": "NyanWunPaing"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 48,
+        "lineNumber": 54,
         "author": {
           "gitId": "NyanWunPaing"
         },
@@ -4205,7 +4382,7 @@
     ],
     "authorContributionMap": {
       "NyanWunPaing": 40,
-      "sitinadiah25": 8
+      "sitinadiah25": 14
     }
   },
   {
@@ -4761,6 +4938,41 @@
       {
         "lineNumber": 79,
         "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "    public static void printExit() {"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "        System.out.println(\"Thank you for using HappyPills! ^_^\");"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "        System.out.println(\"See you again!\");"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 84,
+        "author": {
           "gitId": "itskesin"
         },
         "content": "}"
@@ -4769,7 +4981,7 @@
     "authorContributionMap": {
       "NyanWunPaing": 13,
       "Janicetyy": 7,
-      "sitinadiah25": 4,
+      "sitinadiah25": 9,
       "itskesin": 55
     }
   },
@@ -5008,6 +5220,239 @@
     "authorContributionMap": {
       "NyanWunPaing": 18,
       "itskesin": 1
+    }
+  },
+  {
+    "path": "src/test/java/seedu/happypills/commands/EditCommandTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "package seedu.happypills.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "import seedu.happypills.data.Patient;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "import seedu.happypills.data.PatientList;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "import seedu.happypills.exception.HappyPillsException;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.*;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "class EditCommandTest {"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "    void testExecute() {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "        PatientList patients \u003d new PatientList();"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "        AddCommand testAddCommand \u003d new AddCommand("
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "                \"kesin\", \"S0618\", 912, \"22aug\", \"B-\",\"meat\", \"Strong\""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "        );"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "        testAddCommand.execute(patients);"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "        EditCommand testEditCommand \u003d new EditCommand(\"S0618\", \"remarks\", \"Weak\");"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "            testEditCommand.execute(patients);"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "        } catch (HappyPillsException e) {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "            // catch exception"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "        assertEquals(1, patients.size());"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "        for (Patient patient : patients) {"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "            if (patient.getNric().equals(\"S0618\")) {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "                assertEquals(\"Weak\", patient.getRemarks());"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "sitinadiah25": 32
     }
   },
   {
