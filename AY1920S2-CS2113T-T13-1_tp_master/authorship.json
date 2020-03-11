@@ -3238,77 +3238,77 @@
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "    public static final String SUCCESS_MESSAGE \u003d \"Yes! I\u0027ve marked this item as bought: \""
+        "content": "    public static final String SUCCESS_MESSAGE \u003d System.lineSeparator()"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "            + System.lineSeparator() + \"%s\";"
+        "content": "                                    + \"Yes! I\u0027ve marked this item as bought: \""
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "    public static final String FAIL_MESSAGE \u003d \"Oh No! This item does not exist in the list\";"
+        "content": "                                    + System.lineSeparator() + \"%s\""
       },
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "Shannonwje"
         },
-        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Marks an item as bought.\""
+        "content": "                                    + System.lineSeparator();"
       },
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "Shannonwje"
         },
-        "content": "            + System.lineSeparator() + \"|| Parameters: MARK [INDEX]\""
+        "content": "    public static final String FAIL_MESSAGE \u003d System.lineSeparator()"
       },
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "Shannonwje"
         },
-        "content": "            + System.lineSeparator() + \"|| Example: MARK 1\" + System.lineSeparator();"
+        "content": "                                    + \"Oh No! This item does not exist in the list\""
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "    private int indexOfItem;"
+        "content": "                                    + System.lineSeparator();"
       },
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "Shannonwje"
+          "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Marks an item as bought.\""
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "Shannonwje"
+          "gitId": "trishaangelica"
         },
-        "content": "    public MarkCommand(int index) {"
+        "content": "                                    + System.lineSeparator() + \"|| Parameters: MARK [INDEX]\""
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "        this.indexOfItem \u003d index;"
+        "content": "                                    + System.lineSeparator() + \"|| Example: MARK 1\""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "    }"
+        "content": "                                    + System.lineSeparator();"
       },
       {
         "lineNumber": 19,
@@ -3322,28 +3322,28 @@
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "    @Override"
+        "content": "    private int indexOfItem;"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "    public CommandResult execute() {"
+        "content": ""
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "        Item markItem \u003d ShoppingList.markAsBought(indexOfItem);"
+        "content": "    public MarkCommand(int index) {"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "        return new CommandResult(String.format(SUCCESS_MESSAGE, markItem));"
+        "content": "        this.indexOfItem \u003d index;"
       },
       {
         "lineNumber": 24,
@@ -3357,12 +3357,82 @@
         "author": {
           "gitId": "Shannonwje"
         },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    public CommandResult execute() {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "            Item markItem \u003d ShoppingList.markAsBought(indexOfItem);"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "            return new CommandResult(String.format(SUCCESS_MESSAGE, markItem));"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        } catch (IndexOutOfBoundsException e) {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "            return new CommandResult(FAIL_MESSAGE);"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "Shannonwje"
+        },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "Shannonwje": 22,
-      "trishaangelica": 3
+      "Shannonwje": 33,
+      "trishaangelica": 2
     }
   },
   {
@@ -3752,122 +3822,185 @@
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "    public static final String SUCCESS_MESSAGE \u003d \"Yes! I\u0027ve unmarked this item as bought: \""
+        "content": "    public static final String SUCCESS_MESSAGE \u003d System.lineSeparator()"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "            + System.lineSeparator() + \"%s\";"
+        "content": "                                    + \"Yes! I\u0027ve unmarked this item as bought: \""
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "    public static final String FAIL_MESSAGE \u003d \"Oh No! This item does not exist in the list\";"
+        "content": "                                    + System.lineSeparator() + \"%s\""
       },
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "Shannonwje"
         },
-        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Unmarks a bought item.\""
+        "content": "                                    + System.lineSeparator();"
       },
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "Shannonwje"
         },
-        "content": "            + System.lineSeparator() + \"|| Parameters: UNMARK [INDEX]\""
+        "content": "    public static final String FAIL_MESSAGE \u003d System.lineSeparator()"
       },
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "Shannonwje"
         },
-        "content": "            + System.lineSeparator() + \"|| UNMARK 1\" + System.lineSeparator();"
+        "content": "                                    + \"Oh No! This item does not exist in the list\""
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "    private int indexOfItem;"
+        "content": "                                    + System.lineSeparator();"
       },
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "Shannonwje"
+          "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Unmarks a bought item.\""
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "Shannonwje"
+          "gitId": "trishaangelica"
         },
-        "content": "    public UnmarkCommand(int index) {"
+        "content": "                                    + System.lineSeparator() + \"|| Parameters: UNMARK [INDEX]\""
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "Shannonwje"
+          "gitId": "trishaangelica"
         },
-        "content": "        this.indexOfItem \u003d index;"
+        "content": "                                    + System.lineSeparator() + \"|| UNMARK 1\" + System.lineSeparator();"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": ""
+        "content": "    private int indexOfItem;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "    public CommandResult execute() {"
+        "content": "    public UnmarkCommand(int index) {"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "        Item unmarkItem \u003d ShoppingList.unmarkAsBought(indexOfItem);"
+        "content": "        this.indexOfItem \u003d index;"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "        return new CommandResult(String.format(SUCCESS_MESSAGE, unmarkItem));"
+        "content": "    }"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 25,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    public CommandResult execute() {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "            Item unmarkItem \u003d ShoppingList.unmarkAsBought(indexOfItem);"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "            return new CommandResult(String.format(SUCCESS_MESSAGE, unmarkItem));"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        } catch (IndexOutOfBoundsException e) {"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "            return new CommandResult(FAIL_MESSAGE);"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 34,
         "author": {
           "gitId": "Shannonwje"
         },
@@ -3875,7 +4008,7 @@
       }
     ],
     "authorContributionMap": {
-      "Shannonwje": 22,
+      "Shannonwje": 31,
       "trishaangelica": 3
     }
   },
@@ -5124,325 +5257,283 @@
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "        if (index \u003e\u003d items.size()) {"
+        "content": "        Item itemBought \u003d items.get(index);"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "            newCommand \u003d new IncorrectCommand(MarkCommand.FAIL_MESSAGE);"
+        "content": "        itemBought.markAsBought();"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "        }"
+        "content": "        return itemBought;"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "        Item itemBought \u003d items.get(index);"
-      },
-      {
-        "lineNumber": 65,
-        "author": {
-          "gitId": "Shannonwje"
-        },
-        "content": "        itemBought.markAsBought();"
-      },
-      {
-        "lineNumber": 66,
-        "author": {
-          "gitId": "Shannonwje"
-        },
-        "content": "        return itemBought;"
-      },
-      {
-        "lineNumber": 67,
-        "author": {
-          "gitId": "Shannonwje"
-        },
         "content": "    }"
       },
       {
-        "lineNumber": 68,
+        "lineNumber": 65,
         "author": {
           "gitId": "trishaangelica"
         },
         "content": ""
       },
       {
-        "lineNumber": 69,
+        "lineNumber": 66,
         "author": {
           "gitId": "JLoh579"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 70,
+        "lineNumber": 67,
         "author": {
           "gitId": "JLoh579"
         },
         "content": "     * Returns the item at the specified index."
       },
       {
-        "lineNumber": 71,
+        "lineNumber": 68,
         "author": {
           "gitId": "JLoh579"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 72,
+        "lineNumber": 69,
         "author": {
           "gitId": "JLoh579"
         },
         "content": "     * @param index Index of the item requested."
       },
       {
-        "lineNumber": 73,
+        "lineNumber": 70,
         "author": {
           "gitId": "JLoh579"
         },
         "content": "     * @return Item at the specified index."
       },
       {
-        "lineNumber": 74,
+        "lineNumber": 71,
         "author": {
           "gitId": "JLoh579"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 75,
+        "lineNumber": 72,
         "author": {
           "gitId": "JLoh579"
         },
         "content": "    public static Item getItem(int index) {"
       },
       {
-        "lineNumber": 76,
+        "lineNumber": 73,
         "author": {
           "gitId": "JLoh579"
         },
         "content": "        return items.get(index);"
       },
       {
-        "lineNumber": 77,
+        "lineNumber": 74,
         "author": {
           "gitId": "JLoh579"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 78,
+        "lineNumber": 75,
         "author": {
           "gitId": "Shannonwje"
         },
         "content": ""
       },
       {
-        "lineNumber": 79,
+        "lineNumber": 76,
         "author": {
           "gitId": "Shannonwje"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 80,
+        "lineNumber": 77,
         "author": {
           "gitId": "Shannonwje"
         },
         "content": "     * Unmarks item in index as bought."
       },
       {
-        "lineNumber": 81,
+        "lineNumber": 78,
         "author": {
           "gitId": "Shannonwje"
         },
         "content": "     * @param index index of item to unmark"
       },
       {
-        "lineNumber": 82,
+        "lineNumber": 79,
         "author": {
           "gitId": "Shannonwje"
         },
         "content": "     * @return item that is unmarked"
       },
       {
-        "lineNumber": 83,
+        "lineNumber": 80,
         "author": {
           "gitId": "Shannonwje"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 84,
+        "lineNumber": 81,
         "author": {
           "gitId": "Shannonwje"
         },
         "content": "    public static Item unmarkAsBought(int index) {"
       },
       {
-        "lineNumber": 85,
-        "author": {
-          "gitId": "Shannonwje"
-        },
-        "content": "        if (index \u003e\u003d items.size()) {"
-      },
-      {
-        "lineNumber": 86,
-        "author": {
-          "gitId": "Shannonwje"
-        },
-        "content": "            newCommand \u003d new IncorrectCommand(UnmarkCommand.FAIL_MESSAGE);"
-      },
-      {
-        "lineNumber": 87,
-        "author": {
-          "gitId": "Shannonwje"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 88,
+        "lineNumber": 82,
         "author": {
           "gitId": "Shannonwje"
         },
         "content": "        Item itemNotBought \u003d items.get(index);"
       },
       {
-        "lineNumber": 89,
+        "lineNumber": 83,
         "author": {
           "gitId": "Shannonwje"
         },
         "content": "        itemNotBought.unmarkAsBought();"
       },
       {
-        "lineNumber": 90,
+        "lineNumber": 84,
         "author": {
           "gitId": "Shannonwje"
         },
         "content": "        return itemNotBought;"
       },
       {
-        "lineNumber": 91,
+        "lineNumber": 85,
         "author": {
           "gitId": "Shannonwje"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 92,
+        "lineNumber": 86,
         "author": {
           "gitId": "Shannonwje"
         },
         "content": ""
       },
       {
-        "lineNumber": 93,
+        "lineNumber": 87,
         "author": {
           "gitId": "kokjoon97"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 94,
+        "lineNumber": 88,
         "author": {
           "gitId": "kokjoon97"
         },
         "content": "     * Removes an item at the specified index."
       },
       {
-        "lineNumber": 95,
+        "lineNumber": 89,
         "author": {
           "gitId": "kokjoon97"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 96,
+        "lineNumber": 90,
         "author": {
           "gitId": "kokjoon97"
         },
         "content": "     * @param index Index of the item to be removed."
       },
       {
-        "lineNumber": 97,
+        "lineNumber": 91,
         "author": {
           "gitId": "kokjoon97"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 98,
+        "lineNumber": 92,
         "author": {
           "gitId": "kokjoon97"
         },
         "content": "    public static void deleteItem(int index) {"
       },
       {
-        "lineNumber": 99,
+        "lineNumber": 93,
         "author": {
           "gitId": "kokjoon97"
         },
         "content": "        Item unwantedItem \u003d items.get(index);"
       },
       {
-        "lineNumber": 100,
+        "lineNumber": 94,
         "author": {
           "gitId": "kokjoon97"
         },
         "content": "        items.remove(unwantedItem);"
       },
       {
-        "lineNumber": 101,
+        "lineNumber": 95,
         "author": {
           "gitId": "trishaangelica"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 102,
+        "lineNumber": 96,
         "author": {
           "gitId": "Shannonwje"
         },
         "content": ""
       },
       {
-        "lineNumber": 103,
+        "lineNumber": 97,
         "author": {
           "gitId": "jiajuinphoon"
         },
         "content": "    public static void add(Item toAdd) {"
       },
       {
-        "lineNumber": 104,
+        "lineNumber": 98,
         "author": {
           "gitId": "jiajuinphoon"
         },
         "content": "        items.add(toAdd);"
       },
       {
-        "lineNumber": 105,
+        "lineNumber": 99,
         "author": {
           "gitId": "jiajuinphoon"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 106,
+        "lineNumber": 100,
         "author": {
           "gitId": "trishaangelica"
         },
         "content": ""
       },
       {
-        "lineNumber": 107,
+        "lineNumber": 101,
         "author": {
           "gitId": "trishaangelica"
         },
@@ -5452,7 +5543,7 @@
     "authorContributionMap": {
       "JLoh579": 30,
       "kokjoon97": 8,
-      "Shannonwje": 39,
+      "Shannonwje": 33,
       "jiajuinphoon": 3,
       "trishaangelica": 27
     }
@@ -6437,63 +6528,63 @@
       {
         "lineNumber": 140,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
         "content": "        } catch (ArrayIndexOutOfBoundsException e) {"
       },
       {
         "lineNumber": 141,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
         "content": "            newCommand \u003d new IncorrectCommand(System.lineSeparator()"
       },
       {
         "lineNumber": 142,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
         "content": "                    + \"Oops! For that to be done properly, check if these are met:\""
       },
       {
         "lineNumber": 143,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
         "content": "                    + System.lineSeparator()"
       },
       {
         "lineNumber": 144,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
         "content": "                    + \" - Description of an item cannot be empty.\""
       },
       {
         "lineNumber": 145,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
         "content": "                    + \" - Price of an item has to be in decimal form.\""
       },
       {
         "lineNumber": 146,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
         "content": "                    + System.lineSeparator()"
       },
       {
         "lineNumber": 147,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
         "content": "                    + \" - At least \u0027i/\u0027 or \u0027p/\u0027 should be present.\""
       },
       {
         "lineNumber": 148,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
         "content": "                    + System.lineSeparator()"
       },
@@ -7062,7 +7153,7 @@
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "            newCommand \u003d new IncorrectCommand(\"Can\u0027t find the item to unmark! Try again\");"
+        "content": "            newCommand \u003d new IncorrectCommand(\"Please provide an index number!\");"
       },
       {
         "lineNumber": 230,
@@ -7146,7 +7237,7 @@
         "author": {
           "gitId": "Shannonwje"
         },
-        "content": "            newCommand \u003d new IncorrectCommand(\"Can\u0027t find the item to mark! Try again\");"
+        "content": "            newCommand \u003d new IncorrectCommand(\"Please provide an index number!\");"
       },
       {
         "lineNumber": 242,
@@ -7874,8 +7965,8 @@
       "JLoh579": 37,
       "kokjoon97": 36,
       "Shannonwje": 38,
-      "jiajuinphoon": 44,
-      "trishaangelica": 189
+      "jiajuinphoon": 35,
+      "trishaangelica": 198
     }
   },
   {
@@ -9610,6 +9701,787 @@
     "authorContributionMap": {
       "JLoh579": 6,
       "trishaangelica": 60
+    }
+  },
+  {
+    "path": "src/test/java/seedu/duke/data/MarkCommandTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "package seedu.duke.data;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "import org.junit.jupiter.api.BeforeEach;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "import seedu.duke.commands.Command;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "import seedu.duke.commands.MarkCommand;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "import seedu.duke.data.ShoppingList;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "import seedu.duke.commands.CommandResult;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "import seedu.duke.commands.EditCommand;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "public class MarkCommandTest {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    ShoppingList items \u003d new ShoppingList();"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    Command command \u003d new Command();"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    @BeforeEach"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    void setUp() {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        items.add(new Item(\"apple\", 2.0));"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        items.add(new Item(\"donut\", 3.0));"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        items.add(new Item(\"banana\", 4.5));"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        command.setData(items, null);"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    void testMark_unmarkedItem_Success() {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        command.setData(items, null);"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        command \u003d new MarkCommand(1);"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        CommandResult result \u003d command.execute();"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        String expectedFeedback \u003d System.lineSeparator()"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "                + \"Yes! I\u0027ve marked this item as bought: \""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "                + System.lineSeparator() + items.getList().get(1).toString()"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "                + System.lineSeparator();"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        assertEquals(expectedFeedback, result.feedbackToUser);"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    void testMark_outOfLimitIndex_Success() {"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        command.setData(items, null);"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        command \u003d new MarkCommand(10);"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        CommandResult result1 \u003d command.execute();"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        String expectedFeedback1 \u003d MarkCommand.FAIL_MESSAGE;"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        assertEquals(expectedFeedback1, result1.feedbackToUser);"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    void testMark_negativeIndex_Success() {"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        command.setData(items, null);"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        command \u003d new MarkCommand(-5);"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        CommandResult result2 \u003d command.execute();"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        String expectedFeedback2 \u003d MarkCommand.FAIL_MESSAGE;"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        assertEquals(expectedFeedback2, result2.feedbackToUser);"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "Shannonwje": 55
+    }
+  },
+  {
+    "path": "src/test/java/seedu/duke/data/UnmarkCommandTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "package seedu.duke.data;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "import org.junit.jupiter.api.BeforeEach;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "import seedu.duke.commands.*;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "import seedu.duke.data.ShoppingList;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "public class UnmarkCommandTest {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    ShoppingList items \u003d new ShoppingList();"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    Command command \u003d new Command();"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    @BeforeEach"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    void setUp() {"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        items.add(new Item(\"apple\", 2.0));"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        items.add(new Item(\"donut\", 3.0));"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        items.add(new Item(\"banana\", 4.5));"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        command.setData(items, null);"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    void testUnmark_MarkedItem_Success() {"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        command.setData(items, null);"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        command \u003d new MarkCommand(1);"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        command \u003d new UnmarkCommand(1);"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        CommandResult result \u003d command.execute();"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        String expectedFeedback \u003d System.lineSeparator()"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "                + \"Yes! I\u0027ve unmarked this item as bought: \""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "                + System.lineSeparator() + items.getList().get(1).toString()"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "                + System.lineSeparator();"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        assertEquals(expectedFeedback, result.feedbackToUser);"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    void testUnmark_outOfLimitIndex_Success() {"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        command.setData(items, null);"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        command \u003d new UnmarkCommand(10);"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        CommandResult result1 \u003d command.execute();"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        String expectedFeedback1 \u003d UnmarkCommand.FAIL_MESSAGE;"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        assertEquals(expectedFeedback1, result1.feedbackToUser);"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    void testUnmark_negativeIndex_Success() {"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        command.setData(items, null);"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        command \u003d new UnmarkCommand(-5);"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        CommandResult result2 \u003d command.execute();"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        String expectedFeedback2 \u003d UnmarkCommand.FAIL_MESSAGE;"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        assertEquals(expectedFeedback2, result2.feedbackToUser);"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "Shannonwje": 54
     }
   },
   {

@@ -84,15 +84,464 @@
     }
   },
   {
-    "path": "src/main/java/seedu/jikan/Activity.java",
+    "path": "src/main/java/jikan/EmptyNameException.java",
     "fileType": "java",
     "lines": [
       {
         "lineNumber": 1,
         "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "package jikan;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "public class EmptyNameException extends Exception {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "nigellenl": 4
+    }
+  },
+  {
+    "path": "src/main/java/jikan/Jikan.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "package jikan;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
           "gitId": "btricec"
         },
-        "content": "package seedu.jikan;"
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "import jikan.activity.ActivityList;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "import jikan.parser.Parser;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "import jikan.storage.Storage;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "import jikan.ui.Ui;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "import java.io.IOException;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "import java.util.Scanner;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": " * Represents the Jikan time tracker."
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "public class Jikan {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    /** Constant file path of data file. */"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    private static final String DATA_FILE_PATH \u003d \"data/data.csv\";"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    /** Storage object for data file. */"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    private static Storage storage;"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    /** Activity list to store current tasks in. */"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    private static ActivityList activityList;"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    /** Ui to handle printing. */"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    private static Ui ui \u003d new Ui();"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    private static Parser parser \u003d new Parser();"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "     * Creates ActivityList and loads data from data file if the data file previously existed;"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     * otherwise, an empty task list is initialized."
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    public static void createActivityList() {"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            if (storage.loadFile()) {"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                activityList \u003d new ActivityList(storage);"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                activityList \u003d new ActivityList();"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                activityList.storage \u003d storage;"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        } catch (IOException e) {"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            System.out.println(\"Error loading/creating data file.\");"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "  "
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "     * Main entry-point for the Jikan application."
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "    public static void main(String[] args) {"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        ui.printGreeting();"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "        Scanner in \u003d new Scanner(System.in);"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        storage \u003d new Storage(DATA_FILE_PATH);"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        createActivityList();"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        parser.parseUserCommands(in, activityList);"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "rdimaio": 30,
+      "btricec": 1,
+      "siuhian": 13,
+      "nigellenl": 1,
+      "ananda-lye": 12
+    }
+  },
+  {
+    "path": "src/main/java/jikan/activity/Activity.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "package jikan.activity;"
       },
       {
         "lineNumber": 2,
@@ -167,37 +616,37 @@
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "    protected String name;"
+        "content": "    private String name;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "btricec"
         },
-        "content": "    protected String[] tags;"
+        "content": "    private String[] tags;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "btricec"
         },
-        "content": "    protected LocalDateTime startTime;"
+        "content": "    private LocalDateTime startTime;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "btricec"
         },
-        "content": "    protected LocalDateTime endTime;"
+        "content": "    private LocalDateTime endTime;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "btricec"
         },
-        "content": "    protected Duration duration;"
+        "content": "    private Duration duration;"
       },
       {
         "lineNumber": 17,
@@ -209,1000 +658,387 @@
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "btricec"
-        },
-        "content": "    /*"
-      },
-      {
-        "lineNumber": 19,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "    protected String name;"
-      },
-      {
-        "lineNumber": 20,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "    protected String startTime;"
-      },
-      {
-        "lineNumber": 21,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "    protected String endTime;"
-      },
-      {
-        "lineNumber": 22,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "    */"
-      },
-      {
-        "lineNumber": 23,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 24,
-        "author": {
           "gitId": "rdimaio"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 25,
+        "lineNumber": 19,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "     * Constructor for a new activity entry."
       },
       {
-        "lineNumber": 26,
+        "lineNumber": 20,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "     * @param name represents the name of the activity"
       },
       {
-        "lineNumber": 27,
+        "lineNumber": 21,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "     * @param startTime the time that the activity first started"
       },
       {
-        "lineNumber": 28,
+        "lineNumber": 22,
         "author": {
           "gitId": "btricec"
         },
         "content": "     * @param tags activity tags"
       },
       {
-        "lineNumber": 29,
+        "lineNumber": 23,
         "author": {
           "gitId": "btricec"
         },
         "content": "     * @param endTime the time that the activity ended"
       },
       {
-        "lineNumber": 30,
+        "lineNumber": 24,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 31,
+        "lineNumber": 25,
         "author": {
           "gitId": "btricec"
         },
         "content": "    public Activity(String name, LocalDateTime startTime, LocalDateTime endTime, String[] tags) {"
       },
       {
-        "lineNumber": 32,
+        "lineNumber": 26,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "        this.name \u003d name;"
+        "content": "        this.name \u003d name.strip();"
       },
       {
-        "lineNumber": 33,
+        "lineNumber": 27,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": "        this.startTime \u003d startTime;"
       },
       {
-        "lineNumber": 34,
+        "lineNumber": 28,
         "author": {
           "gitId": "btricec"
         },
         "content": "        this.tags \u003d tags;"
       },
       {
-        "lineNumber": 35,
+        "lineNumber": 29,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": "        this.endTime \u003d endTime;"
       },
       {
-        "lineNumber": 36,
+        "lineNumber": 30,
         "author": {
           "gitId": "btricec"
         },
         "content": "        this.duration \u003d Duration.between(startTime, endTime);"
       },
       {
-        "lineNumber": 37,
+        "lineNumber": 31,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 38,
+        "lineNumber": 32,
         "author": {
           "gitId": "btricec"
         },
         "content": ""
       },
       {
-        "lineNumber": 39,
+        "lineNumber": 33,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 40,
+        "lineNumber": 34,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "     * Constructor to create activity when endTime is previously known"
       },
       {
-        "lineNumber": 41,
+        "lineNumber": 35,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "     * (i.e. when loading from jikan.storage)"
       },
       {
-        "lineNumber": 42,
+        "lineNumber": 36,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 37,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "     * @param name Name of activity."
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 38,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "     * @param startTime Time at which activity started."
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 39,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "     * @param endTime Time at which activity ended."
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 40,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 41,
         "author": {
           "gitId": "btricec"
         },
         "content": "    public Activity(String name, LocalDateTime startTime, LocalDateTime endTime) {"
       },
       {
-        "lineNumber": 48,
+        "lineNumber": 42,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "        this.name \u003d name;"
       },
       {
-        "lineNumber": 49,
+        "lineNumber": 43,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "        this.startTime \u003d startTime;"
       },
       {
-        "lineNumber": 50,
+        "lineNumber": 44,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "        this.endTime \u003d endTime;"
       },
       {
-        "lineNumber": 51,
+        "lineNumber": 45,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 52,
+        "lineNumber": 46,
         "author": {
           "gitId": "rdimaio"
         },
         "content": ""
       },
       {
-        "lineNumber": 53,
+        "lineNumber": 47,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 54,
+        "lineNumber": 48,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "     * Ends an ongoing activity and updates the total time spent on the activity."
       },
       {
-        "lineNumber": 55,
+        "lineNumber": 49,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "     * @param endTime date and time when the activity ended"
       },
       {
-        "lineNumber": 56,
+        "lineNumber": 50,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "     * @return a confirmation message that the tracking of the activity has ended"
       },
       {
-        "lineNumber": 57,
+        "lineNumber": 51,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 58,
+        "lineNumber": 52,
         "author": {
           "gitId": "btricec"
         },
         "content": "    public String endActivity(LocalDateTime endTime) {"
       },
       {
-        "lineNumber": 59,
+        "lineNumber": 53,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": "        this.endTime \u003d endTime;"
       },
       {
-        "lineNumber": 60,
+        "lineNumber": 54,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": "        return (\"You have ended \" + this.name + \" . Great job !\\n\");"
       },
       {
-        "lineNumber": 61,
+        "lineNumber": 55,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 56,
         "author": {
           "gitId": "rdimaio"
         },
         "content": ""
       },
       {
-        "lineNumber": 63,
+        "lineNumber": 57,
         "author": {
           "gitId": "btricec"
         },
         "content": "    public Duration getDuration() {"
       },
       {
-        "lineNumber": 64,
+        "lineNumber": 58,
         "author": {
           "gitId": "btricec"
         },
         "content": "        return duration;"
       },
       {
-        "lineNumber": 65,
+        "lineNumber": 59,
         "author": {
           "gitId": "btricec"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 66,
+        "lineNumber": 60,
         "author": {
           "gitId": "btricec"
         },
         "content": ""
       },
       {
-        "lineNumber": 67,
+        "lineNumber": 61,
         "author": {
           "gitId": "btricec"
         },
         "content": "    public String getName() {"
       },
       {
-        "lineNumber": 68,
+        "lineNumber": 62,
         "author": {
           "gitId": "btricec"
         },
         "content": "        return name;"
       },
       {
-        "lineNumber": 69,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 70,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 71,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "    public String[] getTags() {"
-      },
-      {
-        "lineNumber": 72,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "        return tags;"
-      },
-      {
-        "lineNumber": 73,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 74,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 75,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 76,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "     * Converts the seedu.jikan.Activity object to data representation to be stored in a data file."
-      },
-      {
-        "lineNumber": 77,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     * File format:"
-      },
-      {
-        "lineNumber": 78,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     * name, startTime, endTime"
-      },
-      {
-        "lineNumber": 79,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     *"
-      },
-      {
-        "lineNumber": 80,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     * @return String representing the Task object in comma-separated data format."
-      },
-      {
-        "lineNumber": 81,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 82,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    public String toData() {"
-      },
-      {
-        "lineNumber": 83,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "        String dataLine \u003d (this.name + \",\" + this.startTime + \",\" + this.endTime + \",\" + Arrays.toString(this.tags));"
-      },
-      {
-        "lineNumber": 84,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "        return dataLine;"
-      },
-      {
-        "lineNumber": 85,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 86,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "}"
-      }
-    ],
-    "authorContributionMap": {
-      "btricec": 35,
-      "rdimaio": 36,
-      "ananda-lye": 15
-    }
-  },
-  {
-    "path": "src/main/java/seedu/jikan/ActivityList.java",
-    "fileType": "java",
-    "lines": [
-      {
-        "lineNumber": 1,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "package seedu.jikan;"
-      },
-      {
-        "lineNumber": 2,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 3,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "import java.time.LocalDateTime;"
-      },
-      {
-        "lineNumber": 4,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "import java.util.ArrayList;"
-      },
-      {
-        "lineNumber": 5,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "import java.util.Arrays;"
-      },
-      {
-        "lineNumber": 6,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "import java.util.concurrent.TimeUnit;"
-      },
-      {
-        "lineNumber": 7,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "import java.io.File;"
-      },
-      {
-        "lineNumber": 8,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "import java.io.FileNotFoundException;"
-      },
-      {
-        "lineNumber": 9,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "import java.util.List;"
-      },
-      {
-        "lineNumber": 10,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "import java.util.Scanner;"
-      },
-      {
-        "lineNumber": 11,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 12,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "/**"
-      },
-      {
-        "lineNumber": 13,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": " * Represents the list of activities."
-      },
-      {
-        "lineNumber": 14,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": " */"
-      },
-      {
-        "lineNumber": 15,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "public class ActivityList {"
-      },
-      {
-        "lineNumber": 16,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "    ArrayList\u003cActivity\u003e activities;"
-      },
-      {
-        "lineNumber": 17,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "    //int size;"
-      },
-      {
-        "lineNumber": 18,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 19,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 20,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     * Constructor for a new activity list."
-      },
-      {
-        "lineNumber": 21,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 22,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "    public ActivityList() {"
-      },
-      {
-        "lineNumber": 23,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "        this.activities \u003d new ArrayList\u003c\u003e();"
-      },
-      {
-        "lineNumber": 24,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "        //this.size \u003d activities.size();"
-      },
-      {
-        "lineNumber": 25,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 26,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 27,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 28,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     * Loads activityList from data file."
-      },
-      {
-        "lineNumber": 29,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     *"
-      },
-      {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     * @param dataFile Data file to load from."
-      },
-      {
-        "lineNumber": 31,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 32,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    public ActivityList(File dataFile) {"
-      },
-      {
-        "lineNumber": 33,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "        this.activities \u003d new ArrayList\u003c\u003e();"
-      },
-      {
-        "lineNumber": 34,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "        populateTaskList(dataFile);"
-      },
-      {
-        "lineNumber": 35,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 36,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 37,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "    public Activity get(int i) {"
-      },
-      {
-        "lineNumber": 38,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "        return activities.get(i);"
-      },
-      {
-        "lineNumber": 39,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 40,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 41,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "    public void add(Activity activity) {"
-      },
-      {
-        "lineNumber": 42,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "        activities.add(activity);"
-      },
-      {
-        "lineNumber": 43,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 44,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 45,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "    public int getSize() {"
-      },
-      {
-        "lineNumber": 46,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "        return activities.size();"
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 49,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "     * Prints the activityList."
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 52,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "    public void printList() {"
-      },
-      {
-        "lineNumber": 53,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "        System.out.println(\"Your completed activities:\");"
-      },
-      {
-        "lineNumber": 54,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "        for (int i \u003d 0; i \u003c this.getSize(); i++) {"
-      },
-      {
-        "lineNumber": 55,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            long durationInNanos \u003d (activities.get(i).duration).toNanos();"
-      },
-      {
-        "lineNumber": 56,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            String duration \u003d String.format(\"%02d:%02d:%02d\","
-      },
-      {
-        "lineNumber": 57,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                    TimeUnit.NANOSECONDS.toHours(durationInNanos),"
-      },
-      {
-        "lineNumber": 58,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                    TimeUnit.NANOSECONDS.toMinutes(durationInNanos)"
-      },
-      {
-        "lineNumber": 59,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                            - TimeUnit.HOURS.toMinutes(TimeUnit.NANOSECONDS.toHours(durationInNanos)),"
-      },
-      {
-        "lineNumber": 60,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                    TimeUnit.NANOSECONDS.toSeconds(durationInNanos)"
-      },
-      {
-        "lineNumber": 61,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                            - TimeUnit.MINUTES.toSeconds(TimeUnit.NANOSECONDS.toMinutes(durationInNanos)));"
-      },
-      {
-        "lineNumber": 62,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            System.out.print(i + 1 + \". \" + activities.get(i).name + \" \" + duration);"
-      },
-      {
         "lineNumber": 63,
         "author": {
           "gitId": "btricec"
         },
-        "content": "            if (activities.get(i).tags !\u003d null) {"
+        "content": "    }"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "btricec"
         },
-        "content": "                System.out.println(\" \" + Arrays.toString(activities.get(i).tags));"
+        "content": ""
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "btricec"
         },
-        "content": "            } else {"
+        "content": "    public String[] getTags() {"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "btricec"
         },
-        "content": "                System.out.print(\"\\n\");"
+        "content": "        return tags;"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "btricec"
         },
-        "content": "            }"
+        "content": "    }"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "btricec"
         },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 69,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 70,
-        "author": {
-          "gitId": "btricec"
-        },
         "content": ""
       },
       {
-        "lineNumber": 71,
+        "lineNumber": 69,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "    /**"
       },
       {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     * Converts the jikan.activity.Activity object to data representation to be stored in a data file."
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     * File format:"
+      },
+      {
         "lineNumber": 72,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * Populates task list from file."
+        "content": "     * name, startTime, endTime"
       },
       {
         "lineNumber": 73,
@@ -1216,7 +1052,7 @@
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @param dataFile Data file to populate from."
+        "content": "     * @return String representing the Task object in comma-separated data format."
       },
       {
         "lineNumber": 75,
@@ -1230,241 +1066,31 @@
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    private void populateTaskList(File dataFile) {"
+        "content": "    public String toData() {"
       },
       {
         "lineNumber": 77,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "        try {"
+        "content": "        String dataLine \u003d (this.name + \",\" + this.startTime + \",\" + this.endTime + \",\" + Arrays.toString(this.tags));"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            Scanner dataScanner \u003d new Scanner(dataFile);"
+        "content": "        return dataLine;"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            while (dataScanner.hasNext()) {"
+        "content": "    }"
       },
       {
         "lineNumber": 80,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "                parseDataLine(dataScanner.nextLine());"
-      },
-      {
-        "lineNumber": 81,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 82,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "        } catch (FileNotFoundException e) {"
-      },
-      {
-        "lineNumber": 83,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "            System.out.println(\"Error: data file not found. Could not load into the current session\u0027s task list.\");"
-      },
-      {
-        "lineNumber": 84,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 85,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 86,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 87,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 88,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "     * Parses the current line in the data file to an seedu.jikan.Activity object."
-      },
-      {
-        "lineNumber": 89,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     *"
-      },
-      {
-        "lineNumber": 90,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     * @param s String to parse."
-      },
-      {
-        "lineNumber": 91,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 92,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    private void parseDataLine(String s) {"
-      },
-      {
-        "lineNumber": 93,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 94,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "        List\u003cString\u003e strings \u003d Arrays.asList(s.split(\",\"));"
-      },
-      {
-        "lineNumber": 95,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 96,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "        String[] tags;"
-      },
-      {
-        "lineNumber": 97,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 98,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "        // if there are tags"
-      },
-      {
-        "lineNumber": 99,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "        if (strings.size() \u003e 3) {"
-      },
-      {
-        "lineNumber": 100,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            tags \u003d strings.get(3).split(\" \");"
-      },
-      {
-        "lineNumber": 101,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "        } else {"
-      },
-      {
-        "lineNumber": 102,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            tags \u003d null;"
-      },
-      {
-        "lineNumber": 103,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 104,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 105,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "        // strings[0] \u003d name, strings[1] \u003d startDate, string[2] \u003d endDate"
-      },
-      {
-        "lineNumber": 106,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "        Activity e \u003d new Activity(strings.get(0), LocalDateTime.parse(strings.get(1)),"
-      },
-      {
-        "lineNumber": 107,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                LocalDateTime.parse(strings.get(2)), tags);"
-      },
-      {
-        "lineNumber": 108,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "        activities.add(e);"
-      },
-      {
-        "lineNumber": 109,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 110,
         "author": {
           "gitId": "ananda-lye"
         },
@@ -1472,21 +1098,21 @@
       }
     ],
     "authorContributionMap": {
-      "btricec": 56,
-      "rdimaio": 45,
+      "rdimaio": 38,
+      "btricec": 33,
       "ananda-lye": 9
     }
   },
   {
-    "path": "src/main/java/seedu/jikan/Jikan.java",
+    "path": "src/main/java/jikan/activity/ActivityList.java",
     "fileType": "java",
     "lines": [
       {
         "lineNumber": 1,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "package seedu.jikan;"
+        "content": "package jikan.activity;"
       },
       {
         "lineNumber": 2,
@@ -1498,9 +1124,9 @@
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "import seedu.jikan.storage.Storage;"
+        "content": "import jikan.storage.Storage;"
       },
       {
         "lineNumber": 4,
@@ -1512,888 +1138,1725 @@
       {
         "lineNumber": 5,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": "import java.util.Scanner;"
+        "content": "import java.io.IOException;"
       },
       {
         "lineNumber": 6,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 7,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "/**"
-      },
-      {
-        "lineNumber": 8,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": " * Represents the seedu.jikan.Jikan time tracker."
-      },
-      {
-        "lineNumber": 9,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": " */"
-      },
-      {
-        "lineNumber": 10,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "public class Jikan {"
-      },
-      {
-        "lineNumber": 11,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    /** Constant file path of data file. */"
-      },
-      {
-        "lineNumber": 12,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    private static final String DATA_FILE_PATH \u003d \"data/data.csv\";"
-      },
-      {
-        "lineNumber": 13,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 14,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    /** Storage object for data file. */"
-      },
-      {
-        "lineNumber": 15,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    private static Storage storage;"
-      },
-      {
-        "lineNumber": 16,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 17,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "    /** seedu.jikan.Activity list to store current tasks in. */"
-      },
-      {
-        "lineNumber": 18,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    private static ActivityList activityList;"
-      },
-      {
-        "lineNumber": 19,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 20,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "    public static final String GREETING \u003d \"___________________________________________\\n\""
-      },
-      {
-        "lineNumber": 21,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "            + \"   0101 01010101 01   01  .010.  101   01 \\n\""
-      },
-      {
-        "lineNumber": 22,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "            + \"   `10\u0027   `10\u0027   10 ,10\u0027 10\u0027 `10 101o  01 \\n\""
-      },
-      {
-        "lineNumber": 23,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "            + \"    01     01    01,01   01   01 0101o 10 \\n\""
-      },
-      {
-        "lineNumber": 24,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "            + \"    10     10    10`10   10ooo10 10 11o01 \\n\""
-      },
-      {
-        "lineNumber": 25,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "            + \"01. 01    .01.   01 `01. 01   01 01  1010 \\n\""
-      },
-      {
-        "lineNumber": 26,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "            + \"010101  01010101 10   10 10   10 10   110 \\n\""
-      },
-      {
-        "lineNumber": 27,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "            + \"___________________________________________\\n\""
-      },
-      {
-        "lineNumber": 28,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            + \" Hello! I\u0027m seedu.jikan.Jikan\\n\""
-      },
-      {
-        "lineNumber": 29,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "            + \" What can I do for you today?\\n\""
-      },
-      {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "            + \"-------------------------------------------\\n\";"
-      },
-      {
-        "lineNumber": 31,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 32,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 33,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "     * Creates seedu.jikan.ActivityList and loads data from data file if the data file previously existed;"
-      },
-      {
-        "lineNumber": 34,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     * otherwise, an empty task list is initialized."
-      },
-      {
-        "lineNumber": 35,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 36,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    private static void createActivityList() {"
-      },
-      {
-        "lineNumber": 37,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "        if (storage.loadFile()) {"
-      },
-      {
-        "lineNumber": 38,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "            activityList \u003d new ActivityList(storage.dataFile);"
-      },
-      {
-        "lineNumber": 39,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "        } else {"
-      },
-      {
-        "lineNumber": 40,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "            activityList \u003d new ActivityList();"
-      },
-      {
-        "lineNumber": 41,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 42,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 43,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "  "
-      },
-      {
-        "lineNumber": 44,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 45,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "     * Main entry-point for the seedu.jikan.Jikan application."
-      },
-      {
-        "lineNumber": 46,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "    public static void main(String[] args) {"
-      },
-      {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "        System.out.println(GREETING);"
-      },
-      {
-        "lineNumber": 49,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "        Scanner in \u003d new Scanner(System.in);"
-      },
-      {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "        storage \u003d new Storage(DATA_FILE_PATH);"
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "        createActivityList();"
-      },
-      {
-        "lineNumber": 52,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "        Parser.parseUserCommands(in, activityList);"
-      },
-      {
-        "lineNumber": 53,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 54,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "}"
-      }
-    ],
-    "authorContributionMap": {
-      "btricec": 8,
-      "rdimaio": 21,
-      "siuhian": 11,
-      "ananda-lye": 14
-    }
-  },
-  {
-    "path": "src/main/java/seedu/jikan/Parser.java",
-    "fileType": "java",
-    "lines": [
-      {
-        "lineNumber": 1,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "package seedu.jikan;"
-      },
-      {
-        "lineNumber": 2,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 3,
         "author": {
           "gitId": "btricec"
         },
         "content": "import java.time.LocalDateTime;"
       },
       {
-        "lineNumber": 4,
+        "lineNumber": 7,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 8,
         "author": {
           "gitId": "btricec"
         },
         "content": "import java.util.Arrays;"
       },
       {
-        "lineNumber": 5,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "import java.util.Scanner;"
-      },
-      {
-        "lineNumber": 6,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 7,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "/**"
-      },
-      {
-        "lineNumber": 8,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": " * Represents the object which parses user input to relevant functions for the execution of commands."
-      },
-      {
         "lineNumber": 9,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": " */"
+        "content": "import java.util.concurrent.TimeUnit;"
       },
       {
         "lineNumber": 10,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "public class Parser {"
+        "content": "import java.io.File;"
       },
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": ""
+        "content": "import java.io.FileNotFoundException;"
       },
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": "    /**"
+        "content": "import java.util.List;"
       },
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": "     * Parses user commands to relevant functions to carry out the commands."
+        "content": "import java.util.Scanner;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "     * @param scanner scanner object which reads user input"
+        "content": ""
       },
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": "     * @param activityList the list of activities"
+        "content": "/**"
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": "     */"
+        "content": " * Represents the list of activities."
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": "    public static void parseUserCommands(Scanner scanner, ActivityList activityList) {"
+        "content": " */"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "        boolean exit \u003d false;"
+        "content": "public class ActivityList {"
       },
       {
         "lineNumber": 19,
         "author": {
-          "gitId": "btricec"
+          "gitId": "siuhian"
         },
-        "content": "        Activity newActivity;"
+        "content": "    public ArrayList\u003cActivity\u003e activities;"
       },
       {
         "lineNumber": 20,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "        LocalDateTime startTime \u003d null;"
+        "content": "    public Storage storage; // Storage the list was loaded from"
       },
       {
         "lineNumber": 21,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "        String[] tags \u003d null;"
+        "content": ""
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "btricec"
         },
-        "content": ""
+        "content": "    //int size;"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "        while (exit \u003d\u003d false) {"
+        "content": ""
       },
       {
         "lineNumber": 24,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": "            String userInput \u003d scanner.nextLine();"
+        "content": "    /**"
       },
       {
         "lineNumber": 25,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "            String[] tokenizedInputs \u003d userInput.split(\" \");"
+        "content": "     * Constructor for a new activity list."
       },
       {
         "lineNumber": 26,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": "            String instruction \u003d tokenizedInputs[0];"
+        "content": "     */"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": ""
+        "content": "    public ActivityList() {"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "            switch (instruction) {"
+        "content": "        this.activities \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 29,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "            case \"bye\":"
+        "content": "        //this.size \u003d activities.size();"
       },
       {
         "lineNumber": 30,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "                System.out.println(\"Bye! See you again.\\n\");"
+        "content": "    }"
       },
       {
         "lineNumber": 31,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "                exit \u003d true;"
+        "content": ""
       },
       {
         "lineNumber": 32,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": "                break;"
+        "content": "    /**"
       },
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": "            case \"start\":"
+        "content": "     * Loads activityList from data file."
       },
       {
         "lineNumber": 34,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": "                System.out.println(\"Started \" + tokenizedInputs[1] + \"\\n\");"
+        "content": "     *"
       },
       {
         "lineNumber": 35,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "                if (tokenizedInputs.length \u003e 2) {"
+        "content": "     * @param storage Storage to load from."
       },
       {
         "lineNumber": 36,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "                    tags \u003d Arrays.copyOfRange(tokenizedInputs, 2, tokenizedInputs.length);"
+        "content": "     */"
       },
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "                }"
+        "content": "    public ActivityList(Storage storage) {"
       },
       {
         "lineNumber": 38,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "                startTime \u003d LocalDateTime.now();"
+        "content": "        this.activities \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 39,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": "                break;"
+        "content": "        this.storage \u003d storage;"
       },
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": "            case \"end\":"
+        "content": "        populateTaskList(storage.dataFile);"
       },
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "                if (startTime \u003d\u003d null) {"
+        "content": "    }"
       },
       {
         "lineNumber": 42,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "                    System.out.println(\"You have not started any activity!\");"
+        "content": ""
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "btricec"
         },
-        "content": "                } else {"
+        "content": "    public Activity get(int i) {"
       },
       {
         "lineNumber": 44,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "                    System.out.println(\"Ended \" + tokenizedInputs[1] + \"\\n\");"
+        "content": "        return activities.get(i);"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "btricec"
         },
-        "content": "                    newActivity \u003d new Activity(tokenizedInputs[1], startTime, LocalDateTime.now(), tags);"
+        "content": "    }"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "btricec"
         },
-        "content": "                    activityList.add(newActivity);"
+        "content": ""
       },
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "                }"
+        "content": "    /**"
       },
       {
         "lineNumber": 48,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": "                break;"
+        "content": "     * Adds activity to activity list and stores it in the data file."
       },
       {
         "lineNumber": 49,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": "            case \"list\":"
+        "content": "     * @param activity Activity to add."
       },
       {
         "lineNumber": 50,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "                activityList.printList();"
+        "content": "     */"
       },
       {
         "lineNumber": 51,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "                break;"
+        "content": "    public void add(Activity activity) {"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "btricec"
         },
-        "content": "            case \"abort\":"
+        "content": "        activities.add(activity);"
       },
       {
         "lineNumber": 53,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "                startTime \u003d null;"
+        "content": ""
       },
       {
         "lineNumber": 54,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "                System.out.println(\"You have aborted the current activity!\");"
+        "content": "        String dataLine \u003d activity.toData();"
       },
       {
         "lineNumber": 55,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": "                break;"
+        "content": ""
       },
       {
         "lineNumber": 56,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": "            default:"
+        "content": "        updateFile(dataLine);"
       },
       {
         "lineNumber": 57,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": "                System.out.println(\"☹ OOPS!!! I\u0027m sorry, but I don\u0027t know what that means :-(\");"
+        "content": "    }"
       },
       {
         "lineNumber": 58,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": "                break;"
+        "content": ""
       },
       {
         "lineNumber": 59,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": "            }"
+        "content": "    /**"
       },
       {
         "lineNumber": 60,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
+        },
+        "content": "     * Updates data file with new task."
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     * @param dataLine Line to write to file."
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    private void updateFile(String dataLine) {"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            storage.writeToFile(dataLine);"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        } catch (IOException e) {"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            System.out.println(\"Error saving task to data file.\");"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "rdimaio"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 61,
+        "lineNumber": 70,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    public int getSize() {"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        return activities.size();"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     * Populates task list from file."
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     * @param dataFile Data file to populate from."
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    private void populateTaskList(File dataFile) {"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            Scanner dataScanner \u003d new Scanner(dataFile);"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            while (dataScanner.hasNext()) {"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                parseDataLine(dataScanner.nextLine());"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        } catch (FileNotFoundException e) {"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            System.out.println(\"Error: data file not found. Could not load into the current session\u0027s task list.\");"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     * Parses the current line in the data file to an jikan.activity.Activity object."
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     * @param s String to parse."
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    private void parseDataLine(String s) {"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        if (!s.isEmpty()) {"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            List\u003cString\u003e strings \u003d Arrays.asList(s.split(\",\"));"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            String[] tags;"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            // if there are tags"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            if (!strings.get(3).equals(\"null\")) {"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                // remove square brackets surrounding tags"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                tags \u003d strings.get(3).substring(1,strings.get(3).length() - 1).split(\" \");"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                tags \u003d null;"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            // strings[0] \u003d name, strings[1] \u003d startDate, string[2] \u003d endDate"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            Activity e \u003d new Activity(strings.get(0), LocalDateTime.parse(strings.get(1)),"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                    LocalDateTime.parse(strings.get(2)), tags);"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            activities.add(e);"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 117,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 118,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "btricec": 23,
-      "ananda-lye": 39
+      "rdimaio": 73,
+      "btricec": 37,
+      "siuhian": 1,
+      "ananda-lye": 7
     }
   },
   {
-    "path": "src/main/java/seedu/jikan/Tag.java",
+    "path": "src/main/java/jikan/parser/Parser.java",
     "fileType": "java",
     "lines": [
       {
         "lineNumber": 1,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "package seedu.jikan;"
+        "content": "package jikan.parser;"
       },
       {
         "lineNumber": 2,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
         "content": ""
       },
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "nigellenl"
         },
-        "content": "/**"
+        "content": "import jikan.EmptyNameException;"
       },
       {
         "lineNumber": 4,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": " * Represents a tag object to tag activities."
+        "content": "import jikan.activity.Activity;"
       },
       {
         "lineNumber": 5,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": " */"
+        "content": "import jikan.activity.ActivityList;"
       },
       {
         "lineNumber": 6,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "siuhian"
         },
-        "content": "public class Tag {"
+        "content": "import jikan.ui.Ui;"
       },
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "    protected String name;"
+        "content": ""
       },
       {
         "lineNumber": 8,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "import java.lang.reflect.Array;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "import java.time.LocalDateTime;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "import java.util.Arrays;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "import java.util.NoSuchElementException;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "import java.util.Scanner;"
+      },
+      {
+        "lineNumber": 13,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": ""
       },
       {
-        "lineNumber": 9,
+        "lineNumber": 14,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "    public Tag(String name) {"
+        "content": "/**"
       },
       {
-        "lineNumber": 10,
+        "lineNumber": 15,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "        this.name \u003d name;"
+        "content": " * Represents the object which parses user input to relevant functions for the execution of commands."
       },
       {
-        "lineNumber": 11,
+        "lineNumber": 16,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "public class Parser {"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    protected LocalDateTime startTime \u003d null;"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    protected LocalDateTime endTime \u003d null;"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    private String activityName \u003d null;"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    private String[] tags \u003d null;"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    private Ui ui \u003d new Ui();"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    protected String[] tokenizedInputs;"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    String instruction;"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "     * Parses user commands to relevant functions to carry out the commands."
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "     * @param scanner scanner object which reads user input"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "     * @param activityList the list of activities"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    public void parseUserCommands(Scanner scanner, ActivityList activityList) {"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        while (true) {"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            String userInput \u003d scanner.nextLine();"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            tokenizedInputs \u003d userInput.split(\" \", 2);"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            instruction \u003d tokenizedInputs[0];"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            switch (instruction) {"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            case \"bye\":"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "                ui.exitFromApp();"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "                break;"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            case \"start\":"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                try {"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "                    parseStart();"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                } catch (EmptyNameException e) {"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                    ui.printDivider(\"Task name cannot be empty!\");"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                } catch (ArrayIndexOutOfBoundsException e) {"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                    ui.printDivider(\"Task name cannot be empty!\");"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "                break;"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            case \"end\":"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "                parseEnd(activityList);"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "                break;"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            case \"list\":"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "                ui.printList(activityList);"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "                break;"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            case \"abort\":"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "                parseAbort();"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "                break;"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            default:"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "                parseDefault();"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "                break;"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 65,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 12,
+        "lineNumber": 66,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    /** Method to parse user inputs that are not recognised. */"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    private void parseDefault() {"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        String line \u003d \"☹ OOPS!!! I\u0027m sorry, but I don\u0027t know what that means :-(\";"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        ui.printDivider(line);"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    /** Method to parse the abort command. */"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    private void parseAbort() {"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        if (startTime \u003d\u003d null) {"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            String line \u003d \"You have not started any activity!\";"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            ui.printDivider(line);"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            startTime \u003d null;"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            tags \u003d null;"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            activityName \u003d null;"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            String line \u003d \"You have aborted the current activity!\";"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            ui.printDivider(line);"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    /** Method to parse the start activity command. */"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "    public void parseStart() throws ArrayIndexOutOfBoundsException, EmptyNameException {"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        // check if an activity has already been started"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        if (startTime !\u003d null) {"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            String line \u003d activityName + \" is ongoing!\";"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            ui.printDivider(line);"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            String line;"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            int delimiter \u003d tokenizedInputs[1].indexOf(\"/t\");"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            if (delimiter \u003d\u003d -1) {"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                activityName \u003d tokenizedInputs[1];"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                if (activityName.equals(\"\")) {"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                    throw new EmptyNameException();"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                line \u003d \"Started \" + activityName;"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                activityName \u003d tokenizedInputs[1].substring(0, delimiter);"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                if (activityName.equals(\"\")) {"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                    throw new EmptyNameException();"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                line \u003d \"Started \" + activityName;"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                tags \u003d tokenizedInputs[1].substring(delimiter + 3).split(\" \");"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            startTime \u003d LocalDateTime.now();"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            ui.printDivider(line);"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    /** Method to parse the end activity command. */"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "    public void parseEnd(ActivityList activityList) throws ArrayIndexOutOfBoundsException {"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        if (startTime \u003d\u003d null) {"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            String line \u003d \"You have not started any activity!\";"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            ui.printDivider(line);"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            String line \u003d \"Ended \" + activityName;"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            ui.printDivider(line);"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            endTime \u003d LocalDateTime.now();"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            Activity newActivity \u003d new Activity(activityName, startTime, endTime, tags);"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            activityList.add(newActivity);"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            startTime \u003d null;"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 131,
         "author": {
           "gitId": "ananda-lye"
         },
@@ -2401,20 +2864,23 @@
       }
     ],
     "authorContributionMap": {
-      "btricec": 2,
-      "ananda-lye": 10
+      "rdimaio": 4,
+      "btricec": 34,
+      "siuhian": 46,
+      "nigellenl": 17,
+      "ananda-lye": 30
     }
   },
   {
-    "path": "src/main/java/seedu/jikan/storage/Storage.java",
+    "path": "src/main/java/jikan/storage/Storage.java",
     "fileType": "java",
     "lines": [
       {
         "lineNumber": 1,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "package seedu.jikan.storage;"
+        "content": "package jikan.storage;"
       },
       {
         "lineNumber": 2,
@@ -2687,213 +3153,171 @@
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    // Return true if file previously existed, false if it didn\u0027t exist (and it created a new one)"
+        "content": "    /**"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "     * Loads the data file. Creates file and directories if data file did not previously exist."
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    /**"
+        "content": "     *"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * Loads the data file. Creates file and directories if data file did not previously exist."
+        "content": "     * @return True if file previously existed (and was not created); False if file did not exist and was created."
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     *"
+        "content": "     */"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @return True if file previously existed (and was not created); False if file did not exist and was created."
+        "content": "    public boolean loadFile() throws IOException {"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    public boolean loadFile() {"
+        "content": "        // Create data file if it does not exist already"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "        if (!dataFile.exists()) {"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        // Create data file if it does not exist already"
+        "content": "            createDataFile();"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        if (!dataFile.exists()) {"
+        "content": "            return false; // false \u003d file didn\u0027t previously exist, so it was created"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            try  {"
+        "content": "        }"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "                createDataFile();"
+        "content": "        return true; // true \u003d file previously existed, and was not created"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "                return false; // false \u003d file didn\u0027t previously exist, so it was created"
+        "content": "    }"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            } catch (IOException e) {"
+        "content": ""
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "                System.out.println(\"Error loading data file.\");"
+        "content": "    /**"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            }"
+        "content": "     * Creates a file and any non-existing directories to that file."
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        }"
+        "content": "     *"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        return true; // true \u003d file previously existed, and was not created"
+        "content": "     * @throws IOException If an error occurs while creating the file or directories."
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    }"
+        "content": "     */"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "    private void createDataFile() throws IOException {"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    /**"
+        "content": "        dataFile.getParentFile().mkdirs(); // Create data directory (does nothing if directory already exists)"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * Creates a file and any non-existing directories to that file."
+        "content": "        dataFile.createNewFile();"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     *"
-      },
-      {
-        "lineNumber": 64,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     * @throws IOException If an error occurs while creating the file or directories."
-      },
-      {
-        "lineNumber": 65,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 66,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    private void createDataFile() throws IOException {"
-      },
-      {
-        "lineNumber": 67,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "        dataFile.getParentFile().mkdirs(); // Create data directory (does nothing if directory already exists)"
-      },
-      {
-        "lineNumber": 68,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "        dataFile.createNewFile();"
-      },
-      {
-        "lineNumber": 69,
-        "author": {
-          "gitId": "rdimaio"
-        },
         "content": "    }"
       },
       {
-        "lineNumber": 70,
+        "lineNumber": 64,
         "author": {
           "gitId": "rdimaio"
         },
@@ -2901,20 +3325,19 @@
       }
     ],
     "authorContributionMap": {
-      "btricec": 1,
-      "rdimaio": 69
+      "rdimaio": 64
     }
   },
   {
-    "path": "src/main/java/seedu/jikan/storage/StorageHandler.java",
+    "path": "src/main/java/jikan/storage/StorageHandler.java",
     "fileType": "java",
     "lines": [
       {
         "lineNumber": 1,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "package seedu.jikan.storage;"
+        "content": "package jikan.storage;"
       },
       {
         "lineNumber": 2,
@@ -3884,20 +4307,498 @@
       }
     ],
     "authorContributionMap": {
-      "btricec": 1,
-      "rdimaio": 138
+      "rdimaio": 139
     }
   },
   {
-    "path": "src/test/java/seedu/jikan/ActivityListTest.java",
+    "path": "src/main/java/jikan/ui/Ui.java",
     "fileType": "java",
     "lines": [
       {
         "lineNumber": 1,
         "author": {
+          "gitId": "siuhian"
+        },
+        "content": "package jikan.ui;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "import jikan.activity.ActivityList;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "import java.util.Arrays;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "import java.util.concurrent.TimeUnit;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "public class Ui {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    public static final String GREETING \u003d \"___________________________________________\\n\""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            + \"   0101 01010101 01   01  .010.  101   01 \\n\""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            + \"   `10\u0027   `10\u0027   10 ,10\u0027 10\u0027 `10 101o  01 \\n\""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            + \"    01     01    01,01   01   01 0101o 10 \\n\""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            + \"    10     10    10`10   10ooo10 10 11o01 \\n\""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            + \"01. 01    .01.   01 `01. 01   01 01  1010 \\n\""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            + \"010101  01010101 10   10 10   10 10   110 \\n\""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            + \"___________________________________________\\n\""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            + \" Hello! I\u0027m Jikan\\n\""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            + \" What can I do for you today?\";"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    public static final String DIVIDER \u003d \"-------------------------------------------\";"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    /** Prints the logo and greeting so users know the app is working. */"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    public void printGreeting() {"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        System.out.println(GREETING);"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        System.out.println(DIVIDER);"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    /** Prints exit message and exits the app. */"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    public void exitFromApp() {"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        System.out.println(DIVIDER);"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        System.out.println(\" Bye! See you again.\");"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        System.out.println(DIVIDER);"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        System.exit(0);"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    /** Prints divider between user input and app feedback. */"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    public void printDivider(String line) {"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        System.out.println(DIVIDER);"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        System.out.println(line);"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        System.out.println(DIVIDER);"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    /** Prints all the activities in the list. */"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    public void printList(ActivityList activityList) {"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        System.out.println(DIVIDER);"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        System.out.println(\"Your completed activities:\");"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        for (int i \u003d 0; i \u003c activityList.getSize(); i++) {"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
           "gitId": "btricec"
         },
-        "content": "package seedu.jikan;"
+        "content": "            long durationInNanos \u003d (activityList.get(i).getDuration()).toNanos();"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            String duration \u003d String.format(\"%02d:%02d:%02d\","
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "                    TimeUnit.NANOSECONDS.toHours(durationInNanos),"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "                    TimeUnit.NANOSECONDS.toMinutes(durationInNanos)"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "                            - TimeUnit.HOURS.toMinutes(TimeUnit.NANOSECONDS.toHours(durationInNanos)),"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "                    TimeUnit.NANOSECONDS.toSeconds(durationInNanos)"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "                            - TimeUnit.MINUTES.toSeconds(TimeUnit.NANOSECONDS.toMinutes(durationInNanos)));"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            System.out.print(i + 1 + \". \" + activityList.get(i).getName() + \" \" + duration);"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            if (activityList.get(i).getTags() !\u003d null) {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                if (!activityList.get(i).getTags()[0].equals(\"null\")) {"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                    System.out.println(\" \" + Arrays.toString(activityList.get(i).getTags()));"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                } else {"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                    System.out.println();"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "                System.out.print(\"\\n\");"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        System.out.println(DIVIDER);"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "btricec": 8,
+      "siuhian": 59
+    }
+  },
+  {
+    "path": "src/test/java/jikan/activity/ActivityListTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "package jikan.activity;"
       },
       {
         "lineNumber": 2,
@@ -3909,173 +4810,201 @@
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "import org.junit.jupiter.api.Test;"
+        "content": "import jikan.storage.Storage;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "btricec"
         },
-        "content": ""
+        "content": "import org.junit.jupiter.api.Test;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "btricec"
         },
-        "content": "import java.time.LocalDateTime;"
+        "content": ""
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "btricec"
         },
-        "content": ""
+        "content": "import java.time.LocalDateTime;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "btricec"
         },
-        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+        "content": ""
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "btricec"
         },
-        "content": ""
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "btricec"
         },
-        "content": "class ActivityListTest {"
+        "content": ""
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "btricec"
         },
-        "content": ""
+        "content": "class ActivityListTest {"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "btricec"
         },
-        "content": "    @Test"
+        "content": ""
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "btricec"
         },
-        "content": "    void getIndex() {"
+        "content": "    @Test"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "btricec"
         },
-        "content": "        ActivityList activities \u003d new ActivityList();"
+        "content": "    void getIndex() {"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "btricec"
         },
-        "content": "        String[] tags \u003d {\"tag1\", \"tag2\"};"
+        "content": "        ActivityList activities \u003d new ActivityList();"
       },
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "        Activity activity1 \u003d new Activity(\"Activity1\", LocalDateTime.parse(\"2020-01-01T08:00:00\"),"
+        "content": "        activities.storage \u003d new Storage(\"data/activityList_test.txt\");"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "btricec"
         },
-        "content": "                LocalDateTime.parse(\"2020-01-01T10:00:00\"), tags);"
+        "content": "        String[] tags \u003d {\"tag1\", \"tag2\"};"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "btricec"
         },
-        "content": "        Activity activity2 \u003d new Activity(\"Activity2\", LocalDateTime.parse(\"2020-01-01T10:00:00\"),"
+        "content": "        Activity activity1 \u003d new Activity(\"Activity1\", LocalDateTime.parse(\"2020-01-01T08:00:00\"),"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "btricec"
         },
-        "content": "                LocalDateTime.parse(\"2020-01-01T11:00:00\"), tags);"
+        "content": "                LocalDateTime.parse(\"2020-01-01T10:00:00\"), tags);"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "btricec"
         },
-        "content": "        Activity activity3 \u003d new Activity(\"Activity3\", LocalDateTime.parse(\"2020-01-01T05:00:00\"),"
+        "content": "        Activity activity2 \u003d new Activity(\"Activity2\", LocalDateTime.parse(\"2020-01-01T10:00:00\"),"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "btricec"
         },
-        "content": "                LocalDateTime.parse(\"2020-01-01T07:00:00\"), tags);"
+        "content": "                LocalDateTime.parse(\"2020-01-01T11:00:00\"), tags);"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "btricec"
         },
-        "content": "        activities.add(activity1);"
+        "content": "        Activity activity3 \u003d new Activity(\"Activity3\", LocalDateTime.parse(\"2020-01-01T05:00:00\"),"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "btricec"
         },
-        "content": "        activities.add(activity2);"
+        "content": "                LocalDateTime.parse(\"2020-01-01T07:00:00\"), tags);"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "btricec"
         },
-        "content": "        activities.add(activity3);"
+        "content": "        activities.add(activity1);"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "btricec"
         },
-        "content": ""
+        "content": "        activities.add(activity2);"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "btricec"
         },
-        "content": "        assertEquals(activity2, activities.get(1));"
+        "content": "        activities.add(activity3);"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "btricec"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 27,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        assertEquals(activity2, activities.get(1));"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        activities.storage.dataFile.delete();"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 31,
         "author": {
           "gitId": "btricec"
         },
@@ -4083,19 +5012,20 @@
       }
     ],
     "authorContributionMap": {
-      "btricec": 27
+      "rdimaio": 5,
+      "btricec": 26
     }
   },
   {
-    "path": "src/test/java/seedu/jikan/ActivityTest.java",
+    "path": "src/test/java/jikan/activity/ActivityTest.java",
     "fileType": "java",
     "lines": [
       {
         "lineNumber": 1,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "package seedu.jikan;"
+        "content": "package jikan.activity;"
       },
       {
         "lineNumber": 2,
@@ -4295,7 +5225,1323 @@
       }
     ],
     "authorContributionMap": {
-      "btricec": 29
+      "rdimaio": 1,
+      "btricec": 28
+    }
+  },
+  {
+    "path": "src/test/java/jikan/parser/ParserTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "package jikan.parser;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "import jikan.activity.ActivityList;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "import jikan.storage.Storage;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "import java.time.LocalDateTime;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertFalse;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "class ParserTest {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    Parser parser \u003d new Parser();"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    ActivityList activityList \u003d new ActivityList();"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    void parseEnd() {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        parser.startTime \u003d null;"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        parser.parseEnd(activityList);"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        assertTrue(activityList.activities.isEmpty());"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        parser.tokenizedInputs \u003d new String[]{\"start\", \"studying\"};"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        parser.startTime \u003d LocalDateTime.parse(\"2020-01-01T08:00:00\");"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        activityList.storage \u003d new Storage(\"data/Parser_test.txt\");"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        parser.parseEnd(activityList);"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        assertFalse(activityList.activities.isEmpty());"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "siuhian": 29
+    }
+  },
+  {
+    "path": "src/test/java/jikan/storage/StorageHandlerTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "package jikan.storage;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "import java.io.IOException;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "import java.util.Arrays;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "import java.util.List;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "import java.util.Scanner;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "public class StorageHandlerTest {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    public void removeLine() throws IOException {"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        // Generate random suffix for file"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        // (quick solution to avoid conflicts with tests in StorageTest"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        int random \u003d (int )(Math.random() * 500 + 1);"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        String filepath \u003d \"data/test\" + random + \".txt\";"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        Storage storage \u003d new Storage(filepath);"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        storage.loadFile();"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        String line1 \u003d \"1. a\";"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        String line2 \u003d \"2. b\";"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        String line3 \u003d \"3. c\";"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        String writtenString \u003d \"\";"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        storage.writeToFile(line1);"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        storage.writeToFile(line2);"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        storage.writeToFile(line3);"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        StorageHandler.removeLine(2, storage.dataFilePath);"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        int i \u003d 0;"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        Scanner dataScanner \u003d new Scanner(storage.dataFile);"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        while (dataScanner.hasNext()) {"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            writtenString \u003d dataScanner.nextLine();"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            if (i \u003d\u003d 0) {"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                assertEquals(line1, writtenString);"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                assertEquals(line3, writtenString);"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            i++;"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        storage.dataFile.delete();"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    public void test_replaceLine() throws IOException {"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        List\u003cString\u003e list \u003d Arrays.asList(\"1. a\", \"2. b\", \"10. c\");"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        String replace \u003d \"This string has been replaced.\";"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        // Generate random suffix for file"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        // (quick solution to avoid conflicts with tests in StorageTest)"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        int random \u003d (int )(Math.random() * 500 + 1);"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        String filepath \u003d \"data/test\" + random + \".txt\";"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        Storage storage \u003d new Storage(filepath);"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        storage.loadFile();"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        for (int i \u003d 0; i \u003c list.size(); i++) {"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            storage.writeToFile(list.get(i));"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        int j \u003d 0;"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        Scanner dataScanner \u003d new Scanner(storage.dataFile);"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        StorageHandler.replaceLine(2, replace, storage.dataFilePath);"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        String replacedString \u003d \"\";"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        while (dataScanner.hasNext()) {"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            replacedString \u003d dataScanner.nextLine();"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            // Check second line"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            if (j \u003d\u003d 1) {"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                assertEquals(replace, replacedString);"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                j++;"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        storage.dataFile.delete();"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "rdimaio": 81
+    }
+  },
+  {
+    "path": "src/test/java/jikan/storage/StorageTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "package jikan.storage;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "import java.io.IOException;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "import java.util.Scanner;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertFalse;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertThrows;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "public class StorageTest {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    public void loadFile_fileDoesNotExist() throws IOException {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        Storage storage \u003d new Storage(\"data/test.txt\");"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        // First time calling loadFile, so file does not exist yet"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        assertFalse(storage.loadFile());"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        storage.dataFile.delete();"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    public void loadFile_fileExists() throws IOException {"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        Storage storage \u003d new Storage(\"data/test.txt\");"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        // First time calling loadFile, so file does not exist yet"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        storage.loadFile();"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        // loadFile was called once already, so now file exists"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        assertTrue(storage.loadFile());"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        storage.dataFile.delete();"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    public void testCreateDataFile() throws IOException {"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        Storage storage \u003d new Storage(\"data/test.txt\");"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        storage.loadFile();"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        assertTrue(storage.dataFile.exists());"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        storage.dataFile.delete();"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    public void testCreateDataFile_IoException() throws IOException {"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        Storage storage \u003d new Storage(\"//\\\\-@#4/\\\\/**3\");"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        IOException thrown \u003d assertThrows("
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                IOException.class,"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                storage::loadFile,"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                \"IOException during file creation\""
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        );"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        storage.dataFile.delete();"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    public void testWriteToFile() throws IOException {"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        // Generate random suffix for file"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        // (quick solution to avoid conflicts with other tests)"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        int random \u003d (int )(Math.random() * 500 + 1);"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        String filepath \u003d \"data/test\" + random + \".txt\";"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        Storage storage \u003d new Storage(filepath);"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        storage.loadFile();"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        String originalString \u003d \"This is a test string.\";"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        String writtenString \u003d \"\";"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        storage.writeToFile(originalString);"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        Scanner dataScanner \u003d new Scanner(storage.dataFile);"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        while (dataScanner.hasNext()) {"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            writtenString \u003d dataScanner.nextLine();"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        assertEquals(originalString, writtenString);"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        storage.dataFile.delete();"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "rdimaio": 74
     }
   }
 ]

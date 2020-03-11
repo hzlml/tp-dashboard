@@ -116,42 +116,42 @@
       {
         "lineNumber": 6,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "bennychanya"
         },
-        "content": "import seedu.duke.data.ModuleList;"
+        "content": "import seedu.duke.data.AvailableModulesList;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "import seedu.duke.parser.Parser;"
+        "content": "import seedu.duke.data.ModuleList;"
       },
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": ""
+        "content": "import seedu.duke.data.SelectedModulesList;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": ""
+        "content": "import seedu.duke.parser.Parser;"
       },
       {
         "lineNumber": 10,
         "author": {
-          "gitId": "-"
+          "gitId": "RenzoTsai"
         },
-        "content": "public class Duke {"
+        "content": "import seedu.duke.ui.Ui;"
       },
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -160,157 +160,283 @@
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "    private static ModuleList moduleList \u003d new ModuleList();"
+        "content": ""
       },
       {
         "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "public class Duke {"
+      },
+      {
+        "lineNumber": 14,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": ""
       },
       {
-        "lineNumber": 14,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "    /**"
-      },
-      {
         "lineNumber": 15,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": "     * Main entry-point for the java.duke.Duke application."
+        "content": "    private static ModuleList availableModulesList;"
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": "     */"
+        "content": "    private static ModuleList selectedModulesList;"
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": "    public static void main(String[] args) {"
+        "content": "    private static Ui ui;"
       },
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": "        String logo \u003d \" ____        _        \\n\""
+        "content": ""
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "-"
         },
-        "content": "                + \"|  _ \\\\ _   _| | _____ \\n\""
+        "content": "    /**"
       },
       {
         "lineNumber": 20,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": "                + \"| | | | | | | |/ / _ \\\\\\n\""
+        "content": "     * Instantiate all required classes."
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "-"
         },
-        "content": "                + \"| |_| | |_| |   \u003c  __/\\n\""
+        "content": "     */"
       },
       {
         "lineNumber": 22,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": "                + \"|____/ \\\\__,_|_|\\\\_\\\\___|\\n\";"
+        "content": "    public Duke() {"
       },
       {
         "lineNumber": 23,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": "        System.out.println(\"Hello from\\n\" + logo);"
+        "content": "        ui \u003d new Ui();"
       },
       {
         "lineNumber": 24,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "bennychanya"
         },
-        "content": "        System.out.println(\"What can I do for you?\");"
+        "content": "        availableModulesList \u003d new AvailableModulesList();"
       },
       {
         "lineNumber": 25,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        selectedModulesList \u003d new SelectedModulesList();"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "     * Main program to run."
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    public void run() {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        ui.greetUser();"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        String fullCommand;"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        boolean isExit \u003d false;"
+      },
+      {
+        "lineNumber": 35,
         "author": {
           "gitId": "-"
         },
         "content": "        Scanner in \u003d new Scanner(System.in);"
       },
       {
-        "lineNumber": 26,
+        "lineNumber": 36,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "bennychanya"
         },
-        "content": "        String fullCommand \u003d in.nextLine();"
+        "content": "        do {"
       },
       {
-        "lineNumber": 27,
+        "lineNumber": 37,
         "author": {
-          "gitId": "RenzoTsai"
-        },
-        "content": "        while (!fullCommand.equals(\"bye\")) {"
-      },
-      {
-        "lineNumber": 28,
-        "author": {
-          "gitId": "RenzoTsai"
-        },
-        "content": "            Command command \u003d Parser.parse(fullCommand);"
-      },
-      {
-        "lineNumber": 29,
-        "author": {
-          "gitId": "RenzoTsai"
-        },
-        "content": "            command.execute(moduleList);"
-      },
-      {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "bennychanya"
         },
         "content": "            fullCommand \u003d in.nextLine();"
       },
       {
-        "lineNumber": 31,
+        "lineNumber": 38,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "            Command command \u003d Parser.parse(fullCommand);"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "            command.execute(selectedModulesList, availableModulesList);"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "            isExit \u003d command.isExit();"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        } while (!isExit);"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        ui.greetFarewell();"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 44,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "        }"
+        "content": ""
       },
       {
-        "lineNumber": 32,
+        "lineNumber": 45,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "        System.out.println(System.lineSeparator() + \"bye!\");"
+        "content": "    /**"
       },
       {
-        "lineNumber": 33,
+        "lineNumber": 46,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "     * Main entry-point for the java.duke.Duke application."
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public static void main(String[] args) {"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        new Duke().run();"
+      },
+      {
+        "lineNumber": 51,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 34,
+        "lineNumber": 52,
         "author": {
           "gitId": "-"
         },
@@ -318,8 +444,9 @@
       }
     ],
     "authorContributionMap": {
-      "RenzoTsai": 15,
-      "-": 19
+      "RenzoTsai": 10,
+      "bennychanya": 29,
+      "-": 13
     }
   },
   {
@@ -345,119 +472,119 @@
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "import seedu.duke.data.ModuleList;"
+        "content": "import seedu.duke.ui.Ui;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "import seedu.duke.module.Module;"
+        "content": "import seedu.duke.data.ModuleList;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": ""
+        "content": "import seedu.duke.module.Module;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "public class AddCommand extends Command {"
+        "content": ""
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": ""
+        "content": "public class AddCommand extends Command {"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "    public static final String COMMAND_WORD \u003d \"add\";"
+        "content": ""
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "    private Module module;"
+        "content": "    public static final String COMMAND_WORD \u003d \"add\";"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": ""
+        "content": "    private Module module;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "    public AddCommand(Module module) {"
+        "content": ""
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "        this.module \u003d module;"
+        "content": "    public AddCommand(Module module) {"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "    }"
+        "content": "        this.module \u003d module;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "    public void execute(ModuleList moduleList) {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "bennychanya"
         },
-        "content": "        addModule(moduleList);"
+        "content": "    public void execute(ModuleList selectedModulesList, ModuleList availableModulesList) {"
       },
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "bennychanya"
         },
-        "content": "        System.out.println(\"Okay! I have added this module to your module list:\");"
+        "content": "        addModule(selectedModulesList);"
       },
       {
         "lineNumber": 19,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "bennychanya"
         },
-        "content": "        System.out.println(this.module);"
+        "content": "        Ui.showAddedMessage(module.toString());"
       },
       {
         "lineNumber": 20,
@@ -503,7 +630,8 @@
       }
     ],
     "authorContributionMap": {
-      "RenzoTsai": 25
+      "RenzoTsai": 22,
+      "bennychanya": 3
     }
   },
   {
@@ -548,9 +676,9 @@
       {
         "lineNumber": 6,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "bennychanya"
         },
-        "content": "    public void execute(ModuleList moduleList) {"
+        "content": "    public void execute(ModuleList selectedModulesList, ModuleList availableModulesList) {"
       },
       {
         "lineNumber": 7,
@@ -562,13 +690,180 @@
       {
         "lineNumber": 8,
         "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    public boolean isExit() {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        return false;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
           "gitId": "RenzoTsai"
         },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "RenzoTsai": 8
+      "RenzoTsai": 7,
+      "bennychanya": 5
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/command/ExitCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "package seedu.duke.command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "public class ExitCommand extends Command {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "    public static final String COMMAND_WORD \u003d \"bye\";"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    public boolean isExit() {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        return true;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "bennychanya": 9,
+      "RenzoTsai": 1
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/data/AvailableModulesList.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "package seedu.duke.data;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "public class AvailableModulesList extends ModuleList {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    public AvailableModulesList() {"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        super();"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "bennychanya": 7
     }
   },
   {
@@ -662,6 +957,64 @@
     ],
     "authorContributionMap": {
       "RenzoTsai": 12
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/data/SelectedModulesList.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "package seedu.duke.data;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "public class SelectedModulesList extends ModuleList {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    public SelectedModulesList() {"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        super();"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "bennychanya": 7
     }
   },
   {
@@ -1016,128 +1369,128 @@
       {
         "lineNumber": 5,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "bennychanya"
         },
-        "content": "import seedu.duke.module.Module;"
+        "content": "import seedu.duke.command.ExitCommand;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": ""
+        "content": "import seedu.duke.module.Module;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": " * Parses user input."
+        "content": "/**"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": " */"
+        "content": " * Parses user input."
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "public class Parser {"
+        "content": " */"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "    /**"
+        "content": "public class Parser {"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "     * Parses user input into module."
+        "content": "    /**"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "     * @param fullCommand full user input command."
+        "content": "     * Parses user input into module."
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "     * @return the module."
+        "content": "     * @param fullCommand full user input command."
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "     */"
+        "content": "     * @return the module."
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "    public static Command parse(String fullCommand) {"
+        "content": "     */"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "        String taskType;"
+        "content": "    public static Command parse(String fullCommand) {"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "        String args;"
+        "content": "        String taskType;"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "        String[] words;"
+        "content": "        String args;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "        words \u003d fullCommand.split(\"\\\\s+\",2);"
+        "content": "        String[] words;"
       },
       {
         "lineNumber": 21,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "bennychanya"
         },
-        "content": "        taskType \u003d words[0];"
+        "content": "        words \u003d fullCommand.split(\" \",2);"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "        args \u003d words[1];"
+        "content": "        taskType \u003d words[0];"
       },
       {
         "lineNumber": 23,
@@ -1156,187 +1509,229 @@
       {
         "lineNumber": 25,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "bennychanya"
         },
-        "content": "            return processAddCommand(args);"
+        "content": "            args \u003d words[1];"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "        default:"
+        "content": "            return processAddCommand(args);"
       },
       {
         "lineNumber": 27,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "bennychanya"
         },
-        "content": "            return null;"
+        "content": "        case ExitCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "bennychanya"
         },
-        "content": "        }"
+        "content": "            return processExitCommand();"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "    }"
+        "content": "        default:"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": ""
+        "content": "            return null;"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "    private static AddCommand processAddCommand(String args) {"
+        "content": "        }"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "        String[] moduleWords;"
+        "content": "    }"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "        moduleWords \u003d args.split(\" s/\");"
+        "content": ""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "        boolean isWrongArgs \u003d moduleWords.length \u003c 2;"
+        "content": "    private static AddCommand processAddCommand(String args) {"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "        if (isWrongArgs) {"
+        "content": "        String[] moduleWords;"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "            return null;"
+        "content": "        moduleWords \u003d args.split(\" s/\");"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "        }"
+        "content": "        boolean isWrongArgs \u003d moduleWords.length \u003c 2;"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "        String module \u003d moduleWords[0];"
+        "content": "        if (isWrongArgs) {"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "        String semester \u003d moduleWords[1];"
+        "content": "            return null;"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "        if (module.contains(\"n/\")) {"
+        "content": "        }"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "            String moduleName \u003d module.replace(\"n/\",\"\");"
+        "content": "        String module \u003d moduleWords[0];"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "            return new AddCommand(new Module(\"name\", moduleName, semester));"
+        "content": "        String semester \u003d moduleWords[1];"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "        } else if (module.contains(\"id/\")) {"
+        "content": "        if (module.contains(\"n/\")) {"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "            String moduleId \u003d module.replace(\"id/\",\"\");"
+        "content": "            String moduleName \u003d module.replace(\"n/\",\"\");"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "            return new AddCommand(new Module(\"id\", moduleId, semester));"
+        "content": "            return new AddCommand(new Module(\"name\", moduleName, semester));"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "        }"
+        "content": "        } else if (module.contains(\"id/\")) {"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "        return null;"
+        "content": "            String moduleId \u003d module.replace(\"id/\",\"\");"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "    }"
+        "content": "            return new AddCommand(new Module(\"id\", moduleId, semester));"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": ""
+        "content": "        return null;"
       },
       {
         "lineNumber": 51,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    private static ExitCommand processExitCommand() {"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        return new ExitCommand();"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 57,
         "author": {
           "gitId": "RenzoTsai"
         },
@@ -1344,7 +1739,277 @@
       }
     ],
     "authorContributionMap": {
-      "RenzoTsai": 51
+      "RenzoTsai": 49,
+      "bennychanya": 8
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/ui/Ui.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "package seedu.duke.ui;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "public class Ui {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    private static final String LOGO \u003d"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "              \" ____        _        \\n\""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "            + \"|  _ \\\\ _   _| | _____ \\n\""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "            + \"| | | | | | | |/ / _ \\\\\\n\""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "            + \"| |_| | |_| |   \u003c  __/\\n\""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "            + \"|____/ \\\\__,_|_|\\\\_\\\\___|\\n\";"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    private static final String START_MESSAGE \u003d \"Hello from\\n\" + LOGO + \"What can I do for you?\";"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    private static final String FAREWELL_MESSAGE \u003d \"bye!\";"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    private static final String ADDED_MESSAGE \u003d \"Okay! I have added this module to your module list:\";"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    private static final String LINE_SEPARATOR \u003d System.lineSeparator();"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    private static void showToUser(String... messages) {"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        for (String m: messages) {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "            System.out.println(m);"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    public static void greetUser() {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        showToUser(START_MESSAGE, LINE_SEPARATOR);"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    public static void greetFarewell() {"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        showToUser(FAREWELL_MESSAGE);"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    public static void showAddedMessage(String module) {"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        showToUser(ADDED_MESSAGE, module,LINE_SEPARATOR);"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "RenzoTsai": 1,
+      "bennychanya": 36
     }
   },
   {

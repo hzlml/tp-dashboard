@@ -58,21 +58,1709 @@
           "gitId": "DDzuikeai"
         },
         "content": "![](https://via.placeholder.com/100.png?text\u003dPhoto) | Chenghao | [Github](https://github.com/DDzuikeai) | [Portfolio](docs/team/johndoe.md)"
-      },
-      {
-        "lineNumber": 9,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "![](https://via.placeholder.com/100.png?text\u003dPhoto) | Don Roe | [Github](https://github.com/) | [Portfolio](docs/team/johndoe.md)"
       }
     ],
     "authorContributionMap": {
       "dejunnn": 1,
       "lamyuewei": 1,
       "DDzuikeai": 1,
-      "-": 5,
+      "-": 4,
       "yuxianglim": 1
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/DailyFoodRecord.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "package seedu.duke;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "import java.time.LocalDate;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "import java.time.format.DateTimeFormatter;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "import java.time.format.DateTimeParseException;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "import java.util.Locale;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "public class DailyFoodRecord {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    private String date;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    private ArrayList\u003cFood\u003e breakfast;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    private ArrayList\u003cFood\u003e lunch;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    private ArrayList\u003cFood\u003e dinner;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    public DailyFoodRecord(String date){"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        setDate(date);"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        breakfast \u003d new ArrayList\u003cFood\u003e();"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        lunch \u003d new ArrayList\u003cFood\u003e();"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        dinner \u003d new ArrayList\u003cFood\u003e();"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    public void setDate(String date) {"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        LocalDate standardTime \u003d null;"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        boolean isStandardTime \u003d false;"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "            standardTime \u003d LocalDate.parse(date);"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "            isStandardTime \u003d true;"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        } catch (DateTimeParseException ignored) {"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        } finally {"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "            if (isStandardTime) {"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "                this.date \u003d standardTime.format(DateTimeFormatter.ofPattern(\"MMM dd yyyy\", Locale.ENGLISH));"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "                this.date \u003d date;"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    public void recordMeals(String mealType, ArrayList\u003cFood\u003e foodList){"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        switch (mealType){"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        case \"breakfast\":"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "            breakfast.addAll(foodList);"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "            break;"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        case \"lunch\":"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "            lunch.addAll(foodList);"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "            break;"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        case \"dinner\":"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "            dinner.addAll(foodList);"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "            break;"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    public void showDailyRecord(){"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        this.showBreakfast();"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        this.showLunch();"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        this.showDinner();"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    public void showBreakfast(){"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    public void showLunch(){"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    public void showDinner(){"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "DDzuikeai": 67
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/Duke.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "package seedu.duke;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "import java.util.Scanner;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "public class Duke {"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public static void main(String[] args) {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        Scanner sc \u003d new Scanner(System.in);"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        String logo \u003d \" ____        _        \\n\""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                + \"|  _ \\\\ _   _| | _____ \\n\""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                + \"| | | | | | | |/ / _ \\\\\\n\""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                + \"| |_| | |_| |   \u003c  __/\\n\""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "                + \"|____/ \\\\__,_|_|\\\\_\\\\___|\\n\";"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        System.out.println(\"Hello from\\n\" + logo);"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "        System.out.println(\"What is your name?\");"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        String userName \u003d sc.nextLine();"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        System.out.println(\"Hello \" + userName +"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                \"! We would require some basic information about you before we begin :)\");"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        System.out.println(\"Please enter your current age: \");"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        int userAge \u003d Integer.parseInt(sc.nextLine());"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        System.out.println(\"Please enter your gender: \");"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        String userGender \u003d sc.nextLine();"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        System.out.println(\"Please enter your current height: \");"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        double userHeight \u003d Double.parseDouble(sc.nextLine());"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        System.out.println(\"Please enter your current weight: \");"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        double userWeight \u003d Double.parseDouble(sc.nextLine());"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        System.out.println(\"Name: \" + userName + System.lineSeparator() +"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                \"Age: \" + userAge + System.lineSeparator() +"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                \"Gender: \" + userGender + System.lineSeparator() +"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                \"Height: \" + userHeight + System.lineSeparator() +"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                \"Weight: \" + userWeight + System.lineSeparator());"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "dejunnn": 26,
+      "-": 16
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/Food.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "package seedu.duke;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "public class Food {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    String foodName;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private double carbohydrates;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private double fats;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private double fiber;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private double minerals;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private double proteins;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private double vitamins;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private double water;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    public Food(String foodName, double carbohydrates, double fats, double fiber, double minerals,"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "                double proteins, double vitamins, double water) {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        this.foodName \u003d foodName;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        this.carbohydrates \u003d carbohydrates;"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        this.fats \u003d fats;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        this.fiber \u003d fiber;"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        this.minerals \u003d minerals;"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        this.proteins \u003d proteins;"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        this.vitamins \u003d vitamins;"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        this.water \u003d water;"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    public String getFoodName() {"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        return foodName;"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    public double getCarbohydrates() {"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        return carbohydrates;"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    public double getFats() {"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        return fats;"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    public double getFiber() {"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        return fiber;"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    public double getMinerals() {"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        return minerals;"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    public double getProteins() {"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        return proteins;"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    public double getVitamins() {"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        return vitamins;"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    public double getWater() {"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        return water;"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "dejunnn": 7,
+      "lamyuewei": 49
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/FoodNutritionInfo.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "package seedu.duke;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "// To be edited to add more Food items"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "public class FoodNutritionInfo {"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    private ArrayList\u003cFood\u003e nutrients \u003d new ArrayList\u003c\u003e();"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    public FoodNutritionInfo() {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        nutrients.add(new Food(\"Chicken\", 0, 0, 0, 0, 0,"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "                0, 0)); // Need to check the nutrients"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "lamyuewei": 13
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/Person.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "yuxianglim"
+        },
+        "content": "package seedu.duke;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "yuxianglim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "yuxianglim"
+        },
+        "content": "public class Person {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private String name;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private int age;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private double height; //Height in meter"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private double weight; //Wight in Kg"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private String gender;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "yuxianglim"
+        },
+        "content": "    private double weightGoal;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "yuxianglim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public Person(String name) {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.name \u003d name;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public Person(String name, int age, String gender, double height, double weight, double weightGoal){"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.name \u003d name;"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.age \u003d age;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.gender \u003d gender;"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.height \u003d height;"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.weight \u003d weight;"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "yuxianglim"
+        },
+        "content": "        this.weightGoal \u003d weightGoal;"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "yuxianglim"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "yuxianglim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "yuxianglim"
+        },
+        "content": "    public double getBMI(){"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        return weight / Math.pow(height/100, 2);"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "yuxianglim"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "yuxianglim"
+        },
+        "content": "    public void setWeightGoal(double weightGoal){"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "yuxianglim"
+        },
+        "content": "        this.weightGoal \u003d weightGoal;"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "yuxianglim"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "yuxianglim"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "yuxianglim"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "dejunnn": 17,
+      "yuxianglim": 15
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/Ui.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "package seedu.duke;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "import java.util.Scanner;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "public class Ui {"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    Scanner sc \u003d new Scanner(System.in);"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    private Ui() {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    public String readCommand() {"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        return sc.nextLine();"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    public void showGreeting() {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        String logo \u003d \" ____        _        \\n\""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "                + \"|  _ \\\\ _   _| | _____ \\n\""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "                + \"| | | | | | | |/ / _ \\\\\\n\""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "                + \"| |_| | |_| |   \u003c  __/\\n\""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "                + \"|____/ \\\\__,_|_|\\\\_\\\\___|\\n\";"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        System.out.println(\"Hello from\\n\" + logo);"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        System.out.println(\"What is your name?\");"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        System.out.println(\"Hello \" + sc.nextLine());"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "lamyuewei": 24
     }
   }
 ]

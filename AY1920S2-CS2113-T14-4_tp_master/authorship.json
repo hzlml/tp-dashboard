@@ -574,345 +574,6 @@
     }
   },
   {
-    "path": "src/main/java/commands/AddCommand.java",
-    "fileType": "java",
-    "lines": [
-      {
-        "lineNumber": 1,
-        "author": {
-          "gitId": "gmuthu17"
-        },
-        "content": "package commands;"
-      },
-      {
-        "lineNumber": 2,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 3,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "import java.util.Map;"
-      },
-      {
-        "lineNumber": 4,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "import java.util.Optional;"
-      },
-      {
-        "lineNumber": 5,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "import java.util.stream.Collectors;"
-      },
-      {
-        "lineNumber": 6,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 7,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "import ingredient.Ingredient;"
-      },
-      {
-        "lineNumber": 8,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "import utils.Pair;"
-      },
-      {
-        "lineNumber": 9,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 10,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "/**"
-      },
-      {
-        "lineNumber": 11,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": " * This class focuses on the \u0027add\u0027 functionality of the application."
-      },
-      {
-        "lineNumber": 12,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": " * "
-      },
-      {
-        "lineNumber": 13,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": " */"
-      },
-      {
-        "lineNumber": 14,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "public class AddCommand extends Command {"
-      },
-      {
-        "lineNumber": 15,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 16,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    /** The ingredient to be added into the stock. */"
-      },
-      {
-        "lineNumber": 17,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    private final Ingredient ingredientToAdd;"
-      },
-      {
-        "lineNumber": 18,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 19,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    /** "
-      },
-      {
-        "lineNumber": 20,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * A convenience constructor that contains information of an ingredient "
-      },
-      {
-        "lineNumber": 21,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * stored in a hashMap."
-      },
-      {
-        "lineNumber": 22,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * "
-      },
-      {
-        "lineNumber": 23,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 24,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    public AddCommand(Map\u003cString, Pair\u003cInteger, Double\u003e\u003e ingredientInfo) {  "
-      },
-      {
-        "lineNumber": 25,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        String ingredientName \u003d ingredientInfo"
-      },
-      {
-        "lineNumber": 26,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                .entrySet()"
-      },
-      {
-        "lineNumber": 27,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                .stream()"
-      },
-      {
-        "lineNumber": 28,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                .map(item -\u003e item.getKey())"
-      },
-      {
-        "lineNumber": 29,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                .map(Object::toString)"
-      },
-      {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                .collect(Collectors.joining(\"\"));"
-      },
-      {
-        "lineNumber": 31,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 32,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        int quantity \u003d ingredientInfo.get(ingredientName).first();"
-      },
-      {
-        "lineNumber": 33,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        double price \u003d ingredientInfo.get(ingredientName).second();"
-      },
-      {
-        "lineNumber": 34,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 35,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        this.ingredientToAdd \u003d new Ingredient(ingredientName, "
-      },
-      {
-        "lineNumber": 36,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                Optional.of(quantity), Optional.of(price));               "
-      },
-      {
-        "lineNumber": 37,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 38,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 39,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    @Override"
-      },
-      {
-        "lineNumber": 40,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    public CommandResult execute() {"
-      },
-      {
-        "lineNumber": 41,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        this.stock.addIngredient(ingredientToAdd);"
-      },
-      {
-        "lineNumber": 42,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        return new CommandResult(\"Ingredient \" "
-      },
-      {
-        "lineNumber": 43,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                + ingredientToAdd.getIngredientName() "
-      },
-      {
-        "lineNumber": 44,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                + \" successfully added!\");"
-      },
-      {
-        "lineNumber": 45,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 46,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "}"
-      }
-    ],
-    "authorContributionMap": {
-      "JosephLimWeiJie": 46,
-      "gmuthu17": 1
-    }
-  },
-  {
     "path": "src/main/java/commands/AddDishCommand.java",
     "fileType": "java",
     "lines": [
@@ -1040,9 +701,9 @@
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "SibingWu"
+          "gitId": "nguan1"
         },
-        "content": "    private int reservationNumber;"
+        "content": ""
       },
       {
         "lineNumber": 14,
@@ -1061,16 +722,16 @@
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "SibingWu"
+          "gitId": "nguan1"
         },
-        "content": "    public AddReservationCommand(int reservationNumber, String description) {"
+        "content": "    public AddReservationCommand(String description) {"
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "SibingWu"
+          "gitId": "nguan1"
         },
-        "content": "        this.reservationNumber \u003d reservationNumber;"
+        "content": ""
       },
       {
         "lineNumber": 18,
@@ -1397,11 +1058,12 @@
     ],
     "authorContributionMap": {
       "gmuthu17": 4,
-      "SibingWu": 59
+      "SibingWu": 56,
+      "nguan1": 3
     }
   },
   {
-    "path": "src/main/java/commands/Command.java",
+    "path": "src/main/java/commands/AddStockCommand.java",
     "fileType": "java",
     "lines": [
       {
@@ -1423,129 +1085,528 @@
         "author": {
           "gitId": "JosephLimWeiJie"
         },
-        "content": "import stock.Stock;"
+        "content": "import java.util.HashMap;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "JosephLimWeiJie"
         },
-        "content": ""
+        "content": "import java.util.Map;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "JosephLimWeiJie"
         },
-        "content": "/**"
+        "content": "import java.util.Optional;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "JosephLimWeiJie"
         },
-        "content": " * Represents a command. A command can be executed by"
+        "content": "import java.util.stream.Collectors;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "JosephLimWeiJie"
         },
-        "content": " * specifying Duke as a parameter, which will return a CommandResult."
+        "content": ""
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "JosephLimWeiJie"
         },
-        "content": " * "
+        "content": "import ingredient.Ingredient;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "JosephLimWeiJie"
         },
-        "content": " */"
+        "content": "import stock.Stock;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "JosephLimWeiJie"
         },
-        "content": "public class Command {"
+        "content": "import utils.Pair;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "JosephLimWeiJie"
         },
-        "content": "    "
+        "content": ""
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "JosephLimWeiJie"
         },
-        "content": "    protected Stock stock;   "
+        "content": "/**"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "JosephLimWeiJie"
         },
-        "content": "    "
+        "content": " * This class focuses on the \u0027add\u0027 functionality of the application"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "JosephLimWeiJie"
         },
-        "content": "    public void setData(Stock stock) {"
+        "content": " * on the stock category."
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "JosephLimWeiJie"
         },
-        "content": "        this.stock \u003d stock;"
+        "content": " * "
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "JosephLimWeiJie"
         },
-        "content": "    }"
+        "content": " */"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "JosephLimWeiJie"
         },
-        "content": "        "
+        "content": "public class AddStockCommand extends StockCommand {"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "JosephLimWeiJie"
         },
-        "content": "    public CommandResult execute() {"
+        "content": "    "
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "JosephLimWeiJie"
         },
-        "content": "        throw new IllegalStateException(\"This method is to be implemented by child classes\");"
+        "content": "    /** The ingredient to be added into the stock. */"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "JosephLimWeiJie"
         },
-        "content": "    }"
+        "content": "    private final Ingredient ingredientToAdd;"
       },
       {
         "lineNumber": 21,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    /** "
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * A convenience constructor that contains information of an ingredient "
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * stored in a hashMap."
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * "
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    public AddStockCommand(String ingredientInput) {  "
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        Map\u003cString, Pair\u003cInteger, Double\u003e\u003e ingredientInfo \u003d "
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                parseIntoAddIngredientArgs(ingredientInput);"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        String ingredientName \u003d ingredientInfo"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                .entrySet()"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                .stream()"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                .map(item -\u003e item.getKey())"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                .map(Object::toString)"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                .collect(Collectors.joining(\"\"));"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        int quantity \u003d ingredientInfo.get(ingredientName).first();"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        double price \u003d ingredientInfo.get(ingredientName).second();"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        this.ingredientToAdd \u003d new Ingredient(ingredientName, "
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                Optional.of(quantity), Optional.of(price));               "
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    /** "
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * Parses the user\u0027s input into readable arguments that "
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * will be used to construct an Ingredient object."
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * The arguments are then stored in a HashMap."
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * For example: \u0027 i/tomato; q/10; p/$0.50;\u0027 "
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * will store \u0027tomato\u0027 as the ingredient name, \u002710\u0027 as"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * the ingredient quantity and \u0027$0.50\u0027 as the ingedient\u0027s "
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * price. Note that the constructor of an Ingredient is"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * new Ingredient(NAME, QUANTITY, PRICE)."
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * "
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    private Map\u003cString, Pair\u003cInteger, Double\u003e\u003e parseIntoAddIngredientArgs("
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "            String fullInputLine) {"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        Map\u003cString, Pair\u003cInteger, Double\u003e\u003e ingredientInfo \u003d new HashMap\u003c\u003e();"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        String[] wordArgs \u003d fullInputLine.split(\";\");"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        String ingredientName \u003d parseIngredientName(wordArgs[1].trim());"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        int quantity \u003d parseIngredientQuantity(wordArgs[2].trim());"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        double price \u003d parseIngredientPrice(wordArgs[3].trim());"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        ingredientInfo.put(ingredientName, Pair.of(quantity, price));"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        return ingredientInfo;"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    public void execute(Stock stock) {"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        stock.addIngredient(ingredientToAdd);"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        System.out.println(\"Ingredient \" "
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                + ingredientToAdd.getIngredientName() "
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                + \" successfully added!\");"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 78,
         "author": {
           "gitId": "JosephLimWeiJie"
         },
@@ -1553,7 +1614,7 @@
       }
     ],
     "authorContributionMap": {
-      "JosephLimWeiJie": 20,
+      "JosephLimWeiJie": 77,
       "gmuthu17": 1
     }
   },
@@ -1636,7 +1697,7 @@
         "author": {
           "gitId": "JosephLimWeiJie"
         },
-        "content": "public class CommandResult extends Command {"
+        "content": "public class CommandResult extends StockCommand {"
       },
       {
         "lineNumber": 12,
@@ -1806,464 +1867,6 @@
     }
   },
   {
-    "path": "src/main/java/commands/DeleteCommand.java",
-    "fileType": "java",
-    "lines": [
-      {
-        "lineNumber": 1,
-        "author": {
-          "gitId": "gmuthu17"
-        },
-        "content": "package commands;"
-      },
-      {
-        "lineNumber": 2,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 3,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "import java.util.Map;"
-      },
-      {
-        "lineNumber": 4,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "import java.util.Optional;"
-      },
-      {
-        "lineNumber": 5,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "import java.util.stream.Collectors;"
-      },
-      {
-        "lineNumber": 6,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 7,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "import ingredient.Ingredient;"
-      },
-      {
-        "lineNumber": 8,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "import ingredient.IngredientNotFoundException;"
-      },
-      {
-        "lineNumber": 9,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 10,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "/**"
-      },
-      {
-        "lineNumber": 11,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": " * This class focuses on the \u0027delete\u0027 functionality of the application."
-      },
-      {
-        "lineNumber": 12,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": " * "
-      },
-      {
-        "lineNumber": 13,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": " */"
-      },
-      {
-        "lineNumber": 14,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "public class DeleteCommand extends Command {"
-      },
-      {
-        "lineNumber": 15,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 16,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    private final Ingredient ingredientToDelete;"
-      },
-      {
-        "lineNumber": 17,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 18,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 19,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * A convenience constructor that contains information of an ingredient "
-      },
-      {
-        "lineNumber": 20,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * stored in a hashMap."
-      },
-      {
-        "lineNumber": 21,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * "
-      },
-      {
-        "lineNumber": 22,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 23,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    public DeleteCommand(Map\u003cString, Optional\u003cInteger\u003e\u003e ingredientInfo) {"
-      },
-      {
-        "lineNumber": 24,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 25,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        String ingredientName \u003d ingredientInfo"
-      },
-      {
-        "lineNumber": 26,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                .entrySet()"
-      },
-      {
-        "lineNumber": 27,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                .stream()"
-      },
-      {
-        "lineNumber": 28,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                .map(item -\u003e item.getKey())"
-      },
-      {
-        "lineNumber": 29,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                .map(Object::toString)"
-      },
-      {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                .collect(Collectors.joining(\"\"));"
-      },
-      {
-        "lineNumber": 31,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 32,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        Optional\u003cInteger\u003e quantity \u003d ingredientInfo.get(ingredientName);"
-      },
-      {
-        "lineNumber": 33,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 34,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        this.ingredientToDelete \u003d new Ingredient(ingredientName, quantity, Optional.empty());               "
-      },
-      {
-        "lineNumber": 35,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 36,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 37,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    @Override"
-      },
-      {
-        "lineNumber": 38,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    public CommandResult execute() {"
-      },
-      {
-        "lineNumber": 39,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "             "
-      },
-      {
-        "lineNumber": 40,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 41,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 42,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        try {"
-      },
-      {
-        "lineNumber": 43,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            this.stock.deleteIngredient(ingredientToDelete);"
-      },
-      {
-        "lineNumber": 44,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        } catch (IngredientNotFoundException e) {"
-      },
-      {
-        "lineNumber": 45,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            return new CommandResult(\"Ingredient \" "
-      },
-      {
-        "lineNumber": 46,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                    + this.ingredientToDelete.getIngredientName() "
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                    + \" not found and cannot be deleted!\");"
-      },
-      {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 49,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        return new CommandResult(createDeleteResultMessage());"
-      },
-      {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 52,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    private String createDeleteResultMessage() {"
-      },
-      {
-        "lineNumber": 53,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        boolean hasQuantitySpecified \u003d ingredientToDelete.isQuantitySpecified();"
-      },
-      {
-        "lineNumber": 54,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 55,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        String outputMessage \u003d \"Ingredient \" "
-      },
-      {
-        "lineNumber": 56,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                    + ingredientToDelete.getIngredientName()"
-      },
-      {
-        "lineNumber": 57,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                    + (hasQuantitySpecified "
-      },
-      {
-        "lineNumber": 58,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                            ? \" reduced by \" "
-      },
-      {
-        "lineNumber": 59,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                            + ingredientToDelete.getIngredientQuantity() + \"!\""
-      },
-      {
-        "lineNumber": 60,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                            : \" deleted from the stock!\");"
-      },
-      {
-        "lineNumber": 61,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 62,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        return outputMessage;"
-      },
-      {
-        "lineNumber": 63,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 64,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "}"
-      }
-    ],
-    "authorContributionMap": {
-      "JosephLimWeiJie": 63,
-      "gmuthu17": 1
-    }
-  },
-  {
     "path": "src/main/java/commands/DeleteDishCommand.java",
     "fileType": "java",
     "lines": [
@@ -2298,6 +1901,807 @@
     ],
     "authorContributionMap": {
       "gmuthu17": 4
+    }
+  },
+  {
+    "path": "src/main/java/commands/DeleteStockCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "gmuthu17"
+        },
+        "content": "package commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "import java.util.HashMap;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "import java.util.Map;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "import java.util.Optional;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "import java.util.stream.Collectors;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "import ingredient.Ingredient;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "import ingredient.IngredientNotFoundException;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "import stock.Stock;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": " * This class focuses on the \u0027delete\u0027 functionality of the application."
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": " * "
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "public class DeleteStockCommand extends StockCommand {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    private final Ingredient ingredientToDelete;"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * A convenience constructor that contains information of an ingredient "
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * stored in a hashMap."
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * "
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    public DeleteStockCommand(Map\u003cString, Optional\u003cInteger\u003e\u003e ingredientInfo) {"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        String ingredientName \u003d ingredientInfo"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                .entrySet()"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                .stream()"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                .map(item -\u003e item.getKey())"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                .map(Object::toString)"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                .collect(Collectors.joining(\"\"));"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        Optional\u003cInteger\u003e quantity \u003d ingredientInfo.get(ingredientName);"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        this.ingredientToDelete \u003d new Ingredient(ingredientName, quantity, Optional.empty());               "
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * A convenience constructor that contains information of an ingredient "
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * stored in a hashMap."
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * "
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    public DeleteStockCommand(String ingredientInput) {"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        Map\u003cString, Optional\u003cInteger\u003e\u003e ingredientInfo \u003d "
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                parseIntoDeleteIngredientArgs(ingredientInput);"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        String ingredientName \u003d ingredientInfo"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                .entrySet()"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                .stream()"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                .map(item -\u003e item.getKey())"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                .map(Object::toString)"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                .collect(Collectors.joining(\"\"));"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        Optional\u003cInteger\u003e quantity \u003d ingredientInfo.get(ingredientName);"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        this.ingredientToDelete \u003d new Ingredient(ingredientName, quantity, Optional.empty());               "
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * Parses the user\u0027s input into readable arguments that "
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * will be used to construct an Ingredient object."
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * The arguments are then stored in a HashMap."
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * For example: \u0027 i/tomato; q/10;\u0027 will store \u0027tomato\u0027 "
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * as the ingredient name, \u002710\u0027 as the ingredient quantity "
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * to be deleted. Note that the specification of the ingredient\u0027s quantity "
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * is optional."
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * "
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    private Map\u003cString, Optional\u003cInteger\u003e\u003e parseIntoDeleteIngredientArgs("
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "            String fullInputLine) {"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        Map\u003cString, Optional\u003cInteger\u003e\u003e ingredientInfo \u003d new HashMap\u003c\u003e();"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        String[] wordArgs \u003d fullInputLine.split(\";\");"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        boolean hasQuantitySpecified \u003d fullInputLine.contains(\"q/\");"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        String ingredientName \u003d parseIngredientName(wordArgs[1].trim());"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        if (hasQuantitySpecified) {            "
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "            int quantity \u003d parseIngredientQuantity(wordArgs[2].trim());"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "            ingredientInfo.put(ingredientName, Optional.of(quantity));"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "            ingredientInfo.put(ingredientName, Optional.empty());"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        return ingredientInfo;"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    public void execute(Stock stock) {    "
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "            stock.deleteIngredient(ingredientToDelete);"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        } catch (IngredientNotFoundException e) {"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "            System.out.println(\"Ingredient \" "
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                    + this.ingredientToDelete.getIngredientName() "
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                    + \" not found and cannot be deleted!\");"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        System.out.println(createDeleteResultMessage());"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    private String createDeleteResultMessage() {"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        boolean hasQuantitySpecified \u003d ingredientToDelete.isQuantitySpecified();"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        String outputMessage \u003d \"Ingredient \" "
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                    + ingredientToDelete.getIngredientName()"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                    + (hasQuantitySpecified "
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                            ? \" reduced by \" "
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                            + ingredientToDelete.getIngredientQuantity() + \"!\""
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                            : \" deleted from the stock!\");"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        return outputMessage;"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "JosephLimWeiJie": 112,
+      "gmuthu17": 1
     }
   },
   {
@@ -2447,191 +2851,6 @@
     ],
     "authorContributionMap": {
       "JosephLimWeiJie": 19,
-      "gmuthu17": 1
-    }
-  },
-  {
-    "path": "src/main/java/commands/ListCommand.java",
-    "fileType": "java",
-    "lines": [
-      {
-        "lineNumber": 1,
-        "author": {
-          "gitId": "gmuthu17"
-        },
-        "content": "package commands;"
-      },
-      {
-        "lineNumber": 2,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 3,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "/**"
-      },
-      {
-        "lineNumber": 4,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": " * This class focuses on the \u0027list\u0027 functionality of the application."
-      },
-      {
-        "lineNumber": 5,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": " * "
-      },
-      {
-        "lineNumber": 6,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": " */"
-      },
-      {
-        "lineNumber": 7,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "public class ListCommand extends Command {"
-      },
-      {
-        "lineNumber": 8,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 9,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    private final String category;"
-      },
-      {
-        "lineNumber": 10,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 11,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    public ListCommand(String category) {"
-      },
-      {
-        "lineNumber": 12,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        this.category \u003d category;"
-      },
-      {
-        "lineNumber": 13,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 14,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 15,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    @Override"
-      },
-      {
-        "lineNumber": 16,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    public CommandResult execute() {"
-      },
-      {
-        "lineNumber": 17,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        switch (category) {"
-      },
-      {
-        "lineNumber": 18,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        case (\"stock\") :"
-      },
-      {
-        "lineNumber": 19,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            this.stock.listIngredient();"
-      },
-      {
-        "lineNumber": 20,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            return new CommandResult(\"All ingredients listed successfully!\");"
-      },
-      {
-        "lineNumber": 21,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        default: "
-      },
-      {
-        "lineNumber": 22,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            throw new IllegalStateException(\"Invalid category for list command\");"
-      },
-      {
-        "lineNumber": 23,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        }      "
-      },
-      {
-        "lineNumber": 24,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 25,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "}"
-      }
-    ],
-    "authorContributionMap": {
-      "JosephLimWeiJie": 24,
       "gmuthu17": 1
     }
   },
@@ -2961,6 +3180,128 @@
     "authorContributionMap": {
       "gmuthu17": 3,
       "SibingWu": 22
+    }
+  },
+  {
+    "path": "src/main/java/commands/ListStockCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "gmuthu17"
+        },
+        "content": "package commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "import stock.Stock;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": " * This class focuses on the \u0027list\u0027 functionality of the application."
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": " * "
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "public class ListStockCommand extends StockCommand {"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "  "
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    public void execute(Stock stock) {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        stock.listIngredient();"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        System.out.println(\"All ingredients listed successfully!\");     "
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "JosephLimWeiJie": 15,
+      "gmuthu17": 1
     }
   },
   {
@@ -3446,6 +3787,485 @@
     "authorContributionMap": {
       "gmuthu17": 2,
       "SibingWu": 5
+    }
+  },
+  {
+    "path": "src/main/java/commands/StockCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "gmuthu17"
+        },
+        "content": "package commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "import stock.Stock;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": " * Represents a StockCommand. A StockCommand can be executed by"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": " * consists of methods to parse user\u0027s input into acceptable format"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": " * that can be used by its super classes such as AddStockCommand."
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": " * "
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "public class StockCommand {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    protected Stock stock;   "
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    public void setData(Stock stock) {"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        this.stock \u003d stock;"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    public void execute(Stock stock) {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        System.out.println(\"This method is to be implemented by child classes\");"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * Extract the name of the ingredient from a string."
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * For example, \u0027i/tomato\u0027 will return \u0027tomato\u0027."
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * "
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     */ "
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    protected String parseIngredientName(String ingredientNameInput) {"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        String ingredientName \u003d ingredientNameInput.trim()"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                .substring(2, ingredientNameInput.length());"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        return ingredientName;"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * Extract the quantity of the ingredient from a string."
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * For example, \u0027q/10\u0027 will return \u002710\u0027."
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * "
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     */ "
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    protected int parseIngredientQuantity(String ingredientQuantityInput) {"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        int quantity \u003d Integer.parseInt(ingredientQuantityInput.trim()"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                .substring(2, ingredientQuantityInput.length()));"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        return quantity;"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * Extract the price of the ingredient from a string."
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * For example, \u0027p/$0.50\u0027 will return \u00270.5\u0027."
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * Note that the price will not strictly be in 2 decimal "
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * places. This will be handled in the AddCommand."
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * "
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     */ "
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    protected double parseIngredientPrice(String ingredientPriceInput) {"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        double price \u003d Double.parseDouble(ingredientPriceInput.trim()"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                .substring(3, ingredientPriceInput.length()));"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        "
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        return price;"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     * Convenience constructor for ExitCommand() without parameters."
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    public void execute() {"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "        throw new IllegalStateException(\"This method is to be implemented by child classes\");"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "JosephLimWeiJie": 66,
+      "gmuthu17": 1
     }
   },
   {
@@ -7229,386 +8049,6 @@
     }
   },
   {
-    "path": "src/main/java/seedu/duke/CommandParser.java",
-    "fileType": "java",
-    "lines": [
-      {
-        "lineNumber": 1,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "package seedu.duke;"
-      },
-      {
-        "lineNumber": 2,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 3,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "public class CommandParser {"
-      },
-      {
-        "lineNumber": 4,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "    public static void parseCommand(String command,Menu menu, Stock stock, ReservationList reservations) {"
-      },
-      {
-        "lineNumber": 5,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "        String[] commands \u003d command.split(\";\",2);"
-      },
-      {
-        "lineNumber": 6,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "        String[] split_commands \u003d commands[0].split(\" \",2);"
-      },
-      {
-        "lineNumber": 7,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "        if (split_commands[0].equals(\"add\")) {"
-      },
-      {
-        "lineNumber": 8,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "            if (split_commands[1].equals(\"dish\")) {"
-      },
-      {
-        "lineNumber": 9,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "                //Add dish"
-      },
-      {
-        "lineNumber": 10,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "                menu.addDish(commands[1])"
-      },
-      {
-        "lineNumber": 11,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "            } else if (split_commands[1].equals(\"stock\")){"
-      },
-      {
-        "lineNumber": 12,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "                //Add stock"
-      },
-      {
-        "lineNumber": 13,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "               new Parser.parseCommand(commands[1]);"
-      },
-      {
-        "lineNumber": 14,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "            } else if (split_commands[1].equals(\"reservation\")){"
-      },
-      {
-        "lineNumber": 15,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "                //Add reservation"
-      },
-      {
-        "lineNumber": 16,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "                new AddReservationCommand().execute(reservations);"
-      },
-      {
-        "lineNumber": 17,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "            } else {"
-      },
-      {
-        "lineNumber": 18,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "                errorCommand();"
-      },
-      {
-        "lineNumber": 19,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 20,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "        } else if (split_commands[0].equals(\"delete\")){"
-      },
-      {
-        "lineNumber": 21,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "            if (split_commands[1].equals(\"dish\")) {"
-      },
-      {
-        "lineNumber": 22,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "                //delete dish"
-      },
-      {
-        "lineNumber": 23,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "                menu.deleteDish(commands[1]);"
-      },
-      {
-        "lineNumber": 24,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "            } else if (split_commands[1].equals(\"stock\")){"
-      },
-      {
-        "lineNumber": 25,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "                //delete stock"
-      },
-      {
-        "lineNumber": 26,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "                new Parser.parseCommand(commands[1]);"
-      },
-      {
-        "lineNumber": 27,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "            } else if (split_commands[1].equals(\"reservation\")){"
-      },
-      {
-        "lineNumber": 28,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "                //delete reservation"
-      },
-      {
-        "lineNumber": 29,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "                new VoidReservationCommand(commands[1]).execute(reservations);"
-      },
-      {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "            } else {"
-      },
-      {
-        "lineNumber": 31,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "                errorCommand();"
-      },
-      {
-        "lineNumber": 32,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 33,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "        } else if (split_commands[0].equals(\"list\")) {"
-      },
-      {
-        "lineNumber": 34,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "            if (split_commands[1].equals(\"dish\")) {"
-      },
-      {
-        "lineNumber": 35,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "                //list dish"
-      },
-      {
-        "lineNumber": 36,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "                menu.printDishes();"
-      },
-      {
-        "lineNumber": 37,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "            } else if (split_commands[1].equals(\"stock\")){"
-      },
-      {
-        "lineNumber": 38,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "                //list stock"
-      },
-      {
-        "lineNumber": 39,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "                new Parser.parseCommand(commands[1]);"
-      },
-      {
-        "lineNumber": 40,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "            } else if (split_commands[1].equals(\"reservation\")){"
-      },
-      {
-        "lineNumber": 41,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "                //list reservation"
-      },
-      {
-        "lineNumber": 42,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "                new ListReservationCommand().execute(reservations);"
-      },
-      {
-        "lineNumber": 43,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "            } else {"
-      },
-      {
-        "lineNumber": 44,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "                errorCommand();"
-      },
-      {
-        "lineNumber": 45,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 46,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "        } else {"
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "            errorCommand();"
-      },
-      {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 49,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "    public static void errorCommand() {"
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "        System.out.println(\"Incorrect command\");"
-      },
-      {
-        "lineNumber": 52,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 53,
-        "author": {
-          "gitId": "nguan1"
-        },
-        "content": "}"
-      }
-    ],
-    "authorContributionMap": {
-      "nguan1": 53
-    }
-  },
-  {
     "path": "src/main/java/stock/Stock.java",
     "fileType": "java",
     "lines": [
@@ -8782,6 +9222,499 @@
     }
   },
   {
+    "path": "src/main/java/utils/CommandParser.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "package utils;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "import commands.*;"
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "import dish.*;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "import menu.*;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "import report.*;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "import stock.*;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "import reservation.*;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "import java.io.IOException;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "public class CommandParser {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "    public static void parseCommand(String command,Menu menu, Stock stock, ReservationList reservations) {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "        if (command.equals(\"bye\")){"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "            try {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "                new ReportWriter(stock,reservations,menu).writeToFile();"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "            } catch (IOException e) {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "                System.out.println(\"Error writing to file\");"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "            new ExitCommand().execute();"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "        String[] commands \u003d command.split(\";\",2);"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "        String[] split_commands \u003d commands[0].split(\" \",2);"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "        if (split_commands[0].equals(\"add\")) {"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "            if (split_commands[1].equals(\"dish\")) {"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "                //Add dish"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "                menu.addDish(commands[1]);"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "            } else if (split_commands[1].equals(\"stock\")){"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "                //Add stock"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "               new AddStockCommand(commands[1]).execute(stock);"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "            } else if (split_commands[1].equals(\"reservation\")){"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "                //Add reservation"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "                new AddReservationCommand(commands[1]).execute(reservations);"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "                errorCommand();"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "        } else if (split_commands[0].equals(\"delete\")){"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "            if (split_commands[1].equals(\"dish\")) {"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "                //delete dish"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "                menu.deleteDish(commands[1]);"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "            } else if (split_commands[1].equals(\"stock\")){"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "                //delete stock"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                new DeleteStockCommand(commands[1]).execute(stock);"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "            } else if (split_commands[1].equals(\"reservation\")){"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "                //delete reservation"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "                new VoidReservationCommand(commands[1]).execute(reservations);"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "                errorCommand();"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "        } else if (split_commands[0].equals(\"list\")) {"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "            if (split_commands[1].equals(\"dish\")) {"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "                //list dish"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "                menu.printDishes();"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "            } else if (split_commands[1].equals(\"stock\")){"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "                //list stock"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "                new ListStockCommand().execute(stock);"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "            } else if (split_commands[1].equals(\"reservation\")){"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "                //list reservation"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "                new ListReservationCommand().execute(reservations);"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "                errorCommand();"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "            errorCommand();"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "    public static void errorCommand() {"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "        System.out.println(\"Incorrect command\");"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "nguan1"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "JosephLimWeiJie": 3,
+      "nguan1": 66
+    }
+  },
+  {
     "path": "src/main/java/utils/Constants.java",
     "fileType": "java",
     "lines": [
@@ -9155,1801 +10088,6 @@
     ],
     "authorContributionMap": {
       "JosephLimWeiJie": 23
-    }
-  },
-  {
-    "path": "src/main/java/utils/Parser.java",
-    "fileType": "java",
-    "lines": [
-      {
-        "lineNumber": 1,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "package utils;"
-      },
-      {
-        "lineNumber": 2,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 3,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "import java.util.HashMap;"
-      },
-      {
-        "lineNumber": 4,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "import java.util.Map;"
-      },
-      {
-        "lineNumber": 5,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "import java.util.Optional;"
-      },
-      {
-        "lineNumber": 6,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 7,
-        "author": {
-          "gitId": "gmuthu17"
-        },
-        "content": "import commands.AddCommand;"
-      },
-      {
-        "lineNumber": 8,
-        "author": {
-          "gitId": "gmuthu17"
-        },
-        "content": "import commands.Command;"
-      },
-      {
-        "lineNumber": 9,
-        "author": {
-          "gitId": "gmuthu17"
-        },
-        "content": "import commands.DeleteCommand;"
-      },
-      {
-        "lineNumber": 10,
-        "author": {
-          "gitId": "gmuthu17"
-        },
-        "content": "import commands.ListCommand;"
-      },
-      {
-        "lineNumber": 11,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 12,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "/**"
-      },
-      {
-        "lineNumber": 13,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": " * This class is used to parse user\u0027s input into readable format"
-      },
-      {
-        "lineNumber": 14,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": " * that can be constructed into commands to be executed."
-      },
-      {
-        "lineNumber": 15,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": " *"
-      },
-      {
-        "lineNumber": 16,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": " */"
-      },
-      {
-        "lineNumber": 17,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "public class Parser {"
-      },
-      {
-        "lineNumber": 18,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 19,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    /** "
-      },
-      {
-        "lineNumber": 20,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * Parses the user\u0027s input into specific command type "
-      },
-      {
-        "lineNumber": 21,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * based on the command word used. "
-      },
-      {
-        "lineNumber": 22,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * For instance: \u0027add stock; i/bacon; q/10; p/$0.50;\u0027 "
-      },
-      {
-        "lineNumber": 23,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * will be parse an AddCommand due to the word \u0027add\u0027."
-      },
-      {
-        "lineNumber": 24,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * "
-      },
-      {
-        "lineNumber": 25,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 26,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    public Command parseCommand(String fullInputLine) {"
-      },
-      {
-        "lineNumber": 27,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        Command command;"
-      },
-      {
-        "lineNumber": 28,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        String commandType \u003d parseCommandType(fullInputLine);"
-      },
-      {
-        "lineNumber": 29,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        switch (commandType) {"
-      },
-      {
-        "lineNumber": 31,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        case \"add\": "
-      },
-      {
-        "lineNumber": 32,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            command \u003d parseAddCommand(fullInputLine);         "
-      },
-      {
-        "lineNumber": 33,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            break;"
-      },
-      {
-        "lineNumber": 34,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        case \"list\":"
-      },
-      {
-        "lineNumber": 35,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            command \u003d parseListCommand(fullInputLine);"
-      },
-      {
-        "lineNumber": 36,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            break;"
-      },
-      {
-        "lineNumber": 37,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        case \"delete\":"
-      },
-      {
-        "lineNumber": 38,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            command \u003d parseDeleteCommand(fullInputLine);"
-      },
-      {
-        "lineNumber": 39,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            break;"
-      },
-      {
-        "lineNumber": 40,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        default:"
-      },
-      {
-        "lineNumber": 41,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            throw new IllegalStateException(\"Invalid command\");"
-      },
-      {
-        "lineNumber": 42,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        } "
-      },
-      {
-        "lineNumber": 43,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 44,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        return command;   "
-      },
-      {
-        "lineNumber": 45,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 46,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    /** "
-      },
-      {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * Parses the user\u0027s input into specific AddCommand  "
-      },
-      {
-        "lineNumber": 49,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * based on the category. "
-      },
-      {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * For instance: \u0027add stock; i/bacon; q/10; p/$0.50;\u0027 "
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * will be parse an AddCommand for the category \u0027stock\u0027 "
-      },
-      {
-        "lineNumber": 52,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * due to the word \u0027stock\u0027 used."
-      },
-      {
-        "lineNumber": 53,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * "
-      },
-      {
-        "lineNumber": 54,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 55,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    private Command parseAddCommand(String fullInputLine) {"
-      },
-      {
-        "lineNumber": 56,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        String category \u003d parseCategory(fullInputLine);"
-      },
-      {
-        "lineNumber": 57,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        Command command;"
-      },
-      {
-        "lineNumber": 58,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 59,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        switch (category) {"
-      },
-      {
-        "lineNumber": 60,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        case \"stock\":"
-      },
-      {
-        "lineNumber": 61,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            command \u003d new AddCommand(parseIntoAddIngredientArgs(fullInputLine));"
-      },
-      {
-        "lineNumber": 62,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            break;  "
-      },
-      {
-        "lineNumber": 63,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        default:"
-      },
-      {
-        "lineNumber": 64,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            throw new IllegalStateException(\"Invalid add command\");"
-      },
-      {
-        "lineNumber": 65,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 66,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 67,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        return command;"
-      },
-      {
-        "lineNumber": 68,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 69,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 70,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    /** "
-      },
-      {
-        "lineNumber": 71,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * Parses the user\u0027s input into specific DeleteCommand  "
-      },
-      {
-        "lineNumber": 72,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * based on the category. "
-      },
-      {
-        "lineNumber": 73,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * For instance: \u0027delete stock; i/bacon; q/10;\u0027 "
-      },
-      {
-        "lineNumber": 74,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * will be parse a DeleteCommand for the category \u0027stock\u0027 "
-      },
-      {
-        "lineNumber": 75,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * due to the word \u0027stock\u0027 used."
-      },
-      {
-        "lineNumber": 76,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * "
-      },
-      {
-        "lineNumber": 77,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 78,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    private Command parseDeleteCommand(String fullInputLine) {"
-      },
-      {
-        "lineNumber": 79,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        String category \u003d parseCategory(fullInputLine);"
-      },
-      {
-        "lineNumber": 80,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        Command command;"
-      },
-      {
-        "lineNumber": 81,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 82,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        switch (category) {"
-      },
-      {
-        "lineNumber": 83,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        case \"stock\":"
-      },
-      {
-        "lineNumber": 84,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            command \u003d new DeleteCommand(parseIntoDeleteIngredientArgs(fullInputLine));"
-      },
-      {
-        "lineNumber": 85,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            break;"
-      },
-      {
-        "lineNumber": 86,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        default:"
-      },
-      {
-        "lineNumber": 87,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            throw new IllegalStateException(\"Invalid delete command\");"
-      },
-      {
-        "lineNumber": 88,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        }      "
-      },
-      {
-        "lineNumber": 89,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 90,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        return command;"
-      },
-      {
-        "lineNumber": 91,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 92,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 93,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    /** "
-      },
-      {
-        "lineNumber": 94,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * Parses the user\u0027s input into specific ListCommand  "
-      },
-      {
-        "lineNumber": 95,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * based on the category. "
-      },
-      {
-        "lineNumber": 96,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * For instance: \u0027list stock\u0027 will be parse a ListCommand "
-      },
-      {
-        "lineNumber": 97,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * for the category \u0027stock\u0027 due to the word \u0027stock\u0027 used."
-      },
-      {
-        "lineNumber": 98,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * "
-      },
-      {
-        "lineNumber": 99,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 100,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    private Command parseListCommand(String fullInputLine) {"
-      },
-      {
-        "lineNumber": 101,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        String category \u003d parseCategory(fullInputLine);"
-      },
-      {
-        "lineNumber": 102,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        Command command;"
-      },
-      {
-        "lineNumber": 103,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 104,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        switch (category) {"
-      },
-      {
-        "lineNumber": 105,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        case \"stock\":"
-      },
-      {
-        "lineNumber": 106,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            command \u003d new ListCommand(category);"
-      },
-      {
-        "lineNumber": 107,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            break;"
-      },
-      {
-        "lineNumber": 108,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        default:"
-      },
-      {
-        "lineNumber": 109,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            throw new IllegalStateException(\"Invalid list command\");"
-      },
-      {
-        "lineNumber": 110,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        }                 "
-      },
-      {
-        "lineNumber": 111,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 112,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        return command;"
-      },
-      {
-        "lineNumber": 113,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    }    "
-      },
-      {
-        "lineNumber": 114,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 115,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    /** "
-      },
-      {
-        "lineNumber": 116,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * Extract the commandType word from the user\u0027s input."
-      },
-      {
-        "lineNumber": 117,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * For example: \u0027add stock; i/tomato; q/10; p/$0.50;\u0027 "
-      },
-      {
-        "lineNumber": 118,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * will extract the commandType of \u0027add\u0027 "
-      },
-      {
-        "lineNumber": 119,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * "
-      },
-      {
-        "lineNumber": 120,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 121,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    private String parseCommandType(String fullInputLine) {"
-      },
-      {
-        "lineNumber": 122,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        boolean hasSemiColon \u003d fullInputLine.contains(\";\");"
-      },
-      {
-        "lineNumber": 123,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        String[] wordArgs;"
-      },
-      {
-        "lineNumber": 124,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 125,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        if (hasSemiColon) {"
-      },
-      {
-        "lineNumber": 126,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            wordArgs \u003d fullInputLine.split(\"; \");"
-      },
-      {
-        "lineNumber": 127,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        } else {"
-      },
-      {
-        "lineNumber": 128,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            wordArgs \u003d fullInputLine.split(\" \");"
-      },
-      {
-        "lineNumber": 129,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 130,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 131,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        String zeroIndexWords \u003d wordArgs[0];"
-      },
-      {
-        "lineNumber": 132,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        String[] zeroIndexWordsArgs \u003d zeroIndexWords.split(\" \");"
-      },
-      {
-        "lineNumber": 133,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        String commandType \u003d zeroIndexWordsArgs[0].trim();"
-      },
-      {
-        "lineNumber": 134,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 135,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        return commandType;"
-      },
-      {
-        "lineNumber": 136,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 137,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 138,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 139,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    /** "
-      },
-      {
-        "lineNumber": 140,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * Extract the category word from the user\u0027s input."
-      },
-      {
-        "lineNumber": 141,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * For example: \u0027add stock; i/tomato; q/10; p/$0.50;\u0027 "
-      },
-      {
-        "lineNumber": 142,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * will extract the category of \u0027stock\u0027. "
-      },
-      {
-        "lineNumber": 143,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * "
-      },
-      {
-        "lineNumber": 144,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 145,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    private String parseCategory(String fullInputLine) {        "
-      },
-      {
-        "lineNumber": 146,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        boolean hasSemiColon \u003d fullInputLine.contains(\";\");"
-      },
-      {
-        "lineNumber": 147,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        String[] wordArgs;"
-      },
-      {
-        "lineNumber": 148,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        String category;"
-      },
-      {
-        "lineNumber": 149,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 150,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        if (hasSemiColon) {"
-      },
-      {
-        "lineNumber": 151,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            wordArgs \u003d fullInputLine.split(\"; \");"
-      },
-      {
-        "lineNumber": 152,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            String zeroIndexWords \u003d wordArgs[0];"
-      },
-      {
-        "lineNumber": 153,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            String[] zeroIndexWordsArgs \u003d zeroIndexWords.split(\" \");       "
-      },
-      {
-        "lineNumber": 154,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            category \u003d zeroIndexWordsArgs[1].trim();"
-      },
-      {
-        "lineNumber": 155,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        } else {"
-      },
-      {
-        "lineNumber": 156,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            wordArgs \u003d fullInputLine.split(\" \");"
-      },
-      {
-        "lineNumber": 157,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            category \u003d wordArgs[1].trim();"
-      },
-      {
-        "lineNumber": 158,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 159,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 160,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        return category;"
-      },
-      {
-        "lineNumber": 161,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 162,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 163,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    /** "
-      },
-      {
-        "lineNumber": 164,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * Parses the user\u0027s input into readable arguments that "
-      },
-      {
-        "lineNumber": 165,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * will be used to construct an Ingredient object."
-      },
-      {
-        "lineNumber": 166,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * The arguments are then stored in a HashMap."
-      },
-      {
-        "lineNumber": 167,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * For example: \u0027add stock; i/tomato; q/10; p/$0.50;\u0027 "
-      },
-      {
-        "lineNumber": 168,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * will store \u0027tomato\u0027 as the ingredient name, \u002710\u0027 as"
-      },
-      {
-        "lineNumber": 169,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * the ingredient quantity and \u0027$0.50\u0027 as the ingedient\u0027s "
-      },
-      {
-        "lineNumber": 170,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * price. Note that the constructor of an Ingredient is"
-      },
-      {
-        "lineNumber": 171,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * new Ingredient(NAME, QUANTITY, PRICE)."
-      },
-      {
-        "lineNumber": 172,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * "
-      },
-      {
-        "lineNumber": 173,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 174,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    private Map\u003cString, Pair\u003cInteger, Double\u003e\u003e parseIntoAddIngredientArgs("
-      },
-      {
-        "lineNumber": 175,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            String fullInputLine) {"
-      },
-      {
-        "lineNumber": 176,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 177,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        Map\u003cString, Pair\u003cInteger, Double\u003e\u003e ingredientInfo \u003d new HashMap\u003c\u003e();"
-      },
-      {
-        "lineNumber": 178,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        String[] wordArgs \u003d fullInputLine.split(\";\");"
-      },
-      {
-        "lineNumber": 179,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 180,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        String ingredientName \u003d parseIngredientName(wordArgs[1].trim());"
-      },
-      {
-        "lineNumber": 181,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        int quantity \u003d parseIngredientQuantity(wordArgs[2].trim());"
-      },
-      {
-        "lineNumber": 182,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        double price \u003d parseIngredientPrice(wordArgs[3].trim());"
-      },
-      {
-        "lineNumber": 183,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 184,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        ingredientInfo.put(ingredientName, Pair.of(quantity, price));"
-      },
-      {
-        "lineNumber": 185,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        return ingredientInfo;"
-      },
-      {
-        "lineNumber": 186,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 187,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 188,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 189,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * Parses the user\u0027s input into readable arguments that "
-      },
-      {
-        "lineNumber": 190,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * will be used to construct an Ingredient object."
-      },
-      {
-        "lineNumber": 191,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * The arguments are then stored in a HashMap."
-      },
-      {
-        "lineNumber": 192,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * For example: \u0027delete stock; i/tomato; q/10;\u0027 "
-      },
-      {
-        "lineNumber": 193,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * will store \u0027tomato\u0027 as the ingredient name, \u002710\u0027 as"
-      },
-      {
-        "lineNumber": 194,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * the ingredient quantity to be deleted. Note that the "
-      },
-      {
-        "lineNumber": 195,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * specification of the ingredient\u0027s quantity "
-      },
-      {
-        "lineNumber": 196,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * is optional."
-      },
-      {
-        "lineNumber": 197,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * "
-      },
-      {
-        "lineNumber": 198,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 199,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    private Map\u003cString, Optional\u003cInteger\u003e\u003e parseIntoDeleteIngredientArgs("
-      },
-      {
-        "lineNumber": 200,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            String fullInputLine) {"
-      },
-      {
-        "lineNumber": 201,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 202,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        Map\u003cString, Optional\u003cInteger\u003e\u003e ingredientInfo \u003d new HashMap\u003c\u003e();"
-      },
-      {
-        "lineNumber": 203,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        String[] wordArgs \u003d fullInputLine.split(\";\");"
-      },
-      {
-        "lineNumber": 204,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 205,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        boolean hasQuantitySpecified \u003d fullInputLine.contains(\"q/\");"
-      },
-      {
-        "lineNumber": 206,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        String ingredientName \u003d parseIngredientName(wordArgs[1].trim());"
-      },
-      {
-        "lineNumber": 207,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 208,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        if (hasQuantitySpecified) {            "
-      },
-      {
-        "lineNumber": 209,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            int quantity \u003d parseIngredientQuantity(wordArgs[2].trim());"
-      },
-      {
-        "lineNumber": 210,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            ingredientInfo.put(ingredientName, Optional.of(quantity));"
-      },
-      {
-        "lineNumber": 211,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        } else {"
-      },
-      {
-        "lineNumber": 212,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "            ingredientInfo.put(ingredientName, Optional.empty());"
-      },
-      {
-        "lineNumber": 213,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 214,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 215,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        return ingredientInfo;"
-      },
-      {
-        "lineNumber": 216,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 217,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 218,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 219,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * Extract the name of the ingredient from a string."
-      },
-      {
-        "lineNumber": 220,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * For example, \u0027i/tomato\u0027 will return \u0027tomato\u0027."
-      },
-      {
-        "lineNumber": 221,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * "
-      },
-      {
-        "lineNumber": 222,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     */ "
-      },
-      {
-        "lineNumber": 223,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    private String parseIngredientName(String ingredientNameInput) {"
-      },
-      {
-        "lineNumber": 224,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        String ingredientName \u003d ingredientNameInput.trim()"
-      },
-      {
-        "lineNumber": 225,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                .substring(2, ingredientNameInput.length());"
-      },
-      {
-        "lineNumber": 226,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 227,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        return ingredientName;"
-      },
-      {
-        "lineNumber": 228,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 229,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 230,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 231,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * Extract the quantity of the ingredient from a string."
-      },
-      {
-        "lineNumber": 232,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * For example, \u0027q/10\u0027 will return \u002710\u0027."
-      },
-      {
-        "lineNumber": 233,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * "
-      },
-      {
-        "lineNumber": 234,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     */ "
-      },
-      {
-        "lineNumber": 235,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    private int parseIngredientQuantity(String ingredientQuantityInput) {"
-      },
-      {
-        "lineNumber": 236,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        int quantity \u003d Integer.parseInt(ingredientQuantityInput.trim()"
-      },
-      {
-        "lineNumber": 237,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                .substring(2, ingredientQuantityInput.length()));"
-      },
-      {
-        "lineNumber": 238,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 239,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        return quantity;"
-      },
-      {
-        "lineNumber": 240,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 241,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 242,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 243,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * Extract the price of the ingredient from a string."
-      },
-      {
-        "lineNumber": 244,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * For example, \u0027p/$0.50\u0027 will return \u00270.5\u0027."
-      },
-      {
-        "lineNumber": 245,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * Note that the price will not strictly be in 2 decimal "
-      },
-      {
-        "lineNumber": 246,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * places. This will be handled in the AddCommand."
-      },
-      {
-        "lineNumber": 247,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     * "
-      },
-      {
-        "lineNumber": 248,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "     */ "
-      },
-      {
-        "lineNumber": 249,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    private double parseIngredientPrice(String ingredientPriceInput) {"
-      },
-      {
-        "lineNumber": 250,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        double price \u003d Double.parseDouble(ingredientPriceInput.trim()"
-      },
-      {
-        "lineNumber": 251,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "                .substring(3, ingredientPriceInput.length()));"
-      },
-      {
-        "lineNumber": 252,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        "
-      },
-      {
-        "lineNumber": 253,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "        return price;"
-      },
-      {
-        "lineNumber": 254,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 255,
-        "author": {
-          "gitId": "JosephLimWeiJie"
-        },
-        "content": "}"
-      }
-    ],
-    "authorContributionMap": {
-      "JosephLimWeiJie": 251,
-      "gmuthu17": 4
     }
   },
   {
