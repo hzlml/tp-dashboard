@@ -1371,40 +1371,40 @@
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    protected DataManager dataManager;"
+        "content": "    /**"
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "HAOYUN49"
+          "gitId": "wangqinNick"
         },
-        "content": "    private ArrayList\u003cString\u003e deadlines;"
+        "content": "     * module level"
       },
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "HAOYUN49"
+          "gitId": "wangqinNick"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    public static final String COMMAND_WORD \u003d \"lst\";"
+        "content": "    protected DataManager dataManager;"
       },
       {
         "lineNumber": 20,
         "author": {
-          "gitId": "wangqinNick"
+          "gitId": "HAOYUN49"
         },
-        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD;"
+        "content": "    private ArrayList\u003cString\u003e deadlines;"
       },
       {
         "lineNumber": 21,
         "author": {
-          "gitId": "wangqinNick"
+          "gitId": "HAOYUN49"
         },
         "content": ""
       },
@@ -1413,28 +1413,28 @@
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    @Override"
+        "content": "    public static final String COMMAND_WORD \u003d \"lst\";"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    /**"
+        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD;"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "     * module level"
+        "content": ""
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "     */"
+        "content": "    @Override"
       },
       {
         "lineNumber": 26,
@@ -2192,236 +2192,243 @@
       {
         "lineNumber": 5,
         "author": {
-          "gitId": "iceclementi"
+          "gitId": "wangqinNick"
         },
-        "content": "import seedu.nuke.module.Module;"
+        "content": "import seedu.nuke.exception.ModuleNotFoundException;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "import seedu.nuke.data.ModuleManager;"
+        "content": "import seedu.nuke.module.Module;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": ""
+        "content": "import seedu.nuke.data.ModuleManager;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "import static seedu.nuke.util.ExceptionMessage.MESSAGE_MODULE_NOT_FOUND;"
+        "content": ""
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "import static seedu.nuke.util.Message.MESSAGE_DELETE_MODULE_SUCCESS;"
+        "content": "import static seedu.nuke.util.ExceptionMessage.MESSAGE_MODULE_NOT_FOUND;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": ""
+        "content": "import static seedu.nuke.util.Message.MESSAGE_DELETE_MODULE_SUCCESS;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "public class DeleteModuleCommand extends Command {"
+        "content": ""
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "    public static final String COMMAND_WORD \u003d \"delm\";"
+        "content": "public class DeleteModuleCommand extends Command {"
       },
       {
         "lineNumber": 13,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "    public static final String COMMAND_WORD \u003d \"delm\";"
+      },
+      {
+        "lineNumber": 14,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    public static final String MESSAGE_USAGE \u003d \"delm \u003cmodule code\u003e\";"
       },
       {
-        "lineNumber": 14,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 15,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "    private String moduleCode;"
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": ""
+        "content": "    private String moduleCode;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "    public DeleteModuleCommand(String moduleCode) {"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "        this.moduleCode \u003d moduleCode.toUpperCase();"
+        "content": "    public DeleteModuleCommand(String moduleCode) {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "    }"
+        "content": "        this.moduleCode \u003d moduleCode.toUpperCase();"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     * Executes the \u003cb\u003eDelete Module Command\u003c/b\u003e to delete a \u003cb\u003eModule\u003c/b\u003e with the \u003ccode\u003emodule code\u003c/code\u003e from the"
+        "content": "    /**"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     * \u003cb\u003eModule List\u003c/b\u003e."
+        "content": "     * Executes the \u003cb\u003eDelete Module Command\u003c/b\u003e to delete a \u003cb\u003eModule\u003c/b\u003e with the \u003ccode\u003emodule code\u003c/code\u003e from the"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     *"
+        "content": "     * \u003cb\u003eModule List\u003c/b\u003e."
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     * @return The \u003cb\u003eCommand Result\u003c/b\u003e of the execution"
+        "content": "     *"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     * @see Module"
+        "content": "     * @return The \u003cb\u003eCommand Result\u003c/b\u003e of the execution"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     * @see CommandResult"
+        "content": "     * @see Module"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     */"
+        "content": "     * @see CommandResult"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "    @Override"
+        "content": "     */"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "    public CommandResult execute() {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "        try {"
+        "content": "    public CommandResult execute() {"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "            Module deletedModule \u003d ModuleManager.delete(moduleCode);"
+        "content": "        try {"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "            return new CommandResult(MESSAGE_DELETE_MODULE_SUCCESS(deletedModule.getModuleCode(), deletedModule.getTitle()));"
+        "content": "            Module deletedModule \u003d ModuleManager.delete(moduleCode);"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "        } catch (ModuleManager.ModuleNotFoundException e) {"
+        "content": "            return new CommandResult(MESSAGE_DELETE_MODULE_SUCCESS(deletedModule.getModuleCode(), deletedModule.getTitle()));"
       },
       {
         "lineNumber": 35,
         "author": {
-          "gitId": "iceclementi"
+          "gitId": "wangqinNick"
         },
-        "content": "            return new CommandResult(MESSAGE_MODULE_NOT_FOUND);"
+        "content": "        } catch (ModuleNotFoundException e) {"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "        }"
+        "content": "            return new CommandResult(MESSAGE_MODULE_NOT_FOUND);"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 38,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 39,
         "author": {
           "gitId": "iceclementi"
         },
@@ -2429,8 +2436,8 @@
       }
     ],
     "authorContributionMap": {
-      "wangqinNick": 1,
-      "iceclementi": 37
+      "wangqinNick": 3,
+      "iceclementi": 36
     }
   },
   {
