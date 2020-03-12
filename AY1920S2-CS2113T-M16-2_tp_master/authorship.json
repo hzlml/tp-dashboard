@@ -994,682 +994,6 @@
     }
   },
   {
-    "path": "src/main/java/seedu/kitchenhelper/command/AddCommand.java",
-    "fileType": "java",
-    "lines": [
-      {
-        "lineNumber": 1,
-        "author": {
-          "gitId": "jinfayap"
-        },
-        "content": "package seedu.kitchenhelper.command;"
-      },
-      {
-        "lineNumber": 2,
-        "author": {
-          "gitId": "jinfayap"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 3,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "import seedu.kitchenhelper.exception.KitchenHelperException;"
-      },
-      {
-        "lineNumber": 4,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "import seedu.kitchenhelper.object.Chore;"
-      },
-      {
-        "lineNumber": 5,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "import seedu.kitchenhelper.object.Recipe;"
-      },
-      {
-        "lineNumber": 6,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "import seedu.kitchenhelper.object.ingredient.Ingredient;"
-      },
-      {
-        "lineNumber": 7,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 8,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "import java.util.ArrayList;"
-      },
-      {
-        "lineNumber": 9,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "import java.util.HashMap;"
-      },
-      {
-        "lineNumber": 10,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 11,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "/**"
-      },
-      {
-        "lineNumber": 12,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": " * Perform addition-related commands."
-      },
-      {
-        "lineNumber": 13,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": " */"
-      },
-      {
-        "lineNumber": 14,
-        "author": {
-          "gitId": "jinfayap"
-        },
-        "content": "public class AddCommand extends Command {"
-      },
-      {
-        "lineNumber": 15,
-        "author": {
-          "gitId": "jinfayap"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 16,
-        "author": {
-          "gitId": "jinfayap"
-        },
-        "content": "    public static final String COMMAND_WORD \u003d \"add\";"
-      },
-      {
-        "lineNumber": 17,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "    public HashMap\u003cString[], Integer\u003e parsedIngr;"
-      },
-      {
-        "lineNumber": 18,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 19,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 20,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "     * Set the object\u0027s type."
-      },
-      {
-        "lineNumber": 21,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "     *"
-      },
-      {
-        "lineNumber": 22,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "     * @param object full user input string excluding the action word."
-      },
-      {
-        "lineNumber": 23,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 24,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "    public void setTypeOfObject(String object) {"
-      },
-      {
-        "lineNumber": 25,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        String[] attributes \u003d object.split(\"\\\\s+\");"
-      },
-      {
-        "lineNumber": 26,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        if (attributes[0].equalsIgnoreCase(\"recipe\")) {"
-      },
-      {
-        "lineNumber": 27,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "            objectType \u003d \"recipe\";"
-      },
-      {
-        "lineNumber": 28,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        } else if (attributes[0].equalsIgnoreCase(\"ingredient\")) {"
-      },
-      {
-        "lineNumber": 29,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "            objectType \u003d \"ingredient\";"
-      },
-      {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        } else if (attributes[0].equalsIgnoreCase(\"chore\")) {"
-      },
-      {
-        "lineNumber": 31,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "            objectType \u003d \"chore\";"
-      },
-      {
-        "lineNumber": 32,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 33,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 34,
-        "author": {
-          "gitId": "jinfayap"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 35,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 36,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "     * Set the attributes of the Command class."
-      },
-      {
-        "lineNumber": 37,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "     *"
-      },
-      {
-        "lineNumber": 38,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "     * @param rawString full user input string."
-      },
-      {
-        "lineNumber": 39,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "     * @param ingrAndQty a hashmap of ingredient with [ingredientName, ingredientCategory] as key"
-      },
-      {
-        "lineNumber": 40,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "     *                   and ingredientQuantity as value"
-      },
-      {
-        "lineNumber": 41,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 42,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "    public void setAttributesOfCmd(String rawString, HashMap\u003cString[], Integer\u003e ingrAndQty) {"
-      },
-      {
-        "lineNumber": 43,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        setTypeOfObject(rawString);"
-      },
-      {
-        "lineNumber": 44,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        setObjectVariables(rawString);"
-      },
-      {
-        "lineNumber": 45,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        setAction();"
-      },
-      {
-        "lineNumber": 46,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        this.parsedIngr \u003d ingrAndQty;"
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "jinfayap"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 49,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "    public void setObjectVariables(String rawString) {"
-      },
-      {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        objectVariables \u003d rawString;"
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "jinfayap"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 52,
-        "author": {
-          "gitId": "jinfayap"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 53,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "    public void setAction() {"
-      },
-      {
-        "lineNumber": 54,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        actionType \u003d COMMAND_WORD;"
-      },
-      {
-        "lineNumber": 55,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 56,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 57,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "    public void addIngredients(String attributes) {"
-      },
-      {
-        "lineNumber": 58,
-        "author": {
-          "gitId": "jinfayap"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 59,
-        "author": {
-          "gitId": "jinfayap"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 60,
-        "author": {
-          "gitId": "jinfayap"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 61,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "    @Override"
-      },
-      {
-        "lineNumber": 62,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "    public String addRecipe(String attributes, ArrayList\u003cRecipe\u003e recipeList) throws KitchenHelperException {"
-      },
-      {
-        "lineNumber": 63,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        Recipe freshRecipe \u003d new Recipe();"
-      },
-      {
-        "lineNumber": 64,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        freshRecipe.setRecipeName(attributes);"
-      },
-      {
-        "lineNumber": 65,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        freshRecipe.addIngredientsToRecipe(parsedIngr);"
-      },
-      {
-        "lineNumber": 66,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        recipeList.add(freshRecipe);"
-      },
-      {
-        "lineNumber": 67,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        return freshRecipe.recipeName + \" Recipe has been created with \""
-      },
-      {
-        "lineNumber": 68,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "                + freshRecipe.recipeIngrQty + \" ingredients inside.\";"
-      },
-      {
-        "lineNumber": 69,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 70,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 71,
-        "author": {
-          "gitId": "cheongisabella"
-        },
-        "content": "    @Override"
-      },
-      {
-        "lineNumber": 72,
-        "author": {
-          "gitId": "cheongisabella"
-        },
-        "content": "    public String addChore(String objectVariables, ArrayList\u003cChore\u003e choreList) {"
-      },
-      {
-        "lineNumber": 73,
-        "author": {
-          "gitId": "cheongisabella"
-        },
-        "content": "        String feedbackToUser;"
-      },
-      {
-        "lineNumber": 74,
-        "author": {
-          "gitId": "cheongisabella"
-        },
-        "content": "        try {"
-      },
-      {
-        "lineNumber": 75,
-        "author": {
-          "gitId": "cheongisabella"
-        },
-        "content": "            String[] objectTypeAndOthers \u003d objectVariables.split(\"chore \", 2);"
-      },
-      {
-        "lineNumber": 76,
-        "author": {
-          "gitId": "cheongisabella"
-        },
-        "content": "            String[] descriptionAndDate \u003d objectTypeAndOthers[1].trim().split(\"/by\");"
-      },
-      {
-        "lineNumber": 77,
-        "author": {
-          "gitId": "cheongisabella"
-        },
-        "content": "            String description \u003d descriptionAndDate[0].trim();"
-      },
-      {
-        "lineNumber": 78,
-        "author": {
-          "gitId": "cheongisabella"
-        },
-        "content": "            String date \u003d descriptionAndDate[1].trim();"
-      },
-      {
-        "lineNumber": 79,
-        "author": {
-          "gitId": "cheongisabella"
-        },
-        "content": "            Chore newChore \u003d new Chore(description, date);"
-      },
-      {
-        "lineNumber": 80,
-        "author": {
-          "gitId": "cheongisabella"
-        },
-        "content": "            choreList.add(newChore);"
-      },
-      {
-        "lineNumber": 81,
-        "author": {
-          "gitId": "cheongisabella"
-        },
-        "content": "            newChore.setEditType(COMMAND_WORD);"
-      },
-      {
-        "lineNumber": 82,
-        "author": {
-          "gitId": "cheongisabella"
-        },
-        "content": "            feedbackToUser \u003d String.format(Chore.MESSAGE_SUCCESS,"
-      },
-      {
-        "lineNumber": 83,
-        "author": {
-          "gitId": "cheongisabella"
-        },
-        "content": "                    newChore.editType, newChore, choreList.size(), newChore.checkSingular(choreList));"
-      },
-      {
-        "lineNumber": 84,
-        "author": {
-          "gitId": "cheongisabella"
-        },
-        "content": "        } catch (IndexOutOfBoundsException e) {"
-      },
-      {
-        "lineNumber": 85,
-        "author": {
-          "gitId": "cheongisabella"
-        },
-        "content": "            feedbackToUser \u003d \"You need to add a date with \\\"/by\\\" in the description.\";"
-      },
-      {
-        "lineNumber": 86,
-        "author": {
-          "gitId": "cheongisabella"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 87,
-        "author": {
-          "gitId": "cheongisabella"
-        },
-        "content": "        return feedbackToUser;"
-      },
-      {
-        "lineNumber": 88,
-        "author": {
-          "gitId": "jinfayap"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 89,
-        "author": {
-          "gitId": "jinfayap"
-        },
-        "content": "    "
-      },
-      {
-        "lineNumber": 90,
-        "author": {
-          "gitId": "jinfayap"
-        },
-        "content": "    @Override"
-      },
-      {
-        "lineNumber": 91,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "    public CommandResult execute(ArrayList\u003cIngredient\u003e ingredientList, ArrayList\u003cRecipe\u003e recipeList,"
-      },
-      {
-        "lineNumber": 92,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "                                 ArrayList\u003cChore\u003e choreList) throws KitchenHelperException {"
-      },
-      {
-        "lineNumber": 93,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        return super.execute(ingredientList, recipeList, choreList);"
-      },
-      {
-        "lineNumber": 94,
-        "author": {
-          "gitId": "jinfayap"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 95,
-        "author": {
-          "gitId": "jinfayap"
-        },
-        "content": "}"
-      }
-    ],
-    "authorContributionMap": {
-      "jinfayap": 17,
-      "cheongisabella": 17,
-      "alwayshuizhen": 61
-    }
-  },
-  {
     "path": "src/main/java/seedu/kitchenhelper/command/AddInventoryCommand.java",
     "fileType": "java",
     "lines": [
@@ -2408,6 +1732,598 @@
     }
   },
   {
+    "path": "src/main/java/seedu/kitchenhelper/command/AddRecipeCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "package seedu.kitchenhelper.command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "import seedu.kitchenhelper.exception.KitchenHelperException;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "import seedu.kitchenhelper.object.Chore;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "import seedu.kitchenhelper.object.Recipe;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "import seedu.kitchenhelper.object.ingredient.Ingredient;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "import java.util.HashMap;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": " * Perform addition-related commands."
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "public class AddRecipeCommand extends Command {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "    public static final String COMMAND_WORD \u003d \"addrecipe\";"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "    public HashMap\u003cString[], Integer\u003e parsedIngr;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "     * Set the object\u0027s type."
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "    public void setTypeOfObject() {"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        objectType \u003d \"recipe\";"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "     * Set the attributes of the Command class."
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "     * @param rawString full user input string."
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "     * @param ingrAndQty a hashmap of ingredient with [ingredientName, ingredientCategory] as key"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "     *                   and ingredientQuantity as value"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "    public void setAttributesOfCmd(String rawString, HashMap\u003cString[], Integer\u003e ingrAndQty) {"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        setTypeOfObject();"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        setObjectVariables(rawString);"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        setAction();"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        this.parsedIngr \u003d ingrAndQty;"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "    public void setObjectVariables(String rawString) {"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        objectVariables \u003d rawString;"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "    public void setAction() {"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        actionType \u003d COMMAND_WORD;"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "    public String addRecipe(String attributes, ArrayList\u003cRecipe\u003e recipeList) {"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        Recipe freshRecipe \u003d new Recipe();"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        freshRecipe.setRecipeName(attributes);"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        freshRecipe.addIngredientsToRecipe(parsedIngr);"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        recipeList.add(freshRecipe);"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        return freshRecipe.recipeName + \" Recipe has been created with \""
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "                + freshRecipe.recipeIngrQty + \" ingredients inside.\";"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "cheongisabella"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "cheongisabella"
+        },
+        "content": "    public String addChore(String objectVariables, ArrayList\u003cChore\u003e choreList) {"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "cheongisabella"
+        },
+        "content": "        String feedbackToUser;"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "cheongisabella"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "cheongisabella"
+        },
+        "content": "            String[] objectTypeAndOthers \u003d objectVariables.split(\"chore \", 2);"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "cheongisabella"
+        },
+        "content": "            String[] descriptionAndDate \u003d objectTypeAndOthers[1].trim().split(\"/by\");"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "cheongisabella"
+        },
+        "content": "            String description \u003d descriptionAndDate[0].trim();"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "cheongisabella"
+        },
+        "content": "            String date \u003d descriptionAndDate[1].trim();"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "cheongisabella"
+        },
+        "content": "            Chore newChore \u003d new Chore(description, date);"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "cheongisabella"
+        },
+        "content": "            choreList.add(newChore);"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "cheongisabella"
+        },
+        "content": "            newChore.setEditType(COMMAND_WORD);"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "cheongisabella"
+        },
+        "content": "            feedbackToUser \u003d String.format(Chore.MESSAGE_SUCCESS,"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "cheongisabella"
+        },
+        "content": "                    newChore.editType, newChore, choreList.size(), newChore.checkSingular(choreList));"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "cheongisabella"
+        },
+        "content": "        } catch (IndexOutOfBoundsException e) {"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "cheongisabella"
+        },
+        "content": "            feedbackToUser \u003d \"You need to add a date with \\\"/by\\\" in the description.\";"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "cheongisabella"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "cheongisabella"
+        },
+        "content": "        return feedbackToUser;"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "    public CommandResult execute(ArrayList\u003cIngredient\u003e ingredientList, ArrayList\u003cRecipe\u003e recipeList,"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "                                 ArrayList\u003cChore\u003e choreList) throws KitchenHelperException {"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        String message \u003d addRecipe(this.objectVariables,recipeList);"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        return new CommandResult(message);"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "jinfayap"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "jinfayap": 12,
+      "cheongisabella": 17,
+      "alwayshuizhen": 54
+    }
+  },
+  {
     "path": "src/main/java/seedu/kitchenhelper/command/Command.java",
     "fileType": "java",
     "lines": [
@@ -2932,208 +2848,145 @@
       {
         "lineNumber": 75,
         "author": {
-          "gitId": "JensonWee"
+          "gitId": "alwayshuizhen"
         },
-        "content": ""
+        "content": "    public CommandResult execute(ArrayList\u003cIngredient\u003e ingredientList, ArrayList\u003cRecipe\u003e recipeList,"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "alwayshuizhen"
         },
-        "content": "    public CommandResult execute(ArrayList\u003cIngredient\u003e ingredientList, ArrayList\u003cRecipe\u003e recipeList,"
+        "content": "                                 ArrayList\u003cChore\u003e choreList) throws KitchenHelperException {"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "alwayshuizhen"
         },
-        "content": "                                 ArrayList\u003cChore\u003e choreList) throws KitchenHelperException {"
+        "content": "        String feedbackToUser \u003d \"\";"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "alwayshuizhen"
         },
-        "content": "        //throw new UnsupportedOperationException();"
+        "content": "        if (actionType.equals(DeleteCommand.COMMAND_WORD) \u0026\u0026 objectType.equals(\"recipe\")) {"
       },
       {
         "lineNumber": 79,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        String feedbackToUser \u003d \"\";"
-      },
-      {
-        "lineNumber": 80,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        if (actionType.equals(AddCommand.COMMAND_WORD) \u0026\u0026 objectType.equals(\"recipe\")) {"
-      },
-      {
-        "lineNumber": 81,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "            feedbackToUser \u003d addRecipe(objectVariables, recipeList);"
-      },
-      {
-        "lineNumber": 82,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        } else if (actionType.equals(AddCommand.COMMAND_WORD) \u0026\u0026 objectType.equals(\"ingredient\")) {"
-      },
-      {
-        "lineNumber": 83,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "            // change here for your part!"
-      },
-      {
-        "lineNumber": 84,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "            System.out.println(\"hello add ingr\");"
-      },
-      {
-        "lineNumber": 85,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        } else if (actionType.equals(AddCommand.COMMAND_WORD) \u0026\u0026 objectType.equals(\"chore\")) {"
-      },
-      {
-        "lineNumber": 86,
-        "author": {
-          "gitId": "cheongisabella"
-        },
-        "content": "            feedbackToUser \u003d addChore(objectVariables, choreList);"
-      },
-      {
-        "lineNumber": 87,
-        "author": {
-          "gitId": "yantingsanity"
-        },
-        "content": "        } else if (actionType.equals(DeleteCommand.COMMAND_WORD) \u0026\u0026 objectType.equals(\"recipe\")) {"
-      },
-      {
-        "lineNumber": 88,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "            feedbackToUser \u003d deleteRecipe(objectVariables, recipeList);"
       },
       {
-        "lineNumber": 89,
+        "lineNumber": 80,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "        } else if (actionType.equals(DeleteCommand.COMMAND_WORD) \u0026\u0026 objectType.equals(\"ingredient\")) {"
       },
       {
-        "lineNumber": 90,
+        "lineNumber": 81,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "            feedbackToUser \u003d deleteIngredient(objectVariables, ingredientList);"
       },
       {
-        "lineNumber": 91,
+        "lineNumber": 82,
         "author": {
           "gitId": "cheongisabella"
         },
         "content": "        } else if (actionType.equals(DeleteCommand.COMMAND_WORD) \u0026\u0026 objectType.equals(\"chore\")) {"
       },
       {
-        "lineNumber": 92,
+        "lineNumber": 83,
         "author": {
           "gitId": "cheongisabella"
         },
         "content": "            feedbackToUser \u003d deleteChore(objectVariables, choreList);"
       },
       {
-        "lineNumber": 93,
+        "lineNumber": 84,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "        } else if (actionType.equals(ListCommand.COMMAND_WORD) \u0026\u0026 objectType.equals(\"ingredient\")) {"
       },
       {
-        "lineNumber": 94,
+        "lineNumber": 85,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "            feedbackToUser \u003d listIngredients(ingredientList);"
       },
       {
-        "lineNumber": 95,
+        "lineNumber": 86,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "        } else if (actionType.equals(ListCommand.COMMAND_WORD) \u0026\u0026 objectType.equals(\"recipe\")) {"
       },
       {
-        "lineNumber": 96,
+        "lineNumber": 87,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "            feedbackToUser \u003d listRecipe(objectVariables, recipeList);"
       },
       {
-        "lineNumber": 97,
+        "lineNumber": 88,
         "author": {
           "gitId": "cheongisabella"
         },
         "content": "        } else if (actionType.equals(ListCommand.COMMAND_WORD) \u0026\u0026 objectType.equals(\"chore\")) {"
       },
       {
-        "lineNumber": 98,
+        "lineNumber": 89,
         "author": {
           "gitId": "cheongisabella"
         },
         "content": "            feedbackToUser \u003d listChore(choreList);"
       },
       {
-        "lineNumber": 99,
+        "lineNumber": 90,
         "author": {
           "gitId": "alwayshuizhen"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 100,
+        "lineNumber": 91,
         "author": {
           "gitId": "alwayshuizhen"
         },
         "content": "        CommandResult cmdResult \u003d new CommandResult(feedbackToUser);"
       },
       {
-        "lineNumber": 101,
+        "lineNumber": 92,
         "author": {
           "gitId": "alwayshuizhen"
         },
         "content": "        return cmdResult;"
       },
       {
-        "lineNumber": 102,
+        "lineNumber": 93,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 103,
+        "lineNumber": 94,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": ""
       },
       {
-        "lineNumber": 104,
+        "lineNumber": 95,
         "author": {
           "gitId": "jinfayap"
         },
@@ -3141,11 +2994,11 @@
       }
     ],
     "authorContributionMap": {
-      "yantingsanity": 14,
+      "yantingsanity": 13,
       "jinfayap": 12,
-      "cheongisabella": 19,
-      "alwayshuizhen": 37,
-      "JensonWee": 22
+      "cheongisabella": 18,
+      "alwayshuizhen": 31,
+      "JensonWee": 21
     }
   },
   {
@@ -6617,19 +6470,26 @@
       {
         "lineNumber": 79,
         "author": {
-          "gitId": "JensonWee"
+          "gitId": "alwayshuizhen"
         },
-        "content": "        return this.recipeItems;"
+        "content": "        System.out.println(recipeItems.size());"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "JensonWee"
         },
-        "content": "    }"
+        "content": "        return this.recipeItems;"
       },
       {
         "lineNumber": 81,
+        "author": {
+          "gitId": "JensonWee"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 82,
         "author": {
           "gitId": "jinfayap"
         },
@@ -6639,7 +6499,7 @@
     "authorContributionMap": {
       "yantingsanity": 4,
       "jinfayap": 5,
-      "alwayshuizhen": 68,
+      "alwayshuizhen": 69,
       "JensonWee": 4
     }
   },
@@ -7900,9 +7760,9 @@
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "yantingsanity"
+          "gitId": "alwayshuizhen"
         },
-        "content": "import seedu.kitchenhelper.command.AddCommand;"
+        "content": "import seedu.kitchenhelper.command.AddRecipeCommand;"
       },
       {
         "lineNumber": 4,
@@ -8117,301 +7977,301 @@
       {
         "lineNumber": 34,
         "author": {
-          "gitId": "jinfayap"
+          "gitId": "alwayshuizhen"
         },
-        "content": "        case AddCommand.COMMAND_WORD:"
+        "content": "        case AddRecipeCommand.COMMAND_WORD:"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "alwayshuizhen"
         },
-        "content": "            AddCommand addCmd \u003d new AddCommand();"
+        "content": "            return prepareAddRecipe(parameters);"
       },
       {
         "lineNumber": 36,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "            HashMap\u003cString[], Integer\u003e ingrAndQty \u003d prepareAddRecipe(parameters);"
-      },
-      {
-        "lineNumber": 37,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "            addCmd.setAttributesOfCmd(parameters, ingrAndQty);"
-      },
-      {
-        "lineNumber": 38,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "            return addCmd;"
-      },
-      {
-        "lineNumber": 39,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "        case AddInventoryCommand.COMMAND_WORD:"
       },
       {
-        "lineNumber": 40,
+        "lineNumber": 37,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "            return prepareAddInventory(parameters);"
       },
       {
-        "lineNumber": 41,
+        "lineNumber": 38,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "        case ListCommand.COMMAND_WORD:"
       },
       {
-        "lineNumber": 42,
+        "lineNumber": 39,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "            ListCommand listCmd \u003d new ListCommand();"
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 40,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "            HashMap\u003cString, String\u003e listParams \u003d prepareListParams(parameters);"
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 41,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "            listCmd.setListParams(listParams);"
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 42,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "            return listCmd;"
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 43,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "        case DeleteCommand.COMMAND_WORD:"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 44,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "            DeleteCommand deleteCmd \u003d new DeleteCommand();"
       },
       {
-        "lineNumber": 48,
+        "lineNumber": 45,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "            HashMap\u003cString, String\u003e deleteParams \u003d prepareDeleteParams(parameters);"
       },
       {
-        "lineNumber": 49,
+        "lineNumber": 46,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "            deleteCmd.setDeleteParams(deleteParams);"
       },
       {
-        "lineNumber": 50,
+        "lineNumber": 47,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "            return deleteCmd;"
       },
       {
-        "lineNumber": 51,
+        "lineNumber": 48,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "        case HelpCommand.COMMAND_WORD:"
       },
       {
-        "lineNumber": 52,
+        "lineNumber": 49,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "            return new HelpCommand();"
       },
       {
-        "lineNumber": 53,
+        "lineNumber": 50,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "        case ExitCommand.COMMAND_WORD:"
       },
       {
-        "lineNumber": 54,
+        "lineNumber": 51,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "            return new ExitCommand();"
       },
       {
-        "lineNumber": 55,
+        "lineNumber": 52,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "        default:"
       },
       {
-        "lineNumber": 56,
+        "lineNumber": 53,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "            return new InvalidCommand();"
       },
       {
-        "lineNumber": 57,
+        "lineNumber": 54,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 58,
+        "lineNumber": 55,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 59,
+        "lineNumber": 56,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "    "
       },
       {
-        "lineNumber": 60,
+        "lineNumber": 57,
         "author": {
           "gitId": "alwayshuizhen"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 61,
+        "lineNumber": 58,
         "author": {
           "gitId": "alwayshuizhen"
         },
         "content": "     * Prepares the addition of ingredients into recipe."
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 59,
         "author": {
           "gitId": "alwayshuizhen"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 63,
+        "lineNumber": 60,
         "author": {
           "gitId": "alwayshuizhen"
         },
         "content": "     * @param attributes full user input string."
       },
       {
-        "lineNumber": 64,
+        "lineNumber": 61,
         "author": {
           "gitId": "alwayshuizhen"
         },
         "content": "     * @return hashmap of a formatted list of ingredients."
       },
       {
-        "lineNumber": 65,
+        "lineNumber": 62,
         "author": {
           "gitId": "alwayshuizhen"
         },
         "content": "     * @throws KitchenHelperException if the command is invalid"
       },
       {
-        "lineNumber": 66,
+        "lineNumber": 63,
         "author": {
           "gitId": "alwayshuizhen"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 67,
+        "lineNumber": 64,
         "author": {
           "gitId": "alwayshuizhen"
         },
-        "content": "    public HashMap\u003cString[], Integer\u003e prepareAddRecipe(String attributes) throws KitchenHelperException {"
+        "content": "    public Command prepareAddRecipe(String attributes) throws KitchenHelperException {"
       },
       {
-        "lineNumber": 68,
+        "lineNumber": 65,
         "author": {
           "gitId": "alwayshuizhen"
         },
         "content": "        HashMap\u003cString[], Integer\u003e ingrAndQty \u003d new HashMap\u003c\u003e();"
       },
       {
-        "lineNumber": 69,
+        "lineNumber": 66,
         "author": {
           "gitId": "alwayshuizhen"
         },
         "content": "        String ingredientList;"
       },
       {
-        "lineNumber": 70,
+        "lineNumber": 67,
         "author": {
           "gitId": "alwayshuizhen"
         },
         "content": "        try {"
       },
       {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "            ingredientList \u003d attributes.substring(attributes.indexOf(\"/i\") + 3);"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "            String[] splitedIngr \u003d ingredientList.split(\"[,][\\\\s]\");"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "            for (String item : splitedIngr) {"
+      },
+      {
         "lineNumber": 71,
         "author": {
-          "gitId": "cheongisabella"
+          "gitId": "alwayshuizhen"
         },
-        "content": "            if (attributes.indexOf(\"/i\") \u003d\u003d -1) {"
+        "content": "                String[] ingrContent \u003d item.split(\":\");"
       },
       {
         "lineNumber": 72,
         "author": {
-          "gitId": "cheongisabella"
+          "gitId": "alwayshuizhen"
         },
-        "content": "                String[] splitAttributes \u003d attributes.split(\" \", 2);"
+        "content": "                String[] nameAndType \u003d new String[2];"
       },
       {
         "lineNumber": 73,
         "author": {
-          "gitId": "cheongisabella"
+          "gitId": "alwayshuizhen"
         },
-        "content": "                if (splitAttributes[0].equalsIgnoreCase(\"chore\")) {"
+        "content": "                nameAndType[0] \u003d ingrContent[0];"
       },
       {
         "lineNumber": 74,
         "author": {
-          "gitId": "cheongisabella"
+          "gitId": "alwayshuizhen"
         },
-        "content": "                    return ingrAndQty;"
+        "content": "                nameAndType[1] \u003d ingrContent[2];"
       },
       {
         "lineNumber": 75,
         "author": {
-          "gitId": "cheongisabella"
+          "gitId": "alwayshuizhen"
         },
-        "content": "                }"
+        "content": "                ingrAndQty.put(nameAndType, Integer.parseInt(ingrContent[1]));"
       },
       {
         "lineNumber": 76,
         "author": {
-          "gitId": "cheongisabella"
+          "gitId": "alwayshuizhen"
         },
         "content": "            }"
       },
@@ -8420,1032 +8280,990 @@
         "author": {
           "gitId": "alwayshuizhen"
         },
-        "content": "            ingredientList \u003d attributes.substring(attributes.indexOf(\"/i\") + 3);"
+        "content": "        } catch (IndexOutOfBoundsException e) {"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "alwayshuizhen"
         },
-        "content": "            String[] splitedIngr \u003d ingredientList.split(\"[,][\\\\s]\");"
+        "content": "            throw new KitchenHelperException(\"Invalid Command\");"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "alwayshuizhen"
         },
-        "content": "            for (String item : splitedIngr) {"
+        "content": "        }"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "alwayshuizhen"
         },
-        "content": "                String[] ingrContent \u003d item.split(\":\");"
+        "content": "        AddRecipeCommand addCmd \u003d new AddRecipeCommand();"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "alwayshuizhen"
         },
-        "content": "                String[] nameAndType \u003d new String[2];"
+        "content": "        addCmd.setAttributesOfCmd(attributes, ingrAndQty);"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "alwayshuizhen"
         },
-        "content": "                nameAndType[0] \u003d ingrContent[0];"
+        "content": ""
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "alwayshuizhen"
         },
-        "content": "                nameAndType[1] \u003d ingrContent[2];"
+        "content": "        return addCmd;"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "alwayshuizhen"
         },
-        "content": "                ingrAndQty.put(nameAndType, Integer.parseInt(ingrContent[1]));"
+        "content": "    }"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "alwayshuizhen"
         },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 86,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        } catch (IndexOutOfBoundsException e) {"
-      },
-      {
-        "lineNumber": 87,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "            throw new KitchenHelperException(\"Invalid Command\");"
-      },
-      {
-        "lineNumber": 88,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 89,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "        return ingrAndQty;"
-      },
-      {
-        "lineNumber": 90,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 91,
-        "author": {
-          "gitId": "alwayshuizhen"
-        },
         "content": "    "
       },
       {
-        "lineNumber": 92,
+        "lineNumber": 86,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 93,
+        "lineNumber": 87,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "     * Prepares the addition of ingredient into inventory."
       },
       {
-        "lineNumber": 94,
+        "lineNumber": 88,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 95,
+        "lineNumber": 89,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "     * @param attributes full user input string."
       },
       {
-        "lineNumber": 96,
+        "lineNumber": 90,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "     * @return the prepared command."
       },
       {
-        "lineNumber": 97,
+        "lineNumber": 91,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 98,
+        "lineNumber": 92,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "    public Command prepareAddInventory(String attributes) {"
       },
       {
-        "lineNumber": 99,
+        "lineNumber": 93,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "        try {"
       },
       {
-        "lineNumber": 100,
+        "lineNumber": 94,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "            // Regex for checking the format of add inventory"
       },
       {
-        "lineNumber": 101,
+        "lineNumber": 95,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "            String addInventoryRegex \u003d"
       },
       {
-        "lineNumber": 102,
+        "lineNumber": 96,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "                    \"/n [a-zA-Z]+( [a-zA-Z]+)* /c [a-zA-Z]+ /q [0-9]+ /p \\\\d+(\\\\.\\\\d{1,2})? /e \\\\d{4}-\\\\d{2}-\\\\d{2}\";"
       },
       {
-        "lineNumber": 103,
+        "lineNumber": 97,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "            if (!isValidUserInputFormat(attributes, addInventoryRegex)) {"
       },
       {
-        "lineNumber": 104,
+        "lineNumber": 98,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "                throw new KitchenHelperException(\"Invalid Add Inventory Format\");"
       },
       {
-        "lineNumber": 105,
+        "lineNumber": 99,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 106,
+        "lineNumber": 100,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "            String[] nameAndOthers \u003d attributes.split(\"/c\\\\s\", 2);"
       },
       {
-        "lineNumber": 107,
+        "lineNumber": 101,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "            String itemName \u003d nameAndOthers[0].split(\"/n\\\\s+\")[1].trim();"
       },
       {
-        "lineNumber": 108,
+        "lineNumber": 102,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "            String[] categoryAndOthers \u003d nameAndOthers[1].split(\"\\\\s+/q\\\\s+\");"
       },
       {
-        "lineNumber": 109,
+        "lineNumber": 103,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "            String category \u003d categoryAndOthers[0].trim();"
       },
       {
-        "lineNumber": 110,
+        "lineNumber": 104,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "            String[] quantityAndOthers \u003d categoryAndOthers[1].split(\"\\\\s+/p\\\\s+\");"
       },
       {
-        "lineNumber": 111,
+        "lineNumber": 105,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "            int quantity \u003d Integer.parseInt(quantityAndOthers[0]);"
       },
       {
-        "lineNumber": 112,
+        "lineNumber": 106,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "            String[] priceAndExpiry \u003d quantityAndOthers[1].split(\"\\\\s+/e\\\\s+\");"
       },
       {
-        "lineNumber": 113,
+        "lineNumber": 107,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "            double price \u003d Double.parseDouble(priceAndExpiry[0]);"
       },
       {
-        "lineNumber": 114,
+        "lineNumber": 108,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "            String expiry \u003d priceAndExpiry[1];"
       },
       {
-        "lineNumber": 115,
+        "lineNumber": 109,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "            "
       },
       {
-        "lineNumber": 116,
+        "lineNumber": 110,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "            return new AddInventoryCommand(itemName, category, quantity, price, expiry);"
       },
       {
-        "lineNumber": 117,
+        "lineNumber": 111,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "        } catch (KitchenHelperException khe) {"
       },
       {
-        "lineNumber": 118,
+        "lineNumber": 112,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "            return new InvalidCommand("
       },
       {
-        "lineNumber": 119,
+        "lineNumber": 113,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "                    String.format(\"%s\\n%s\", InvalidCommand.MESSAGE_INVALID, AddInventoryCommand.COMMAND_FORMAT));"
       },
       {
-        "lineNumber": 120,
+        "lineNumber": 114,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 121,
+        "lineNumber": 115,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 122,
+        "lineNumber": 116,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "  "
       },
       {
-        "lineNumber": 123,
+        "lineNumber": 117,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 124,
+        "lineNumber": 118,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "     * Prepares the parameters needed for the list function."
       },
       {
-        "lineNumber": 125,
+        "lineNumber": 119,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 126,
+        "lineNumber": 120,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "     * @param attributes full user input string."
       },
       {
-        "lineNumber": 127,
+        "lineNumber": 121,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "     * @return the prepared command."
       },
       {
-        "lineNumber": 128,
+        "lineNumber": 122,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 129,
+        "lineNumber": 123,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "    private HashMap\u003cString, String\u003e prepareListParams(String attributes) throws KitchenHelperException {"
       },
       {
-        "lineNumber": 130,
+        "lineNumber": 124,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "        HashMap\u003cString, String\u003e listParam \u003d new HashMap\u003c\u003e();"
       },
       {
-        "lineNumber": 131,
+        "lineNumber": 125,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "        try {"
       },
       {
-        "lineNumber": 132,
+        "lineNumber": 126,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "            String[] typeName \u003d attributes.split(\"\\\\s\", 2);"
       },
       {
-        "lineNumber": 133,
+        "lineNumber": 127,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "            listParam.put(\"type\", typeName[0].trim());"
       },
       {
-        "lineNumber": 134,
+        "lineNumber": 128,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "            if (typeName.length \u003d\u003d 2) {"
       },
       {
-        "lineNumber": 135,
+        "lineNumber": 129,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "                listParam.put(\"item\", typeName[1].trim());"
       },
       {
-        "lineNumber": 136,
+        "lineNumber": 130,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 137,
+        "lineNumber": 131,
         "author": {
           "gitId": "cheongisabella"
         },
         "content": "            if (listParam.get(\"type\").equalsIgnoreCase(\"recipe\") \u0026\u0026 typeName.length !\u003d 2) {"
       },
       {
-        "lineNumber": 138,
+        "lineNumber": 132,
         "author": {
           "gitId": "cheongisabella"
         },
         "content": "                throw new KitchenHelperException(\"list recipe \u003cinteger\u003e\");"
       },
       {
-        "lineNumber": 139,
+        "lineNumber": 133,
         "author": {
           "gitId": "cheongisabella"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 140,
+        "lineNumber": 134,
         "author": {
           "gitId": "cheongisabella"
         },
         "content": "            if (listParam.get(\"type\").isEmpty()) {"
       },
       {
-        "lineNumber": 141,
+        "lineNumber": 135,
         "author": {
           "gitId": "cheongisabella"
         },
         "content": "                throw new KitchenHelperException(\"list \u003ctype\u003e\");"
       },
       {
-        "lineNumber": 142,
+        "lineNumber": 136,
         "author": {
           "gitId": "cheongisabella"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 143,
+        "lineNumber": 137,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "        } catch (IndexOutOfBoundsException e) {"
       },
       {
-        "lineNumber": 144,
+        "lineNumber": 138,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "            throw new KitchenHelperException(ListCommand.COMMAND_FORMAT);"
       },
       {
-        "lineNumber": 145,
+        "lineNumber": 139,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 146,
+        "lineNumber": 140,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "        return listParam;"
       },
       {
-        "lineNumber": 147,
+        "lineNumber": 141,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 148,
+        "lineNumber": 142,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "  "
       },
       {
-        "lineNumber": 149,
+        "lineNumber": 143,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "  "
       },
       {
-        "lineNumber": 150,
+        "lineNumber": 144,
         "author": {
           "gitId": "JensonWee"
         },
         "content": "  "
       },
       {
-        "lineNumber": 151,
+        "lineNumber": 145,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 152,
+        "lineNumber": 146,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "     * Prepares the deletion of recipe and ingredients from the lists."
       },
       {
-        "lineNumber": 153,
+        "lineNumber": 147,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 154,
+        "lineNumber": 148,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "     * @param attributes full user input string."
       },
       {
-        "lineNumber": 155,
+        "lineNumber": 149,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "     * @return hashmap of a formatted list of parameters to be deleted."
       },
       {
-        "lineNumber": 156,
+        "lineNumber": 150,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "     * @throws KitchenHelperException if the command is invalid"
       },
       {
-        "lineNumber": 157,
+        "lineNumber": 151,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 158,
+        "lineNumber": 152,
         "author": {
-          "gitId": "JensonWee"
+          "gitId": "jinfayap"
         },
         "content": "    "
       },
       {
-        "lineNumber": 159,
+        "lineNumber": 153,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "    private HashMap\u003cString, String\u003e prepareDeleteParams(String attributes) throws KitchenHelperException {"
       },
       {
-        "lineNumber": 160,
+        "lineNumber": 154,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "        HashMap\u003cString, String\u003e deleteParam \u003d new HashMap\u003c\u003e();"
       },
       {
-        "lineNumber": 161,
+        "lineNumber": 155,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "        try {"
       },
       {
-        "lineNumber": 162,
+        "lineNumber": 156,
         "author": {
           "gitId": "cheongisabella"
         },
         "content": "            if (attributes.indexOf(\"/n\") \u003d\u003d -1) {"
       },
       {
-        "lineNumber": 163,
+        "lineNumber": 157,
         "author": {
           "gitId": "cheongisabella"
         },
         "content": "                String [] typeAndNumber \u003d attributes.split(\" \", 2);"
       },
       {
-        "lineNumber": 164,
+        "lineNumber": 158,
         "author": {
           "gitId": "cheongisabella"
         },
         "content": "                deleteParam.put(\"type\", typeAndNumber[0].trim());"
       },
       {
-        "lineNumber": 165,
+        "lineNumber": 159,
         "author": {
           "gitId": "cheongisabella"
         },
         "content": "                deleteParam.put(\"nameToDelete\", typeAndNumber[1].trim());"
       },
       {
-        "lineNumber": 166,
+        "lineNumber": 160,
         "author": {
           "gitId": "cheongisabella"
         },
         "content": "                deleteParam.put(\"quantity\", \"-1\");"
       },
       {
-        "lineNumber": 167,
+        "lineNumber": 161,
         "author": {
           "gitId": "cheongisabella"
         },
         "content": "            } else {"
       },
       {
-        "lineNumber": 168,
+        "lineNumber": 162,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "                String [] typeAndName \u003d attributes.split(\"/n\\\\s\", 2);"
       },
       {
-        "lineNumber": 169,
+        "lineNumber": 163,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "                deleteParam.put(\"type\", typeAndName[0].trim());"
       },
       {
-        "lineNumber": 170,
+        "lineNumber": 164,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "                String [] nameAndQuantity \u003d typeAndName[1].split(\"/q\\\\s\", 2);"
       },
       {
-        "lineNumber": 171,
+        "lineNumber": 165,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "                deleteParam.put(\"nameToDelete\", nameAndQuantity[0].trim());"
       },
       {
-        "lineNumber": 172,
+        "lineNumber": 166,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "                if (nameAndQuantity.length \u003e 1) {"
       },
       {
-        "lineNumber": 173,
+        "lineNumber": 167,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "                    deleteParam.put(\"quantity\", nameAndQuantity[1].trim());"
       },
       {
-        "lineNumber": 174,
+        "lineNumber": 168,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "                } else {"
       },
       {
-        "lineNumber": 175,
+        "lineNumber": 169,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "                    deleteParam.put(\"quantity\", \"-1\");"
       },
       {
-        "lineNumber": 176,
+        "lineNumber": 170,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "                }"
       },
       {
-        "lineNumber": 177,
+        "lineNumber": 171,
         "author": {
           "gitId": "cheongisabella"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 178,
+        "lineNumber": 172,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "        } catch (IndexOutOfBoundsException e) {"
       },
       {
-        "lineNumber": 179,
+        "lineNumber": 173,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "            if (deleteParam.get(\"type\").equalsIgnoreCase(\"ingredient\")) {"
       },
       {
-        "lineNumber": 180,
+        "lineNumber": 174,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "                throw new KitchenHelperException(\"delete ingredient /n INGREDIENT [/q QUANTITY]\");"
       },
       {
-        "lineNumber": 181,
+        "lineNumber": 175,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "            } else if (deleteParam.get(\"type\").equalsIgnoreCase(\"recipe\")) {"
       },
       {
-        "lineNumber": 182,
+        "lineNumber": 176,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "                throw new KitchenHelperException(\"delete recipe /n RECIPENAME\");"
       },
       {
-        "lineNumber": 183,
+        "lineNumber": 177,
         "author": {
           "gitId": "cheongisabella"
         },
         "content": "            } else if (deleteParam.get(\"type\").equalsIgnoreCase(\"chore\")) {"
       },
       {
-        "lineNumber": 184,
+        "lineNumber": 178,
         "author": {
           "gitId": "cheongisabella"
         },
         "content": "                throw new KitchenHelperException(\"delete chore \u003cinteger\u003e\");"
       },
       {
-        "lineNumber": 185,
+        "lineNumber": 179,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 186,
+        "lineNumber": 180,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "            throw new KitchenHelperException(\"\");"
       },
       {
-        "lineNumber": 187,
+        "lineNumber": 181,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 188,
+        "lineNumber": 182,
         "author": {
           "gitId": "yantingsanity"
         },
         "content": "        return deleteParam;"
       },
       {
-        "lineNumber": 189,
+        "lineNumber": 183,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 190,
+        "lineNumber": 184,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "    "
       },
       {
-        "lineNumber": 191,
+        "lineNumber": 185,
         "author": {
           "gitId": "-"
         },
         "content": "    //@@author AY1920S2-CS2113T-M16-2-reused"
       },
       {
-        "lineNumber": 192,
+        "lineNumber": 186,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "    //Reused from"
       },
       {
-        "lineNumber": 193,
+        "lineNumber": 187,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "    //https://github.com/nus-cs2113-AY1920S2/contacts/blob/master/src/main/java/Contacts1.java"
       },
       {
-        "lineNumber": 194,
+        "lineNumber": 188,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "    "
       },
       {
-        "lineNumber": 195,
+        "lineNumber": 189,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 196,
+        "lineNumber": 190,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "     * Split the user input into two parts with a specific regex."
       },
       {
-        "lineNumber": 197,
+        "lineNumber": 191,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 198,
+        "lineNumber": 192,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "     * @param rawUserInput full user input string."
       },
       {
-        "lineNumber": 199,
+        "lineNumber": 193,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "     * @param regex        the quantifier to separate the string."
       },
       {
-        "lineNumber": 200,
+        "lineNumber": 194,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "     * @return an array of size 2 separated by the quantifier."
       },
       {
-        "lineNumber": 201,
+        "lineNumber": 195,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 202,
+        "lineNumber": 196,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "    public static String[] splitInputLine(String rawUserInput, String regex) {"
       },
       {
-        "lineNumber": 203,
+        "lineNumber": 197,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "        String[] split \u003d rawUserInput.trim().split(regex, 2);"
       },
       {
-        "lineNumber": 204,
+        "lineNumber": 198,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "        return split.length \u003d\u003d 2 ? split : new String[]{split[0], \"\"}; // else no parameters"
       },
       {
-        "lineNumber": 205,
+        "lineNumber": 199,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 206,
+        "lineNumber": 200,
         "author": {
           "gitId": "-"
         },
         "content": "    //@@author"
       },
       {
-        "lineNumber": 207,
+        "lineNumber": 201,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "    "
       },
       {
-        "lineNumber": 208,
+        "lineNumber": 202,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 209,
+        "lineNumber": 203,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "     * Checks if the input string matches the regex."
       },
       {
-        "lineNumber": 210,
+        "lineNumber": 204,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 211,
+        "lineNumber": 205,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "     * @param attributes the user input string."
       },
       {
-        "lineNumber": 212,
+        "lineNumber": 206,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "     * @param regex      quantifier to check if valid."
       },
       {
-        "lineNumber": 213,
+        "lineNumber": 207,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "     * @return true if it match, otherwise false."
       },
       {
-        "lineNumber": 214,
+        "lineNumber": 208,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 215,
+        "lineNumber": 209,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "    public boolean isValidUserInputFormat(String attributes, String regex) {"
       },
       {
-        "lineNumber": 216,
+        "lineNumber": 210,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "        Pattern pattern \u003d Pattern.compile(regex);"
       },
       {
-        "lineNumber": 217,
+        "lineNumber": 211,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "        Matcher matcher \u003d pattern.matcher(attributes);"
       },
       {
-        "lineNumber": 218,
+        "lineNumber": 212,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "        boolean isMatch \u003d matcher.matches();"
       },
       {
-        "lineNumber": 219,
+        "lineNumber": 213,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "        if (isMatch) {"
       },
       {
-        "lineNumber": 220,
+        "lineNumber": 214,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "            return true;"
       },
       {
-        "lineNumber": 221,
+        "lineNumber": 215,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 222,
+        "lineNumber": 216,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "        return false;"
       },
       {
-        "lineNumber": 223,
+        "lineNumber": 217,
         "author": {
           "gitId": "jinfayap"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 224,
+        "lineNumber": 218,
         "author": {
           "gitId": "jinfayap"
         },
@@ -9453,12 +9271,12 @@
       }
     ],
     "authorContributionMap": {
-      "yantingsanity": 48,
+      "yantingsanity": 47,
       "jinfayap": 96,
-      "cheongisabella": 21,
-      "alwayshuizhen": 34,
+      "cheongisabella": 15,
+      "alwayshuizhen": 36,
       "-": 2,
-      "JensonWee": 23
+      "JensonWee": 22
     }
   },
   {
@@ -11925,6 +11743,309 @@
     }
   },
   {
+    "path": "src/test/java/seedu/kitchenhelper/command/AddRecipeCommandTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "package seedu.kitchenhelper.command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "import seedu.kitchenhelper.object.Recipe;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "import java.util.ArrayList;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "import java.util.HashMap;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertNotEquals;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "public class AddRecipeCommandTest {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "    public void addRecipe_testPass() {"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        HashMap\u003cString[], Integer\u003e parsedIngr \u003d new HashMap\u003c\u003e();"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        String[] ingr \u003d new String[2];"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        ingr[0] \u003d \"milo\";"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        ingr[1] \u003d \"drink\";"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        parsedIngr.put(ingr, 10);"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        String attributes \u003d \"recipe /n Chicken Salad /i Chicken Breast:2:meat, Lettuce:4:vegetable\";"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        ArrayList\u003cRecipe\u003e recipeList \u003d new ArrayList\u003c\u003e();"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        AddRecipeCommand newRecipe \u003d new AddRecipeCommand();"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        newRecipe.setAttributesOfCmd(attributes, parsedIngr);"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        newRecipe.addRecipe(attributes, recipeList);"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        assertEquals(1, recipeList.size());"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "    public void addRecipe_testFail() {"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        HashMap\u003cString[], Integer\u003e parsedIngr \u003d new HashMap\u003c\u003e();"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        String[] ingr \u003d new String[2];"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        ingr[0] \u003d \"milo\";"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        ingr[1] \u003d \" \";"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        parsedIngr.put(ingr, 10);"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        String attributes \u003d \"recipe /n Chicken Salad /i Chicken Breast:2:meat, Lettuce:4:vegetable\";"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        ArrayList\u003cRecipe\u003e recipeList \u003d new ArrayList\u003c\u003e();"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        AddRecipeCommand newRecipe \u003d new AddRecipeCommand();"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        newRecipe.setAttributesOfCmd(attributes, parsedIngr);"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        newRecipe.addRecipe(attributes, recipeList);"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "        assertNotEquals(\"drink\", recipeList.get(0).getRecipeItem().getClass());"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "alwayshuizhen"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "alwayshuizhen": 42
+    }
+  },
+  {
     "path": "src/test/java/seedu/kitchenhelper/command/ListCommandTest.java",
     "fileType": "java",
     "lines": [
@@ -13230,9 +13351,9 @@
       {
         "lineNumber": 1,
         "author": {
-          "gitId": "jinfayap"
+          "gitId": "alwayshuizhen"
         },
-        "content": "add recipe /n Chicken Salad /i Chicken Breast:2:meat, Lettuce:4:vegetable"
+        "content": "addRecipe /n Chicken Salad /i Chicken Breast:2:meat, Lettuce:4:vegetable"
       },
       {
         "lineNumber": 2,
@@ -13300,13 +13421,6 @@
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "cheongisabella"
-        },
-        "content": "delete chore 1"
-      },
-      {
-        "lineNumber": 12,
-        "author": {
           "gitId": "jinfayap"
         },
         "content": "exit"
@@ -13314,8 +13428,9 @@
     ],
     "authorContributionMap": {
       "yantingsanity": 3,
-      "jinfayap": 6,
-      "cheongisabella": 3
+      "jinfayap": 5,
+      "cheongisabella": 2,
+      "alwayshuizhen": 1
     }
   }
 ]

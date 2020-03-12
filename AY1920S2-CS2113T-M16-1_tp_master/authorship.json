@@ -416,6 +416,190 @@
     }
   },
   {
+    "path": "src/main/java/command/ClearCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "package command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "import common.Messages;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "import seedu.duke.TaskList;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "import seedu.duke.Ui;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "public class ClearCommand  extends Command {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    public static final String CLEAR_COMMAND_WORD \u003d \"clear\";"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "     * Constructs the clear command to empty TaskList."
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    public ClearCommand() {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    public CommandResult execute(TaskList taskList, Ui ui) {"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        if (taskList.getListSize() \u003d\u003d 0) {"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "            return new CommandResult(String.format(Messages.NO_TASKS_MSG));"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "            taskList.clearList();"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "            return new CommandResult(String.format(Messages.CLEAR_SUCCESS_MESSAGE));"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "joelczk": 25
+    }
+  },
+  {
     "path": "src/main/java/command/Command.java",
     "fileType": "java",
     "lines": [
@@ -979,7 +1163,7 @@
         "author": {
           "gitId": "joelczk"
         },
-        "content": "     * Delete tasks based on specified index."
+        "content": "     * Constructs a DeleteCommand with the parameters supplied."
       },
       {
         "lineNumber": 15,
@@ -1785,66 +1969,59 @@
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "     *"
+        "content": "     * @param taskList TaskList object that handles adding Task"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "     * @param taskList TaskList object that handles adding Task"
+        "content": "     * @param ui       Ui object that interacts with user"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "     * @param ui       Ui object that interacts with user"
+        "content": "     * @return CommandResult object with acknowledgment message"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "     * @return CommandResult object with acknowledgment message"
+        "content": "     */"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "     */"
+        "content": "    @Override"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "    @Override"
+        "content": "    public CommandResult execute(TaskList taskList, Ui ui) {"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "    public CommandResult execute(TaskList taskList, Ui ui) {"
+        "content": "        return new CommandResult(Messages.EXIT_MESSAGE).setExit();"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "        return new CommandResult(Messages.EXIT_MESSAGE).setExit();"
-      },
-      {
-        "lineNumber": 20,
-        "author": {
-          "gitId": "Keith-JK"
-        },
         "content": "    }"
       },
       {
-        "lineNumber": 21,
+        "lineNumber": 20,
         "author": {
           "gitId": "Keith-JK"
         },
@@ -1853,7 +2030,7 @@
     ],
     "authorContributionMap": {
       "lwxymere": 1,
-      "Keith-JK": 20
+      "Keith-JK": 19
     }
   },
   {
@@ -1942,66 +2119,59 @@
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "     *"
+        "content": "     * @param taskList TaskList object that handles adding Task"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "     * @param taskList TaskList object that handles adding Task"
+        "content": "     * @param ui       Ui object that interacts with user"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "     * @param ui       Ui object that interacts with user"
+        "content": "     * @return CommandResult object with acknowledgment message"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "     * @return CommandResult object with acknowledgment message"
+        "content": "     */"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "     */"
+        "content": "    @Override"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "    @Override"
+        "content": "    public CommandResult execute(TaskList taskList, Ui ui) {"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "    public CommandResult execute(TaskList taskList, Ui ui) {"
+        "content": "        return new CommandResult(Messages.HELP_FORMAT_MESSAGE);"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "        return new CommandResult(Messages.HELP_FORMAT_MESSAGE);"
-      },
-      {
-        "lineNumber": 20,
-        "author": {
-          "gitId": "Keith-JK"
-        },
         "content": "    }"
       },
       {
-        "lineNumber": 21,
+        "lineNumber": 20,
         "author": {
           "gitId": "Keith-JK"
         },
@@ -2010,7 +2180,7 @@
     ],
     "authorContributionMap": {
       "lwxymere": 1,
-      "Keith-JK": 20
+      "Keith-JK": 19
     }
   },
   {
@@ -2083,61 +2253,89 @@
       {
         "lineNumber": 10,
         "author": {
-          "gitId": "lwxymere"
+          "gitId": "joelczk"
         },
-        "content": "    public IncorrectCommand(String description) {"
+        "content": "    /**"
       },
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "lwxymere"
+          "gitId": "joelczk"
         },
-        "content": "        this.description \u003d description;"
+        "content": "     * Constructor to deal with incorrect commands."
       },
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "lwxymere"
+          "gitId": "joelczk"
         },
-        "content": "    }"
+        "content": "     * @param description String of the wrong command input by user"
       },
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "lwxymere"
+          "gitId": "joelczk"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    @Override"
+        "content": "    public IncorrectCommand(String description) {"
       },
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "lwxymere"
         },
-        "content": "    public CommandResult execute(TaskList taskList, Ui ui) {"
+        "content": "        this.description \u003d description;"
       },
       {
         "lineNumber": 16,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "        return new CommandResult(String.format(Messages.INCORRECT_COMMAND_ERROR, description));"
-      },
-      {
-        "lineNumber": 17,
         "author": {
           "gitId": "lwxymere"
         },
         "content": "    }"
       },
       {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": ""
+      },
+      {
         "lineNumber": 18,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "    public CommandResult execute(TaskList taskList, Ui ui) {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "        return new CommandResult(String.format(Messages.INCORRECT_COMMAND_ERROR, description));"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 22,
         "author": {
           "gitId": "lwxymere"
         },
@@ -2146,7 +2344,7 @@
     ],
     "authorContributionMap": {
       "lwxymere": 11,
-      "joelczk": 1,
+      "joelczk": 5,
       "Keith-JK": 3,
       "E0309556": 3
     }
@@ -2375,9 +2573,9 @@
       {
         "lineNumber": 32,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "jichngan"
         },
-        "content": "            return new CommandResult(showListTasks(taskList.getTodayTasks()));"
+        "content": "            return new CommandResult(showListTasks(taskList.getTasksByDays(0)));"
       },
       {
         "lineNumber": 33,
@@ -2389,9 +2587,9 @@
       {
         "lineNumber": 34,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "jichngan"
         },
-        "content": "            return new CommandResult(showListTasks(taskList.getWeekTasks()));"
+        "content": "            return new CommandResult(showListTasks(taskList.getTasksByDays(7)));"
       },
       {
         "lineNumber": 35,
@@ -2466,159 +2664,201 @@
       {
         "lineNumber": 45,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "jichngan"
         },
-        "content": "     * Converts an ArrayList object to text for printing."
+        "content": "     * Formats String of tasks with standard task listing message."
       },
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "jichngan"
         },
-        "content": "     * @param taskList ArrayList object to be converted to string."
+        "content": "     * @param taskList ArrayList object with tasks to be printed"
       },
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "jichngan"
         },
-        "content": "     */"
+        "content": "     * @return Formatted string of tasks and printing message"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "E0309556"
         },
-        "content": "    public String showListTasks(ArrayList\u003cTask\u003e taskList) {"
+        "content": "     */"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "E0309556"
         },
-        "content": "        if (taskList.size() \u003d\u003d 0) {"
+        "content": "    public String showListTasks(ArrayList\u003cTask\u003e taskList) {"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "E0309556"
         },
-        "content": "            //If there are no tasks found within the provided taskList"
+        "content": "        if (taskList.size() \u003d\u003d 0) {"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "E0309556"
         },
-        "content": "            return (Messages.EMPTY_TASKLIST_MESSAGE);"
+        "content": "            //If there are no tasks found within the provided taskList"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "E0309556"
         },
-        "content": "        }"
+        "content": "            return (Messages.EMPTY_TASKLIST_MESSAGE);"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "E0309556"
         },
-        "content": "        String stringFromArrayList \u003d stringTaskList(taskList);"
+        "content": "        }"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "E0309556"
         },
-        "content": "        return (String.format(Messages.SHOW_TASKLIST_MESSAGE, System.lineSeparator(), stringFromArrayList));"
+        "content": "        String stringFromArrayList \u003d stringTaskList(taskList);"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "E0309556"
         },
-        "content": "    }"
+        "content": "        return (String.format(Messages.SHOW_TASKLIST_MESSAGE, System.lineSeparator(), stringFromArrayList));"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "E0309556"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "E0309556"
         },
-        "content": "    private String stringTaskList(ArrayList\u003cTask\u003e taskList) {"
+        "content": ""
       },
       {
         "lineNumber": 58,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "jichngan"
         },
-        "content": "        StringBuilder stringFromArrayList \u003d new StringBuilder();"
+        "content": "    /**"
       },
       {
         "lineNumber": 59,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "jichngan"
         },
-        "content": "        for (int i \u003d 0; i \u003c taskList.size(); i++) {"
+        "content": "     * Converts ArrayList object into string to be printed."
       },
       {
         "lineNumber": 60,
         "author": {
-          "gitId": "lwxymere"
+          "gitId": "jichngan"
         },
-        "content": "            stringFromArrayList.append(String.format(\"%3d. %s\", i + 1, taskList.get(i).toString()));"
+        "content": "     * @param taskList ArrayList object with tasks to be printed"
       },
       {
         "lineNumber": 61,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "jichngan"
         },
-        "content": "            if (i !\u003d taskList.size() - 1) {"
+        "content": "     * @return Formatted string of tasks"
       },
       {
         "lineNumber": 62,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "jichngan"
         },
-        "content": "                stringFromArrayList.append(System.lineSeparator());"
+        "content": "     */"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "E0309556"
         },
-        "content": "            }"
+        "content": "    private String stringTaskList(ArrayList\u003cTask\u003e taskList) {"
       },
       {
         "lineNumber": 64,
         "author": {
-          "gitId": "jichngan"
+          "gitId": "E0309556"
         },
-        "content": "        }"
+        "content": "        StringBuilder stringFromArrayList \u003d new StringBuilder();"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "E0309556"
         },
-        "content": "        return stringFromArrayList.toString();"
+        "content": "        for (int i \u003d 0; i \u003c taskList.size(); i++) {"
       },
       {
         "lineNumber": 66,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "            stringFromArrayList.append(String.format(\"%3d. %s\", i + 1, taskList.get(i).toString()));"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "            if (i !\u003d taskList.size() - 1) {"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "                stringFromArrayList.append(System.lineSeparator());"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "jichngan"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "        return stringFromArrayList.toString();"
+      },
+      {
+        "lineNumber": 72,
         "author": {
           "gitId": "jichngan"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 67,
+        "lineNumber": 73,
         "author": {
           "gitId": "lwxymere"
         },
@@ -2629,8 +2869,8 @@
       "lwxymere": 8,
       "joelczk": 1,
       "Keith-JK": 1,
-      "E0309556": 42,
-      "jichngan": 15
+      "E0309556": 38,
+      "jichngan": 25
     }
   },
   {
@@ -2696,366 +2936,366 @@
       {
         "lineNumber": 9,
         "author": {
-          "gitId": "joelczk"
+          "gitId": "jichngan"
         },
-        "content": "            \"   _____________________    _________\\n\""
+        "content": "            \" _______        _______        _______        _______ \\n\""
       },
       {
         "lineNumber": 10,
         "author": {
-          "gitId": "joelczk"
+          "gitId": "jichngan"
         },
-        "content": "            + \"  /  _  \\\\__    ___/  _  \\\\  /   _____/\\n\""
+        "content": "            + \"|   _   |      |       |      |   _   |      |       |\\n\""
       },
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "joelczk"
+          "gitId": "jichngan"
         },
-        "content": "            + \" /  /_\\\\  \\\\|    | /  /_\\\\  \\\\ \\\\_____  \\\\\\n\""
+        "content": "            + \"|  |_|  |      |_     _|      |  |_|  |      |  _____|\\n\""
       },
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "joelczk"
+          "gitId": "jichngan"
         },
-        "content": "            + \"/    |    \\\\    |/    |    \\\\/        \\\\\\n\""
+        "content": "            + \"|       |        |   |        |       |      | |_____ \\n\""
       },
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "joelczk"
+          "gitId": "jichngan"
         },
-        "content": "            + \"\\\\____|____/____|\\\\____|____/_________/\\n\";"
+        "content": "            + \"|       | ___    |   |   ___  |       | ___  |_____  |\\n\""
       },
       {
         "lineNumber": 14,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "jichngan"
         },
-        "content": "    public static final String DIVIDER \u003d \"____________________________________________________________\";"
+        "content": "            + \"|   _   ||   |   |   |  |   | |   _   ||   |  _____| |\\n\""
       },
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "lwxymere"
+          "gitId": "jichngan"
         },
-        "content": "    public static final String EXIT_MESSAGE \u003d \"Exiting ATAS\";"
+        "content": "            + \"|__| |__||___|   |___|  |___| |__| |__||___| |_______|\\n\";"
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "lwxymere"
+          "gitId": "jichngan"
         },
-        "content": "    public static final String NEWLINE_INDENT \u003d \"     \";"
+        "content": ""
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "jichngan"
         },
         "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "Keith-JK"
+          "gitId": "joelczk"
         },
-        "content": "    // Help Messages"
+        "content": "    public static final String DIVIDER \u003d \"_______________________________________________________________________\";"
       },
       {
         "lineNumber": 19,
         "author": {
-          "gitId": "Keith-JK"
+          "gitId": "jichngan"
         },
-        "content": "    public static final String DATE_FORMAT_HELP \u003d \"Date Format: dd/MM/yy HHmm\";"
+        "content": "    public static final String EXIT_MESSAGE \u003d \"Exiting A.T.A.S\";"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    public static final String EVENT_FORMAT_HELP \u003d \"Add Event: \""
+        "content": "    public static final String NEWLINE_INDENT \u003d \"     \";"
       },
       {
         "lineNumber": 21,
         "author": {
-          "gitId": "Keith-JK"
+          "gitId": "E0309556"
         },
-        "content": "            + \"event n/[EVENT NAME] l/[LOCATION] d/[dd/MM/yy HHmm] c/[COMMENTS]\";"
+        "content": ""
       },
       {
         "lineNumber": 22,
         "author": {
-          "gitId": "lwxymere"
+          "gitId": "Keith-JK"
         },
-        "content": "    public static final String ASSIGNMENT_FORMAT_HELP \u003d \"Add Assignment: \""
+        "content": "    // Help Messages"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "            + \"assignment n/[ASSIGNMENT NAME] m/[MODULE NAME] d/[dd/MM/yy HHmm] c/[COMMENTS]\";"
+        "content": "    public static final String DATE_FORMAT_HELP \u003d \"Date Format: dd/MM/yy HHmm\";"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    public static final String DONE_FORMAT_HELP \u003d \"Mark Task as Done: done [TASK NUMBER]\";"
+        "content": "    public static final String EVENT_FORMAT_HELP \u003d \"Add Event: \""
       },
       {
         "lineNumber": 25,
         "author": {
-          "gitId": "lwxymere"
+          "gitId": "Keith-JK"
         },
-        "content": "    public static final String DELETE_FORMAT_HELP \u003d \"Delete a Task: delete [TASK NUMBER]\";"
+        "content": "            + \"event n/[EVENT NAME] l/[LOCATION] d/[dd/MM/yy HHmm] c/[COMMENTS]\";"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    public static final String LIST_FORMAT_HELP \u003d \"List All Tasks: list\";"
+        "content": "    public static final String ASSIGNMENT_FORMAT_HELP \u003d \"Add Assignment: \""
       },
       {
         "lineNumber": 27,
         "author": {
-          "gitId": "lwxymere"
+          "gitId": "Keith-JK"
         },
-        "content": "    public static final String LIST_TODAY_FORMAT_HELP \u003d \"List Today\u0027s Tasks: list today\";"
+        "content": "            + \"assignment n/[ASSIGNMENT NAME] m/[MODULE NAME] d/[dd/MM/yy HHmm] c/[COMMENTS]\";"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    public static final String LIST_WEEK_FORMAT_HELP \u003d \"List This Week\u0027s Tasks: list week\";"
+        "content": "    public static final String DONE_FORMAT_HELP \u003d \"Mark Task as Done: done [TASK NUMBER]\";"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    public static final String LIST_UPCOMING_EVENT_FORMAT_HELP \u003d \"List Upcoming Events: \""
+        "content": "    public static final String DELETE_FORMAT_HELP \u003d \"Delete a Task: delete [TASK NUMBER]\";"
       },
       {
         "lineNumber": 30,
         "author": {
-          "gitId": "Keith-JK"
+          "gitId": "lwxymere"
         },
-        "content": "            + \"list upcoming events\";"
+        "content": "    public static final String LIST_FORMAT_HELP \u003d \"List All Tasks: list\";"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    public static final String LIST_INCOMPLETE_ASSIGN_FORMAT_HELP \u003d \"List Incomplete Assignments: \""
+        "content": "    public static final String LIST_TODAY_FORMAT_HELP \u003d \"List Today\u0027s Tasks: list today\";"
       },
       {
         "lineNumber": 32,
         "author": {
-          "gitId": "Keith-JK"
+          "gitId": "lwxymere"
         },
-        "content": "            + \"list incomplete assignments\";"
+        "content": "    public static final String LIST_WEEK_FORMAT_HELP \u003d \"List This Week\u0027s Tasks: list week\";"
       },
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "Keith-JK"
+          "gitId": "lwxymere"
         },
-        "content": "    public static final String HELP_FORMAT_MESSAGE \u003d"
+        "content": "    public static final String LIST_UPCOMING_EVENT_FORMAT_HELP \u003d \"List Upcoming Events: \""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "            \"Following is the list of commands available:\" + System.lineSeparator()"
+        "content": "            + \"list upcoming events\";"
       },
       {
         "lineNumber": 35,
         "author": {
-          "gitId": "Keith-JK"
+          "gitId": "lwxymere"
         },
-        "content": "            + \"1.  Help Format: help\" + System.lineSeparator()"
+        "content": "    public static final String LIST_INCOMPLETE_ASSIGN_FORMAT_HELP \u003d \"List Incomplete Assignments: \""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "            + \"2.  \" + ASSIGNMENT_FORMAT_HELP + System.lineSeparator()"
+        "content": "            + \"list incomplete assignments\";"
       },
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "Keith-JK"
+          "gitId": "joelczk"
         },
-        "content": "            + \"3.  \" + EVENT_FORMAT_HELP + System.lineSeparator()"
+        "content": "    public static final String CLEAR_FORMAT_HELP \u003d \"Clear all tasks: clear\";"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "            + \"4.  \" + LIST_TODAY_FORMAT_HELP + System.lineSeparator()"
+        "content": "    public static final String HELP_FORMAT_MESSAGE \u003d"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "            + \"5.  \" + LIST_WEEK_FORMAT_HELP + System.lineSeparator()"
+        "content": "            \"Following is the list of commands available:\" + System.lineSeparator()"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "            + \"6.  \" + LIST_FORMAT_HELP + System.lineSeparator()"
+        "content": "            + \"1.  Help Format: help\" + System.lineSeparator()"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "            + \"7.  \" + LIST_INCOMPLETE_ASSIGN_FORMAT_HELP + System.lineSeparator()"
+        "content": "            + \"2.  \" + ASSIGNMENT_FORMAT_HELP + System.lineSeparator()"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "            + \"8.  \" + LIST_UPCOMING_EVENT_FORMAT_HELP + System.lineSeparator()"
+        "content": "            + \"3.  \" + EVENT_FORMAT_HELP + System.lineSeparator()"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "            + \"9.  \" + DONE_FORMAT_HELP + System.lineSeparator()"
+        "content": "            + \"4.  \" + LIST_TODAY_FORMAT_HELP + System.lineSeparator()"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": "            + \"10. \" + DELETE_FORMAT_HELP;"
+        "content": "            + \"5.  \" + LIST_WEEK_FORMAT_HELP + System.lineSeparator()"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "Keith-JK"
         },
-        "content": ""
+        "content": "            + \"6.  \" + LIST_FORMAT_HELP + System.lineSeparator()"
       },
       {
         "lineNumber": 46,
+        "author": {
+          "gitId": "Keith-JK"
+        },
+        "content": "            + \"7.  \" + LIST_INCOMPLETE_ASSIGN_FORMAT_HELP + System.lineSeparator()"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "Keith-JK"
+        },
+        "content": "            + \"8.  \" + LIST_UPCOMING_EVENT_FORMAT_HELP + System.lineSeparator()"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "Keith-JK"
+        },
+        "content": "            + \"9.  \" + DONE_FORMAT_HELP + System.lineSeparator()"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "            + \"10.  \" + CLEAR_FORMAT_HELP + System.lineSeparator()"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "            + \"12. \" + DELETE_FORMAT_HELP;"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "Keith-JK"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 52,
         "author": {
           "gitId": "E0309556"
         },
         "content": "    // Command Print Messages"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 53,
         "author": {
           "gitId": "lwxymere"
         },
         "content": "    public static final String ADD_SUCCESS_MESSAGE \u003d \"Added task:\" + System.lineSeparator() + NEWLINE_INDENT"
       },
       {
-        "lineNumber": 48,
+        "lineNumber": 54,
         "author": {
           "gitId": "lwxymere"
         },
         "content": "            + \"%s\" + System.lineSeparator() + \"Now you have %d task%s in the list!\";"
       },
       {
-        "lineNumber": 49,
+        "lineNumber": 55,
         "author": {
           "gitId": "lwxymere"
         },
         "content": "    public static final String DELETE_SUCCESS_MESSAGE \u003d \"[%s] has been deleted!\";"
       },
       {
-        "lineNumber": 50,
+        "lineNumber": 56,
         "author": {
           "gitId": "lwxymere"
         },
         "content": "    public static final String DONE_SUCCESS_MESSAGE \u003d \"[%s] has been marked done!\";"
       },
       {
-        "lineNumber": 51,
+        "lineNumber": 57,
         "author": {
           "gitId": "E0309556"
         },
         "content": "    public static final String INCORRECT_COMMAND_ERROR \u003d \"Oh no. %s\";"
       },
       {
-        "lineNumber": 52,
+        "lineNumber": 58,
         "author": {
           "gitId": "lwxymere"
         },
         "content": "    public static final String EMPTY_TASKLIST_MESSAGE \u003d \"No tasks were found\";"
       },
       {
-        "lineNumber": 53,
+        "lineNumber": 59,
         "author": {
           "gitId": "lwxymere"
         },
         "content": "    public static final String SHOW_TASKLIST_MESSAGE \u003d \"Here are the relevant tasks:%s%s\";"
       },
       {
-        "lineNumber": 54,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 55,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "    // Error Messages"
-      },
-      {
-        "lineNumber": 56,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "    public static final String UNKNOWN_COMMAND_ERROR \u003d \"Unknown command entered\";"
-      },
-      {
-        "lineNumber": 57,
-        "author": {
-          "gitId": "Keith-JK"
-        },
-        "content": "    public static final String ASSIGN_INCORRECT_FORMAT_ERROR \u003d \"Incorrect format for Assignment Command\""
-      },
-      {
-        "lineNumber": 58,
-        "author": {
-          "gitId": "Keith-JK"
-        },
-        "content": "            + System.lineSeparator() + ASSIGNMENT_FORMAT_HELP;"
-      },
-      {
-        "lineNumber": 59,
-        "author": {
-          "gitId": "Keith-JK"
-        },
-        "content": "    public static final String EVENT_INCORRECT_FORMAT_ERROR \u003d \"Incorrect format for Event Command\""
-      },
-      {
         "lineNumber": 60,
         "author": {
-          "gitId": "Keith-JK"
+          "gitId": "joelczk"
         },
-        "content": "            + System.lineSeparator() + EVENT_FORMAT_HELP;"
+        "content": "    public static final String CLEAR_SUCCESS_MESSAGE \u003d \"All tasks have been deleted\";"
       },
       {
         "lineNumber": 61,
@@ -3067,89 +3307,138 @@
       {
         "lineNumber": 62,
         "author": {
-          "gitId": "Keith-JK"
+          "gitId": "E0309556"
         },
-        "content": "    public static final String DATE_INCORRECT_OR_INVALID_ERROR \u003d \"Wrong date format or invalid date provided\""
+        "content": "    // Error Messages"
       },
       {
         "lineNumber": 63,
         "author": {
-          "gitId": "Keith-JK"
+          "gitId": "E0309556"
         },
-        "content": "            + System.lineSeparator() + DATE_FORMAT_HELP;"
+        "content": "    public static final String UNKNOWN_COMMAND_ERROR \u003d \"Unknown command entered\";"
       },
       {
         "lineNumber": 64,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "Keith-JK"
         },
-        "content": "    public static final String NUM_FORMAT_ERROR \u003d \"Please provide an integer as the command parameter\";"
+        "content": "    public static final String ASSIGN_INCORRECT_FORMAT_ERROR \u003d \"Incorrect format for Assignment Command\""
       },
       {
         "lineNumber": 65,
         "author": {
-          "gitId": "lwxymere"
+          "gitId": "Keith-JK"
         },
-        "content": "    public static final String DELETE_INSUFFICIENT_ARGS_ERROR \u003d \"Insufficient arguments for Delete Command\""
+        "content": "            + System.lineSeparator() + ASSIGNMENT_FORMAT_HELP;"
       },
       {
         "lineNumber": 66,
         "author": {
-          "gitId": "lwxymere"
+          "gitId": "Keith-JK"
         },
-        "content": "            + System.lineSeparator() + DELETE_FORMAT_HELP;"
+        "content": "    public static final String EVENT_INCORRECT_FORMAT_ERROR \u003d \"Incorrect format for Event Command\""
       },
       {
         "lineNumber": 67,
         "author": {
-          "gitId": "lwxymere"
+          "gitId": "Keith-JK"
         },
-        "content": "    public static final String DONE_INSUFFICIENT_ARGS_ERROR \u003d \"Insufficient arguments for Done Command\""
+        "content": "            + System.lineSeparator() + EVENT_FORMAT_HELP;"
       },
       {
         "lineNumber": 68,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "            + System.lineSeparator() + DONE_FORMAT_HELP;"
-      },
-      {
-        "lineNumber": 69,
         "author": {
           "gitId": "E0309556"
         },
         "content": ""
       },
       {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "Keith-JK"
+        },
+        "content": "    public static final String DATE_INCORRECT_OR_INVALID_ERROR \u003d \"Wrong date format or invalid date provided\""
+      },
+      {
         "lineNumber": 70,
         "author": {
-          "gitId": "lwxymere"
+          "gitId": "Keith-JK"
         },
-        "content": "    public static final String INVALID_ID_ERROR \u003d \"Please provide a valid task number from %1$s\";"
+        "content": "            + System.lineSeparator() + DATE_FORMAT_HELP;"
       },
       {
         "lineNumber": 71,
         "author": {
-          "gitId": "lwxymere"
+          "gitId": "E0309556"
         },
-        "content": "    public static final String NO_TASKS_MSG \u003d \"You have no tasks at the moment\";"
+        "content": "    public static final String NUM_FORMAT_ERROR \u003d \"Please provide an integer as the command parameter\";"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    public static final String RANGE_OF_VALID_TASK_INDEX_MSG \u003d \"1 to %1$s\";"
+        "content": "    public static final String DELETE_INSUFFICIENT_ARGS_ERROR \u003d \"Insufficient arguments for Delete Command\""
       },
       {
         "lineNumber": 73,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "            + System.lineSeparator() + DELETE_FORMAT_HELP;"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "    public static final String DONE_INSUFFICIENT_ARGS_ERROR \u003d \"Insufficient arguments for Done Command\""
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "            + System.lineSeparator() + DONE_FORMAT_HELP;"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "    public static final String INVALID_ID_ERROR \u003d \"Please provide a valid task number from %1$s\";"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "    public static final String NO_TASKS_MSG \u003d \"You have no tasks at the moment\";"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "    public static final String RANGE_OF_VALID_TASK_INDEX_MSG \u003d \"1 to %1$s\";"
+      },
+      {
+        "lineNumber": 80,
         "author": {
           "gitId": "E0309556"
         },
         "content": "    public static final String COMPLETED_TASK_ERROR \u003d \"Task is already completed\";"
       },
       {
-        "lineNumber": 74,
+        "lineNumber": 81,
         "author": {
           "gitId": "E0309556"
         },
@@ -3157,10 +3446,11 @@
       }
     ],
     "authorContributionMap": {
-      "lwxymere": 24,
+      "lwxymere": 23,
       "joelczk": 5,
-      "Keith-JK": 25,
-      "E0309556": 20
+      "Keith-JK": 24,
+      "E0309556": 19,
+      "jichngan": 10
     }
   },
   {
@@ -3716,1041 +4006,1090 @@
       {
         "lineNumber": 12,
         "author": {
+          "gitId": "joelczk"
+        },
+        "content": "import command.ClearCommand;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
           "gitId": "lwxymere"
         },
         "content": ""
       },
       {
-        "lineNumber": 13,
+        "lineNumber": 14,
         "author": {
           "gitId": "E0309556"
         },
         "content": "import common.Messages;"
       },
       {
-        "lineNumber": 14,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 15,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "import java.time.LocalDateTime;"
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "import java.time.format.DateTimeFormatter;"
+        "content": "import java.time.LocalDateTime;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "import java.time.format.DateTimeParseException;"
+        "content": "import java.time.format.DateTimeFormatter;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": ""
+        "content": "import java.time.format.DateTimeParseException;"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "import java.util.regex.Matcher;"
+        "content": ""
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "import java.util.regex.Pattern;"
+        "content": "import java.util.regex.Matcher;"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": ""
+        "content": "import java.util.regex.Pattern;"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "public class Parser {"
+        "content": ""
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    public static final DateTimeFormatter INPUT_DATE_FORMAT \u003d DateTimeFormatter.ofPattern(\"dd/MM/yy HHmm\");"
+        "content": "public class Parser {"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    public static final DateTimeFormatter PRINT_DATE_FORMAT \u003d DateTimeFormatter.ofPattern(\"EEE dd MMM yyyy HH\u0027:\u0027mm\");"
+        "content": "    public static final DateTimeFormatter INPUT_DATE_FORMAT \u003d DateTimeFormatter.ofPattern(\"dd/MM/yy HHmm\");"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    public static final DateTimeFormatter PRINT_TIME_FORMAT \u003d DateTimeFormatter.ofPattern(\"HH\u0027:\u0027mm\");"
+        "content": "    public static final DateTimeFormatter PRINT_DATE_FORMAT \u003d DateTimeFormatter.ofPattern(\"EEE dd MMM yyyy HH\u0027:\u0027mm\");"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": ""
+        "content": "    public static final DateTimeFormatter PRINT_TIME_FORMAT \u003d DateTimeFormatter.ofPattern(\"HH\u0027:\u0027mm\");"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    // regex for an add assignment command"
+        "content": ""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    public static final Pattern ASSIGNMENT_PARAMETERS_FORMAT \u003d Pattern.compile("
+        "content": "    // regex for an add assignment command"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "            \"(?\u003ctaskType\u003e[^/]+)\""
+        "content": "    public static final Pattern ASSIGNMENT_PARAMETERS_FORMAT \u003d Pattern.compile("
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "            + \"\\\\s+n/\\\\s*(?\u003cassignmentName\u003e[^/]+)\""
+        "content": "            \"(?\u003ctaskType\u003e[^/]+)\""
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "            + \"\\\\s+m/\\\\s*(?\u003cmoduleName\u003e[^/]+)\""
+        "content": "            + \"\\\\s+n/\\\\s*(?\u003cassignmentName\u003e[^/]+)\""
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "            + \"\\\\s+d/\\\\s*(?\u003cdateTime\u003e\\\\d{2}/\\\\d{2}/\\\\d{2}\\\\s+\\\\d{4})\""
+        "content": "            + \"\\\\s+m/\\\\s*(?\u003cmoduleName\u003e[^/]+)\""
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "            + \"\\\\s+c/\\\\s*(?\u003ccomments\u003e[^/]+)\""
+        "content": "            + \"\\\\s+d/\\\\s*(?\u003cdateTime\u003e\\\\d{2}/\\\\d{2}/\\\\d{2}\\\\s+\\\\d{4})\""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    );"
+        "content": "            + \"\\\\s+c/\\\\s*(?\u003ccomments\u003e[^/]+)\""
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": ""
+        "content": "    );"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    // regex for an add event command"
+        "content": ""
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    public static final Pattern EVENT_PARAMETERS_FORMAT \u003d Pattern.compile("
+        "content": "    // regex for an add event command"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "            \"(?\u003ctaskType\u003e[^/]+)\""
+        "content": "    public static final Pattern EVENT_PARAMETERS_FORMAT \u003d Pattern.compile("
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "            + \"\\\\s+n/\\\\s*(?\u003ceventName\u003e[^/]+)\""
+        "content": "            \"(?\u003ctaskType\u003e[^/]+)\""
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "            + \"\\\\s+l/\\\\s*(?\u003clocation\u003e[^/]+)\""
+        "content": "            + \"\\\\s+n/\\\\s*(?\u003ceventName\u003e[^/]+)\""
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "            + \"\\\\s+d/\\\\s*(?\u003cdateTime\u003e\\\\d{2}/\\\\d{2}/\\\\d{2}\\\\s+\\\\d{4})\""
+        "content": "            + \"\\\\s+l/\\\\s*(?\u003clocation\u003e[^/]+)\""
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "            + \"\\\\s+c/\\\\s*(?\u003ccomments\u003e[^/]+)\""
+        "content": "            + \"\\\\s+d/\\\\s*(?\u003cdateTime\u003e\\\\d{2}/\\\\d{2}/\\\\d{2}\\\\s+\\\\d{4})\""
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    );"
+        "content": "            + \"\\\\s+c/\\\\s*(?\u003ccomments\u003e[^/]+)\""
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": ""
+        "content": "    );"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "     * Returns a Command object depending on the command input by the user."
+        "content": "    /**"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "     * @param fullCommand line input by the user, which represents a command"
+        "content": "     * Returns a Command object depending on the command input by the user."
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "     * @return Command depending on user input, with the appropriate arguments set"
+        "content": "     * @param fullCommand line input by the user, which represents a command"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "     */"
+        "content": "     * @return Command depending on user input, with the appropriate arguments set"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    public static Command parseCommand(String fullCommand) {"
+        "content": "     */"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "        String commandType \u003d fullCommand.split(\"\\\\s+\", 2)[0].trim().toLowerCase();"
+        "content": "    public static Command parseCommand(String fullCommand) {"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": ""
+        "content": "        String commandType \u003d fullCommand.split(\"\\\\s+\", 2)[0].trim().toLowerCase();"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "        switch (commandType) {"
+        "content": ""
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "        case HelpCommand.HELP_COMMAND_WORD:"
+        "content": "        switch (commandType) {"
       },
       {
         "lineNumber": 55,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        case HelpCommand.HELP_COMMAND_WORD:"
+      },
+      {
+        "lineNumber": 56,
         "author": {
           "gitId": "Keith-JK"
         },
         "content": "            return new HelpCommand();"
       },
       {
-        "lineNumber": 56,
+        "lineNumber": 57,
         "author": {
           "gitId": "lwxymere"
         },
         "content": "        case AssignmentCommand.ASSIGNMENT_COMMAND_WORD:"
       },
       {
-        "lineNumber": 57,
+        "lineNumber": 58,
         "author": {
           "gitId": "lwxymere"
         },
         "content": "            return prepareAssignmentCommand(fullCommand);"
       },
       {
-        "lineNumber": 58,
+        "lineNumber": 59,
         "author": {
           "gitId": "lwxymere"
         },
         "content": "        case DeleteCommand.DELETE_COMMAND_WORD:"
       },
       {
-        "lineNumber": 59,
+        "lineNumber": 60,
         "author": {
           "gitId": "lwxymere"
         },
         "content": "            return prepareDeleteCommand(fullCommand);"
       },
       {
-        "lineNumber": 60,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        case DoneCommand.DONE_COMMAND_WORD:"
-      },
-      {
         "lineNumber": 61,
         "author": {
-          "gitId": "lwxymere"
+          "gitId": "joelczk"
         },
-        "content": "            return prepareDoneCommand(fullCommand);"
+        "content": "        case ClearCommand.CLEAR_COMMAND_WORD:"
       },
       {
         "lineNumber": 62,
         "author": {
-          "gitId": "lwxymere"
+          "gitId": "joelczk"
         },
-        "content": "        case EventCommand.EVENT_COMMAND_WORD:"
+        "content": "            return prepareClearCommand(fullCommand);"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "            return prepareEventCommand(fullCommand);"
+        "content": "        case DoneCommand.DONE_COMMAND_WORD:"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "        case ListCommand.LIST_COMMAND_WORD:"
+        "content": "            return prepareDoneCommand(fullCommand);"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "            return prepareListCommand(fullCommand);"
+        "content": "        case EventCommand.EVENT_COMMAND_WORD:"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "        case ExitCommand.EXIT_COMMAND_WORD:"
+        "content": "            return prepareEventCommand(fullCommand);"
       },
       {
         "lineNumber": 67,
         "author": {
-          "gitId": "Keith-JK"
+          "gitId": "lwxymere"
         },
-        "content": "            return new ExitCommand();"
+        "content": "        case ListCommand.LIST_COMMAND_WORD:"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "        default:"
+        "content": "            return prepareListCommand(fullCommand);"
       },
       {
         "lineNumber": 69,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "lwxymere"
         },
-        "content": "            return new IncorrectCommand(Messages.UNKNOWN_COMMAND_ERROR);"
+        "content": "        case ExitCommand.EXIT_COMMAND_WORD:"
       },
       {
         "lineNumber": 70,
         "author": {
-          "gitId": "lwxymere"
+          "gitId": "Keith-JK"
         },
-        "content": "        }"
+        "content": "            return new ExitCommand();"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    }"
+        "content": "        default:"
       },
       {
         "lineNumber": 72,
         "author": {
-          "gitId": "lwxymere"
+          "gitId": "E0309556"
         },
-        "content": ""
+        "content": "            return new IncorrectCommand(Messages.UNKNOWN_COMMAND_ERROR);"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    /**"
+        "content": "        }"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "     * Returns a LocalDateTime object based on an input String with the format INPUT_DATE_FORMAT."
+        "content": "    }"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "     * @param dateTimeString String representing a date with the format dd/MM/yy HHmm"
+        "content": ""
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "     * @return LocalDateTime representing the date and time specified in dateTimeString"
+        "content": "    /**"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "     * @throws DateTimeParseException if dateTimeString does not follow INPUT_DATE_FORMAT"
+        "content": "     * Returns a LocalDateTime object based on an input String with the format INPUT_DATE_FORMAT."
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "     * @throws IndexOutOfBoundsException if dateTimeString does not follow INPUT_DATE_FORMAT"
+        "content": "     * @param dateTimeString String representing a date with the format dd/MM/yy HHmm"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "     */"
+        "content": "     * @return LocalDateTime representing the date and time specified in dateTimeString"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    public static LocalDateTime parseDate(String dateTimeString)"
+        "content": "     * @throws DateTimeParseException if dateTimeString does not follow INPUT_DATE_FORMAT"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "            throws DateTimeParseException, IndexOutOfBoundsException {"
+        "content": "     * @throws IndexOutOfBoundsException if dateTimeString does not follow INPUT_DATE_FORMAT"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "        // handle issue where there are multiple spaces between the date and the time"
+        "content": "     */"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "        String[] dateAndTime \u003d dateTimeString.split(\"\\\\s+\", 2);"
+        "content": "    public static LocalDateTime parseDate(String dateTimeString)"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "        String formattedDateTimeString \u003d dateAndTime[0] + \" \" + dateAndTime[1];"
+        "content": "            throws DateTimeParseException, IndexOutOfBoundsException {"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "        return LocalDateTime.parse(formattedDateTimeString, INPUT_DATE_FORMAT);"
+        "content": "        // handle issue where there are multiple spaces between the date and the time"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    }"
+        "content": "        String[] dateAndTime \u003d dateTimeString.split(\"\\\\s+\", 2);"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": ""
+        "content": "        String formattedDateTimeString \u003d dateAndTime[0] + \" \" + dateAndTime[1];"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    private static Command prepareAssignmentCommand(String fullCommand) {"
+        "content": "        return LocalDateTime.parse(formattedDateTimeString, INPUT_DATE_FORMAT);"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "        final Matcher matcher \u003d ASSIGNMENT_PARAMETERS_FORMAT.matcher(fullCommand);"
+        "content": "    }"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "        if (!matcher.matches()) {"
+        "content": ""
       },
       {
         "lineNumber": 91,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "lwxymere"
         },
-        "content": "            return new IncorrectCommand(Messages.ASSIGN_INCORRECT_FORMAT_ERROR);"
+        "content": "    private static Command prepareAssignmentCommand(String fullCommand) {"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "        }"
+        "content": "        final Matcher matcher \u003d ASSIGNMENT_PARAMETERS_FORMAT.matcher(fullCommand);"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": ""
+        "content": "        if (!matcher.matches()) {"
       },
       {
         "lineNumber": 94,
         "author": {
-          "gitId": "lwxymere"
+          "gitId": "E0309556"
         },
-        "content": "        LocalDateTime dateTime;"
+        "content": "            return new IncorrectCommand(Messages.ASSIGN_INCORRECT_FORMAT_ERROR);"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "        try {"
+        "content": "        }"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "            dateTime \u003d parseDate(matcher.group(\"dateTime\"));"
+        "content": ""
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "        } catch (DateTimeParseException | IndexOutOfBoundsException e) {"
+        "content": "        LocalDateTime dateTime;"
       },
       {
         "lineNumber": 98,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "lwxymere"
         },
-        "content": "            return new IncorrectCommand(Messages.DATE_INCORRECT_OR_INVALID_ERROR);"
+        "content": "        try {"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "        }"
+        "content": "            dateTime \u003d parseDate(matcher.group(\"dateTime\"));"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": ""
-      },
-      {
-        "lineNumber": 101,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        String assignmentName \u003d matcher.group(\"assignmentName\");"
-      },
-      {
-        "lineNumber": 102,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        String moduleName \u003d matcher.group(\"moduleName\");"
-      },
-      {
-        "lineNumber": 103,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        String comments \u003d matcher.group(\"comments\");"
-      },
-      {
-        "lineNumber": 104,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        return new AssignmentCommand(assignmentName, moduleName, dateTime, comments);"
-      },
-      {
-        "lineNumber": 105,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 106,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 107,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "    private static Command prepareDeleteCommand(String fullCommand) {"
-      },
-      {
-        "lineNumber": 108,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        String[] tokens \u003d fullCommand.split(\"\\\\s+\", 2);"
-      },
-      {
-        "lineNumber": 109,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        int deleteIndex;"
-      },
-      {
-        "lineNumber": 110,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        try {"
-      },
-      {
-        "lineNumber": 111,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "            deleteIndex \u003d Integer.parseInt(tokens[1].trim()) - 1;"
-      },
-      {
-        "lineNumber": 112,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        } catch (NumberFormatException e) {"
-      },
-      {
-        "lineNumber": 113,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "            return new IncorrectCommand(Messages.NUM_FORMAT_ERROR);"
-      },
-      {
-        "lineNumber": 114,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        } catch (IndexOutOfBoundsException e) {"
-      },
-      {
-        "lineNumber": 115,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "            return new IncorrectCommand(Messages.DELETE_INSUFFICIENT_ARGS_ERROR);"
-      },
-      {
-        "lineNumber": 116,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 117,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        return new DeleteCommand(deleteIndex);"
-      },
-      {
-        "lineNumber": 118,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 119,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 120,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "    private static Command prepareDoneCommand(String fullCommand) {"
-      },
-      {
-        "lineNumber": 121,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        String[] tokens \u003d fullCommand.split(\"\\\\s+\", 2);"
-      },
-      {
-        "lineNumber": 122,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        int doneIndex;"
-      },
-      {
-        "lineNumber": 123,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        try {"
-      },
-      {
-        "lineNumber": 124,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "            doneIndex \u003d Integer.parseInt(tokens[1].trim()) - 1;"
-      },
-      {
-        "lineNumber": 125,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        } catch (NumberFormatException e) {"
-      },
-      {
-        "lineNumber": 126,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "            return new IncorrectCommand(Messages.NUM_FORMAT_ERROR);"
-      },
-      {
-        "lineNumber": 127,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        } catch (IndexOutOfBoundsException e) {"
-      },
-      {
-        "lineNumber": 128,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "            return new IncorrectCommand(Messages.DONE_INSUFFICIENT_ARGS_ERROR);"
-      },
-      {
-        "lineNumber": 129,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 130,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        return new DoneCommand(doneIndex);"
-      },
-      {
-        "lineNumber": 131,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 132,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 133,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "    private static Command prepareEventCommand(String fullCommand) {"
-      },
-      {
-        "lineNumber": 134,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        final Matcher matcher \u003d EVENT_PARAMETERS_FORMAT.matcher(fullCommand);"
-      },
-      {
-        "lineNumber": 135,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        if (!matcher.matches()) {"
-      },
-      {
-        "lineNumber": 136,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "            return new IncorrectCommand(Messages.EVENT_INCORRECT_FORMAT_ERROR);"
-      },
-      {
-        "lineNumber": 137,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 138,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 139,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        LocalDateTime dateTime;"
-      },
-      {
-        "lineNumber": 140,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "        try {"
-      },
-      {
-        "lineNumber": 141,
-        "author": {
-          "gitId": "lwxymere"
-        },
-        "content": "            dateTime \u003d parseDate(matcher.group(\"dateTime\"));"
-      },
-      {
-        "lineNumber": 142,
-        "author": {
-          "gitId": "lwxymere"
-        },
         "content": "        } catch (DateTimeParseException | IndexOutOfBoundsException e) {"
       },
       {
-        "lineNumber": 143,
+        "lineNumber": 101,
         "author": {
           "gitId": "E0309556"
         },
         "content": "            return new IncorrectCommand(Messages.DATE_INCORRECT_OR_INVALID_ERROR);"
       },
       {
-        "lineNumber": 144,
+        "lineNumber": 102,
         "author": {
           "gitId": "lwxymere"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 145,
+        "lineNumber": 103,
         "author": {
           "gitId": "lwxymere"
         },
         "content": ""
       },
       {
-        "lineNumber": 146,
+        "lineNumber": 104,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "        String eventName \u003d matcher.group(\"eventName\");"
+        "content": "        String assignmentName \u003d matcher.group(\"assignmentName\");"
       },
       {
-        "lineNumber": 147,
+        "lineNumber": 105,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "        String location \u003d matcher.group(\"location\");"
+        "content": "        String moduleName \u003d matcher.group(\"moduleName\");"
       },
       {
-        "lineNumber": 148,
+        "lineNumber": 106,
         "author": {
           "gitId": "lwxymere"
         },
         "content": "        String comments \u003d matcher.group(\"comments\");"
       },
       {
-        "lineNumber": 149,
+        "lineNumber": 107,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "        return new EventCommand(eventName, location, dateTime, comments);"
+        "content": "        return new AssignmentCommand(assignmentName, moduleName, dateTime, comments);"
       },
       {
-        "lineNumber": 150,
+        "lineNumber": 108,
         "author": {
           "gitId": "lwxymere"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 151,
+        "lineNumber": 109,
         "author": {
           "gitId": "lwxymere"
         },
         "content": ""
       },
       {
-        "lineNumber": 152,
+        "lineNumber": 110,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "    private static Command prepareListCommand(String fullCommand) {"
+        "content": "    private static Command prepareDeleteCommand(String fullCommand) {"
       },
       {
-        "lineNumber": 153,
+        "lineNumber": 111,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "        String[] tokens \u003d fullCommand.trim().split(\"\\\\s+\", 2);"
+        "content": "        String[] tokens \u003d fullCommand.split(\"\\\\s+\", 2);"
       },
       {
-        "lineNumber": 154,
+        "lineNumber": 112,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "        if (tokens.length \u003d\u003d 1) {"
+        "content": "        int deleteIndex;"
       },
       {
-        "lineNumber": 155,
+        "lineNumber": 113,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "            // check if list has no parameters"
+        "content": "        try {"
       },
       {
-        "lineNumber": 156,
+        "lineNumber": 114,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "            return new ListCommand(null);"
+        "content": "            deleteIndex \u003d Integer.parseInt(tokens[1].trim()) - 1;"
       },
       {
-        "lineNumber": 157,
+        "lineNumber": 115,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        } catch (NumberFormatException e) {"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "            return new IncorrectCommand(Messages.NUM_FORMAT_ERROR);"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        } catch (IndexOutOfBoundsException e) {"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "            return new IncorrectCommand(Messages.DELETE_INSUFFICIENT_ARGS_ERROR);"
+      },
+      {
+        "lineNumber": 119,
         "author": {
           "gitId": "lwxymere"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 158,
+        "lineNumber": 120,
         "author": {
           "gitId": "lwxymere"
         },
-        "content": "        return new ListCommand(tokens[1]);"
+        "content": "        return new DeleteCommand(deleteIndex);"
       },
       {
-        "lineNumber": 159,
+        "lineNumber": 121,
         "author": {
           "gitId": "lwxymere"
         },
         "content": "    }"
       },
       {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "    private static Command prepareDoneCommand(String fullCommand) {"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        String[] tokens \u003d fullCommand.split(\"\\\\s+\", 2);"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        int doneIndex;"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "            doneIndex \u003d Integer.parseInt(tokens[1].trim()) - 1;"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        } catch (NumberFormatException e) {"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "            return new IncorrectCommand(Messages.NUM_FORMAT_ERROR);"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        } catch (IndexOutOfBoundsException e) {"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "            return new IncorrectCommand(Messages.DONE_INSUFFICIENT_ARGS_ERROR);"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        return new DoneCommand(doneIndex);"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "    private static Command prepareEventCommand(String fullCommand) {"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        final Matcher matcher \u003d EVENT_PARAMETERS_FORMAT.matcher(fullCommand);"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        if (!matcher.matches()) {"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "            return new IncorrectCommand(Messages.EVENT_INCORRECT_FORMAT_ERROR);"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        LocalDateTime dateTime;"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "            dateTime \u003d parseDate(matcher.group(\"dateTime\"));"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        } catch (DateTimeParseException | IndexOutOfBoundsException e) {"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "            return new IncorrectCommand(Messages.DATE_INCORRECT_OR_INVALID_ERROR);"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        String eventName \u003d matcher.group(\"eventName\");"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        String location \u003d matcher.group(\"location\");"
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        String comments \u003d matcher.group(\"comments\");"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        return new EventCommand(eventName, location, dateTime, comments);"
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "    private static Command prepareListCommand(String fullCommand) {"
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        String[] tokens \u003d fullCommand.trim().split(\"\\\\s+\", 2);"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        if (tokens.length \u003d\u003d 1) {"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "            // check if list has no parameters"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "            return new ListCommand(null);"
+      },
+      {
         "lineNumber": 160,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "        return new ListCommand(tokens[1]);"
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "lwxymere"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    private static Command prepareClearCommand(String fullCommand) {"
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        return new ClearCommand();"
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 167,
         "author": {
           "gitId": "lwxymere"
         },
@@ -4759,7 +5098,7 @@
     ],
     "authorContributionMap": {
       "lwxymere": 139,
-      "joelczk": 7,
+      "joelczk": 14,
       "Keith-JK": 4,
       "E0309556": 10
     }
@@ -5149,275 +5488,275 @@
       {
         "lineNumber": 55,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "jichngan"
         },
-        "content": "     * Getter method for tasks due or scheduled today."
+        "content": "     * Getter method for tasks depending of days from today."
       },
       {
         "lineNumber": 56,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "jichngan"
         },
-        "content": "     * @return ArrayList object containing all tasks for today."
+        "content": "     * @param days Integer representing number of days from today"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "jichngan"
         },
-        "content": "     */"
+        "content": "     * @return ArrayList object containing all tasks from indicated days from today"
       },
       {
         "lineNumber": 58,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "jichngan"
         },
-        "content": "    public ArrayList\u003cTask\u003e getTodayTasks() {"
+        "content": "     */"
       },
       {
         "lineNumber": 59,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "jichngan"
         },
-        "content": "        ArrayList\u003cTask\u003e todayList \u003d new ArrayList\u003c\u003e();"
+        "content": "    public ArrayList\u003cTask\u003e getTasksByDays(int days) {"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "jichngan"
         },
-        "content": "        LocalDate currDate \u003d getCurrentDate();"
+        "content": "        ArrayList\u003cTask\u003e taskList \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 61,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "jichngan"
         },
-        "content": "        for (Task task : tasks) {"
+        "content": "        LocalDate currDate \u003d getCurrentDate();"
       },
       {
         "lineNumber": 62,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "jichngan"
         },
-        "content": "            LocalDate taskDate \u003d task.getDate();"
+        "content": "        LocalDate daysIndicated \u003d currDate.plusDays(days);"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "E0309556"
         },
-        "content": "            if (currDate.compareTo(taskDate) \u003d\u003d 0) {"
+        "content": "        for (Task task : tasks) {"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "E0309556"
         },
-        "content": "                todayList.add(task);"
+        "content": "            LocalDate taskDate \u003d task.getDate();"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "jichngan"
         },
-        "content": "            }"
+        "content": "            if (currDate.compareTo(taskDate) \u003c\u003d 0 \u0026\u0026 taskDate.compareTo(daysIndicated) \u003c\u003d 0) {"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "jichngan"
         },
-        "content": "        }"
+        "content": "                taskList.add(task);"
       },
       {
         "lineNumber": 67,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "        return todayList;"
-      },
-      {
-        "lineNumber": 68,
-        "author": {
-          "gitId": "jichngan"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 69,
-        "author": {
-          "gitId": "jichngan"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 70,
-        "author": {
-          "gitId": "jichngan"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 71,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "     * Getter method for tasks due or scheduled within the next 7 days."
-      },
-      {
-        "lineNumber": 72,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "     * @return ArrayList object containing all tasks in next 7 days."
-      },
-      {
-        "lineNumber": 73,
-        "author": {
-          "gitId": "jichngan"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 74,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "    public ArrayList\u003cTask\u003e getWeekTasks() {"
-      },
-      {
-        "lineNumber": 75,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "        ArrayList\u003cTask\u003e weekList \u003d new ArrayList\u003c\u003e();"
-      },
-      {
-        "lineNumber": 76,
-        "author": {
-          "gitId": "jichngan"
-        },
-        "content": "        LocalDate currDate \u003d getCurrentDate();"
-      },
-      {
-        "lineNumber": 77,
-        "author": {
-          "gitId": "jichngan"
-        },
-        "content": "        LocalDate nextWeekDate \u003d currDate.plusWeeks(1);"
-      },
-      {
-        "lineNumber": 78,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "        for (Task task : tasks) {"
-      },
-      {
-        "lineNumber": 79,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "            LocalDate taskDate \u003d task.getDate();"
-      },
-      {
-        "lineNumber": 80,
-        "author": {
-          "gitId": "jichngan"
-        },
-        "content": "            if (currDate.compareTo(taskDate) \u003c\u003d 0 \u0026\u0026 taskDate.compareTo(nextWeekDate) \u003c 0) {"
-      },
-      {
-        "lineNumber": 81,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "                weekList.add(task);"
-      },
-      {
-        "lineNumber": 82,
         "author": {
           "gitId": "jichngan"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 83,
+        "lineNumber": 68,
         "author": {
           "gitId": "jichngan"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 84,
+        "lineNumber": 69,
         "author": {
-          "gitId": "E0309556"
+          "gitId": "jichngan"
         },
-        "content": "        return weekList;"
+        "content": "        return taskList;"
       },
       {
-        "lineNumber": 85,
+        "lineNumber": 70,
         "author": {
           "gitId": "jichngan"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 86,
+        "lineNumber": 71,
         "author": {
           "gitId": "jichngan"
         },
         "content": ""
       },
       {
-        "lineNumber": 87,
+        "lineNumber": 72,
         "author": {
           "gitId": "E0309556"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 88,
+        "lineNumber": 73,
         "author": {
           "gitId": "E0309556"
         },
         "content": "     * Getter method for tasks that are events and in the future."
       },
       {
-        "lineNumber": 89,
+        "lineNumber": 74,
         "author": {
           "gitId": "E0309556"
         },
         "content": "     * @return ArrayList object containing all future events."
       },
       {
-        "lineNumber": 90,
+        "lineNumber": 75,
         "author": {
           "gitId": "E0309556"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 91,
+        "lineNumber": 76,
         "author": {
           "gitId": "E0309556"
         },
         "content": "    public ArrayList\u003cTask\u003e getUpcomingEventArray() {"
       },
       {
-        "lineNumber": 92,
+        "lineNumber": 77,
         "author": {
           "gitId": "E0309556"
         },
         "content": "        ArrayList\u003cTask\u003e eventList \u003d new ArrayList\u003c\u003e();"
       },
       {
-        "lineNumber": 93,
+        "lineNumber": 78,
         "author": {
           "gitId": "E0309556"
         },
         "content": "        LocalDate currDate \u003d getCurrentDate();"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "        for (Task task : tasks) {"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "            LocalDate taskDate \u003d task.getDate();"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "            if (task instanceof Event \u0026\u0026 taskDate.compareTo(currDate) \u003e 0) {"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "                eventList.add(task);"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "        return eventList;"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "     * Getter method for tasks that are assignments and not marked done."
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "     * @return ArrayList object containing all incomplete assignments"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "    public ArrayList\u003cTask\u003e getIncompleteAssignArray() {"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "E0309556"
+        },
+        "content": "        ArrayList\u003cTask\u003e assignList \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 94,
@@ -5431,367 +5770,346 @@
         "author": {
           "gitId": "E0309556"
         },
-        "content": "            LocalDate taskDate \u003d task.getDate();"
+        "content": "            if (task instanceof Assignment \u0026\u0026 !task.getIsDone()) {"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "E0309556"
         },
-        "content": "            if (task instanceof Event \u0026\u0026 taskDate.compareTo(currDate) \u003e 0) {"
+        "content": "                assignList.add(task);"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "E0309556"
         },
-        "content": "                eventList.add(task);"
+        "content": "            }"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "E0309556"
         },
-        "content": "            }"
+        "content": "        }"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "E0309556"
         },
-        "content": "        }"
+        "content": "        return assignList;"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "E0309556"
         },
-        "content": "        return eventList;"
+        "content": "    }"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "E0309556"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 102,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 103,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 104,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "     * Getter method for tasks that are assignments and not marked done."
-      },
-      {
-        "lineNumber": 105,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "     * @return ArrayList object containing all incomplete assignments"
-      },
-      {
-        "lineNumber": 106,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 107,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "    public ArrayList\u003cTask\u003e getIncompleteAssignArray() {"
-      },
-      {
-        "lineNumber": 108,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "        ArrayList\u003cTask\u003e assignList \u003d new ArrayList\u003c\u003e();"
-      },
-      {
-        "lineNumber": 109,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "        for (Task task : tasks) {"
-      },
-      {
-        "lineNumber": 110,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "            if (task instanceof Assignment \u0026\u0026 !task.getIsDone()) {"
-      },
-      {
-        "lineNumber": 111,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "                assignList.add(task);"
-      },
-      {
-        "lineNumber": 112,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 113,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 114,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "        return assignList;"
-      },
-      {
-        "lineNumber": 115,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 116,
-        "author": {
-          "gitId": "E0309556"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 117,
         "author": {
           "gitId": "Keith-JK"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 118,
+        "lineNumber": 103,
         "author": {
           "gitId": "jichngan"
         },
         "content": "     * Getter method for Task with the provided index in TaskList."
       },
       {
-        "lineNumber": 119,
+        "lineNumber": 104,
         "author": {
           "gitId": "Keith-JK"
         },
         "content": "     * @param index index of Task to return"
       },
       {
-        "lineNumber": 120,
+        "lineNumber": 105,
         "author": {
           "gitId": "Keith-JK"
         },
         "content": "     * @return Task object with corresponding index"
       },
       {
-        "lineNumber": 121,
+        "lineNumber": 106,
         "author": {
           "gitId": "lwxymere"
         },
         "content": "     * @throws IndexOutOfBoundsException if index is invalid"
       },
       {
-        "lineNumber": 122,
+        "lineNumber": 107,
         "author": {
           "gitId": "Keith-JK"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 123,
+        "lineNumber": 108,
         "author": {
           "gitId": "lwxymere"
         },
         "content": "    public Task getTask(int index) throws IndexOutOfBoundsException {"
       },
       {
-        "lineNumber": 124,
+        "lineNumber": 109,
         "author": {
           "gitId": "Keith-JK"
         },
         "content": "        return this.tasks.get(index);"
       },
       {
-        "lineNumber": 125,
+        "lineNumber": 110,
         "author": {
           "gitId": "Keith-JK"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 126,
+        "lineNumber": 111,
         "author": {
           "gitId": "jichngan"
         },
         "content": ""
       },
       {
-        "lineNumber": 127,
+        "lineNumber": 112,
         "author": {
           "gitId": "Keith-JK"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 128,
+        "lineNumber": 113,
         "author": {
           "gitId": "Keith-JK"
         },
         "content": "     * Adds a task to TaskList."
       },
       {
-        "lineNumber": 129,
+        "lineNumber": 114,
         "author": {
           "gitId": "Keith-JK"
         },
         "content": "     * @param task task object to be added"
       },
       {
-        "lineNumber": 130,
+        "lineNumber": 115,
         "author": {
           "gitId": "Keith-JK"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 131,
+        "lineNumber": 116,
         "author": {
           "gitId": "Keith-JK"
         },
         "content": "    public void addTask(Task task) {"
       },
       {
-        "lineNumber": 132,
+        "lineNumber": 117,
         "author": {
           "gitId": "Keith-JK"
         },
         "content": "        tasks.add(task);"
       },
       {
-        "lineNumber": 133,
+        "lineNumber": 118,
         "author": {
           "gitId": "Keith-JK"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 134,
+        "lineNumber": 119,
         "author": {
           "gitId": "jichngan"
         },
         "content": ""
       },
       {
-        "lineNumber": 135,
+        "lineNumber": 120,
         "author": {
           "gitId": "Keith-JK"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 136,
+        "lineNumber": 121,
         "author": {
           "gitId": "Keith-JK"
         },
         "content": "     * Set the Task corresponding to index specified as done."
       },
       {
-        "lineNumber": 137,
+        "lineNumber": 122,
         "author": {
           "gitId": "Keith-JK"
         },
         "content": "     * @param doneIndex index of Task to be marked done"
       },
       {
-        "lineNumber": 138,
+        "lineNumber": 123,
         "author": {
           "gitId": "Keith-JK"
         },
         "content": "     * @throws IndexOutOfBoundsException throws when index is out of range of size of current TaskList"
       },
       {
-        "lineNumber": 139,
+        "lineNumber": 124,
         "author": {
           "gitId": "Keith-JK"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 140,
+        "lineNumber": 125,
         "author": {
           "gitId": "Keith-JK"
         },
         "content": "    public void markTaskAsDone(int doneIndex) throws IndexOutOfBoundsException {"
       },
       {
-        "lineNumber": 141,
+        "lineNumber": 126,
         "author": {
           "gitId": "Keith-JK"
         },
         "content": "        tasks.get(doneIndex).setDone();"
       },
       {
-        "lineNumber": 142,
+        "lineNumber": 127,
         "author": {
           "gitId": "Keith-JK"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 143,
+        "lineNumber": 128,
         "author": {
           "gitId": "joelczk"
         },
         "content": ""
       },
       {
-        "lineNumber": 144,
+        "lineNumber": 129,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "     * Delete tasks according to the index specified by user."
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "     * @param deleteIndex index of task to be deleted"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "     * @throws IndexOutOfBoundsException throws when index is out of range of the size of current Tasklist"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 134,
         "author": {
           "gitId": "joelczk"
         },
         "content": "    public void deleteTask(int deleteIndex) throws IndexOutOfBoundsException {"
       },
       {
-        "lineNumber": 145,
+        "lineNumber": 135,
         "author": {
           "gitId": "joelczk"
         },
         "content": "        tasks.remove(deleteIndex);"
       },
       {
-        "lineNumber": 146,
+        "lineNumber": 136,
         "author": {
           "gitId": "joelczk"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 147,
+        "lineNumber": 137,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "     * Deletes all the tasks in the list."
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    public void clearList() {"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        tasks.clear();"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 144,
         "author": {
           "gitId": "jichngan"
         },
@@ -5800,10 +6118,10 @@
     ],
     "authorContributionMap": {
       "lwxymere": 2,
-      "joelczk": 4,
+      "joelczk": 16,
       "Keith-JK": 21,
       "jichngan": 73,
-      "E0309556": 47
+      "E0309556": 32
     }
   },
   {
@@ -7620,6 +7938,554 @@
     "authorContributionMap": {
       "lwxymere": 5,
       "joelczk": 16
+    }
+  },
+  {
+    "path": "src/test/java/command/ClearCommandTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "package command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "import common.Messages;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "import org.junit.jupiter.api.BeforeAll;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "import seedu.duke.TaskList;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "import seedu.duke.Ui;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "import tasks.Assignment;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "import tasks.Event;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "import java.time.LocalDateTime;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "import java.time.format.DateTimeFormatter;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "public class ClearCommandTest {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    private static TaskList filledTaskList;"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    private static TaskList emptyTaskList;"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    private static Ui ui;"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "     * Initialize hard-coded test cases for testing purposes."
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    @BeforeAll"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    public static void setup() {"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        filledTaskList \u003d new TaskList();"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        emptyTaskList \u003d new TaskList();"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        ui \u003d new Ui();"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        DateTimeFormatter dateTimeFormatter \u003d DateTimeFormatter.ofPattern(\"dd/MM/yyyy HH:mm\");"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        DateTimeFormatter timeFormatter \u003d DateTimeFormatter.ofPattern(\"HH:mm\");"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        String dateOne \u003d \"13/03/2020 18:00\";"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        String dateTwo \u003d \"01/01/2020 00:00\";"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        LocalDateTime testDateTimeOne \u003d LocalDateTime.parse(dateOne, dateTimeFormatter);"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        LocalDateTime testDateTimeTwo \u003d LocalDateTime.parse(dateTwo, dateTimeFormatter);"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        Assignment testCaseOne \u003d new Assignment(\"Assignment 3\", \"CS2102\", testDateTimeOne, \" \");"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        Assignment testCaseTwo \u003d new Assignment(\"OP1\", \"CS2101\", testDateTimeTwo, \"15%\");"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        Assignment testCaseThree \u003d new Assignment(null,null,null,null);"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        Event testCaseFour \u003d new Event(\"midterms\", \"MPSH1A\", testDateTimeOne, \" \");"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        Event testCaseFive \u003d new Event(\"Countdown\", \"TimeSquare\", testDateTimeTwo, \"new year new me\");"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        Event testCaseSix \u003d new Event(null,null,null,null);"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        filledTaskList.addTask(testCaseOne);"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        filledTaskList.addTask(testCaseTwo);"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        filledTaskList.addTask(testCaseThree);"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        filledTaskList.addTask(testCaseFour);"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        filledTaskList.addTask(testCaseFive);"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        filledTaskList.addTask(testCaseSix);"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    public void testClear_success() {"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        filledTaskList.clearList();"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        assertEquals(filledTaskList.getListSize(),0);"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    public void testClear_failure() {"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        emptyTaskList.clearList();"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        assertEquals(emptyTaskList.getListSize(), 0);"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    public void testClear_successMessage() {"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        assertEquals(new ClearCommand().execute(filledTaskList, ui).feedbackToUser, Messages.CLEAR_SUCCESS_MESSAGE);"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    public void testClear_failureMessage() {"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "        assertEquals(new ClearCommand().execute(emptyTaskList, ui).feedbackToUser, Messages.NO_TASKS_MSG);"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "joelczk"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "joelczk": 77
     }
   },
   {
