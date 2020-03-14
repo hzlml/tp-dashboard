@@ -3093,7 +3093,7 @@
         "author": {
           "gitId": "kcubey"
         },
-        "content": "    private CardList cards \u003d new CardList(storage.loadCards());"
+        "content": "    private CardList cards;"
       },
       {
         "lineNumber": 18,
@@ -3245,124 +3245,131 @@
       {
         "lineNumber": 39,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
-        "content": "                String fullCommand \u003d ui.readCommand();"
+        "content": "                cards \u003d new CardList(storage.loadCards());"
       },
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "alexlim510"
+          "gitId": "Jeremy733"
         },
-        "content": "                Command c \u003d Parser.parse(fullCommand);"
+        "content": "                String fullCommand \u003d ui.readCommand();"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "                c.execute(cards);"
+        "content": "                Command c \u003d Parser.parse(fullCommand);"
       },
       {
         "lineNumber": 42,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "                c.execute(cards);"
+      },
+      {
+        "lineNumber": 43,
         "author": {
           "gitId": "kcubey"
         },
         "content": "                storage.saveCards(cards.getCards());"
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 44,
         "author": {
           "gitId": "alexlim510"
         },
         "content": "                isExit \u003d c.isExit();"
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 45,
         "author": {
           "gitId": "alexlim510"
         },
         "content": "            } catch (EscException e) {"
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 46,
         "author": {
           "gitId": "alexlim510"
         },
         "content": "                System.out.println(e.getMessage());"
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 47,
         "author": {
           "gitId": "alexlim510"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 48,
         "author": {
           "gitId": "alexlim510"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "kcubey"
-        },
-        "content": "    }"
-      },
-      {
         "lineNumber": 49,
         "author": {
           "gitId": "kcubey"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "     * Main method."
+        "content": "    /**"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "     */"
+        "content": "     * Main method."
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "    public static void main(String[] args) {"
+        "content": "     */"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "        new Duke().run();"
+        "content": "    public static void main(String[] args) {"
       },
       {
         "lineNumber": 55,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "        new Duke().run();"
+      },
+      {
+        "lineNumber": 56,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 56,
+        "lineNumber": 57,
         "author": {
           "gitId": "-"
         },
@@ -3372,7 +3379,7 @@
     "authorContributionMap": {
       "alexlim510": 19,
       "Jeremy733": 15,
-      "kcubey": 11,
+      "kcubey": 12,
       "-": 11
     }
   },
@@ -3738,196 +3745,196 @@
         "author": {
           "gitId": "kcubey"
         },
-        "content": ""
+        "content": "import seedu.exception.EscException;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "import java.io.File;"
+        "content": ""
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "import java.io.IOException;"
+        "content": "import java.io.File;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "import java.io.FileOutputStream;"
+        "content": "import java.io.IOException;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "import java.io.ObjectOutputStream;"
+        "content": "import java.io.FileOutputStream;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "import java.io.ObjectInputStream;"
+        "content": "import java.io.ObjectOutputStream;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "import java.io.FileInputStream;"
+        "content": "import java.io.ObjectInputStream;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "import java.nio.file.Path;"
+        "content": "import java.io.FileInputStream;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "import java.nio.file.Paths;"
+        "content": "import java.nio.file.Path;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "import java.util.ArrayList;"
+        "content": "import java.nio.file.Paths;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "kcubey"
         },
-        "content": ""
+        "content": "import java.util.ArrayList;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "public class Storage {"
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "kcubey"
         },
-        "content": ""
+        "content": "public class Storage {"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "    private static String dir \u003d System.getProperty(\"user.dir\");"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "    private static Path filepath \u003d Paths.get(dir, \"data\", \"cards.txt\");"
+        "content": "    private static String dir \u003d System.getProperty(\"user.dir\");"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "    private static String filepathStr  \u003d String.valueOf(filepath);"
+        "content": "    private static Path filepath \u003d Paths.get(dir, \"data\", \"cards.txt\");"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "    private static File saveFile \u003d new File(filepathStr);"
+        "content": "    private static String filepathStr  \u003d String.valueOf(filepath);"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "kcubey"
         },
-        "content": ""
+        "content": "    private static File saveFile \u003d new File(filepathStr);"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "     * Loads any pre-existing cards from the save file and creates a new card list."
+        "content": "    /**"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "     * @return pre-existing card list (if any) or a new list"
+        "content": "     * Loads any pre-existing cards from the save file and creates a new card list."
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "     */"
+        "content": "     * @return pre-existing card list (if any) or a new list"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "    public static ArrayList\u003cCard\u003e loadCards() {"
+        "content": "     */"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "        ArrayList\u003cCard\u003e loadCards \u003d new ArrayList\u003c\u003e();"
+        "content": "    public static ArrayList\u003cCard\u003e loadCards() throws EscException {"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "        ArrayList tempList;"
+        "content": "        ArrayList\u003cCard\u003e loadCards \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "        if (!saveFile.exists()) {"
+        "content": "        ArrayList tempList;"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "            try {"
+        "content": "        if (!saveFile.exists()) {"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "                // creates all sub dir if not exist"
+        "content": "            try {"
       },
       {
         "lineNumber": 32,
@@ -3955,7 +3962,7 @@
         "author": {
           "gitId": "kcubey"
         },
-        "content": "                System.out.println(\"File creation error\");"
+        "content": "                throw new EscException(\"File creation error\");"
       },
       {
         "lineNumber": 36,
@@ -4053,7 +4060,7 @@
         "author": {
           "gitId": "kcubey"
         },
-        "content": "                System.out.println(\"\\nLoad error\");"
+        "content": "                throw new EscException(\"Load error\");"
       },
       {
         "lineNumber": 50,
@@ -4123,7 +4130,7 @@
         "author": {
           "gitId": "kcubey"
         },
-        "content": "    public void saveCards(ArrayList\u003cCard\u003e currCards) {"
+        "content": "    public void saveCards(ArrayList\u003cCard\u003e currCards) throws EscException {"
       },
       {
         "lineNumber": 60,
@@ -4186,7 +4193,7 @@
         "author": {
           "gitId": "kcubey"
         },
-        "content": "            System.out.println(\"\\nSave error\");"
+        "content": "            throw new EscException(\"Save error\");"
       },
       {
         "lineNumber": 69,
@@ -4354,100 +4361,100 @@
       {
         "lineNumber": 20,
         "author": {
-          "gitId": "kcubey"
+          "gitId": "Jeremy733"
         },
-        "content": "        //greeting +\u003d \"What is your name?\";"
+        "content": ""
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": ""
+        "content": "        System.out.println(greeting);"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "        System.out.println(greeting);"
+        "content": "    }"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": ""
+        "content": "    public static void showLine() {"
       },
       {
         "lineNumber": 25,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
-        "content": "    public static void showLine() {"
+        "content": "        System.out.println(\"______________________\");"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "        System.out.println(\"_________________________________________________\");"
+        "content": "    }"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "    /**"
+        "content": "     * Reads the user command."
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "     * Reads the user command."
+        "content": "     * @return User command."
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "     * @return User command."
+        "content": "     */"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "     */"
+        "content": "    public static String readCommand() {"
       },
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
-        "content": "    public static String readCommand() {"
+        "content": "        showLine();"
       },
       {
         "lineNumber": 34,
@@ -4466,9 +4473,9 @@
       {
         "lineNumber": 36,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
-        "content": "        System.out.println(\"[Command entered: \" + userInput + \"]\");"
+        "content": "        System.out.println(\"[Command entered: \" + userInput + \"]\"); //TODO remove if not necessary"
       },
       {
         "lineNumber": 37,
@@ -4522,222 +4529,166 @@
       {
         "lineNumber": 44,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
-        "content": "        String helpMessage \u003d \" Welcome to ESC.\\n\""
+        "content": "        String helpMessage \u003d \"Here\u0027s a list of things you can do:\\n\""
       },
       {
         "lineNumber": 45,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
-        "content": "                + \"Create: ​create n/[CATEGORYNAME] \\n\""
+        "content": "                + \"\\t\u003e Create Category:     create n/[CATEGORYNAME]  e.g. create n/Biology.\\n\""
       },
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
-        "content": "                + \"E.g. ​create n/Biology.\\n\""
+        "content": "                + \"\\t\u003e List Category: ​     list category\\n\""
       },
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
-        "content": "                + \"List Category: ​list category\\n\""
+        "content": "                + \"\\t\u003e Select Category: ​   select [INDEX] e.g. select 1\\n\""
       },
       {
         "lineNumber": 48,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
-        "content": "                + \"Select Category: ​select [INDEX]\\n\""
+        "content": "                + \"\\t\u003e Delete Category: ​   delete category [INDEX] e.g. delete 1\\n\""
       },
       {
         "lineNumber": 49,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
-        "content": "                + \"Eg. ​select 1\\n\""
+        "content": "                + \"\\t\u003e Add New Card:​       add q/[QUESTION] a/[ANSWER] e.g. add q/Which year was NUS founded? a/1980\\n\""
       },
       {
         "lineNumber": 50,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
-        "content": "                + \"Delete Category: ​delete category [INDEX]\\n\""
+        "content": "                + \"\\t\u003e List all Cards: ​    list card\\n\""
       },
       {
         "lineNumber": 51,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
-        "content": "                + \"Eg. ​delete 1\\n\""
+        "content": "                + \"\\t\u003e Delete a Card: ​     delete [INDEX] e.g. delete 1\\n\""
       },
       {
         "lineNumber": 52,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
-        "content": "                + \"Add Card:​ add q/[QUESTION] a/[ANSWER]\\n\""
+        "content": "                + \"\\t\u003e Start Quiz: ​        quiz\\n\""
       },
       {
         "lineNumber": 53,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
-        "content": "                + \"Eg. ​add q/Which year was NUS founded? a/1980\\n\""
+        "content": "                + \"\\t\u003e View Answer: ​       answer [INDEX] e.g. answer 1\\n\""
       },
       {
         "lineNumber": 54,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
-        "content": "                + \"List Card: ​list card\\n\""
+        "content": "                + \"\\t\u003e Help Page: ​         help\\n\""
       },
       {
         "lineNumber": 55,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
-        "content": "                + \"Delete Card: ​delete [INDEX]\\n\""
+        "content": "                + \"\\t\u003e Exit the Program: ​  exit\";"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "                + \"Eg. ​delete 1\\n\""
+        "content": "        System.out.println(helpMessage);"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "                + \"Quiz: ​quiz\\n\""
+        "content": "    }"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "                + \"Answer: ​answer​ / ​answer [INDEX]\\n\""
+        "content": ""
       },
       {
         "lineNumber": 59,
-        "author": {
-          "gitId": "Jeremy733"
-        },
-        "content": "                + \"Eg. ​answer 1\\n\""
-      },
-      {
-        "lineNumber": 60,
-        "author": {
-          "gitId": "Jeremy733"
-        },
-        "content": "                + \"Help: ​help\\n\""
-      },
-      {
-        "lineNumber": 61,
-        "author": {
-          "gitId": "Jeremy733"
-        },
-        "content": "                + \"Exit: ​exit\\n\";"
-      },
-      {
-        "lineNumber": 62,
-        "author": {
-          "gitId": "Jeremy733"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 63,
-        "author": {
-          "gitId": "Jeremy733"
-        },
-        "content": "        System.out.println(helpMessage);"
-      },
-      {
-        "lineNumber": 64,
-        "author": {
-          "gitId": "Jeremy733"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 65,
-        "author": {
-          "gitId": "Jeremy733"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 66,
         "author": {
           "gitId": "kcubey"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 67,
+        "lineNumber": 60,
         "author": {
           "gitId": "kcubey"
         },
         "content": "     * Exits the ESC program."
       },
       {
-        "lineNumber": 68,
+        "lineNumber": 61,
         "author": {
           "gitId": "kcubey"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 69,
+        "lineNumber": 62,
         "author": {
           "gitId": "Jeremy733"
         },
         "content": "    public static void exitEsc() {"
       },
       {
-        "lineNumber": 70,
+        "lineNumber": 63,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
-        "content": "        System.out.println(\"____________________________________________________________\");"
+        "content": "        showLine();"
       },
       {
-        "lineNumber": 71,
+        "lineNumber": 64,
         "author": {
           "gitId": "Jeremy733"
         },
         "content": "        System.out.println(\"Bye. Hope to see you again soon!\");"
       },
       {
-        "lineNumber": 72,
+        "lineNumber": 65,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
-        "content": "        System.out.println(\"____________________________________________________________\");"
+        "content": "        showLine();"
       },
       {
-        "lineNumber": 73,
+        "lineNumber": 66,
         "author": {
           "gitId": "Jeremy733"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 74,
-        "author": {
-          "gitId": "Jeremy733"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 75,
+        "lineNumber": 67,
         "author": {
           "gitId": "Jeremy733"
         },
@@ -4745,8 +4696,8 @@
       }
     ],
     "authorContributionMap": {
-      "Jeremy733": 69,
-      "kcubey": 6
+      "Jeremy733": 45,
+      "kcubey": 22
     }
   },
   {

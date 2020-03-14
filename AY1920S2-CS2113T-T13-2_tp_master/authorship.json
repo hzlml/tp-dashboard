@@ -410,584 +410,738 @@
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "import org.fusesource.jansi.Ansi;"
+        "content": "import seedu.nuke.command.Command;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "import org.fusesource.jansi.AnsiConsole;"
+        "content": "import seedu.nuke.command.CommandResult;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "import seedu.nuke.command.Command;"
+        "content": "import seedu.nuke.command.ExitCommand;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "import seedu.nuke.command.CommandResult;"
+        "content": "import seedu.nuke.data.*;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "import seedu.nuke.command.ExitCommand;"
+        "content": "import seedu.nuke.module.Module;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "import seedu.nuke.data.DataManager;"
-      },
-      {
-        "lineNumber": 9,
-        "author": {
-          "gitId": "A11riseforme"
-        },
-        "content": "import seedu.nuke.data.ModuleLoader;"
-      },
-      {
-        "lineNumber": 10,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "import seedu.nuke.data.ModuleManager;"
-      },
-      {
-        "lineNumber": 11,
-        "author": {
-          "gitId": "A11riseforme"
-        },
-        "content": "import seedu.nuke.module.DummyModule;"
-      },
-      {
-        "lineNumber": 12,
-        "author": {
-          "gitId": "wangqinNick"
-        },
         "content": "import seedu.nuke.parser.Parser;"
       },
       {
-        "lineNumber": 13,
+        "lineNumber": 9,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "import seedu.nuke.ui.TextUi;"
       },
       {
-        "lineNumber": 14,
+        "lineNumber": 10,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "import seedu.nuke.ui.Ui;"
       },
       {
-        "lineNumber": 15,
+        "lineNumber": 11,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": ""
       },
       {
-        "lineNumber": 16,
+        "lineNumber": 12,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "import java.io.FileNotFoundException;"
       },
       {
-        "lineNumber": 17,
-        "author": {
-          "gitId": "A11riseforme"
-        },
-        "content": "import java.util.ArrayList;"
-      },
-      {
-        "lineNumber": 18,
+        "lineNumber": 13,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "import java.util.HashMap;"
       },
       {
-        "lineNumber": 19,
-        "author": {
-          "gitId": "A11riseforme"
-        },
-        "content": "import java.util.List;"
-      },
-      {
-        "lineNumber": 20,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "import java.util.Scanner;"
-      },
-      {
-        "lineNumber": 21,
+        "lineNumber": 14,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": ""
       },
       {
-        "lineNumber": 22,
+        "lineNumber": 15,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "import static org.fusesource.jansi.Ansi.ansi;"
       },
       {
-        "lineNumber": 23,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "import static seedu.nuke.ui.TextUi.printDivider;"
-      },
-      {
-        "lineNumber": 24,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "import static seedu.nuke.util.ExceptionMessage.*;"
-      },
-      {
-        "lineNumber": 25,
+        "lineNumber": 16,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": ""
       },
       {
-        "lineNumber": 26,
+        "lineNumber": 17,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "public class Nuke {"
       },
       {
-        "lineNumber": 27,
+        "lineNumber": 18,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    private CommandResult commandResult;"
       },
       {
-        "lineNumber": 28,
+        "lineNumber": 19,
         "author": {
           "gitId": "HAOYUN49"
         },
         "content": "    private ModuleManager moduleManager;"
       },
       {
-        "lineNumber": 29,
+        "lineNumber": 20,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    private DataManager dataManager;"
       },
       {
-        "lineNumber": 30,
+        "lineNumber": 21,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "    public HashMap\u003cString,String\u003e modulesMap;"
       },
       {
-        "lineNumber": 31,
+        "lineNumber": 22,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public ScreenShotManager screenShotManager;"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    private ScreenShot currentScreenShot;"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "    private Ui ui;"
       },
       {
-        "lineNumber": 32,
+        "lineNumber": 26,
         "author": {
           "gitId": "HAOYUN49"
         },
         "content": ""
       },
       {
-        "lineNumber": 33,
+        "lineNumber": 27,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "    public Nuke() throws FileNotFoundException {"
       },
       {
-        "lineNumber": 34,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "        moduleManager \u003d new ModuleManager();"
-      },
-      {
-        "lineNumber": 35,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "        dataManager \u003d new DataManager(moduleManager);"
-      },
-      {
-        "lineNumber": 36,
+        "lineNumber": 28,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "        modulesMap  \u003d ModuleLoader.load(\"moduleList.json\");"
       },
       {
-        "lineNumber": 37,
+        "lineNumber": 29,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        moduleManager \u003d new ModuleManager(modulesMap);"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        dataManager \u003d new DataManager(moduleManager);"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        screenShotManager \u003d new ScreenShotManager();"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        currentScreenShot \u003d new ScreenShot(moduleManager, dataManager);"
+      },
+      {
+        "lineNumber": 33,
         "author": {
           "gitId": "HAOYUN49"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 38,
+        "lineNumber": 34,
         "author": {
           "gitId": "HAOYUN49"
         },
         "content": ""
       },
       {
-        "lineNumber": 39,
+        "lineNumber": 35,
         "author": {
           "gitId": "-"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 40,
+        "lineNumber": 36,
         "author": {
-          "gitId": "-"
+          "gitId": "wangqinNick"
         },
-        "content": "     * Main entry-point for the java.duke.Duke application."
+        "content": "     * ScreenShot entry-point for the java.duke.Duke application."
       },
       {
-        "lineNumber": 41,
+        "lineNumber": 37,
         "author": {
           "gitId": "-"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 42,
+        "lineNumber": 38,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "    public static void main(String[] args) throws FileNotFoundException {"
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 39,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        TextUi.clearScreen();"
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 40,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        TextUi.displayLogo();"
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 41,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        new Nuke().run();"
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 42,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 43,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": ""
       },
       {
-        "lineNumber": 48,
+        "lineNumber": 44,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    private void run() {"
+        "content": "    public void run() {"
       },
       {
-        "lineNumber": 49,
+        "lineNumber": 45,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "        this.ui \u003d new Ui();"
       },
       {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 51,
+        "lineNumber": 46,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        TextUi.showWelcomeMessage();"
       },
       {
-        "lineNumber": 52,
+        "lineNumber": 47,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        runCommandLoopUntilExitCommand();"
       },
       {
-        "lineNumber": 53,
+        "lineNumber": 48,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 54,
+        "lineNumber": 49,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": ""
       },
       {
-        "lineNumber": 55,
+        "lineNumber": 50,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    private void runCommandLoopUntilExitCommand() {"
       },
       {
-        "lineNumber": 56,
+        "lineNumber": 51,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        do {"
       },
       {
-        "lineNumber": 57,
+        "lineNumber": 52,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "            String userCommandText \u003d ui.getInput();"
       },
       {
-        "lineNumber": 58,
+        "lineNumber": 53,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "            Command command \u003d new Parser().parseCommand(userCommandText);"
       },
       {
-        "lineNumber": 59,
+        "lineNumber": 54,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "            CommandResult result \u003d executeCommand(command);"
       },
       {
-        "lineNumber": 60,
+        "lineNumber": 55,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "            ui.showResult(result);"
       },
       {
-        "lineNumber": 61,
+        "lineNumber": 56,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "        } while (!ExitCommand.isExit());"
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 57,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 63,
+        "lineNumber": 58,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": ""
       },
       {
-        "lineNumber": 64,
+        "lineNumber": 59,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 65,
+        "lineNumber": 60,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "     * initialize the taskManager system, execute command and save the list to the file"
       },
       {
-        "lineNumber": 66,
+        "lineNumber": 61,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "     * @param command the parsed Command object"
       },
       {
-        "lineNumber": 67,
+        "lineNumber": 62,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "     * @return commandResult that contains the execute output information"
       },
       {
-        "lineNumber": 68,
+        "lineNumber": 63,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 69,
+        "lineNumber": 64,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    private CommandResult executeCommand(Command command) {"
       },
       {
-        "lineNumber": 70,
+        "lineNumber": 65,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        try {"
       },
       {
-        "lineNumber": 71,
+        "lineNumber": 66,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "            //load from current screen shot"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "            readScreenShot();"
+      },
+      {
+        "lineNumber": 68,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "            // supplies the data the command will operate on."
       },
       {
-        "lineNumber": 72,
+        "lineNumber": 69,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "            // if there is no file to load or the file is empty, setData will initialize a new taskManager system"
       },
       {
-        "lineNumber": 73,
+        "lineNumber": 70,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "            //update the module manager as well as the data manager"
       },
       {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "            setCommandData(command);"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "            //take the screen shot"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "            takeScreenShot();"
+      },
+      {
         "lineNumber": 74,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "            command.setData(moduleManager, dataManager);"
+        "content": "            //add screen shot"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "            // Execute according to the command itself"
+        "content": "            addScreenShotToScreenShotList();"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "            commandResult \u003d command.execute();"
+        "content": "            // Execute according to the command itself"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "            // save the taskManager to a file"
+        "content": "            execute(command);"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "            //moduleManager.getStorager().save(taskManager);"
+        "content": "            // save the taskManager to a file"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "            //StorageFile.saveJson(taskManager);"
+        "content": "            //moduleManager.getStorager().save(taskManager);"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        } catch (Exception ex) {"
+        "content": "            //StorageFile.saveJson(taskManager);"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "            // the out layer exception handler"
+        "content": "        } catch (Exception ex) {"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "            System.out.println(ex);"
+        "content": "            // the out layer exception handler"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        }"
+        "content": "            System.out.println(ex);"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        return commandResult;"
+        "content": "        }"
       },
       {
         "lineNumber": 85,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        return commandResult;"
+      },
+      {
+        "lineNumber": 86,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 86,
+        "lineNumber": 87,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    private void execute(Command command) {"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        commandResult \u003d command.execute();"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    private void addScreenShotToScreenShotList() {"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        screenShotManager.getScreenShotList().add(currentScreenShot);"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    private void setCommandData(Command command) {"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        command.setData(moduleManager, dataManager, screenShotManager);"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    private void takeScreenShot() {"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        currentScreenShot.takeScreenShot(moduleManager, dataManager);"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    private void readScreenShot() {"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        dataManager.setAllTasks(screenShotManager.getCurrentScreenShot().getDataManager().getAllTasks());"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        moduleManager.setModules(screenShotManager.getCurrentScreenShot().getModuleManager().getModuleList());"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 108,
         "author": {
           "gitId": "-"
         },
@@ -995,11 +1149,11 @@
       }
     ],
     "authorContributionMap": {
-      "HAOYUN49": 5,
-      "wangqinNick": 54,
-      "A11riseforme": 12,
-      "iceclementi": 9,
-      "-": 6
+      "HAOYUN49": 4,
+      "wangqinNick": 83,
+      "A11riseforme": 9,
+      "iceclementi": 7,
+      "-": 5
     }
   },
   {
@@ -1030,114 +1184,114 @@
       {
         "lineNumber": 4,
         "author": {
-          "gitId": "iceclementi"
+          "gitId": "A11riseforme"
         },
-        "content": "import seedu.nuke.module.Module;"
+        "content": "import seedu.nuke.exception.ModuleNotProvidedException;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": ""
+        "content": "import seedu.nuke.module.Module;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "import static seedu.nuke.util.ExceptionMessage.MESSAGE_DUPLICATE_MODULE_ADD;"
+        "content": ""
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "import static seedu.nuke.util.Message.MESSAGE_ADD_MODULE_SUCCESS;"
+        "content": "import static seedu.nuke.util.ExceptionMessage.MESSAGE_DUPLICATE_MODULE_ADD;"
       },
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "iceclementi"
+          "gitId": "A11riseforme"
         },
-        "content": ""
+        "content": "import static seedu.nuke.util.ExceptionMessage.MESSAGE_MODULE_NOT_PROVIDED;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "/**"
+        "content": "import static seedu.nuke.util.Message.MESSAGE_ADD_MODULE_SUCCESS;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": " * \u003ch3\u003eAdd Module Command\u003c/h3\u003e"
+        "content": ""
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": " * A \u003cb\u003eCommand\u003c/b\u003e to add a \u003cb\u003eModule\u003c/b\u003e into the \u003cb\u003eModule List\u003c/b\u003e."
+        "content": "/**"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": " * @see Command"
+        "content": " * \u003ch3\u003eAdd Module Command\u003c/h3\u003e"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": " * @see Module"
+        "content": " * A \u003cb\u003eCommand\u003c/b\u003e to add a \u003cb\u003eModule\u003c/b\u003e into the \u003cb\u003eModule List\u003c/b\u003e."
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": " */"
+        "content": " * @see Command"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "public class AddModuleCommand extends Command {"
+        "content": " * @see Module"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "    public static final String COMMAND_WORD \u003d \"addm\";"
+        "content": " */"
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "wangqinNick"
+          "gitId": "iceclementi"
         },
-        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD+ \" \u003cmodule code\u003e\";"
+        "content": "public class AddModuleCommand extends Command {"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": ""
+        "content": "    public static final String COMMAND_WORD \u003d \"addm\";"
       },
       {
         "lineNumber": 19,
         "author": {
-          "gitId": "iceclementi"
+          "gitId": "wangqinNick"
         },
-        "content": "    private String moduleCode;"
+        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD+ \" \u003cmodule code\u003e\";"
       },
       {
         "lineNumber": 20,
@@ -1151,150 +1305,178 @@
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "    public AddModuleCommand(String moduleCode) {"
+        "content": "    private String moduleCode;"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "        this.moduleCode \u003d moduleCode;"
+        "content": ""
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "    }"
+        "content": "    public AddModuleCommand(String moduleCode) {"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": ""
+        "content": "        this.moduleCode \u003d moduleCode;"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     * Executes the \u003cb\u003eAdd Module Command\u003c/b\u003e to add a \u003cb\u003eModule\u003c/b\u003e into the \u003cb\u003eModule List\u003c/b\u003e."
+        "content": ""
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     *"
+        "content": "    /**"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     * @return The \u003cb\u003eCommand Result\u003c/b\u003e of the execution"
+        "content": "     * Executes the \u003cb\u003eAdd Module Command\u003c/b\u003e to add a \u003cb\u003eModule\u003c/b\u003e into the \u003cb\u003eModule List\u003c/b\u003e."
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     * @see Module"
+        "content": "     *"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     * @see CommandResult"
+        "content": "     * @return The \u003cb\u003eCommand Result\u003c/b\u003e of the execution"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     */"
+        "content": "     * @see Module"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "    @Override"
+        "content": "     * @see CommandResult"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "    public CommandResult execute() {"
+        "content": "     */"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "        Module toAdd \u003d new Module(moduleCode, null, null);"
+        "content": "    @Override"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "        try {"
+        "content": "    public CommandResult execute() {"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "            ModuleManager.add(toAdd);"
+        "content": "        try {"
       },
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "iceclementi"
+          "gitId": "wangqinNick"
         },
-        "content": "            return new CommandResult(MESSAGE_ADD_MODULE_SUCCESS(toAdd.getModuleCode(), toAdd.getTitle()));"
+        "content": "            moduleManager.add(moduleCode);"
       },
       {
         "lineNumber": 38,
         "author": {
-          "gitId": "iceclementi"
+          "gitId": "wangqinNick"
         },
-        "content": "        } catch (ModuleManager.DuplicateModuleException e) {"
+        "content": "            Module addedModule \u003d moduleManager.getLastAddedModule();"
       },
       {
         "lineNumber": 39,
         "author": {
-          "gitId": "iceclementi"
+          "gitId": "A11riseforme"
         },
-        "content": "            return new CommandResult(MESSAGE_DUPLICATE_MODULE_ADD);"
+        "content": "            return new CommandResult(MESSAGE_ADD_MODULE_SUCCESS(addedModule.getModuleCode(), addedModule.getTitle()));"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "        }"
+        "content": "        } catch (ModuleManager.DuplicateModuleException e) {"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "    }"
+        "content": "            return new CommandResult(MESSAGE_DUPLICATE_MODULE_ADD);"
       },
       {
         "lineNumber": 42,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        } catch (ModuleNotProvidedException e) {"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "            return new CommandResult(MESSAGE_MODULE_NOT_PROVIDED);"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 46,
         "author": {
           "gitId": "iceclementi"
         },
@@ -1302,8 +1484,9 @@
       }
     ],
     "authorContributionMap": {
-      "wangqinNick": 1,
-      "iceclementi": 41
+      "wangqinNick": 3,
+      "A11riseforme": 5,
+      "iceclementi": 38
     }
   },
   {
@@ -2111,9 +2294,9 @@
       {
         "lineNumber": 24,
         "author": {
-          "gitId": "HAOYUN49"
+          "gitId": "wangqinNick"
         },
-        "content": "            this.module \u003d ModuleManager.getModuleList().get(moduleIndex);"
+        "content": "            this.module \u003d moduleManager.getModuleList().get(moduleIndex);"
       },
       {
         "lineNumber": 25,
@@ -2215,7 +2398,8 @@
       }
     ],
     "authorContributionMap": {
-      "HAOYUN49": 38
+      "HAOYUN49": 37,
+      "wangqinNick": 1
     }
   },
   {
@@ -2241,47 +2425,47 @@
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "import seedu.nuke.data.DataManager;"
+        "content": "import seedu.nuke.data.*;"
       },
       {
         "lineNumber": 4,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "import seedu.nuke.data.ModuleManager;"
-      },
-      {
-        "lineNumber": 5,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "import seedu.nuke.data.TaskManager;"
-      },
-      {
-        "lineNumber": 6,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "import seedu.nuke.module.Module;"
       },
       {
-        "lineNumber": 7,
+        "lineNumber": 5,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "import seedu.nuke.task.Task;"
       },
       {
-        "lineNumber": 8,
+        "lineNumber": 6,
         "author": {
           "gitId": "HAOYUN49"
         },
         "content": "import seedu.nuke.ui.Ui;"
       },
       {
-        "lineNumber": 9,
+        "lineNumber": 7,
         "author": {
           "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "import java.util.HashMap;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "A11riseforme"
         },
         "content": ""
       },
@@ -2318,136 +2502,150 @@
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    protected static Module currentModule;"
+        "content": "    protected ScreenShotManager screenShotManager;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": ""
+        "content": "    protected static Module currentModule;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    public abstract CommandResult execute () ;"
+        "content": ""
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    public String toString(){"
+        "content": "    public abstract CommandResult execute () ;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        return this.COMMAND_WORD;"
+        "content": "    public String toString(){"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    }"
+        "content": "        return this.COMMAND_WORD;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    public void setData(ModuleManager moduleManager, DataManager dataManager) {"
+        "content": ""
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        this.moduleManager \u003d moduleManager;"
+        "content": "    public void setData(ModuleManager moduleManager, DataManager dataManager, ScreenShotManager screenShotManager) {"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        this.dataManager \u003d dataManager;"
+        "content": "        this.moduleManager \u003d moduleManager;"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    }"
+        "content": "        this.dataManager \u003d dataManager;"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": ""
+        "content": "        this.screenShotManager \u003d screenShotManager;"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    public static Module getCurrentModule() {"
+        "content": "    }"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        return currentModule;"
+        "content": ""
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    }"
+        "content": "    public static Module getCurrentModule() {"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": ""
+        "content": "        return currentModule;"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    public static void setCurrentModule(Module currentModule) {"
+        "content": "    }"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        Command.currentModule \u003d currentModule;"
+        "content": ""
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    }"
+        "content": "    public static void setCurrentModule(Module currentModule) {"
       },
       {
         "lineNumber": 33,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        Command.currentModule \u003d currentModule;"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 35,
         "author": {
           "gitId": "wangqinNick"
         },
@@ -2455,8 +2653,9 @@
       }
     ],
     "authorContributionMap": {
-      "HAOYUN49": 2,
-      "wangqinNick": 31
+      "HAOYUN49": 1,
+      "wangqinNick": 32,
+      "A11riseforme": 2
     }
   },
   {
@@ -2910,9 +3109,9 @@
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "iceclementi"
+          "gitId": "wangqinNick"
         },
-        "content": "            Module deletedModule \u003d ModuleManager.delete(moduleCode);"
+        "content": "            Module deletedModule \u003d moduleManager.delete(moduleCode);"
       },
       {
         "lineNumber": 34,
@@ -2958,8 +3157,8 @@
       }
     ],
     "authorContributionMap": {
-      "wangqinNick": 3,
-      "iceclementi": 36
+      "wangqinNick": 4,
+      "iceclementi": 35
     }
   },
   {
@@ -4651,6 +4850,155 @@
     }
   },
   {
+    "path": "src/main/java/seedu/nuke/command/UndoCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "package seedu.nuke.command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "import seedu.nuke.data.ScreenShot;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "import seedu.nuke.data.ScreenShotManager;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "public class UndoCommand extends Command {"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public static final String COMMAND_WORD \u003d \"un\";"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    private ScreenShot targetScreenShot;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public UndoCommand() {"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public CommandResult execute() {"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        //change to the screen one step before"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        targetScreenShot \u003d screenShotManager.unDo();"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        return null;"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "wangqinNick": 20
+    }
+  },
+  {
     "path": "src/main/java/seedu/nuke/common/Constants.java",
     "fileType": "java",
     "lines": [
@@ -4829,7 +5177,7 @@
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        for (Module module:ModuleManager.getModuleList()"
+        "content": "        for (Module module:moduleManager.getModuleList()"
       },
       {
         "lineNumber": 19,
@@ -4869,44 +5217,44 @@
       {
         "lineNumber": 24,
         "author": {
-          "gitId": "HAOYUN49"
+          "gitId": "wangqinNick"
         },
-        "content": "    public void sortAllTasks() {"
+        "content": "    public void setAllTasks(ArrayList\u003cTask\u003e allTasks) {"
       },
       {
         "lineNumber": 25,
         "author": {
-          "gitId": "HAOYUN49"
+          "gitId": "wangqinNick"
         },
-        "content": "        Collections.sort(allTasks);"
+        "content": "        this.allTasks \u003d allTasks;"
       },
       {
         "lineNumber": 26,
         "author": {
-          "gitId": "HAOYUN49"
+          "gitId": "wangqinNick"
         },
         "content": "    }"
       },
       {
         "lineNumber": 27,
         "author": {
-          "gitId": "HAOYUN49"
+          "gitId": "wangqinNick"
         },
         "content": ""
       },
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "wangqinNick"
+          "gitId": "HAOYUN49"
         },
-        "content": "    public ArrayList\u003cTask\u003e getAllTasks() {"
+        "content": "    public void sortAllTasks() {"
       },
       {
         "lineNumber": 29,
         "author": {
-          "gitId": "wangqinNick"
+          "gitId": "HAOYUN49"
         },
-        "content": "        return allTasks;"
+        "content": "        Collections.sort(allTasks);"
       },
       {
         "lineNumber": 30,
@@ -4925,16 +5273,16 @@
       {
         "lineNumber": 32,
         "author": {
-          "gitId": "HAOYUN49"
+          "gitId": "wangqinNick"
         },
-        "content": "    public int countAllTasks() {"
+        "content": "    public ArrayList\u003cTask\u003e getAllTasks() {"
       },
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "HAOYUN49"
+          "gitId": "wangqinNick"
         },
-        "content": "        return allTasks.size();"
+        "content": "        return allTasks;"
       },
       {
         "lineNumber": 34,
@@ -4955,82 +5303,82 @@
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "    public ArrayList\u003cString\u003e checkDeadline() {"
+        "content": "    public int countAllTasks() {"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "        ArrayList\u003cString\u003e deadlines \u003d new ArrayList\u003c\u003e();"
+        "content": "        return allTasks.size();"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "        sortAllTasks();"
+        "content": "    }"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "        for (Task task: allTasks) {"
+        "content": ""
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "            deadlines.add(\"Task: \" + task.getDescription() + \"  deadline: \"+task.getDeadline());"
+        "content": "    public ArrayList\u003cString\u003e checkDeadline() {"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "        }"
+        "content": "        ArrayList\u003cString\u003e deadlines \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "        return deadlines;"
+        "content": "        sortAllTasks();"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "    }"
+        "content": "        for (Task task: allTasks) {"
       },
       {
         "lineNumber": 44,
         "author": {
-          "gitId": "wangqinNick"
+          "gitId": "HAOYUN49"
         },
-        "content": ""
+        "content": "            deadlines.add(\"Task: \" + task.getDescription() + \"  deadline: \"+task.getDeadline());"
       },
       {
         "lineNumber": 45,
         "author": {
-          "gitId": "wangqinNick"
+          "gitId": "HAOYUN49"
         },
-        "content": "    public void addTask(Task toAdd){"
+        "content": "        }"
       },
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "wangqinNick"
+          "gitId": "HAOYUN49"
         },
-        "content": "        this.allTasks.add(toAdd);"
+        "content": "        return deadlines;"
       },
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "wangqinNick"
+          "gitId": "HAOYUN49"
         },
         "content": "    }"
       },
@@ -5046,14 +5394,14 @@
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    public void removeTask(Task toRemove){"
+        "content": "    public void addTask(Task toAdd){"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        this.allTasks.remove(toRemove);"
+        "content": "        this.allTasks.add(toAdd);"
       },
       {
         "lineNumber": 51,
@@ -5067,12 +5415,40 @@
         "author": {
           "gitId": "wangqinNick"
         },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public void removeTask(Task toRemove){"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        this.allTasks.remove(toRemove);"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "wangqinNick"
+        },
         "content": "}"
       }
     ],
     "authorContributionMap": {
       "HAOYUN49": 28,
-      "wangqinNick": 24
+      "wangqinNick": 28
     }
   },
   {
@@ -5611,14 +5987,14 @@
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "import seedu.nuke.exception.DataNotFoundException;"
+        "content": "import seedu.nuke.exception.DuplicateDataException;"
       },
       {
         "lineNumber": 4,
         "author": {
-          "gitId": "iceclementi"
+          "gitId": "A11riseforme"
         },
-        "content": "import seedu.nuke.exception.DuplicateDataException;"
+        "content": "import seedu.nuke.exception.ModuleNotProvidedException;"
       },
       {
         "lineNumber": 5,
@@ -5651,93 +6027,1015 @@
       {
         "lineNumber": 9,
         "author": {
-          "gitId": "wangqinNick"
+          "gitId": "A11riseforme"
         },
-        "content": "import java.util.Iterator;"
+        "content": "import java.util.HashMap;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "import java.util.List;"
+        "content": "import java.util.Iterator;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": ""
+        "content": "import java.util.List;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "import static seedu.nuke.util.Message.*;"
+        "content": ""
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": ""
+        "content": "public class ModuleManager implements Iterable\u003cModule\u003e {"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "public class ModuleManager implements Iterable\u003cModule\u003e {"
+        "content": "    private ArrayList\u003cModule\u003e modules \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    private static ArrayList\u003cModule\u003e modules \u003d new ArrayList\u003c\u003e();"
+        "content": "    private HashMap\u003cString, String\u003e modulesMap;"
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "wangqinNick"
+          "gitId": "A11riseforme"
         },
         "content": ""
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "wangqinNick"
+          "gitId": "A11riseforme"
         },
-        "content": "    /**"
+        "content": "    public ModuleManager(HashMap\u003cString, String\u003e modulesMap) {"
       },
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "wangqinNick"
+          "gitId": "A11riseforme"
         },
-        "content": "     * @return all modules"
+        "content": "        this.modulesMap \u003d modulesMap;"
       },
       {
         "lineNumber": 19,
         "author": {
-          "gitId": "wangqinNick"
+          "gitId": "A11riseforme"
         },
-        "content": "     */"
+        "content": "    }"
       },
       {
         "lineNumber": 20,
         "author": {
-          "gitId": "iceclementi"
+          "gitId": "wangqinNick"
         },
-        "content": "    public static List\u003cModule\u003e getModuleList() {"
+        "content": ""
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "wangqinNick"
         },
+        "content": "    public void setModules(ArrayList\u003cModule\u003e modules) {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        this.modules \u003d modules;"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     * @return all modules"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public ArrayList\u003cModule\u003e getModuleList() {"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "wangqinNick"
+        },
         "content": "        return modules;"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "HAOYUN49"
+        },
+        "content": "    //public Module getAModule(String moduleCode) {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "HAOYUN49"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "HAOYUN49"
+        },
+        "content": "    //}"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "HAOYUN49"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     * Checks if the list contains an equivalent task as the given description."
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "     * @param moduleCode the module code to check if provided by NUS currently"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "     * @return true if NUS is providing the module currently"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public boolean contains(String moduleCode) {"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        for (Module p : modules) {"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "            if (p.getModuleCode().equals(moduleCode)) {"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "                return true;"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        return false;"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     * Add a module to the module List."
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "     * @param moduleCode the module code of the module to add"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public void add(String moduleCode) throws DuplicateModuleException, ModuleNotProvidedException {"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        //check duplicate"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        if (modules.contains(moduleCode)) {"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "            throw new DuplicateModuleException();"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        } else if (!modulesMap.containsKey(moduleCode)) {"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "            throw new ModuleNotProvidedException();"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        else {"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "            Module toAdd \u003d new Module(moduleCode, modulesMap.get(moduleCode), null);"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "            modules.add(toAdd);"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     * Clears all tasks in list."
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public void clear() {"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        modules.clear();"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public Module getLastAddedModule() {"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "        return modules.get(modules.size()-1);"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     * Remove a module to the list."
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "     * @param toDelete the task to remove"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     * @throws ModuleNotFoundException if the to-remove module does not exist"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public void delete(Module toDelete) throws ModuleNotFoundException {"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "        boolean isModuleFoundAndDeleted \u003d modules.remove(toDelete);"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "        if (!isModuleFoundAndDeleted) {"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "HAOYUN49"
+        },
+        "content": "            throw new ModuleNotFoundException(\"\");"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "     * Deletes a \u003cb\u003eModule\u003c/b\u003e with the specified \u003ccode\u003emodule code\u003c/code\u003e in the \u003cb\u003eModule List\u003c/b\u003e."
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "     * @param moduleCode    The module code of the \u003cb\u003eModule\u003c/b\u003e to be deleted"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "     * @throws ModuleNotFoundException  If the module with the specified module code is not found in the \u003cb\u003eModule List\u003c/b\u003e"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "     * @see Module"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public Module delete(String moduleCode) throws ModuleNotFoundException {"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "        for (Module module : modules) {"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "            if (module.getModuleCode().toUpperCase().equals(moduleCode)) {"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "                modules.remove(module);"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "                return module;"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "HAOYUN49"
+        },
+        "content": "        throw new ModuleNotFoundException(\"\");"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public Iterator\u003cModule\u003e iterator() {"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        return modules.iterator();"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     * @return the next-to-add task index"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public int getNextTaskIndex(){"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        return modules.size();"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public class DuplicateModuleException extends DuplicateDataException {}"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public Module getModuleWithCode(String moduleCode){"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        for (Module module: modules"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "             ) {"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "            if (module.getModuleCode().equals(moduleCode)){"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "                return module;"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        return null;"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "HAOYUN49": 6,
+      "wangqinNick": 84,
+      "A11riseforme": 18,
+      "iceclementi": 22
+    }
+  },
+  {
+    "path": "src/main/java/seedu/nuke/data/ScreenShot.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "package seedu.nuke.data;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "import seedu.nuke.data.DataManager;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "import seedu.nuke.data.ModuleManager;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "public class ScreenShot {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    private ModuleManager moduleManager;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    private DataManager dataManager;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public ScreenShot(ModuleManager moduleManager, DataManager dataManager) {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        this.moduleManager \u003d moduleManager;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        this.dataManager \u003d dataManager;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public ModuleManager getModuleManager() {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        return moduleManager;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public void setModuleManager(ModuleManager moduleManager) {"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        this.moduleManager \u003d moduleManager;"
       },
       {
         "lineNumber": 22,
@@ -5756,28 +7054,28 @@
       {
         "lineNumber": 24,
         "author": {
-          "gitId": "HAOYUN49"
+          "gitId": "wangqinNick"
         },
-        "content": "    //public Module getAModule(String moduleCode) {"
+        "content": "    public DataManager getDataManager() {"
       },
       {
         "lineNumber": 25,
         "author": {
-          "gitId": "HAOYUN49"
+          "gitId": "wangqinNick"
         },
-        "content": ""
+        "content": "        return dataManager;"
       },
       {
         "lineNumber": 26,
         "author": {
-          "gitId": "HAOYUN49"
+          "gitId": "wangqinNick"
         },
-        "content": "    //}"
+        "content": "    }"
       },
       {
         "lineNumber": 27,
         "author": {
-          "gitId": "HAOYUN49"
+          "gitId": "wangqinNick"
         },
         "content": ""
       },
@@ -5786,612 +7084,376 @@
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    /**"
+        "content": "    public void setDataManager(DataManager dataManager) {"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "     * Checks if the list contains an equivalent task as the given description."
+        "content": "        this.dataManager \u003d dataManager;"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "     * @param toCheck the task to-check"
+        "content": "    }"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "     * @return true if the task exists"
+        "content": ""
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "     */"
+        "content": "    public void takeScreenShot (ModuleManager moduleManager, DataManager dataManager){"
       },
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "iceclementi"
+          "gitId": "wangqinNick"
         },
-        "content": "    public static boolean contains(Module toCheck) {"
+        "content": "        this.moduleManager \u003d moduleManager;"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        for (Module p : modules) {"
+        "content": "        this.dataManager \u003d dataManager;"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "            if (p.isSameModule(toCheck)) {"
+        "content": "    }"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "                return true;"
+        "content": "}"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "            }"
+        "content": ""
+      }
+    ],
+    "authorContributionMap": {
+      "wangqinNick": 37
+    }
+  },
+  {
+    "path": "src/main/java/seedu/nuke/data/ScreenShotManager.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "package seedu.nuke.data;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "import java.util.LinkedList;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "import java.util.List;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "public class ScreenShotManager {"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    private List\u003cScreenShot\u003e screenShotList;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    private int currentPointer;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public ScreenShotManager() {"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        screenShotList \u003d new LinkedList\u003c\u003e();"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        currentPointer \u003d 0;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public ScreenShotManager(List\u003cScreenShot\u003e screenShotList) {"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        this.screenShotList \u003d screenShotList;"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public List\u003cScreenShot\u003e getScreenShotList() {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        return screenShotList;"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public void setScreenShotList(List\u003cScreenShot\u003e screenShotList) {"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        this.screenShotList \u003d screenShotList;"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public int getCurrentPointer() {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        return currentPointer;"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public void setCurrentPointer(int currentPointer) {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        this.currentPointer \u003d currentPointer;"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public ScreenShot unDo(){"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        currentPointer \u003d currentPointer -1;"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        return screenShotList.get(currentPointer - 1);"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        }"
+        "content": "    }"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        return false;"
+        "content": ""
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    }"
+        "content": "    public ScreenShot getCurrentScreenShot() {"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": ""
+        "content": "        return screenShotList.get(currentPointer);"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 43,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "     * Add a module to the module List."
-      },
-      {
-        "lineNumber": 44,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "     *"
-      },
-      {
-        "lineNumber": 45,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "     * @param toAdd the module to add"
-      },
-      {
-        "lineNumber": 46,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "    public static void add(Module toAdd) throws DuplicateModuleException {"
-      },
-      {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "        //check duplicate"
-      },
-      {
-        "lineNumber": 49,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "        if (ModuleManager.contains(toAdd)) {"
-      },
-      {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "            throw new DuplicateModuleException();"
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "        } else {"
-      },
-      {
-        "lineNumber": 52,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "            modules.add(toAdd);"
-      },
-      {
-        "lineNumber": 53,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 54,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 55,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 56,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 57,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "     * Clears all tasks in list."
-      },
-      {
-        "lineNumber": 58,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 59,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "    public void clear() {"
-      },
-      {
-        "lineNumber": 60,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "        modules.clear();"
-      },
-      {
-        "lineNumber": 61,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 62,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 63,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 64,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "     * Remove a module to the list."
-      },
-      {
-        "lineNumber": 65,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "     * @param toDelete the task to remove"
-      },
-      {
-        "lineNumber": 66,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "     * @throws ModuleNotFoundException if the to-remove module does not exist"
-      },
-      {
-        "lineNumber": 67,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 68,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "    public static void delete(Module toDelete) throws ModuleNotFoundException {"
-      },
-      {
-        "lineNumber": 69,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "        boolean isModuleFoundAndDeleted \u003d modules.remove(toDelete);"
-      },
-      {
-        "lineNumber": 70,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "        if (!isModuleFoundAndDeleted) {"
-      },
-      {
-        "lineNumber": 71,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "            throw new ModuleNotFoundException(\"\");"
-      },
-      {
-        "lineNumber": 72,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 73,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 74,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 75,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 76,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "     * Deletes a \u003cb\u003eModule\u003c/b\u003e with the specified \u003ccode\u003emodule code\u003c/code\u003e in the \u003cb\u003eModule List\u003c/b\u003e."
-      },
-      {
-        "lineNumber": 77,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "     *"
-      },
-      {
-        "lineNumber": 78,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "     * @param moduleCode    The module code of the \u003cb\u003eModule\u003c/b\u003e to be deleted"
-      },
-      {
-        "lineNumber": 79,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "     * @throws ModuleNotFoundException  If the module with the specified module code is not found in the \u003cb\u003eModule List\u003c/b\u003e"
-      },
-      {
-        "lineNumber": 80,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "     * @see Module"
-      },
-      {
-        "lineNumber": 81,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 82,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "    public static Module delete(String moduleCode) throws ModuleNotFoundException {"
-      },
-      {
-        "lineNumber": 83,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "        for (Module module : modules) {"
-      },
-      {
-        "lineNumber": 84,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "            if (module.getModuleCode().toUpperCase().equals(moduleCode)) {"
-      },
-      {
-        "lineNumber": 85,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "                modules.remove(module);"
-      },
-      {
-        "lineNumber": 86,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "                return module;"
-      },
-      {
-        "lineNumber": 87,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 88,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 89,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "        throw new ModuleNotFoundException(\"\");"
-      },
-      {
-        "lineNumber": 90,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 91,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 92,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "    @Override"
-      },
-      {
-        "lineNumber": 93,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "    public Iterator\u003cModule\u003e iterator() {"
-      },
-      {
-        "lineNumber": 94,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "        return modules.iterator();"
-      },
-      {
-        "lineNumber": 95,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 96,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 97,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 98,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "     * @return the next-to-add task index"
-      },
-      {
-        "lineNumber": 99,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 100,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "    public int getNextTaskIndex(){"
-      },
-      {
-        "lineNumber": 101,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "        return modules.size();"
-      },
-      {
-        "lineNumber": 102,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 103,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 104,
-        "author": {
-          "gitId": "iceclementi"
-        },
-        "content": "    public static class DuplicateModuleException extends DuplicateDataException {}"
-      },
-      {
-        "lineNumber": 105,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 106,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "    public static Module getModuleWithCode(String moduleCode){"
-      },
-      {
-        "lineNumber": 107,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "        for (Module module: getModuleList()"
-      },
-      {
-        "lineNumber": 108,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "             ) {"
-      },
-      {
-        "lineNumber": 109,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "            if (module.getModuleCode().equals(moduleCode)){"
-      },
-      {
-        "lineNumber": 110,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "                return module;"
-      },
-      {
-        "lineNumber": 111,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 112,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 113,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "        return null;"
-      },
-      {
-        "lineNumber": 114,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 115,
         "author": {
           "gitId": "wangqinNick"
         },
@@ -6399,9 +7461,7 @@
       }
     ],
     "authorContributionMap": {
-      "HAOYUN49": 6,
-      "wangqinNick": 78,
-      "iceclementi": 31
+      "wangqinNick": 43
     }
   },
   {
@@ -7143,6 +8203,43 @@
     ],
     "authorContributionMap": {
       "wangqinNick": 7
+    }
+  },
+  {
+    "path": "src/main/java/seedu/nuke/exception/ModuleNotProvidedException.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "package seedu.nuke.exception;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "public class ModuleNotProvidedException extends Exception {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "A11riseforme": 4
     }
   },
   {
@@ -10459,1069 +11556,1062 @@
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "import seedu.nuke.exception.ModuleNotFoundException;"
-      },
-      {
-        "lineNumber": 8,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "import seedu.nuke.module.Module;"
-      },
-      {
-        "lineNumber": 9,
-        "author": {
           "gitId": "wangqinNick"
         },
         "content": "import seedu.nuke.task.Task;"
       },
       {
-        "lineNumber": 10,
+        "lineNumber": 8,
         "author": {
           "gitId": "iceclementi"
         },
         "content": ""
       },
       {
-        "lineNumber": 11,
+        "lineNumber": 9,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": "import java.util.HashMap;"
+      },
+      {
+        "lineNumber": 10,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "import java.util.regex.Matcher;"
       },
       {
-        "lineNumber": 12,
+        "lineNumber": 11,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "import java.util.regex.Pattern;"
       },
       {
-        "lineNumber": 13,
+        "lineNumber": 12,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": ""
       },
       {
-        "lineNumber": 14,
+        "lineNumber": 13,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "import static seedu.nuke.util.Message.MESSAGE_INVALID_COMMAND_FORMAT;"
       },
       {
-        "lineNumber": 15,
+        "lineNumber": 14,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": ""
       },
       {
-        "lineNumber": 16,
+        "lineNumber": 15,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "public class Parser {"
       },
       {
-        "lineNumber": 17,
+        "lineNumber": 16,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 18,
+        "lineNumber": 17,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "     * Used for initial separation of command word and args."
       },
       {
-        "lineNumber": 19,
+        "lineNumber": 18,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 20,
+        "lineNumber": 19,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    public static final Pattern MODULE_INDEX_ARGS_FORMAT \u003d Pattern.compile(\"(?\u003ctargetIndex\u003e.+)\");"
       },
       {
-        "lineNumber": 21,
+        "lineNumber": 20,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    public static final Pattern BASIC_COMMAND_FORMAT \u003d Pattern.compile(\"(?\u003ccommandWord\u003e\\\\S+)(?\u003carguments\u003e.*)\");"
       },
       {
-        "lineNumber": 22,
+        "lineNumber": 21,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    public static final String COMMAND_PARAMETER_SPLITTER \u003d \"\\\\s+\";"
       },
       {
-        "lineNumber": 23,
+        "lineNumber": 22,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    public static final String PARAMETER_SPLITTER \u003d \" \";"
       },
       {
-        "lineNumber": 24,
+        "lineNumber": 23,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    public static final int COMMAND_PARAMETER_MAXIMUM_LIMIT \u003d 2;"
       },
       {
-        "lineNumber": 25,
+        "lineNumber": 24,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    public static final int COMMAND_WORD_INDEX \u003d 0;"
       },
       {
-        "lineNumber": 26,
+        "lineNumber": 25,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    public static final int PARAMETER_WORD_INDEX \u003d 1;"
       },
       {
-        "lineNumber": 27,
+        "lineNumber": 26,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    private static final int MAX_INPUT_LENGTH \u003d 100; // Maximum length of user input accepted"
       },
       {
-        "lineNumber": 28,
+        "lineNumber": 27,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": ""
+        "content": "    private ModuleManager moduleManager;"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "    /**"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "    /**"
+        "content": "     * Parses the input string read by the \u003cb\u003eUI\u003c/b\u003e and converts the string into a specific \u003cb\u003eCommand\u003c/b\u003e, which is"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     * Parses the input string read by the \u003cb\u003eUI\u003c/b\u003e and converts the string into a specific \u003cb\u003eCommand\u003c/b\u003e, which is"
+        "content": "     * to be executed by the \u003cb\u003eNuke\u003c/b\u003e program."
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     * to be executed by the \u003cb\u003eNuke\u003c/b\u003e program."
+        "content": "     * \u003cp\u003e\u003c/p\u003e"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     * \u003cp\u003e\u003c/p\u003e"
+        "content": "     * \u003cb\u003eNote\u003c/b\u003e: The user input has to start with a certain keyword (i.e. \u003ci\u003ecommand word\u003c/i\u003e), otherwise an"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     * \u003cb\u003eNote\u003c/b\u003e: The user input has to start with a certain keyword (i.e. \u003ci\u003ecommand word\u003c/i\u003e), otherwise an"
+        "content": "     * \u003ci\u003eInvalid Command Exception\u003c/i\u003e will be thrown."
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     * \u003ci\u003eInvalid Command Exception\u003c/i\u003e will be thrown."
+        "content": "     *"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     *"
+        "content": "     * @param input The user input read by the \u003cb\u003eUI.java\u003c/b\u003e"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     * @param input The user input read by the \u003cb\u003eUI.java\u003c/b\u003e"
+        "content": "     * @return The \u003cb\u003ecorresponding\u003c/b\u003e command to be executed"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     * @return The \u003cb\u003ecorresponding\u003c/b\u003e command to be executed"
+        "content": "     * @see seedu.nuke.ui.Ui"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     * @see seedu.nuke.ui.Ui"
+        "content": "     * @see Command"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "     * @see Command"
-      },
-      {
-        "lineNumber": 40,
-        "author": {
-          "gitId": "iceclementi"
-        },
         "content": "     */"
       },
       {
-        "lineNumber": 41,
+        "lineNumber": 40,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    public Command parseCommand(String input) {"
       },
       {
-        "lineNumber": 42,
+        "lineNumber": 41,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        final Matcher matcher \u003d BASIC_COMMAND_FORMAT.matcher(input.trim());"
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 42,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        /*"
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 43,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "        if (input.isEmpty()) {"
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 44,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE));"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "        }"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "        }"
+        "content": "        if (input.length() \u003e MAX_INPUT_LENGTH) {"
       },
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "iceclementi"
+          "gitId": "wangqinNick"
         },
-        "content": "        if (input.length() \u003e MAX_INPUT_LENGTH) {"
+        "content": "            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE));"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE));"
+        "content": "        }*/"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        }*/"
+        "content": "        if (!matcher.matches()) {"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        if (!matcher.matches()) {"
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "wangqinNick"
-        },
         "content": "            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE));"
       },
       {
-        "lineNumber": 52,
+        "lineNumber": 51,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 53,
+        "lineNumber": 52,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        String commandWord \u003d getCommandAndParameter(input)[COMMAND_WORD_INDEX];"
       },
       {
-        "lineNumber": 54,
+        "lineNumber": 53,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        String parameters \u003d getCommandAndParameter(input)[PARAMETER_WORD_INDEX];"
       },
       {
-        "lineNumber": 55,
+        "lineNumber": 54,
         "author": {
           "gitId": "iceclementi"
         },
         "content": ""
       },
       {
-        "lineNumber": 56,
+        "lineNumber": 55,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "        switch (commandWord) {"
       },
       {
-        "lineNumber": 57,
+        "lineNumber": 56,
         "author": {
           "gitId": "iceclementi"
         },
         "content": ""
       },
       {
-        "lineNumber": 58,
+        "lineNumber": 57,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        case ChangeModuleCommand.COMMAND_WORD:"
       },
       {
-        "lineNumber": 59,
+        "lineNumber": 58,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "            return prepareChangeModuleCommand(parameters);"
       },
       {
-        "lineNumber": 60,
+        "lineNumber": 59,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": ""
       },
       {
-        "lineNumber": 61,
+        "lineNumber": 60,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "        case AddModuleCommand.COMMAND_WORD:"
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 61,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "            return prepareAddModuleCommand(parameters);"
       },
       {
-        "lineNumber": 63,
+        "lineNumber": 62,
         "author": {
           "gitId": "iceclementi"
         },
         "content": ""
       },
       {
-        "lineNumber": 64,
+        "lineNumber": 63,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "        case DeleteModuleCommand.COMMAND_WORD:"
       },
       {
-        "lineNumber": 65,
+        "lineNumber": 64,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "            return prepareDeleteModuleCommand(parameters);"
       },
       {
-        "lineNumber": 66,
+        "lineNumber": 65,
         "author": {
           "gitId": "iceclementi"
         },
         "content": ""
       },
       {
-        "lineNumber": 67,
+        "lineNumber": 66,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        case ListModuleCommand.COMMAND_WORD:"
       },
       {
-        "lineNumber": 68,
+        "lineNumber": 67,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "            return new ListModuleCommand();"
       },
       {
-        "lineNumber": 69,
+        "lineNumber": 68,
         "author": {
           "gitId": "iceclementi"
         },
         "content": ""
       },
       {
-        "lineNumber": 70,
+        "lineNumber": 69,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        case HelpCommand.COMMAND_WORD:"
       },
       {
-        "lineNumber": 71,
+        "lineNumber": 70,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "            return new HelpCommand();"
       },
       {
-        "lineNumber": 72,
+        "lineNumber": 71,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": ""
       },
       {
-        "lineNumber": 73,
+        "lineNumber": 72,
         "author": {
           "gitId": "HAOYUN49"
         },
         "content": "        case CheckAllTasksDeadlineCommand.COMMAND_WORD:"
       },
       {
-        "lineNumber": 74,
+        "lineNumber": 73,
         "author": {
           "gitId": "HAOYUN49"
         },
         "content": "            return new CheckAllTasksDeadlineCommand();"
       },
       {
-        "lineNumber": 75,
+        "lineNumber": 74,
         "author": {
           "gitId": "HAOYUN49"
         },
         "content": ""
       },
       {
-        "lineNumber": 76,
+        "lineNumber": 75,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        //case CheckModuleTasksDeadlineCommand.COMMAND_WORD:"
       },
       {
-        "lineNumber": 77,
+        "lineNumber": 76,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "            //return new CheckModuleTasksDeadlineCommand();"
       },
       {
-        "lineNumber": 78,
+        "lineNumber": 77,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": ""
       },
       {
-        "lineNumber": 79,
+        "lineNumber": 78,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        case AddTaskCommand.COMMAND_WORD:"
       },
       {
-        "lineNumber": 80,
+        "lineNumber": 79,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "            return prepareAddTaskCommand(parameters);"
       },
       {
-        "lineNumber": 81,
+        "lineNumber": 80,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": ""
       },
       {
-        "lineNumber": 82,
+        "lineNumber": 81,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        case DeleteTaskCommand.COMMAND_WORD:"
       },
       {
-        "lineNumber": 83,
+        "lineNumber": 82,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "            return prepareDeleteTaskCommand(parameters);"
       },
       {
-        "lineNumber": 84,
+        "lineNumber": 83,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": ""
       },
       {
-        "lineNumber": 85,
+        "lineNumber": 84,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "        case ExitCommand.COMMAND_WORD:"
       },
       {
-        "lineNumber": 86,
+        "lineNumber": 85,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "            return new ExitCommand();"
       },
       {
-        "lineNumber": 87,
+        "lineNumber": 86,
         "author": {
           "gitId": "iceclementi"
         },
         "content": ""
       },
       {
-        "lineNumber": 88,
+        "lineNumber": 87,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "        default:"
       },
       {
-        "lineNumber": 89,
+        "lineNumber": 88,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, HelpCommand.MESSAGE_USAGE));"
       },
       {
-        "lineNumber": 90,
+        "lineNumber": 89,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        }"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": ""
+        "content": "    private Command prepareDeleteTaskCommand(String parameters) {"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    private Command prepareDeleteTaskCommand(String parameters) {"
+        "content": "        //"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        //"
+        "content": "        return null;"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        return null;"
+        "content": "    }"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": ""
+        "content": "    private Command prepareChangeModuleCommand(String parameters) {"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    private Command prepareChangeModuleCommand(String parameters) {"
+        "content": "        //System.out.println(parameters);"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        //System.out.println(parameters);"
+        "content": "        if(moduleManager.getModuleWithCode(parameters)!\u003dnull){"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        if(ModuleManager.getModuleWithCode(parameters)!\u003dnull){"
+        "content": "            return new ChangeModuleCommand(moduleManager.getModuleWithCode(parameters));"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "            return new ChangeModuleCommand(ModuleManager.getModuleWithCode(parameters));"
+        "content": "        }"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        }"
+        "content": "        return new IncorrectCommand(MESSAGE_INVALID_COMMAND_FORMAT);"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        return new IncorrectCommand(MESSAGE_INVALID_COMMAND_FORMAT);"
+        "content": "    }"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": ""
+        "content": "    private Command prepareAddTaskCommand(String parameters) {"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    private Command prepareAddTaskCommand(String parameters) {"
+        "content": "        //todo"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        //todo"
+        "content": "        //add a very simple task (for testing)"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        //add a very simple task (for testing)"
+        "content": "        if (Command.getCurrentModule()!\u003d null){"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        if (Command.getCurrentModule()!\u003d null){"
+        "content": "            return new AddTaskCommand(new Task(parameters));"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "            return new AddTaskCommand(new Task(parameters));"
+        "content": "        } else {"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        } else {"
+        "content": "            return new IncorrectCommand(\"please go inside a Module!\");"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "            return new IncorrectCommand(\"please go inside a Module!\");"
+        "content": "        }"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        }"
+        "content": "    }"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    /**"
+        "content": "     * Splits user input into command word and rest of parameters (if any)"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "     * Splits user input into command word and rest of parameters (if any)"
+        "content": "     * @param input"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "     * @param input"
+        "content": "     * @return array of String contains command and parameter"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "     * @return array of String contains command and parameter"
+        "content": "     */"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "     */"
+        "content": "    private String[] getCommandAndParameter(String input){"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    private String[] getCommandAndParameter(String input){"
+        "content": "        String[] separatedInput \u003d input.split(COMMAND_PARAMETER_SPLITTER, COMMAND_PARAMETER_MAXIMUM_LIMIT);"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        String[] separatedInput \u003d input.split(COMMAND_PARAMETER_SPLITTER, COMMAND_PARAMETER_MAXIMUM_LIMIT);"
+        "content": "        String commandWord \u003d separatedInput[COMMAND_WORD_INDEX].toLowerCase();"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        String commandWord \u003d separatedInput[COMMAND_WORD_INDEX].toLowerCase();"
+        "content": "        String parameters \u003d (separatedInput.length \u003d\u003d COMMAND_PARAMETER_MAXIMUM_LIMIT) ? separatedInput[PARAMETER_WORD_INDEX].trim() : \"\";"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        String parameters \u003d (separatedInput.length \u003d\u003d COMMAND_PARAMETER_MAXIMUM_LIMIT) ? separatedInput[PARAMETER_WORD_INDEX].trim() : \"\";"
+        "content": "        return new String[] {commandWord, parameters};"
       },
       {
         "lineNumber": 125,
         "author": {
-          "gitId": "wangqinNick"
+          "gitId": "iceclementi"
         },
-        "content": "        return new String[] {commandWord, parameters};"
+        "content": "    }"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 127,
-        "author": {
-          "gitId": "iceclementi"
-        },
         "content": ""
       },
       {
-        "lineNumber": 128,
+        "lineNumber": 127,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    private Command prepareAddModuleCommand(String parameters) {"
       },
       {
-        "lineNumber": 129,
+        "lineNumber": 128,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        String moduleCode \u003d parameters;"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        if (parameters.isEmpty()){"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        if (parameters.isEmpty()){"
+        "content": "            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddModuleCommand.MESSAGE_USAGE));"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddModuleCommand.MESSAGE_USAGE));"
+        "content": "        }"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        }"
+        "content": "        if (hasMultipleParameters(parameters)) {"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        if (hasMultipleParameters(parameters)) {"
-      },
-      {
-        "lineNumber": 134,
-        "author": {
-          "gitId": "wangqinNick"
-        },
         "content": "            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddModuleCommand.MESSAGE_USAGE));"
       },
       {
-        "lineNumber": 135,
+        "lineNumber": 134,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 136,
+        "lineNumber": 135,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        return new AddModuleCommand(moduleCode);"
       },
       {
-        "lineNumber": 137,
+        "lineNumber": 136,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 138,
+        "lineNumber": 137,
         "author": {
           "gitId": "iceclementi"
         },
         "content": ""
       },
       {
-        "lineNumber": 139,
+        "lineNumber": 138,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    private Command prepareDeleteModuleCommand(String parameters) {"
       },
       {
-        "lineNumber": 140,
+        "lineNumber": 139,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        String moduleCode \u003d parameters;"
       },
       {
-        "lineNumber": 141,
+        "lineNumber": 140,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        if (parameters.isEmpty()){"
       },
       {
-        "lineNumber": 142,
+        "lineNumber": 141,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteModuleCommand.MESSAGE_USAGE));"
       },
       {
-        "lineNumber": 143,
+        "lineNumber": 142,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 144,
+        "lineNumber": 143,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        if (hasMultipleParameters(parameters)) {"
       },
       {
-        "lineNumber": 145,
+        "lineNumber": 144,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteModuleCommand.MESSAGE_USAGE));"
       },
       {
-        "lineNumber": 146,
+        "lineNumber": 145,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 147,
+        "lineNumber": 146,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        return new DeleteModuleCommand(moduleCode);"
       },
       {
-        "lineNumber": 148,
+        "lineNumber": 147,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 149,
+        "lineNumber": 148,
         "author": {
           "gitId": "iceclementi"
         },
         "content": ""
       },
       {
-        "lineNumber": 150,
+        "lineNumber": 149,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 151,
+        "lineNumber": 150,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "     * Checks if there is more than \u003cb\u003eone\u003c/b\u003e parameter in the input"
       },
       {
-        "lineNumber": 152,
+        "lineNumber": 151,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 153,
+        "lineNumber": 152,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "     * @param parameters The parameter(s) provided in the input"
       },
       {
-        "lineNumber": 154,
+        "lineNumber": 153,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "     * @return \u003ccode\u003eTRUE\u003c/code\u003e if there is more than one parameter in the input, and \u003ccode\u003eFALSE\u003c/code\u003e otherwise"
       },
       {
-        "lineNumber": 155,
+        "lineNumber": 154,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 156,
+        "lineNumber": 155,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "    private boolean hasMultipleParameters(String parameters) {"
       },
       {
-        "lineNumber": 157,
+        "lineNumber": 156,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        return parameters.contains(PARAMETER_SPLITTER);"
       },
       {
-        "lineNumber": 158,
+        "lineNumber": 157,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 159,
+        "lineNumber": 158,
         "author": {
           "gitId": "wangqinNick"
         },
@@ -11529,8 +12619,9 @@
       }
     ],
     "authorContributionMap": {
-      "HAOYUN49": 4,
-      "wangqinNick": 109,
+      "HAOYUN49": 3,
+      "wangqinNick": 108,
+      "A11riseforme": 1,
       "iceclementi": 46
     }
   },
@@ -13426,23 +14517,23 @@
       {
         "lineNumber": 6,
         "author": {
-          "gitId": "iceclementi"
+          "gitId": "A11riseforme"
         },
-        "content": "    public static final String MESSAGE_MODULE_NOT_FOUND \u003d \"Alert! Module is not found.\\n\";"
+        "content": "    public static final String MESSAGE_MODULE_NOT_FOUND \u003d \"ALERT! Module is not found.\\n\";"
       },
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "iceclementi"
+          "gitId": "A11riseforme"
         },
         "content": ""
       },
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "iceclementi"
+          "gitId": "A11riseforme"
         },
-        "content": "    public static final String MESSAGE_MISSING_MODULE_CODE \u003d \"ALERT! Module code is missing.\\n\";"
+        "content": "    public static final String MESSAGE_MODULE_NOT_PROVIDED \u003d \"ALERT! The module is not provided by NUS currently.\\n\";"
       },
       {
         "lineNumber": 9,
@@ -13456,7 +14547,7 @@
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "    public static final String MESSAGE_EXCESS_PARAMETERS \u003d \"ALERT! Too many parameters.\\n\";"
+        "content": "    public static final String MESSAGE_MISSING_MODULE_CODE \u003d \"ALERT! Module code is missing.\\n\";"
       },
       {
         "lineNumber": 11,
@@ -13470,7 +14561,7 @@
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "    public static final String MESSAGE_INPUT_LENGTH_EXCEEDED \u003d \"ALERT! Enter less than 100 characters.\\n\";"
+        "content": "    public static final String MESSAGE_EXCESS_PARAMETERS \u003d \"ALERT! Too many parameters.\\n\";"
       },
       {
         "lineNumber": 13,
@@ -13484,7 +14575,7 @@
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "    public static final String MESSAGE_EMPTY_INPUT \u003d \"ALERT! Enter a command.\\n\";"
+        "content": "    public static final String MESSAGE_INPUT_LENGTH_EXCEEDED \u003d \"ALERT! Enter less than 100 characters.\\n\";"
       },
       {
         "lineNumber": 15,
@@ -13498,10 +14589,24 @@
         "author": {
           "gitId": "iceclementi"
         },
-        "content": "    public static final String MESSAGE_INVALID_COMMAND \u003d \"ALERT! Unrecognised command.\\n\";"
+        "content": "    public static final String MESSAGE_EMPTY_INPUT \u003d \"ALERT! Enter a command.\\n\";"
       },
       {
         "lineNumber": 17,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "iceclementi"
+        },
+        "content": "    public static final String MESSAGE_INVALID_COMMAND \u003d \"ALERT! Unrecognised command.\\n\";"
+      },
+      {
+        "lineNumber": 19,
         "author": {
           "gitId": "iceclementi"
         },
@@ -13509,7 +14614,8 @@
       }
     ],
     "authorContributionMap": {
-      "iceclementi": 17
+      "A11riseforme": 3,
+      "iceclementi": 16
     }
   },
   {
@@ -15208,9 +16314,9 @@
       {
         "lineNumber": 99,
         "author": {
-          "gitId": "wangqinNick"
+          "gitId": "A11riseforme"
         },
-        "content": "        final Command result \u003d parser.parseCommand(input);"
+        "content": "        final Command result \u003d parser.parseCommand(input, modulesMap);"
       },
       {
         "lineNumber": 100,
@@ -15242,7 +16348,8 @@
       }
     ],
     "authorContributionMap": {
-      "wangqinNick": 103
+      "wangqinNick": 102,
+      "A11riseforme": 1
     }
   }
 ]
