@@ -545,9 +545,9 @@
       {
         "lineNumber": 65,
         "author": {
-          "gitId": "JustinnT"
+          "gitId": "thanhduc2000"
         },
-        "content": ""
+        "content": "                isExit \u003d c.isExit();"
       },
       {
         "lineNumber": 66,
@@ -663,9 +663,9 @@
       }
     ],
     "authorContributionMap": {
-      "JustinnT": 28,
+      "JustinnT": 27,
       "brandoncjh": 25,
-      "thanhduc2000": 17,
+      "thanhduc2000": 18,
       "-": 11
     }
   },
@@ -1340,21 +1340,21 @@
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     * Execution method that will be overriden its child classes (the different command classes"
+        "content": "     * Method to return false in default for exit"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     * @param ui the ui object which can be used to display text"
+        "content": "     *"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     * @param storage the storage object for auto saving function"
+        "content": "     * @return false"
       },
       {
         "lineNumber": 19,
@@ -1366,12 +1366,75 @@
       {
         "lineNumber": 20,
         "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    public boolean isExit() {"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        return false;"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * Execution method that will be overriden its child classes (the different command classes"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @param ui the ui object which can be used to display text"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @param storage the storage object for auto saving function"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
           "gitId": "JustinnT"
         },
         "content": "    public abstract void execute(Ui ui, Storage storage) throws IOException;"
       },
       {
-        "lineNumber": 21,
+        "lineNumber": 30,
         "author": {
           "gitId": "thanhduc2000"
         },
@@ -1380,11 +1443,475 @@
     ],
     "authorContributionMap": {
       "JustinnT": 2,
-      "thanhduc2000": 19
+      "thanhduc2000": 28
     }
   },
   {
-    "path": "src/main/java/seedu/duke/command/DeleteCommand.java",
+    "path": "src/main/java/seedu/duke/command/DeleteAppointmentCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "package seedu.duke.command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import seedu.duke.record.Appointment;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import seedu.duke.storage.AppointmentList;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import seedu.duke.storage.Storage;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import seedu.duke.ui.Ui;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import java.io.IOException;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import java.util.Map;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": " * Delete an appointment\u0027s record with certain index in the appointment\u0027s list"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": " *"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": " * @author Nguyen Thanh Duc"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": " * @version 1.0"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": " * @since 2020-03-14"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "public class DeleteAppointmentCommand extends Command{"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    public static final String COMMAND_WORD \u003d \"deletea\";"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    public static final String EXAMPLE \u003d \"deletea \\\\index 12\";"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    private static final String APPOINTMENT_INDEX \u003d \"index\";"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Delete an appointment from the list.\\n\""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "            + \"Example: \" + EXAMPLE;"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    private int index;"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * Constructor which pass a hash map with only 1 item containing the index of"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * the patient that needs to be removed"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @param fieldsToChange a hash map with only 1 item which is a field called"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     *                       \"index\" and the value of the index needed to delete"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    public DeleteAppointmentCommand(Map\u003cString, String\u003e fieldsToChange) {"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        this.index \u003d Integer.parseInt(fieldsToChange.get(APPOINTMENT_INDEX));"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * Method to delete the appointment from the list by getting that appointment\u0027s index then"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * remove it and auto-save the changes"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @param ui the ui object which can be used to display text"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @param storage the storage object for auto saving function"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @throws IOException when there is error in the index\u0027s input"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @see IOException"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @see AppointmentList#getAppointmentRecord"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @see Storage#saveAppointmentsList"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    public void execute(Ui ui, Storage storage) throws IOException {"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        // Get the appointment\u0027s record based on its index from the list"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        Appointment appointment \u003d AppointmentList.getAppointmentRecord(index - 1);"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        // Remove the appointment\u0027s information from the patient\u0027s list"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        AppointmentList.getAppointmentList().remove(appointment);"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        //Auto-save the changes"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        storage.saveAppointmentsList();"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        //TODO Justin ui.showDeleteAppointmentSuccess(); To be implemented later"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "thanhduc2000": 65
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/command/DeletePatientCommand.java",
     "fileType": "java",
     "lines": [
       {
@@ -1511,7 +2038,7 @@
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "public class DeleteCommand extends Command{"
+        "content": "public class DeletePatientCommand extends Command{"
       },
       {
         "lineNumber": 19,
@@ -1637,7 +2164,7 @@
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    public DeleteCommand(Map\u003cString, String\u003e fieldsToChange) {"
+        "content": "    public DeletePatientCommand(Map\u003cString, String\u003e fieldsToChange) {"
       },
       {
         "lineNumber": 37,
@@ -1826,7 +2353,7 @@
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        //TODO Justin ui.showDeleteSuccess(); To be implemented later"
+        "content": "        //TODO Justin ui.showDeletePatientSuccess(); To be implemented later"
       },
       {
         "lineNumber": 64,
@@ -1846,6 +2373,316 @@
     "authorContributionMap": {
       "JustinnT": 4,
       "thanhduc2000": 61
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/command/ExitCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "package seedu.duke.command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import seedu.duke.storage.Storage;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import seedu.duke.ui.Ui;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import java.io.IOException;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": " * Terminate the program when the user\u0027s input is \"exit"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": " *"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": " * @author Nguyen Thanh Duc"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": " * @version 1.0"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": " * @since 2020-03-14"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "public class ExitCommand extends Command {"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    public static final String COMMAND_WORD \u003d \"exit\";"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Type to exit the program.\\n\""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "            + \"Example: \" + COMMAND_WORD;"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * Set the termination of the program to be true"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @return true"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    public boolean isExit() {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        return true;"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * Method to print the bye message for users"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @param ui the ui object which can be used to display text"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @param storage the storage object for auto saving function"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @throws IOException when there is error in the index\u0027s input"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @see IOException"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    public void execute(Ui ui, Storage storage) throws IOException {"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        //TODO Justin ui.showByeMessage();"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "thanhduc2000": 43
     }
   },
   {
@@ -1997,14 +2834,14 @@
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "            + \"\\n\" + UpdateCommand.MESSAGE_USAGE"
+        "content": "            + \"\\n\" + UpdatePatientCommand.MESSAGE_USAGE"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "            + \"\\n\" + DeleteCommand.MESSAGE_USAGE"
+        "content": "            + \"\\n\" + DeletePatientCommand.MESSAGE_USAGE"
       },
       {
         "lineNumber": 23,
@@ -2109,10 +2946,17 @@
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    }"
+        "content": "        //TODO Justin ui.showHelpUsage(): can use the printing I just implemented"
       },
       {
         "lineNumber": 38,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 39,
         "author": {
           "gitId": "thanhduc2000"
         },
@@ -2121,7 +2965,7 @@
     ],
     "authorContributionMap": {
       "JustinnT": 1,
-      "thanhduc2000": 37
+      "thanhduc2000": 38
     }
   },
   {
@@ -2325,7 +3169,548 @@
     }
   },
   {
-    "path": "src/main/java/seedu/duke/command/UpdateCommand.java",
+    "path": "src/main/java/seedu/duke/command/UpdateAppointmentCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "package seedu.duke.command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import seedu.duke.record.Appointment;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import seedu.duke.storage.AppointmentList;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import seedu.duke.storage.Storage;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import seedu.duke.ui.Ui;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import java.io.IOException;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import java.util.Map;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": " * Edit the information of the appointment existed in the appointment\u0027s list"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": " *"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": " * @author Nguyen Thanh Duc"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": " * @version 1.0"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": " * @since 2020-03-14"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "public class UpdateAppointmentCommand extends Command{"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    public static final String COMMAND_WORD \u003d \"edita\";"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    public static final String EXAMPLE \u003d \"edita \\\\index 5  \\\\date 01/03/2020 \\\\time 10am\";"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    public static final String APPOINTMENT_INDEX \u003d \"index\";"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    public static final String APPOINTMENT_DATE \u003d \"date\";"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    public static final String APPOINTMENT_TIME \u003d \"time\";"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Update the information of appointment in the list.\\n\""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "            + \"Example: \" + EXAMPLE;"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    private int index;"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    private String date;"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    private String time;"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * Constructor which pass a hash map with keys as fields to change and values"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * as content in that fields that needs to be changed. If there is no need to"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * change in a field in the appointment\u0027s record, it will be automatically set as"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * null"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @param fieldsToChange a hash map which pass all the fields needed to be changed"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     *                       as key and content as values"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    public UpdateAppointmentCommand(Map\u003cString, String\u003e fieldsToChange) {"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        this.index \u003d Integer.parseInt(fieldsToChange.get(APPOINTMENT_INDEX));"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        this.date \u003d fieldsToChange.get(APPOINTMENT_DATE);"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        this.time \u003d fieldsToChange.get(APPOINTMENT_TIME);"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * Method to update the appointment by getting the appointment\u0027s record based on its index"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * and update it based on the queries by users, and auto-save it to the data file"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @param ui the ui object which can be used to display text"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @param storage the storage object for auto saving function"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @throws IOException when there is error in the index\u0027s input"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @see IOException"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @see AppointmentList#getAppointmentRecord"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @see Appointment#setAppointmentInfo"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @see Storage#saveAppointmentsList"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    public void execute(Ui ui, Storage storage) throws IOException {"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        // Get the appointment\u0027s record based on its index from the list"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        Appointment appointment \u003d AppointmentList.getAppointmentRecord(index - 1);"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        // Updating the information"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        appointment.setAppointmentInfo(date,time);"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        // Updating it back to its corresponding index in the appointment\u0027s list"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        AppointmentList.getAppointmentList().set(index - 1,appointment);"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        //Auto-save the changes"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        storage.saveAppointmentsList();"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        //TODO Justin ui.showUpdateAppointmentSuccess(); To be implemented later"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "thanhduc2000": 76
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/command/UpdatePatientCommand.java",
     "fileType": "java",
     "lines": [
       {
@@ -2452,7 +3837,7 @@
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "public class UpdateCommand extends Command{"
+        "content": "public class UpdatePatientCommand extends Command{"
       },
       {
         "lineNumber": 19,
@@ -2508,7 +3893,7 @@
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    public static final String CONTACT_NUMBER \u003d \"contactNumber\";"
+        "content": "    public static final String CONTACT_NUMBER \u003d \"phone\";"
       },
       {
         "lineNumber": 27,
@@ -2648,7 +4033,7 @@
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    public UpdateCommand(Map\u003cString, String\u003e fieldsToChange) {"
+        "content": "    public UpdatePatientCommand(Map\u003cString, String\u003e fieldsToChange) {"
       },
       {
         "lineNumber": 47,
@@ -2928,7 +4313,7 @@
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        //TODO Justin ui.showUpdateSuccess(); To be implemented later"
+        "content": "        //TODO Justin ui.showUpdatePatientSuccess(); To be implemented later"
       },
       {
         "lineNumber": 87,
@@ -3682,336 +5067,336 @@
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": ""
+        "content": "    private static final String HELP_COMMAND \u003d \"help\";"
       },
       {
         "lineNumber": 24,
         "author": {
-          "gitId": "JustinnT"
+          "gitId": "thanhduc2000"
         },
-        "content": "    public static final String REGEX_BACKSLASH \u003d \"\\\\\\\\\";"
+        "content": "    private static final String BYE_COMMAND \u003d \"exit\";"
       },
       {
         "lineNumber": 25,
         "author": {
-          "gitId": "JustinnT"
+          "gitId": "thanhduc2000"
         },
-        "content": "    private static final String BLANK_STRING \u003d \"\";"
+        "content": ""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "    private static final String WHITESPACE \u003d \" \";"
+        "content": "    public static final String REGEX_BACKSLASH \u003d \"\\\\\\\\\";"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "    private static final String INDEX \u003d \"index\";"
+        "content": "    private static final String BLANK_STRING \u003d \"\";"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": ""
+        "content": "    private static final String WHITESPACE \u003d \" \";"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "    /**"
+        "content": "    private static final String INDEX \u003d \"index\";"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * This methods returns the command from the user input string."
+        "content": ""
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     *"
+        "content": "    /**"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * @param fullCommand the user input string"
+        "content": "     * This methods returns the command from the user input string."
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * @return the actual command to execute"
+        "content": "     *"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     */"
+        "content": "     * @param fullCommand the user input string"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "    private String getCommand(String fullCommand) {"
+        "content": "     * @return the actual command to execute"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "        String[] splits \u003d fullCommand.split(REGEX_BACKSLASH, LIMIT);"
+        "content": "     */"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "        return splits[COMMAND_INDEX].trim();"
+        "content": "    private String getCommand(String fullCommand) {"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "    }"
+        "content": "        String[] splits \u003d fullCommand.split(REGEX_BACKSLASH, LIMIT);"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": ""
+        "content": "        return splits[COMMAND_INDEX].trim();"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * This method returns strictly the String that is between the fieldKey and \" \\\" delimiter."
+        "content": ""
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * It will only return the value that is behind the first key."
+        "content": "    /**"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * Returns an empty String if the key supplied cannot be found in the fullCommand"
+        "content": "     * This method returns strictly the String that is between the fieldKey and \" \\\" delimiter."
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * For example: param fullCommand \u003d \"addp \\name Justin \\address Pasir Ris \\name Ananda\""
+        "content": "     * It will only return the value that is behind the first key."
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * Supplied key is \"\\name\""
+        "content": "     * Returns an empty String if the key supplied cannot be found in the fullCommand"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * Default delimiter is \"\\\""
+        "content": "     * For example: param fullCommand \u003d \"addp \\name Justin \\address Pasir Ris \\name Ananda\""
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * Returns String value \"Justin\" since it is the value behind the first key"
+        "content": "     * Supplied key is \"\\name\""
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * \u003cp\u003e"
+        "content": "     * Default delimiter is \"\\\""
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * Note: This method only searches of known keys (key values in the patient field enum). Therefore, any"
+        "content": "     * Returns String value \"Justin\" since it is the value behind the first key"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * unknown keys in the full command will be ignore."
+        "content": "     * \u003cp\u003e"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * For example: param fullCommand \u003d \"addp \\name Justin \\adress Pasir Ris \\age 20\""
+        "content": "     * Note: This method only searches of known keys (key values in the patient field enum). Therefore, any"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * \"\\adress\" will be ignored as it is a mis-spelling of the enum fieldKeys \"address\"."
+        "content": "     * unknown keys in the full command will be ignore."
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * \u003cp\u003e"
+        "content": "     * For example: param fullCommand \u003d \"addp \\name Justin \\adress Pasir Ris \\age 20\""
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * Note: The default delimiter in this method is exactly \" \\\". Any sequence of characters that does not follow this"
+        "content": "     * \"\\adress\" will be ignored as it is a mis-spelling of the enum fieldKeys \"address\"."
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * delimiter will be considered as the value to the key."
+        "content": "     * \u003cp\u003e"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * For example: param fullCommand \u003d \"\\name Justin\\age 24\","
+        "content": "     * Note: The default delimiter in this method is exactly \" \\\". Any sequence of characters that does not follow this"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * The value returned for key \"\\name\" will be \"Justin\\age 24\"."
+        "content": "     * delimiter will be considered as the value to the key."
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * The value return for key \"\\age\" will be EMPTY_STRING."
+        "content": "     * For example: param fullCommand \u003d \"\\name Justin\\age 24\","
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     *"
+        "content": "     * The value returned for key \"\\name\" will be \"Justin\\age 24\"."
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * @param fullCommand the entire command that the user supplied"
+        "content": "     * The value return for key \"\\age\" will be EMPTY_STRING."
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * @param key         the patient field, prepended with REGEX_BACKSLASH. This key is an enum."
+        "content": "     *"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * @return the String that is between key and \" \\\" delimiter"
+        "content": "     * @param fullCommand the entire command that the user supplied"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     */"
+        "content": "     * @param key         the patient field, prepended with REGEX_BACKSLASH. This key is an enum."
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "    private String findValue(String fullCommand, String key) {"
+        "content": "     * @return the String that is between key and \" \\\" delimiter"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "        String[] keyValue \u003d fullCommand.split(key, LIMIT);"
+        "content": "     */"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": ""
+        "content": "    private String findValue(String fullCommand, String key) {"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "        try {"
+        "content": "        String[] keyValue \u003d fullCommand.split(key, LIMIT);"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            DukeExceptions.doesKeyExist(keyValue);"
+        "content": ""
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": ""
+        "content": "        try {"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            String valueString \u003d keyValue[VALUE_STRING_INDEX];"
+        "content": "            DukeExceptions.doesKeyExist(keyValue);"
       },
       {
         "lineNumber": 71,
@@ -4025,257 +5410,257 @@
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            String delimiter \u003d WHITESPACE + REGEX_BACKSLASH;"
+        "content": "            String valueString \u003d keyValue[VALUE_STRING_INDEX];"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            String[] b \u003d valueString.split(delimiter, LIMIT);"
+        "content": ""
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": ""
+        "content": "            String delimiter \u003d WHITESPACE + REGEX_BACKSLASH;"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            String value \u003d b[VALUE_INDEX];"
+        "content": "            String[] b \u003d valueString.split(delimiter, LIMIT);"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            return value.trim();"
+        "content": "            String value \u003d b[VALUE_INDEX];"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": ""
+        "content": "            return value.trim();"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "        } catch (noKeyExistException e) {"
+        "content": ""
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            return BLANK_STRING;"
+        "content": "        } catch (noKeyExistException e) {"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "        }"
+        "content": "            return BLANK_STRING;"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * This method returns a HashMap that matches the Patient fields to edit to the values to edit in."
+        "content": "    /**"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * The HashMap is guaranteed to contain the keys found in the enum PatientFieldKeys."
+        "content": "     * This method returns a HashMap that matches the Patient fields to edit to the values to edit in."
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * The values however will be determined by the user."
+        "content": "     * The HashMap is guaranteed to contain the keys found in the enum PatientFieldKeys."
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     *"
+        "content": "     * The values however will be determined by the user."
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * @param fullCommand the user input that the user provided"
+        "content": "     *"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * @return a HashMap that matches the patient\u0027s fieldKey to value."
+        "content": "     * @param fullCommand the user input that the user provided"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     *"
+        "content": "     * @return a HashMap that matches the patient\u0027s fieldKey to value."
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * @see PatientFieldKeys for the list of keys guaranteed to be in the HashMap"
+        "content": "     *"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * @see #findValue(String fullCommand ,String key) value returned by this method will be stored at key."
+        "content": "     * @see PatientFieldKeys for the list of keys guaranteed to be in the HashMap"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     */"
+        "content": "     * @see #findValue(String fullCommand ,String key) value returned by this method will be stored at key."
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "    private Map\u003cString, String\u003e getPatientFields(String fullCommand) {"
+        "content": "     */"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "        Map\u003cString, String\u003e fieldsToChange \u003d new HashMap\u003c\u003e();"
+        "content": "    private Map\u003cString, String\u003e getPatientFields(String fullCommand) {"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": ""
+        "content": "        Map\u003cString, String\u003e fieldsToChange \u003d new HashMap\u003c\u003e();"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "        for (PatientFieldKeys pf : PatientFieldKeys.values()) {"
+        "content": ""
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            String field \u003d pf.toString();"
+        "content": "        for (PatientFieldKeys pf : PatientFieldKeys.values()) {"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            String key \u003d WHITESPACE + REGEX_BACKSLASH + field; // String key \u003d \"\\key\";"
+        "content": "            String field \u003d pf.toString();"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            String value \u003d findValue(fullCommand, key);"
+        "content": "            String key \u003d WHITESPACE + REGEX_BACKSLASH + field; // String key \u003d \"\\key\";"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            fieldsToChange.put(field, value);"
+        "content": "            String value \u003d findValue(fullCommand, key);"
       },
       {
         "lineNumber": 102,
+        "author": {
+          "gitId": "JustinnT"
+        },
+        "content": "            fieldsToChange.put(field, value);"
+      },
+      {
+        "lineNumber": 103,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "            if(field.equals(ADD_PATIENT)) {"
       },
       {
-        "lineNumber": 103,
+        "lineNumber": 104,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "                Duke.indexNumber++;"
       },
       {
-        "lineNumber": 104,
+        "lineNumber": 105,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "                fieldsToChange.put(INDEX, Integer.toString(Duke.indexNumber));"
       },
       {
-        "lineNumber": 105,
+        "lineNumber": 106,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 106,
+        "lineNumber": 107,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 107,
-        "author": {
-          "gitId": "thanhduc2000"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 108,
         "author": {
-          "gitId": "JustinnT"
+          "gitId": "thanhduc2000"
         },
         "content": ""
       },
@@ -4284,402 +5669,437 @@
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "        return fieldsToChange;"
+        "content": ""
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "    }"
+        "content": "        return fieldsToChange;"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * This method returns the command object to be executed."
+        "content": "    /**"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * Throws an unknownCommandException for the caller to catch when user supplied an unknown command"
+        "content": "     * This method returns the command object to be executed."
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     *"
+        "content": "     * Throws an unknownCommandException for the caller to catch when user supplied an unknown command"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * @param fullCommand the user input that the user provided"
+        "content": "     *"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * @return a command object to be executed"
+        "content": "     * @param fullCommand the user input that the user provided"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * @throws unknownCommandException Throws custom duke exception to catch and print error message."
+        "content": "     * @return a command object to be executed"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     */"
+        "content": "     * @throws unknownCommandException Throws custom duke exception to catch and print error message."
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "    public Command parseCommand(String fullCommand) throws unknownCommandException {"
+        "content": "     */"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "        String commandAsString \u003d getCommand(fullCommand);"
+        "content": "    public Command parseCommand(String fullCommand) throws unknownCommandException {"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": ""
+        "content": "        String commandAsString \u003d getCommand(fullCommand);"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "        Command command;"
+        "content": ""
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "        Map\u003cString, String\u003e fieldsToChange;"
+        "content": "        Command command;"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "        switch (commandAsString) {"
+        "content": "        Map\u003cString, String\u003e fieldsToChange;"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "        case ADD_PATIENT :"
+        "content": "        switch (commandAsString) {"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            //fallthrough"
+        "content": "        case ADD_PATIENT :"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "        case EDIT_PATIENT :"
+        "content": "            //fallthrough"
       },
       {
         "lineNumber": 129,
+        "author": {
+          "gitId": "JustinnT"
+        },
+        "content": "        case EDIT_PATIENT :"
+      },
+      {
+        "lineNumber": 130,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "        case DELETE_PATIENT:"
       },
       {
-        "lineNumber": 130,
+        "lineNumber": 131,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "            fieldsToChange \u003d getPatientFields(fullCommand);"
       },
       {
-        "lineNumber": 131,
+        "lineNumber": 132,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "            command \u003d getCommandObject(commandAsString, fieldsToChange);"
       },
       {
-        "lineNumber": 132,
-        "author": {
-          "gitId": "JustinnT"
-        },
-        "content": "            break;"
-      },
-      {
         "lineNumber": 133,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "        default :"
+        "content": "            break;"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            command \u003d getCommandObject(commandAsString, null);"
+        "content": "        default :"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            break;"
+        "content": "            command \u003d getCommandObject(commandAsString, null);"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "        }"
+        "content": "            break;"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "        return command; //return a command object to @andyyy/@duccc"
+        "content": "        }"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "    }"
+        "content": "        return command; //return a command object to @andyyy/@duccc"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * This method returns the specific type of command object."
+        "content": "    /**"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * Throws an unknownCommandException for the caller to catch when user supplied an unknown command"
+        "content": "     * This method returns the specific type of command object."
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     *"
+        "content": "     * Throws an unknownCommandException for the caller to catch when user supplied an unknown command"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * @param command the command that was specified"
+        "content": "     *"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * @param fieldsToChange the HashMap of what to add or edit"
+        "content": "     * @param command the command that was specified"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * @return a specific command object that is specified by @param command."
+        "content": "     * @param fieldsToChange the HashMap of what to add or edit"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     * @throws unknownCommandException Throws custom duke exception to catch and print error message."
+        "content": "     * @return a specific command object that is specified by @param command."
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "     */"
+        "content": "     * @throws unknownCommandException Throws custom duke exception to catch and print error message."
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "    private Command getCommandObject(String command, Map\u003cString, String\u003e fieldsToChange) throws unknownCommandException {"
+        "content": "     */"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "        switch (command) {"
+        "content": "    private Command getCommandObject(String command, Map\u003cString, String\u003e fieldsToChange) throws unknownCommandException {"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "        case ADD_PATIENT:"
+        "content": "        switch (command) {"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            assert fieldsToChange !\u003d null;"
+        "content": "        case ADD_PATIENT:"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            return new AddCommand(fieldsToChange);"
+        "content": "            assert fieldsToChange !\u003d null;"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "        case EDIT_PATIENT:"
+        "content": "            return new AddCommand(fieldsToChange);"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            assert fieldsToChange !\u003d null;"
+        "content": "        case EDIT_PATIENT:"
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            return new UpdateCommand(fieldsToChange);"
+        "content": "            assert fieldsToChange !\u003d null;"
       },
       {
         "lineNumber": 157,
         "author": {
-          "gitId": "JustinnT"
+          "gitId": "thanhduc2000"
         },
-        "content": "        case DELETE_PATIENT:"
+        "content": "            return new UpdatePatientCommand(fieldsToChange);"
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            return new DeleteCommand(fieldsToChange);"
+        "content": "        case DELETE_PATIENT:"
       },
       {
         "lineNumber": 159,
         "author": {
-          "gitId": "JustinnT"
+          "gitId": "thanhduc2000"
         },
-        "content": "        case LIST_PATIENT:"
+        "content": "            return new DeletePatientCommand(fieldsToChange);"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            return new ListCommand();"
+        "content": "        case LIST_PATIENT:"
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "        default:"
+        "content": "            return new ListCommand();"
       },
       {
         "lineNumber": 162,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        case HELP_COMMAND:"
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "            return new HelpCommand();"
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        case BYE_COMMAND:"
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "            return new ExitCommand();"
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "JustinnT"
+        },
+        "content": "        default:"
+      },
+      {
+        "lineNumber": 167,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "            DukeExceptions.unknownCommand();"
       },
       {
-        "lineNumber": 163,
+        "lineNumber": 168,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "            return null;"
       },
       {
-        "lineNumber": 164,
+        "lineNumber": 169,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 165,
+        "lineNumber": 170,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 166,
+        "lineNumber": 171,
         "author": {
           "gitId": "thanhduc2000"
         },
@@ -4687,8 +6107,8 @@
       }
     ],
     "authorContributionMap": {
-      "JustinnT": 156,
-      "thanhduc2000": 10
+      "JustinnT": 153,
+      "thanhduc2000": 18
     }
   },
   {
@@ -4929,13 +6349,273 @@
       {
         "lineNumber": 34,
         "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * This part is implemented for the UpdatePatientCommand class by Duc"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * Update the name if it is not null"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @param date date that needs to be updated"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    public void setDate(String date) {"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        if (!date.isBlank()) {"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "            this.date \u003d date;"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * Update the age if it is a positive integer"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @param time time that needs to be updated"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    public void setTime(String time) {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        if (!time.isBlank()) {"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "            this.time \u003d time;"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * Method to update all the patient\u0027s information"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @param date date that needs to be updated"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     * @param time time that needs to be updated"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    public void setAppointmentInfo(String date, String time) {"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        setDate(date);"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        setTime(time);"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
           "gitId": "Yukilite"
         },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "Yukilite": 34
+      "Yukilite": 34,
+      "thanhduc2000": 37
     }
   },
   {
@@ -4959,768 +6639,782 @@
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "Yukilite"
+          "gitId": "thanhduc2000"
         },
-        "content": "/**"
+        "content": "import java.io.IOException;"
       },
       {
         "lineNumber": 4,
         "author": {
-          "gitId": "Yukilite"
+          "gitId": "thanhduc2000"
         },
-        "content": " * This class contains the patient information such as name, age, address and contact number."
+        "content": ""
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "Yukilite"
         },
-        "content": " */"
+        "content": "/**"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "Yukilite"
         },
-        "content": ""
+        "content": " * This class contains the patient information such as name, age, address and contact number."
       },
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "thanhduc2000"
+          "gitId": "Yukilite"
         },
-        "content": "public class Patient {"
+        "content": " */"
       },
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "thanhduc2000"
+          "gitId": "Yukilite"
         },
-        "content": "    private String name;"
+        "content": ""
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    private int age;"
+        "content": "public class Patient {"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    private String address;"
+        "content": "    private String name;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    private String contactNumber;"
+        "content": "    private int age;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": ""
+        "content": "    private String address;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    public Patient (String name, int age, String address, String contactNumber) {"
+        "content": "    private String contactNumber;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        this.name \u003d name;"
+        "content": ""
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        this.age \u003d age;"
+        "content": "    public Patient (String name, int age, String address, String contactNumber) {"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        this.address \u003d address;"
+        "content": "        this.name \u003d name;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        this.contactNumber \u003d contactNumber;"
+        "content": "        this.age \u003d age;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    }"
+        "content": "        this.address \u003d address;"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": ""
+        "content": "        this.contactNumber \u003d contactNumber;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    public String getName() {"
+        "content": "    }"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        return name;"
+        "content": ""
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    }"
+        "content": "    public String getName() {"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": ""
+        "content": "        return name;"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    public int getAge() {"
+        "content": "    }"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        return age;"
+        "content": ""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    }"
+        "content": "    public int getAge() {"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": ""
+        "content": "        return age;"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    public String getAddress() {"
+        "content": "    }"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        return address;"
+        "content": ""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    }"
+        "content": "    public String getAddress() {"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": ""
+        "content": "        return address;"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    public String getContactNumber() {"
+        "content": "    }"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        return contactNumber;"
+        "content": ""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    }"
+        "content": "    public String getContactNumber() {"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": ""
+        "content": "        return contactNumber;"
       },
       {
         "lineNumber": 36,
         "author": {
-          "gitId": "Yukilite"
+          "gitId": "thanhduc2000"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "Yukilite"
+          "gitId": "thanhduc2000"
         },
-        "content": "     * Overrides the default toString command so that the patient information can be printed"
+        "content": ""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "Yukilite"
         },
-        "content": "     * in a specific string format."
+        "content": "    /**"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "Yukilite"
         },
-        "content": "     * @return newToString The formatted string"
+        "content": "     * Overrides the default toString command so that the patient information can be printed"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "Yukilite"
         },
-        "content": "     */"
+        "content": "     * in a specific string format."
       },
       {
         "lineNumber": 41,
+        "author": {
+          "gitId": "Yukilite"
+        },
+        "content": "     * @return newToString The formatted string"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "Yukilite"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 43,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "    @Override"
       },
       {
-        "lineNumber": 42,
+        "lineNumber": 44,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "    public String toString() {"
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 45,
         "author": {
           "gitId": "Yukilite"
         },
         "content": "        String newToString \u003d \"{\" + \"[Name]:\"+ \" \" + getName() + \" \" + \"|\" + \" \" + \"[Age]:\" + \" \" + getAge() + \" \" + \"|\""
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 46,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "                + \" \" + \"[Address]:\" + \" \" +  getAddress() + \" \" + \"|\" + \" \" + \"[Contact Number]:\" + \" \""
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 47,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "                + getContactNumber() + \"}\";"
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 48,
         "author": {
           "gitId": "Yukilite"
         },
         "content": "        return newToString;"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 49,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 48,
+        "lineNumber": 50,
         "author": {
           "gitId": "Yukilite"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 49,
-        "author": {
-          "gitId": "thanhduc2000"
-        },
-        "content": "/**"
-      },
-      {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "thanhduc2000"
-        },
-        "content": " * This part is implemented for the UpdateCommand class by Duc"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": " */"
+        "content": "/**"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": ""
+        "content": " * This part is implemented for the UpdatePatientCommand class by Duc"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    /**"
+        "content": " */"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     * Update the name if it is not null"
+        "content": ""
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     *"
+        "content": "    /**"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     * @param name name that needs to be updated"
+        "content": "     * Update the name if it is not null"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     */"
+        "content": "     *"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    public void setName(String name) {"
+        "content": "     * @param name name that needs to be updated"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        if(name !\u003d null) {"
+        "content": "     */"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "            this.name \u003d name;"
+        "content": "    public void setName(String name) {"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        }"
+        "content": "        if (!name.isBlank()) {"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    }"
+        "content": "            this.name \u003d name;"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     * Update the age if it is a positive integer"
+        "content": ""
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     *"
+        "content": "    /**"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     * @param age age that needs to be updated"
+        "content": "     * Update the age if it is a positive integer"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     */"
+        "content": "     *"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    public void setAge(int age) {"
+        "content": "     * @param age age that needs to be updated"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        if(age \u003e\u003d 0) {"
+        "content": "     */"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "            this.age \u003d age;"
+        "content": "    public void setAge(int age) {"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        }"
+        "content": "        if(age \u003e\u003d 0) {"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    }"
+        "content": "            this.age \u003d age;"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     * Update the address if it is not null"
+        "content": ""
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     *"
+        "content": "    /**"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     * @param address address that needs to be updated"
+        "content": "     * Update the address if it is not null"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     */"
+        "content": "     *"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    public void setAddress(String address) {"
+        "content": "     * @param address address that needs to be updated"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        if(address !\u003d null) {"
+        "content": "     */"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "            this.address \u003d address;"
+        "content": "    public void setAddress(String address) {"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        }"
+        "content": "        if(!address.isBlank()) {"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    }"
+        "content": "            this.address \u003d address;"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     * Update the contact number if it is not null"
+        "content": ""
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     *"
+        "content": "    /**"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     * @param contactNumber contact number that needs to be updated"
+        "content": "     * Update the contact number if it is not null"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     */"
+        "content": "     *"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    public void setContactNumber(String contactNumber) {"
+        "content": "     * @param contactNumber contact number that needs to be updated"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        if(contactNumber !\u003d null) {"
+        "content": "     */"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "            this.contactNumber \u003d contactNumber;"
+        "content": "    public void setContactNumber(String contactNumber) {"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        }"
+        "content": "        if(!contactNumber.isBlank()) {"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    }"
+        "content": "            this.contactNumber \u003d contactNumber;"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     * Method to update all the patient\u0027s information"
+        "content": ""
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     *"
+        "content": "    /**"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     * @param name name that needs to be updated"
+        "content": "     * Method to update all the patient\u0027s information"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     * @param age age that needs to be updated"
+        "content": "     *"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     * @param address address that needs to be updated"
+        "content": "     * @param name name that needs to be updated"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     * @param contactNumber contact number that needs to be updated"
+        "content": "     * @param age age that needs to be updated"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "     */"
+        "content": "     * @param address address that needs to be updated"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    public void setPatientInfo(String name, int age, String address, String contactNumber) {"
+        "content": "     * @param contactNumber contact number that needs to be updated"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        setName(name);"
+        "content": "     */"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        setAge(age);"
+        "content": "    public void setPatientInfo(String name, int age, String address, String contactNumber) {"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        setAddress(address);"
+        "content": "        setName(name);"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        setContactNumber(contactNumber);"
+        "content": "        setAge(age);"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    }"
+        "content": "        setAddress(address);"
       },
       {
         "lineNumber": 111,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        setContactNumber(contactNumber);"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 113,
         "author": {
           "gitId": "Yukilite"
         },
         "content": "}"
       },
       {
-        "lineNumber": 112,
+        "lineNumber": 114,
         "author": {
           "gitId": "Yukilite"
         },
@@ -5729,7 +7423,7 @@
     ],
     "authorContributionMap": {
       "Yukilite": 14,
-      "thanhduc2000": 98
+      "thanhduc2000": 100
     }
   },
   {
@@ -5872,16 +7566,16 @@
       {
         "lineNumber": 20,
         "author": {
-          "gitId": "brandoncjh"
+          "gitId": "thanhduc2000"
         },
-        "content": "    public List\u003cAppointment\u003e getAppointmentList() {"
+        "content": "    public static List\u003cAppointment\u003e getAppointmentList() {"
       },
       {
         "lineNumber": 21,
         "author": {
-          "gitId": "brandoncjh"
+          "gitId": "thanhduc2000"
         },
-        "content": "        return this.appointmentList;"
+        "content": "        return appointmentList;"
       },
       {
         "lineNumber": 22,
@@ -5928,16 +7622,16 @@
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "brandoncjh"
+          "gitId": "thanhduc2000"
         },
-        "content": "    public Appointment getAppointmentRecord(int appointmentIndex) {"
+        "content": "    public static Appointment getAppointmentRecord(int appointmentIndex) {"
       },
       {
         "lineNumber": 29,
         "author": {
-          "gitId": "brandoncjh"
+          "gitId": "thanhduc2000"
         },
-        "content": "        return this.getAppointmentList().get(appointmentIndex-1);"
+        "content": "        return getAppointmentList().get(appointmentIndex);"
       },
       {
         "lineNumber": 30,
@@ -5993,7 +7687,7 @@
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "        this.getAppointmentList().remove(appointmentIndex-1);"
+        "content": "        this.getAppointmentList().remove(appointmentIndex);"
       },
       {
         "lineNumber": 38,
@@ -6012,7 +7706,8 @@
     ],
     "authorContributionMap": {
       "JustinnT": 3,
-      "brandoncjh": 36
+      "brandoncjh": 32,
+      "thanhduc2000": 4
     }
   },
   {
@@ -6227,7 +7922,7 @@
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "        return getPatientList().get(patientIndex-1);"
+        "content": "        return getPatientList().get(patientIndex);"
       },
       {
         "lineNumber": 31,
@@ -6283,7 +7978,7 @@
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "        this.getPatientList().remove(patientIndex-1);"
+        "content": "        this.getPatientList().remove(patientIndex);"
       },
       {
         "lineNumber": 39,
@@ -7111,9 +8806,9 @@
       {
         "lineNumber": 115,
         "author": {
-          "gitId": "brandoncjh"
+          "gitId": "thanhduc2000"
         },
-        "content": "    public void saveAppointmentsList(AppointmentList appointmentListToSave) throws IOException {"
+        "content": "    public void saveAppointmentsList() throws IOException {"
       },
       {
         "lineNumber": 116,
@@ -7412,8 +9107,8 @@
     ],
     "authorContributionMap": {
       "JustinnT": 29,
-      "brandoncjh": 115,
-      "thanhduc2000": 13
+      "brandoncjh": 114,
+      "thanhduc2000": 14
     }
   },
   {
@@ -7586,35 +9281,35 @@
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "//                + \"|  _ \\\\ _   _| | _____ \\n\""
+        "content": "////                + \"|  _ \\\\ _   _| | _____ \\n\""
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "//                + \"| | | | | | | |/ / _ \\\\\\n\""
+        "content": "////                + \"| | | | | | | |/ / _ \\\\\\n\""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "//                + \"| |_| | |_| |   \u003c  __/\\n\""
+        "content": "////                + \"| |_| | |_| |   \u003c  __/\\n\""
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "//                + \"|____/ \\\\__,_|_|\\\\_\\\\___|\\n\";"
+        "content": "////                + \"|____/ \\\\__,_|_|\\\\_\\\\___|\\n\";"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "//        startUpGreetings();"
+        "content": "////        startUpGreetings();"
       },
       {
         "lineNumber": 29,
@@ -9221,7 +10916,7 @@
     }
   },
   {
-    "path": "src/test/java/seedu/duke/command/DeleteCommandTest.java",
+    "path": "src/test/java/seedu/duke/command/DeletePatientCommandTest.java",
     "fileType": "java",
     "lines": [
       {
@@ -9313,7 +11008,7 @@
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "import static seedu.duke.command.UpdateCommand.*;"
+        "content": "import static seedu.duke.command.UpdatePatientCommand.*;"
       },
       {
         "lineNumber": 14,
@@ -9327,7 +11022,7 @@
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "class DeleteCommandTest {"
+        "content": "class DeletePatientCommandTest {"
       },
       {
         "lineNumber": 16,
@@ -9432,7 +11127,7 @@
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        Command command \u003d new DeleteCommand(fieldsToChange);"
+        "content": "        Command command \u003d new DeletePatientCommand(fieldsToChange);"
       },
       {
         "lineNumber": 31,
@@ -10186,7 +11881,275 @@
     }
   },
   {
-    "path": "src/test/java/seedu/duke/command/UpdateCommandTest.java",
+    "path": "src/test/java/seedu/duke/command/UpdateAppointmentCommandTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "package seedu.duke.command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import seedu.duke.record.Appointment;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import seedu.duke.storage.AppointmentList;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import seedu.duke.storage.Storage;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import seedu.duke.ui.Ui;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import java.util.HashMap;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import java.util.Map;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.*;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "import static seedu.duke.command.UpdateAppointmentCommand.*;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "class UpdateAppointmentCommandTest {"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    //Test case 1"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    void execute_1() throws Exception{"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        AppointmentList appointmentList \u003d new AppointmentList();"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        appointmentList.getAppointmentList().add(new Appointment(\"14/03/2020\",\"10am\"));"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        appointmentList.getAppointmentList().add(new Appointment(\"15/03/2020\",\"11am\"));"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        appointmentList.getAppointmentList().add(new Appointment(\"16/03/2020\",\"12am\"));"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        appointmentList.getAppointmentList().add(new Appointment(\"17/03/2020\",\"1pm\"));"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        appointmentList.getAppointmentList().add(new Appointment(\"18/03/2020\",\"2pm\"));"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        Map\u003cString, String\u003e fieldsToChange \u003d new HashMap\u003c\u003e();"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        Ui ui \u003d new Ui();"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        Storage storage \u003d new Storage();"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        fieldsToChange.put(APPOINTMENT_INDEX, \"3\");"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        fieldsToChange.put(APPOINTMENT_DATE,\"31/12/2020\");"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        fieldsToChange.put(APPOINTMENT_TIME, \"11pm\");"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        Command command \u003d new UpdateAppointmentCommand(fieldsToChange);"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        command.execute(ui,storage);"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "        assertEquals(\"{[Date]: 31/12/2020 |[Time]: 11pm}\","
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "                appointmentList.getAppointmentRecord(2).toString());"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "thanhduc2000"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "thanhduc2000": 37
+    }
+  },
+  {
+    "path": "src/test/java/seedu/duke/command/UpdatePatientCommandTest.java",
     "fileType": "java",
     "lines": [
       {
@@ -10250,35 +12213,35 @@
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "import java.io.IOException;"
+        "content": "import java.util.HashMap;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "import java.util.ArrayList;"
+        "content": "import java.util.Map;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "import java.util.HashMap;"
+        "content": ""
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "import java.util.List;"
+        "content": "import static org.junit.jupiter.api.Assertions.*;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "import java.util.Map;"
+        "content": "import static seedu.duke.command.UpdatePatientCommand.*;"
       },
       {
         "lineNumber": 14,
@@ -10292,367 +12255,346 @@
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "import static org.junit.jupiter.api.Assertions.*;"
+        "content": "class UpdatePatientCommandTest {"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "import static seedu.duke.command.UpdateCommand.*;"
+        "content": ""
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": ""
+        "content": "    //Test case 1"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "class UpdateCommandTest {"
+        "content": "    @Test"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": ""
+        "content": "    void execute_1() throws Exception{"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    //Test case 1"
+        "content": "        PatientList patientList \u003d new PatientList();"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    @Test"
+        "content": "        patientList.getPatientList().add(new Patient(\"peony\", 33, \"clementi road\", \"61234567\"));"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "    void execute_1() throws Exception{"
+        "content": "        patientList.getPatientList().add(new Patient(\"yoshino\", 8, \"shibuya\", \"13182371\"));"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        PatientList patientList \u003d new PatientList();"
+        "content": "        patientList.getPatientList().add(new Patient(\"kurumi\", 15, \"hokkaido\", \"31732913\"));"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        patientList.getPatientList().add(new Patient(\"peony\", 33, \"clementi road\", \"61234567\"));"
+        "content": "        patientList.getPatientList().add(new Patient(\"ren\", 17, \"tokyo\", \"31093991\"));"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        patientList.getPatientList().add(new Patient(\"yoshino\", 8, \"shibuya\", \"13182371\"));"
+        "content": "        patientList.getPatientList().add(new Patient(\"ren\", 17, \"tokyo\", \"31093991\"));"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        patientList.getPatientList().add(new Patient(\"kurumi\", 15, \"hokkaido\", \"31732913\"));"
+        "content": "        Map\u003cString, String\u003e fieldsToChange \u003d new HashMap\u003c\u003e();"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        patientList.getPatientList().add(new Patient(\"ren\", 17, \"tokyo\", \"31093991\"));"
+        "content": "        Ui ui \u003d new Ui();"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        patientList.getPatientList().add(new Patient(\"ren\", 17, \"tokyo\", \"31093991\"));"
+        "content": "        Storage storage \u003d new Storage();"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        Map\u003cString, String\u003e fieldsToChange \u003d new HashMap\u003c\u003e();"
+        "content": "        fieldsToChange.put(PATIENT_INDEX, \"3\");"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        Ui ui \u003d new Ui();"
+        "content": "        fieldsToChange.put(PATIENT_NAME, \"Joe Harris\");"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        Storage storage \u003d new Storage();"
+        "content": "        fieldsToChange.put(AGE, \"20\");"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        fieldsToChange.put(PATIENT_INDEX, \"3\");"
+        "content": "        fieldsToChange.put(ADDRESS, \"Jurong East\");"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        fieldsToChange.put(PATIENT_NAME, \"Joe Harris\");"
+        "content": "        fieldsToChange.put(CONTACT_NUMBER, \"8225 3819\");"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        fieldsToChange.put(AGE, \"20\");"
+        "content": "        Command command \u003d new UpdatePatientCommand(fieldsToChange);"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        fieldsToChange.put(ADDRESS, \"Jurong East\");"
+        "content": "        command.execute(ui,storage);"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        fieldsToChange.put(CONTACT_NUMBER, \"8225 3819\");"
+        "content": "        assertEquals(\"{[Name]: Joe Harris | [Age]: 20 | [Address]: Jurong East | [Contact Number]: 8225 3819}\","
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        Command command \u003d new UpdateCommand(fieldsToChange);"
+        "content": "                patientList.getPatientRecord(2).toString());"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        command.execute(ui,storage);"
-      },
-      {
-        "lineNumber": 39,
-        "author": {
-          "gitId": "thanhduc2000"
-        },
-        "content": "        assertEquals(\"{[Name]: Joe Harris | [Age]: 20 | [Address]: Jurong East | [Contact Number]: 8225 3819}\","
-      },
-      {
-        "lineNumber": 40,
-        "author": {
-          "gitId": "thanhduc2000"
-        },
-        "content": "                patientList.getPatientRecord(2).toString());"
-      },
-      {
-        "lineNumber": 41,
-        "author": {
-          "gitId": "thanhduc2000"
-        },
         "content": "    }"
       },
       {
-        "lineNumber": 42,
+        "lineNumber": 39,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "/*"
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 40,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "    //Test case 2"
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 41,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "    @Test"
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 42,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "    void execute_2() throws Exception{"
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 43,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "        PatientList patientList \u003d new PatientList();"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 44,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "        patientList.getPatientList().add(new Patient(\"peony\", 33, \"clementi road\", \"61234567\"));"
       },
       {
-        "lineNumber": 48,
+        "lineNumber": 45,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "        patientList.getPatientList().add(new Patient(\"yoshino\", 8, \"shibuya\", \"13182371\"));"
       },
       {
-        "lineNumber": 49,
+        "lineNumber": 46,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "        patientList.getPatientList().add(new Patient(\"kurumi\", 15, \"hokkaido\", \"31732913\"));"
       },
       {
-        "lineNumber": 50,
+        "lineNumber": 47,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "        patientList.getPatientList().add(new Patient(\"ren\", 17, \"tokyo\", \"31093991\"));"
       },
       {
-        "lineNumber": 51,
+        "lineNumber": 48,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "        patientList.getPatientList().add(new Patient(\"ren\", 17, \"tokyo\", \"31093991\"));"
       },
       {
-        "lineNumber": 52,
+        "lineNumber": 49,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "        Map\u003cString, String\u003e fieldsToChange \u003d new HashMap\u003c\u003e();"
       },
       {
-        "lineNumber": 53,
+        "lineNumber": 50,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "        Ui ui \u003d new Ui();"
       },
       {
-        "lineNumber": 54,
+        "lineNumber": 51,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "        Storage storage \u003d new Storage();"
       },
       {
-        "lineNumber": 55,
+        "lineNumber": 52,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "        fieldsToChange.put(PATIENT_INDEX, \"3\");"
       },
       {
-        "lineNumber": 56,
+        "lineNumber": 53,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "        fieldsToChange.put(PATIENT_NAME, null);"
       },
       {
-        "lineNumber": 57,
+        "lineNumber": 54,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "        fieldsToChange.put(AGE, null);"
       },
       {
-        "lineNumber": 58,
+        "lineNumber": 55,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "        fieldsToChange.put(ADDRESS, null);"
       },
       {
-        "lineNumber": 59,
+        "lineNumber": 56,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "        fieldsToChange.put(CONTACT_NUMBER, \"8225 3819\");"
       },
       {
-        "lineNumber": 60,
+        "lineNumber": 57,
         "author": {
           "gitId": "thanhduc2000"
         },
-        "content": "        Command command \u003d new UpdateCommand(fieldsToChange);"
+        "content": "        Command command \u003d new UpdatePatientCommand(fieldsToChange);"
       },
       {
-        "lineNumber": 61,
+        "lineNumber": 58,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "        command.execute(ui,storage);"
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 59,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "        assertEquals(\"{[Name]: kurumi | [Age]: 15 | [Address]: hokkaido | [Contact Number]: 8225 3819}\","
       },
       {
-        "lineNumber": 63,
+        "lineNumber": 60,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "                patientList.getPatientRecord(2).toString());"
       },
       {
-        "lineNumber": 64,
+        "lineNumber": 61,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 65,
+        "lineNumber": 62,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": ""
       },
       {
-        "lineNumber": 66,
+        "lineNumber": 63,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": " */"
       },
       {
-        "lineNumber": 67,
+        "lineNumber": 64,
         "author": {
           "gitId": "thanhduc2000"
         },
@@ -10661,7 +12603,7 @@
     ],
     "authorContributionMap": {
       "brandoncjh": 3,
-      "thanhduc2000": 64
+      "thanhduc2000": 61
     }
   },
   {
@@ -11601,14 +13543,14 @@
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "        assertEquals(\"april 1\", testAppointmentList.getAppointmentRecord(1).getDate());"
+        "content": "        assertEquals(\"april 1\", testAppointmentList.getAppointmentRecord(0).getDate());"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "        assertEquals(\"13:00\", testAppointmentList.getAppointmentRecord(1).getTime());"
+        "content": "        assertEquals(\"13:00\", testAppointmentList.getAppointmentRecord(0).getTime());"
       },
       {
         "lineNumber": 27,
@@ -11664,7 +13606,7 @@
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "        testAppointmentList.removeAppointmentRecord(1);"
+        "content": "        testAppointmentList.removeAppointmentRecord(0);"
       },
       {
         "lineNumber": 35,
@@ -11678,7 +13620,7 @@
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "        assertEquals(\"jun 4\", testAppointmentList.getAppointmentRecord(1).getDate());"
+        "content": "        assertEquals(\"jun 4\", testAppointmentList.getAppointmentRecord(0).getDate());"
       },
       {
         "lineNumber": 37,
@@ -11883,28 +13825,28 @@
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "        assertEquals(\"alice\", testPatientList.getPatientRecord(1).getName());"
+        "content": "        assertEquals(\"alice\", testPatientList.getPatientRecord(0).getName());"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "        assertEquals(11, testPatientList.getPatientRecord(1).getAge());"
+        "content": "        assertEquals(11, testPatientList.getPatientRecord(0).getAge());"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "        assertEquals(\"bukit timah\", testPatientList.getPatientRecord(1).getAddress());"
+        "content": "        assertEquals(\"bukit timah\", testPatientList.getPatientRecord(0).getAddress());"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "        assertEquals(\"61111111\", testPatientList.getPatientRecord(1).getContactNumber());"
+        "content": "        assertEquals(\"61111111\", testPatientList.getPatientRecord(0).getContactNumber());"
       },
       {
         "lineNumber": 29,
@@ -11960,7 +13902,7 @@
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "        testPatientList.removePatientRecord(1);"
+        "content": "        testPatientList.removePatientRecord(0);"
       },
       {
         "lineNumber": 37,
@@ -11974,7 +13916,7 @@
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "        assertEquals(\"bob\", testPatientList.getPatientRecord(1).getName());"
+        "content": "        assertEquals(\"bob\", testPatientList.getPatientRecord(0).getName());"
       },
       {
         "lineNumber": 39,

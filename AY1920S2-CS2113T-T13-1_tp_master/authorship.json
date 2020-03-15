@@ -1382,199 +1382,276 @@
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": "public class AddCommand extends Command {"
+        "content": "import java.util.logging.Level;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": ""
+        "content": "import java.util.logging.Logger;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": "    public static final String COMMAND_WORD \u003d \"ADD\";"
+        "content": ""
       },
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": "    public static final String SUCCESS_ACK \u003d System.lineSeparator() + \"Added this item: \" + \"%s\";"
+        "content": "public class AddCommand extends Command {"
       },
       {
         "lineNumber": 9,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Adds an item to the list.\""
+        "content": "    private static final Logger LOGGER \u003d Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);"
       },
       {
         "lineNumber": 10,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": "            + System.lineSeparator() + \"|| Parameters: ADD i/[DESCRIPTION] p/[PRICE]\""
+        "content": "    public static final String COMMAND_WORD \u003d \"ADD\";"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "            + System.lineSeparator() + \"|| Example: ADD i/apple p/3.00\" + System.lineSeparator();"
+        "content": "    public static final String SUCCESS_ACK \u003d System.lineSeparator() + \"Added this item: \" + \"%s\";"
       },
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
-        "content": "    public static final String FAILURE_ACK \u003d System.lineSeparator()"
+        "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD + \": Adds an item to the list.\""
       },
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
-        "content": "            + \"Error! Description of an item cannot be empty.\""
+        "content": "            + System.lineSeparator() + \"|| Parameters: ADD i/[DESCRIPTION] p/[PRICE]\""
       },
       {
         "lineNumber": 14,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
-        "content": "            + \"\\nExample: ADD 1 i/apple p/4.50\";"
+        "content": "            + System.lineSeparator() + \"|| Example: ADD i/apple p/3.00\" + System.lineSeparator();"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": "    private Item add;"
+        "content": "    public static final String FAILURE_ACK \u003d System.lineSeparator()"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": ""
+        "content": "            + \"Error! Description of an item cannot be empty.\""
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": "    public AddCommand(String description, double price) {"
+        "content": "            + \"\\nExample: ADD 1 i/apple p/4.50\";"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": "        this.add \u003d new Item(description, price);"
+        "content": "    public static final String FAILURE_ACK_2 \u003d System.lineSeparator()"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": "    }"
+        "content": "            + \"Error! price should follow this format\""
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": ""
+        "content": "            + \"\\nExample: p/4.50\";"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": "    @Override"
+        "content": "    private Item add;"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": "    public CommandResult execute() {"
+        "content": ""
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": ""
+        "content": "    public AddCommand(String description, double price) {"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": "        try {"
+        "content": "        this.add \u003d new Item(description, price);"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": "            items.add(add);"
+        "content": "    }"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": "            return new CommandResult(String.format(SUCCESS_ACK,add));"
+        "content": ""
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": "        } catch (NullPointerException e) {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": "            return new CommandResult(String.format(FAILURE_ACK));"
+        "content": "    public CommandResult execute() {"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": ""
+        "content": "        try {"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": "    }"
+        "content": "            items.add(add);"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": "    //By right should be able to run once the other function is done."
+        "content": "            LOGGER.log(Level.INFO, \"(Add command)  Added item: \" + items.toString());"
       },
       {
         "lineNumber": 33,
+        "author": {
+          "gitId": "jiajuinphoon"
+        },
+        "content": "            return new CommandResult(String.format(SUCCESS_ACK,add));"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "jiajuinphoon"
+        },
+        "content": "        } catch (NullPointerException e) {"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "jiajuinphoon"
+        },
+        "content": "            LOGGER.log(Level.WARNING, e.getMessage());"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "jiajuinphoon"
+        },
+        "content": "            return new CommandResult(String.format(FAILURE_ACK));"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "jiajuinphoon"
+        },
+        "content": "        } catch (NumberFormatException nfe) {"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "jiajuinphoon"
+        },
+        "content": "            LOGGER.log(Level.WARNING, \"(Add command) Invoked with invalid price format: \u0027\""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "jiajuinphoon"
+        },
+        "content": "                    + add.getPrice() + \"\u0027\");"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "jiajuinphoon"
+        },
+        "content": "            return new CommandResult(String.format(FAILURE_ACK_2));"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "jiajuinphoon"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "jiajuinphoon"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "jiajuinphoon"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 44,
         "author": {
           "gitId": "jiajuinphoon"
         },
@@ -1582,7 +1659,7 @@
       }
     ],
     "authorContributionMap": {
-      "jiajuinphoon": 29,
+      "jiajuinphoon": 40,
       "trishaangelica": 4
     }
   },
@@ -6201,9 +6278,9 @@
       {
         "lineNumber": 115,
         "author": {
-          "gitId": "Shannonwje"
+          "gitId": "jiajuinphoon"
         },
-        "content": "    public void add(Item item) throws NullPointerException {"
+        "content": "    public void add(Item item) throws NullPointerException, NumberFormatException {"
       },
       {
         "lineNumber": 116,
@@ -6250,6 +6327,13 @@
       {
         "lineNumber": 122,
         "author": {
+          "gitId": "jiajuinphoon"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 123,
+        "author": {
           "gitId": "trishaangelica"
         },
         "content": "}"
@@ -6258,8 +6342,8 @@
     "authorContributionMap": {
       "JLoh579": 29,
       "kokjoon97": 13,
-      "Shannonwje": 47,
-      "jiajuinphoon": 3,
+      "Shannonwje": 46,
+      "jiajuinphoon": 5,
       "trishaangelica": 30
     }
   },
@@ -7049,1260 +7133,1260 @@
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": "                double price \u003d Double.parseDouble(prices);"
+        "content": "                try {"
       },
       {
         "lineNumber": 113,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": "                newCommand \u003d new AddCommand(description, price);"
+        "content": "                    double price \u003d Double.parseDouble(prices);"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "            }"
+        "content": "                    newCommand \u003d new AddCommand(description, price);"
       },
       {
         "lineNumber": 115,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": "        } catch (NullPointerException e) {"
+        "content": "                } catch (NumberFormatException nfe) {"
       },
       {
         "lineNumber": 116,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": "            newCommand \u003d new IncorrectCommand(System.lineSeparator()"
+        "content": "                    newCommand \u003d new IncorrectCommand(System.lineSeparator()"
       },
       {
         "lineNumber": 117,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": "                    + \"Error! Description of an item cannot be empty.\""
+        "content": "                            + \"Oops! For that to be done properly, check if these are met:\""
       },
       {
         "lineNumber": 118,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": "                    + \"\\nExample: ADD 1 i/apple p/4.50\");"
+        "content": "                            + System.lineSeparator()"
       },
       {
         "lineNumber": 119,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": "        } catch (ArrayIndexOutOfBoundsException e) {"
+        "content": "                            + \" - Description of an item cannot be empty.\""
       },
       {
         "lineNumber": 120,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": "            newCommand \u003d new IncorrectCommand(System.lineSeparator()"
+        "content": "                            + System.lineSeparator()"
       },
       {
         "lineNumber": 121,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": "                    + \"Oops! For that to be done properly, check if these are met:\""
+        "content": "                            + \" - Price of an item has to be in numerical form.\""
       },
       {
         "lineNumber": 122,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": "                    + System.lineSeparator()"
+        "content": "                            + System.lineSeparator()"
       },
       {
         "lineNumber": 123,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": "                    + \" - Description of an item cannot be empty.\""
+        "content": "                            + \" - At least \u0027i/\u0027 or \u0027p/\u0027 should be present.\""
       },
       {
         "lineNumber": 124,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": "                    + System.lineSeparator()"
+        "content": "                            + System.lineSeparator()"
       },
       {
         "lineNumber": 125,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": "                    + \" - Price of an item has to be in decimal form.\""
+        "content": "                            + \"|| Example: ADD i/apple p/2.50\""
       },
       {
         "lineNumber": 126,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": "                    + System.lineSeparator()"
+        "content": "                            + System.lineSeparator());"
       },
       {
         "lineNumber": 127,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": "                    + \" - At least \u0027i/\u0027 or \u0027p/\u0027 should be present.\""
+        "content": "                }"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "                    + System.lineSeparator()"
+        "content": "            }"
       },
       {
         "lineNumber": 129,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
-        "content": "                    + \"|| Example: ADD i/apple p/2.50\""
+        "content": "        } catch (NullPointerException e) {"
       },
       {
         "lineNumber": 130,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
-        "content": "                    + System.lineSeparator());"
+        "content": "            newCommand \u003d new IncorrectCommand(System.lineSeparator()"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        }"
+        "content": "                    + \"Error! Description of an item cannot be empty.\""
       },
       {
         "lineNumber": 132,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
-        "content": "    }"
+        "content": "                    + \"\\nExample: ADD 1 i/apple p/4.50\");"
       },
       {
         "lineNumber": 133,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "        } catch (ArrayIndexOutOfBoundsException e) {"
       },
       {
         "lineNumber": 134,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
-        "content": "    private String[] splitArgsForAddCommand(String arguments) throws NullPointerException {"
+        "content": "            newCommand \u003d new IncorrectCommand(System.lineSeparator()"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        String[] argsArray \u003d new String[]{};"
+        "content": "                    + \"Oops! For that to be done properly, check if these are met:\""
       },
       {
         "lineNumber": 136,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
-        "content": "        String descriptionDelimiter \u003d \"i/\";"
+        "content": "                    + System.lineSeparator()"
       },
       {
         "lineNumber": 137,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
-        "content": "        String priceDelimiter \u003d \"p/\";"
+        "content": "                    + \" - Description of an item cannot be empty.\""
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        String itemPrice;"
+        "content": "                    + System.lineSeparator()"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        String itemDescription;"
+        "content": "                    + \" - Price of an item has to be in decimal form.\""
       },
       {
         "lineNumber": 140,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "                    + System.lineSeparator()"
       },
       {
         "lineNumber": 141,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
-        "content": "        int buffer \u003d 2;"
+        "content": "                    + \" - At least \u0027i/\u0027 or \u0027p/\u0027 should be present.\""
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        int indexOfiPrefix;"
+        "content": "                    + System.lineSeparator()"
       },
       {
         "lineNumber": 143,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": "        int indexOfpPrefix;"
+        "content": "                    + \"|| Example: ADD i/apple p/2.50\""
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": "        boolean descriptionPresent \u003d arguments.contains(descriptionDelimiter);"
+        "content": "                    + System.lineSeparator());"
       },
       {
         "lineNumber": 145,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
-        "content": "        boolean pricePresent \u003d arguments.contains(priceDelimiter);"
+        "content": "        }"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 147,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": "        if (descriptionPresent \u0026\u0026 !pricePresent) { //eg args: ADD i/apple"
+        "content": ""
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": "            indexOfiPrefix \u003d arguments.trim().indexOf(descriptionDelimiter);"
+        "content": "    private String[] splitArgsForAddCommand(String arguments) throws NullPointerException {"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "            itemDescription \u003d arguments.substring(indexOfiPrefix + buffer).trim();"
+        "content": "        String[] argsArray \u003d new String[]{};"
       },
       {
         "lineNumber": 150,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": "            argsArray \u003d new String[]{itemDescription, null};"
+        "content": "        String descriptionDelimiter \u003d \"i/\";"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "jiajuinphoon"
         },
-        "content": "        } else if (descriptionPresent \u0026\u0026 pricePresent) {"
-      },
-      {
-        "lineNumber": 152,
-        "author": {
-          "gitId": "jiajuinphoon"
-        },
-        "content": "            indexOfiPrefix \u003d arguments.trim().indexOf(descriptionDelimiter);"
-      },
-      {
-        "lineNumber": 153,
-        "author": {
-          "gitId": "jiajuinphoon"
-        },
-        "content": "            indexOfpPrefix \u003d arguments.trim().indexOf(priceDelimiter);"
-      },
-      {
-        "lineNumber": 154,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            if (indexOfpPrefix \u003c indexOfiPrefix) { //e.g args: ADD p/4.50 i/apple"
-      },
-      {
-        "lineNumber": 155,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                itemDescription \u003d arguments.substring(indexOfiPrefix + buffer).trim();"
-      },
-      {
-        "lineNumber": 156,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                itemPrice \u003d arguments.substring(indexOfpPrefix + buffer, indexOfiPrefix).trim();"
-      },
-      {
-        "lineNumber": 157,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            } else { //e.g args: ADD i/apple p/4.50"
-      },
-      {
-        "lineNumber": 158,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                itemDescription \u003d arguments.substring(indexOfiPrefix + buffer, indexOfpPrefix).trim();"
-      },
-      {
-        "lineNumber": 159,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                itemPrice \u003d arguments.substring(indexOfpPrefix + buffer).trim();"
-      },
-      {
-        "lineNumber": 160,
-        "author": {
-          "gitId": "jiajuinphoon"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 161,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            argsArray \u003d new String[]{itemDescription, itemPrice};"
-      },
-      {
-        "lineNumber": 162,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        } else if (!descriptionPresent \u0026\u0026 pricePresent) { //ADD p/3.50"
-      },
-      {
-        "lineNumber": 163,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            argsArray \u003d new String[]{null, null};"
-      },
-      {
-        "lineNumber": 164,
-        "author": {
-          "gitId": "jiajuinphoon"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 165,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 166,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        if (argsArray[0] \u003d\u003d null \u0026\u0026 argsArray[1] \u003d\u003d null) {"
-      },
-      {
-        "lineNumber": 167,
-        "author": {
-          "gitId": "jiajuinphoon"
-        },
-        "content": "            throw new NullPointerException();"
-      },
-      {
-        "lineNumber": 168,
-        "author": {
-          "gitId": "jiajuinphoon"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 169,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        return argsArray;"
-      },
-      {
-        "lineNumber": 170,
-        "author": {
-          "gitId": "jiajuinphoon"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 171,
-        "author": {
-          "gitId": "jiajuinphoon"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 172,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 173,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "     * Initialises the MarkCommand."
-      },
-      {
-        "lineNumber": 174,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 175,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "    private void createMarkCommand(String arguments) {"
-      },
-      {
-        "lineNumber": 176,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        String[] words \u003d arguments.trim().split(\" \");"
-      },
-      {
-        "lineNumber": 177,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        if (words.length !\u003d 1) {"
-      },
-      {
-        "lineNumber": 178,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            newCommand \u003d new IncorrectCommand(\"Please provide an index number!\");"
-      },
-      {
-        "lineNumber": 179,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 180,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        int index \u003d Integer.parseInt(words[0]) - 1;"
-      },
-      {
-        "lineNumber": 181,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        newCommand \u003d new MarkCommand(index);"
-      },
-      {
-        "lineNumber": 182,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 183,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 184,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 185,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "     * Initialises the Unmark Command."
-      },
-      {
-        "lineNumber": 186,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 187,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "    private void createUnmarkCommand(String arguments) {"
-      },
-      {
-        "lineNumber": 188,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        String[] words \u003d arguments.trim().split(\" \");"
-      },
-      {
-        "lineNumber": 189,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        if (words.length !\u003d 1) {"
-      },
-      {
-        "lineNumber": 190,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            newCommand \u003d new IncorrectCommand(\"Please provide an index number!\");"
-      },
-      {
-        "lineNumber": 191,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 192,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        int index \u003d Integer.parseInt(words[0]) - 1;"
-      },
-      {
-        "lineNumber": 193,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        newCommand \u003d new UnmarkCommand(index);"
-      },
-      {
-        "lineNumber": 194,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 195,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 196,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 197,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "     * Initialises the EditCommand."
-      },
-      {
-        "lineNumber": 198,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 199,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "    private void createEditCommand(String arguments) {"
-      },
-      {
-        "lineNumber": 200,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        int indexOfItem;"
-      },
-      {
-        "lineNumber": 201,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        String newItemPrice;  //newItemPrice is String type as it need not be present (allows null)."
-      },
-      {
-        "lineNumber": 202,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        String newItemDescription;"
-      },
-      {
-        "lineNumber": 203,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        try {"
-      },
-      {
-        "lineNumber": 204,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            String[] args \u003d splitArgsForEditCommand(arguments);"
-      },
-      {
-        "lineNumber": 205,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            indexOfItem \u003d Integer.parseInt(args[0]);"
-      },
-      {
-        "lineNumber": 206,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            assert indexOfItem \u003e 0 : \"(Edit command) Rejecting user command, index provided must be a positive number\";"
-      },
-      {
-        "lineNumber": 207,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            newItemDescription \u003d args[1];"
-      },
-      {
-        "lineNumber": 208,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            newItemPrice \u003d args[2];"
-      },
-      {
-        "lineNumber": 209,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            newCommand \u003d new EditCommand(indexOfItem, newItemDescription, newItemPrice);"
-      },
-      {
-        "lineNumber": 210,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        } catch (NumberFormatException | NullPointerException e) {"
-      },
-      {
-        "lineNumber": 211,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            LOGGER.log(Level.WARNING, \"(Edit command) Rejecting user command, invalid command format entered.\");"
-      },
-      {
-        "lineNumber": 212,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            newCommand \u003d new IncorrectCommand(System.lineSeparator()"
-      },
-      {
-        "lineNumber": 213,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                    + \"Oops! For that to be done properly, check if these are met:\""
-      },
-      {
-        "lineNumber": 214,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                    + System.lineSeparator()"
-      },
-      {
-        "lineNumber": 215,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                    + \" - Index of item must be a positive number.\""
-      },
-      {
-        "lineNumber": 216,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                    + System.lineSeparator()"
-      },
-      {
-        "lineNumber": 217,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                    + \" - Price of an item has to be in decimal form.\""
-      },
-      {
-        "lineNumber": 218,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                    + System.lineSeparator()"
-      },
-      {
-        "lineNumber": 219,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                    + \" - At least \u0027i/\u0027 or \u0027p/\u0027 should be present.\""
-      },
-      {
-        "lineNumber": 220,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                    + System.lineSeparator()"
-      },
-      {
-        "lineNumber": 221,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                    + \" - If \u0027i/\u0027 or \u0027p/\u0027 is present, ensure i/[NEW DESCRIPTION] or p/[NEW PRICE] is present.\""
-      },
-      {
-        "lineNumber": 222,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                    + System.lineSeparator()"
-      },
-      {
-        "lineNumber": 223,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                    + \"|| Example: EDIT 2 i/apple p/2.50\");"
-      },
-      {
-        "lineNumber": 224,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        } catch (AssertionError e) {"
-      },
-      {
-        "lineNumber": 225,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            LOGGER.log(Level.WARNING, e.getMessage());"
-      },
-      {
-        "lineNumber": 226,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            newCommand \u003d new IncorrectCommand(System.lineSeparator()"
-      },
-      {
-        "lineNumber": 227,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                    + \"Oops! For that to be done properly, check if these are met:\""
-      },
-      {
-        "lineNumber": 228,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                    + System.lineSeparator()"
-      },
-      {
-        "lineNumber": 229,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                    + \" - Index of item must be a positive number.\""
-      },
-      {
-        "lineNumber": 230,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                    + System.lineSeparator()"
-      },
-      {
-        "lineNumber": 231,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                    + \" - Price of an item has to be in decimal form.\""
-      },
-      {
-        "lineNumber": 232,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                    + System.lineSeparator()"
-      },
-      {
-        "lineNumber": 233,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                    + \" - At least \u0027i/\u0027 or \u0027p/\u0027 should be present.\""
-      },
-      {
-        "lineNumber": 234,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                    + System.lineSeparator()"
-      },
-      {
-        "lineNumber": 235,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                    + \" - If \u0027i/\u0027 or \u0027p/\u0027 is present, ensure i/[NEW DESCRIPTION] or p/[NEW PRICE] is present.\""
-      },
-      {
-        "lineNumber": 236,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                    + System.lineSeparator()"
-      },
-      {
-        "lineNumber": 237,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                    + \"|| Example: EDIT 2 i/apple p/2.50\");"
-      },
-      {
-        "lineNumber": 238,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 239,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 240,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 241,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 242,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "     * Split args for Edit Command."
-      },
-      {
-        "lineNumber": 243,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 244,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "    private String[] splitArgsForEditCommand(String arguments) throws NullPointerException {"
-      },
-      {
-        "lineNumber": 245,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        String[] argsArray;"
-      },
-      {
-        "lineNumber": 246,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        String descriptionDelimiter \u003d \"i/\";"
-      },
-      {
-        "lineNumber": 247,
-        "author": {
-          "gitId": "trishaangelica"
-        },
         "content": "        String priceDelimiter \u003d \"p/\";"
       },
       {
-        "lineNumber": 248,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        String indexOfItem;"
-      },
-      {
-        "lineNumber": 249,
+        "lineNumber": 152,
         "author": {
           "gitId": "trishaangelica"
         },
         "content": "        String itemPrice;"
       },
       {
-        "lineNumber": 250,
+        "lineNumber": 153,
         "author": {
           "gitId": "trishaangelica"
         },
         "content": "        String itemDescription;"
       },
       {
-        "lineNumber": 251,
+        "lineNumber": 154,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
         "content": ""
       },
       {
-        "lineNumber": 252,
+        "lineNumber": 155,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
         "content": "        int buffer \u003d 2;"
       },
       {
-        "lineNumber": 253,
+        "lineNumber": 156,
         "author": {
           "gitId": "trishaangelica"
         },
         "content": "        int indexOfiPrefix;"
       },
       {
-        "lineNumber": 254,
+        "lineNumber": 157,
         "author": {
           "gitId": "trishaangelica"
         },
         "content": "        int indexOfpPrefix;"
       },
       {
-        "lineNumber": 255,
+        "lineNumber": 158,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
         "content": "        boolean descriptionPresent \u003d arguments.contains(descriptionDelimiter);"
       },
       {
-        "lineNumber": 256,
+        "lineNumber": 159,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
         "content": "        boolean pricePresent \u003d arguments.contains(priceDelimiter);"
       },
       {
-        "lineNumber": 257,
+        "lineNumber": 160,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
         "content": ""
       },
       {
-        "lineNumber": 258,
+        "lineNumber": 161,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        if (descriptionPresent \u0026\u0026 !pricePresent) { //e.g args: EDIT 2 i/apple"
+        "content": "        if (descriptionPresent \u0026\u0026 !pricePresent) { //eg args: ADD i/apple"
       },
       {
-        "lineNumber": 259,
+        "lineNumber": 162,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
         "content": "            indexOfiPrefix \u003d arguments.trim().indexOf(descriptionDelimiter);"
       },
       {
-        "lineNumber": 260,
+        "lineNumber": 163,
         "author": {
           "gitId": "trishaangelica"
         },
         "content": "            itemDescription \u003d arguments.substring(indexOfiPrefix + buffer).trim();"
       },
       {
-        "lineNumber": 261,
+        "lineNumber": 164,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "            if (itemDescription.equals(\"\")) { //e.g args: EDIT 2 i/"
+        "content": "            argsArray \u003d new String[]{itemDescription, null};"
       },
       {
-        "lineNumber": 262,
+        "lineNumber": 165,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": "                throw new NullPointerException();"
+        "content": "        } else if (descriptionPresent \u0026\u0026 pricePresent) {"
       },
       {
-        "lineNumber": 263,
+        "lineNumber": 166,
         "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            } else {"
-      },
-      {
-        "lineNumber": 264,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                indexOfItem \u003d arguments.substring(0, indexOfiPrefix).trim();"
-      },
-      {
-        "lineNumber": 265,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                argsArray \u003d new String[]{indexOfItem, itemDescription, null};"
-      },
-      {
-        "lineNumber": 266,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 267,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        } else if (pricePresent \u0026\u0026 !descriptionPresent) { //e.g args: EDIT 2 p/4.50"
-      },
-      {
-        "lineNumber": 268,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            indexOfpPrefix \u003d arguments.trim().indexOf(priceDelimiter);"
-      },
-      {
-        "lineNumber": 269,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            itemPrice \u003d arguments.substring(indexOfpPrefix + buffer).trim();"
-      },
-      {
-        "lineNumber": 270,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            if (itemPrice.equals(\"\")) { //e.g args: EDIT 2 p/"
-      },
-      {
-        "lineNumber": 271,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                throw new NullPointerException();"
-      },
-      {
-        "lineNumber": 272,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 273,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            indexOfItem \u003d arguments.substring(0, indexOfpPrefix).trim();"
-      },
-      {
-        "lineNumber": 274,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            argsArray \u003d new String[]{indexOfItem, null, itemPrice};"
-      },
-      {
-        "lineNumber": 275,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 276,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "        } else if (descriptionPresent \u0026\u0026 pricePresent) { //e.g args: EDIT 2 i/.. p/.."
-      },
-      {
-        "lineNumber": 277,
-        "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
         "content": "            indexOfiPrefix \u003d arguments.trim().indexOf(descriptionDelimiter);"
       },
       {
-        "lineNumber": 278,
+        "lineNumber": 167,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
         "content": "            indexOfpPrefix \u003d arguments.trim().indexOf(priceDelimiter);"
       },
       {
-        "lineNumber": 279,
+        "lineNumber": 168,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "            if (indexOfpPrefix \u003c indexOfiPrefix) { //e.g args: ADD p/4.50 i/apple"
       },
       {
-        "lineNumber": 280,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "            if (indexOfpPrefix \u003c indexOfiPrefix) { //e.g args: EDIT 2 p/4.50 i/apple"
-      },
-      {
-        "lineNumber": 281,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                indexOfItem \u003d arguments.substring(0, indexOfpPrefix).trim();"
-      },
-      {
-        "lineNumber": 282,
+        "lineNumber": 169,
         "author": {
           "gitId": "trishaangelica"
         },
         "content": "                itemDescription \u003d arguments.substring(indexOfiPrefix + buffer).trim();"
       },
       {
-        "lineNumber": 283,
+        "lineNumber": 170,
         "author": {
           "gitId": "trishaangelica"
         },
         "content": "                itemPrice \u003d arguments.substring(indexOfpPrefix + buffer, indexOfiPrefix).trim();"
       },
       {
-        "lineNumber": 284,
+        "lineNumber": 171,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "            } else { //e.g args: EDIT 2 i/apple p/4.50"
+        "content": "            } else { //e.g args: ADD i/apple p/4.50"
       },
       {
-        "lineNumber": 285,
-        "author": {
-          "gitId": "trishaangelica"
-        },
-        "content": "                indexOfItem \u003d arguments.substring(0, indexOfiPrefix).trim();"
-      },
-      {
-        "lineNumber": 286,
+        "lineNumber": 172,
         "author": {
           "gitId": "trishaangelica"
         },
         "content": "                itemDescription \u003d arguments.substring(indexOfiPrefix + buffer, indexOfpPrefix).trim();"
       },
       {
-        "lineNumber": 287,
+        "lineNumber": 173,
         "author": {
           "gitId": "trishaangelica"
         },
         "content": "                itemPrice \u003d arguments.substring(indexOfpPrefix + buffer).trim();"
       },
       {
-        "lineNumber": 288,
+        "lineNumber": 174,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 289,
+        "lineNumber": 175,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "            if (itemDescription.equals(\"\") || itemPrice.equals(\"\")) { //e.g args: EDIT 2 p/i/apple OR EDIT 2 p/4 i/"
+        "content": "            argsArray \u003d new String[]{itemDescription, itemPrice};"
       },
       {
-        "lineNumber": 290,
+        "lineNumber": 176,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        } else if (!descriptionPresent \u0026\u0026 pricePresent) { //ADD p/3.50"
+      },
+      {
+        "lineNumber": 177,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            argsArray \u003d new String[]{null, null};"
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "jiajuinphoon"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 179,
         "author": {
           "gitId": "trishaangelica"
         },
         "content": ""
       },
       {
-        "lineNumber": 291,
+        "lineNumber": 180,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        if (argsArray[0] \u003d\u003d null \u0026\u0026 argsArray[1] \u003d\u003d null) {"
+      },
+      {
+        "lineNumber": 181,
+        "author": {
+          "gitId": "jiajuinphoon"
+        },
+        "content": "            throw new NullPointerException();"
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "jiajuinphoon"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 183,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        return argsArray;"
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "jiajuinphoon"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "jiajuinphoon"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     * Initialises the MarkCommand."
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 189,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    private void createMarkCommand(String arguments) {"
+      },
+      {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            String[] words \u003d arguments.trim().split(\" \");"
+      },
+      {
+        "lineNumber": 192,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "            if (words.length \u003d\u003d 1) {"
+      },
+      {
+        "lineNumber": 193,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                int index \u003d Integer.parseInt(words[0]) - 1;"
+      },
+      {
+        "lineNumber": 194,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                newCommand \u003d new MarkCommand(index);"
+      },
+      {
+        "lineNumber": 195,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 196,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "                newCommand \u003d new IncorrectCommand(\"Please provide a single numerical index number!\");"
+      },
+      {
+        "lineNumber": 197,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 198,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 199,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        } catch (NumberFormatException | NullPointerException e) {"
+      },
+      {
+        "lineNumber": 200,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "            newCommand \u003d new IncorrectCommand(\"Please provide a single numerical index number!\");"
+      },
+      {
+        "lineNumber": 201,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 202,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 203,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 204,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 205,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     * Initialises the Unmark Command."
+      },
+      {
+        "lineNumber": 206,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 207,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    private void createUnmarkCommand(String arguments) {"
+      },
+      {
+        "lineNumber": 208,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 209,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            String[] words \u003d arguments.trim().split(\" \");"
+      },
+      {
+        "lineNumber": 210,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "            if (words.length \u003d\u003d 1) {"
+      },
+      {
+        "lineNumber": 211,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                int index \u003d Integer.parseInt(words[0]) - 1;"
+      },
+      {
+        "lineNumber": 212,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                newCommand \u003d new UnmarkCommand(index);"
+      },
+      {
+        "lineNumber": 213,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 214,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "                newCommand \u003d new IncorrectCommand(\"Please provide a single numerical index number!\");"
+      },
+      {
+        "lineNumber": 215,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 216,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 217,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        } catch (NumberFormatException | NullPointerException e) {"
+      },
+      {
+        "lineNumber": 218,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "            newCommand \u003d new IncorrectCommand(\"Please provide a single numerical index number!\");"
+      },
+      {
+        "lineNumber": 219,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 220,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 221,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 222,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 223,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     * Initialises the EditCommand."
+      },
+      {
+        "lineNumber": 224,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 225,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    private void createEditCommand(String arguments) {"
+      },
+      {
+        "lineNumber": 226,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        int indexOfItem;"
+      },
+      {
+        "lineNumber": 227,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        String newItemPrice;  //newItemPrice is String type as it need not be present (allows null)."
+      },
+      {
+        "lineNumber": 228,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        String newItemDescription;"
+      },
+      {
+        "lineNumber": 229,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 230,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            String[] args \u003d splitArgsForEditCommand(arguments);"
+      },
+      {
+        "lineNumber": 231,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            indexOfItem \u003d Integer.parseInt(args[0]);"
+      },
+      {
+        "lineNumber": 232,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            assert indexOfItem \u003e 0 : \"(Edit command) Rejecting user command, index provided must be a positive number\";"
+      },
+      {
+        "lineNumber": 233,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            newItemDescription \u003d args[1];"
+      },
+      {
+        "lineNumber": 234,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            newItemPrice \u003d args[2];"
+      },
+      {
+        "lineNumber": 235,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            newCommand \u003d new EditCommand(indexOfItem, newItemDescription, newItemPrice);"
+      },
+      {
+        "lineNumber": 236,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        } catch (NumberFormatException | NullPointerException e) {"
+      },
+      {
+        "lineNumber": 237,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            LOGGER.log(Level.WARNING, \"(Edit command) Rejecting user command, invalid command format entered.\");"
+      },
+      {
+        "lineNumber": 238,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            newCommand \u003d new IncorrectCommand(System.lineSeparator()"
+      },
+      {
+        "lineNumber": 239,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + \"Oops! For that to be done properly, check if these are met:\""
+      },
+      {
+        "lineNumber": 240,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + System.lineSeparator()"
+      },
+      {
+        "lineNumber": 241,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + \" - Index of item must be a positive number.\""
+      },
+      {
+        "lineNumber": 242,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + System.lineSeparator()"
+      },
+      {
+        "lineNumber": 243,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + \" - Price of an item has to be in decimal form.\""
+      },
+      {
+        "lineNumber": 244,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + System.lineSeparator()"
+      },
+      {
+        "lineNumber": 245,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + \" - At least \u0027i/\u0027 or \u0027p/\u0027 should be present.\""
+      },
+      {
+        "lineNumber": 246,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + System.lineSeparator()"
+      },
+      {
+        "lineNumber": 247,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + \" - If \u0027i/\u0027 or \u0027p/\u0027 is present, ensure i/[NEW DESCRIPTION] or p/[NEW PRICE] is present.\""
+      },
+      {
+        "lineNumber": 248,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + System.lineSeparator()"
+      },
+      {
+        "lineNumber": 249,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + \"|| Example: EDIT 2 i/apple p/2.50\");"
+      },
+      {
+        "lineNumber": 250,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        } catch (AssertionError e) {"
+      },
+      {
+        "lineNumber": 251,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            LOGGER.log(Level.WARNING, e.getMessage());"
+      },
+      {
+        "lineNumber": 252,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            newCommand \u003d new IncorrectCommand(System.lineSeparator()"
+      },
+      {
+        "lineNumber": 253,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + \"Oops! For that to be done properly, check if these are met:\""
+      },
+      {
+        "lineNumber": 254,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + System.lineSeparator()"
+      },
+      {
+        "lineNumber": 255,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + \" - Index of item must be a positive number.\""
+      },
+      {
+        "lineNumber": 256,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + System.lineSeparator()"
+      },
+      {
+        "lineNumber": 257,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + \" - Price of an item has to be in decimal form.\""
+      },
+      {
+        "lineNumber": 258,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + System.lineSeparator()"
+      },
+      {
+        "lineNumber": 259,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + \" - At least \u0027i/\u0027 or \u0027p/\u0027 should be present.\""
+      },
+      {
+        "lineNumber": 260,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + System.lineSeparator()"
+      },
+      {
+        "lineNumber": 261,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + \" - If \u0027i/\u0027 or \u0027p/\u0027 is present, ensure i/[NEW DESCRIPTION] or p/[NEW PRICE] is present.\""
+      },
+      {
+        "lineNumber": 262,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + System.lineSeparator()"
+      },
+      {
+        "lineNumber": 263,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + \"|| Example: EDIT 2 i/apple p/2.50\");"
+      },
+      {
+        "lineNumber": 264,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 265,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 266,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 267,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 268,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     * Split args for Edit Command."
+      },
+      {
+        "lineNumber": 269,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 270,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    private String[] splitArgsForEditCommand(String arguments) throws NullPointerException {"
+      },
+      {
+        "lineNumber": 271,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        String[] argsArray;"
+      },
+      {
+        "lineNumber": 272,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        String descriptionDelimiter \u003d \"i/\";"
+      },
+      {
+        "lineNumber": 273,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        String priceDelimiter \u003d \"p/\";"
+      },
+      {
+        "lineNumber": 274,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        String indexOfItem;"
+      },
+      {
+        "lineNumber": 275,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        String itemPrice;"
+      },
+      {
+        "lineNumber": 276,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        String itemDescription;"
+      },
+      {
+        "lineNumber": 277,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 278,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        int buffer \u003d 2;"
+      },
+      {
+        "lineNumber": 279,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        int indexOfiPrefix;"
+      },
+      {
+        "lineNumber": 280,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        int indexOfpPrefix;"
+      },
+      {
+        "lineNumber": 281,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        boolean descriptionPresent \u003d arguments.contains(descriptionDelimiter);"
+      },
+      {
+        "lineNumber": 282,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        boolean pricePresent \u003d arguments.contains(priceDelimiter);"
+      },
+      {
+        "lineNumber": 283,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 284,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        if (descriptionPresent \u0026\u0026 !pricePresent) { //e.g args: EDIT 2 i/apple"
+      },
+      {
+        "lineNumber": 285,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            indexOfiPrefix \u003d arguments.trim().indexOf(descriptionDelimiter);"
+      },
+      {
+        "lineNumber": 286,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            itemDescription \u003d arguments.substring(indexOfiPrefix + buffer).trim();"
+      },
+      {
+        "lineNumber": 287,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            if (itemDescription.equals(\"\")) { //e.g args: EDIT 2 i/"
+      },
+      {
+        "lineNumber": 288,
         "author": {
           "gitId": "trishaangelica"
         },
         "content": "                throw new NullPointerException();"
+      },
+      {
+        "lineNumber": 289,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 290,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                indexOfItem \u003d arguments.substring(0, indexOfiPrefix).trim();"
+      },
+      {
+        "lineNumber": 291,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                argsArray \u003d new String[]{indexOfItem, itemDescription, null};"
       },
       {
         "lineNumber": 292,
@@ -8316,516 +8400,516 @@
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "            argsArray \u003d new String[]{indexOfItem, itemDescription, itemPrice};"
+        "content": "        } else if (pricePresent \u0026\u0026 !descriptionPresent) { //e.g args: EDIT 2 p/4.50"
       },
       {
         "lineNumber": 294,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        } else {"
+        "content": "            indexOfpPrefix \u003d arguments.trim().indexOf(priceDelimiter);"
       },
       {
         "lineNumber": 295,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "            argsArray \u003d new String[]{null, null, null};"
+        "content": "            itemPrice \u003d arguments.substring(indexOfpPrefix + buffer).trim();"
       },
       {
         "lineNumber": 296,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        }"
+        "content": "            if (itemPrice.equals(\"\")) { //e.g args: EDIT 2 p/"
       },
       {
         "lineNumber": 297,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        if (argsArray[1] \u003d\u003d null \u0026\u0026 argsArray[2] \u003d\u003d null) {"
+        "content": "                throw new NullPointerException();"
       },
       {
         "lineNumber": 298,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "            throw new NullPointerException();"
+        "content": "            }"
       },
       {
         "lineNumber": 299,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        }"
+        "content": "            indexOfItem \u003d arguments.substring(0, indexOfpPrefix).trim();"
       },
       {
         "lineNumber": 300,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        return argsArray;"
+        "content": "            argsArray \u003d new String[]{indexOfItem, null, itemPrice};"
       },
       {
         "lineNumber": 301,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 302,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "        } else if (descriptionPresent \u0026\u0026 pricePresent) { //e.g args: EDIT 2 i/.. p/.."
       },
       {
         "lineNumber": 303,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    /**"
+        "content": "            indexOfiPrefix \u003d arguments.trim().indexOf(descriptionDelimiter);"
       },
       {
         "lineNumber": 304,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "     * Initialises the DeleteCommand."
+        "content": "            indexOfpPrefix \u003d arguments.trim().indexOf(priceDelimiter);"
       },
       {
         "lineNumber": 305,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 306,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    private void createDeleteCommand(String arguments) {"
+        "content": "            if (indexOfpPrefix \u003c indexOfiPrefix) { //e.g args: EDIT 2 p/4.50 i/apple"
       },
       {
         "lineNumber": 307,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        try {"
+        "content": "                indexOfItem \u003d arguments.substring(0, indexOfpPrefix).trim();"
       },
       {
         "lineNumber": 308,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "            int index \u003d Integer.parseInt(arguments);"
+        "content": "                itemDescription \u003d arguments.substring(indexOfiPrefix + buffer).trim();"
       },
       {
         "lineNumber": 309,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "            newCommand \u003d new DeleteCommand(index);"
+        "content": "                itemPrice \u003d arguments.substring(indexOfpPrefix + buffer, indexOfiPrefix).trim();"
       },
       {
         "lineNumber": 310,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        } catch (NumberFormatException e) {"
+        "content": "            } else { //e.g args: EDIT 2 i/apple p/4.50"
       },
       {
         "lineNumber": 311,
         "author": {
-          "gitId": "kokjoon97"
+          "gitId": "trishaangelica"
         },
-        "content": "            LOGGER.log(Level.WARNING,\"(Delete command) Rejecting user command, user did not enter a number for index.\");"
+        "content": "                indexOfItem \u003d arguments.substring(0, indexOfiPrefix).trim();"
       },
       {
         "lineNumber": 312,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "            newCommand \u003d new IncorrectCommand(System.lineSeparator()"
+        "content": "                itemDescription \u003d arguments.substring(indexOfiPrefix + buffer, indexOfpPrefix).trim();"
       },
       {
         "lineNumber": 313,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "                    + \"Please enter an index\""
+        "content": "                itemPrice \u003d arguments.substring(indexOfpPrefix + buffer).trim();"
       },
       {
         "lineNumber": 314,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "                    + System.lineSeparator()"
+        "content": "            }"
       },
       {
         "lineNumber": 315,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "                    + \"Example: DEL 3\");"
+        "content": "            if (itemDescription.equals(\"\") || itemPrice.equals(\"\")) { //e.g args: EDIT 2 p/i/apple OR EDIT 2 p/4 i/"
       },
       {
         "lineNumber": 316,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 317,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "                throw new NullPointerException();"
       },
       {
         "lineNumber": 318,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    }"
+        "content": "            }"
       },
       {
         "lineNumber": 319,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "            argsArray \u003d new String[]{indexOfItem, itemDescription, itemPrice};"
       },
       {
         "lineNumber": 320,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    private void createListCommand(String arguments) {"
+        "content": "        } else {"
       },
       {
         "lineNumber": 321,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        if (arguments !\u003d null) {"
+        "content": "            argsArray \u003d new String[]{null, null, null};"
       },
       {
         "lineNumber": 322,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "            newCommand \u003d new IncorrectCommand(System.lineSeparator()"
+        "content": "        }"
       },
       {
         "lineNumber": 323,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "                    + \"Invalid command.\""
+        "content": "        if (argsArray[1] \u003d\u003d null \u0026\u0026 argsArray[2] \u003d\u003d null) {"
       },
       {
         "lineNumber": 324,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "                    + System.lineSeparator()"
+        "content": "            throw new NullPointerException();"
       },
       {
         "lineNumber": 325,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "                    + \"To display your shopping list, just input \\\"DISPLAY\\\".\");"
+        "content": "        }"
       },
       {
         "lineNumber": 326,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        } else {"
+        "content": "        return argsArray;"
       },
       {
         "lineNumber": 327,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "            newCommand \u003d new ListCommand();"
+        "content": "    }"
       },
       {
         "lineNumber": 328,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 329,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    }"
+        "content": "    /**"
       },
       {
         "lineNumber": 330,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "     * Initialises the DeleteCommand."
       },
       {
         "lineNumber": 331,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    private void createClearCommand(String arguments) {"
+        "content": "     */"
       },
       {
         "lineNumber": 332,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        if (arguments !\u003d null) {"
+        "content": "    private void createDeleteCommand(String arguments) {"
       },
       {
         "lineNumber": 333,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "            newCommand \u003d new IncorrectCommand(System.lineSeparator()"
+        "content": "        try {"
       },
       {
         "lineNumber": 334,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "                    + \"Invalid command.\""
+        "content": "            int index \u003d Integer.parseInt(arguments);"
       },
       {
         "lineNumber": 335,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "                    + System.lineSeparator()"
+        "content": "            newCommand \u003d new DeleteCommand(index);"
       },
       {
         "lineNumber": 336,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "                    + \"To clear your shopping list, just input \\\"CLEAR\\\".\");"
+        "content": "        } catch (NumberFormatException e) {"
       },
       {
         "lineNumber": 337,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "kokjoon97"
         },
-        "content": "        } else {"
+        "content": "            LOGGER.log(Level.WARNING,\"(Delete command) Rejecting user command, user did not enter a number for index.\");"
       },
       {
         "lineNumber": 338,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "            newCommand \u003d new ClearCommand();"
+        "content": "            newCommand \u003d new IncorrectCommand(System.lineSeparator()"
       },
       {
         "lineNumber": 339,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        }"
+        "content": "                    + \"Please enter an index\""
       },
       {
         "lineNumber": 340,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    }"
+        "content": "                    + System.lineSeparator()"
       },
       {
         "lineNumber": 341,
         "author": {
-          "gitId": "jiajuinphoon"
+          "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "                    + \"Example: DEL 3\");"
       },
       {
         "lineNumber": 342,
         "author": {
-          "gitId": "kokjoon97"
+          "gitId": "trishaangelica"
         },
-        "content": "    /**"
+        "content": "        }"
       },
       {
         "lineNumber": 343,
         "author": {
-          "gitId": "kokjoon97"
+          "gitId": "trishaangelica"
         },
-        "content": "     * Initialises the SetBudgetCommand."
+        "content": ""
       },
       {
         "lineNumber": 344,
         "author": {
-          "gitId": "kokjoon97"
+          "gitId": "trishaangelica"
         },
-        "content": "     */"
+        "content": "    }"
       },
       {
         "lineNumber": 345,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    private void createSetBudgetCommand(String arguments) {"
+        "content": ""
       },
       {
         "lineNumber": 346,
         "author": {
-          "gitId": "kokjoon97"
+          "gitId": "trishaangelica"
         },
-        "content": "        try {"
+        "content": "    private void createListCommand(String arguments) {"
       },
       {
         "lineNumber": 347,
         "author": {
-          "gitId": "kokjoon97"
+          "gitId": "trishaangelica"
         },
-        "content": "            if (!arguments.contains(\"b/\")) {"
+        "content": "        if (arguments !\u003d null) {"
       },
       {
         "lineNumber": 348,
         "author": {
-          "gitId": "kokjoon97"
-        },
-        "content": "                LOGGER.log(Level.WARNING,\"(Set budget) Rejecting user command, no \\\"b/\\\" substring.\");"
-      },
-      {
-        "lineNumber": 349,
-        "author": {
-          "gitId": "kokjoon97"
-        },
-        "content": "                newCommand \u003d new IncorrectCommand(System.lineSeparator()"
-      },
-      {
-        "lineNumber": 350,
-        "author": {
-          "gitId": "kokjoon97"
-        },
-        "content": "                        + \"Please enter the amount after the \\\"b/\\\" divider\""
-      },
-      {
-        "lineNumber": 351,
-        "author": {
-          "gitId": "kokjoon97"
-        },
-        "content": "                        + System.lineSeparator()"
-      },
-      {
-        "lineNumber": 352,
-        "author": {
-          "gitId": "kokjoon97"
-        },
-        "content": "                        + \"Example: SET b/300\");"
-      },
-      {
-        "lineNumber": 353,
-        "author": {
-          "gitId": "kokjoon97"
-        },
-        "content": "            } else {"
-      },
-      {
-        "lineNumber": 354,
-        "author": {
-          "gitId": "kokjoon97"
-        },
-        "content": "                assert arguments.indexOf(\"b/\") !\u003d -1 : \"Substring \\\"b/\\\" should be present\";"
-      },
-      {
-        "lineNumber": 355,
-        "author": {
-          "gitId": "JLoh579"
-        },
-        "content": "                double amount \u003d Double.parseDouble(arguments.substring(2));"
-      },
-      {
-        "lineNumber": 356,
-        "author": {
-          "gitId": "kokjoon97"
-        },
-        "content": "                newCommand \u003d new SetBudgetCommand(amount);"
-      },
-      {
-        "lineNumber": 357,
-        "author": {
-          "gitId": "kokjoon97"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 358,
-        "author": {
-          "gitId": "kokjoon97"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 359,
-        "author": {
-          "gitId": "kokjoon97"
-        },
-        "content": "        } catch (NumberFormatException | NullPointerException | StringIndexOutOfBoundsException e) {"
-      },
-      {
-        "lineNumber": 360,
-        "author": {
-          "gitId": "kokjoon97"
-        },
-        "content": "            LOGGER.log(Level.WARNING,\"(Set budget) Rejecting user command, no number was specified for budget.\");"
-      },
-      {
-        "lineNumber": 361,
-        "author": {
-          "gitId": "kokjoon97"
+          "gitId": "trishaangelica"
         },
         "content": "            newCommand \u003d new IncorrectCommand(System.lineSeparator()"
       },
       {
-        "lineNumber": 362,
+        "lineNumber": 349,
         "author": {
-          "gitId": "kokjoon97"
+          "gitId": "trishaangelica"
         },
-        "content": "                    + \"Please enter an amount for your budget\""
+        "content": "                    + \"Invalid command.\""
       },
       {
-        "lineNumber": 363,
+        "lineNumber": 350,
         "author": {
-          "gitId": "kokjoon97"
+          "gitId": "trishaangelica"
         },
         "content": "                    + System.lineSeparator()"
       },
       {
+        "lineNumber": 351,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + \"To display your shopping list, just input \\\"DISPLAY\\\".\");"
+      },
+      {
+        "lineNumber": 352,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 353,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            newCommand \u003d new ListCommand();"
+      },
+      {
+        "lineNumber": 354,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 355,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 356,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 357,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    private void createClearCommand(String arguments) {"
+      },
+      {
+        "lineNumber": 358,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        if (arguments !\u003d null) {"
+      },
+      {
+        "lineNumber": 359,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "            newCommand \u003d new IncorrectCommand(System.lineSeparator()"
+      },
+      {
+        "lineNumber": 360,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + \"Invalid command.\""
+      },
+      {
+        "lineNumber": 361,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + System.lineSeparator()"
+      },
+      {
+        "lineNumber": 362,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "                    + \"To clear your shopping list, just input \\\"CLEAR\\\".\");"
+      },
+      {
+        "lineNumber": 363,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        } else {"
+      },
+      {
         "lineNumber": 364,
         "author": {
-          "gitId": "kokjoon97"
+          "gitId": "trishaangelica"
         },
-        "content": "                    + \"Example: SET b/300\");"
+        "content": "            newCommand \u003d new ClearCommand();"
       },
       {
         "lineNumber": 365,
         "author": {
-          "gitId": "kokjoon97"
+          "gitId": "trishaangelica"
         },
         "content": "        }"
       },
       {
         "lineNumber": 366,
         "author": {
-          "gitId": "kokjoon97"
+          "gitId": "trishaangelica"
         },
         "content": "    }"
       },
@@ -8846,9 +8930,9 @@
       {
         "lineNumber": 369,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "kokjoon97"
         },
-        "content": "     * Initialises the ResetBudgetCommand."
+        "content": "     * Initialises the SetBudgetCommand."
       },
       {
         "lineNumber": 370,
@@ -8862,129 +8946,311 @@
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    private void createResetBudgetCommand() {"
+        "content": "    private void createSetBudgetCommand(String arguments) {"
       },
       {
         "lineNumber": 372,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "kokjoon97"
         },
-        "content": "        newCommand \u003d new ResetBudgetCommand();"
+        "content": "        try {"
       },
       {
         "lineNumber": 373,
         "author": {
           "gitId": "kokjoon97"
         },
-        "content": "    }"
+        "content": "            if (!arguments.contains(\"b/\")) {"
       },
       {
         "lineNumber": 374,
         "author": {
-          "gitId": "Shannonwje"
+          "gitId": "kokjoon97"
         },
-        "content": ""
+        "content": "                LOGGER.log(Level.WARNING,\"(Set budget) Rejecting user command, no \\\"b/\\\" substring.\");"
       },
       {
         "lineNumber": 375,
         "author": {
           "gitId": "kokjoon97"
         },
-        "content": "    /**"
+        "content": "                newCommand \u003d new IncorrectCommand(System.lineSeparator()"
       },
       {
         "lineNumber": 376,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "kokjoon97"
         },
-        "content": "     * Initialises the HelpCommand."
+        "content": "                        + \"Please enter the amount after the \\\"b/\\\" divider\""
       },
       {
         "lineNumber": 377,
         "author": {
-          "gitId": "JLoh579"
+          "gitId": "kokjoon97"
         },
-        "content": "     */"
+        "content": "                        + System.lineSeparator()"
       },
       {
         "lineNumber": 378,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "kokjoon97"
         },
-        "content": "    private void createHelpCommand() {"
+        "content": "                        + \"Example: SET b/300\");"
       },
       {
         "lineNumber": 379,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "kokjoon97"
         },
-        "content": "        newCommand \u003d new HelpCommand();"
+        "content": "            } else {"
       },
       {
         "lineNumber": 380,
         "author": {
-          "gitId": "JLoh579"
+          "gitId": "kokjoon97"
         },
-        "content": "    }"
+        "content": "                assert arguments.indexOf(\"b/\") !\u003d -1 : \"Substring \\\"b/\\\" should be present\";"
       },
       {
         "lineNumber": 381,
         "author": {
           "gitId": "JLoh579"
         },
-        "content": ""
+        "content": "                double amount \u003d Double.parseDouble(arguments.substring(2));"
       },
       {
         "lineNumber": 382,
+        "author": {
+          "gitId": "kokjoon97"
+        },
+        "content": "                newCommand \u003d new SetBudgetCommand(amount);"
+      },
+      {
+        "lineNumber": 383,
+        "author": {
+          "gitId": "kokjoon97"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 384,
+        "author": {
+          "gitId": "kokjoon97"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 385,
+        "author": {
+          "gitId": "kokjoon97"
+        },
+        "content": "        } catch (NumberFormatException | NullPointerException | StringIndexOutOfBoundsException e) {"
+      },
+      {
+        "lineNumber": 386,
+        "author": {
+          "gitId": "kokjoon97"
+        },
+        "content": "            LOGGER.log(Level.WARNING,\"(Set budget) Rejecting user command, no number was specified for budget.\");"
+      },
+      {
+        "lineNumber": 387,
+        "author": {
+          "gitId": "kokjoon97"
+        },
+        "content": "            newCommand \u003d new IncorrectCommand(System.lineSeparator()"
+      },
+      {
+        "lineNumber": 388,
+        "author": {
+          "gitId": "kokjoon97"
+        },
+        "content": "                    + \"Please enter an amount for your budget\""
+      },
+      {
+        "lineNumber": 389,
+        "author": {
+          "gitId": "kokjoon97"
+        },
+        "content": "                    + System.lineSeparator()"
+      },
+      {
+        "lineNumber": 390,
+        "author": {
+          "gitId": "kokjoon97"
+        },
+        "content": "                    + \"Example: SET b/300\");"
+      },
+      {
+        "lineNumber": 391,
+        "author": {
+          "gitId": "kokjoon97"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 392,
+        "author": {
+          "gitId": "kokjoon97"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 393,
+        "author": {
+          "gitId": "jiajuinphoon"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 394,
+        "author": {
+          "gitId": "kokjoon97"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 395,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     * Initialises the ResetBudgetCommand."
+      },
+      {
+        "lineNumber": 396,
+        "author": {
+          "gitId": "kokjoon97"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 397,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    private void createResetBudgetCommand() {"
+      },
+      {
+        "lineNumber": 398,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        newCommand \u003d new ResetBudgetCommand();"
+      },
+      {
+        "lineNumber": 399,
+        "author": {
+          "gitId": "kokjoon97"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 400,
+        "author": {
+          "gitId": "Shannonwje"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 401,
+        "author": {
+          "gitId": "kokjoon97"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 402,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "     * Initialises the HelpCommand."
+      },
+      {
+        "lineNumber": 403,
+        "author": {
+          "gitId": "JLoh579"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 404,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "    private void createHelpCommand() {"
+      },
+      {
+        "lineNumber": 405,
+        "author": {
+          "gitId": "trishaangelica"
+        },
+        "content": "        newCommand \u003d new HelpCommand();"
+      },
+      {
+        "lineNumber": 406,
+        "author": {
+          "gitId": "JLoh579"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 407,
+        "author": {
+          "gitId": "JLoh579"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 408,
         "author": {
           "gitId": "trishaangelica"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 383,
+        "lineNumber": 409,
         "author": {
           "gitId": "trishaangelica"
         },
         "content": "     * Initialises the ExitCommand."
       },
       {
-        "lineNumber": 384,
+        "lineNumber": 410,
         "author": {
           "gitId": "trishaangelica"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 385,
+        "lineNumber": 411,
         "author": {
           "gitId": "trishaangelica"
         },
         "content": "    private void createExitCommand() {"
       },
       {
-        "lineNumber": 386,
+        "lineNumber": 412,
         "author": {
           "gitId": "trishaangelica"
         },
         "content": "        newCommand \u003d new ExitCommand();"
       },
       {
-        "lineNumber": 387,
+        "lineNumber": 413,
         "author": {
           "gitId": "trishaangelica"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 388,
+        "lineNumber": 414,
         "author": {
           "gitId": "trishaangelica"
         },
         "content": ""
       },
       {
-        "lineNumber": 389,
+        "lineNumber": 415,
         "author": {
           "gitId": "trishaangelica"
         },
@@ -8994,9 +9260,9 @@
     "authorContributionMap": {
       "JLoh579": 13,
       "kokjoon97": 41,
-      "Shannonwje": 14,
-      "jiajuinphoon": 28,
-      "trishaangelica": 293
+      "Shannonwje": 32,
+      "jiajuinphoon": 42,
+      "trishaangelica": 287
     }
   },
   {
@@ -12145,21 +12411,21 @@
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "Shannonwje"
         },
-        "content": ""
+        "content": "import seedu.duke.commands.MarkCommand;"
       },
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "Shannonwje"
         },
-        "content": ""
+        "content": "import seedu.duke.commands.UnmarkCommand;"
       },
       {
         "lineNumber": 14,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "Shannonwje"
         },
         "content": ""
       },
@@ -12168,14 +12434,14 @@
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
+        "content": ""
       },
       {
         "lineNumber": 17,
@@ -12189,686 +12455,686 @@
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "public class ParserTest {"
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    private Parser parser;"
+        "content": ""
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "public class ParserTest {"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    @BeforeEach"
+        "content": ""
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    public void setUp() {"
+        "content": "    private Parser parser;"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        parser \u003d new Parser();"
+        "content": ""
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    }"
+        "content": "    @BeforeEach"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "    public void setUp() {"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "        parser \u003d new Parser();"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    @Test"
+        "content": "    }"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    public void parse_unknownCommandWord_returnsHelp() {"
+        "content": ""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        final String input \u003d \"unknownCommandWord arguments\";"
+        "content": ""
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        parseAndAssertCommandType(input, HelpCommand.class);"
+        "content": "    @Test"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    }"
+        "content": "    public void parse_unknownCommandWord_returnsHelp() {"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "        final String input \u003d \"unknownCommandWord arguments\";"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    /*"
+        "content": "        parseAndAssertCommandType(input, HelpCommand.class);"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "     * Tests for 0-argument commands \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
+        "content": "    }"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "    /*"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    @Test"
+        "content": "     * Tests for 0-argument commands \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    public void parse_helpCommand_parsedCorrectly() {"
+        "content": "     */"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        final String input \u003d \"HELP\";"
+        "content": ""
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        parseAndAssertCommandType(input, HelpCommand.class);"
+        "content": "    @Test"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    }"
+        "content": "    public void parse_helpCommand_parsedCorrectly() {"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "        final String input \u003d \"HELP\";"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    @Test"
+        "content": "        parseAndAssertCommandType(input, HelpCommand.class);"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    public void parse_clearCommand_parsedCorrectly() {"
+        "content": "    }"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        final String input \u003d \"CLEAR\";"
+        "content": ""
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        parseAndAssertCommandType(input, ClearCommand.class);"
+        "content": "    @Test"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    }"
+        "content": "    public void parse_clearCommand_parsedCorrectly() {"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "        final String input \u003d \"CLEAR\";"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    @Test"
+        "content": "        parseAndAssertCommandType(input, ClearCommand.class);"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    public void parse_listCommand_parsedCorrectly() {"
+        "content": "    }"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        final String input \u003d \"DISPLAY\";"
+        "content": ""
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        parseAndAssertCommandType(input, ListCommand.class);"
+        "content": "    @Test"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    }"
+        "content": "    public void parse_listCommand_parsedCorrectly() {"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "        final String input \u003d \"DISPLAY\";"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    @Test"
+        "content": "        parseAndAssertCommandType(input, ListCommand.class);"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    public void parse_exitCommand_parsedCorrectly() {"
+        "content": "    }"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        final String input \u003d \"BYE\";"
+        "content": ""
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        parseAndAssertCommandType(input, ExitCommand.class);"
+        "content": "    @Test"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    }"
+        "content": "    public void parse_exitCommand_parsedCorrectly() {"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "        final String input \u003d \"BYE\";"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    @Test"
+        "content": "        parseAndAssertCommandType(input, ExitCommand.class);"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    public void parse_resetBudgetCommand_parsedCorrectly() {"
+        "content": "    }"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        final String input \u003d \"RES\";"
+        "content": ""
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        parseAndAssertCommandType(input, ResetBudgetCommand.class);"
+        "content": "    @Test"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    }"
+        "content": "    public void parse_resetBudgetCommand_parsedCorrectly() {"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "        final String input \u003d \"RES\";"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    /*"
+        "content": "        parseAndAssertCommandType(input, ResetBudgetCommand.class);"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "     * Tests for single index argument commands \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
+        "content": "    }"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "    /*"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    @Test"
+        "content": "     * Tests for single index argument commands \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    public void parse_deleteCommandNoArgs_errorMessage() {"
+        "content": "     */"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        final String[] inputs \u003d { \"DEL\", \"DEL \" };"
+        "content": ""
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        final String resultMessage \u003d System.lineSeparator()"
+        "content": "    @Test"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "                + \"Please enter an index\""
+        "content": "    public void parse_deleteCommandNoArgs_errorMessage() {"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "                + System.lineSeparator()"
+        "content": "        final String[] inputs \u003d { \"DEL\", \"DEL \" };"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "                + \"Example: DEL 3\";"
+        "content": "        final String resultMessage \u003d System.lineSeparator()"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        parseAndAssertIncorrectWithMessage(resultMessage, inputs);"
+        "content": "                + \"Please enter an index\""
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    }"
+        "content": "                + System.lineSeparator()"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "                + \"Example: DEL 3\";"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    @Test"
+        "content": "        parseAndAssertIncorrectWithMessage(resultMessage, inputs);"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    public void parse_deleteCommandArgsIsNotSingleNumber_errorMessage() {"
+        "content": "    }"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        final String[] inputs \u003d { \"DEL notAnumber \", \"DEL 8*wh12\", \"DEL 1 2 3 4 5\" };"
+        "content": ""
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        final String resultMessage \u003d System.lineSeparator()"
+        "content": "    @Test"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "                + \"Please enter an index\""
+        "content": "    public void parse_deleteCommandArgsIsNotSingleNumber_errorMessage() {"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "                + System.lineSeparator()"
+        "content": "        final String[] inputs \u003d { \"DEL notAnumber \", \"DEL 8*wh12\", \"DEL 1 2 3 4 5\" };"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "                + \"Example: DEL 3\";"
+        "content": "        final String resultMessage \u003d System.lineSeparator()"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        parseAndAssertIncorrectWithMessage(resultMessage, inputs);"
+        "content": "                + \"Please enter an index\""
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    }"
+        "content": "                + System.lineSeparator()"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": ""
+        "content": "                + \"Example: DEL 3\";"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    /*"
+        "content": "        parseAndAssertIncorrectWithMessage(resultMessage, inputs);"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    @Test"
+        "content": "    }"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    public void parse_markCommandNoArgs_errorMessage() {"
+        "content": ""
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        final String[] inputs \u003d { \"MARK\", \"MARK \" };"
+        "content": "    @Test"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        final String resultMessage \u003d \"Please provide an index number!\";"
+        "content": "    public void parse_markCommandNoArgs_errorMessage() {"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        parseAndAssertIncorrectWithMessage(resultMessage, inputs);"
+        "content": "        final String[] inputs \u003d { \"MARK\", \"MARK \" };"
       },
       {
         "lineNumber": 98,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "Shannonwje"
         },
-        "content": "    }"
+        "content": "        final String resultMessage \u003d \"Please provide a single numerical index number!\";"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "*/"
+        "content": "        parseAndAssertIncorrectWithMessage(resultMessage, inputs);"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    /*"
+        "content": "    }"
       },
       {
         "lineNumber": 101,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "Shannonwje"
         },
-        "content": "    @Test"
+        "content": ""
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    public void parse_markCommandArgsIsNotSingleNumber_errorMessage() {"
+        "content": "    @Test"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        final String[] inputs \u003d { \"MARK notAnumber \", \"MARK 8*wh12\", \"MARK 1 2 3 4 5\" };"
+        "content": "    public void parse_markCommandArgsIsNotSingleNumber_errorMessage() {"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        final String resultMessage \u003d \"Please provide an index number!\";"
+        "content": "        final String[] inputs \u003d { \"MARK notAnumber \", \"MARK 8*wh12\", \"MARK 1 2 3 4 5\" };"
       },
       {
         "lineNumber": 105,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "Shannonwje"
         },
-        "content": "        parseAndAssertIncorrectWithMessage(resultMessage, inputs);"
+        "content": "        final String resultMessage \u003d \"Please provide a single numerical index number!\";"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    }"
+        "content": "        parseAndAssertIncorrectWithMessage(resultMessage, inputs);"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "*/"
+        "content": "    }"
       },
       {
         "lineNumber": 108,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "Shannonwje"
         },
-        "content": "    /*"
+        "content": ""
       },
       {
         "lineNumber": 109,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "Shannonwje"
         },
-        "content": "    @Test"
+        "content": ""
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    public void parse_unMarkCommandNoArgs_errorMessage() {"
+        "content": "    @Test"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        final String[] inputs \u003d { \"UNMARK\", \"UNMARK \" };"
+        "content": "    public void parse_unMarkCommandNoArgs_errorMessage() {"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "        final String resultMessage \u003d \"Please provide an index number!\";"
+        "content": "        final String[] inputs \u003d { \"UNMARK\", \"UNMARK \" };"
       },
       {
         "lineNumber": 113,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "Shannonwje"
         },
-        "content": "        parseAndAssertIncorrectWithMessage(resultMessage, inputs);"
+        "content": "        final String resultMessage \u003d \"Please provide a single numerical index number!\";"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    }"
+        "content": "        parseAndAssertIncorrectWithMessage(resultMessage, inputs);"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "trishaangelica"
         },
-        "content": "    */"
+        "content": "    }"
       },
       {
         "lineNumber": 116,
@@ -12887,9 +13153,9 @@
       {
         "lineNumber": 118,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "Shannonwje"
         },
-        "content": "    /*"
+        "content": ""
       },
       {
         "lineNumber": 119,
@@ -12908,16 +13174,16 @@
       {
         "lineNumber": 121,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "Shannonwje"
         },
-        "content": "        final String[] inputs \u003d { \"UNMARK notAnumber \", \"UNMARK 8*wh12\", \"MARK 1 2 3 4 5\" };"
+        "content": "        final String[] inputs \u003d { \"UNMARK notAnumber \", \"UNMARK 8*wh12\", \"UNMARK 1 2 3 4 5\" };"
       },
       {
         "lineNumber": 122,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "Shannonwje"
         },
-        "content": "        final String resultMessage \u003d \"Please provide an index number!\";"
+        "content": "        final String resultMessage \u003d \"Please provide a single numerical index number!\";"
       },
       {
         "lineNumber": 123,
@@ -12936,9 +13202,9 @@
       {
         "lineNumber": 125,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "Shannonwje"
         },
-        "content": "    */"
+        "content": ""
       },
       {
         "lineNumber": 126,
@@ -13041,9 +13307,9 @@
       {
         "lineNumber": 140,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": "    /*"
+        "content": ""
       },
       {
         "lineNumber": 141,
@@ -13167,9 +13433,9 @@
       {
         "lineNumber": 158,
         "author": {
-          "gitId": "trishaangelica"
+          "gitId": "jiajuinphoon"
         },
-        "content": " */"
+        "content": ""
       },
       {
         "lineNumber": 159,
@@ -13642,7 +13908,9 @@
       }
     ],
     "authorContributionMap": {
-      "trishaangelica": 225
+      "Shannonwje": 13,
+      "jiajuinphoon": 2,
+      "trishaangelica": 210
     }
   },
   {
