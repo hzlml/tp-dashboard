@@ -173,369 +173,579 @@
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "DDzuikeai"
+          "gitId": "dejunnn"
         },
-        "content": "    public DailyFoodRecord(String date){"
+        "content": "    /**"
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "DDzuikeai"
+          "gitId": "dejunnn"
         },
-        "content": "        setDate(date);"
+        "content": "     * Constructs the Daily Food Record."
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "DDzuikeai"
+          "gitId": "dejunnn"
         },
-        "content": "        breakfast \u003d new ArrayList\u003cFood\u003e();"
+        "content": "     */"
       },
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "DDzuikeai"
+          "gitId": "dejunnn"
         },
-        "content": "        lunch \u003d new ArrayList\u003cFood\u003e();"
+        "content": ""
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        dinner \u003d new ArrayList\u003cFood\u003e();"
+        "content": "    public DailyFoodRecord(String date) {"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    }"
+        "content": "        setDate(date);"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": ""
+        "content": "        breakfast \u003d new ArrayList\u003cFood\u003e();"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    public void setDate(String date) {"
+        "content": "        lunch \u003d new ArrayList\u003cFood\u003e();"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        LocalDate standardTime \u003d null;"
+        "content": "        dinner \u003d new ArrayList\u003cFood\u003e();"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        boolean isStandardTime \u003d false;"
+        "content": "    }"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        try {"
+        "content": ""
       },
       {
         "lineNumber": 26,
         "author": {
-          "gitId": "DDzuikeai"
+          "gitId": "dejunnn"
         },
-        "content": "            standardTime \u003d LocalDate.parse(date);"
+        "content": "    /**"
       },
       {
         "lineNumber": 27,
         "author": {
-          "gitId": "DDzuikeai"
+          "gitId": "dejunnn"
         },
-        "content": "            isStandardTime \u003d true;"
+        "content": "     * Sets the date of the record."
       },
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "DDzuikeai"
+          "gitId": "dejunnn"
         },
-        "content": "        } catch (DateTimeParseException ignored) {"
+        "content": "     */"
       },
       {
         "lineNumber": 29,
         "author": {
-          "gitId": "DDzuikeai"
+          "gitId": "dejunnn"
         },
-        "content": "        } finally {"
+        "content": ""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            if (isStandardTime) {"
+        "content": "    public void setDate(String date) {"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "                this.date \u003d standardTime.format(DateTimeFormatter.ofPattern(\"MMM dd yyyy\", Locale.ENGLISH));"
+        "content": "        LocalDate standardTime \u003d null;"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            } else {"
+        "content": "        boolean isStandardTime \u003d false;"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "                this.date \u003d date;"
+        "content": "        try {"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            }"
+        "content": "            standardTime \u003d LocalDate.parse(date);"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        }"
+        "content": "            isStandardTime \u003d true;"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    }"
+        "content": "        } catch (DateTimeParseException ignored) {"
       },
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "DDzuikeai"
+          "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "            System.out.println(\"Invalid Date Format\");"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": ""
+        "content": "        } finally {"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    public void recordMeals(String mealType, ArrayList\u003cFood\u003e foodList){"
+        "content": "            if (isStandardTime) {"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        switch (mealType){"
+        "content": "                this.date \u003d standardTime.format(DateTimeFormatter.ofPattern(\"MMM dd yyyy\", Locale.ENGLISH));"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        case \"breakfast\":"
+        "content": "            } else {"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            breakfast.addAll(foodList);"
+        "content": "                this.date \u003d date;"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            break;"
+        "content": "            }"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        case \"lunch\":"
+        "content": "        }"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            lunch.addAll(foodList);"
+        "content": "    }"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            break;"
+        "content": ""
       },
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "DDzuikeai"
+          "gitId": "dejunnn"
         },
-        "content": "        case \"dinner\":"
+        "content": "    /**"
       },
       {
         "lineNumber": 48,
         "author": {
-          "gitId": "DDzuikeai"
+          "gitId": "dejunnn"
         },
-        "content": "            dinner.addAll(foodList);"
+        "content": "     * Records the meals consumed into their respective categories."
       },
       {
         "lineNumber": 49,
         "author": {
-          "gitId": "DDzuikeai"
+          "gitId": "dejunnn"
         },
-        "content": "            break;"
+        "content": "     */"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    }"
+        "content": "    public void recordMeals(String mealType, ArrayList\u003cFood\u003e foodList) {"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": ""
+        "content": "        switch (mealType) {"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    public void showDailyRecord(){"
+        "content": "        case \"breakfast\":"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        this.showBreakfast();"
+        "content": "            breakfast.addAll(foodList);"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        this.showLunch();"
+        "content": "            break;"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        this.showDinner();"
+        "content": "        case \"lunch\":"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    }"
+        "content": "            lunch.addAll(foodList);"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": ""
+        "content": "            break;"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    public void showBreakfast(){"
+        "content": "        case \"dinner\":"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    }"
+        "content": "            dinner.addAll(foodList);"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": ""
+        "content": "            break;"
       },
       {
         "lineNumber": 62,
         "author": {
-          "gitId": "DDzuikeai"
+          "gitId": "dejunnn"
         },
-        "content": "    public void showLunch(){"
+        "content": "        default:"
       },
       {
         "lineNumber": 63,
         "author": {
-          "gitId": "DDzuikeai"
+          "gitId": "dejunnn"
         },
-        "content": "    }"
+        "content": "            break;"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    public void showDinner(){"
+        "content": "    }"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 67,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * Displays the Daily Food Record."
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    public void showDailyRecord() {"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        this.showBreakfast();"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        this.showLunch();"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        this.showDinner();"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * Displays the Daily Breakfast Record."
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    public void showBreakfast() {"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * Displays the Daily Lunch Record."
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    public void showLunch() {"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * Displays the Daily Dinner Record."
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    public void showDinner() {"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 97,
         "author": {
           "gitId": "DDzuikeai"
         },
@@ -543,24 +753,25 @@
       }
     ],
     "authorContributionMap": {
+      "dejunnn": 30,
       "DDzuikeai": 67
     }
   },
   {
-    "path": "src/main/java/seedu/duke/DietManager.java",
+    "path": "src/main/java/seedu/duke/Duke.java",
     "fileType": "java",
     "lines": [
       {
         "lineNumber": 1,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "-"
         },
         "content": "package seedu.duke;"
       },
       {
         "lineNumber": 2,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -569,145 +780,145 @@
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "import java.util.Scanner;"
+        "content": "import java.io.IOException;"
       },
       {
         "lineNumber": 4,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "-"
         },
-        "content": ""
+        "content": "import java.util.Scanner;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "public class DietManager {"
+        "content": "import java.util.logging.ConsoleHandler;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "import java.util.logging.Level;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public static void main(String[] args) {"
+        "content": "import java.util.logging.LogManager;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "import java.util.logging.Logger;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        FoodNutritionInfo foodNutritionInfo \u003d new FoodNutritionInfo();"
+        "content": "import java.util.logging.FileHandler;"
       },
       {
         "lineNumber": 10,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "-"
         },
-        "content": "        Profile profile \u003d new Profile();"
+        "content": ""
       },
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "-"
         },
-        "content": "        UI ui \u003d new UI();"
+        "content": "public class Duke {"
       },
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "DDzuikeai"
         },
         "content": ""
       },
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "-"
         },
-        "content": "        Scanner sc \u003d new Scanner(System.in);"
+        "content": "    /**"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "     * Begins the application and creates the relevant objects required for the application to function."
       },
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "-"
         },
-        "content": "        String logo \u003d \"  _____   _        _     __  __                                         \\n\""
+        "content": "     */"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                + \" |  __ \\\\ (_)      | |   |  \\\\/  |                                        \\n\""
+        "content": ""
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "-"
         },
-        "content": "                + \" | |  | | _   ___ | |_  | \\\\  / |  __ _  _ __    __ _   __ _   ___  _ __ \\n\""
+        "content": "    public static void main(String[] args) {"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                + \" | |  | || | / _ \\\\| __| | |\\\\/| | / _` || \u0027_ \\\\  / _` | / _` | / _ \\\\| \u0027__|\\n\""
+        "content": ""
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                + \" | |__| || ||  __/| |_  | |  | || (_| || | | || (_| || (_| ||  __/| |   \\n\""
+        "content": "        Logger logger \u003d Logger.getLogger(Duke.class.getName());"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                + \" |_____/ |_| \\\\___| \\\\__| |_|  |_| \\\\__,_||_| |_| \\\\__,_| \\\\__, | \\\\___||_|   \\n\""
+        "content": ""
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                + \"                                                       __/ |            \\n\""
+        "content": "        LogManager.getLogManager().reset();"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                + \"                                                      |___/             \";"
+        "content": "        logger.setLevel(Level.ALL);"
       },
       {
         "lineNumber": 23,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "DDzuikeai"
         },
         "content": ""
       },
@@ -716,375 +927,678 @@
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        System.out.println(logo);"
+        "content": "        //Console Handler - What appears in the console"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        System.out.println(\"Welcome to Diet Manager! How may I assist you today?\");"
+        "content": "        ConsoleHandler consoleHandler \u003d new ConsoleHandler();"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "        consoleHandler.setLevel(Level.INFO);"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        while (!ui.isExitStatus()) {"
+        "content": "        logger.addHandler(consoleHandler);"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "            String[] inputArray \u003d sc.nextLine().trim().split(\" \", 2);"
+        "content": ""
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "            switch (inputArray[0]) {"
+        "content": "        //File Handler - What appears in log file"
       },
       {
         "lineNumber": 30,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "DDzuikeai"
         },
-        "content": "            case \"profile\":"
+        "content": "        try {"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                if (profile.isProfileExist()) {"
+        "content": "            FileHandler fileHandler \u003d new FileHandler(\"DukeLogger.log\");"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                    System.out.println(String.format(\"Hello %s, here is your profile information:\", profile.getName()));"
+        "content": "            fileHandler.setLevel(Level.FINE);"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                    System.out.println(String.format(\"Age:          %d years old\", profile.getAge()));"
+        "content": "            logger.addHandler(fileHandler);"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                    System.out.println(String.format(\"Gender:       %s\", profile.getGender()));"
+        "content": "        } catch (IOException e) {"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                    System.out.println(String.format(\"Height:       %f metres\", profile.getHeight()));"
+        "content": "            logger.log(Level.SEVERE, \"File logger error.\", e);"
       },
       {
         "lineNumber": 36,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "DDzuikeai"
         },
-        "content": "                    System.out.println(String.format(\"Weight        %f kilograms\", profile.getWeight()));"
+        "content": "        }"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                    System.out.println(String.format(\"Weight Goal:  %f kilograms\", profile.getWeightGoal()));"
+        "content": ""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                } else {"
+        "content": "        logger.log(Level.INFO, \"Starting Diet Manager\");"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                    System.out.println(\"No existing profile found. To create a new profile, enter:\\n\" +"
+        "content": ""
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                            \"createProfile {name} {age} {gender} {height} {weight} {weight goal}\");"
+        "content": "        FoodNutritionInfo foodNutritionInfo \u003d new FoodNutritionInfo();"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                }"
+        "content": "        Profile profile \u003d new Profile();"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                break;"
+        "content": "        UI ui \u003d new UI();"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "            case\"setName\":"
+        "content": ""
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                profile.setName(inputArray[1]);"
+        "content": "        //Conduct checks using assert"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                System.out.println(String.format(\"Your username has been changed to %s\", profile.getName()));"
+        "content": "        assert !ui.isExitStatus();"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                break;"
+        "content": "        assert !profile.isProfileExist();"
       },
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "DDzuikeai"
         },
-        "content": "            case\"setAge\":"
+        "content": ""
       },
       {
         "lineNumber": 48,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "DDzuikeai"
         },
-        "content": "                profile.setAge(Integer.parseInt(inputArray[1]));"
+        "content": "        String logo \u003d \"  _____   _        _     __  __\\n\""
       },
       {
         "lineNumber": 49,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "DDzuikeai"
         },
-        "content": "                System.out.println(String.format(\"Your username has been changed to %s\", profile.getName()));"
+        "content": "                + \" |  __ \\\\ (_)      | |   |  \\\\/  |\\n\""
       },
       {
         "lineNumber": 50,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "DDzuikeai"
         },
-        "content": "                break;"
+        "content": "                + \" | |  | | _   ___ | |_  | \\\\  / |  __ _  _ __    __ _   __ _   ___  _ __\\n\""
       },
       {
         "lineNumber": 51,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "DDzuikeai"
         },
-        "content": "            case\"setGender\":"
+        "content": "                + \" | |  | || | / _ \\\\| __| | |\\\\/| | / _` || \u0027_ \\\\  / _` | / _` | / _ \\\\| \u0027__|\\n\""
       },
       {
         "lineNumber": 52,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "DDzuikeai"
         },
-        "content": "                profile.setGender(inputArray[1]);"
+        "content": "                + \" | |__| || ||  __/| |_  | |  | || (_| || | | || (_| || (_| ||  __/| |\\n\""
       },
       {
         "lineNumber": 53,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "DDzuikeai"
         },
-        "content": "                System.out.println(String.format(\"Your username has been changed to %s\", profile.getName()));"
+        "content": "                + \" |_____/ |_| \\\\___| \\\\__| |_|  |_| \\\\__,_||_| |_| \\\\__,_| \\\\__, | \\\\___||_|\\n\""
       },
       {
         "lineNumber": 54,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "DDzuikeai"
         },
-        "content": "                break;"
+        "content": "                + \"                                                       __/ |\\n\""
       },
       {
         "lineNumber": 55,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "DDzuikeai"
         },
-        "content": "            case\"setHeight\":"
+        "content": "                + \"                                                      |___/\";"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                profile.setHeight(Double.parseDouble(inputArray[1]));"
+        "content": ""
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                System.out.println(String.format(\"Your username has been changed to %s\", profile.getName()));"
+        "content": "        System.out.println(logo);"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                break;"
+        "content": "        System.out.println(\"Welcome to Diet Manager! How may I assist you today?\");"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "            case\"setWeight\":"
+        "content": ""
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                profile.setWeight(Double.parseDouble(inputArray[1]));"
+        "content": "        while (!ui.isExitStatus()) {"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                System.out.println(String.format(\"Your username has been changed to %s\", profile.getName()));"
+        "content": "            String[] inputArray \u003d ui.readInput().trim().split(\" \", 2);"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                break;"
+        "content": "            switch (inputArray[0]) {"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "            case\"setWeightGoal\":"
+        "content": "            case \"profile\":"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                profile.setWeightGoal(Double.parseDouble(inputArray[1]));"
+        "content": "                if (profile.isProfileExist()) {"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                System.out.println(String.format(\"Your username has been changed to %s\", profile.getName()));"
+        "content": "                    System.out.println(String.format(\"Hello %s, here is your profile information:\", profile.getName()));"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                break;"
+        "content": "                    System.out.println(String.format(\"Age:          %d years old\", profile.getAge()));"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "            case \"exit\":"
+        "content": "                    System.out.println(String.format(\"Gender:       %s\", profile.getGender()));"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                System.out.println(\"Thank you and see you again soon!\");"
+        "content": "                    System.out.println(String.format(\"Height:       %f metres\", profile.getHeight()));"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                ui.setExitStatus(false);"
+        "content": "                    System.out.println(String.format(\"Weight        %f kilograms\", profile.getWeight()));"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "            default:"
+        "content": "                    System.out.println(String.format(\"Weight Goal:  %f kilograms\", profile.getWeightGoal()));"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                System.out.println(\"Sorry, I don\u0027t understand that command :(\");"
+        "content": "                } else {"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "                break;"
+        "content": "                    System.out.println(\"No existing profile found. To create a new profile, enter:\\n\""
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "            }"
+        "content": "                            + \"setProfile {name} {age} {gender} {height} {weight} {weight goal}\");"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        }"
+        "content": "                }"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    }"
+        "content": "                break;"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "dejunnn"
         },
+        "content": "            case \"setProfile\":"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                String[] profileArray \u003d inputArray[1].split(\" \", 6);"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                profile.setProfile(profileArray[0], Integer.parseInt(profileArray[1]),"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                        profileArray[2], Double.parseDouble(profileArray[3]),"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                        Double.parseDouble(profileArray[4]), Double.parseDouble(profileArray[5]));"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                break;"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            case\"setName\":"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                profile.setName(inputArray[1]);"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                System.out.println(String.format(\"Your username has been changed to %s\", profile.getName()));"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                break;"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            case\"setAge\":"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                profile.setAge(Integer.parseInt(inputArray[1]));"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                System.out.println(String.format(\"Your username has been changed to %s\", profile.getName()));"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                break;"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            case\"setGender\":"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                profile.setGender(inputArray[1]);"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                System.out.println(String.format(\"Your username has been changed to %s\", profile.getName()));"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                break;"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            case\"setHeight\":"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                profile.setHeight(Double.parseDouble(inputArray[1]));"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                System.out.println(String.format(\"Your username has been changed to %s\", profile.getName()));"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                break;"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            case\"setWeight\":"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                profile.setWeight(Double.parseDouble(inputArray[1]));"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                System.out.println(String.format(\"Your username has been changed to %s\", profile.getName()));"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                break;"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            case\"setWeightGoal\":"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                profile.setWeightGoal(Double.parseDouble(inputArray[1]));"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                System.out.println(String.format(\"Your username has been changed to %s\", profile.getName()));"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                break;"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            case \"exit\":"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "                System.out.println(\"Thank you and see you again soon!\");"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                ui.setExitStatus(true);"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                break;"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            default:"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                System.out.println(\"Sorry, I don\u0027t understand that command :(\");"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                break;"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        logger.log(Level.INFO, \"Exiting Diet Manager\");"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "-"
+        },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "dejunnn": 76
+      "dejunnn": 94,
+      "DDzuikeai": 15,
+      "-": 10
     }
   },
   {
@@ -1178,100 +1692,100 @@
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "lamyuewei"
+          "gitId": "dejunnn"
         },
-        "content": "    public Food(String foodName, double carbohydrates, double fats, double fiber, double minerals,"
+        "content": "    /**"
       },
       {
         "lineNumber": 14,
         "author": {
-          "gitId": "lamyuewei"
+          "gitId": "dejunnn"
         },
-        "content": "                double proteins, double vitamins, double water) {"
+        "content": "     * Constructs the Food Object and its relevant nutirtional information."
       },
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "lamyuewei"
+          "gitId": "dejunnn"
         },
-        "content": "        this.foodName \u003d foodName;"
+        "content": "     */"
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "lamyuewei"
+          "gitId": "dejunnn"
         },
-        "content": "        this.carbohydrates \u003d carbohydrates;"
+        "content": ""
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "        this.fats \u003d fats;"
+        "content": "    public Food(String foodName, double carbohydrates, double fats, double fiber, double minerals,"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "        this.fiber \u003d fiber;"
+        "content": "                double proteins, double vitamins, double water) {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "        this.minerals \u003d minerals;"
+        "content": "        this.foodName \u003d foodName;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "        this.proteins \u003d proteins;"
+        "content": "        this.carbohydrates \u003d carbohydrates;"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "        this.vitamins \u003d vitamins;"
+        "content": "        this.fats \u003d fats;"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "        this.water \u003d water;"
+        "content": "        this.fiber \u003d fiber;"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "    }"
+        "content": "        this.minerals \u003d minerals;"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": ""
+        "content": "        this.proteins \u003d proteins;"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "    public String getFoodName() {"
+        "content": "        this.vitamins \u003d vitamins;"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "        return foodName;"
+        "content": "        this.water \u003d water;"
       },
       {
         "lineNumber": 27,
@@ -1292,14 +1806,14 @@
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "    public double getCarbohydrates() {"
+        "content": "    public String getFoodName() {"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "        return carbohydrates;"
+        "content": "        return foodName;"
       },
       {
         "lineNumber": 31,
@@ -1320,14 +1834,14 @@
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "    public double getFats() {"
+        "content": "    public double getCarbohydrates() {"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "        return fats;"
+        "content": "        return carbohydrates;"
       },
       {
         "lineNumber": 35,
@@ -1348,14 +1862,14 @@
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "    public double getFiber() {"
+        "content": "    public double getFats() {"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "        return fiber;"
+        "content": "        return fats;"
       },
       {
         "lineNumber": 39,
@@ -1376,14 +1890,14 @@
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "    public double getMinerals() {"
+        "content": "    public double getFiber() {"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "        return minerals;"
+        "content": "        return fiber;"
       },
       {
         "lineNumber": 43,
@@ -1404,14 +1918,14 @@
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "    public double getProteins() {"
+        "content": "    public double getMinerals() {"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "        return proteins;"
+        "content": "        return minerals;"
       },
       {
         "lineNumber": 47,
@@ -1432,14 +1946,14 @@
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "    public double getVitamins() {"
+        "content": "    public double getProteins() {"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "        return vitamins;"
+        "content": "        return proteins;"
       },
       {
         "lineNumber": 51,
@@ -1460,14 +1974,14 @@
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "    public double getWater() {"
+        "content": "    public double getVitamins() {"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "        return water;"
+        "content": "        return vitamins;"
       },
       {
         "lineNumber": 55,
@@ -1481,11 +1995,39 @@
         "author": {
           "gitId": "lamyuewei"
         },
+        "content": ""
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    public double getWater() {"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "        return water;"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "lamyuewei"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "lamyuewei"
+        },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "dejunnn": 7,
+      "dejunnn": 11,
       "lamyuewei": 49
     }
   },
@@ -1633,21 +2175,21 @@
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    private double height; //Height in meter"
+        "content": "    private String gender;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    private double weight; //Wight in Kg"
+        "content": "    private double height; //Height in meter"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    private String gender;"
+        "content": "    private double weight; //Wight in Kg"
       },
       {
         "lineNumber": 9,
@@ -1703,21 +2245,21 @@
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public void setName(String name) {"
+        "content": "    /**"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        this.name \u003d name;"
+        "content": "     * Sets the User Profile with the relevant information required."
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    }"
+        "content": "     */"
       },
       {
         "lineNumber": 19,
@@ -1731,126 +2273,126 @@
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public void setGender(String gender) {"
+        "content": "    public void setProfile(String name, int age, String gender, double height, double weight, double weightGoal) {"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        this.gender \u003d gender;"
+        "content": "        this.name \u003d name;"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    }"
+        "content": "        this.age \u003d age;"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "        this.gender \u003d gender;"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public void setAge(int age) {"
+        "content": "        this.height \u003d height;"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        this.age \u003d age;"
+        "content": "        this.weight \u003d weight;"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    }"
+        "content": "        this.weightGoal \u003d weightGoal;"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "        this.profileExist \u003d true;"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public void setHeight(double height) {"
+        "content": "    }"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        this.height \u003d height;"
+        "content": ""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    }"
+        "content": "    public void setName(String name) {"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "        this.name \u003d name;"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public void setWeight(double weight) {"
+        "content": "        this.profileExist \u003d true;"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        this.weight \u003d weight;"
+        "content": "    }"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "    public void setGender(String gender) {"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public void setWeightGoal(double weightGoal){"
+        "content": "        this.gender \u003d gender;"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        this.weightGoal \u003d weightGoal;"
+        "content": "        this.profileExist \u003d true;"
       },
       {
         "lineNumber": 38,
@@ -1871,126 +2413,126 @@
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public void setProfileExist(boolean profileExist) {"
+        "content": "    public void setAge(int age) {"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        this.profileExist \u003d profileExist;"
+        "content": "        this.age \u003d age;"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    }"
+        "content": "        this.profileExist \u003d true;"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public boolean isProfileExist() {"
+        "content": ""
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        return profileExist;"
+        "content": "    public void setHeight(double height) {"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    }"
+        "content": "        this.height \u003d height;"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "        this.profileExist \u003d true;"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public double getHeight() {"
+        "content": "    }"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        return height;"
+        "content": ""
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    }"
+        "content": "    public void setWeight(double weight) {"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "        this.weight \u003d weight;"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public double getWeight() {"
+        "content": "        this.profileExist \u003d true;"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        return weight;"
+        "content": "    }"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "    public void setWeightGoal(double weightGoal) {"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public double getWeightGoal() {"
+        "content": "        this.weightGoal \u003d weightGoal;"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        return weightGoal;"
+        "content": "        this.profileExist \u003d true;"
       },
       {
         "lineNumber": 58,
@@ -2011,14 +2553,14 @@
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public int getAge() {"
+        "content": "    public void setProfileExist(boolean profileExist) {"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        return age;"
+        "content": "        this.profileExist \u003d profileExist;"
       },
       {
         "lineNumber": 62,
@@ -2039,14 +2581,14 @@
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public String getGender() {"
+        "content": "    public boolean isProfileExist() {"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        return gender;"
+        "content": "        return profileExist;"
       },
       {
         "lineNumber": 66,
@@ -2067,14 +2609,14 @@
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public String getName() {"
+        "content": "    public double getHeight() {"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        return name;"
+        "content": "        return height;"
       },
       {
         "lineNumber": 70,
@@ -2095,14 +2637,14 @@
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public double getBMI(){"
+        "content": "    public double getWeight() {"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        return weight / Math.pow(height/100, 2);"
+        "content": "        return weight;"
       },
       {
         "lineNumber": 74,
@@ -2123,11 +2665,151 @@
         "author": {
           "gitId": "dejunnn"
         },
+        "content": "    public double getWeightGoal() {"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        return weightGoal;"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public int getAge() {"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        return age;"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public String getGender() {"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        return gender;"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public String getName() {"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        return name;"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public double getBmi() {"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        return weight / Math.pow(height / 100, 2);"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "dejunnn"
+        },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "dejunnn": 76
+      "dejunnn": 96
     }
   },
   {
@@ -2321,238 +3003,238 @@
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     *"
+        "content": "     * @return the exit status."
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     * @return the exit status."
+        "content": "     */"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "    public boolean isExitStatus() {"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public boolean isExitStatus() {"
+        "content": "        return this.exitStatus;"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        return this.exitStatus;"
+        "content": "    }"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    /**"
+        "content": "     * Updates the exit status."
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     * Updates the exit status."
+        "content": "     * @param update the updated exit status."
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     *"
+        "content": "     */"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     * @param update the updated exit status."
+        "content": ""
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     */"
+        "content": "    public void setExitStatus(boolean update) {"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "        this.exitStatus \u003d update;"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public void setExitStatus(boolean update) {"
+        "content": "    }"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        this.exitStatus \u003d update;"
+        "content": ""
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    }"
+        "content": "    /**"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "     * Returns the next line of user input."
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    /**"
+        "content": "     * @return the next line of user input."
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     * Returns the next line of user input."
+        "content": "     */"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     *"
+        "content": ""
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     * @return the next line of user input."
+        "content": "    public String readInput() {"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     */"
+        "content": "        Scanner sc \u003d new Scanner(System.in);"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "        return sc.nextLine();"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public String readInput() {"
+        "content": "    }"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        Scanner sc \u003d new Scanner(System.in);"
+        "content": ""
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        return sc.nextLine();"
+        "content": "    /**"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    }"
+        "content": "     * Prints the welcome message for the user."
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     * Prints the welcome message for the user."
+        "content": "    public void displayWelcomeMessage() {"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public void displayWelcomeMessage() {"
+        "content": ""
       },
       {
         "lineNumber": 61,
@@ -2566,14 +3248,457 @@
         "author": {
           "gitId": "dejunnn"
         },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "dejunnn": 62
+    }
+  },
+  {
+    "path": "src/test/java/seedu/duke/ProfileTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "package seedu.duke;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "class ProfileTest {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    void setName() {"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        Profile profile \u003d new Profile();"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setProfile(\"John Doe\",20, \"Male\", 180, 80, 75);"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setName(\"Jane Doe\");"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        assertEquals(\"Jane Doe\", profile.getName());"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "dejunnn"
+        },
         "content": "    }"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    void setGender() {"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        Profile profile \u003d new Profile();"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setProfile(\"John Doe\",20, \"Male\", 180, 80, 75);"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setGender(\"Female\");"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        assertEquals(\"Female\", profile.getGender());"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    void setAge() {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        Profile profile \u003d new Profile();"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setProfile(\"John Doe\",20, \"Male\", 180, 80, 75);"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setAge(18);"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        assertEquals(18, profile.getAge());"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    void setHeight() {"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        Profile profile \u003d new Profile();"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setProfile(\"John Doe\",20, \"Male\", 180, 80, 75);"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setHeight(170);"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        assertEquals(170, profile.getHeight());"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    void setWeight() {"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        Profile profile \u003d new Profile();"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setProfile(\"John Doe\",20, \"Male\", 180, 80, 75);"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setWeight(60);"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        assertEquals(60, profile.getWeight());"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    void setWeightGoal() {"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        Profile profile \u003d new Profile();"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setProfile(\"John Doe\",20, \"Male\", 180, 80, 75);"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setWeightGoal(50);"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        assertEquals(50, profile.getWeightGoal());"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    void setProfileExist() {"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        Profile profile \u003d new Profile();"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setProfile(\"John Doe\",20, \"Male\", 180, 80, 75);"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setProfileExist(false);"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        assertEquals(false, profile.isProfileExist());"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 64,
@@ -2587,105 +3712,412 @@
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "}"
-      }
-    ],
-    "authorContributionMap": {
-      "dejunnn": 65
-    }
-  },
-  {
-    "path": "src/test/java/seedu/duke/DietManagerTest.java",
-    "fileType": "java",
-    "lines": [
-      {
-        "lineNumber": 1,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "package seedu.duke;"
-      },
-      {
-        "lineNumber": 2,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 3,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
-      },
-      {
-        "lineNumber": 4,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 5,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "import org.junit.jupiter.api.Test;"
-      },
-      {
-        "lineNumber": 6,
-        "author": {
-          "gitId": "-"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 7,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "class DietManagerTest {"
-      },
-      {
-        "lineNumber": 8,
-        "author": {
-          "gitId": "-"
-        },
         "content": "    @Test"
       },
       {
-        "lineNumber": 9,
+        "lineNumber": 66,
         "author": {
-          "gitId": "-"
+          "gitId": "dejunnn"
         },
-        "content": "    public void sampleTest() {"
+        "content": "    void isProfileExist() {"
       },
       {
-        "lineNumber": 10,
+        "lineNumber": 67,
         "author": {
-          "gitId": "-"
+          "gitId": "dejunnn"
         },
-        "content": "        assertTrue(true);"
+        "content": "        Profile profile \u003d new Profile();"
       },
       {
-        "lineNumber": 11,
+        "lineNumber": 68,
         "author": {
-          "gitId": "-"
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setProfile(\"John Doe\",20, \"Male\", 180, 80, 75);"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        assertEquals(true, profile.isProfileExist());"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "dejunnn"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 12,
+        "lineNumber": 71,
         "author": {
-          "gitId": "-"
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    void getHeight() {"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        Profile profile \u003d new Profile();"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setProfile(\"John Doe\",20, \"Male\", 180, 80, 75);"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        assertEquals(180, profile.getHeight());"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    void getWeight() {"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        Profile profile \u003d new Profile();"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setProfile(\"John Doe\",20, \"Male\", 180, 80, 75);"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        assertEquals(80, profile.getWeight());"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    void getWeightGoal() {"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        Profile profile \u003d new Profile();"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setProfile(\"John Doe\",20, \"Male\", 180, 80, 75);"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        assertEquals(75, profile.getWeightGoal());"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    void getAge() {"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        Profile profile \u003d new Profile();"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setProfile(\"John Doe\",20, \"Male\", 180, 80, 75);"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        assertEquals(20, profile.getAge());"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    void getGender() {"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        Profile profile \u003d new Profile();"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setProfile(\"John Doe\",20, \"Male\", 180, 80, 75);"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        assertEquals(\"Male\", profile.getGender());"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    void getName() {"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        Profile profile \u003d new Profile();"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setProfile(\"John Doe\",20, \"Male\", 180, 80, 75);"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        assertEquals(\"John Doe\", profile.getName());"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    void getBmi() {"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        Profile profile \u003d new Profile();"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setProfile(\"John Doe\",20, \"Male\", 180, 80, 75);"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        assertEquals(80 / (1.80 * 1.80), profile.getBmi());"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "dejunnn"
         },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "dejunnn": 1,
-      "-": 11
+      "dejunnn": 120
+    }
+  },
+  {
+    "path": "text-ui-test/input.txt",
+    "fileType": "txt",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "exit"
+      }
+    ],
+    "authorContributionMap": {
+      "dejunnn": 1
     }
   }
 ]

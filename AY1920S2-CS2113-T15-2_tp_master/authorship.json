@@ -1448,94 +1448,157 @@
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    public Card getCard(int index) {"
+        "content": "    public Card getCard(int index) throws EscException {"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        // assuming that our question index starts from 1 and not 0."
+        "content": "        if (this.size() \u003d\u003d 0) {"
       },
       {
         "lineNumber": 57,
         "author": {
-          "gitId": "alexlim510"
+          "gitId": "JeremiasLiew"
         },
-        "content": "        Card card \u003d cards.get(index - 1);"
+        "content": "            throw new EscException(\"The card list is empty.\");"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        return card;"
+        "content": "        }"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": ""
+        "content": "        // assuming that our question index starts from 1 and not 0."
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    /**"
+        "content": "        Card card;"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "     * Returns size of the cardlist."
+        "content": "        try {"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "     */"
+        "content": "            card \u003d cards.get(index - 1);"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    public int size() {"
+        "content": "        } catch (IndexOutOfBoundsException e) {"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        return this.cards.size();"
+        "content": "            throw new EscException(\"The card item does not exist.\");"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": ""
+        "content": "        return card;"
       },
       {
         "lineNumber": 68,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "     * Returns size of the cardlist."
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    public int size() {"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        return this.cards.size();"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 77,
         "author": {
           "gitId": "JeremiasLiew"
         },
@@ -1543,8 +1606,8 @@
       }
     ],
     "authorContributionMap": {
-      "JeremiasLiew": 53,
-      "alexlim510": 13,
+      "JeremiasLiew": 63,
+      "alexlim510": 12,
       "kcubey": 2
     }
   },
@@ -3420,290 +3483,381 @@
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": ""
+        "content": "import seedu.exception.EscException;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "import java.util.ArrayList;"
+        "content": "import seedu.duke.UI;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "import java.util.Random;"
+        "content": ""
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": ""
+        "content": "import java.util.Random;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "public class Quiz {"
+        "content": ""
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": ""
+        "content": "public class Quiz {"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "     * Generate a random number with a set upper limit."
+        "content": "    /**"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "     * @param upperRange Upper limit of random number."
+        "content": "     * Generate a random number with a set upper limit."
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "     * @return Random number generated."
+        "content": "     * @param upperRange Upper limit of random number."
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "     */"
+        "content": "     * @return Random number generated."
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    public static int generateRandomInt(int upperRange) {"
+        "content": "     */"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        Random random \u003d new Random();"
+        "content": "    public static int generateRandomInt(int upperRange) throws EscException {"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        return random.nextInt(upperRange);"
+        "content": "        if (upperRange \u003c 1) {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    }"
+        "content": "            throw new EscException(\"The card list is empty.\");"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    /**"
+        "content": "        Random random \u003d new Random();"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "     * Retrieves a random card from the card list."
+        "content": "        return random.nextInt(upperRange);"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "     * @param cardlist Card list where card is taken from."
+        "content": "    }"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "     * @return retrievedCard"
+        "content": ""
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    public static Card retrieveCard(CardList cardlist) {"
+        "content": "     * Retrieves a random card from the card list."
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        int size \u003d cardlist.size();"
+        "content": "     * @param cardlist Card list where card is taken from."
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        int randomInt \u003d generateRandomInt(size);"
+        "content": "     * @return retrievedCard"
       },
       {
         "lineNumber": 29,
-        "author": {
-          "gitId": "alexlim510"
-        },
-        "content": "        Card retrievedCard \u003d cardlist.getCard(randomInt + 1);"
-      },
-      {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "JeremiasLiew"
-        },
-        "content": "        return retrievedCard;"
-      },
-      {
-        "lineNumber": 31,
-        "author": {
-          "gitId": "JeremiasLiew"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 32,
-        "author": {
-          "gitId": "JeremiasLiew"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 33,
-        "author": {
-          "gitId": "JeremiasLiew"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 34,
-        "author": {
-          "gitId": "JeremiasLiew"
-        },
-        "content": "     * Outputs a random question, and outputs its answer after the user has entered an answer."
-      },
-      {
-        "lineNumber": 35,
-        "author": {
-          "gitId": "JeremiasLiew"
-        },
-        "content": "     * @param cardlist Card list where card is taken from."
-      },
-      {
-        "lineNumber": 36,
         "author": {
           "gitId": "JeremiasLiew"
         },
         "content": "     */"
       },
       {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    public static Card retrieveCard(CardList cardlist) throws EscException {"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        int size \u003d cardlist.size();"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        Card retrievedCard;"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            int randomInt \u003d generateRandomInt(size);"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            retrievedCard \u003d cardlist.getCard(randomInt + 1);"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        } catch (EscException e) {"
+      },
+      {
         "lineNumber": 37,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    public static void quizQuestion(CardList cardlist) {"
+        "content": "            throw e;"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        Card questionCard \u003d retrieveCard(cardlist);"
+        "content": "        }"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        String question \u003d questionCard.getQuestion();"
+        "content": "        return retrievedCard;"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        String answer \u003d questionCard.getAnswer();"
+        "content": "    }"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        // To be printed out using ui"
+        "content": ""
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        // ui.println(\"Question: \" + question);"
+        "content": "    /**"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        // ui.getUserInput"
+        "content": "     * Outputs a random question, and outputs its answer after the user has entered an answer."
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        // ui.println(\"Answer: \" + answer);"
+        "content": "     * @param cardlist Card list where card is taken from."
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    }"
+        "content": "     */"
       },
       {
         "lineNumber": 46,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    public static void quizQuestion(CardList cardlist) {"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        UI ui \u003d new UI();"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            Card questionCard \u003d retrieveCard(cardlist);"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            String question \u003d questionCard.getQuestion();"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            String answer \u003d questionCard.getAnswer();"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            System.out.println(\"Question: \" + question);"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            ui.readAnswer();"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            System.out.println(\"Answer: \" + answer);"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        } catch (EscException e) {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            System.out.println(e.getMessage());"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 59,
         "author": {
           "gitId": "JeremiasLiew"
         },
@@ -3711,8 +3865,7 @@
       }
     ],
     "authorContributionMap": {
-      "JeremiasLiew": 45,
-      "alexlim510": 1
+      "JeremiasLiew": 59
     }
   },
   {
@@ -4501,194 +4654,271 @@
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "JeremiasLiew"
         },
         "content": "    /**"
       },
       {
         "lineNumber": 41,
         "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "     * Reads the user answer."
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "     * @return User answer."
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    public static String readAnswer() {"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        System.out.println(\"Enter answer: \");"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        String userInput \u003d in.nextLine();"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        System.out.println(\"[Answer entered: \" + userInput + \"]\");"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        return userInput;"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
           "gitId": "Jeremy733"
         },
         "content": "     *  Prints a list of commands used in the programme."
       },
       {
-        "lineNumber": 42,
+        "lineNumber": 53,
         "author": {
           "gitId": "Jeremy733"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 54,
         "author": {
           "gitId": "Jeremy733"
         },
         "content": "    public static void printHelp() {"
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 55,
         "author": {
           "gitId": "kcubey"
         },
         "content": "        String helpMessage \u003d \"Here\u0027s a list of things you can do:\\n\""
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 56,
         "author": {
           "gitId": "kcubey"
         },
         "content": "                + \"\\t\u003e Create Category:     create n/[CATEGORYNAME]  e.g. create n/Biology.\\n\""
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 57,
         "author": {
           "gitId": "kcubey"
         },
         "content": "                + \"\\t\u003e List Category: ​     list category\\n\""
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 58,
         "author": {
           "gitId": "kcubey"
         },
         "content": "                + \"\\t\u003e Select Category: ​   select [INDEX] e.g. select 1\\n\""
       },
       {
-        "lineNumber": 48,
+        "lineNumber": 59,
         "author": {
           "gitId": "kcubey"
         },
         "content": "                + \"\\t\u003e Delete Category: ​   delete category [INDEX] e.g. delete 1\\n\""
       },
       {
-        "lineNumber": 49,
+        "lineNumber": 60,
         "author": {
           "gitId": "kcubey"
         },
         "content": "                + \"\\t\u003e Add New Card:​       add q/[QUESTION] a/[ANSWER] e.g. add q/Which year was NUS founded? a/1980\\n\""
       },
       {
-        "lineNumber": 50,
+        "lineNumber": 61,
         "author": {
           "gitId": "kcubey"
         },
         "content": "                + \"\\t\u003e List all Cards: ​    list card\\n\""
       },
       {
-        "lineNumber": 51,
+        "lineNumber": 62,
         "author": {
           "gitId": "kcubey"
         },
         "content": "                + \"\\t\u003e Delete a Card: ​     delete [INDEX] e.g. delete 1\\n\""
       },
       {
-        "lineNumber": 52,
+        "lineNumber": 63,
         "author": {
           "gitId": "kcubey"
         },
         "content": "                + \"\\t\u003e Start Quiz: ​        quiz\\n\""
       },
       {
-        "lineNumber": 53,
+        "lineNumber": 64,
         "author": {
           "gitId": "kcubey"
         },
         "content": "                + \"\\t\u003e View Answer: ​       answer [INDEX] e.g. answer 1\\n\""
       },
       {
-        "lineNumber": 54,
+        "lineNumber": 65,
         "author": {
           "gitId": "kcubey"
         },
         "content": "                + \"\\t\u003e Help Page: ​         help\\n\""
       },
       {
-        "lineNumber": 55,
+        "lineNumber": 66,
         "author": {
           "gitId": "kcubey"
         },
         "content": "                + \"\\t\u003e Exit the Program: ​  exit\";"
       },
       {
-        "lineNumber": 56,
+        "lineNumber": 67,
         "author": {
           "gitId": "Jeremy733"
         },
         "content": "        System.out.println(helpMessage);"
       },
       {
-        "lineNumber": 57,
+        "lineNumber": 68,
         "author": {
           "gitId": "Jeremy733"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 58,
+        "lineNumber": 69,
         "author": {
           "gitId": "Jeremy733"
         },
         "content": ""
       },
       {
-        "lineNumber": 59,
+        "lineNumber": 70,
         "author": {
           "gitId": "kcubey"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 60,
+        "lineNumber": 71,
         "author": {
           "gitId": "kcubey"
         },
         "content": "     * Exits the ESC program."
       },
       {
-        "lineNumber": 61,
+        "lineNumber": 72,
         "author": {
           "gitId": "kcubey"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 73,
         "author": {
           "gitId": "Jeremy733"
         },
         "content": "    public static void exitEsc() {"
       },
       {
-        "lineNumber": 63,
+        "lineNumber": 74,
         "author": {
           "gitId": "kcubey"
         },
         "content": "        showLine();"
       },
       {
-        "lineNumber": 64,
+        "lineNumber": 75,
         "author": {
           "gitId": "Jeremy733"
         },
         "content": "        System.out.println(\"Bye. Hope to see you again soon!\");"
       },
       {
-        "lineNumber": 65,
+        "lineNumber": 76,
         "author": {
           "gitId": "kcubey"
         },
         "content": "        showLine();"
       },
       {
-        "lineNumber": 66,
+        "lineNumber": 77,
         "author": {
           "gitId": "Jeremy733"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 67,
+        "lineNumber": 78,
         "author": {
           "gitId": "Jeremy733"
         },
@@ -4696,6 +4926,7 @@
       }
     ],
     "authorContributionMap": {
+      "JeremiasLiew": 11,
       "Jeremy733": 45,
       "kcubey": 22
     }
@@ -5559,6 +5790,1039 @@
     }
   },
   {
+    "path": "src/test/java/seedu/cards/CardListTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "package seedu.cards;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "import org.junit.jupiter.api.BeforeEach;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "import seedu.exception.EscException;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertFalse;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.fail;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "public class CardListTest {"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    private CardList cards;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    private Card flashcard1;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    private Card flashcard2;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    private EscException expectedException;"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    @BeforeEach"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    void setUp() {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        cards \u003d new CardList();"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        flashcard1 \u003d new Card(\"What does HTTP stand for?\", \"HyperText Transfer Protocol\");"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        flashcard2 \u003d new Card(\"What does HTML stand for?\", \"Hypertext Markup Language\");"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    void getCards() {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        cards.addCard(flashcard1);"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        cards.addCard(flashcard2);"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        assertTrue(cards.getCards().contains(flashcard1));"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        assertTrue(cards.getCards().contains(flashcard2));"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    void getCard_emptyCardList_exceptionThrown() {"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        expectedException \u003d new EscException(\"The card list is empty.\");"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            cards.getCard(1);"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        } catch (EscException e) {"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            assertEquals(e.getMessage(),expectedException.getMessage());"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    void getCard_indexOutOfRange_exceptionThrown() {"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        cards.addCard(flashcard1);"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        expectedException \u003d new EscException(\"The card item does not exist.\");"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        int[] getIndexes \u003d {-1,2};"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        for (int i : getIndexes) {"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            try {"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "                cards.getCard(i);"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "                fail(\"Out of range index should have thrown an exception\");"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            } catch (EscException e) {"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "                assertEquals(e.getMessage(),expectedException.getMessage());"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    void getCard_SuccessfullyExecuted() throws EscException {"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        cards.addCard(flashcard1);"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        cards.addCard(flashcard2);"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        assertEquals(cards.getCard(1), flashcard1);"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        assertEquals(cards.getCard(2), flashcard2);"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    void addCard_CardSuccessfullyAdded() {"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        cards.addCard(flashcard1);"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        assertTrue(cards.size() \u003d\u003d 1);"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        assertTrue(cards.getCards().contains(flashcard1));"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    void removeCard_emptyCardList_exceptionThrown() {"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        expectedException \u003d new EscException(\"The card list is empty.\");"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            cards.removeCard(1);"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        } catch (EscException e) {"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            assertEquals(e.getMessage(),expectedException.getMessage());"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    void removeCard_indexOutOfRange_exceptionThrown() {"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        cards.addCard(flashcard1);"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        expectedException \u003d new EscException(\"The card item does not exist.\");"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        int[] deleteIndexes \u003d {-1,1};"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        for (int i : deleteIndexes) {"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            try {"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "                cards.removeCard(i);"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "                fail(\"Out of range index should have thrown an exception\");"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            } catch (EscException e) {"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "                assertEquals(e.getMessage(),expectedException.getMessage());"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    void removeCard_CardSuccessfullyDeleted() throws EscException {"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        cards.addCard(flashcard1);"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        cards.addCard(flashcard2);"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        cards.removeCard(0);"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        assertFalse(cards.getCards().contains(flashcard1));"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        assertTrue(cards.getCards().contains(flashcard2));"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        assertEquals(1,cards.getCards().size());"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        cards.removeCard(0);"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        assertFalse(cards.getCards().contains(flashcard2));"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        assertEquals(0,cards.getCards().size());"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "JeremiasLiew": 115
+    }
+  },
+  {
+    "path": "src/test/java/seedu/cards/CardTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "package seedu.cards;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "import org.junit.jupiter.api.BeforeEach;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "public class CardTest {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    private Card flashcard1;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    private Card flashcard2;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    @BeforeEach"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    public void setUp() {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        flashcard1 \u003d new Card(\"What does HTTP stand for?\", \"HyperText Transfer Protocol\");"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        flashcard2 \u003d new Card(\"What does HTML stand for?\", \"HyperText Markup Language\");"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    public void getQuestion() {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        assertTrue(flashcard1.getQuestion().equals(\"What does HTTP stand for?\"));"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        assertTrue(flashcard2.getQuestion().equals(\"What does HTML stand for?\"));"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    public void getAnswer() {"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        assertTrue(flashcard1.getAnswer().equals(\"HyperText Transfer Protocol\"));"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        assertTrue(flashcard2.getAnswer().equals(\"HyperText Markup Language\"));"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "JeremiasLiew": 30
+    }
+  },
+  {
     "path": "src/test/java/seedu/commands/AddCardCommandTest.java",
     "fileType": "java",
     "lines": [
@@ -6317,6 +7581,470 @@
     "authorContributionMap": {
       "alexlim510": 69,
       "kcubey": 3
+    }
+  },
+  {
+    "path": "src/test/java/seedu/duke/QuizTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "package seedu.duke;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "import org.junit.jupiter.api.BeforeEach;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "import seedu.cards.Card;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "import seedu.cards.CardList;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "import seedu.exception.EscException;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "import java.io.ByteArrayInputStream;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "import java.io.InputStream;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "import static seedu.duke.Quiz.generateRandomInt;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "import static seedu.duke.Quiz.retrieveCard;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "import static seedu.duke.Quiz.quizQuestion;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "public class QuizTest {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    private CardList emptyCardList;"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    private CardList filledCardList;"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    private Card flashcard1;"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    private Card flashcard2;"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    private Card flashcard3;"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    private EscException expectedException;"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    @BeforeEach"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    void setUp() {"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        emptyCardList \u003d new CardList();"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        filledCardList \u003d new CardList();"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        flashcard1 \u003d new Card(\"What does HTTP stand for?\", \"HyperText Transfer Protocol\");"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        flashcard2 \u003d new Card(\"What does HTML stand for?\", \"HyperText Markup Language\");"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        flashcard3 \u003d new Card(\"What does CSS stand for?\", \"Cascading Style Sheets\");"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        filledCardList.addCard(flashcard1);"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        filledCardList.addCard(flashcard2);"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        filledCardList.addCard(flashcard3);"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    void generateRandomInt_emptyCardList_exceptionThrown() {"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        expectedException \u003d new EscException(\"The card list is empty.\");"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            generateRandomInt(0);"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        } catch (EscException e) {"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            assertEquals(e.getMessage(),expectedException.getMessage());"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    void retrieveCard_emptyCardList_exceptionThrown() {"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        expectedException \u003d new EscException(\"The card list is empty.\");"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            retrieveCard(emptyCardList);"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        } catch (EscException e) {"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            assertEquals(e.getMessage(),expectedException.getMessage());"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    void retrieveCard_SuccessfullyExecuted() throws EscException {"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        Card card \u003d retrieveCard(filledCardList);"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        assertTrue(card.equals(flashcard1) || card.equals(flashcard2) || card.equals(flashcard3));"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "JeremiasLiew": 65
     }
   },
   {
