@@ -2188,44 +2188,44 @@
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "wangqinNick"
+          "gitId": "HAOYUN49"
         },
-        "content": "    protected DataManager dataManager;"
+        "content": "    private ArrayList\u003cString\u003e deadlines;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "    private ArrayList\u003cString\u003e deadlines;"
-      },
-      {
-        "lineNumber": 17,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
         "content": ""
       },
       {
-        "lineNumber": 18,
+        "lineNumber": 17,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    public static final String COMMAND_WORD \u003d \"lst\";"
       },
       {
-        "lineNumber": 19,
+        "lineNumber": 18,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    public static final String MESSAGE_USAGE \u003d COMMAND_WORD;"
       },
       {
-        "lineNumber": 20,
+        "lineNumber": 19,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    public static final int EMPTY \u003d 0;"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": ""
       },
       {
         "lineNumber": 21,
@@ -2239,94 +2239,80 @@
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": ""
+        "content": "    @Override"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    @Override"
+        "content": "    public CommandResult execute() {"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    public CommandResult execute() {"
+        "content": "        //get the large task list"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        //get the large task list"
+        "content": "        if (dataManager.countAllTasks() \u003d\u003d EMPTY) {"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        dataManager \u003d new DataManager(moduleManager);"
+        "content": "            return new CommandResult(MESSAGE_NO_TASK_IN_LIST);"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        if (dataManager.countAllTasks() \u003d\u003d EMPTY) {"
+        "content": "        }"
       },
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "wangqinNick"
+          "gitId": "HAOYUN49"
         },
-        "content": "            return new CommandResult(MESSAGE_NO_TASK_IN_LIST);"
+        "content": "        //assert dataManager.countAllTasks() !\u003d EMPTY : \"make sure there are some tasks in the list\";"
       },
       {
         "lineNumber": 29,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "        assert dataManager.countAllTasks() !\u003d EMPTY : \"make sure there are some tasks in the list\";"
-      },
-      {
-        "lineNumber": 31,
         "author": {
           "gitId": "HAOYUN49"
         },
         "content": "        deadlines \u003d dataManager.checkDeadline();"
       },
       {
-        "lineNumber": 32,
+        "lineNumber": 30,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "        return new CommandResult(String.format(MESSAGE_TASK_SUCCESSFULLY_LIST, dataManager.countAllTasks()),"
       },
       {
-        "lineNumber": 33,
+        "lineNumber": 31,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "                true, deadlines);"
       },
       {
-        "lineNumber": 34,
+        "lineNumber": 32,
         "author": {
           "gitId": "HAOYUN49"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 35,
+        "lineNumber": 33,
         "author": {
           "gitId": "HAOYUN49"
         },
@@ -2335,7 +2321,7 @@
     ],
     "authorContributionMap": {
       "HAOYUN49": 14,
-      "wangqinNick": 17,
+      "wangqinNick": 15,
       "A11riseforme": 4
     }
   },
@@ -2481,192 +2467,150 @@
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "    private int moduleIndex;"
+        "content": "    private ArrayList\u003cString\u003e deadlines;"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "    private Module module;"
-      },
-      {
-        "lineNumber": 22,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "    private ArrayList\u003cString\u003e deadlines;"
-      },
-      {
-        "lineNumber": 23,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
         "content": ""
       },
       {
-        "lineNumber": 24,
+        "lineNumber": 22,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 25,
+        "lineNumber": 23,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "     * Constructor method for CheckModuleTaskDeadlineCommand class."
       },
       {
-        "lineNumber": 26,
-        "author": {
-          "gitId": "A11riseforme"
-        },
-        "content": "     * @param moduleIndex the index of the module of the user."
-      },
-      {
-        "lineNumber": 27,
+        "lineNumber": 24,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "     * @throws ModuleNotFoundException exception is thrown if the specified module is not found."
       },
       {
-        "lineNumber": 28,
+        "lineNumber": 25,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 29,
+        "lineNumber": 26,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "    public CheckModuleTasksDeadlineCommand(int moduleIndex) throws ModuleNotFoundException {"
+        "content": "    public CheckModuleTasksDeadlineCommand() {"
       },
       {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "        this.moduleIndex \u003d moduleIndex;"
-      },
-      {
-        "lineNumber": 31,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "        try {"
-      },
-      {
-        "lineNumber": 32,
-        "author": {
-          "gitId": "wangqinNick"
-        },
-        "content": "            this.module \u003d moduleManager.getModuleList().get(moduleIndex);"
-      },
-      {
-        "lineNumber": 33,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "        } catch (IndexOutOfBoundsException e) {"
-      },
-      {
-        "lineNumber": 34,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "            throw new ModuleNotFoundException(\"Module index is out of bound\");"
-      },
-      {
-        "lineNumber": 35,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 36,
+        "lineNumber": 27,
         "author": {
           "gitId": "HAOYUN49"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 37,
+        "lineNumber": 28,
         "author": {
           "gitId": "HAOYUN49"
         },
         "content": ""
       },
       {
-        "lineNumber": 38,
+        "lineNumber": 29,
         "author": {
           "gitId": "HAOYUN49"
         },
         "content": "    @Override"
       },
       {
-        "lineNumber": 39,
+        "lineNumber": 30,
         "author": {
           "gitId": "HAOYUN49"
         },
         "content": "    public CommandResult execute() {"
       },
       {
-        "lineNumber": 40,
+        "lineNumber": 31,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "        if (module.countTasks() \u003d\u003d EMPTY) {"
+        "content": "        if (currentModule.countTasks() \u003d\u003d EMPTY) {"
       },
       {
-        "lineNumber": 41,
+        "lineNumber": 32,
         "author": {
           "gitId": "HAOYUN49"
         },
         "content": "            return new CommandResult(MESSAGE_NO_TASK_IN_LIST);"
       },
       {
-        "lineNumber": 42,
+        "lineNumber": 33,
         "author": {
           "gitId": "HAOYUN49"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 43,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "        assert module.countTasks() !\u003d EMPTY : \"make sure the list is not empty\";"
-      },
-      {
-        "lineNumber": 44,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "        deadlines \u003d module.checkDeadline();"
-      },
-      {
-        "lineNumber": 45,
+        "lineNumber": 34,
         "author": {
           "gitId": "A11riseforme"
         },
-        "content": "        return new CommandResult(String.format(MESSAGE_TASK_SUCCESSFULLY_LIST, module.countTasks()), true, deadlines);"
+        "content": ""
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 35,
+        "author": {
+          "gitId": "HAOYUN49"
+        },
+        "content": "        assert currentModule.countTasks() !\u003d EMPTY : \"make sure the list is not empty\";"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "A11riseforme"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "HAOYUN49"
+        },
+        "content": "        deadlines \u003d currentModule.checkDeadline();"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "HAOYUN49"
+        },
+        "content": "        return new CommandResult(String.format(MESSAGE_TASK_SUCCESSFULLY_LIST, currentModule.countTasks()),"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "HAOYUN49"
+        },
+        "content": "                true, deadlines);"
+      },
+      {
+        "lineNumber": 40,
         "author": {
           "gitId": "HAOYUN49"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 41,
         "author": {
           "gitId": "HAOYUN49"
         },
@@ -2674,8 +2618,7 @@
       }
     ],
     "authorContributionMap": {
-      "HAOYUN49": 38,
-      "wangqinNick": 1,
+      "HAOYUN49": 33,
       "A11riseforme": 8
     }
   },
@@ -5906,236 +5849,257 @@
       {
         "lineNumber": 39,
         "author": {
-          "gitId": "HAOYUN49"
+          "gitId": "A11riseforme"
         },
-        "content": "                return t1.getDeadline().toString().compareToIgnoreCase(t2.getDeadline().toString());"
+        "content": "                String t1Deadline \u003d t1.getDeadline() \u003d\u003d null ? \"\" : t1.getDeadline().toString();"
       },
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "HAOYUN49"
+          "gitId": "A11riseforme"
         },
-        "content": "            }"
+        "content": "                String t2Deadline \u003d t2.getDeadline() \u003d\u003d null ? \"\" : t2.getDeadline().toString();"
       },
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "HAOYUN49"
+          "gitId": "A11riseforme"
         },
-        "content": "        });"
+        "content": "                return t1Deadline.compareToIgnoreCase(t2Deadline);"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "    }"
+        "content": "            }"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": ""
+        "content": "        });"
       },
       {
         "lineNumber": 44,
+        "author": {
+          "gitId": "HAOYUN49"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "HAOYUN49"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 46,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    public ArrayList\u003cTask\u003e getAllTasks() {"
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 47,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        return allTasks;"
       },
       {
-        "lineNumber": 46,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 48,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "    public int countAllTasks() {"
+        "content": "    }"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "        return allTasks.size();"
+        "content": ""
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "    }"
+        "content": "    public int countAllTasks() {"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": ""
+        "content": "        return allTasks.size();"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 53,
+        "author": {
+          "gitId": "HAOYUN49"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "HAOYUN49"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 55,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "     * return an orders lists of all tasks of all modules."
       },
       {
-        "lineNumber": 54,
+        "lineNumber": 56,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "     * @return an ArrayList of String which represents the ordered list"
       },
       {
-        "lineNumber": 55,
+        "lineNumber": 57,
         "author": {
           "gitId": "HAOYUN49"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 56,
+        "lineNumber": 58,
         "author": {
           "gitId": "HAOYUN49"
         },
         "content": "    public ArrayList\u003cString\u003e checkDeadline() {"
       },
       {
-        "lineNumber": 57,
+        "lineNumber": 59,
         "author": {
           "gitId": "HAOYUN49"
         },
         "content": "        ArrayList\u003cString\u003e deadlines \u003d new ArrayList\u003c\u003e();"
       },
       {
-        "lineNumber": 58,
+        "lineNumber": 60,
         "author": {
           "gitId": "HAOYUN49"
         },
         "content": "        sortAllTasks();"
       },
       {
-        "lineNumber": 59,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "        for (Task task: allTasks) {"
-      },
-      {
-        "lineNumber": 60,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "            deadlines.add(task.getDescription() + \" \" + task.getModuleCode() + \"  deadline: \" + task.getDeadline());"
-      },
-      {
         "lineNumber": 61,
         "author": {
-          "gitId": "HAOYUN49"
+          "gitId": "A11riseforme"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "        return deadlines;"
+        "content": "        for (Task task: allTasks) {"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "    }"
+        "content": "            deadlines.add(task.getDescription() + \" \" + task.getModuleCode() + \"  deadline: \" + task.getDeadline());"
       },
       {
         "lineNumber": 64,
         "author": {
-          "gitId": "wangqinNick"
+          "gitId": "HAOYUN49"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 65,
         "author": {
-          "gitId": "wangqinNick"
+          "gitId": "HAOYUN49"
         },
-        "content": "    public void addTask(Task toAdd) {"
+        "content": "        return deadlines;"
       },
       {
         "lineNumber": 66,
         "author": {
-          "gitId": "wangqinNick"
+          "gitId": "HAOYUN49"
         },
-        "content": "        this.allTasks.add(toAdd);"
+        "content": "    }"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": ""
+        "content": "    public void addTask(Task toAdd) {"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    public void removeTask(Task toRemove) {"
+        "content": "        this.allTasks.add(toAdd);"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "        this.allTasks.remove(toRemove);"
+        "content": "    }"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "wangqinNick"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 72,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    public void removeTask(Task toRemove) {"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "        this.allTasks.remove(toRemove);"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "wangqinNick"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 75,
         "author": {
           "gitId": "wangqinNick"
         },
@@ -6143,9 +6107,9 @@
       }
     ],
     "authorContributionMap": {
-      "HAOYUN49": 43,
+      "HAOYUN49": 42,
       "wangqinNick": 22,
-      "A11riseforme": 7
+      "A11riseforme": 11
     }
   },
   {
@@ -12771,89 +12735,110 @@
       {
         "lineNumber": 60,
         "author": {
-          "gitId": "HAOYUN49"
+          "gitId": "A11riseforme"
         },
-        "content": "                return t1.getDeadline().toString().compareToIgnoreCase(t2.getDeadline().toString());"
+        "content": "                String t1Deadline \u003d t1.getDeadline() \u003d\u003d null ? \"\" : t1.getDeadline().toString();"
       },
       {
         "lineNumber": 61,
         "author": {
-          "gitId": "HAOYUN49"
+          "gitId": "A11riseforme"
         },
-        "content": "            }"
+        "content": "                String t2Deadline \u003d t2.getDeadline() \u003d\u003d null ? \"\" : t2.getDeadline().toString();"
       },
       {
         "lineNumber": 62,
         "author": {
-          "gitId": "HAOYUN49"
+          "gitId": "A11riseforme"
         },
-        "content": "        });"
+        "content": "                return t1Deadline.compareToIgnoreCase(t2Deadline);"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "        for (Task task: tasks) {"
+        "content": "            }"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "            deadlines.add(\"Task: \" + task.getDescription() + \"  Deadline: \" + task.getDeadline().toString());"
+        "content": "        });"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "        }"
+        "content": "        for (Task task: tasks) {"
       },
       {
         "lineNumber": 66,
         "author": {
-          "gitId": "HAOYUN49"
+          "gitId": "A11riseforme"
         },
-        "content": "        return deadlines;"
+        "content": "            String deadline \u003d task.getDeadline() \u003d\u003d null ? \"\" : task.getDeadline().toString();"
       },
       {
         "lineNumber": 67,
         "author": {
-          "gitId": "HAOYUN49"
+          "gitId": "A11riseforme"
         },
-        "content": "    }"
+        "content": "            deadlines.add(\"Task: \" + task.getDescription() + \"  Deadline: \" + deadline);"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 69,
+        "author": {
+          "gitId": "HAOYUN49"
+        },
+        "content": "        return deadlines;"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "HAOYUN49"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "HAOYUN49"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 72,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    public boolean isSameModule(Module module) {"
       },
       {
-        "lineNumber": 70,
+        "lineNumber": 73,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "        return this.moduleCode.equals(module.moduleCode.toUpperCase());"
       },
       {
-        "lineNumber": 71,
+        "lineNumber": 74,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 72,
+        "lineNumber": 75,
         "author": {
           "gitId": "A11riseforme"
         },
@@ -12861,9 +12846,9 @@
       }
     ],
     "authorContributionMap": {
-      "HAOYUN49": 22,
+      "HAOYUN49": 20,
       "wangqinNick": 9,
-      "A11riseforme": 39,
+      "A11riseforme": 44,
       "iceclementi": 2
     }
   },
@@ -13506,7 +13491,7 @@
         "author": {
           "gitId": "HAOYUN49"
         },
-        "content": "            return prepareCheckModuleTasksDeadlineCommand(parameters);"
+        "content": "            return new CheckModuleTasksDeadlineCommand();"
       },
       {
         "lineNumber": 92,
@@ -13735,544 +13720,488 @@
       {
         "lineNumber": 124,
         "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "    private Command prepareCheckModuleTasksDeadlineCommand(String parameters) {"
-      },
-      {
-        "lineNumber": 125,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "        try {"
-      },
-      {
-        "lineNumber": 126,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "            return new CheckModuleTasksDeadlineCommand(Integer.parseInt(parameters));"
-      },
-      {
-        "lineNumber": 127,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "        } catch (ModuleNotFoundException e) {"
-      },
-      {
-        "lineNumber": 128,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "            return new IncorrectCommand(\"Module cannot be found\");"
-      },
-      {
-        "lineNumber": 129,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 130,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 131,
-        "author": {
-          "gitId": "HAOYUN49"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 132,
-        "author": {
           "gitId": "wangqinNick"
         },
         "content": "    private Command prepareDeleteTaskCommand(String parameters) {"
       },
       {
-        "lineNumber": 133,
+        "lineNumber": 125,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        //"
       },
       {
-        "lineNumber": 134,
+        "lineNumber": 126,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        return null;"
       },
       {
-        "lineNumber": 135,
+        "lineNumber": 127,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 136,
+        "lineNumber": 128,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": ""
       },
       {
-        "lineNumber": 137,
+        "lineNumber": 129,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    private Command prepareChangeModuleCommand(String parameters, ModuleManager moduleManager) {"
       },
       {
-        "lineNumber": 138,
+        "lineNumber": 130,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        if (moduleManager.getModuleWithCode(parameters) !\u003d null) {"
       },
       {
-        "lineNumber": 139,
+        "lineNumber": 131,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "            return new ChangeModuleCommand(moduleManager.getModuleWithCode(parameters));"
       },
       {
-        "lineNumber": 140,
+        "lineNumber": 132,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 141,
+        "lineNumber": 133,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        return new IncorrectCommand(MESSAGE_INVALID_COMMAND_FORMAT);"
       },
       {
-        "lineNumber": 142,
+        "lineNumber": 134,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 143,
+        "lineNumber": 135,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": ""
       },
       {
-        "lineNumber": 144,
+        "lineNumber": 136,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    private Command prepareAddTaskCommand(String parameters) {"
       },
       {
-        "lineNumber": 145,
+        "lineNumber": 137,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        //todo"
       },
       {
-        "lineNumber": 146,
+        "lineNumber": 138,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        //add a very simple task (for testing)"
       },
       {
-        "lineNumber": 147,
+        "lineNumber": 139,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        if (Command.getCurrentModule() !\u003d null) {"
       },
       {
-        "lineNumber": 148,
+        "lineNumber": 140,
         "author": {
           "gitId": "HAOYUN49"
         },
         "content": "            return new AddTaskCommand(new Task(parameters, Command.getCurrentModule().getModuleCode()));"
       },
       {
-        "lineNumber": 149,
+        "lineNumber": 141,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        } else {"
       },
       {
-        "lineNumber": 150,
+        "lineNumber": 142,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "            return new IncorrectCommand(\"please go inside a Module!\");"
       },
       {
-        "lineNumber": 151,
+        "lineNumber": 143,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 152,
+        "lineNumber": 144,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 153,
+        "lineNumber": 145,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": ""
       },
       {
-        "lineNumber": 154,
+        "lineNumber": 146,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 155,
+        "lineNumber": 147,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "     * Splits user input into command word and rest of parameters (if any)."
       },
       {
-        "lineNumber": 156,
+        "lineNumber": 148,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 157,
+        "lineNumber": 149,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "     * @param input the input from the user"
       },
       {
-        "lineNumber": 158,
+        "lineNumber": 150,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "     * @return array of String contains command and parameter"
       },
       {
-        "lineNumber": 159,
+        "lineNumber": 151,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 160,
+        "lineNumber": 152,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    private String[] getCommandAndParameter(String input) {"
       },
       {
-        "lineNumber": 161,
+        "lineNumber": 153,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        String[] separatedInput \u003d input.split(COMMAND_PARAMETER_SPLITTER, COMMAND_PARAMETER_MAXIMUM_LIMIT);"
       },
       {
-        "lineNumber": 162,
+        "lineNumber": 154,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        String commandWord \u003d separatedInput[COMMAND_WORD_INDEX].toLowerCase();"
       },
       {
-        "lineNumber": 163,
+        "lineNumber": 155,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "        String parameters \u003d (separatedInput.length \u003d\u003d COMMAND_PARAMETER_MAXIMUM_LIMIT)"
       },
       {
-        "lineNumber": 164,
+        "lineNumber": 156,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "                ? separatedInput[PARAMETER_WORD_INDEX].trim() : \"\";"
       },
       {
-        "lineNumber": 165,
+        "lineNumber": 157,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        return new String[]{commandWord, parameters};"
       },
       {
-        "lineNumber": 166,
+        "lineNumber": 158,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 167,
+        "lineNumber": 159,
         "author": {
           "gitId": "iceclementi"
         },
         "content": ""
       },
       {
-        "lineNumber": 168,
+        "lineNumber": 160,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    private Command prepareAddModuleCommand(String parameters) {"
       },
       {
-        "lineNumber": 169,
+        "lineNumber": 161,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        String moduleCode \u003d parameters;"
       },
       {
-        "lineNumber": 170,
+        "lineNumber": 162,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        if (parameters.isEmpty()) {"
       },
       {
-        "lineNumber": 171,
+        "lineNumber": 163,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddModuleCommand.MESSAGE_USAGE));"
       },
       {
-        "lineNumber": 172,
+        "lineNumber": 164,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 173,
+        "lineNumber": 165,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        if (hasMultipleParameters(parameters)) {"
       },
       {
-        "lineNumber": 174,
+        "lineNumber": 166,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddModuleCommand.MESSAGE_USAGE));"
       },
       {
-        "lineNumber": 175,
+        "lineNumber": 167,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 176,
+        "lineNumber": 168,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        return new AddModuleCommand(moduleCode);"
       },
       {
-        "lineNumber": 177,
+        "lineNumber": 169,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 178,
+        "lineNumber": 170,
         "author": {
           "gitId": "iceclementi"
         },
         "content": ""
       },
       {
-        "lineNumber": 179,
+        "lineNumber": 171,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "    private Command prepareDeleteModuleCommand(String parameters) {"
       },
       {
-        "lineNumber": 180,
+        "lineNumber": 172,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        String moduleCode \u003d parameters;"
       },
       {
-        "lineNumber": 181,
+        "lineNumber": 173,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        if (parameters.isEmpty()) {"
       },
       {
-        "lineNumber": 182,
+        "lineNumber": 174,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT,"
       },
       {
-        "lineNumber": 183,
+        "lineNumber": 175,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "                    DeleteModuleCommand.MESSAGE_USAGE));"
       },
       {
-        "lineNumber": 184,
+        "lineNumber": 176,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 185,
+        "lineNumber": 177,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        if (hasMultipleParameters(parameters)) {"
       },
       {
-        "lineNumber": 186,
+        "lineNumber": 178,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT,"
       },
       {
-        "lineNumber": 187,
+        "lineNumber": 179,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "                    DeleteModuleCommand.MESSAGE_USAGE));"
       },
       {
-        "lineNumber": 188,
+        "lineNumber": 180,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 189,
+        "lineNumber": 181,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        return new DeleteModuleCommand(moduleCode);"
       },
       {
-        "lineNumber": 190,
+        "lineNumber": 182,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 191,
+        "lineNumber": 183,
         "author": {
           "gitId": "iceclementi"
         },
         "content": ""
       },
       {
-        "lineNumber": 192,
+        "lineNumber": 184,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 193,
+        "lineNumber": 185,
         "author": {
           "gitId": "A11riseforme"
         },
         "content": "     * Checks if there is more than \u003cb\u003eone\u003c/b\u003e parameter in the input."
       },
       {
-        "lineNumber": 194,
+        "lineNumber": 186,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 195,
+        "lineNumber": 187,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "     * @param parameters The parameter(s) provided in the input"
       },
       {
-        "lineNumber": 196,
+        "lineNumber": 188,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "     * @return \u003ccode\u003eTRUE\u003c/code\u003e if there is more than one parameter in the input, and \u003ccode\u003eFALSE\u003c/code\u003e otherwise"
       },
       {
-        "lineNumber": 197,
+        "lineNumber": 189,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 198,
+        "lineNumber": 190,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "    private boolean hasMultipleParameters(String parameters) {"
       },
       {
-        "lineNumber": 199,
+        "lineNumber": 191,
         "author": {
           "gitId": "wangqinNick"
         },
         "content": "        return parameters.contains(PARAMETER_SPLITTER);"
       },
       {
-        "lineNumber": 200,
+        "lineNumber": 192,
         "author": {
           "gitId": "iceclementi"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 201,
+        "lineNumber": 193,
         "author": {
           "gitId": "wangqinNick"
         },
@@ -14280,7 +14209,7 @@
       }
     ],
     "authorContributionMap": {
-      "HAOYUN49": 17,
+      "HAOYUN49": 9,
       "wangqinNick": 114,
       "A11riseforme": 29,
       "iceclementi": 41

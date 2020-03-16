@@ -538,390 +538,453 @@
       {
         "lineNumber": 7,
         "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "import seedu.happypills.storage.Storage;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
           "gitId": "NyanWunPaing"
         },
         "content": "import seedu.happypills.ui.TextUi;"
       },
       {
-        "lineNumber": 8,
+        "lineNumber": 9,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "import java.io.FileNotFoundException;"
+      },
+      {
+        "lineNumber": 11,
         "author": {
           "gitId": "itskesin"
         },
         "content": "import java.util.logging.Level;"
       },
       {
-        "lineNumber": 9,
+        "lineNumber": 12,
         "author": {
           "gitId": "itskesin"
         },
         "content": "import java.util.logging.Logger;"
       },
       {
-        "lineNumber": 10,
+        "lineNumber": 13,
         "author": {
           "gitId": "NyanWunPaing"
         },
         "content": "import java.util.Scanner;"
       },
       {
-        "lineNumber": 11,
-        "author": {
-          "gitId": "NyanWunPaing"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 12,
-        "author": {
-          "gitId": "NyanWunPaing"
-        },
-        "content": "/**"
-      },
-      {
-        "lineNumber": 13,
-        "author": {
-          "gitId": "NyanWunPaing"
-        },
-        "content": " * Main entry-point for the java.duke.Duke application."
-      },
-      {
         "lineNumber": 14,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": " */"
+        "content": ""
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "public class HappyPills {"
+        "content": "/**"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "    private TextUi ui;"
+        "content": " * Main entry-point for the java.duke.Duke application."
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "    private PatientList patients;"
+        "content": " */"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": ""
+        "content": "public class HappyPills {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "    /**"
+        "content": "    private TextUi ui;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "     * Sets up the required objects, loads up the data from the storage file."
+        "content": "    private PatientList patients;"
       },
       {
         "lineNumber": 21,
         "author": {
-          "gitId": "NyanWunPaing"
+          "gitId": "Janicetyy"
         },
-        "content": "     */"
+        "content": "    private static final String FILEPATH \u003d \"data/data.txt\";"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "    public HappyPills() {"
+        "content": ""
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "        ui \u003d new TextUi();"
+        "content": "    /**"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "        patients \u003d new PatientList();"
+        "content": "     * Sets up the required objects, loads up the data from the storage file."
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "    }"
+        "content": "     */"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": ""
+        "content": "    public HappyPills() {"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "    /**"
+        "content": "        ui \u003d new TextUi();"
       },
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "NyanWunPaing"
+          "gitId": "Janicetyy"
         },
-        "content": "     * Main entry-point for the java.duke.Duke application."
+        "content": "        //patients \u003d new PatientList();"
       },
       {
         "lineNumber": 29,
         "author": {
-          "gitId": "NyanWunPaing"
+          "gitId": "Janicetyy"
         },
-        "content": "     */"
+        "content": "        try {"
       },
       {
         "lineNumber": 30,
         "author": {
-          "gitId": "NyanWunPaing"
+          "gitId": "Janicetyy"
         },
-        "content": "    public static void main(String[] args) {"
+        "content": "            patients \u003d Storage.loadFromFile(FILEPATH);"
       },
       {
         "lineNumber": 31,
         "author": {
-          "gitId": "NyanWunPaing"
+          "gitId": "Janicetyy"
         },
-        "content": "        new HappyPills().run();"
+        "content": "        } catch (FileNotFoundException e) {"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "    }"
+        "content": "            patients \u003d new PatientList();"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 34,
         "author": {
-          "gitId": "NyanWunPaing"
+          "gitId": "Janicetyy"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "     * Runs the program until termination."
+        "content": ""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "    private void run() {"
+        "content": "     * Main entry-point for the java.duke.Duke application."
       },
       {
         "lineNumber": 38,
         "author": {
-          "gitId": "itskesin"
+          "gitId": "NyanWunPaing"
         },
-        "content": "        Level logLevel \u003d Level.INFO;"
+        "content": "     */"
       },
       {
         "lineNumber": 39,
         "author": {
-          "gitId": "itskesin"
+          "gitId": "NyanWunPaing"
         },
-        "content": "        Logger logger \u003d Logger.getLogger(HappyPills.class.getName());"
+        "content": "    public static void main(String[] args) {"
       },
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "itskesin"
+          "gitId": "NyanWunPaing"
         },
-        "content": ""
+        "content": "        new HappyPills().run();"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "        ui.printWelcomeMessage();"
+        "content": "    }"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "        Scanner in \u003d new Scanner(System.in);"
+        "content": ""
       },
       {
         "lineNumber": 43,
         "author": {
-          "gitId": "itskesin"
+          "gitId": "NyanWunPaing"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 44,
         "author": {
-          "gitId": "itskesin"
+          "gitId": "NyanWunPaing"
         },
-        "content": "        while (in.hasNextLine()) {"
+        "content": "     * Runs the program until termination."
       },
       {
         "lineNumber": 45,
         "author": {
-          "gitId": "itskesin"
+          "gitId": "NyanWunPaing"
         },
-        "content": "            logger.log(logLevel, \"going to start processing\");"
+        "content": "     */"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "            try {"
+        "content": "    private void run() {"
       },
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "NyanWunPaing"
+          "gitId": "itskesin"
         },
-        "content": "                String fullCommand \u003d in.nextLine();"
+        "content": "        Level logLevel \u003d Level.INFO;"
       },
       {
         "lineNumber": 48,
         "author": {
-          "gitId": "NyanWunPaing"
+          "gitId": "itskesin"
         },
-        "content": "                System.out.println(ui.DIVIDER);"
+        "content": "        Logger logger \u003d Logger.getLogger(HappyPills.class.getName());"
       },
       {
         "lineNumber": 49,
-        "author": {
-          "gitId": "NyanWunPaing"
-        },
-        "content": "                Command c \u003d Parser.parse(fullCommand);"
-      },
-      {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "itskesin"
-        },
-        "content": "                String message \u003d c.execute(patients);"
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "sitinadiah25"
-        },
-        "content": "                if (message !\u003d null) {"
-      },
-      {
-        "lineNumber": 52,
-        "author": {
-          "gitId": "itskesin"
-        },
-        "content": "                    System.out.println(message);"
-      },
-      {
-        "lineNumber": 53,
-        "author": {
-          "gitId": "sitinadiah25"
-        },
-        "content": "                }"
-      },
-      {
-        "lineNumber": 54,
-        "author": {
-          "gitId": "NyanWunPaing"
-        },
-        "content": "            } catch (HappyPillsException hpe) {"
-      },
-      {
-        "lineNumber": 55,
-        "author": {
-          "gitId": "NyanWunPaing"
-        },
-        "content": "                System.out.println(hpe.getMessage());"
-      },
-      {
-        "lineNumber": 56,
-        "author": {
-          "gitId": "NyanWunPaing"
-        },
-        "content": "                System.out.println(ui.DIVIDER);"
-      },
-      {
-        "lineNumber": 57,
-        "author": {
-          "gitId": "NyanWunPaing"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 58,
         "author": {
           "gitId": "itskesin"
         },
         "content": ""
       },
       {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        ui.printWelcomeMessage();"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        Scanner in \u003d new Scanner(System.in);"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "        while (in.hasNextLine()) {"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "            logger.log(logLevel, \"going to start processing\");"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "            try {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "                String fullCommand \u003d in.nextLine();"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "                System.out.println(TextUi.DIVIDER);"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "                Command c \u003d Parser.parse(fullCommand);"
+      },
+      {
         "lineNumber": 59,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "                String message \u003d c.execute(patients);"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "                if (message !\u003d null) {"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": "                    System.out.println(message);"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "sitinadiah25"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "            } catch (HappyPillsException hpe) {"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "                System.out.println(hpe.getMessage());"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "                System.out.println(TextUi.DIVIDER);"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "itskesin"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 68,
         "author": {
           "gitId": "itskesin"
         },
         "content": "            logger.log(logLevel, \"end of processing\");"
       },
       {
-        "lineNumber": 60,
+        "lineNumber": 69,
         "author": {
           "gitId": "NyanWunPaing"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 61,
+        "lineNumber": 70,
         "author": {
           "gitId": "NyanWunPaing"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 71,
         "author": {
           "gitId": "NyanWunPaing"
         },
@@ -929,7 +992,8 @@
       }
     ],
     "authorContributionMap": {
-      "NyanWunPaing": 47,
+      "NyanWunPaing": 45,
+      "Janicetyy": 11,
       "sitinadiah25": 3,
       "itskesin": 12
     }
@@ -2572,192 +2636,206 @@
         "author": {
           "gitId": "Janicetyy"
         },
-        "content": "import seedu.happypills.data.Patient;"
+        "content": "import org.w3c.dom.Text;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "Janicetyy"
         },
-        "content": "import seedu.happypills.data.PatientList;"
+        "content": "import seedu.happypills.data.Patient;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "Janicetyy"
         },
-        "content": "import seedu.happypills.ui.TextUi;"
+        "content": "import seedu.happypills.data.PatientList;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "Janicetyy"
         },
-        "content": ""
+        "content": "import seedu.happypills.ui.TextUi;"
       },
       {
         "lineNumber": 7,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
         "author": {
           "gitId": "sitinadiah25"
         },
         "content": "public class GetCommand extends Command {"
       },
       {
-        "lineNumber": 8,
+        "lineNumber": 9,
         "author": {
           "gitId": "Janicetyy"
         },
         "content": "    protected String patientNric;"
       },
       {
-        "lineNumber": 9,
-        "author": {
-          "gitId": "Janicetyy"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 10,
         "author": {
           "gitId": "Janicetyy"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "Janicetyy"
         },
-        "content": "     * Constructor for RetrieveCommand Class."
+        "content": "    /**"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "Janicetyy"
         },
-        "content": "     * It creates a new RetrieveCommand Object with the information provided."
+        "content": "     * Constructor for RetrieveCommand Class."
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "Janicetyy"
         },
-        "content": "     *"
+        "content": "     * It creates a new RetrieveCommand Object with the information provided."
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "Janicetyy"
         },
-        "content": "     * @param patientNric        Contains the nric of the patient that is to be retrieved."
+        "content": "     *"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "Janicetyy"
         },
-        "content": "     */"
+        "content": "     * @param patientNric        Contains the nric of the patient that is to be retrieved."
       },
       {
         "lineNumber": 16,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 17,
         "author": {
           "gitId": "sitinadiah25"
         },
         "content": "    public GetCommand(String patientNric) {"
       },
       {
-        "lineNumber": 17,
+        "lineNumber": 18,
         "author": {
           "gitId": "Janicetyy"
         },
         "content": "        this.patientNric \u003d patientNric;"
       },
       {
-        "lineNumber": 18,
-        "author": {
-          "gitId": "Janicetyy"
-        },
-        "content": "    }"
-      },
-      {
         "lineNumber": 19,
         "author": {
           "gitId": "Janicetyy"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "Janicetyy"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 21,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 22,
         "author": {
           "gitId": "itskesin"
         },
         "content": "    public String execute(PatientList patients) {"
       },
       {
-        "lineNumber": 22,
+        "lineNumber": 23,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        assert !patientNric.equals(\"\") : \"No NRIC is provided\";"
+      },
+      {
+        "lineNumber": 24,
         "author": {
           "gitId": "Janicetyy"
         },
         "content": "        for (Patient patient : patients) {"
       },
       {
-        "lineNumber": 23,
+        "lineNumber": 25,
         "author": {
           "gitId": "sitinadiah25"
         },
         "content": "            if (patient.getNric().equalsIgnoreCase(patientNric)) {"
       },
       {
-        "lineNumber": 24,
+        "lineNumber": 26,
         "author": {
-          "gitId": "sitinadiah25"
+          "gitId": "Janicetyy"
         },
-        "content": "                TextUi.printGetPatient(patient);"
+        "content": "                return TextUi.successfulGetPatientMessage(patient);"
       },
       {
-        "lineNumber": 25,
+        "lineNumber": 27,
         "author": {
           "gitId": "Janicetyy"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 26,
+        "lineNumber": 28,
         "author": {
           "gitId": "Janicetyy"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 27,
+        "lineNumber": 29,
         "author": {
-          "gitId": "itskesin"
+          "gitId": "Janicetyy"
         },
-        "content": "        return null;"
+        "content": "        return \"The patient you are looking for does not exist\";"
       },
       {
-        "lineNumber": 28,
+        "lineNumber": 30,
         "author": {
           "gitId": "Janicetyy"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 29,
+        "lineNumber": 31,
         "author": {
           "gitId": "Janicetyy"
         },
         "content": ""
       },
       {
-        "lineNumber": 30,
+        "lineNumber": 32,
         "author": {
           "gitId": "Janicetyy"
         },
@@ -2765,9 +2843,9 @@
       }
     ],
     "authorContributionMap": {
-      "Janicetyy": 24,
-      "sitinadiah25": 4,
-      "itskesin": 2
+      "Janicetyy": 28,
+      "sitinadiah25": 3,
+      "itskesin": 1
     }
   },
   {
@@ -4314,6 +4392,97 @@
       {
         "lineNumber": 181,
         "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 183,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "     * Create a string with all the patient\u0027s data for storage to a text file."
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "     * Each variable is separated with | as a divider."
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "     * @return a formatted string with patient\u0027s data."
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    public String toSave() {"
+      },
+      {
+        "lineNumber": 189,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        String text \u003d this.name + \"|\" + this.nric + \"|\""
+      },
+      {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "                + this.phoneNumber + \"|\" + this.dateOfBirth + \"|\""
+      },
+      {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "                + this.bloodType + \"|\" + this.allergies + \"|\" + this.remarks;"
+      },
+      {
+        "lineNumber": 192,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        return text;"
+      },
+      {
+        "lineNumber": 193,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 194,
+        "author": {
           "gitId": "NyanWunPaing"
         },
         "content": "}"
@@ -4321,6 +4490,7 @@
     ],
     "authorContributionMap": {
       "NyanWunPaing": 169,
+      "Janicetyy": 13,
       "sitinadiah25": 12
     }
   },
@@ -4972,96 +5142,117 @@
       {
         "lineNumber": 42,
         "author": {
-          "gitId": "sitinadiah25"
+          "gitId": "Janicetyy"
         },
-        "content": "            return new GetCommand(userCommand[1]);"
+        "content": "            if (userCommand.length \u003d\u003d 1 || userCommand[1].trim().isEmpty()) {"
       },
       {
         "lineNumber": 43,
         "author": {
-          "gitId": "sitinadiah25"
+          "gitId": "Janicetyy"
         },
-        "content": "        } else if (userCommand[0].equalsIgnoreCase(\"edit\")) {"
+        "content": "                throw new HappyPillsException(\"    Please input the NRIC of the patient you are searching for\");"
       },
       {
         "lineNumber": 44,
         "author": {
-          "gitId": "sitinadiah25"
+          "gitId": "Janicetyy"
         },
-        "content": "            String[] edit \u003d fullCommand.split(\" \", 3);"
+        "content": "            }"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "            if (edit.length \u003c 3) {"
+        "content": "            return new GetCommand(userCommand[1]);"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "                throw new HappyPillsException(\"    Please input your patient\u0027s details correctly\");"
+        "content": "        } else if (userCommand[0].equalsIgnoreCase(\"edit\")) {"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "            }"
+        "content": "            String[] edit \u003d fullCommand.split(\" \", 3);"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "            return new EditCommand(edit[1], edit[2]);"
+        "content": "            if (edit.length \u003c 3) {"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "        } else if (userCommand[0].equalsIgnoreCase(\"exit\")) {"
+        "content": "                throw new HappyPillsException(\"    Please input your patient\u0027s details correctly\");"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "            return new ExitCommand();"
+        "content": "            }"
       },
       {
         "lineNumber": 51,
         "author": {
-          "gitId": "NyanWunPaing"
+          "gitId": "sitinadiah25"
         },
-        "content": "        } else {"
+        "content": "            return new EditCommand(edit[1], edit[2]);"
       },
       {
         "lineNumber": 52,
         "author": {
-          "gitId": "NyanWunPaing"
+          "gitId": "sitinadiah25"
         },
-        "content": "            throw new HappyPillsException(\"    Invalid Command\");"
+        "content": "        } else if (userCommand[0].equalsIgnoreCase(\"exit\")) {"
       },
       {
         "lineNumber": 53,
         "author": {
-          "gitId": "NyanWunPaing"
+          "gitId": "sitinadiah25"
         },
-        "content": "        }"
+        "content": "            return new ExitCommand();"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "NyanWunPaing"
         },
-        "content": "    }"
+        "content": "        } else {"
       },
       {
         "lineNumber": 55,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "            throw new HappyPillsException(\"    Invalid Command\");"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "NyanWunPaing"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 58,
         "author": {
           "gitId": "NyanWunPaing"
         },
@@ -5070,7 +5261,486 @@
     ],
     "authorContributionMap": {
       "NyanWunPaing": 37,
+      "Janicetyy": 3,
       "sitinadiah25": 18
+    }
+  },
+  {
+    "path": "src/main/java/seedu/happypills/storage/Storage.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "package seedu.happypills.storage;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "import seedu.happypills.data.Patient;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "import seedu.happypills.data.PatientList;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "import java.io.File;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "import java.io.FileNotFoundException;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "import java.io.FileWriter;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "import java.io.IOException;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "import java.util.Scanner;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": " * A class that manages read and write operations to file."
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "public class Storage {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "     * Save individual patient data as strings to file. Creates file if it does not exist."
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "     * @param filePath location of file to save to, requires directory/file."
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "     * @param patientDataString  single patient data as string to be saved to file."
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "     * @throws IOException if unable to save to file, possibly due to interruptions."
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    public static void addPatientToFile(String filePath, String patientDataString) throws IOException {"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        File d \u003d new File(filePath.substring(0, filePath.lastIndexOf(\u0027/\u0027)));"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        if (!d.exists()) {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "            d.mkdir();"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        File f \u003d new File(filePath);"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        if (!f.exists()) {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "            f.createNewFile();"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        FileWriter fw \u003d new FileWriter(filePath);"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        fw.write(patientDataString);"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        fw.close();"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "     * Read in file as strings."
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "     * @param filePath location of file to read from."
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "     * @return \u003ccode\u003eArrayList\u003c/code\u003e of each line read from the file."
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "     * @throws FileNotFoundException if the file specified by \u003ccode\u003efilePath\u003c/code\u003e does not exist."
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    public static PatientList loadFromFile(String filePath) throws FileNotFoundException {"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        File f \u003d new File(filePath);"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        Scanner s \u003d new Scanner(f);"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        PatientList storedPatients \u003d new PatientList();"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        while (s.hasNext()) {"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "            String stringInput \u003d s.nextLine();"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "            parseFileContent(stringInput, storedPatients);"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        return storedPatients;"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    private static void parseFileContent(String savedString, PatientList storedPatients) {"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        String[] dataString \u003d savedString.split(\"[|]\", 7);"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        Patient tempPatient \u003d new Patient(dataString[0], dataString[1],"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "                Integer.parseInt(dataString[2]), dataString[3], dataString[4],"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "                dataString[5], dataString[6]);"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        storedPatients.add(tempPatient);"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "Janicetyy": 67
     }
   },
   {
@@ -5430,23 +6100,23 @@
       {
         "lineNumber": 51,
         "author": {
-          "gitId": "sitinadiah25"
+          "gitId": "Janicetyy"
         },
-        "content": "    public static void printGetPatient(Patient patient) {"
+        "content": "    public static String successfulGetPatientMessage(Patient patient) {"
       },
       {
         "lineNumber": 52,
         "author": {
-          "gitId": "sitinadiah25"
+          "gitId": "Janicetyy"
         },
-        "content": "        System.out.println(\"    Here are the patient\u0027s details:\");"
+        "content": "        String returnMessage \u003d \"    Here are the patient\u0027s details:\\n\" + patient + DIVIDER;"
       },
       {
         "lineNumber": 53,
         "author": {
-          "gitId": "sitinadiah25"
+          "gitId": "Janicetyy"
         },
-        "content": "        System.out.println(patient + DIVIDER);"
+        "content": "        return returnMessage;"
       },
       {
         "lineNumber": 54,
@@ -5759,8 +6429,8 @@
     ],
     "authorContributionMap": {
       "NyanWunPaing": 6,
-      "Janicetyy": 4,
-      "sitinadiah25": 19,
+      "Janicetyy": 7,
+      "sitinadiah25": 16,
       "itskesin": 68
     }
   },
@@ -6225,6 +6895,386 @@
     ],
     "authorContributionMap": {
       "sitinadiah25": 31
+    }
+  },
+  {
+    "path": "src/test/java/seedu/happypills/commands/GetCommandTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "package seedu.happypills.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "import org.junit.jupiter.api.BeforeAll;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "import seedu.happypills.data.Patient;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "import seedu.happypills.data.PatientList;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "import seedu.happypills.exception.HappyPillsException;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "public class GetCommandTest {"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    private static PatientList newPatientList;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    public static final String DIVIDER \u003d \"    \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\";"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "     * Initialize hardcoded test cases for testing."
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    @BeforeAll"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    public static void setup() {"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        newPatientList \u003d new PatientList();"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        Patient patientOne \u003d new Patient(\"P1\", \"S123A\", 123,"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "                \"01 Jan\", \"O+\", \"None\", \"NIL\");"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        Patient patientTwo \u003d new Patient(\"P2\", \"S456B\", 456,"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "                \"01 Feb\", \"O+\", \"None\", \"NIL\");"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        newPatientList.add(patientOne);"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        newPatientList.add(patientTwo);"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    public void getList_notInList_notFound() throws HappyPillsException {"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        String expectedOutputNotInList \u003d \"The patient you are looking for does not exist\";"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        String message \u003d new GetCommand(\"S789C\").execute(newPatientList);"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        assertEquals(expectedOutputNotInList, message);"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    public void getList_InList_found() throws HappyPillsException {"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        String expectedOutputInList \u003d \"    Here are the patient\u0027s details:\\n\""
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "                + \"        Name : P1\\n\""
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "                + \"        NRIC : S123A\\n\""
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "                + \"        Phone Number : 123\\n\""
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "                + \"        DOB : 01 Jan\\n\""
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "                + \"        Blood Type : O+\\n\""
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "                + \"        Allergies : None\\n\""
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "                + \"        Remarks : NIL\\n\""
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "                + DIVIDER;"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        String message \u003d new GetCommand(\"S123A\").execute(newPatientList);"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "        assertEquals(expectedOutputInList, message);"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "Janicetyy"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "Janicetyy": 53
     }
   },
   {
