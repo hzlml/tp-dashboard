@@ -1983,227 +1983,437 @@
         "author": {
           "gitId": "benchan911"
         },
-        "content": "import seedu.attendance.AttendanceList;"
+        "content": "import seedu.command.attendance.AddAttendance;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "import seedu.command.attendance.AddAttendance;"
+        "content": "import seedu.command.attendance.DeleteAttendance;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "import seedu.command.attendance.DeleteAttendance;"
+        "content": "import seedu.event.EventList;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "import seedu.command.attendance.ListAttendance;"
+        "content": "import seedu.exception.DukeException;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "import seedu.event.EventList;"
+        "content": ""
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "import seedu.exception.DukeException;"
+        "content": "import java.io.IOException;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "benchan911"
         },
-        "content": ""
+        "content": "import java.util.logging.Logger;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "benchan911"
         },
-        "content": ""
+        "content": "import java.util.logging.ConsoleHandler;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "public class AttendanceCommandInterpreter extends CommandInterpreter {"
+        "content": "import java.util.logging.FileHandler;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "benchan911"
         },
-        "content": ""
+        "content": "import java.util.logging.Level;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "    public AttendanceCommandInterpreter(EventList eventList) {"
+        "content": "import java.util.logging.LogManager;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        super(eventList);"
+        "content": ""
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "    }"
+        "content": "public class AttendanceCommandInterpreter extends CommandInterpreter {"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "benchan911"
         },
-        "content": ""
+        "content": "    private static final Logger logger \u003d Logger.getLogger(AttendanceCommandInterpreter.class.getName());"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "     * Execute the command from userInput."
+        "content": "    public AttendanceCommandInterpreter(EventList eventList) {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "     *"
+        "content": "        super(eventList);"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "     * @param commandDescription The userInput from the Ui."
+        "content": "    }"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "     * @throws DukeException If the command is undefined."
+        "content": ""
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "     */"
+        "content": "    public static void setupLogger() throws DukeException {"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "    public Command decideCommand(String commandDescription) throws DukeException {"
+        "content": "        LogManager.getLogManager().reset();"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        String commandType \u003d getFirstWord(commandDescription);"
+        "content": "        logger.setLevel(Level.ALL);"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        String commandParameters \u003d getSubsequentWords(commandDescription);"
+        "content": ""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        switch (commandType) {"
+        "content": "        ConsoleHandler ch \u003d new ConsoleHandler();"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        case \"add\":"
+        "content": "        ch.setLevel(Level.SEVERE);"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "            return new AddAttendance(commandParameters);"
+        "content": "        logger.addHandler(ch);"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        case \"delete\":"
+        "content": ""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "            return new DeleteAttendance(commandParameters);"
+        "content": "        try {"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        default:"
+        "content": "            FileHandler fh \u003d new FileHandler(\"myLogger.log\");"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "            throw new DukeException(\"Attendance: Unknown command.\");"
+        "content": "            fh.setLevel(Level.FINE);"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        }"
+        "content": "            logger.addHandler(fh);"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "    }"
+        "content": "        } catch (IOException e) {"
       },
       {
         "lineNumber": 35,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "            throw new DukeException(e.getMessage());"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "     * Execute the command from userInput."
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "     * @param commandDescription The userInput from the Ui."
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "     * @throws DukeException If the command is undefined."
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "    public Command decideCommand(String commandDescription) throws DukeException {"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        AttendanceCommandInterpreter.setupLogger();"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        logger.info(\"My First Log\");"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        logger.fine(\"My Second Log\");"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        String commandType \u003d getFirstWord(commandDescription);"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        String commandParameters \u003d getSubsequentWords(commandDescription);"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        assert commandType \u003d\u003d \"\" : \"UnknownType\";"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        assert commandType \u003d\u003d \"\" : \"UnknownParameter\";"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        switch (commandType) {"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        case \"add\":"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "            return new AddAttendance(commandParameters);"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        case \"delete\":"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "            return new DeleteAttendance(commandParameters);"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        default:"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "            throw new DukeException(\"Attendance: Unknown command.\");"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 65,
         "author": {
           "gitId": "benchan911"
         },
@@ -2211,7 +2421,7 @@
       }
     ],
     "authorContributionMap": {
-      "benchan911": 35
+      "benchan911": 65
     }
   },
   {
@@ -2815,138 +3025,173 @@
       {
         "lineNumber": 67,
         "author": {
-          "gitId": "harithadiv"
+          "gitId": "lowjiayee"
         },
-        "content": ""
+        "content": "            //TODO"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        case \"attendance\":"
+        "content": "            break;"
       },
       {
         "lineNumber": 69,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "lowjiayee"
         },
-        "content": "            AttendanceCommandInterpreter aci \u003d new AttendanceCommandInterpreter(eventList);"
+        "content": "        case \"attendance\":"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "            command \u003d aci.decideCommand(commandDescription);"
+        "content": "            AttendanceCommandInterpreter aci \u003d new AttendanceCommandInterpreter(eventList);"
       },
       {
         "lineNumber": 71,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "benchan911"
         },
-        "content": "            break;"
+        "content": "            command \u003d aci.decideCommand(commandDescription);"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        case \"performance\":"
+        "content": "            break;"
       },
       {
         "lineNumber": 73,
         "author": {
-          "gitId": "anqi-nus"
+          "gitId": "lowjiayee"
         },
-        "content": "            PerformanceCommandInterpreter pci \u003d new PerformanceCommandInterpreter(eventList);"
+        "content": "        case \"performance\":"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "anqi-nus"
         },
-        "content": "            command \u003d pci.decideCommand(commandDescription);"
+        "content": "            PerformanceCommandInterpreter pci \u003d new PerformanceCommandInterpreter(eventList);"
       },
       {
         "lineNumber": 75,
+        "author": {
+          "gitId": "anqi-nus"
+        },
+        "content": "            command \u003d pci.decideCommand(commandDescription);"
+      },
+      {
+        "lineNumber": 76,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": "            break;"
       },
       {
-        "lineNumber": 76,
+        "lineNumber": 77,
         "author": {
           "gitId": "benchan911"
         },
         "content": "        default:"
       },
       {
-        "lineNumber": 77,
-        "author": {
-          "gitId": "harithadiv"
-        },
-        "content": "            throw new DukeException(\"No parameters provided\");"
-      },
-      {
         "lineNumber": 78,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "lowjiayee"
         },
-        "content": "        }"
+        "content": "            assert (!commandCategory.equals(\"bye\") \u0026\u0026 !commandCategory.equals(\"event\")"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": ""
+        "content": "                    \u0026\u0026 !commandCategory.equals(\"seminar\") \u0026\u0026 !commandCategory.equals(\"attendance\")"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        if (command \u003d\u003d null) {"
+        "content": "                    \u0026\u0026 !commandCategory.equals(\"performance\"))"
       },
       {
         "lineNumber": 81,
         "author": {
-          "gitId": "anqi-nus"
+          "gitId": "lowjiayee"
         },
-        "content": "            throw new DukeException(\"Duke is null.\");"
+        "content": "                    : \"accepted command category is not further interpreted!\";"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        }"
+        "content": "            throw new DukeException(\"Unknown command category is provided\");"
       },
       {
         "lineNumber": 83,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "        if (command \u003d\u003d null) {"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "anqi-nus"
+        },
+        "content": "            throw new DukeException(\"Duke is null.\");"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 88,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": "        return command;"
       },
       {
-        "lineNumber": 84,
+        "lineNumber": 89,
         "author": {
           "gitId": "benchan911"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 85,
+        "lineNumber": 90,
         "author": {
           "gitId": "benchan911"
         },
         "content": "}"
       },
       {
-        "lineNumber": 86,
+        "lineNumber": 91,
         "author": {
           "gitId": "anqi-nus"
         },
@@ -2956,8 +3201,8 @@
     "authorContributionMap": {
       "anqi-nus": 5,
       "benchan911": 16,
-      "lowjiayee": 59,
-      "harithadiv": 6
+      "lowjiayee": 66,
+      "harithadiv": 4
     }
   },
   {
@@ -3205,292 +3450,306 @@
       {
         "lineNumber": 35,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "        switch (commandType) {"
+        "content": "        assert commandType \u003d\u003d \" \" : \"Event: Unknown command\";"
       },
       {
         "lineNumber": 36,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "        case \"add\":"
+        "content": "        assert commandType \u003d\u003d \" \" : \"Event: Command is null\";"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            event \u003d eventParser.parseEvent(commandParameters);"
+        "content": "        switch (commandType) {"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            command \u003d new AddEvent(event, this.eventList);"
+        "content": "        case \"add\":"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            break;"
+        "content": "            event \u003d eventParser.parseEvent(commandParameters);"
       },
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "harithadiv"
+          "gitId": "lowjiayee"
         },
-        "content": "        case \"editname\":"
+        "content": "            command \u003d new AddEvent(event, this.eventList);"
       },
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "harithadiv"
+          "gitId": "lowjiayee"
         },
-        "content": "            index \u003d eventParser.parseIndex(commandParameters);"
+        "content": "            break;"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "            name \u003d eventParser.parseEventName(commandParameters);"
+        "content": "        case \"editname\":"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "            command \u003d new EditName(index, name, this.eventList);"
+        "content": "            index \u003d eventParser.parseIndex(commandParameters);"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "            break;"
+        "content": "            name \u003d eventParser.parseEventName(commandParameters);"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        case \"editdatetime\":"
+        "content": "            command \u003d new EditName(index, name, this.eventList);"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "            index \u003d eventParser.parseIndex(commandParameters);"
+        "content": "            break;"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "            datetime \u003d eventParser.parseEventDateTime(commandParameters);"
+        "content": "        case \"editdatetime\":"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "            command \u003d new EditDateTime(index, datetime, this.eventList);"
+        "content": "            index \u003d eventParser.parseIndex(commandParameters);"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "            break;"
+        "content": "            datetime \u003d eventParser.parseEventDateTime(commandParameters);"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        case \"editvenue\":"
+        "content": "            command \u003d new EditDateTime(index, datetime, this.eventList);"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "            index \u003d eventParser.parseIndex(commandParameters);"
+        "content": "            break;"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "            venue \u003d eventParser.parseVenue(commandParameters);"
+        "content": "        case \"editvenue\":"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "            command \u003d new EditVenue(index, venue, this.eventList);"
+        "content": "            index \u003d eventParser.parseIndex(commandParameters);"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "            break;"
+        "content": "            venue \u003d eventParser.parseVenue(commandParameters);"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        case \"editevent\":"
+        "content": "            command \u003d new EditVenue(index, venue, this.eventList);"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "            index \u003d eventParser.parseIndex(commandParameters);"
+        "content": "            break;"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "            event \u003d eventParser.parseEvent(commandParameters);"
+        "content": "        case \"editevent\":"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "            command \u003d new EditEvent(index, event, this.eventList);"
+        "content": "            index \u003d eventParser.parseIndex(commandParameters);"
       },
       {
         "lineNumber": 59,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "            break;"
+        "content": "            event \u003d eventParser.parseEvent(commandParameters);"
       },
       {
         "lineNumber": 60,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "        case \"delete\":"
+        "content": "            command \u003d new EditEvent(index, event, this.eventList);"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            index \u003d eventParser.parseIndex(commandParameters);"
+        "content": "            break;"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            command \u003d new DeleteEvent(index, this.eventList);"
+        "content": "        case \"delete\":"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            break;"
+        "content": "            index \u003d eventParser.parseIndex(commandParameters);"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        case \"list\":"
+        "content": "            command \u003d new DeleteEvent(index, this.eventList);"
       },
       {
         "lineNumber": 65,
-        "author": {
-          "gitId": "harithadiv"
-        },
-        "content": "            command \u003d new ListEvent(this.eventList);"
-      },
-      {
-        "lineNumber": 66,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": "            break;"
       },
       {
-        "lineNumber": 67,
+        "lineNumber": 66,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        default:"
+        "content": "        case \"list\":"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "harithadiv"
+        },
+        "content": "            command \u003d new ListEvent(this.eventList);"
       },
       {
         "lineNumber": 68,
         "author": {
-          "gitId": "anqi-nus"
+          "gitId": "lowjiayee"
         },
-        "content": "            throw new DukeException(\"Event: Unknown command\");"
+        "content": "            break;"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        }"
+        "content": "        default:"
       },
       {
         "lineNumber": 70,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "anqi-nus"
         },
-        "content": ""
+        "content": "            throw new DukeException(\"Event: Unknown command\");"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        if (command \u003d\u003d null) {"
+        "content": "        }"
       },
       {
         "lineNumber": 72,
         "author": {
-          "gitId": "anqi-nus"
+          "gitId": "lowjiayee"
         },
-        "content": "            throw new DukeException(\"Event: Command is null\");"
+        "content": ""
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        }"
+        "content": "        if (command \u003d\u003d null) {"
       },
       {
         "lineNumber": 74,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "anqi-nus"
         },
-        "content": "        return command;"
+        "content": "            throw new DukeException(\"Event: Command is null\");"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 76,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "        return command;"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 78,
         "author": {
           "gitId": "lowjiayee"
         },
@@ -3500,7 +3759,7 @@
     "authorContributionMap": {
       "anqi-nus": 2,
       "lowjiayee": 45,
-      "harithadiv": 29
+      "harithadiv": 31
     }
   },
   {
@@ -3899,16 +4158,16 @@
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "lowjiayee"
         },
-        "content": "import seedu.parser.PerformanceParser;"
+        "content": ""
       },
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "lowjiayee"
         },
-        "content": "import seedu.performance.PerformanceList;"
+        "content": "public class AddAttendance extends Command {"
       },
       {
         "lineNumber": 9,
@@ -3920,173 +4179,159 @@
       {
         "lineNumber": 10,
         "author": {
-          "gitId": "lowjiayee"
-        },
-        "content": "public class AddAttendance extends Command {"
-      },
-      {
-        "lineNumber": 11,
-        "author": {
-          "gitId": "lowjiayee"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 12,
-        "author": {
           "gitId": "benchan911"
         },
         "content": "    Attendance attendance;"
       },
       {
-        "lineNumber": 13,
+        "lineNumber": 11,
         "author": {
           "gitId": "benchan911"
         },
         "content": "    public String commandParameters;"
       },
       {
-        "lineNumber": 14,
+        "lineNumber": 12,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": ""
       },
       {
-        "lineNumber": 15,
+        "lineNumber": 13,
         "author": {
           "gitId": "benchan911"
         },
         "content": "    public AddAttendance(String commandParameters) {"
       },
       {
-        "lineNumber": 16,
+        "lineNumber": 14,
         "author": {
           "gitId": "benchan911"
         },
         "content": "        this.commandParameters \u003d commandParameters;"
       },
       {
-        "lineNumber": 17,
+        "lineNumber": 15,
         "author": {
           "gitId": "benchan911"
         },
         "content": "        attendance \u003d new AttendanceParser().parseAttendance(commandParameters);"
       },
       {
-        "lineNumber": 18,
+        "lineNumber": 16,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 19,
+        "lineNumber": 17,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": ""
       },
       {
-        "lineNumber": 20,
+        "lineNumber": 18,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 21,
+        "lineNumber": 19,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": "     * Executes this command on the given task list and user interface."
       },
       {
-        "lineNumber": 22,
+        "lineNumber": 20,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 23,
+        "lineNumber": 21,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": ""
       },
       {
-        "lineNumber": 24,
+        "lineNumber": 22,
         "author": {
           "gitId": "benchan911"
         },
         "content": "    public void addToList() {"
       },
       {
-        "lineNumber": 25,
+        "lineNumber": 23,
         "author": {
           "gitId": "benchan911"
         },
         "content": "        String eventName \u003d attendance.getEvent();"
       },
       {
-        "lineNumber": 26,
+        "lineNumber": 24,
         "author": {
           "gitId": "benchan911"
         },
         "content": "        AttendanceList attendanceList \u003d new AttendanceList();"
       },
       {
-        "lineNumber": 27,
+        "lineNumber": 25,
         "author": {
           "gitId": "benchan911"
         },
         "content": "        attendanceList.addToList(attendance, eventName);"
       },
       {
-        "lineNumber": 28,
+        "lineNumber": 26,
         "author": {
           "gitId": "benchan911"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 29,
+        "lineNumber": 27,
         "author": {
           "gitId": "benchan911"
         },
         "content": ""
       },
       {
-        "lineNumber": 30,
+        "lineNumber": 28,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": "    @Override"
       },
       {
-        "lineNumber": 31,
+        "lineNumber": 29,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": "    public void execute() {"
       },
       {
-        "lineNumber": 32,
+        "lineNumber": 30,
         "author": {
           "gitId": "benchan911"
         },
         "content": "        addToList();"
       },
       {
-        "lineNumber": 33,
+        "lineNumber": 31,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 34,
+        "lineNumber": 32,
         "author": {
           "gitId": "lowjiayee"
         },
@@ -4096,7 +4341,7 @@
     "authorContributionMap": {
       "anqi-nus": 1,
       "lowjiayee": 17,
-      "benchan911": 16
+      "benchan911": 14
     }
   },
   {
@@ -4150,108 +4395,101 @@
         "author": {
           "gitId": "benchan911"
         },
-        "content": "import seedu.performance.PerformanceList;"
+        "content": ""
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "benchan911"
         },
-        "content": ""
+        "content": "public class DeleteAttendance extends Command {"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "public class DeleteAttendance extends Command {"
+        "content": "    Attendance attendance;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "    Attendance attendance;"
+        "content": "    public String userInput;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "    public String userInput;"
+        "content": ""
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "benchan911"
         },
-        "content": ""
+        "content": "    public DeleteAttendance(String commandParameters) {"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "    public DeleteAttendance(String commandParameters) {"
+        "content": "        this.userInput \u003d commandParameters;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        this.userInput \u003d commandParameters;"
+        "content": "        attendance \u003d new AttendanceParser().parseAttendance(commandParameters);"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        attendance \u003d new AttendanceParser().parseAttendance(commandParameters);"
+        "content": "    }"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "benchan911"
         },
-        "content": ""
+        "content": "    @Override"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "    @Override"
+        "content": "    public void execute() {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "    public void execute() {"
+        "content": "        AttendanceList.deleteAttendance(attendance);"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        AttendanceList.deleteAttendance(attendance);"
-      },
-      {
-        "lineNumber": 21,
-        "author": {
-          "gitId": "benchan911"
-        },
         "content": "    }"
       },
       {
-        "lineNumber": 22,
+        "lineNumber": 21,
         "author": {
           "gitId": "benchan911"
         },
@@ -4259,7 +4497,7 @@
       }
     ],
     "authorContributionMap": {
-      "benchan911": 22
+      "benchan911": 21
     }
   },
   {
@@ -4306,14 +4544,14 @@
         "author": {
           "gitId": "benchan911"
         },
-        "content": "import seedu.performance.Performance;"
+        "content": ""
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "import seedu.performance.PerformanceList;"
+        "content": "import java.util.List;"
       },
       {
         "lineNumber": 8,
@@ -4327,7 +4565,7 @@
         "author": {
           "gitId": "benchan911"
         },
-        "content": "import java.util.List;"
+        "content": "public class ListAttendance extends Command {"
       },
       {
         "lineNumber": 10,
@@ -4341,199 +4579,185 @@
         "author": {
           "gitId": "benchan911"
         },
-        "content": "public class ListAttendance extends Command {"
+        "content": "    public static List\u003cAttendance\u003e attendanceList;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "benchan911"
         },
-        "content": ""
+        "content": "    private String studentName;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "    public static List\u003cAttendance\u003e attendanceList;"
+        "content": ""
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "    private String studentName;"
+        "content": "    public ListAttendance(String userInput) {"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "benchan911"
         },
-        "content": ""
+        "content": "        String[] instructions \u003d userInput.split(\" \", 2);"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "    public ListAttendance(String userInput) {"
+        "content": "        studentName \u003d instructions[1];"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        String[] instructions \u003d userInput.split(\" \", 2);"
+        "content": "        attendanceList \u003d new AttendanceList().getAttendanceList();"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        studentName \u003d instructions[1];"
+        "content": "    }"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        attendanceList \u003d new AttendanceList().getAttendanceList();"
+        "content": ""
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "    }"
+        "content": "    public void printStudentAttendance() {"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "benchan911"
         },
-        "content": ""
+        "content": "        int size \u003d attendanceList.size();"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "    public void printStudentAttendance() {"
+        "content": "        if (size \u003d\u003d 0) {"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        int size \u003d attendanceList.size();"
+        "content": "            System.out.println(\"empty\");"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        if (size \u003d\u003d 0) {"
+        "content": "        } else {"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "            System.out.println(\"empty\");"
+        "content": "            int i \u003d 1;"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        } else {"
+        "content": "            for (Attendance attendance: attendanceList) {"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "            int i \u003d 1;"
+        "content": "                System.out.println(i + attendance.formatForStudentList());"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "            for (Attendance attendance: attendanceList) {"
+        "content": "                i++;"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "                System.out.println(i + attendance.formatForStudentList());"
+        "content": "            }"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "                i++;"
+        "content": "        }"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "            }"
+        "content": "    }"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "    }"
+        "content": "    @Override"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "benchan911"
         },
-        "content": ""
+        "content": "    public void execute() {"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "    @Override"
+        "content": "        printStudentAttendance();"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "    public void execute() {"
-      },
-      {
-        "lineNumber": 37,
-        "author": {
-          "gitId": "benchan911"
-        },
-        "content": "        printStudentAttendance();"
-      },
-      {
-        "lineNumber": 38,
-        "author": {
-          "gitId": "benchan911"
-        },
         "content": "    }"
       },
       {
-        "lineNumber": 39,
+        "lineNumber": 37,
         "author": {
           "gitId": "benchan911"
         },
@@ -4541,7 +4765,7 @@
       }
     ],
     "authorContributionMap": {
-      "benchan911": 39
+      "benchan911": 37
     }
   },
   {
@@ -4721,138 +4945,159 @@
       {
         "lineNumber": 4,
         "author": {
+          "gitId": "harithadiv"
+        },
+        "content": "import seedu.duke.Duke;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
           "gitId": "lowjiayee"
         },
         "content": "import seedu.event.EventList;"
       },
       {
-        "lineNumber": 5,
+        "lineNumber": 6,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "import seedu.exception.DukeException;"
       },
       {
-        "lineNumber": 6,
-        "author": {
-          "gitId": "lowjiayee"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 7,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "public class DeleteEvent extends Command {"
+        "content": ""
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    private Integer index;"
+        "content": "public class DeleteEvent extends Command {"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    private EventList eventList;"
+        "content": "    private Integer index;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": ""
+        "content": "    private EventList eventList;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    public DeleteEvent(Integer index, EventList eventList) {"
+        "content": ""
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        this.index \u003d index;"
+        "content": "    public DeleteEvent(Integer index, EventList eventList) {"
       },
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "        this.eventList \u003d eventList;"
+        "content": "        this.index \u003d index - 1;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    }"
+        "content": "        this.eventList \u003d eventList;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "harithadiv"
+          "gitId": "lowjiayee"
         },
-        "content": "    public void execute() throws DukeException {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        if (eventList.getSize() \u003d\u003d 0) {"
+        "content": "    public void execute() throws DukeException {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "            throw new DukeException(\"List is empty, unable to delete any items.\");"
+        "content": "        if (eventList.getSize() \u003d\u003d 0) {"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        }"
+        "content": "            throw new DukeException(\"List is empty, unable to delete any items.\");"
       },
       {
         "lineNumber": 21,
+        "author": {
+          "gitId": "harithadiv"
+        },
+        "content": "        } else if (index \u003e eventList.getSize()) {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "harithadiv"
+        },
+        "content": "            throw new DukeException(\"Index not found\");"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "harithadiv"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 24,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": "        eventList.delete(index);"
       },
       {
-        "lineNumber": 22,
+        "lineNumber": 25,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 23,
+        "lineNumber": 26,
         "author": {
           "gitId": "lowjiayee"
         },
@@ -4860,8 +5105,8 @@
       }
     ],
     "authorContributionMap": {
-      "lowjiayee": 18,
-      "harithadiv": 5
+      "lowjiayee": 17,
+      "harithadiv": 9
     }
   },
   {
@@ -4950,7 +5195,7 @@
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        this.index \u003d index;"
+        "content": "        this.index \u003d index - 1;"
       },
       {
         "lineNumber": 13,
@@ -5013,10 +5258,17 @@
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "    }"
+        "content": "        System.out.println(eventList.list.get(index));"
       },
       {
         "lineNumber": 22,
+        "author": {
+          "gitId": "harithadiv"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 23,
         "author": {
           "gitId": "harithadiv"
         },
@@ -5024,7 +5276,7 @@
       }
     ],
     "authorContributionMap": {
-      "harithadiv": 22
+      "harithadiv": 23
     }
   },
   {
@@ -5176,10 +5428,17 @@
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "    }"
+        "content": "        System.out.println(newEvent);"
       },
       {
         "lineNumber": 22,
+        "author": {
+          "gitId": "harithadiv"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 23,
         "author": {
           "gitId": "harithadiv"
         },
@@ -5187,7 +5446,7 @@
       }
     ],
     "authorContributionMap": {
-      "harithadiv": 22
+      "harithadiv": 23
     }
   },
   {
@@ -5283,7 +5542,7 @@
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        this.index \u003d index;"
+        "content": "        this.index \u003d index - 1;"
       },
       {
         "lineNumber": 14,
@@ -5346,10 +5605,17 @@
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "    }"
+        "content": "        System.out.println(eventList.list.get(index));"
       },
       {
         "lineNumber": 23,
+        "author": {
+          "gitId": "harithadiv"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 24,
         "author": {
           "gitId": "harithadiv"
         },
@@ -5357,7 +5623,7 @@
       }
     ],
     "authorContributionMap": {
-      "harithadiv": 21,
+      "harithadiv": 22,
       "lowjiayee": 2
     }
   },
@@ -5454,7 +5720,7 @@
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        this.index \u003d index;"
+        "content": "        this.index \u003d index - 1;"
       },
       {
         "lineNumber": 14,
@@ -5510,10 +5776,17 @@
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "    }"
+        "content": "        System.out.println(eventList.list.get(index));"
       },
       {
         "lineNumber": 22,
+        "author": {
+          "gitId": "harithadiv"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 23,
         "author": {
           "gitId": "harithadiv"
         },
@@ -5521,7 +5794,7 @@
       }
     ],
     "authorContributionMap": {
-      "harithadiv": 22
+      "harithadiv": 23
     }
   },
   {
@@ -5554,136 +5827,143 @@
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "import seedu.event.EventList;"
+        "content": "import seedu.event.Event;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "import seedu.exception.DukeException;"
+        "content": "import seedu.event.EventList;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": ""
+        "content": "import seedu.exception.DukeException;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "public class ListEvent extends Command {"
+        "content": ""
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "    private EventList eventList;"
+        "content": "public class ListEvent extends Command {"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": ""
+        "content": "    private EventList eventList;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "    public ListEvent(EventList eventList) {"
+        "content": ""
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        this.eventList \u003d eventList;"
+        "content": "    public ListEvent(EventList eventList) {"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "    }"
+        "content": "        this.eventList \u003d eventList;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "    public void execute() throws DukeException {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        if (eventList.getSize() \u003d\u003d 0) {"
+        "content": "    public void execute() throws DukeException {"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "            throw new DukeException(\"List is empty\");"
+        "content": "        if (eventList.getSize() \u003d\u003d 0) {"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        }"
+        "content": "            throw new DukeException(\"List is empty\");"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        for (int i \u003d 0; i \u003c eventList.getSize(); i++) {"
+        "content": "        }"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "            eventList.find(i);"
+        "content": "        for (int i \u003d 0; i \u003c eventList.getSize(); i++) {"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        }"
+        "content": "            System.out.println(i + 1 + \". \" +  eventList.find(i));"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 23,
+        "author": {
+          "gitId": "harithadiv"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 24,
         "author": {
           "gitId": "harithadiv"
         },
@@ -5691,7 +5971,7 @@
       }
     ],
     "authorContributionMap": {
-      "harithadiv": 23
+      "harithadiv": 24
     }
   },
   {
@@ -6937,304 +7217,493 @@
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "import seedu.command.Bye;"
+        "content": "import java.io.IOException;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "import seedu.command.CommandInterpreter;"
+        "content": "import java.util.logging.ConsoleHandler;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "import seedu.command.Command;"
+        "content": "import java.util.logging.FileHandler;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "import seedu.event.EventList;"
+        "content": "import java.util.logging.Level;"
       },
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "anqi-nus"
+          "gitId": "lowjiayee"
         },
-        "content": "import seedu.ui.UI;"
+        "content": "import java.util.logging.LogManager;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "import seedu.exception.DukeException;"
+        "content": "import java.util.logging.Logger;"
       },
       {
         "lineNumber": 9,
         "author": {
-          "gitId": "-"
+          "gitId": "lowjiayee"
         },
-        "content": ""
+        "content": "import seedu.command.Bye;"
       },
       {
         "lineNumber": 10,
         "author": {
-          "gitId": "-"
+          "gitId": "lowjiayee"
         },
-        "content": "public class Duke {"
+        "content": "import seedu.command.CommandInterpreter;"
       },
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "anqi-nus"
+          "gitId": "lowjiayee"
         },
-        "content": "    protected UI ui;"
+        "content": "import seedu.command.Command;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    protected CommandInterpreter interpreter;"
+        "content": "import seedu.event.EventList;"
       },
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "anqi-nus"
         },
-        "content": "    protected EventList eventList;"
+        "content": "import seedu.ui.UI;"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": ""
+        "content": "import seedu.exception.DukeException;"
       },
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "-"
         },
-        "content": "    public Duke() {"
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "anqi-nus"
+          "gitId": "-"
         },
-        "content": "        ui \u003d new UI();"
+        "content": "public class Duke {"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        eventList \u003d new EventList();  //TODO: new Storage().load()"
+        "content": "    public static final Logger logger \u003d Logger.getLogger(Duke.class.getName());"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        interpreter \u003d new CommandInterpreter(eventList);"
+        "content": ""
       },
       {
         "lineNumber": 19,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "anqi-nus"
         },
-        "content": "    }"
+        "content": "    protected UI ui;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": ""
+        "content": "    protected CommandInterpreter interpreter;"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    public void run() {"
+        "content": "    protected EventList eventList;"
       },
       {
         "lineNumber": 22,
         "author": {
-          "gitId": "anqi-nus"
+          "gitId": "lowjiayee"
         },
-        "content": "        UI.setUserName();"
+        "content": ""
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        Command command \u003d null;"
+        "content": "    public Duke() {"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": ""
+        "content": "        setupLogger();"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        do {"
+        "content": ""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "anqi-nus"
         },
-        "content": "            UI.readUserInput();"
+        "content": "        ui \u003d new UI();"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            try {"
+        "content": "        eventList \u003d new EventList();  //TODO: new Storage().load()"
       },
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "anqi-nus"
+          "gitId": "lowjiayee"
         },
-        "content": "                command \u003d interpreter.decideCommand(ui.getUserInput());"
+        "content": "        interpreter \u003d new CommandInterpreter(eventList);"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                command.execute();"
+        "content": "    }"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            } catch (DukeException m) {"
+        "content": ""
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                System.out.println(m.getMessage());"
+        "content": "    private void setupLogger() {"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            }"
+        "content": "        LogManager.getLogManager().reset();"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        } while (isNotBye(command));"
+        "content": "        logger.setLevel(Level.ALL); // print ALL log"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    }"
+        "content": "        ConsoleHandler ch \u003d new ConsoleHandler();"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": ""
+        "content": "        ch.setLevel(Level.SEVERE);  // only print SEVERE log to console"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    private boolean isNotBye(Command command) {"
+        "content": "        logger.addHandler(ch);"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        return !(command instanceof Bye);"
+        "content": "        try {"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    }"
+        "content": "            FileHandler fh \u003d new FileHandler(\"Duke.log\", true);"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": ""
+        "content": "            fh.setLevel(Level.FINE);    // print FINE log and more severe log to log file"
       },
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "-"
+          "gitId": "lowjiayee"
         },
-        "content": "    /**"
+        "content": "            logger.addHandler(fh);"
       },
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "-"
+          "gitId": "lowjiayee"
         },
-        "content": "     * Main entry-point for the java.duke.Duke application."
+        "content": "        } catch (IOException m) {"
       },
       {
         "lineNumber": 42,
         "author": {
-          "gitId": "-"
+          "gitId": "lowjiayee"
         },
-        "content": "     */"
+        "content": "            logger.severe(\"File logger not working\");"
       },
       {
         "lineNumber": 43,
         "author": {
-          "gitId": "-"
+          "gitId": "lowjiayee"
         },
-        "content": "    public static void main(String[] args) {"
+        "content": "            System.out.println(m.getMessage());"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        new Duke().run();"
+        "content": "        }"
       },
       {
         "lineNumber": 45,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "    public void run() {"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "anqi-nus"
+        },
+        "content": "        UI.setUserName();"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "        Command command \u003d null;"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "        do {"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "anqi-nus"
+        },
+        "content": "            UI.readUserInput();"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "            try {"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "anqi-nus"
+        },
+        "content": "                command \u003d interpreter.decideCommand(ui.getUserInput());"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "                command.execute();"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "            } catch (DukeException m) {"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "                logger.log(Level.WARNING, \"DukeException at main()\");"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "                System.out.println(m.getMessage());"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "        } while (isNotBye(command));"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "    private boolean isNotBye(Command command) {"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "        return !(command instanceof Bye);"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     * Main entry-point for the java.duke.Duke application."
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public static void main(String[] args) {"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "        new Duke().run();"
+      },
+      {
+        "lineNumber": 72,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 73,
         "author": {
           "gitId": "-"
         },
@@ -7243,7 +7712,7 @@
     ],
     "authorContributionMap": {
       "anqi-nus": 6,
-      "lowjiayee": 30,
+      "lowjiayee": 57,
       "-": 10
     }
   },
@@ -7410,7 +7879,7 @@
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "            return \"Please provide correct format\";"
+        "content": "            return \"yyyy-MM-dd HHmm\";"
       },
       {
         "lineNumber": 24,
@@ -8252,17 +8721,52 @@
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        return \"Event: \" + getName() + \"at: \" + getDatetime() + \", \" + getVenue();"
+        "content": "        if (getDatetime() \u003d\u003d \"yyyy-MM-dd HHmm\" \u0026\u0026 getVenue() \u003d\u003d \"\") {"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "    }"
+        "content": "            return \"Event: \" + getName();"
       },
       {
         "lineNumber": 114,
+        "author": {
+          "gitId": "harithadiv"
+        },
+        "content": "        } else if (getVenue() \u003d\u003d \"\") {"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "harithadiv"
+        },
+        "content": "            return \"Event: \" + getName() + \", time: \" + getDatetime();"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "harithadiv"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "harithadiv"
+        },
+        "content": "        return \"Event: \" + getName() + \", time: \" + getDatetime() + \", venue: \" + getVenue();"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "harithadiv"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 119,
         "author": {
           "gitId": "lowjiayee"
         },
@@ -8271,7 +8775,7 @@
     ],
     "authorContributionMap": {
       "lowjiayee": 89,
-      "harithadiv": 25
+      "harithadiv": 30
     }
   },
   {
@@ -9829,7 +10333,7 @@
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
         "content": "import seedu.duke.Duke;"
       },
@@ -10025,86 +10529,86 @@
       {
         "lineNumber": 31,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "            switch (token.substring(0, 2)) {"
+        "content": "            try {"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            case \"i/\":"
+        "content": "                switch (token.substring(0, 2)) {"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                index \u003d Integer.parseInt(parameters.substring(2));"
+        "content": "                case \"i/\":"
       },
       {
         "lineNumber": 34,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "                break;"
+        "content": "                    index \u003d Integer.parseInt(parameters.substring(2, 3));"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            default:"
+        "content": "                    break;"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                // does nothing, as intended"
+        "content": "                default:"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                break;"
+        "content": "                    // does nothing, as intended"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            }"
+        "content": "                    break;"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        }"
+        "content": "                }"
       },
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": ""
+        "content": "            } catch (Exception m) {"
       },
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "        if (index \u003d\u003d -1) {"
+        "content": "                throw new DukeException(m.getMessage());"
       },
       {
         "lineNumber": 42,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "            throw new DukeException(\"index not found\");"
+        "content": "            }"
       },
       {
         "lineNumber": 43,
@@ -10118,378 +10622,378 @@
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        return index;"
+        "content": ""
       },
       {
         "lineNumber": 45,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "    }"
+        "content": "        if (index \u003c 0) {"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": ""
+        "content": "            throw new DukeException(\"index not found\");"
       },
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "harithadiv"
+          "gitId": "lowjiayee"
         },
-        "content": "    /**"
+        "content": "        }"
       },
       {
         "lineNumber": 48,
         "author": {
-          "gitId": "harithadiv"
+          "gitId": "lowjiayee"
         },
-        "content": "     * Parses string passed in to obtain name of the event."
+        "content": "        return index;"
       },
       {
         "lineNumber": 49,
         "author": {
-          "gitId": "harithadiv"
+          "gitId": "lowjiayee"
         },
-        "content": "     *"
+        "content": "    }"
       },
       {
         "lineNumber": 50,
         "author": {
-          "gitId": "harithadiv"
+          "gitId": "lowjiayee"
         },
-        "content": "     * @param parameters Input String by user in the format: i/[INDEX] n/[EVENTNAME]"
+        "content": ""
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "     * @return Name of event as a string."
+        "content": "    /**"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "     */"
+        "content": "     * Parses string passed in to obtain name of the event."
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "    public String parseEventName(String parameters) {"
+        "content": "     *"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        String[] tokens \u003d parameters.split(\" \");"
+        "content": "     * @param parameters Input String by user in the format: i/[INDEX] n/[EVENTNAME]"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        String name \u003d tokens[1].substring(2);"
+        "content": "     * @return Name of event as a string."
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        return name;"
+        "content": "     */"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "    }"
+        "content": "    public String parseEventName(String parameters) {"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": ""
+        "content": "        String[] tokens \u003d parameters.split(\" \");"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "    /**"
+        "content": "        String name \u003d tokens[1].substring(2);"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "     * Parses input string to obtain date and time of the event."
+        "content": "        return name;"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "     *"
+        "content": "    }"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "     * @param parameters Input String by user in the format: i/[INDEX] d/[EVENTDATE] t/[EVENTTIME]"
+        "content": ""
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "     * @return Date and time of the event as a string."
+        "content": "    /**"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "     */"
+        "content": "     * Parses input string to obtain date and time of the event."
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "    public String parseEventDateTime(String parameters) {"
+        "content": "     *"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        String[] tokens \u003d parameters.split(\" \");"
+        "content": "     * @param parameters Input String by user in the format: i/[INDEX] d/[EVENTDATE] t/[EVENTTIME]"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        String date \u003d tokens[1].substring(2);"
+        "content": "     * @return Date and time of the event as a string."
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        String time \u003d tokens[2].substring(2);"
+        "content": "     */"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        String datetime \u003d date + \" \" + time;"
+        "content": "    public String parseEventDateTime(String parameters) {"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        return datetime;"
+        "content": "        String[] tokens \u003d parameters.split(\" \");"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "    }"
+        "content": "        String date \u003d tokens[1].substring(2);"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": ""
+        "content": "        String time \u003d tokens[2].substring(2);"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "    /**"
+        "content": "        String datetime \u003d date + \" \" + time;"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "     * Parses input string to obtain venue of the event."
+        "content": "        return datetime;"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "     *"
+        "content": "    }"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "     * @param parameters Input String by user in the format: i/[INDEX] v/[EVENTVENUE]"
+        "content": ""
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "     * @return Venue of the event as a String"
+        "content": "    /**"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "     */"
+        "content": "     * Parses input string to obtain venue of the event."
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "    public String parseVenue(String parameters) {"
+        "content": "     *"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        String[] tokens \u003d parameters.split(\" \");"
+        "content": "     * @param parameters Input String by user in the format: i/[INDEX] v/[EVENTVENUE]"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        String venue \u003d tokens[1].substring(2);"
+        "content": "     * @return Venue of the event as a String"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        return venue;"
+        "content": "     */"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "    }"
+        "content": "    public String parseVenue(String parameters) {"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": ""
+        "content": "        String[] tokens \u003d parameters.split(\" \");"
       },
       {
         "lineNumber": 85,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "    // TODO: [r/FREQ[/TIME or /DAY]]"
+        "content": "        String venue \u003d tokens[1].substring(2);"
       },
       {
         "lineNumber": 86,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "    /**"
+        "content": "        return venue;"
       },
       {
         "lineNumber": 87,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "     * Parse parameters based on the following format:"
+        "content": "    }"
       },
       {
         "lineNumber": 88,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "     * n/EVENTNAME [t/EVENTTIME] [d/EVENTDATE] [v/EVENTVENUE]."
+        "content": ""
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "     * @param parameters original parameters"
+        "content": "    // TODO: [r/FREQ[/TIME or /DAY]]"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "     * @return an Event object with the relevant information"
+        "content": "    /**"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "     */"
+        "content": "     * Parse parameters based on the following format:"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    public Event parseEvent(String parameters) throws DukeException {"
+        "content": "     * n/EVENTNAME [t/EVENTTIME] [d/EVENTDATE] [v/EVENTVENUE]."
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        String[] tokens \u003d parameters.split(\" \");"
+        "content": "     * @param parameters original parameters"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": ""
+        "content": "     * @return an Event object with the relevant information"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        splitByEventFlags(tokens);"
+        "content": "     */"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": ""
+        "content": "    public Event parseEvent(String parameters) throws DukeException {"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        String datetime \u003d date + \" \" + time;"
+        "content": "        String[] tokens \u003d parameters.split(\" \");"
       },
       {
         "lineNumber": 98,
@@ -10503,336 +11007,336 @@
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        return new Event(name, datetime, venue);"
+        "content": "        splitByEventFlags(tokens);"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": ""
+        "content": "        String datetime \u003d date + \" \" + time;"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    private void splitByEventFlags(String[] tokens) throws DukeException {"
+        "content": ""
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        String mostRecent \u003d null;"
+        "content": "        return new Event(name, datetime, venue);"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        for (String token : tokens) {"
+        "content": "    }"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            if (token.length() \u003c 2) {"
+        "content": ""
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                if (mostRecent \u003d\u003d null) {"
+        "content": "    private void splitByEventFlags(String[] tokens) throws DukeException {"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                    throw new DukeException(\"invalid flag, too short\");"
+        "content": "        String mostRecent \u003d null;"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                } else {"
+        "content": "        for (String token : tokens) {"
       },
       {
         "lineNumber": 109,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "                    append(mostRecent, token);"
+        "content": "            if (token.length() \u003c 2) {"
       },
       {
         "lineNumber": 110,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "                }"
+        "content": "                if (mostRecent \u003d\u003d null) {"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            }"
+        "content": "                    throw new DukeException(\"invalid flag, too short\");"
       },
       {
         "lineNumber": 112,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": ""
+        "content": "                } else {"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            switch (token.substring(0, 2)) {"
+        "content": "                    append(mostRecent, token);"
       },
       {
         "lineNumber": 114,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "            case \"n/\":"
+        "content": "                }"
       },
       {
         "lineNumber": 115,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "                ensureNotDuplicateFlag(name, \"duplicate name flag\");"
+        "content": "            } else {"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                name +\u003d token.substring(2);"
+        "content": "                switch (token.substring(0, 2)) {"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                mostRecent \u003d \"name\";"
+        "content": "                case \"n/\":"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                break;"
+        "content": "                    ensureNotDuplicateFlag(name, \"duplicate name flag\");"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            case \"t/\":"
+        "content": "                    name +\u003d token.substring(2);"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                ensureNotDuplicateFlag(time, \"duplicate time flag\");"
+        "content": "                    mostRecent \u003d \"name\";"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                time +\u003d token.substring(2);"
+        "content": "                    break;"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                mostRecent \u003d \"time\";"
+        "content": "                case \"t/\":"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                break;"
+        "content": "                    ensureNotDuplicateFlag(time, \"duplicate time flag\");"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            case \"d/\":"
+        "content": "                    time +\u003d token.substring(2);"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                ensureNotDuplicateFlag(date, \"duplicate date flag\");"
+        "content": "                    mostRecent \u003d \"time\";"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                date +\u003d token.substring(2);"
+        "content": "                    break;"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                mostRecent \u003d \"date\";"
+        "content": "                case \"d/\":"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                break;"
+        "content": "                    ensureNotDuplicateFlag(date, \"duplicate date flag\");"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            case \"v/\":"
+        "content": "                    date +\u003d token.substring(2);"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                ensureNotDuplicateFlag(venue, \"duplicate venue flag\");"
+        "content": "                    mostRecent \u003d \"date\";"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                venue +\u003d token.substring(2);"
+        "content": "                    break;"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                mostRecent \u003d \"venue\";"
+        "content": "                case \"v/\":"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                break;"
+        "content": "                    ensureNotDuplicateFlag(venue, \"duplicate venue flag\");"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            default:"
+        "content": "                    venue +\u003d token.substring(2);"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                // assumes that all valid flags have been processed before this line"
+        "content": "                    mostRecent \u003d \"venue\";"
       },
       {
         "lineNumber": 136,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "                if (isUnknownFlag(token)) {"
+        "content": "                    break;"
       },
       {
         "lineNumber": 137,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "                    throw new DukeException(\"unknown flag\");"
+        "content": "                case \"i/\":"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                }"
+        "content": "                    break;"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                if (mostRecent \u003d\u003d null) {"
+        "content": "                default:"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                    throw new DukeException(\"parameter without flag\");"
+        "content": "                    // assumes that all valid flags have been processed before this line"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                }"
+        "content": "                    if (isUnknownFlag(token)) {"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": ""
+        "content": "                        throw new DukeException(\"unknown flag\");"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "                append(mostRecent, token);"
+        "content": "                    }"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            }"
+        "content": "                    if (mostRecent \u003d\u003d null) {"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        }"
+        "content": "                        throw new DukeException(\"parameter without flag\");"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    }"
+        "content": "                    }"
       },
       {
         "lineNumber": 147,
@@ -10846,241 +11350,304 @@
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    /**"
+        "content": "                    append(mostRecent, token);"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "     * Append a string to the most recently added parameter."
+        "content": "                }"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "     * @param mostRecent the most recently added parameter"
+        "content": "            }"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "     * @param token the string to be appended"
+        "content": "        }"
       },
       {
         "lineNumber": 152,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "     */"
+        "content": "    }"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    private void append(String mostRecent, String token) throws DukeException {"
+        "content": ""
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        switch (mostRecent) {"
+        "content": "    /**"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        case \"name\":"
+        "content": "     * Append a string to the most recently added parameter."
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            name +\u003d (\" \" + token);"
+        "content": "     * @param mostRecent the most recently added parameter"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            break;"
+        "content": "     * @param token the string to be appended"
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        case \"venue\":"
+        "content": "     */"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "            venue +\u003d (\" \" + token);"
+        "content": "    private void append(String mostRecent, String token) throws DukeException {"
       },
       {
         "lineNumber": 160,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "            break;"
+        "content": "        if (token.isEmpty() || token.equals(\" \")) {"
       },
       {
         "lineNumber": 161,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "        default:"
+        "content": "            return;"
       },
       {
         "lineNumber": 162,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "            throw new DukeException(\"invalid flag\");"
+        "content": "        }"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        }"
+        "content": "        switch (mostRecent) {"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    }"
+        "content": "        case \"name\":"
       },
       {
         "lineNumber": 165,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": ""
+        "content": "            name +\u003d name.isEmpty() ? token : (\" \" + token);"
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    private void ensureNotDuplicateFlag(String name, String message) throws DukeException {"
+        "content": "            break;"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        if (!name.isEmpty()) {"
+        "content": "        case \"venue\":"
       },
       {
         "lineNumber": 168,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "            throw new DukeException(message);"
+        "content": "            venue +\u003d venue.isEmpty() ? token : (\" \" + token);"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        }"
+        "content": "            break;"
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    }"
+        "content": "        default:"
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": ""
+        "content": "            throw new DukeException(\"invalid flag\");"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    /**"
+        "content": "        }"
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "     * Returns {@code true} if the input contains a flag."
+        "content": "    }"
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "     * It is assumed that all valid flags have been handled"
+        "content": ""
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "     * before the execution of this function."
+        "content": "    private void ensureNotDuplicateFlag(String name, String message) throws DukeException {"
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "     * @param input the token to be checked"
+        "content": "        if (!name.isEmpty()) {"
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "     * @return {@code true} if the input contains a flag"
+        "content": "            throw new DukeException(message);"
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "     */"
+        "content": "        }"
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    private boolean isUnknownFlag(String input) {"
+        "content": "    }"
       },
       {
         "lineNumber": 180,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "        return input.charAt(1) \u003d\u003d \u0027/\u0027;"
+        "content": ""
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    }"
+        "content": "    /**"
       },
       {
         "lineNumber": 182,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "     * Returns {@code true} if the input contains a flag."
+      },
+      {
+        "lineNumber": 183,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "     * It is assumed that all valid flags have been handled"
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "     * before the execution of this function."
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "     * @param input the token to be checked"
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "     * @return {@code true} if the input contains a flag"
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "    private boolean isUnknownFlag(String input) {"
+      },
+      {
+        "lineNumber": 189,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "        return input.charAt(1) \u003d\u003d \u0027/\u0027;"
+      },
+      {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 191,
         "author": {
           "gitId": "lowjiayee"
         },
@@ -11088,8 +11655,8 @@
       }
     ],
     "authorContributionMap": {
-      "lowjiayee": 144,
-      "harithadiv": 38
+      "lowjiayee": 133,
+      "harithadiv": 58
     }
   },
   {
@@ -15696,7 +16263,7 @@
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        assertEquals(\"Please provide correct format\", event1.getDatetime());"
+        "content": "        assertEquals(\"yyyy-MM-dd HHmm\", event1.getDatetime());"
       },
       {
         "lineNumber": 47,

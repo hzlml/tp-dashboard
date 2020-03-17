@@ -780,54 +780,54 @@
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "import java.io.IOException;"
+        "content": "import seedu.duke.commands.Command;"
       },
       {
         "lineNumber": 4,
         "author": {
-          "gitId": "-"
+          "gitId": "dejunnn"
         },
-        "content": "import java.util.Scanner;"
+        "content": "import seedu.duke.exceptions.InvalidCommandException;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "import java.util.logging.ConsoleHandler;"
+        "content": "import seedu.duke.exceptions.InvalidFormatException;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "import java.util.logging.Level;"
+        "content": "import seedu.duke.parser.Parser;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "import java.util.logging.LogManager;"
+        "content": "import seedu.duke.ui.UI;"
       },
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "-"
         },
-        "content": "import java.util.logging.Logger;"
+        "content": ""
       },
       {
         "lineNumber": 9,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "-"
         },
-        "content": "import java.util.logging.FileHandler;"
+        "content": "public class Duke {"
       },
       {
         "lineNumber": 10,
         "author": {
-          "gitId": "-"
+          "gitId": "dejunnn"
         },
         "content": ""
       },
@@ -836,35 +836,35 @@
         "author": {
           "gitId": "-"
         },
-        "content": "public class Duke {"
-      },
-      {
-        "lineNumber": 12,
-        "author": {
-          "gitId": "DDzuikeai"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 13,
-        "author": {
-          "gitId": "-"
-        },
         "content": "    /**"
       },
       {
-        "lineNumber": 14,
+        "lineNumber": 12,
         "author": {
           "gitId": "dejunnn"
         },
         "content": "     * Begins the application and creates the relevant objects required for the application to function."
       },
       {
-        "lineNumber": 15,
+        "lineNumber": 13,
         "author": {
           "gitId": "-"
         },
         "content": "     */"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    public static void main(String[] args) {"
       },
       {
         "lineNumber": 16,
@@ -876,79 +876,79 @@
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "-"
+          "gitId": "dejunnn"
         },
-        "content": "    public static void main(String[] args) {"
+        "content": "        InfoLogger infoLogger \u003d new InfoLogger();"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "        FoodNutritionInfo foodNutritionInfo \u003d new FoodNutritionInfo();"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        Logger logger \u003d Logger.getLogger(Duke.class.getName());"
+        "content": "        Profile profile \u003d new Profile();"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "        UI ui \u003d new UI();"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        LogManager.getLogManager().reset();"
+        "content": ""
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        logger.setLevel(Level.ALL);"
+        "content": "        //Conduct checks using assert"
       },
       {
         "lineNumber": 23,
         "author": {
-          "gitId": "DDzuikeai"
+          "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "        assert !ui.isExitStatus();"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        //Console Handler - What appears in the console"
+        "content": "        assert !profile.isProfileExist();"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        ConsoleHandler consoleHandler \u003d new ConsoleHandler();"
+        "content": ""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        consoleHandler.setLevel(Level.INFO);"
+        "content": "        infoLogger.logExecuteProgramme();"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        logger.addHandler(consoleHandler);"
+        "content": "        ui.displayWelcomeMessage();"
       },
       {
         "lineNumber": 28,
@@ -962,633 +962,94 @@
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        //File Handler - What appears in log file"
+        "content": "        while (!ui.isExitStatus()) {"
       },
       {
         "lineNumber": 30,
         "author": {
-          "gitId": "DDzuikeai"
+          "gitId": "dejunnn"
         },
-        "content": "        try {"
+        "content": "            try {"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "            FileHandler fileHandler \u003d new FileHandler(\"DukeLogger.log\");"
+        "content": "                String userInput \u003d ui.readInput();"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "            fileHandler.setLevel(Level.FINE);"
+        "content": "                Command command \u003d Parser.parseInput(userInput);"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "            logger.addHandler(fileHandler);"
+        "content": "                command.execute(profile, ui);"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        } catch (IOException e) {"
+        "content": "            } catch (InvalidFormatException | NumberFormatException e) {"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "            logger.log(Level.SEVERE, \"File logger error.\", e);"
+        "content": "                ui.displayInvalidFormatMessage();"
       },
       {
         "lineNumber": 36,
         "author": {
-          "gitId": "DDzuikeai"
+          "gitId": "dejunnn"
         },
-        "content": "        }"
+        "content": "            } catch (InvalidCommandException e) {"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "                ui.displayInvalidCommandMessage();"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        logger.log(Level.INFO, \"Starting Diet Manager\");"
+        "content": "            }"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        FoodNutritionInfo foodNutritionInfo \u003d new FoodNutritionInfo();"
+        "content": "        infoLogger.logExitProgramme();"
       },
       {
         "lineNumber": 41,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "        Profile profile \u003d new Profile();"
-      },
-      {
-        "lineNumber": 42,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "        UI ui \u003d new UI();"
-      },
-      {
-        "lineNumber": 43,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 44,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "        //Conduct checks using assert"
-      },
-      {
-        "lineNumber": 45,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "        assert !ui.isExitStatus();"
-      },
-      {
-        "lineNumber": 46,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "        assert !profile.isProfileExist();"
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "DDzuikeai"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "DDzuikeai"
-        },
-        "content": "        String logo \u003d \"  _____   _        _     __  __\\n\""
-      },
-      {
-        "lineNumber": 49,
-        "author": {
-          "gitId": "DDzuikeai"
-        },
-        "content": "                + \" |  __ \\\\ (_)      | |   |  \\\\/  |\\n\""
-      },
-      {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "DDzuikeai"
-        },
-        "content": "                + \" | |  | | _   ___ | |_  | \\\\  / |  __ _  _ __    __ _   __ _   ___  _ __\\n\""
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "DDzuikeai"
-        },
-        "content": "                + \" | |  | || | / _ \\\\| __| | |\\\\/| | / _` || \u0027_ \\\\  / _` | / _` | / _ \\\\| \u0027__|\\n\""
-      },
-      {
-        "lineNumber": 52,
-        "author": {
-          "gitId": "DDzuikeai"
-        },
-        "content": "                + \" | |__| || ||  __/| |_  | |  | || (_| || | | || (_| || (_| ||  __/| |\\n\""
-      },
-      {
-        "lineNumber": 53,
-        "author": {
-          "gitId": "DDzuikeai"
-        },
-        "content": "                + \" |_____/ |_| \\\\___| \\\\__| |_|  |_| \\\\__,_||_| |_| \\\\__,_| \\\\__, | \\\\___||_|\\n\""
-      },
-      {
-        "lineNumber": 54,
-        "author": {
-          "gitId": "DDzuikeai"
-        },
-        "content": "                + \"                                                       __/ |\\n\""
-      },
-      {
-        "lineNumber": 55,
-        "author": {
-          "gitId": "DDzuikeai"
-        },
-        "content": "                + \"                                                      |___/\";"
-      },
-      {
-        "lineNumber": 56,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 57,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "        System.out.println(logo);"
-      },
-      {
-        "lineNumber": 58,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "        System.out.println(\"Welcome to Diet Manager! How may I assist you today?\");"
-      },
-      {
-        "lineNumber": 59,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 60,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "        while (!ui.isExitStatus()) {"
-      },
-      {
-        "lineNumber": 61,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "            String[] inputArray \u003d ui.readInput().trim().split(\" \", 2);"
-      },
-      {
-        "lineNumber": 62,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "            switch (inputArray[0]) {"
-      },
-      {
-        "lineNumber": 63,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "            case \"profile\":"
-      },
-      {
-        "lineNumber": 64,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                if (profile.isProfileExist()) {"
-      },
-      {
-        "lineNumber": 65,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                    System.out.println(String.format(\"Hello %s, here is your profile information:\", profile.getName()));"
-      },
-      {
-        "lineNumber": 66,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                    System.out.println(String.format(\"Age:          %d years old\", profile.getAge()));"
-      },
-      {
-        "lineNumber": 67,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                    System.out.println(String.format(\"Gender:       %s\", profile.getGender()));"
-      },
-      {
-        "lineNumber": 68,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                    System.out.println(String.format(\"Height:       %f metres\", profile.getHeight()));"
-      },
-      {
-        "lineNumber": 69,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                    System.out.println(String.format(\"Weight        %f kilograms\", profile.getWeight()));"
-      },
-      {
-        "lineNumber": 70,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                    System.out.println(String.format(\"Weight Goal:  %f kilograms\", profile.getWeightGoal()));"
-      },
-      {
-        "lineNumber": 71,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                } else {"
-      },
-      {
-        "lineNumber": 72,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                    System.out.println(\"No existing profile found. To create a new profile, enter:\\n\""
-      },
-      {
-        "lineNumber": 73,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                            + \"setProfile {name} {age} {gender} {height} {weight} {weight goal}\");"
-      },
-      {
-        "lineNumber": 74,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                }"
-      },
-      {
-        "lineNumber": 75,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                break;"
-      },
-      {
-        "lineNumber": 76,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "            case \"setProfile\":"
-      },
-      {
-        "lineNumber": 77,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                String[] profileArray \u003d inputArray[1].split(\" \", 6);"
-      },
-      {
-        "lineNumber": 78,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                profile.setProfile(profileArray[0], Integer.parseInt(profileArray[1]),"
-      },
-      {
-        "lineNumber": 79,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                        profileArray[2], Double.parseDouble(profileArray[3]),"
-      },
-      {
-        "lineNumber": 80,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                        Double.parseDouble(profileArray[4]), Double.parseDouble(profileArray[5]));"
-      },
-      {
-        "lineNumber": 81,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                break;"
-      },
-      {
-        "lineNumber": 82,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "            case\"setName\":"
-      },
-      {
-        "lineNumber": 83,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                profile.setName(inputArray[1]);"
-      },
-      {
-        "lineNumber": 84,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                System.out.println(String.format(\"Your username has been changed to %s\", profile.getName()));"
-      },
-      {
-        "lineNumber": 85,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                break;"
-      },
-      {
-        "lineNumber": 86,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "            case\"setAge\":"
-      },
-      {
-        "lineNumber": 87,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                profile.setAge(Integer.parseInt(inputArray[1]));"
-      },
-      {
-        "lineNumber": 88,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                System.out.println(String.format(\"Your username has been changed to %s\", profile.getName()));"
-      },
-      {
-        "lineNumber": 89,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                break;"
-      },
-      {
-        "lineNumber": 90,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "            case\"setGender\":"
-      },
-      {
-        "lineNumber": 91,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                profile.setGender(inputArray[1]);"
-      },
-      {
-        "lineNumber": 92,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                System.out.println(String.format(\"Your username has been changed to %s\", profile.getName()));"
-      },
-      {
-        "lineNumber": 93,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                break;"
-      },
-      {
-        "lineNumber": 94,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "            case\"setHeight\":"
-      },
-      {
-        "lineNumber": 95,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                profile.setHeight(Double.parseDouble(inputArray[1]));"
-      },
-      {
-        "lineNumber": 96,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                System.out.println(String.format(\"Your username has been changed to %s\", profile.getName()));"
-      },
-      {
-        "lineNumber": 97,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                break;"
-      },
-      {
-        "lineNumber": 98,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "            case\"setWeight\":"
-      },
-      {
-        "lineNumber": 99,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                profile.setWeight(Double.parseDouble(inputArray[1]));"
-      },
-      {
-        "lineNumber": 100,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                System.out.println(String.format(\"Your username has been changed to %s\", profile.getName()));"
-      },
-      {
-        "lineNumber": 101,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                break;"
-      },
-      {
-        "lineNumber": 102,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "            case\"setWeightGoal\":"
-      },
-      {
-        "lineNumber": 103,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                profile.setWeightGoal(Double.parseDouble(inputArray[1]));"
-      },
-      {
-        "lineNumber": 104,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                System.out.println(String.format(\"Your username has been changed to %s\", profile.getName()));"
-      },
-      {
-        "lineNumber": 105,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                break;"
-      },
-      {
-        "lineNumber": 106,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "            case \"exit\":"
-      },
-      {
-        "lineNumber": 107,
-        "author": {
-          "gitId": "DDzuikeai"
-        },
-        "content": "                System.out.println(\"Thank you and see you again soon!\");"
-      },
-      {
-        "lineNumber": 108,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                ui.setExitStatus(true);"
-      },
-      {
-        "lineNumber": 109,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                break;"
-      },
-      {
-        "lineNumber": 110,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "            default:"
-      },
-      {
-        "lineNumber": 111,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                System.out.println(\"Sorry, I don\u0027t understand that command :(\");"
-      },
-      {
-        "lineNumber": 112,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "                break;"
-      },
-      {
-        "lineNumber": 113,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 114,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 115,
-        "author": {
-          "gitId": "DDzuikeai"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 116,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": "        logger.log(Level.INFO, \"Exiting Diet Manager\");"
-      },
-      {
-        "lineNumber": 117,
-        "author": {
-          "gitId": "dejunnn"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 118,
         "author": {
           "gitId": "-"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 119,
+        "lineNumber": 42,
         "author": {
           "gitId": "-"
         },
@@ -1596,9 +1057,8 @@
       }
     ],
     "authorContributionMap": {
-      "dejunnn": 94,
-      "DDzuikeai": 15,
-      "-": 10
+      "dejunnn": 33,
+      "-": 9
     }
   },
   {
@@ -2129,6 +1589,449 @@
     ],
     "authorContributionMap": {
       "lamyuewei": 13
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/InfoLogger.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "package seedu.duke;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import java.io.IOException;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import java.util.logging.ConsoleHandler;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import java.util.logging.Level;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import java.util.logging.LogManager;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import java.util.logging.Logger;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import java.util.logging.FileHandler;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "public class InfoLogger {"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private static final String LOGGER_FILE_NAME \u003d \"DietManagerLogger.log\";"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private final Logger logger;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * Constructs the InfoLogger to record information when running the application."
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public InfoLogger() {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.logger \u003d Logger.getLogger(InfoLogger.class.getName());"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        LogManager.getLogManager().reset();"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        logger.setLevel(Level.ALL);"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.initialiseConsoleHandler();"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.initialiseFileHandler();"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * Initialises the File Handler, and sets Log Level priority at FINE."
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public void initialiseFileHandler() {"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            FileHandler fileHandler \u003d new FileHandler(LOGGER_FILE_NAME);"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            fileHandler.setLevel(Level.FINE);"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            this.logger.addHandler(fileHandler);"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        } catch (IOException e) {"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            this.logger.log(Level.SEVERE, \"File logger error.\", e);"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * Initialises the Console Handler, and sets Log Level priority at INFO."
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public void initialiseConsoleHandler() {"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        //Console Handler - What appears in the console"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        ConsoleHandler consoleHandler \u003d new ConsoleHandler();"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        consoleHandler.setLevel(Level.INFO);"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        logger.addHandler(consoleHandler);"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public void logExecuteProgramme() {"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.logger.log(Level.INFO, \"Starting Diet Manager\");"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public void logExitProgramme() {"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.logger.log(Level.INFO, \"Exiting Diet Manager\");"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "dejunnn": 62
     }
   },
   {
@@ -2813,7 +2716,7 @@
     }
   },
   {
-    "path": "src/main/java/seedu/duke/UI.java",
+    "path": "src/main/java/seedu/duke/commands/Command.java",
     "fileType": "java",
     "lines": [
       {
@@ -2821,7 +2724,3451 @@
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "package seedu.duke;"
+        "content": "package seedu.duke.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.Profile;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.ui.UI;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": " * Command is a public abstract class providing a skeletal implementation for"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": " * different commands and is responsible for storing the base information"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": " * required in a command, allowing other more specific events to draw onto its"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": " * components."
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "public abstract class Command {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * The command prompt entered by the user."
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    protected String command;"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * Constructs the Command object."
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @param command the command prompt entered by the user."
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public Command(String command) {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.command \u003d command;"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * Returns the command prompt entered by the user."
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @return the command prompt entered by the user."
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public String getCommand() {"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        return this.command;"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * Abstract method to execute the Command."
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @param profile the object containing user profile information."
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @param ui      the object containing user interface functions."
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public abstract void execute(Profile profile, UI ui);"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "dejunnn": 50
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/commands/ExitCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "package seedu.duke.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.Profile;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.exceptions.InvalidFormatException;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.parser.Parser;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.ui.UI;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "public class ExitCommand extends Command {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private static final int ARGUMENTS_REQUIRED \u003d 1;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private double weightGoal;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * Constructs the Command object."
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @param command the command prompt entered by the user."
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public ExitCommand(String command) {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        super(command);"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public void execute(Profile profile, UI ui) {"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        System.out.println(\"Thank you and see you again soon!\");"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        ui.setExitStatus(true);"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "dejunnn": 28
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/commands/ProfileCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "package seedu.duke.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.Profile;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.ui.UI;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "public class ProfileCommand extends Command {"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * Constructs the Command object."
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @param command the command prompt entered by the user."
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public ProfileCommand(String command) {"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        super(command);"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public void execute(Profile profile, UI ui) {"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        if (profile.isProfileExist()) {"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            System.out.println(String.format(\"Hello %s, here is your profile information:\", profile.getName()));"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            System.out.println(String.format(\"Age:          %d years old\", profile.getAge()));"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            System.out.println(String.format(\"Gender:       %s\", profile.getGender()));"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            System.out.println(String.format(\"Height:       %.2f centimetres\", profile.getHeight()));"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            System.out.println(String.format(\"Weight        %.2f kilograms\", profile.getWeight()));"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            System.out.println(String.format(\"Weight Goal:  %.2f kilograms\", profile.getWeightGoal()));"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            System.out.println(\"No existing profile found. To create a new profile, enter:\\n\""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "                    + \"set-profile {name} {age} {gender} {height} {weight} {weight goal}\");"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "dejunnn": 33
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/commands/SetAgeCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "package seedu.duke.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.Profile;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.exceptions.InvalidFormatException;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.parser.Parser;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.ui.UI;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "public class SetAgeCommand extends Command {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private static final int ARGUMENTS_REQUIRED \u003d 1;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private int age;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * Constructs the Command object."
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @param command the command prompt entered by the user."
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public SetAgeCommand(String command, String description) throws InvalidFormatException, NumberFormatException {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        super(command);"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        String[] descriptionArray \u003d Parser.parseDescription(description, ARGUMENTS_REQUIRED);"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.age \u003d Integer.parseInt(descriptionArray[0]);"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public void execute(Profile profile, UI ui) {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setAge(this.age);"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        System.out.println(String.format(\"Your username has been changed to %d\", profile.getAge()));"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "dejunnn": 30
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/commands/SetGenderCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "package seedu.duke.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.Profile;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.exceptions.InvalidFormatException;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.parser.Parser;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.ui.UI;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "public class SetGenderCommand extends Command {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private static final int ARGUMENTS_REQUIRED \u003d 1;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private String gender;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * Constructs the Command object."
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @param command the command prompt entered by the user."
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public SetGenderCommand(String command, String description) throws InvalidFormatException {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        super(command);"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        String[] descriptionArray \u003d Parser.parseDescription(description, ARGUMENTS_REQUIRED);"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.gender \u003d descriptionArray[0];"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public void execute(Profile profile, UI ui) {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setGender(this.gender);"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        System.out.println(String.format(\"Your gender has been changed to %s\", profile.getGender()));"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "dejunnn": 30
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/commands/SetHeightCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "package seedu.duke.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.Profile;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.exceptions.InvalidFormatException;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.parser.Parser;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.ui.UI;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "public class SetHeightCommand extends Command {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private static final int ARGUMENTS_REQUIRED \u003d 1;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private double height;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * Constructs the Command object."
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @param command the command prompt entered by the user."
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public SetHeightCommand(String command, String description) throws InvalidFormatException, NumberFormatException {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        super(command);"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        String[] descriptionArray \u003d Parser.parseDescription(description, ARGUMENTS_REQUIRED);"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.height \u003d Double.parseDouble(descriptionArray[0]);"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public void execute(Profile profile, UI ui) {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setHeight(this.height);"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        System.out.println(String.format(\"Your height has been changed to %.2f\", profile.getHeight()));"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "dejunnn": 30
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/commands/SetNameCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "package seedu.duke.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.Profile;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.exceptions.InvalidFormatException;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.parser.Parser;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.ui.UI;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "public class SetNameCommand extends Command {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private static final int ARGUMENTS_REQUIRED \u003d 1;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private String name;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * Constructs the Command object."
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @param command the command prompt entered by the user."
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public SetNameCommand(String command, String description) throws InvalidFormatException {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        super(command);"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        String[] descriptionArray \u003d Parser.parseDescription(description, ARGUMENTS_REQUIRED);"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.name \u003d descriptionArray[0];"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public void execute(Profile profile, UI ui) {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setName(this.name);"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        System.out.println(String.format(\"Your username has been changed to %s\", profile.getName()));"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "dejunnn": 30
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/commands/SetProfileCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "package seedu.duke.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.Profile;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.exceptions.InvalidFormatException;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.parser.Parser;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.ui.UI;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "public class SetProfileCommand extends Command {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private static final int ARGUMENTS_REQUIRED \u003d 6;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private String name;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private int age;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private String gender;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private double height;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private double weight;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private double weightGoal;"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * Constructs the Command object."
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @param command the command prompt entered by the user."
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public SetProfileCommand(String command, String description) throws InvalidFormatException, NumberFormatException {"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        super(command);"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        String[] descriptionArray \u003d Parser.parseDescription(description, ARGUMENTS_REQUIRED);"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.name \u003d descriptionArray[0];"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.age \u003d Integer.parseInt(descriptionArray[1]);"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.gender \u003d descriptionArray[2];"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.height \u003d Double.parseDouble(descriptionArray[3]);"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.weight \u003d Double.parseDouble(descriptionArray[4]);"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.weightGoal \u003d Double.parseDouble(descriptionArray[5]);"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public void execute(Profile profile, UI ui) {"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setProfile(this.name, this.age, this.gender, this.height, this.weight, this.weightGoal);"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        System.out.println(\"Profile updated successfully!\");"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "dejunnn": 40
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/commands/SetWeightCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "package seedu.duke.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.Profile;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.exceptions.InvalidFormatException;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.parser.Parser;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.ui.UI;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "public class SetWeightCommand extends Command {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private static final int ARGUMENTS_REQUIRED \u003d 1;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private double weight;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * Constructs the Command object."
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @param command the command prompt entered by the user."
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public SetWeightCommand(String command, String description) throws InvalidFormatException, NumberFormatException {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        super(command);"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        String[] descriptionArray \u003d Parser.parseDescription(description, ARGUMENTS_REQUIRED);"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.weight \u003d Double.parseDouble(descriptionArray[0]);"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public void execute(Profile profile, UI ui) {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setWeight(this.weight);"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        System.out.println(String.format(\"Your height has been changed to %.2f\", profile.getWeight()));"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "dejunnn": 30
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/commands/SetWeightGoalCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "package seedu.duke.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.Profile;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.exceptions.InvalidFormatException;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.parser.Parser;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.ui.UI;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "public class SetWeightGoalCommand extends Command {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private static final int ARGUMENTS_REQUIRED \u003d 1;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private double weightGoal;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * Constructs the Command object."
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @param command the command prompt entered by the user."
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public SetWeightGoalCommand(String command, String description)"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            throws InvalidFormatException, NumberFormatException {"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        super(command);"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        String[] descriptionArray \u003d Parser.parseDescription(description, ARGUMENTS_REQUIRED);"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        this.weightGoal \u003d Double.parseDouble(descriptionArray[0]);"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public void execute(Profile profile, UI ui) {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        profile.setWeightGoal(this.weightGoal);"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        System.out.println(String.format(\"Your weight goal has been changed to %.2f\", profile.getWeightGoal()));"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "dejunnn": 31
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/exceptions/InvalidCommandException.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "package seedu.duke.exceptions;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "public class InvalidCommandException extends Exception {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "dejunnn": 4
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/exceptions/InvalidFormatException.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "package seedu.duke.exceptions;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "public class InvalidFormatException extends Exception {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "dejunnn": 4
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/parser/Parser.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "package seedu.duke.parser;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.commands.Command;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.commands.ExitCommand;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.commands.ProfileCommand;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.commands.SetAgeCommand;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.commands.SetGenderCommand;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.commands.SetHeightCommand;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.commands.SetNameCommand;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.commands.SetProfileCommand;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.commands.SetWeightCommand;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.commands.SetWeightGoalCommand;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.exceptions.InvalidCommandException;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "import seedu.duke.exceptions.InvalidFormatException;"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": " * Parser is the public class responsible for parsing user input and generating the relevant commands."
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "public class Parser {"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * The command prompt entered by the user."
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private static String commandPrompt;"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * The description of the command entered by the user."
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    private static String description;"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * Parses the user input and prepares it to be analysed and used to generate commands."
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @param input the user input."
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @throws InvalidCommandException if user input has too few arguments."
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public static void prepareInput(String input) throws InvalidCommandException {"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        String[] inputArray \u003d input.trim().split(\" \", 2);"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        int numArguments \u003d inputArray.length;"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        switch (numArguments) {"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        case 1:"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            commandPrompt \u003d inputArray[0].trim().toLowerCase();"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            break;"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        case 2:"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            commandPrompt \u003d inputArray[0].trim().toLowerCase();"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            description \u003d inputArray[1].trim();"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            break;"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        default:"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            throw new InvalidCommandException();"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * Parses the user input and prepares it to be analysed and used to generate commands."
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @param description the command description."
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @param argumentsRequired the number of arguments required by the command."
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @throws InvalidFormatException if user input has the wrong format."
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public static String[] parseDescription(String description, int argumentsRequired) throws InvalidFormatException {"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        String[] descriptionArray \u003d description.trim().split(\" \", argumentsRequired);"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        if (descriptionArray.length !\u003d argumentsRequired) {"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            throw new InvalidFormatException();"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        return descriptionArray;"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * Analyses the user input and generates the relevant command."
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @param input the user input."
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @return the command generated from the user input."
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @throws InvalidCommandException  if command is not supported by application."
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @throws InvalidFormatException   if format for command is wrong."
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public static Command parseInput(String input) throws InvalidCommandException, InvalidFormatException {"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        prepareInput(input);"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        Command command;"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        switch (commandPrompt) {"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        case \"profile\":"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            command \u003d new ProfileCommand(commandPrompt);"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            break;"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        case \"set-profile\":"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            command \u003d new SetProfileCommand(commandPrompt, description);"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            break;"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        case\"set-name\":"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            command \u003d new SetNameCommand(commandPrompt, description);"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            break;"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        case\"set-age\":"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            command \u003d new SetAgeCommand(commandPrompt, description);"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            break;"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        case\"set-gender\":"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            command \u003d new SetGenderCommand(commandPrompt, description);"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            break;"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        case\"set-height\":"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            command \u003d new SetHeightCommand(commandPrompt, description);"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            break;"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        case\"set-weight\":"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            command \u003d new SetWeightCommand(commandPrompt, description);"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            break;"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        case\"set-weight-goal\":"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            command \u003d new SetWeightGoalCommand(commandPrompt, description);"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            break;"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        case \"exit\":"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            command \u003d new ExitCommand(commandPrompt);"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            break;"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        default:"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            throw new InvalidCommandException();"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        return command;"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "dejunnn": 116
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/ui/MessageBank.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "package seedu.duke.ui;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "public class MessageBank {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public static String LOGO \u003d \"  _____   _        _     __  __\\n\""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            + \" |  __ \\\\ (_)      | |   |  \\\\/  |\\n\""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            + \" | |  | | _   ___ | |_  | \\\\  / |  __ _  _ __    __ _   __ _   ___  _ __\\n\""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            + \" | |  | || | / _ \\\\| __| | |\\\\/| | / _` || \u0027_ \\\\  / _` | / _` | / _ \\\\| \u0027__|\\n\""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            + \" | |__| || ||  __/| |_  | |  | || (_| || | | || (_| || (_| ||  __/| |\\n\""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            + \" |_____/ |_| \\\\___| \\\\__| |_|  |_| \\\\__,_||_| |_| \\\\__,_| \\\\__, | \\\\___||_|\\n\""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            + \"                                                       __/ |\\n\""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "            + \"                                                      |___/\";"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public static String WELCOME_MESSAGE \u003d \"Welcome to Diet Manager! How may I assist you today?\";"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public static String INVALID_COMMAND_MESSAGE \u003d \"Sorry, the command you have entered is invalid.\";"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public static String INVALID_FORMAT_MESSAGE \u003d \"Sorry, that is an invalid command format.\";"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "dejunnn": 18
+    }
+  },
+  {
+    "path": "src/main/java/seedu/duke/ui/UI.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "package seedu.duke.ui;"
       },
       {
         "lineNumber": 2,
@@ -2996,42 +6343,42 @@
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     * Returns the exit status."
+        "content": "     * Prints the welcome message for the user."
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     * @return the exit status."
+        "content": "     */"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "    public void displayWelcomeMessage() {"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public boolean isExitStatus() {"
+        "content": "        System.out.println(MessageBank.LOGO);"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        return this.exitStatus;"
+        "content": "        System.out.println(MessageBank.WELCOME_MESSAGE);"
       },
       {
         "lineNumber": 32,
@@ -3052,199 +6399,255 @@
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    /**"
+        "content": "    public void displayInvalidCommandMessage() {"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     * Updates the exit status."
+        "content": "        System.out.println(MessageBank.INVALID_COMMAND_MESSAGE);"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     * @param update the updated exit status."
+        "content": "    }"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "    public void displayInvalidFormatMessage() {"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public void setExitStatus(boolean update) {"
+        "content": "        System.out.println(MessageBank.INVALID_FORMAT_MESSAGE);"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        this.exitStatus \u003d update;"
+        "content": "    }"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    /**"
+        "content": "     * Returns the exit status."
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     * Returns the next line of user input."
+        "content": "     * @return the exit status."
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     * @return the next line of user input."
+        "content": "     */"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "    public boolean isExitStatus() {"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public String readInput() {"
+        "content": "        return this.exitStatus;"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        Scanner sc \u003d new Scanner(System.in);"
+        "content": "    }"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "        return sc.nextLine();"
+        "content": ""
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    }"
+        "content": "    /**"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "     * Updates the exit status."
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    /**"
+        "content": "     * @param update the updated exit status."
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     * Prints the welcome message for the user."
+        "content": "     */"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "    public void setExitStatus(boolean update) {"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    public void displayWelcomeMessage() {"
+        "content": "        this.exitStatus \u003d update;"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "dejunnn"
         },
-        "content": ""
+        "content": "     * Returns the next line of user input."
       },
       {
         "lineNumber": 62,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     * @return the next line of user input."
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    public String readInput() {"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        Scanner sc \u003d new Scanner(System.in);"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "        return sc.nextLine();"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "dejunnn"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 70,
         "author": {
           "gitId": "dejunnn"
         },
@@ -3252,7 +6655,7 @@
       }
     ],
     "authorContributionMap": {
-      "dejunnn": 62
+      "dejunnn": 70
     }
   },
   {
