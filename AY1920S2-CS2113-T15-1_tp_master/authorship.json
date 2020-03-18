@@ -2112,26 +2112,96 @@
       {
         "lineNumber": 84,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "        String dataLine \u003d (this.name + \",\" + this.startTime + \",\" + this.endTime + \",\" + Arrays.toString(this.tags));"
+        "content": ""
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        return dataLine;"
+        "content": "        // Convert tags to a single space-separated"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    }"
+        "content": "        String tagString \u003d \"\";"
       },
       {
         "lineNumber": 87,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        if (this.tags !\u003d null) {"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            for (int i \u003d 0; i \u003c this.tags.length; i++) {"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                tagString \u003d tagString + this.tags[i] + \" \";"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        String dataLine \u003d (this.name + \",\" + this.startTime + \",\" + this.endTime + \",\" + tagString);"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        return dataLine;"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 97,
         "author": {
           "gitId": "ananda-lye"
         },
@@ -2139,8 +2209,8 @@
       }
     ],
     "authorContributionMap": {
-      "rdimaio": 38,
-      "btricec": 40,
+      "rdimaio": 49,
+      "btricec": 39,
       "ananda-lye": 9
     }
   },
@@ -2172,803 +2242,901 @@
       {
         "lineNumber": 4,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": ""
+        "content": "import jikan.storage.StorageHandler;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "import java.io.IOException;"
+        "content": ""
       },
       {
         "lineNumber": 6,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "import java.io.IOException;"
+      },
+      {
+        "lineNumber": 7,
         "author": {
           "gitId": "btricec"
         },
         "content": "import java.time.LocalDateTime;"
       },
       {
-        "lineNumber": 7,
+        "lineNumber": 8,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": "import java.util.ArrayList;"
       },
       {
-        "lineNumber": 8,
+        "lineNumber": 9,
         "author": {
           "gitId": "btricec"
         },
         "content": "import java.util.Arrays;"
       },
       {
-        "lineNumber": 9,
+        "lineNumber": 10,
         "author": {
           "gitId": "btricec"
         },
         "content": "import java.util.concurrent.TimeUnit;"
       },
       {
-        "lineNumber": 10,
+        "lineNumber": 11,
         "author": {
           "gitId": "btricec"
         },
         "content": "import java.io.File;"
       },
       {
-        "lineNumber": 11,
+        "lineNumber": 12,
         "author": {
           "gitId": "btricec"
         },
         "content": "import java.io.FileNotFoundException;"
       },
       {
-        "lineNumber": 12,
+        "lineNumber": 13,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "import java.util.List;"
       },
       {
-        "lineNumber": 13,
+        "lineNumber": 14,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "import java.util.Scanner;"
       },
       {
-        "lineNumber": 14,
+        "lineNumber": 15,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 15,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "/**"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": " * Represents the list of activities."
+        "content": "/**"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": " */"
+        "content": " * Represents the list of activities."
       },
       {
         "lineNumber": 18,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 19,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": "public class ActivityList {"
       },
       {
-        "lineNumber": 19,
+        "lineNumber": 20,
         "author": {
           "gitId": "siuhian"
         },
         "content": "    public ArrayList\u003cActivity\u003e activities;"
       },
       {
-        "lineNumber": 20,
+        "lineNumber": 21,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "    public Storage storage; // Storage the list was loaded from"
       },
       {
-        "lineNumber": 21,
+        "lineNumber": 22,
         "author": {
           "gitId": "rdimaio"
         },
         "content": ""
       },
       {
-        "lineNumber": 22,
+        "lineNumber": 23,
         "author": {
           "gitId": "btricec"
         },
         "content": "    //int size;"
       },
       {
-        "lineNumber": 23,
+        "lineNumber": 24,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 24,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    /**"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * Constructor for a new activity list."
+        "content": "    /**"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     */"
+        "content": "     * Constructor for a new activity list."
       },
       {
         "lineNumber": 27,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": "    public ActivityList() {"
+        "content": "     */"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "        this.activities \u003d new ArrayList\u003c\u003e();"
+        "content": "    public ActivityList() {"
       },
       {
         "lineNumber": 29,
         "author": {
-          "gitId": "btricec"
+          "gitId": "ananda-lye"
         },
-        "content": "        //this.size \u003d activities.size();"
+        "content": "        this.activities \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "btricec"
         },
-        "content": "    }"
+        "content": "        //this.size \u003d activities.size();"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "btricec"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 32,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * Loads activityList from data file."
+        "content": "    /**"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     *"
+        "content": "     * Loads activityList from data file."
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @param storage Storage to load from."
+        "content": "     *"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     */"
+        "content": "     * @param storage Storage to load from."
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    public ActivityList(Storage storage) {"
+        "content": "     */"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        this.activities \u003d new ArrayList\u003c\u003e();"
+        "content": "    public ActivityList(Storage storage) {"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        this.storage \u003d storage;"
+        "content": "        this.activities \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        populateTaskList(storage.dataFile);"
+        "content": "        this.storage \u003d storage;"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    }"
+        "content": "        populateTaskList(storage.dataFile);"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 43,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "    public Activity get(int i) {"
+        "content": ""
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "btricec"
         },
-        "content": "        return activities.get(i);"
+        "content": "    public Activity get(int i) {"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "btricec"
         },
-        "content": "    }"
+        "content": "        return activities.get(i);"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "btricec"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * Adds activity to activity list and stores it in the data file."
+        "content": "    /**"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @param activity Activity to add."
+        "content": "     * Adds activity to activity list and stores it in the data file."
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     */"
+        "content": "     * @param activity Activity to add."
       },
       {
         "lineNumber": 51,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "    public void add(Activity activity) {"
+        "content": "     */"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "btricec"
         },
-        "content": "        activities.add(activity);"
+        "content": "    public void add(Activity activity) {"
       },
       {
         "lineNumber": 53,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": ""
+        "content": "        activities.add(activity);"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        String dataLine \u003d activity.toData();"
+        "content": ""
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "        String dataLine \u003d activity.toData();"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        updateFile(dataLine);"
+        "content": ""
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    }"
+        "content": "        updateFile(dataLine);"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * Updates data file with new task."
+        "content": "    /**"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     *"
+        "content": "     * Updates data file with new task."
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @param dataLine Line to write to file."
+        "content": "     *"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     */"
+        "content": "     * @param dataLine Line to write to file."
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    private void updateFile(String dataLine) {"
+        "content": "     */"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        try {"
+        "content": "    private void updateFile(String dataLine) {"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            storage.writeToFile(dataLine);"
+        "content": "        try {"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        } catch (IOException e) {"
+        "content": "            storage.writeToFile(dataLine);"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            System.out.println(\"Error saving task to data file.\");"
+        "content": "        } catch (IOException e) {"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        }"
+        "content": "            System.out.println(\"Error saving task to data file.\");"
       },
       {
         "lineNumber": 70,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "btricec"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "btricec"
         },
-        "content": "    public int getSize() {"
+        "content": ""
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "btricec"
         },
-        "content": "        return activities.size();"
+        "content": "    public void delete(int index) {"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "btricec"
         },
-        "content": "    }"
+        "content": "        activities.remove(index);"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "btricec"
         },
-        "content": ""
+        "content": "        deleteUpdateFile(index);"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "btricec"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 77,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 78,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "     * Populates task list from file."
+        "content": "    private void deleteUpdateFile(int index) {"
       },
       {
         "lineNumber": 79,
         "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     *"
-      },
-      {
-        "lineNumber": 80,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     * @param dataFile Data file to populate from."
-      },
-      {
-        "lineNumber": 81,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 82,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    private void populateTaskList(File dataFile) {"
-      },
-      {
-        "lineNumber": 83,
-        "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
         "content": "        try {"
       },
       {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            StorageHandler.removeLine(index, storage);"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        } catch (IOException e) {"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            System.out.println(\"Error while deleting task from data file.\");"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        }"
+      },
+      {
         "lineNumber": 84,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "            Scanner dataScanner \u003d new Scanner(dataFile);"
+        "content": "    }"
       },
       {
         "lineNumber": 85,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "            while (dataScanner.hasNext()) {"
+        "content": ""
       },
       {
         "lineNumber": 86,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "                parseDataLine(dataScanner.nextLine());"
+        "content": "    public int getSize() {"
       },
       {
         "lineNumber": 87,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "            }"
+        "content": "        return activities.size();"
       },
       {
         "lineNumber": 88,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "        } catch (FileNotFoundException e) {"
+        "content": "    }"
       },
       {
         "lineNumber": 89,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "            System.out.println(\"Error: data file not found. Could not load into the current session\u0027s task list.\");"
+        "content": ""
       },
       {
         "lineNumber": 90,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    }"
+        "content": "    /**"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "     * Populates task list from file."
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    /**"
+        "content": "     *"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * Parses the current line in the data file to an jikan.activity.Activity object."
+        "content": "     * @param dataFile Data file to populate from."
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     *"
+        "content": "     */"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @param s String to parse."
+        "content": "    private void populateTaskList(File dataFile) {"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     */"
+        "content": "        try {"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    private void parseDataLine(String s) {"
+        "content": "            Scanner dataScanner \u003d new Scanner(dataFile);"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "            while (dataScanner.hasNext()) {"
       },
       {
         "lineNumber": 100,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "        if (!s.isEmpty()) {"
+        "content": "                parseDataLine(dataScanner.nextLine());"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            List\u003cString\u003e strings \u003d Arrays.asList(s.split(\",\"));"
+        "content": "            }"
       },
       {
         "lineNumber": 102,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "            String[] tags;"
+        "content": "        } catch (FileNotFoundException e) {"
       },
       {
         "lineNumber": 103,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "            System.out.println(\"Error: data file not found. Could not load into the current session\u0027s task list.\");"
       },
       {
         "lineNumber": 104,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            // if there are tags"
-      },
-      {
-        "lineNumber": 105,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            if (!strings.get(3).equals(\"null\")) {"
-      },
-      {
-        "lineNumber": 106,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                // remove square brackets surrounding tags"
-      },
-      {
-        "lineNumber": 107,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                tags \u003d strings.get(3).substring(1,strings.get(3).length() - 1).split(\" \");"
-      },
-      {
-        "lineNumber": 108,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            } else {"
-      },
-      {
-        "lineNumber": 109,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                tags \u003d null;"
-      },
-      {
-        "lineNumber": 110,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 111,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 112,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "            // strings[0] \u003d name, strings[1] \u003d startDate, string[2] \u003d endDate"
-      },
-      {
-        "lineNumber": 113,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            Activity e \u003d new Activity(strings.get(0), LocalDateTime.parse(strings.get(1)),"
-      },
-      {
-        "lineNumber": 114,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                    LocalDateTime.parse(strings.get(2)), tags);"
-      },
-      {
-        "lineNumber": 115,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "            activities.add(e);"
-      },
-      {
-        "lineNumber": 116,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "        }"
       },
       {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     * Parses the current line in the data file to an jikan.activity.Activity object."
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     * @param s String to parse."
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    private void parseDataLine(String s) {"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        if (!s.isEmpty()) {"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            List\u003cString\u003e strings \u003d Arrays.asList(s.split(\",\"));"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            String[] tags;"
+      },
+      {
         "lineNumber": 117,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            // if there are tags"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            if (strings.size() \u003e 3) {"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                // remove square brackets surrounding tags"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                // tags \u003d strings.get(3).substring(0,strings.get(3).length() - 1).split(\" \");"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                tags \u003d strings.get(3).split(\" \");"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                tags \u003d null;"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            // strings[0] \u003d name, strings[1] \u003d startDate, string[2] \u003d endDate"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            Activity e \u003d new Activity(strings.get(0), LocalDateTime.parse(strings.get(1)),"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                    LocalDateTime.parse(strings.get(2)), tags);"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            activities.add(e);"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 131,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 118,
+        "lineNumber": 132,
         "author": {
           "gitId": "btricec"
         },
@@ -2977,7 +3145,7 @@
     ],
     "authorContributionMap": {
       "rdimaio": 73,
-      "btricec": 37,
+      "btricec": 51,
       "siuhian": 1,
       "ananda-lye": 7
     }
@@ -3294,7 +3462,7 @@
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "btricec"
+          "gitId": "siuhian"
         },
         "content": ""
       },
@@ -3336,7 +3504,7 @@
       {
         "lineNumber": 34,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "siuhian"
         },
         "content": "    public void parseUserCommands(Scanner scanner, ActivityList activityList) {"
       },
@@ -3644,91 +3812,91 @@
       {
         "lineNumber": 78,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "            default:"
+        "content": "            case \"delete\":"
       },
       {
         "lineNumber": 79,
         "author": {
-          "gitId": "siuhian"
+          "gitId": "btricec"
         },
-        "content": "                parseDefault();"
+        "content": "                try {"
       },
       {
         "lineNumber": 80,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "                break;"
+        "content": "                    parseDelete(activityList);"
       },
       {
         "lineNumber": 81,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "            }"
+        "content": "                } catch (IndexOutOfBoundsException | NumberFormatException e) {"
       },
       {
         "lineNumber": 82,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "        }"
+        "content": "                    ui.printDivider(\"Invalid index number.\");"
       },
       {
         "lineNumber": 83,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "    }"
+        "content": "                }"
       },
       {
         "lineNumber": 84,
         "author": {
-          "gitId": "siuhian"
+          "gitId": "btricec"
         },
-        "content": ""
+        "content": "                break;"
       },
       {
         "lineNumber": 85,
         "author": {
-          "gitId": "siuhian"
+          "gitId": "ananda-lye"
         },
-        "content": "    /** Method to parse user inputs that are not recognised. */"
+        "content": "            default:"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "siuhian"
         },
-        "content": "    private void parseDefault() {"
+        "content": "                parseDefault();"
       },
       {
         "lineNumber": 87,
         "author": {
-          "gitId": "siuhian"
+          "gitId": "ananda-lye"
         },
-        "content": "        String line \u003d \"☹ OOPS!!! I\u0027m sorry, but I don\u0027t know what that means :-(\";"
+        "content": "                break;"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "        logger.makeInfoLog(\"Invalid command entered\");"
+        "content": "            }"
       },
       {
         "lineNumber": 89,
         "author": {
-          "gitId": "siuhian"
+          "gitId": "ananda-lye"
         },
-        "content": "        ui.printDivider(line);"
+        "content": "        }"
       },
       {
         "lineNumber": 90,
         "author": {
-          "gitId": "siuhian"
+          "gitId": "ananda-lye"
         },
         "content": "    }"
       },
@@ -3744,451 +3912,556 @@
         "author": {
           "gitId": "siuhian"
         },
-        "content": "    /** Method to parse the abort command. */"
+        "content": "    /** Method to parse user inputs that are not recognised. */"
       },
       {
         "lineNumber": 93,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "siuhian"
         },
-        "content": "    public void parseAbort() throws NoSuchActivityException {"
+        "content": "    private void parseDefault() {"
       },
       {
         "lineNumber": 94,
         "author": {
-          "gitId": "btricec"
+          "gitId": "siuhian"
         },
-        "content": "        if (startTime \u003d\u003d null) {"
+        "content": "        String line \u003d \"☹ OOPS!!! I\u0027m sorry, but I don\u0027t know what that means :-(\";"
       },
       {
         "lineNumber": 95,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "            throw new NoSuchActivityException();"
+        "content": "        logger.makeInfoLog(\"Invalid command entered\");"
       },
       {
         "lineNumber": 96,
         "author": {
-          "gitId": "btricec"
+          "gitId": "siuhian"
         },
-        "content": "        } else {"
+        "content": "        ui.printDivider(line);"
       },
       {
         "lineNumber": 97,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "siuhian"
         },
-        "content": "            logger.makeFineLog(\"Aborted \" + activityName);"
+        "content": "    }"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "siuhian"
         },
-        "content": "            startTime \u003d null;"
+        "content": ""
       },
       {
         "lineNumber": 99,
         "author": {
-          "gitId": "btricec"
+          "gitId": "siuhian"
         },
-        "content": "            tags \u003d null;"
+        "content": "    /** Method to parse the abort command. */"
       },
       {
         "lineNumber": 100,
         "author": {
-          "gitId": "btricec"
+          "gitId": "nigellenl"
         },
-        "content": "            activityName \u003d null;"
+        "content": "    public void parseAbort() throws NoSuchActivityException {"
       },
       {
         "lineNumber": 101,
         "author": {
-          "gitId": "siuhian"
-        },
-        "content": "            String line \u003d \"You have aborted the current activity!\";"
-      },
-      {
-        "lineNumber": 102,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "            ui.printDivider(line);"
-      },
-      {
-        "lineNumber": 103,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 104,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 105,
-        "author": {
           "gitId": "btricec"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 106,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 107,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "    /** Method to parse the start activity command. */"
-      },
-      {
-        "lineNumber": 108,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "    public void parseStart() throws ArrayIndexOutOfBoundsException, EmptyNameException, NullPointerException {"
-      },
-      {
-        "lineNumber": 109,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "        // check if an activity has already been started"
-      },
-      {
-        "lineNumber": 110,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "        if (startTime !\u003d null) {"
-      },
-      {
-        "lineNumber": 111,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            String line \u003d activityName + \" is ongoing!\";"
-      },
-      {
-        "lineNumber": 112,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "            logger.makeInfoLog(\"Could not start activity due to already ongoing activity.\");"
-      },
-      {
-        "lineNumber": 113,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            ui.printDivider(line);"
-      },
-      {
-        "lineNumber": 114,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "        } else {"
-      },
-      {
-        "lineNumber": 115,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            // tags should be reset"
-      },
-      {
-        "lineNumber": 116,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            assert tags \u003d\u003d null;"
-      },
-      {
-        "lineNumber": 117,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 118,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            String line;"
-      },
-      {
-        "lineNumber": 119,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            int delimiter \u003d tokenizedInputs[1].indexOf(\"/t\");"
-      },
-      {
-        "lineNumber": 120,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            if (delimiter \u003d\u003d -1) {"
-      },
-      {
-        "lineNumber": 121,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                activityName \u003d tokenizedInputs[1];"
-      },
-      {
-        "lineNumber": 122,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "                if (activityName.equals(\"\")) {"
-      },
-      {
-        "lineNumber": 123,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "                    throw new EmptyNameException();"
-      },
-      {
-        "lineNumber": 124,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "                }"
-      },
-      {
-        "lineNumber": 125,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                line \u003d \"Started \" + activityName;"
-      },
-      {
-        "lineNumber": 126,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            } else {"
-      },
-      {
-        "lineNumber": 127,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                activityName \u003d tokenizedInputs[1].substring(0, delimiter);"
-      },
-      {
-        "lineNumber": 128,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "                if (activityName.equals(\"\")) {"
-      },
-      {
-        "lineNumber": 129,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "                    throw new EmptyNameException();"
-      },
-      {
-        "lineNumber": 130,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "                }"
-      },
-      {
-        "lineNumber": 131,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                line \u003d \"Started \" + activityName;"
-      },
-      {
-        "lineNumber": 132,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                tags \u003d tokenizedInputs[1].substring(delimiter + 3).split(\" \");"
-      },
-      {
-        "lineNumber": 133,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 134,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "            startTime \u003d LocalDateTime.now();"
-      },
-      {
-        "lineNumber": 135,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            ui.printDivider(line);"
-      },
-      {
-        "lineNumber": 136,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 137,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "        logger.makeFineLog(\"Started: \" + activityName);"
-      },
-      {
-        "lineNumber": 138,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 139,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 140,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "    /** Method to parse the end activity command. */"
-      },
-      {
-        "lineNumber": 141,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "    public void parseEnd(ActivityList activityList) throws NoSuchActivityException {"
-      },
-      {
-        "lineNumber": 142,
-        "author": {
-          "gitId": "siuhian"
         },
         "content": "        if (startTime \u003d\u003d null) {"
       },
       {
-        "lineNumber": 143,
+        "lineNumber": 102,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "            throw new NoSuchActivityException();"
       },
       {
-        "lineNumber": 144,
+        "lineNumber": 103,
         "author": {
-          "gitId": "siuhian"
+          "gitId": "btricec"
         },
         "content": "        } else {"
       },
       {
-        "lineNumber": 145,
+        "lineNumber": 104,
         "author": {
-          "gitId": "btricec"
+          "gitId": "ananda-lye"
         },
-        "content": "            String line \u003d \"Ended \" + activityName;"
+        "content": "            logger.makeFineLog(\"Aborted \" + activityName);"
       },
       {
-        "lineNumber": 146,
+        "lineNumber": 105,
         "author": {
           "gitId": "siuhian"
-        },
-        "content": "            ui.printDivider(line);"
-      },
-      {
-        "lineNumber": 147,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "            endTime \u003d LocalDateTime.now();"
-      },
-      {
-        "lineNumber": 148,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            Activity newActivity \u003d new Activity(activityName, startTime, endTime, tags);"
-      },
-      {
-        "lineNumber": 149,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "            activityList.add(newActivity);"
-      },
-      {
-        "lineNumber": 150,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            // reset activity info"
-      },
-      {
-        "lineNumber": 151,
-        "author": {
-          "gitId": "btricec"
         },
         "content": "            startTime \u003d null;"
       },
       {
-        "lineNumber": 152,
+        "lineNumber": 106,
         "author": {
           "gitId": "btricec"
         },
         "content": "            tags \u003d null;"
       },
       {
-        "lineNumber": 153,
+        "lineNumber": 107,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            activityName \u003d null;"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            String line \u003d \"You have aborted the current activity!\";"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            ui.printDivider(line);"
+      },
+      {
+        "lineNumber": 110,
         "author": {
           "gitId": "siuhian"
         },
         "content": "        }"
       },
       {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    /** Method to parse the start activity command. */"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "    public void parseStart() throws ArrayIndexOutOfBoundsException, EmptyNameException, NullPointerException {"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        // check if an activity has already been started"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        if (startTime !\u003d null) {"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            String line \u003d activityName + \" is ongoing!\";"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            logger.makeInfoLog(\"Could not start activity due to already ongoing activity.\");"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            ui.printDivider(line);"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            // tags should be reset"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            assert tags \u003d\u003d null;"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            String line;"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            int delimiter \u003d tokenizedInputs[1].indexOf(\"/t\");"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            if (delimiter \u003d\u003d -1) {"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                activityName \u003d tokenizedInputs[1];"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                if (activityName.equals(\"\")) {"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                    throw new EmptyNameException();"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                line \u003d \"Started: \" + activityName;"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                activityName \u003d tokenizedInputs[1].substring(0, delimiter);"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                if (activityName.equals(\"\")) {"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                    throw new EmptyNameException();"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                line \u003d \"Started: \" + activityName;"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                tags \u003d tokenizedInputs[1].substring(delimiter + 3).split(\" \");"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            startTime \u003d LocalDateTime.now();"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            ui.printDivider(line);"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "        logger.makeFineLog(\"Started: \" + activityName);"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    /** Method to parse the end activity command. */"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "    public void parseEnd(ActivityList activityList) throws NoSuchActivityException {"
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        if (startTime \u003d\u003d null) {"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "            throw new NoSuchActivityException();"
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            String line \u003d \"Ended: \" + activityName;"
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            ui.printDivider(line);"
+      },
+      {
         "lineNumber": 154,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            endTime \u003d LocalDateTime.now();"
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            Activity newActivity \u003d new Activity(activityName, startTime, endTime, tags);"
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "            activityList.add(newActivity);"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            // reset activity info"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            startTime \u003d null;"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            tags \u003d null;"
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 161,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": "        logger.makeFineLog(\"Ended: \" + activityName);"
       },
       {
-        "lineNumber": 155,
+        "lineNumber": 162,
         "author": {
           "gitId": "siuhian"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 156,
+        "lineNumber": 163,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    /** Deletes an activity from the activity list. */"
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    public void parseDelete(ActivityList activityList) {"
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        int index \u003d Integer.parseInt(tokenizedInputs[1]) - 1;"
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        String line \u003d \"You have deleted \" + activityList.get(index).getName();"
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        ui.printDivider(line);"
+      },
+      {
+        "lineNumber": 169,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        activityList.delete(index);"
+      },
+      {
+        "lineNumber": 170,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 171,
         "author": {
           "gitId": "ananda-lye"
         },
@@ -4196,9 +4469,9 @@
       }
     ],
     "authorContributionMap": {
-      "rdimaio": 7,
-      "btricec": 39,
-      "siuhian": 40,
+      "rdimaio": 6,
+      "btricec": 53,
+      "siuhian": 42,
       "nigellenl": 27,
       "ananda-lye": 43
     }
@@ -4681,191 +4954,191 @@
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "import java.io.IOException;"
+        "content": "import java.io.File;"
       },
       {
         "lineNumber": 4,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "import java.nio.charset.StandardCharsets;"
+        "content": "import java.io.FileOutputStream;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "import java.nio.file.Files;"
+        "content": "import java.io.IOException;"
       },
       {
         "lineNumber": 6,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "import java.nio.file.Paths;"
+        "content": "import java.io.PrintWriter;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "import java.util.ArrayList;"
+        "content": "import java.nio.charset.StandardCharsets;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "import java.util.Arrays;"
+        "content": "import java.nio.file.Files;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "import java.util.List;"
+        "content": "import java.nio.file.Paths;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "import java.util.ArrayList;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "/**"
+        "content": "import java.util.Arrays;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": " * Class containing useful functions for modifying the data file."
+        "content": "import java.util.List;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": " */"
+        "content": ""
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "public class StorageHandler {"
+        "content": "/**"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": " * Class containing useful functions for modifying the data file."
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    /**"
+        "content": " */"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * Removes the line whose index matches lineNumber from file at dataFilePath."
+        "content": "public class StorageHandler {"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     *"
+        "content": ""
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @param lineNumber Index of line to remove."
+        "content": "    /**"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @param dataFilePath Path to data file."
+        "content": "     * Removes the line whose index matches lineNumber from file at dataFilePath."
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @throws IOException If an error occurs while writing the new list to file."
+        "content": "     *"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     */"
+        "content": "     * @param lineNumber Index of line to remove."
       },
       {
         "lineNumber": 23,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "    public static void removeLine(int lineNumber, String dataFilePath) throws IOException {"
+        "content": "     * @param storage Storage object which contains path to save file."
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        // Read file into list of strings, where each string is a line in the file"
+        "content": "     * @throws IOException If an error occurs while writing the new list to file."
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        List\u003cString\u003e fileContent \u003d new ArrayList\u003c\u003e(Files.readAllLines(Paths.get(dataFilePath), StandardCharsets.UTF_8));"
+        "content": "     */"
       },
       {
         "lineNumber": 26,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "        int removedIndex \u003d 0;"
+        "content": "    public static void removeLine(int lineNumber, Storage storage) throws IOException {"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "        // Read file into list of strings, where each string is a line in the file"
       },
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "        // Remove line from fileContent list"
+        "content": "        List\u003cString\u003e fileContent \u003d new ArrayList\u003c\u003e(Files.readAllLines(Paths.get(storage.dataFilePath),"
       },
       {
         "lineNumber": 29,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "        removedIndex \u003d removeLineFromList(lineNumber, fileContent, removedIndex);"
+        "content": "                StandardCharsets.UTF_8));"
       },
       {
         "lineNumber": 30,
@@ -4877,625 +5150,625 @@
       {
         "lineNumber": 31,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "        // Rewrite list into data file"
+        "content": "        //int removedIndex \u003d 0;"
       },
       {
         "lineNumber": 32,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "        Files.write(Paths.get(dataFilePath), fileContent, StandardCharsets.UTF_8);"
+        "content": ""
       },
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": ""
+        "content": "        fileContent.remove(lineNumber);"
       },
       {
         "lineNumber": 34,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "        // Update indexes of subsequent lines"
+        "content": ""
       },
       {
         "lineNumber": 35,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "        updateIndexes(fileContent, removedIndex, dataFilePath);"
+        "content": "        saveNewList(fileContent, storage.dataFile);"
       },
       {
         "lineNumber": 36,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": ""
+        "content": "        /*"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    /**"
+        "content": "        // Remove line from fileContent list"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * Removes line from a list based on its index. Returns index at which the line was removed."
+        "content": "        removedIndex \u003d removeLineFromList(lineNumber, fileContent, removedIndex);"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     *"
+        "content": ""
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @param lineNumber Index of line to remove."
+        "content": "        // Rewrite list into data file"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @param list List of strings containing lines, each with a starting index."
+        "content": "        Files.write(Paths.get(dataFilePath), fileContent, StandardCharsets.UTF_8);"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @param removedIndex Index at which line was removed."
+        "content": ""
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @return Index of the removed line."
+        "content": "        // Update indexes of subsequent lines"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     */"
+        "content": "        updateIndexes(fileContent, removedIndex, dataFilePath);"
       },
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    private static int removeLineFromList(int lineNumber, List\u003cString\u003e list, int removedIndex) {"
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "        // Iterate through the lines"
-      },
-      {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "        for (int i \u003d 0; i \u003c list.size(); i++) {"
-      },
-      {
-        "lineNumber": 49,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "            // If the current line matches the taskId"
-      },
-      {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "            if (list.get(i).startsWith(String.valueOf(lineNumber))) {"
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "                // Remove current line"
-      },
-      {
-        "lineNumber": 52,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "                removedIndex \u003d i; // Store index of removed line to use as initial index of next loop"
-      },
-      {
-        "lineNumber": 53,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "                list.remove(i);"
-      },
-      {
-        "lineNumber": 54,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "                break;"
-      },
-      {
-        "lineNumber": 55,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 56,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 57,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "        return removedIndex;"
-      },
-      {
-        "lineNumber": 58,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 59,
-        "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
         "content": ""
       },
       {
-        "lineNumber": 60,
+        "lineNumber": 47,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
+        },
+        "content": "         */"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "btricec"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 61,
+        "lineNumber": 51,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "     * After a line has been removed, updates subsequent indexes."
+        "content": "     * Saves a the updated activity list to the csv file."
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 52,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
         "content": "     *"
       },
       {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "     * @param newList The list containing the updated data."
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "     * @param dataFile The file to save to."
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "     * @throws IOException If an error occurs while writing the new list to file."
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    public static void saveNewList(List\u003cString\u003e newList, File dataFile) throws IOException {"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        FileOutputStream fileOutputStream \u003d new FileOutputStream(dataFile);"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        PrintWriter printWriter \u003d new PrintWriter(fileOutputStream);"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        for (String s : newList) {"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            printWriter.println(s);"
+      },
+      {
         "lineNumber": 63,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "     * @param fileContent List of strings from the data file."
+        "content": "        }"
       },
       {
         "lineNumber": 64,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "     * @param removedIndex Index at which line was removed."
+        "content": "        printWriter.close();"
       },
       {
         "lineNumber": 65,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "     * @param dataFilePath Path to data file."
+        "content": "        fileOutputStream.close();"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @throws IOException If an error occurs while writing to file."
+        "content": "    }"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    private static void updateIndexes(List\u003cString\u003e fileContent, int removedIndex, String dataFilePath)"
+        "content": "    /**"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            throws IOException {"
+        "content": "     * Removes line from a list based on its index. Returns index at which the line was removed."
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        // Update indexes of subsequent tasks (e.g. if you remove task 2, task 3 becomes task 2)"
+        "content": "     *"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        for (int i \u003d removedIndex; i \u003c fileContent.size(); i++) {"
+        "content": "     * @param lineNumber Index of line to remove."
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            // Get current comma separated string"
+        "content": "     * @param list List of strings containing lines, each with a starting index."
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            String currString \u003d fileContent.get(i);"
+        "content": "     * @param removedIndex Index at which line was removed."
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "     * @return Index of the removed line."
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            String updatedString \u003d decrementIndex(currString, i);"
+        "content": "     */"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "    private static int removeLineFromList(int lineNumber, List\u003cString\u003e list, int removedIndex) {"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            // Replace the line with the updated string"
+        "content": "        // Iterate through the lines"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            replaceLine(i + 1, updatedString, dataFilePath);"
+        "content": "        for (int i \u003d 0; i \u003c list.size(); i++) {"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        }"
+        "content": "            // If the current line matches the taskId"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    }"
+        "content": "            if (list.get(i).startsWith(String.valueOf(lineNumber))) {"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "                // Remove current line"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    /**"
+        "content": "                removedIndex \u003d i; // Store index of removed line to use as initial index of next loop"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * Decrements index at beginning of string by 1."
+        "content": "                list.remove(i);"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     *"
+        "content": "                break;"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @param currString String whose index must be decremented."
+        "content": "            }"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @param i Index that the currString\u0027s index must be set to."
+        "content": "        }"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @return Original string with its index decremented by 1."
+        "content": "        return removedIndex;"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     */"
+        "content": "    }"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    private static String decrementIndex(String currString, int i) {"
+        "content": ""
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        // Split into different cells"
+        "content": "     * After a line has been removed, updates subsequent indexes."
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        List\u003cString\u003e cells \u003d Arrays.asList(currString.split(\",\"));"
+        "content": "     *"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "     * @param fileContent List of strings from the data file."
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        // Change first cell (taskID) to new ID (taskID-1)"
+        "content": "     * @param removedIndex Index at which line was removed."
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        // Task 3 becomes task 2, task 4 becomes task 3, until end of list"
+        "content": "     * @param dataFilePath Path to data file."
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        cells.set(0, String.valueOf(i));"
+        "content": "     * @throws IOException If an error occurs while writing to file."
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        // Recombine the comma separated string"
+        "content": "    private static void updateIndexes(List\u003cString\u003e fileContent, int removedIndex, String dataFilePath)"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        return String.join(\",\", cells);"
+        "content": "            throws IOException {"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    }"
+        "content": "        // Update indexes of subsequent tasks (e.g. if you remove task 2, task 3 becomes task 2)"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "        for (int i \u003d removedIndex; i \u003c fileContent.size(); i++) {"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    /**"
+        "content": "            // Get current comma separated string"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * Replaces line in a data file."
+        "content": "            String currString \u003d fileContent.get(i);"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     *"
+        "content": ""
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @param lineNumber Index of the line to replace."
+        "content": "            String updatedString \u003d decrementIndex(currString, i);"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @param newString String that replaces the original line."
+        "content": ""
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @param dataFilePath Path to data file."
+        "content": "            // Replace the line with the updated string"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @throws IOException If an error occurs while writing to file."
+        "content": "            replaceLine(i + 1, updatedString, dataFilePath);"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     */"
+        "content": "        }"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    public static void replaceLine(int lineNumber, String newString, String dataFilePath) throws IOException {"
+        "content": "    }"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        // Read file into list of strings, where each string is a line in the file"
+        "content": ""
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        List\u003cString\u003e fileContent \u003d new ArrayList\u003c\u003e(Files.readAllLines(Paths.get(dataFilePath), StandardCharsets.UTF_8));"
+        "content": "    /**"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "     * Decrements index at beginning of string by 1."
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        // Replace line in the list of strings"
+        "content": "     *"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        replaceLineInList(lineNumber, newString, fileContent);"
+        "content": "     * @param currString String whose index must be decremented."
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "     * @param i Index that the currString\u0027s index must be set to."
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        // Write new list of strings to file"
+        "content": "     * @return Original string with its index decremented by 1."
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        Files.write(Paths.get(dataFilePath), fileContent, StandardCharsets.UTF_8);"
+        "content": "     */"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    }"
+        "content": "    private static String decrementIndex(String currString, int i) {"
       },
       {
         "lineNumber": 120,
@@ -5509,129 +5782,339 @@
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    /**"
+        "content": "        // Split into different cells"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * Replaces a line in a list of Strings."
+        "content": "        List\u003cString\u003e cells \u003d Arrays.asList(currString.split(\",\"));"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     *"
+        "content": ""
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @param lineNumber Number at which line must be replaced."
+        "content": "        // Change first cell (taskID) to new ID (taskID-1)"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @param newString String that replaces the original string."
+        "content": "        // Task 3 becomes task 2, task 4 becomes task 3, until end of list"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     * @param list List of strings."
+        "content": "        cells.set(0, String.valueOf(i));"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    private static void replaceLineInList(int lineNumber, String newString, List\u003cString\u003e list) {"
+        "content": "        // Recombine the comma separated string"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        // Iterate through the lines"
+        "content": "        return String.join(\",\", cells);"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        for (int i \u003d 0; i \u003c list.size(); i++) {"
+        "content": "    }"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            // If the current line matches the taskId"
+        "content": ""
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            if (list.get(i).startsWith(String.valueOf(lineNumber))) {"
+        "content": "    /**"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "                // Replace it with the new task string"
+        "content": "     * Replaces line in a data file."
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "                list.set(i, newString);"
+        "content": "     *"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "                break;"
+        "content": "     * @param lineNumber Index of the line to replace."
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            }"
+        "content": "     * @param newString String that replaces the original line."
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        }"
+        "content": "     * @param dataFilePath Path to data file."
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    }"
+        "content": "     * @throws IOException If an error occurs while writing to file."
       },
       {
         "lineNumber": 139,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    public static void replaceLine(int lineNumber, String newString, String dataFilePath) throws IOException {"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        // Read file into list of strings, where each string is a line in the file"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        List\u003cString\u003e fileContent \u003d new ArrayList\u003c\u003e(Files.readAllLines(Paths.get(dataFilePath), StandardCharsets.UTF_8));"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        // Replace line in the list of strings"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        replaceLineInList(lineNumber, newString, fileContent);"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        // Write new list of strings to file"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        Files.write(Paths.get(dataFilePath), fileContent, StandardCharsets.UTF_8);"
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     * Replaces a line in a list of Strings."
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     * @param lineNumber Number at which line must be replaced."
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     * @param newString String that replaces the original string."
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     * @param list List of strings."
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    private static void replaceLineInList(int lineNumber, String newString, List\u003cString\u003e list) {"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        // Iterate through the lines"
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        for (int i \u003d 0; i \u003c list.size(); i++) {"
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            // If the current line matches the taskId"
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            if (list.get(i).startsWith(String.valueOf(lineNumber))) {"
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                // Replace it with the new task string"
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                list.set(i, newString);"
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                break;"
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 169,
         "author": {
           "gitId": "rdimaio"
         },
@@ -5639,7 +6122,8 @@
       }
     ],
     "authorContributionMap": {
-      "rdimaio": 139
+      "rdimaio": 135,
+      "btricec": 34
     }
   },
   {
@@ -5887,42 +6371,42 @@
       {
         "lineNumber": 35,
         "author": {
-          "gitId": "btricec"
+          "gitId": "siuhian"
         },
         "content": "        String duration \u003d String.format(\"%02d:%02d:%02d\","
       },
       {
         "lineNumber": 36,
         "author": {
-          "gitId": "btricec"
+          "gitId": "siuhian"
         },
         "content": "                TimeUnit.NANOSECONDS.toHours(durationInNanos),"
       },
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "btricec"
+          "gitId": "siuhian"
         },
         "content": "                TimeUnit.NANOSECONDS.toMinutes(durationInNanos)"
       },
       {
         "lineNumber": 38,
         "author": {
-          "gitId": "btricec"
+          "gitId": "siuhian"
         },
         "content": "                        - TimeUnit.HOURS.toMinutes(TimeUnit.NANOSECONDS.toHours(durationInNanos)),"
       },
       {
         "lineNumber": 39,
         "author": {
-          "gitId": "btricec"
+          "gitId": "siuhian"
         },
         "content": "                TimeUnit.NANOSECONDS.toSeconds(durationInNanos)"
       },
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "btricec"
+          "gitId": "siuhian"
         },
         "content": "                        - TimeUnit.MINUTES.toSeconds(TimeUnit.NANOSECONDS.toMinutes(durationInNanos)));"
       },
@@ -6013,7 +6497,7 @@
       {
         "lineNumber": 53,
         "author": {
-          "gitId": "siuhian"
+          "gitId": "btricec"
         },
         "content": "    /** Prints all the activities in the list. */"
       },
@@ -6076,7 +6560,7 @@
       {
         "lineNumber": 62,
         "author": {
-          "gitId": "btricec"
+          "gitId": "siuhian"
         },
         "content": "            } else {"
       },
@@ -6090,229 +6574,33 @@
       {
         "lineNumber": 64,
         "author": {
-          "gitId": "btricec"
+          "gitId": "siuhian"
         },
         "content": "            }"
       },
       {
         "lineNumber": 65,
         "author": {
-          "gitId": "btricec"
+          "gitId": "siuhian"
         },
         "content": "        }"
       },
       {
         "lineNumber": 66,
         "author": {
-          "gitId": "btricec"
+          "gitId": "siuhian"
         },
         "content": "        System.out.println(DIVIDER);"
       },
       {
         "lineNumber": 67,
         "author": {
-          "gitId": "btricec"
+          "gitId": "siuhian"
         },
         "content": "    }"
       },
       {
         "lineNumber": 68,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 69,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 70,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "    /*"
-      },
-      {
-        "lineNumber": 71,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "    public void printList(ActivityList activityList) {"
-      },
-      {
-        "lineNumber": 72,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "        System.out.println(DIVIDER);"
-      },
-      {
-        "lineNumber": 73,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "        System.out.println(\"Your completed activities:\");"
-      },
-      {
-        "lineNumber": 74,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "        for (int i \u003d 0; i \u003c activityList.getSize(); i++) {"
-      },
-      {
-        "lineNumber": 75,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            long durationInNanos \u003d (activityList.get(i).getDuration()).toNanos();"
-      },
-      {
-        "lineNumber": 76,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "            String duration \u003d String.format(\"%02d:%02d:%02d\","
-      },
-      {
-        "lineNumber": 77,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "                    TimeUnit.NANOSECONDS.toHours(durationInNanos),"
-      },
-      {
-        "lineNumber": 78,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "                    TimeUnit.NANOSECONDS.toMinutes(durationInNanos)"
-      },
-      {
-        "lineNumber": 79,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "                            - TimeUnit.HOURS.toMinutes(TimeUnit.NANOSECONDS.toHours(durationInNanos)),"
-      },
-      {
-        "lineNumber": 80,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "                    TimeUnit.NANOSECONDS.toSeconds(durationInNanos)"
-      },
-      {
-        "lineNumber": 81,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "                            - TimeUnit.MINUTES.toSeconds(TimeUnit.NANOSECONDS.toMinutes(durationInNanos)));"
-      },
-      {
-        "lineNumber": 82,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            System.out.print(i + 1 + \". \" + activityList.get(i).getName() + \" \" + duration);"
-      },
-      {
-        "lineNumber": 83,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            if (activityList.get(i).getTags() !\u003d null) {"
-      },
-      {
-        "lineNumber": 84,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                if (!activityList.get(i).getTags()[0].equals(\"null\")) {"
-      },
-      {
-        "lineNumber": 85,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                    System.out.println(\" \" + Arrays.toString(activityList.get(i).getTags()));"
-      },
-      {
-        "lineNumber": 86,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                } else {"
-      },
-      {
-        "lineNumber": 87,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                    System.out.println();"
-      },
-      {
-        "lineNumber": 88,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                }"
-      },
-      {
-        "lineNumber": 89,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "            } else {"
-      },
-      {
-        "lineNumber": 90,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "                System.out.print(\"\\n\");"
-      },
-      {
-        "lineNumber": 91,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 92,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 93,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "        System.out.println(DIVIDER);"
-      },
-      {
-        "lineNumber": 94,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 95,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "    */"
-      },
-      {
-        "lineNumber": 96,
         "author": {
           "gitId": "siuhian"
         },
@@ -6321,8 +6609,8 @@
     ],
     "authorContributionMap": {
       "rdimaio": 1,
-      "btricec": 46,
-      "siuhian": 49
+      "btricec": 24,
+      "siuhian": 43
     }
   },
   {
@@ -7442,23 +7730,23 @@
       {
         "lineNumber": 23,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "        String line1 \u003d \"1. a\";"
+        "content": "        String line1 \u003d \"a\";"
       },
       {
         "lineNumber": 24,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "        String line2 \u003d \"2. b\";"
+        "content": "        String line2 \u003d \"b\";"
       },
       {
         "lineNumber": 25,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "        String line3 \u003d \"3. c\";"
+        "content": "        String line3 \u003d \"c\";"
       },
       {
         "lineNumber": 26,
@@ -7505,9 +7793,9 @@
       {
         "lineNumber": 32,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "        StorageHandler.removeLine(2, storage.dataFilePath);"
+        "content": "        StorageHandler.removeLine(1, storage);"
       },
       {
         "lineNumber": 33,
@@ -7854,7 +8142,8 @@
       }
     ],
     "authorContributionMap": {
-      "rdimaio": 81
+      "rdimaio": 77,
+      "btricec": 4
     }
   },
   {

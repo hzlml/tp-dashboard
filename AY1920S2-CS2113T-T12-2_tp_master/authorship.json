@@ -8626,9 +8626,9 @@
       {
         "lineNumber": 88,
         "author": {
-          "gitId": "sitinadiah25"
+          "gitId": "NyanWunPaing"
         },
-        "content": "            int phoneNum \u003d Integer.parseInt(matcher.group(\"phone\"));"
+        "content": "            int phoneNum \u003d Integer.parseInt(matcher.group(\"phone\").trim());"
       },
       {
         "lineNumber": 89,
@@ -8640,16 +8640,16 @@
       {
         "lineNumber": 90,
         "author": {
-          "gitId": "sitinadiah25"
+          "gitId": "NyanWunPaing"
         },
-        "content": "                    matcher.group(\"name\"),"
+        "content": "                    matcher.group(\"name\").trim(),"
       },
       {
         "lineNumber": 91,
         "author": {
-          "gitId": "sitinadiah25"
+          "gitId": "NyanWunPaing"
         },
-        "content": "                    matcher.group(\"nric\"),"
+        "content": "                    matcher.group(\"nric\").trim(),"
       },
       {
         "lineNumber": 92,
@@ -8661,16 +8661,16 @@
       {
         "lineNumber": 93,
         "author": {
-          "gitId": "sitinadiah25"
+          "gitId": "NyanWunPaing"
         },
-        "content": "                    matcher.group(\"dob\"),"
+        "content": "                    matcher.group(\"dob\").trim(),"
       },
       {
         "lineNumber": 94,
         "author": {
-          "gitId": "sitinadiah25"
+          "gitId": "NyanWunPaing"
         },
-        "content": "                    matcher.group(\"blood\"), \"\", \"\""
+        "content": "                    matcher.group(\"blood\").trim(), \"\", \"\""
       },
       {
         "lineNumber": 95,
@@ -8684,171 +8684,164 @@
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "        }"
+        "content": "        matcher \u003d PATIENT_ALLERGIES_ARGS_FORMAT.matcher((content.trim()));"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "        matcher \u003d PATIENT_ALLERGIES_ARGS_FORMAT.matcher((content.trim()));"
+        "content": "        if (matcher.matches()) {"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "        if (matcher.matches()) {"
+        "content": "            return new AddCommand("
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "            return new AddCommand("
+        "content": "                    \"\","
       },
       {
         "lineNumber": 101,
         "author": {
-          "gitId": "sitinadiah25"
+          "gitId": "NyanWunPaing"
         },
-        "content": "                    \"\","
+        "content": "                    matcher.group(\"nric\").trim(),"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "                    matcher.group(\"nric\"),"
+        "content": "                    0,"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "                    0,"
+        "content": "                    \"\", \"\","
       },
       {
         "lineNumber": 104,
         "author": {
-          "gitId": "sitinadiah25"
+          "gitId": "NyanWunPaing"
         },
-        "content": "                    \"\", \"\","
+        "content": "                    matcher.group(\"allergies\").trim(), \"\""
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "                    matcher.group(\"allergies\"), \"\""
+        "content": "            );"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "            );"
+        "content": "        }"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "        }"
+        "content": "        matcher \u003d PATIENT_REMARKS_ARGS_FORMAT.matcher((content.trim()));"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "        matcher \u003d PATIENT_REMARKS_ARGS_FORMAT.matcher((content.trim()));"
+        "content": "        if (matcher.matches()) {"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "        if (matcher.matches()) {"
+        "content": "            return new AddCommand("
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "            return new AddCommand("
+        "content": "                    \"\","
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "                    \"\","
+        "content": "                    matcher.group(\"nric\"),"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "                    matcher.group(\"nric\"),"
+        "content": "                    0,"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "                    0,"
+        "content": "                    \"\", \"\","
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "                    \"\", \"\","
+        "content": "                    \"\", matcher.group(\"remarks\")"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "                    \"\", matcher.group(\"remarks\")"
+        "content": "            );"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "            );"
+        "content": "        }"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "        }"
+        "content": "        return new IncorrectCommand(\"    Command is invalid. Please try again\");"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "sitinadiah25"
         },
-        "content": "        return new IncorrectCommand(\"    Command is invalid. Please try again\");"
-      },
-      {
-        "lineNumber": 119,
-        "author": {
-          "gitId": "sitinadiah25"
-        },
         "content": "    }"
       },
       {
-        "lineNumber": 120,
+        "lineNumber": 119,
         "author": {
           "gitId": "NyanWunPaing"
         },
@@ -8856,9 +8849,9 @@
       }
     ],
     "authorContributionMap": {
-      "NyanWunPaing": 29,
+      "NyanWunPaing": 36,
       "Janicetyy": 3,
-      "sitinadiah25": 88
+      "sitinadiah25": 80
     }
   },
   {
