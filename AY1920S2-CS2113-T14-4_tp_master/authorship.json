@@ -462,6 +462,1052 @@
     }
   },
   {
+    "path": "docs/DeveloperGuide.md",
+    "fileType": "md",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "# Developer Guide"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "* [1. Design \u0026 Implementation](#design-implementation)"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    + [1.1. [Proposed] Search stock feature](#search-stock)"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "    + [1.2. [Proposed] List stock in descending quantities](#list-stock)"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "* [2. Product Scope](#product-scope)"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "* [3. User Stories](#user-stories)"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "* [4. Non-Functional Requirements](#nonfunctional-requirement)"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "* [5. Glossary](#glossary)"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "\u003ca name\u003d\"design-implementation\"\u003e\u003c/a\u003e"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "## 1. Design \u0026 Implementation"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "{Describe the design and implementation of the product. Use UML diagrams and short code snippets where applicable.}"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "\u003ca name\u003d\"search-stock\"\u003e\u003c/a\u003e"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "### 1.1 [Proposed] Search stock feature"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "#### 1.1.1 Proposed implementation"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "In the restaurant daily report, users can search against the stock category by supplying a keyword."
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "Given below is an example usage scenario and how the search mechanism behaves at each step."
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "Step 1. The user launches the application for the first time. An empty `stock` will be initialized."
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "Step 2. The user executes `add stock; i/tomato; q/10; p/$0.40;` command to add a tomato ingredient into the `stock`. Further, the user may add more ingredients into the current `stock`. Suppose the user executes `add stock; i/potato; q/5; p/$0.40;` and `add stock; i/rice; q/3; p/$0.40;` as well."
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "Step 3. The user can now search against the current `stock` to see if an ingredient is stored in the `stock`. The user now executes `search stock; tomato`, which will display the following result in the image. "
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "\u003cp align\u003d\"center\"\u003e"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "  \u003cimg src\u003d\"https://user-images.githubusercontent.com/59989652/77285807-d9d6f580-6d0c-11ea-8716-b4cb55877662.PNG\"\u003e"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "\u003c/p\u003e"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "The following sequence diagram shows how the search operation works:"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "\u003cp align\u003d\"center\"\u003e"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "  \u003cimg src\u003d\"https://user-images.githubusercontent.com/59989652/77437099-36c2d080-6e1f-11ea-8241-9000a65e3bb6.png\"\u003e"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "\u003c/p\u003e"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "#### 1.1.2 Design Considerations"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "##### Aspect: How search stock executes"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "* **Alternative 1 (current choice)**: List all ingredients that contains the keyword supplied."
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "+ Pros: Easy to implement."
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "+ Cons: All ingredients containing the keyword will be listed. This means that even if the keyword doesn\u0027t make sense, such as supplying \"to\", both potato and tomato will be listed since it contains \"to\"."
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "* **Alternative 2**: The user supplies the exact ingredient name."
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "+ Pros: The ingredient that matches exactly with the keyword supplied will be listed."
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "+ Cons: The user have to input the ingredient name correctly each time he/she uses the search stock feature."
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "##### Aspect: Data structure to support the search stock feature."
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "* **Alternative 1 (current choice)**: Use a `List` to store all possible ingredient names that contain the keyword supplied."
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "+ Pros: Easy to understand."
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "+ Cons: The `List` is derived by converting the existing stock (which is a `HashMap`) into an ArrayList. In order to print out the ingredient\u0027s name, quantity and price, methods such as `getKey()` and `getValue()` have to be used."
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "* **Alternative 2**: Use the existing `HashMap` data structure employed by the `stock` object."
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "+ Pros: We do not need to create a new `List` to display the relevant results."
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "+ Cons: Iterating a HashMap can be done by converting it to an EntrySet or by using an iterator. These, compared to `List`, is much less straightforward."
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "\u003ca name\u003d\"list-stock\"\u003e\u003c/a\u003e"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "### 1.2 [Proposed] List stock ingredients in descending quantity"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "#### 1.2.1 Proposed implementation"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "In the restaurant daily report, users can view all the ingredients presently in the stock by supplying the input `list stock`. The ingredients will be ordered in descending quantities, that is, the ingredient that has the highest quantity will be listed first and vice versa."
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "Given below is an example usage scenario and how the listing mechanism behaves at each step."
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "Step 1. The user launches the application for the first time. An empty `stock` will be initialized."
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "Step 2. The user executes `add stock; i/tomato; q/10; p/$0.40;` command to add a tomato ingredient into the `stock`. Further, the user may add more ingredients into the current `stock`. Suppose the user executes `add stock; i/potato; q/0; p/$0.40;` and `add stock; i/rice; q/55; p/$0.40;` as well."
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "Step 3. The user can now view the current `stock` to see what ingredients are there in the stock. The user now executes `list stock`, which will display the following result in the image. In this case, `rice` has the highest quantity of `55`, which is listed first as compared to `potato`, which has the lowest quantity of `0`. This can be seen from the image below."
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "\u003cp align\u003d\"center\"\u003e"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "  \u003cimg src\u003d\"https://user-images.githubusercontent.com/59989652/77300028-5cb97980-6d28-11ea-9a27-7d118de3431f.PNG\"\u003e"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "\u003c/p\u003e"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "The following class diagram shows how the listing operation works:"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "\u003cp align\u003d\"center\"\u003e"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "  \u003cimg src\u003d\"https://user-images.githubusercontent.com/59989652/77317533-54703700-6d46-11ea-8fa7-1085ce028f55.png\"\u003e"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "\u003c/p\u003e"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "* 1. When the user first runs the application, the Main object is initialized. The Main object then initializes the ui and the stock object in its `start()` method. "
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "* 2. Through its `runCommandUntilExit()` method, it then instructs the ui object to scan and read for user input. A CommandParser object is then initialized to parse this user input into a command."
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "* 3. The CommandParser object detects `list stock` as the user input, in which it will then create a ListStockCommand object."
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "* 4. The ListStockCommand object is then executed via its `execute(stock)` method, which takes in the stock object initialized previously and instruct it to list all ingredients through its `listIngredient()` method."
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "* 5. Within  the `listIngredient()` method, a temporary `List` data structure is used to convert from the `HashMap` in the stock object. The list is then sorted by supplying a `new Comparator` that compares the ingredient\u0027s quantity. Afterwards, the sorted list is then printed to be displayed to the user."
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "#### 1.2.2 Design Considerations"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "##### Aspect: How listing stock executes"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "* **Alternative 1 (current choice)**: List all ingredients in the stock in descending quantities."
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "+ Pros: The user is able to tell which ingredients are the least/most quickly. This can help to facilitate quicker decision making in terms of what ingredients to re-stock."
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "+ Cons: The current ingredients are listed in a specific ordering. A change in the ordering requirement would mean that a change in the implementation of the `comparator`."
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "* **Alternative 2**: List all ingredients in the stock without any ordering."
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "+ Pros: Easy to implement."
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "+ Cons: Hard to identity which ingredients that require re-stocking quickly."
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "##### Aspect: Data structure to support the search stock feature."
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "* **Alternative 1 (current choice)**: Use a `List` to store all possible ingredient names."
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "+ Pros: Easy to understand."
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "+ Cons: The `List` is derived by converting the existing stock (which is a `HashMap`) into an ArrayList. In order to print out the ingredient\u0027s name, quantity and price, methods such as `getKey()` and `getValue()` have to be used."
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "* **Alternative 2**: Use the existing `HashMap` data structure employed by the `stock` object."
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "+ Pros: We do not need to create a new `List` to display the relevant results."
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "+ Cons: Iterating a HashMap can be done by converting it to an EntrySet or by using an iterator. Sorting it, however, as compared to `List`, is much less straightforward."
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "\u003ca name\u003d\"product-scope\"\u003e\u003c/a\u003e"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "## 2. Product Scope"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "### Target user profile"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "{Describe the target user profile}"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "### Value proposition"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "{Describe the value proposition: what problem does it solve?}"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "\u003ca name\u003d\"user-stories\"\u003e\u003c/a\u003e"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "## 3. User Stories"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|Version| As a ... | I want to ... | So that I can ...|"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|--------|----------|---------------|------------------|"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|v1.0|new user|see usage instructions|refer to them when I forget how to use the application|"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|v2.0|user|find a to-do item by name|locate a to-do without having to go through the entire list|"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "\u003ca name\u003d\"nonfunctional-requirement\"\u003e\u003c/a\u003e"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "## 4. Non-Functional Requirements"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "{Give non-functional requirements}"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "\u003ca name\u003d\"glossary\"\u003e\u003c/a\u003e"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Glossary"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "* *glossary item* - Definition"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "JosephLimWeiJie"
+        },
+        "content": "## 5. Instructions for Manual Testing"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "{Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing}"
+      }
+    ],
+    "authorContributionMap": {
+      "JosephLimWeiJie": 118,
+      "-": 30
+    }
+  },
+  {
     "path": "docs/UserGuide.md",
     "fileType": "md",
     "lines": [

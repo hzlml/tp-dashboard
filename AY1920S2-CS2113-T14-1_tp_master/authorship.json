@@ -556,625 +556,625 @@
       {
         "lineNumber": 27,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": "#### Study Plan Feature"
+        "content": "#### Set Priority Feature"
       },
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
         "content": ""
       },
       {
         "lineNumber": 29,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": "##### Proposed Implementation"
+        "content": "The Set Priority feature allows users to mark a flashcard with a specified priority level. The priority level is"
       },
       {
         "lineNumber": 30,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": ""
+        "content": "then reflected when the user requests a list of existing flashcards."
       },
       {
         "lineNumber": 31,
         "author": {
-          "gitId": "Zhilin-Huang"
-        },
-        "content": "The Study Plan feature is facilitated by `StudyPlanList`."
-      },
-      {
-        "lineNumber": 32,
-        "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
         "content": ""
       },
       {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "##### Proposed Implementation"
+      },
+      {
         "lineNumber": 33,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": "Internally, it implements a `TreeMap`, with date as key and the list of flashcard indexes to study as value. "
+        "content": ""
       },
       {
         "lineNumber": 34,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": "Key-value pairs in the `TreeMap` are sorted by dates."
+        "content": "`PriorityLevel` is stored as an enum with four fields: LOW, MEDIUM, HIGH and DEFAULT."
       },
       {
         "lineNumber": 35,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
         "content": ""
       },
       {
         "lineNumber": 36,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": "It implements the following operations:"
+        "content": "The feature implements the following operations:"
       },
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
         "content": ""
       },
       {
         "lineNumber": 38,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": "- `StudyPlanList#updateStudyPlan()` - Updates the study plan list."
+        "content": "- `Flashcard#setPriorityLevel()` - Sets a flashcard to a specified priority level (LOW/MEDIUM/HIGH)."
       },
       {
         "lineNumber": 39,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": "- `StudyPlanList#getStudyPlanList()` - Gets the list of study plans."
+        "content": "- `Flashcard#getPriorityAsString()` - Return an icon indicating the flashcard\u0027s priority level."
       },
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
         "content": ""
       },
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": "Given below is an example usage scenario and how the study plan mechanism behaves at each step."
+        "content": "The following class diagram shows the structures relevant to the Set Priority feature:"
       },
       {
         "lineNumber": 42,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
         "content": ""
       },
       {
         "lineNumber": 43,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": "Step 1. The user launches the application and an empty `StudyPlanList` is initialized."
+        "content": "![SetPriorityFeatureClassDiagram](images/SetPriorityFeatureClassDiagram.png)"
       },
       {
         "lineNumber": 44,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
         "content": ""
       },
       {
         "lineNumber": 45,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": "Step 2. The user executes `plan` command and the `updateStudyPlan` operation is invoked. The application prompts the"
+        "content": "Given below is an example usage scenario and how the set priority mechanism behaves at each step."
       },
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "Zhilin-Huang"
-        },
-        "content": "user for date and the corresponding list of flashcards indexes."
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
         "content": ""
       },
       {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "Step 1. The user launches the application and creates a new `Flashcard` (of type Event, Person, or Other), "
+      },
+      {
         "lineNumber": 48,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": "The following sequence diagram shows how the `updateStudyPlan` operation works:"
+        "content": "with a default priority level of DEFAULT."
       },
       {
         "lineNumber": 49,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
         "content": ""
       },
       {
         "lineNumber": 50,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": "![updateStudyPlanSequenceDiagram](images/updateStudyPlanSequenceDiagram.png)"
+        "content": "Step 2. The user executes `priority [flashcard index] [priority level]` command and the `setPriorityLevel` "
       },
       {
         "lineNumber": 51,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": ""
+        "content": "operation is invoked. Subsequently, the flashcard of specified index is retrieved from the main `FlashcardList` "
       },
       {
         "lineNumber": 52,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": "Step 3. The user executes `show-plan` command and the `getStudyPlanList` operation is invoked. The application"
+        "content": "instance. Its priority level is set to the specified priority."
       },
       {
         "lineNumber": 53,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": "displays the user\u0027s study plan list."
+        "content": ""
       },
       {
         "lineNumber": 54,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": ""
+        "content": "The following sequence diagram shows the relevant interactions behind `setPriorityLevel`:"
       },
       {
         "lineNumber": 55,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": "The following sequence diagram shows how the `getStudyPlanList` operation works:"
+        "content": ""
       },
       {
         "lineNumber": 56,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": ""
+        "content": "![setPriorityLevelSequenceDiagram](images/setPriorityLevelSequenceDiagram.png)"
       },
       {
         "lineNumber": 57,
         "author": {
-          "gitId": "Zhilin-Huang"
-        },
-        "content": "![getStudyPlanListSequenceDiagram](images/getStudyPlanListSequenceDiagram.png)"
-      },
-      {
-        "lineNumber": 58,
-        "author": {
-          "gitId": "-"
+          "gitId": "g-lilian"
         },
         "content": ""
       },
       {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "Zhilin-Huang"
+        },
+        "content": "#### Study Plan Feature"
+      },
+      {
         "lineNumber": 59,
         "author": {
-          "gitId": "-"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "## Product Scope"
+        "content": ""
       },
       {
         "lineNumber": 60,
         "author": {
-          "gitId": "-"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "### Target user profile"
+        "content": "##### Proposed Implementation"
       },
       {
         "lineNumber": 61,
         "author": {
-          "gitId": "-"
+          "gitId": "Zhilin-Huang"
         },
         "content": ""
       },
       {
         "lineNumber": 62,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "History Flashcard (HF) is for those who are studying history subjects to create flashcards which summarize "
+        "content": "The Study Plan feature is facilitated by `StudyPlanList`."
       },
       {
         "lineNumber": 63,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "the most important information for historical events, figures and artifacts. HF is optimized for those who "
+        "content": ""
       },
       {
         "lineNumber": 64,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "prefer to use a simple Command Line Interface (CLI). "
+        "content": "Internally, it implements a `TreeMap`, with date as key and the list of flashcard indexes to study as value. "
       },
       {
         "lineNumber": 65,
         "author": {
-          "gitId": "-"
+          "gitId": "Zhilin-Huang"
         },
-        "content": ""
+        "content": "Key-value pairs in the `TreeMap` are sorted by dates."
       },
       {
         "lineNumber": 66,
         "author": {
-          "gitId": "-"
-        },
-        "content": "### Value proposition"
-      },
-      {
-        "lineNumber": 67,
-        "author": {
-          "gitId": "-"
+          "gitId": "Zhilin-Huang"
         },
         "content": ""
       },
       {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "Zhilin-Huang"
+        },
+        "content": "It implements the following operations:"
+      },
+      {
         "lineNumber": 68,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "History is a subject that usually relies on heavy memorisation of a large amount of content. In order to "
+        "content": ""
       },
       {
         "lineNumber": 69,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "make revision easier for history students, HF includes features that help with memory retention and organises "
+        "content": "- `StudyPlanList#updateStudyPlan()` - Updates the study plan list."
       },
       {
         "lineNumber": 70,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "information in a way that makes it convenient to review."
+        "content": "- `StudyPlanList#getStudyPlanList()` - Gets the list of study plans."
       },
       {
         "lineNumber": 71,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
         "content": ""
       },
       {
         "lineNumber": 72,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "In HF, information can be entered in the form of flashcards with different fields, such as the name of the "
+        "content": "Given below is an example usage scenario and how the study plan mechanism behaves at each step."
       },
       {
         "lineNumber": 73,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "historical event/person, the relevant dates, and a summary. Flashcards can be categorised into user-defined groups"
+        "content": ""
       },
       {
         "lineNumber": 74,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
-        "content": " to enable students to organise their knowledge better. Users can also create daily study plans."
+        "content": "Step 1. The user launches the application and an empty `StudyPlanList` is initialized."
       },
       {
         "lineNumber": 75,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
-        "content": " "
+        "content": ""
       },
       {
         "lineNumber": 76,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
-        "content": " In addition, the user can shuffle and display random flashcards for revision."
+        "content": "Step 2. The user executes `plan` command and the `updateStudyPlan` operation is invoked. The application prompts the"
       },
       {
         "lineNumber": 77,
         "author": {
-          "gitId": "-"
+          "gitId": "Zhilin-Huang"
         },
-        "content": ""
+        "content": "user for date and the corresponding list of flashcards indexes."
       },
       {
         "lineNumber": 78,
         "author": {
-          "gitId": "-"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "## User Stories"
+        "content": ""
       },
       {
         "lineNumber": 79,
+        "author": {
+          "gitId": "Zhilin-Huang"
+        },
+        "content": "The following sequence diagram shows how the `updateStudyPlan` operation works:"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "Zhilin-Huang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "Zhilin-Huang"
+        },
+        "content": "![updateStudyPlanSequenceDiagram](images/updateStudyPlanSequenceDiagram.png)"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "Zhilin-Huang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "Zhilin-Huang"
+        },
+        "content": "Step 3. The user executes `show-plan` command and the `getStudyPlanList` operation is invoked. The application"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "Zhilin-Huang"
+        },
+        "content": "displays the user\u0027s study plan list."
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "Zhilin-Huang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "Zhilin-Huang"
+        },
+        "content": "The following sequence diagram shows how the `getStudyPlanList` operation works:"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "Zhilin-Huang"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "Zhilin-Huang"
+        },
+        "content": "![getStudyPlanListSequenceDiagram](images/getStudyPlanListSequenceDiagram.png)"
+      },
+      {
+        "lineNumber": 89,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 80,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "|Version| As a ... | I want to ... | So that I can ...|"
-      },
-      {
-        "lineNumber": 81,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "|--------|----------|---------------|------------------|"
-      },
-      {
-        "lineNumber": 82,
-        "author": {
-          "gitId": "g-lilian"
-        },
-        "content": "|v1.0|student|add a Person flashcard|record the details about a historical figure|"
-      },
-      {
-        "lineNumber": 83,
-        "author": {
-          "gitId": "g-lilian"
-        },
-        "content": "|v1.0|student|add an Event flashcard|record the details about a historical event|"
-      },
-      {
-        "lineNumber": 84,
-        "author": {
-          "gitId": "g-lilian"
-        },
-        "content": "|v1.0|student|add an Other flashcard|record the details about any other historical item|"
-      },
-      {
-        "lineNumber": 85,
-        "author": {
-          "gitId": "g-lilian"
-        },
-        "content": "|v1.0|student|list all flashcards|get an overview of all my existing flashcards|"
-      },
-      {
-        "lineNumber": 86,
-        "author": {
-          "gitId": "g-lilian"
-        },
-        "content": "|v1.0|student|delete a flashcard|remove the flashcards that I no longer need|"
-      },
-      {
-        "lineNumber": 87,
-        "author": {
-          "gitId": "g-lilian"
-        },
-        "content": "|v1.0|student|view all the fields of a flashcard|review the details of a specific flashcard|"
-      },
-      {
-        "lineNumber": 88,
-        "author": {
-          "gitId": "g-lilian"
-        },
-        "content": "|v1.0|student|mark a flashcard as Reviewed|keep track of my learning progress|"
-      },
-      {
-        "lineNumber": 89,
-        "author": {
-          "gitId": "g-lilian"
-        },
-        "content": "|v1.0|student|assign priority to flashcards|identify the relative importance of flashcards for review|"
-      },
-      {
         "lineNumber": 90,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "|v1.0|student|view a timeline of all events and people|better organize my knowledge|"
+        "content": "#### Random Review Feature"
       },
       {
         "lineNumber": 91,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "|v1.0|student|make groups for flashcards|group related flashcards together for more organized revision|"
+        "content": ""
       },
       {
         "lineNumber": 92,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "|v1.0|student|see all the commands available|find out what commands are available, and their format|"
+        "content": "##### Proposed Implementation"
       },
       {
         "lineNumber": 93,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "|v2.0|student|set a daily study plan|keep myself motivated to review flashcards every day|"
+        "content": ""
       },
       {
         "lineNumber": 94,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "|v2.0|student|list the flashcards which have been reviewed|keep track of my learning progress|"
+        "content": "The random review mechanism is facilitated by `FlashcardList`.It stores an `List\u003cFlashcard\u003e` internally which contains"
       },
       {
         "lineNumber": 95,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "|v2.0|student|list all existing flashcard groups|view all the groups I have created|"
+        "content": "all the flashcards created by the user."
       },
       {
         "lineNumber": 96,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "|v2.0|student|list flashcards from a particular group|quickly identify the flashcards belonging to a group|"
+        "content": ""
       },
       {
         "lineNumber": 97,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "|v2.0|student|search for flashcards using a keyword|quickly find the flashcard I am looking for|"
+        "content": "It implements the following operation:"
       },
       {
         "lineNumber": 98,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "|v2.0|student|save flashcards to a storage file|flashcards are not lost when I exit the app|"
+        "content": ""
       },
       {
         "lineNumber": 99,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "|v2.0|student|read in flashcards from a storage file|flashcards can be loaded when I enter the app|"
+        "content": "- `FlashcardList#reviewRandomFlashcards()` -Randomize all the flashcards, then display the details of them one by one "
       },
       {
         "lineNumber": 100,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "|v2.0|student|save my daily study plan to a storage file|study plans are not lost when I exit the app|"
+        "content": "to the user. And update the review status of the flashcards corresponding to the user\u0027s\u0027 responses."
       },
       {
         "lineNumber": 101,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "|v2.0|student|read in study plans from a storage file|study plans can be loaded when I enter the app|"
+        "content": ""
       },
       {
         "lineNumber": 102,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "|v2.0|student|save flashcard groups to a storage file|groups are not lost when I exit the app|"
+        "content": "Given below is an example usage scenario and how the random review mechanism behaves at each step."
       },
       {
         "lineNumber": 103,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "|v2.0|student|read in flashcard groups from a storage file|groups can be loaded when I enter the app|"
+        "content": ""
       },
       {
         "lineNumber": 104,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "|v2.0|student|restrict the timeline to a fixed period|keep track of flashcards belonging to a certain time period|"
+        "content": "Step 1. The user launches the application for the first time. The `FlashcardsList` will be initialized with the empty "
       },
       {
         "lineNumber": 105,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "|v2.0|student|shuffle and display random flashcards|test my knowledge using random flashcards|"
+        "content": "flashcards list."
       },
       {
         "lineNumber": 106,
         "author": {
-          "gitId": "-"
+          "gitId": "sliu107"
         },
         "content": ""
       },
       {
         "lineNumber": 107,
         "author": {
-          "gitId": "-"
+          "gitId": "sliu107"
         },
-        "content": "## Non-Functional Requirements"
+        "content": "Step 2. The user executes `event/person/other commands` to add multiple flashcards to the flashcard list "
       },
       {
         "lineNumber": 108,
         "author": {
-          "gitId": "-"
+          "gitId": "sliu107"
         },
-        "content": ""
+        "content": "(The detailed implementation of creating flashcards explained in the Flashcard Creation Feature)"
       },
       {
         "lineNumber": 109,
         "author": {
-          "gitId": "-"
-        },
-        "content": "{Give non-functional requirements}"
-      },
-      {
-        "lineNumber": 110,
-        "author": {
-          "gitId": "-"
+          "gitId": "sliu107"
         },
         "content": ""
       },
       {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "sliu107"
+        },
+        "content": "Step 3. The user executes `random command` and `reviewRandomFlashcards()` operation is invoked. The application prompts "
+      },
+      {
         "lineNumber": 111,
         "author": {
-          "gitId": "-"
+          "gitId": "sliu107"
         },
-        "content": "## Glossary"
+        "content": "responses for each unreviewed flashcard that whether the user want to mark it as reviewed or not."
       },
       {
         "lineNumber": 112,
         "author": {
-          "gitId": "-"
+          "gitId": "sliu107"
         },
         "content": ""
       },
       {
         "lineNumber": 113,
         "author": {
-          "gitId": "-"
+          "gitId": "sliu107"
         },
-        "content": "* *glossary item* - Definition"
+        "content": "The following sequence diagram shows how the   `reviewRandomFlashcards()` operation works:"
       },
       {
         "lineNumber": 114,
         "author": {
-          "gitId": "-"
+          "gitId": "sliu107"
         },
         "content": ""
       },
       {
         "lineNumber": 115,
         "author": {
-          "gitId": "-"
+          "gitId": "sliu107"
         },
-        "content": "## Instructions for Manual Testing"
+        "content": "![randomReviewSequenceDiagram](images/randomReviewSequenceDiagram.png)"
       },
       {
         "lineNumber": 116,
@@ -1188,13 +1188,427 @@
         "author": {
           "gitId": "-"
         },
+        "content": "## Product Scope"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "### Target user profile"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "History Flashcard (HF) is for those who are studying history subjects to create flashcards which summarize "
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "the most important information for historical events, figures and artifacts. HF is optimized for those who "
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "prefer to use a simple Command Line Interface (CLI). "
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "### Value proposition"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "History is a subject that usually relies on heavy memorisation of a large amount of content. In order to "
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "make revision easier for history students, HF includes features that help with memory retention and organises "
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "information in a way that makes it convenient to review."
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "In HF, information can be entered in the form of flashcards with different fields, such as the name of the "
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "historical event/person, the relevant dates, and a summary. Flashcards can be categorised into user-defined groups"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": " to enable students to organise their knowledge better. Users can also create daily study plans."
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": " "
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": " In addition, the user can shuffle and display random flashcards for revision."
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## User Stories"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|Version| As a ... | I want to ... | So that I can ...|"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|--------|----------|---------------|------------------|"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v1.0|student|add a Person flashcard|record the details about a historical figure|"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v1.0|student|add an Event flashcard|record the details about a historical event|"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v1.0|student|add an Other flashcard|record the details about any other historical item|"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v1.0|student|list all flashcards|get an overview of all my existing flashcards|"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v1.0|student|delete a flashcard|remove the flashcards that I no longer need|"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v1.0|student|view all the fields of a flashcard|review the details of a specific flashcard|"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v1.0|student|mark a flashcard as Reviewed|keep track of my learning progress|"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v1.0|student|assign priority to flashcards|identify the relative importance of flashcards for review|"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v1.0|student|view a timeline of all events and people|better organize my knowledge|"
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v1.0|student|make groups for flashcards|group related flashcards together for more organized revision|"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v1.0|student|see all the commands available|find out what commands are available, and their format|"
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|set a daily study plan|keep myself motivated to review flashcards every day|"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|list the flashcards which have been reviewed|keep track of my learning progress|"
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|list all existing flashcard groups|view all the groups I have created|"
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|list flashcards from a particular group|quickly identify the flashcards belonging to a group|"
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|search for flashcards using a keyword|quickly find the flashcard I am looking for|"
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|save flashcards to a storage file|flashcards are not lost when I exit the app|"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|read in flashcards from a storage file|flashcards can be loaded when I enter the app|"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|save my daily study plan to a storage file|study plans are not lost when I exit the app|"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|read in study plans from a storage file|study plans can be loaded when I enter the app|"
+      },
+      {
+        "lineNumber": 160,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|save flashcard groups to a storage file|groups are not lost when I exit the app|"
+      },
+      {
+        "lineNumber": 161,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|read in flashcard groups from a storage file|groups can be loaded when I enter the app|"
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|restrict the timeline to a fixed period|keep track of flashcards belonging to a certain time period|"
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|shuffle and display random flashcards|test my knowledge using random flashcards|"
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "sliu107"
+        },
+        "content": "|v2.0|student|reset all the flashcards as unreviewed|review flashcards for multiple times"
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Non-Functional Requirements"
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "{Give non-functional requirements}"
+      },
+      {
+        "lineNumber": 169,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 170,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Glossary"
+      },
+      {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "* *glossary item* - Definition"
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Instructions for Manual Testing"
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 176,
+        "author": {
+          "gitId": "-"
+        },
         "content": "{Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing}"
       }
     ],
     "authorContributionMap": {
       "Zhilin-Huang": 50,
-      "g-lilian": 36,
-      "-": 31
+      "sliu107": 27,
+      "g-lilian": 67,
+      "-": 32
     }
   },
   {
@@ -7376,7 +7790,7 @@
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "        LOGGER.info(\"Executing ListGroupCommand...\");"
+        "content": "        LOGGER.info(\"Executing ListFlashcardsInGroupCommand...\");"
       },
       {
         "lineNumber": 36,
@@ -7418,136 +7832,143 @@
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "            LOGGER.warning(\"UnrecognizedFlashcardGroupException occurred when executing ListGroupCommand.\");"
+        "content": "            LOGGER.warning(\"UnrecognizedFlashcardGroupException occurred when executing \""
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "        }"
+        "content": "                    + \"ListFlashcardsInGroupCommand.\");"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "        LOGGER.info(\"Finished executing ListGroupCommand!\");"
+        "content": "        }"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "    }"
+        "content": "        LOGGER.info(\"Finished executing ListFlashcardsInGroupCommand!\");"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "    @Override"
+        "content": ""
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "    public boolean equals(Object obj) {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "        if (!(obj instanceof ListFlashcardsInGroupCommand)) {"
+        "content": "    public boolean equals(Object obj) {"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "            return false;"
+        "content": "        if (!(obj instanceof ListFlashcardsInGroupCommand)) {"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "        }"
+        "content": "            return false;"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "        if (this \u003d\u003d obj) {"
+        "content": "        }"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "            return true;"
+        "content": "        if (this \u003d\u003d obj) {"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "        }"
+        "content": "            return true;"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "        ListFlashcardsInGroupCommand otherListFlashcardsInGroupCommand \u003d (ListFlashcardsInGroupCommand) obj;"
+        "content": ""
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "        return this.ui.equals(otherListFlashcardsInGroupCommand.ui)"
+        "content": "        ListFlashcardsInGroupCommand otherListFlashcardsInGroupCommand \u003d (ListFlashcardsInGroupCommand) obj;"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "            \u0026\u0026 this.groupList.equals(otherListFlashcardsInGroupCommand.groupList)"
+        "content": "        return this.ui.equals(otherListFlashcardsInGroupCommand.ui)"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "            \u0026\u0026 this.groupIdentifier.equals(otherListFlashcardsInGroupCommand.groupIdentifier);"
+        "content": "            \u0026\u0026 this.groupList.equals(otherListFlashcardsInGroupCommand.groupList)"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "    }"
+        "content": "            \u0026\u0026 this.groupIdentifier.equals(otherListFlashcardsInGroupCommand.groupIdentifier);"
       },
       {
         "lineNumber": 60,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 61,
         "author": {
           "gitId": "g-lilian"
         },
@@ -7555,7 +7976,7 @@
       }
     ],
     "authorContributionMap": {
-      "g-lilian": 60
+      "g-lilian": 61
     }
   },
   {
@@ -15963,7 +16384,7 @@
         "author": {
           "gitId": "sliu107"
         },
-        "content": "            if (flashcard.isReviewed) {"
+        "content": "            if (flashcard.isReviewed()) {"
       },
       {
         "lineNumber": 147,
@@ -32757,6 +33178,1023 @@
     }
   },
   {
+    "path": "src/test/java/seedu/tp/commands/ListFlashcardsInGroupCommandTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "package seedu.tp.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import org.junit.jupiter.api.AfterEach;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import org.junit.jupiter.api.BeforeEach;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import seedu.tp.flashcard.EventFlashcard;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import seedu.tp.flashcard.Flashcard;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import seedu.tp.flashcard.FlashcardList;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import seedu.tp.flashcard.OtherFlashcard;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import seedu.tp.flashcard.PersonFlashcard;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import seedu.tp.group.FlashcardGroup;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import seedu.tp.group.GroupList;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import seedu.tp.ui.Ui;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import java.io.ByteArrayOutputStream;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import java.io.PrintStream;"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import java.util.Arrays;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import java.util.List;"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import static seedu.tp.utils.ExampleInputConstants.DESCRIPTION;"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import static seedu.tp.utils.ExampleInputConstants.DETAILS;"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import static seedu.tp.utils.ExampleInputConstants.END_LOCAL_DATE;"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import static seedu.tp.utils.ExampleInputConstants.GROUP_NAME;"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import static seedu.tp.utils.ExampleInputConstants.INDEXES_3;"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import static seedu.tp.utils.ExampleInputConstants.START_LOCAL_DATE;"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import static seedu.tp.utils.InputTestUtil.convertStringIndexesToIntArray;"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "public class ListFlashcardsInGroupCommandTest {"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    private final ByteArrayOutputStream capturedOut \u003d new ByteArrayOutputStream();"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    private final PrintStream backupStdout \u003d System.out;"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    private static final EventFlashcard EVENT_FLASHCARD \u003d new EventFlashcard("
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            \"Event 1\","
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            START_LOCAL_DATE,"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            END_LOCAL_DATE,"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            \"This is an event summary\","
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            DETAILS"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    );"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    private static final PersonFlashcard PERSON_FLASHCARD \u003d new PersonFlashcard("
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            \"Person 1\","
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            START_LOCAL_DATE,"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            END_LOCAL_DATE,"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            \"This is a person\u0027s summary\","
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            DETAILS"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    );"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    private static final OtherFlashcard OTHER_FLASHCARD \u003d new OtherFlashcard("
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            \"Title 1\","
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            \"This is a summary\","
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            DETAILS"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    );"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    private FlashcardList fullFlashcardList;"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    @BeforeEach"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    public void setup() {"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        List\u003cFlashcard\u003e flashcards \u003d Arrays.asList(EVENT_FLASHCARD, PERSON_FLASHCARD, OTHER_FLASHCARD);"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        fullFlashcardList \u003d new FlashcardList(flashcards);"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    @BeforeEach"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    public void captureStdout() {"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        System.setOut(new PrintStream(capturedOut));"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    @AfterEach"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    public void restoreStdout() {"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        System.setOut(backupStdout);"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    public void showGroupsCommand_execute_listFlashcardsInGroupSuccessfullyUsingName() {"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        FlashcardGroup group \u003d new FlashcardGroup(GROUP_NAME, DESCRIPTION, fullFlashcardList,"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "                convertStringIndexesToIntArray(INDEXES_3));"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        GroupList groupList \u003d new GroupList();"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        groupList.addFlashcardGroup(group);"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        ListFlashcardsInGroupCommand listFlashcardsInGroupCommand \u003d"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "                new ListFlashcardsInGroupCommand(groupList, new Ui(), GROUP_NAME);"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        listFlashcardsInGroupCommand.execute();"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        StringBuilder expectedOutput \u003d new StringBuilder();"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        expectedOutput.append(\"Example flashcard group name contains the following flashcards:\""
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "                + System.lineSeparator());"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        expectedOutput.append(\"- Event 1 | Reviewed: X | Not indicated\" + System.lineSeparator());"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        expectedOutput.append(\"- Person 1 | Reviewed: X | Not indicated\" + System.lineSeparator());"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        expectedOutput.append(\"- Title 1 | Reviewed: X | Not indicated\" + System.lineSeparator());"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        assertEquals(expectedOutput.toString(), capturedOut.toString());"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    public void showGroupsCommand_execute_listFlashcardsInGroupSuccessfullyUsingIndex() {"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        FlashcardGroup group \u003d new FlashcardGroup(GROUP_NAME, DESCRIPTION, fullFlashcardList,"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "                convertStringIndexesToIntArray(INDEXES_3));"
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        GroupList groupList \u003d new GroupList();"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        groupList.addFlashcardGroup(group);"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        ListFlashcardsInGroupCommand listFlashcardsInGroupCommand \u003d"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "                new ListFlashcardsInGroupCommand(groupList, new Ui(), \"1\");"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        listFlashcardsInGroupCommand.execute();"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        StringBuilder expectedOutput \u003d new StringBuilder();"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        expectedOutput.append(\"1 contains the following flashcards:\""
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "                + System.lineSeparator());"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        expectedOutput.append(\"- Event 1 | Reviewed: X | Not indicated\" + System.lineSeparator());"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        expectedOutput.append(\"- Person 1 | Reviewed: X | Not indicated\" + System.lineSeparator());"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        expectedOutput.append(\"- Title 1 | Reviewed: X | Not indicated\" + System.lineSeparator());"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        assertEquals(expectedOutput.toString(), capturedOut.toString());"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    public void execute_listGroupWithOutOfBoundIndex_catchesUnrecognizedFlashcardGroupException() {"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        FlashcardGroup group \u003d new FlashcardGroup(GROUP_NAME, DESCRIPTION, fullFlashcardList,"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "                convertStringIndexesToIntArray(INDEXES_3));"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        GroupList groupList \u003d new GroupList();"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        groupList.addFlashcardGroup(group);"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        ListFlashcardsInGroupCommand listFlashcardsInGroupCommand \u003d"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "                new ListFlashcardsInGroupCommand(groupList, new Ui(), \"0\");"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        listFlashcardsInGroupCommand.execute();"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        StringBuilder expectedOutput \u003d new StringBuilder();"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        expectedOutput.append(\"Please enter a valid flashcard group name or index.\""
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "                + \" Use \\\"showgroups\\\" to view all groups.\" + System.lineSeparator());"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        assertEquals(expectedOutput.toString(), capturedOut.toString());"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    public void execute_listGroupWithFalseName_catchesUnrecognizedFlashcardGroupException() {"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        FlashcardGroup group \u003d new FlashcardGroup(GROUP_NAME, DESCRIPTION, fullFlashcardList,"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "                convertStringIndexesToIntArray(INDEXES_3));"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        GroupList groupList \u003d new GroupList();"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        groupList.addFlashcardGroup(group);"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        ListFlashcardsInGroupCommand listFlashcardsInGroupCommand \u003d"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "                new ListFlashcardsInGroupCommand(groupList, new Ui(), \"badname\");"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        listFlashcardsInGroupCommand.execute();"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        StringBuilder expectedOutput \u003d new StringBuilder();"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        expectedOutput.append(\"Please enter a valid flashcard group name or index.\""
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "                + \" Use \\\"showgroups\\\" to view all groups.\" + System.lineSeparator());"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        assertEquals(expectedOutput.toString(), capturedOut.toString());"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "g-lilian": 144
+    }
+  },
+  {
     "path": "src/test/java/seedu/tp/commands/ListReviewedCommandTest.java",
     "fileType": "java",
     "lines": [
@@ -37303,6 +38741,652 @@
     }
   },
   {
+    "path": "src/test/java/seedu/tp/commands/ShowGroupsCommandTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "package seedu.tp.commands;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import org.junit.jupiter.api.AfterEach;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import org.junit.jupiter.api.BeforeEach;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import seedu.tp.flashcard.EventFlashcard;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import seedu.tp.flashcard.Flashcard;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import seedu.tp.flashcard.FlashcardList;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import seedu.tp.flashcard.OtherFlashcard;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import seedu.tp.flashcard.PersonFlashcard;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import seedu.tp.group.FlashcardGroup;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import seedu.tp.group.GroupList;"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import seedu.tp.ui.Ui;"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import java.io.ByteArrayOutputStream;"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import java.io.PrintStream;"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import java.util.Arrays;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import java.util.List;"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import static seedu.tp.utils.ExampleInputConstants.DESCRIPTION;"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import static seedu.tp.utils.ExampleInputConstants.DETAILS;"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import static seedu.tp.utils.ExampleInputConstants.END_LOCAL_DATE;"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import static seedu.tp.utils.ExampleInputConstants.INDEXES_2;"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import static seedu.tp.utils.ExampleInputConstants.INDEXES_3;"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import static seedu.tp.utils.ExampleInputConstants.START_LOCAL_DATE;"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "import static seedu.tp.utils.InputTestUtil.convertStringIndexesToIntArray;"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "public class ShowGroupsCommandTest {"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    private final ByteArrayOutputStream capturedOut \u003d new ByteArrayOutputStream();"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    private final PrintStream backupStdout \u003d System.out;"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    private static final EventFlashcard EVENT_FLASHCARD \u003d new EventFlashcard("
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            \"Event 1\","
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            START_LOCAL_DATE,"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            END_LOCAL_DATE,"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            \"This is an event summary\","
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            DETAILS"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    );"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    private static final PersonFlashcard PERSON_FLASHCARD \u003d new PersonFlashcard("
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            \"Person 1\","
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            START_LOCAL_DATE,"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            END_LOCAL_DATE,"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            \"This is a person\u0027s summary\","
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            DETAILS"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    );"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    private static final OtherFlashcard OTHER_FLASHCARD \u003d new OtherFlashcard("
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            \"Title 1\","
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            \"This is a summary\","
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "            DETAILS"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    );"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    private FlashcardList fullFlashcardList;"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    @BeforeEach"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    public void setup() {"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        List\u003cFlashcard\u003e flashcards \u003d Arrays.asList(EVENT_FLASHCARD, PERSON_FLASHCARD, OTHER_FLASHCARD);"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        fullFlashcardList \u003d new FlashcardList(flashcards);"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    @BeforeEach"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    public void captureStdout() {"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        System.setOut(new PrintStream(capturedOut));"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    @AfterEach"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    public void restoreStdout() {"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        System.setOut(backupStdout);"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    public void showGroupsCommand_execute_listGroupsSuccessfully() {"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        FlashcardGroup group1 \u003d new FlashcardGroup(\"Group 1\", DESCRIPTION, fullFlashcardList,"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "                convertStringIndexesToIntArray(INDEXES_3));"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        FlashcardGroup group2 \u003d new FlashcardGroup(\"Group 2\", DESCRIPTION, fullFlashcardList,"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "                convertStringIndexesToIntArray(INDEXES_2));"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        GroupList groupList \u003d new GroupList();"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        groupList.addFlashcardGroup(group1);"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        groupList.addFlashcardGroup(group2);"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        ShowGroupsCommand showGroupsCommand \u003d new ShowGroupsCommand(groupList, new Ui());"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        showGroupsCommand.execute();"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        StringBuilder expectedOutput \u003d new StringBuilder();"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        expectedOutput.append(\"Here are all existing groups:\""
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "                + System.lineSeparator());"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        expectedOutput.append(\"1. Group 1\" + System.lineSeparator());"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        expectedOutput.append(\"2. Group 2\" + System.lineSeparator());"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        assertEquals(expectedOutput.toString(), capturedOut.toString());"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "g-lilian": 91
+    }
+  },
+  {
     "path": "src/test/java/seedu/tp/commands/TimelineCommandTest.java",
     "fileType": "java",
     "lines": [
@@ -37561,9 +39645,9 @@
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "quinnyyy"
+          "gitId": "g-lilian"
         },
-        "content": "    public void timelineCommand_execute_listsFlashcardsSuccessfully() throws UnrecognizedFlashcardTypeException {"
+        "content": "    public void timelineCommand_execute_listsAllFlashcardsSuccessfully() throws UnrecognizedFlashcardTypeException {"
       },
       {
         "lineNumber": 38,
@@ -37743,14 +39827,189 @@
       {
         "lineNumber": 63,
         "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    public void timelineCommand_execute_listsRestrictedFlashcardsSuccessfully() {"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        FlashcardList flashcardList \u003d new FlashcardList();"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        LocalDate firstDate \u003d LocalDate.of(1834, 2, 1);"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        LocalDate middleDate \u003d LocalDate.of(1834, 7, 3);"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        LocalDate lastDate \u003d LocalDate.of(1921, 7, 3);"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        flashcardList.addFlashcard(new EventFlashcard(\"Middle\", middleDate, middleDate, SUMMARY, DETAILS));"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        flashcardList.addFlashcard(new OtherFlashcard(\"Bottom\", SUMMARY, DETAILS));"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        flashcardList.addFlashcard(new EventFlashcard(\"Last\", lastDate, lastDate, SUMMARY, DETAILS));"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        flashcardList.addFlashcard(new PersonFlashcard(\"First\", firstDate, firstDate, SUMMARY, DETAILS));"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        StringBuilder expectedOutput \u003d new StringBuilder();"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        expectedOutput.append(\"Listing flashcards from 1834-02-01 to 1834-07-03...\" + System.lineSeparator());"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        expectedOutput.append(BULLET_POINT"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "                + flashcardList.getFlashcardAtIdx(3).getShortDescription() + System.lineSeparator());"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        expectedOutput.append(BULLET_POINT"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "                + flashcardList.getFlashcardAtIdx(0).getShortDescription() + System.lineSeparator());"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        TimelineCommand timelineCommand \u003d new TimelineCommand(flashcardList, new Ui(),"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "                \"01-02-1834\", \"03-07-1834\");"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        timelineCommand.execute();"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "        assertEquals(expectedOutput.toString(), capturedOut.toString());"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
           "gitId": "quinnyyy"
         },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "quinnyyy": 53,
-      "g-lilian": 10
+      "quinnyyy": 52,
+      "g-lilian": 36
     }
   },
   {
