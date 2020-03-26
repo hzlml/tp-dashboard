@@ -838,7 +838,7 @@
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "|Amazing \u0026 Dazzling (A\u0026D) Commands|?|"
+        "content": "|Amazing \u0026 Dazzling (A\u0026D) Commands|Facade classes that deals with input so that differenct classes can interact with each other|"
       },
       {
         "lineNumber": 65,
@@ -1852,6 +1852,93 @@
     "authorContributionMap": {
       "-": 28,
       "andy-aw-why": 180
+    }
+  },
+  {
+    "path": "docs/README.md",
+    "fileType": "md",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "# Duke"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "HAMS is a CLI-based medical facility administration system that assists in the maintenance of various medical records."
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "Its functionality has some resemblance to the Duke ChatBot, a CS2113 individual project."
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "HAMS is designed for administrative assistants in medical facilities, like hospitals or polyclinics, that prefer using CLI to keep track of various medical records and can type fast."
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Useful links:"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "* [User Guide](UserGuide.md)"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "* [Developer Guide](DeveloperGuide.md)"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "* [About Us](AboutUs.md)"
+      }
+    ],
+    "authorContributionMap": {
+      "-": 6,
+      "andy-aw-why": 5
     }
   },
   {
@@ -18640,616 +18727,616 @@
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "        //TODO: parse the text file, return List of Appointments"
+        "content": "        List\u003cAppointment\u003e appointmentListToReturn \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "        List\u003cAppointment\u003e appointmentListToReturn \u003d new ArrayList\u003c\u003e();"
+        "content": "        Scanner s \u003d new Scanner(appointmentSave);"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "        Scanner s \u003d new Scanner(appointmentSave);"
+        "content": "        while (s.hasNext()) {"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "        while (s.hasNext()) {"
-      },
-      {
-        "lineNumber": 60,
-        "author": {
-          "gitId": "brandoncjh"
-        },
-        "content": "            //TODO: parse savefile substring, update Appointment constructor"
-      },
-      {
-        "lineNumber": 61,
-        "author": {
-          "gitId": "brandoncjh"
-        },
         "content": "            //process each line, construct new Appointment object"
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 60,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "            String appointmentString \u003d s.nextLine();"
       },
       {
-        "lineNumber": 63,
+        "lineNumber": 61,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "            String[] patientFields \u003d appointmentString.split(\" \\\\| \", 2);"
       },
       {
-        "lineNumber": 64,
+        "lineNumber": 62,
+        "author": {
+          "gitId": "brandoncjh"
+        },
+        "content": "            assert patientFields.length \u003d\u003d 2 : \"not enough fields in this line:\" + appointmentString;"
+      },
+      {
+        "lineNumber": 63,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "            for (String field : patientFields) {"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "JustinnT"
+        },
+        "content": "                if (field.trim().isEmpty()) {"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "                if (field.trim().isEmpty()) {"
+        "content": "                    field \u003d null;"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "                    field \u003d null;"
+        "content": "                }"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "                }"
+        "content": "            }"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 69,
-        "author": {
-          "gitId": "JustinnT"
-        },
         "content": "            Appointment newAppointmentToLoad \u003d new Appointment(patientFields[0], patientFields[1]);"
       },
       {
-        "lineNumber": 70,
+        "lineNumber": 69,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "            appointmentListToReturn.add(newAppointmentToLoad);"
       },
       {
-        "lineNumber": 71,
+        "lineNumber": 70,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "        }"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "brandoncjh"
+        },
+        "content": ""
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": ""
+        "content": "        return appointmentListToReturn;"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "        return appointmentListToReturn;"
+        "content": "    }"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 75,
         "author": {
-          "gitId": "brandoncjh"
+          "gitId": "Yukilite"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "Yukilite"
         },
-        "content": "    /**"
+        "content": "     * load save file for Patients list."
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "Yukilite"
         },
-        "content": "     * load save file for Patients list."
+        "content": "     *"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "Yukilite"
         },
-        "content": "     *"
+        "content": "     * @return patientListToReturn the patient list for the save file."
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "Yukilite"
         },
-        "content": "     * @return patientListToReturn the patient list for the save file."
+        "content": "     * @throws FileNotFoundException this exception occurs if a file is not found."
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "Yukilite"
         },
-        "content": "     * @throws FileNotFoundException this exception occurs if a file is not found."
-      },
-      {
-        "lineNumber": 81,
-        "author": {
-          "gitId": "Yukilite"
-        },
         "content": "     */"
       },
       {
-        "lineNumber": 82,
+        "lineNumber": 81,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "    public List\u003cPatient\u003e loadSavedPatients() throws FileNotFoundException {"
       },
       {
-        "lineNumber": 83,
+        "lineNumber": 82,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "        File patientSave \u003d new File(this.patientListSaveLocation);"
       },
       {
-        "lineNumber": 84,
+        "lineNumber": 83,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "        if (!patientSave.exists()) {"
       },
       {
-        "lineNumber": 85,
+        "lineNumber": 84,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "            File newDirectory \u003d new File(SAVE_DIRECTORY);"
       },
       {
-        "lineNumber": 86,
+        "lineNumber": 85,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "            boolean isNewDirectoryCreated \u003d newDirectory.mkdir();"
       },
       {
-        "lineNumber": 87,
+        "lineNumber": 86,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "            if (isNewDirectoryCreated) {"
       },
       {
-        "lineNumber": 88,
+        "lineNumber": 87,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "                File newFile \u003d new File(PATIENT_LIST_SAVE_FILEPATH);"
       },
       {
-        "lineNumber": 89,
+        "lineNumber": 88,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "                try {"
       },
       {
-        "lineNumber": 90,
+        "lineNumber": 89,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "                    newFile.createNewFile();"
       },
       {
-        "lineNumber": 91,
+        "lineNumber": 90,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "                } catch (IOException e) {"
       },
       {
-        "lineNumber": 92,
+        "lineNumber": 91,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "                    Ui.showFailedToCreateFile();"
       },
       {
-        "lineNumber": 93,
+        "lineNumber": 92,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "                }"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "brandoncjh"
+        },
+        "content": ""
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": ""
-      },
-      {
-        "lineNumber": 95,
-        "author": {
-          "gitId": "brandoncjh"
-        },
         "content": "            } else {"
       },
       {
-        "lineNumber": 96,
+        "lineNumber": 95,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "                Ui.showFailedToCreateDirectory();"
       },
       {
-        "lineNumber": 97,
+        "lineNumber": 96,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 98,
+        "lineNumber": 97,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "            throw new FileNotFoundException();"
       },
       {
-        "lineNumber": 99,
+        "lineNumber": 98,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": ""
       },
       {
-        "lineNumber": 100,
+        "lineNumber": 99,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 101,
-        "author": {
-          "gitId": "brandoncjh"
-        },
-        "content": "        //TODO: parse the text file, return List of Patients"
-      },
-      {
-        "lineNumber": 102,
+        "lineNumber": 100,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "        List\u003cPatient\u003e patientListToReturn \u003d new ArrayList\u003c\u003e();"
       },
       {
-        "lineNumber": 103,
+        "lineNumber": 101,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "        Scanner s \u003d new Scanner(patientSave);"
       },
       {
-        "lineNumber": 104,
+        "lineNumber": 102,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "        while (s.hasNext()) {"
       },
       {
-        "lineNumber": 105,
-        "author": {
-          "gitId": "brandoncjh"
-        },
-        "content": "            //TODO: parse savefile substring, update Patient constructor"
-      },
-      {
-        "lineNumber": 106,
+        "lineNumber": 103,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "            //process each line, construct new Appointment object"
       },
       {
-        "lineNumber": 107,
+        "lineNumber": 104,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "            String patientString \u003d s.nextLine();"
       },
       {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "brandoncjh"
+        },
+        "content": "            int delimiterCount \u003d 0;"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "brandoncjh"
+        },
+        "content": "            for (int i \u003d 0; i \u003c patientString.length(); i++) {"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "brandoncjh"
+        },
+        "content": "                if (Character.toString(patientString.charAt(i)).equals(\"|\")) {"
+      },
+      {
         "lineNumber": 108,
+        "author": {
+          "gitId": "brandoncjh"
+        },
+        "content": "                    delimiterCount++;"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "brandoncjh"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "brandoncjh"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "brandoncjh"
+        },
+        "content": "            assert delimiterCount \u003d\u003d 3 : \"not enough fields in this line:\";"
+      },
+      {
+        "lineNumber": 112,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "            String[] patientFields \u003d patientString.split(\" \\\\| \", 4);"
       },
       {
-        "lineNumber": 109,
+        "lineNumber": 113,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "            for (String field : patientFields) {"
       },
       {
-        "lineNumber": 110,
+        "lineNumber": 114,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "                if (field.trim().isEmpty()) {"
       },
       {
-        "lineNumber": 111,
+        "lineNumber": 115,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "                    field \u003d null;"
       },
       {
-        "lineNumber": 112,
+        "lineNumber": 116,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "                }"
       },
       {
-        "lineNumber": 113,
+        "lineNumber": 117,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 114,
-        "author": {
-          "gitId": "JustinnT"
-        },
-        "content": "            Patient newPatientToLoad \u003d new Patient(patientFields[0], Integer.parseInt(patientFields[1]),"
-      },
-      {
-        "lineNumber": 115,
-        "author": {
-          "gitId": "JustinnT"
-        },
-        "content": "                    patientFields[2], patientFields[3]);"
-      },
-      {
-        "lineNumber": 116,
-        "author": {
-          "gitId": "JustinnT"
-        },
-        "content": "            patientListToReturn.add(newPatientToLoad);"
-      },
-      {
-        "lineNumber": 117,
-        "author": {
-          "gitId": "brandoncjh"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 118,
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "        }"
+        "content": "            if (patientFields[1].isEmpty()) {"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": ""
+        "content": "                patientFields[1] \u003d \"-1\";"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "        return patientListToReturn;"
+        "content": "            }"
       },
       {
         "lineNumber": 121,
+        "author": {
+          "gitId": "JustinnT"
+        },
+        "content": "            Patient newPatientToLoad \u003d new Patient(patientFields[0], Integer.parseInt(patientFields[1]),"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "JustinnT"
+        },
+        "content": "                    patientFields[2], patientFields[3]);"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "JustinnT"
+        },
+        "content": "            patientListToReturn.add(newPatientToLoad);"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "brandoncjh"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "brandoncjh"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "brandoncjh"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "brandoncjh"
+        },
+        "content": "        return patientListToReturn;"
+      },
+      {
+        "lineNumber": 128,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 122,
+        "lineNumber": 129,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": ""
       },
       {
-        "lineNumber": 123,
+        "lineNumber": 130,
         "author": {
           "gitId": "Yukilite"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 124,
+        "lineNumber": 131,
         "author": {
           "gitId": "Yukilite"
         },
         "content": "     * This method saves the patient\u0027s appointment details from the AppointmentList into the local save file."
       },
       {
-        "lineNumber": 125,
+        "lineNumber": 132,
         "author": {
           "gitId": "Yukilite"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 126,
+        "lineNumber": 133,
         "author": {
           "gitId": "Yukilite"
         },
         "content": "     * @throws IOException this exception occurs if the patient\u0027s appointment details are unable to be written"
       },
       {
-        "lineNumber": 127,
+        "lineNumber": 134,
         "author": {
           "gitId": "Yukilite"
         },
         "content": "     *                     to the local save file."
       },
       {
-        "lineNumber": 128,
+        "lineNumber": 135,
         "author": {
           "gitId": "Yukilite"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 129,
+        "lineNumber": 136,
         "author": {
           "gitId": "thanhduc2000"
         },
         "content": "    public void saveAppointmentsList() throws IOException {"
       },
       {
-        "lineNumber": 130,
+        "lineNumber": 137,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "        FileWriter fwAppointmentSave;"
       },
       {
-        "lineNumber": 131,
+        "lineNumber": 138,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "        try {"
       },
       {
-        "lineNumber": 132,
+        "lineNumber": 139,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "            fwAppointmentSave \u003d new FileWriter(this.appointmentListSaveLocation);"
       },
       {
-        "lineNumber": 133,
+        "lineNumber": 140,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "        } catch (IOException e) {"
       },
       {
-        "lineNumber": 134,
+        "lineNumber": 141,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "            throw new IOException();"
       },
       {
-        "lineNumber": 135,
-        "author": {
-          "gitId": "brandoncjh"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 136,
-        "author": {
-          "gitId": "brandoncjh"
-        },
-        "content": "        String newAppointmentString \u003d null;"
-      },
-      {
-        "lineNumber": 137,
-        "author": {
-          "gitId": "brandoncjh"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 138,
-        "author": {
-          "gitId": "JustinnT"
-        },
-        "content": "        for (int i \u003d 0; i \u003c AppointmentList.getTotalAppointments(); i++) {"
-      },
-      {
-        "lineNumber": 139,
-        "author": {
-          "gitId": "JustinnT"
-        },
-        "content": "            Appointment newAppointmentData \u003d AppointmentList.getAppointmentRecord(i);"
-      },
-      {
-        "lineNumber": 140,
-        "author": {
-          "gitId": "JustinnT"
-        },
-        "content": "            newAppointmentString \u003d newAppointmentData.getDate() + PIPE_DELIMITER + newAppointmentData.getTime() + LS;"
-      },
-      {
-        "lineNumber": 141,
-        "author": {
-          "gitId": "brandoncjh"
-        },
-        "content": "            fwAppointmentSave.write(newAppointmentString);"
-      },
-      {
         "lineNumber": 142,
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "        }"
+        "content": "        String newAppointmentString \u003d null;"
       },
       {
         "lineNumber": 144,
@@ -19261,222 +19348,271 @@
       {
         "lineNumber": 145,
         "author": {
+          "gitId": "JustinnT"
+        },
+        "content": "        for (int i \u003d 0; i \u003c AppointmentList.getTotalAppointments(); i++) {"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "JustinnT"
+        },
+        "content": "            Appointment newAppointmentData \u003d AppointmentList.getAppointmentRecord(i);"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "JustinnT"
+        },
+        "content": "            newAppointmentString \u003d newAppointmentData.getDate() + PIPE_DELIMITER + newAppointmentData.getTime() + LS;"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "brandoncjh"
+        },
+        "content": "            fwAppointmentSave.write(newAppointmentString);"
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "brandoncjh"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "brandoncjh"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "brandoncjh"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 152,
+        "author": {
           "gitId": "brandoncjh"
         },
         "content": "        fwAppointmentSave.close();"
       },
       {
-        "lineNumber": 146,
+        "lineNumber": 153,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 147,
-        "author": {
-          "gitId": "thanhduc2000"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 148,
-        "author": {
-          "gitId": "Yukilite"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 149,
-        "author": {
-          "gitId": "Yukilite"
-        },
-        "content": "     * This method saves the patient list into the local save file."
-      },
-      {
-        "lineNumber": 150,
-        "author": {
-          "gitId": "JustinnT"
-        },
-        "content": "     *"
-      },
-      {
-        "lineNumber": 151,
-        "author": {
-          "gitId": "Yukilite"
-        },
-        "content": "     * @throws IOException this exception occurs if the patient data was unable to be written to the local save file."
-      },
-      {
-        "lineNumber": 152,
-        "author": {
-          "gitId": "Yukilite"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 153,
-        "author": {
-          "gitId": "JustinnT"
-        },
-        "content": "    public void savePatientList() throws IOException {"
-      },
-      {
         "lineNumber": 154,
         "author": {
-          "gitId": "JustinnT"
+          "gitId": "thanhduc2000"
         },
         "content": ""
       },
       {
         "lineNumber": 155,
         "author": {
-          "gitId": "brandoncjh"
+          "gitId": "Yukilite"
         },
-        "content": "        FileWriter fwPatientSave;"
+        "content": "    /**"
       },
       {
         "lineNumber": 156,
         "author": {
-          "gitId": "brandoncjh"
+          "gitId": "Yukilite"
         },
-        "content": "        try {"
+        "content": "     * This method saves the patient list into the local save file."
       },
       {
         "lineNumber": 157,
         "author": {
-          "gitId": "brandoncjh"
+          "gitId": "JustinnT"
         },
-        "content": "            fwPatientSave \u003d new FileWriter(this.patientListSaveLocation);"
+        "content": "     *"
       },
       {
         "lineNumber": 158,
         "author": {
-          "gitId": "brandoncjh"
+          "gitId": "Yukilite"
         },
-        "content": "        } catch (IOException e) {"
+        "content": "     * @throws IOException this exception occurs if the patient data was unable to be written to the local save file."
       },
       {
         "lineNumber": 159,
         "author": {
-          "gitId": "brandoncjh"
+          "gitId": "Yukilite"
         },
-        "content": "            throw new IOException();"
+        "content": "     */"
       },
       {
         "lineNumber": 160,
         "author": {
-          "gitId": "thanhduc2000"
+          "gitId": "JustinnT"
         },
-        "content": "        }"
+        "content": "    public void savePatientList() throws IOException {"
       },
       {
         "lineNumber": 161,
         "author": {
-          "gitId": "brandoncjh"
+          "gitId": "JustinnT"
         },
-        "content": "        String newPatientString \u003d null;"
+        "content": ""
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": ""
+        "content": "        FileWriter fwPatientSave;"
       },
       {
         "lineNumber": 163,
         "author": {
-          "gitId": "JustinnT"
+          "gitId": "brandoncjh"
         },
-        "content": "        for (int i \u003d 0; i \u003c PatientList.getTotalPatients(); i++) {"
+        "content": "        try {"
       },
       {
         "lineNumber": 164,
         "author": {
-          "gitId": "JustinnT"
+          "gitId": "brandoncjh"
         },
-        "content": "            Patient newPatientData \u003d PatientList.getPatientRecord(i);"
+        "content": "            fwPatientSave \u003d new FileWriter(this.patientListSaveLocation);"
       },
       {
         "lineNumber": 165,
         "author": {
-          "gitId": "Yukilite"
+          "gitId": "brandoncjh"
         },
-        "content": "            newPatientString \u003d newPatientData.getName() + PIPE_DELIMITER"
+        "content": "        } catch (IOException e) {"
       },
       {
         "lineNumber": 166,
         "author": {
-          "gitId": "Yukilite"
+          "gitId": "brandoncjh"
         },
-        "content": "                    + newPatientData.getAge() + PIPE_DELIMITER"
+        "content": "            throw new IOException();"
       },
       {
         "lineNumber": 167,
         "author": {
-          "gitId": "Yukilite"
+          "gitId": "thanhduc2000"
         },
-        "content": "                    + newPatientData.getAddress() + PIPE_DELIMITER"
+        "content": "        }"
       },
       {
         "lineNumber": 168,
         "author": {
-          "gitId": "Yukilite"
+          "gitId": "brandoncjh"
         },
-        "content": "                    + newPatientData.getContactNumber() + LS;"
+        "content": "        String newPatientString \u003d null;"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "brandoncjh"
         },
-        "content": "            fwPatientSave.write(newPatientString);"
+        "content": ""
       },
       {
         "lineNumber": 170,
+        "author": {
+          "gitId": "JustinnT"
+        },
+        "content": "        for (int i \u003d 0; i \u003c PatientList.getTotalPatients(); i++) {"
+      },
+      {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "JustinnT"
+        },
+        "content": "            Patient newPatientData \u003d PatientList.getPatientRecord(i);"
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "Yukilite"
+        },
+        "content": "            newPatientString \u003d newPatientData.getName() + PIPE_DELIMITER"
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "Yukilite"
+        },
+        "content": "                    + newPatientData.getAge() + PIPE_DELIMITER"
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "Yukilite"
+        },
+        "content": "                    + newPatientData.getAddress() + PIPE_DELIMITER"
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "Yukilite"
+        },
+        "content": "                    + newPatientData.getContactNumber() + LS;"
+      },
+      {
+        "lineNumber": 176,
+        "author": {
+          "gitId": "brandoncjh"
+        },
+        "content": "            fwPatientSave.write(newPatientString);"
+      },
+      {
+        "lineNumber": 177,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": ""
       },
       {
-        "lineNumber": 171,
+        "lineNumber": 178,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 172,
+        "lineNumber": 179,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": ""
       },
       {
-        "lineNumber": 173,
+        "lineNumber": 180,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "        fwPatientSave.close();"
       },
       {
-        "lineNumber": 174,
+        "lineNumber": 181,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 175,
+        "lineNumber": 182,
         "author": {
           "gitId": "brandoncjh"
         },
         "content": ""
       },
       {
-        "lineNumber": 176,
+        "lineNumber": 183,
         "author": {
           "gitId": "thanhduc2000"
         },
@@ -19486,7 +19622,7 @@
     "authorContributionMap": {
       "JustinnT": 38,
       "Yukilite": 25,
-      "brandoncjh": 99,
+      "brandoncjh": 106,
       "thanhduc2000": 14
     }
   },
@@ -20534,14 +20670,14 @@
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "import java.util.HashMap;"
+        "content": "import seedu.duke.storage.Storage;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "import java.util.Map;"
+        "content": "import seedu.duke.ui.Ui;"
       },
       {
         "lineNumber": 5,
@@ -20555,117 +20691,117 @@
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "public class AddAppointmentCommandStub {"
+        "content": "import java.util.HashMap;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "import java.util.Map;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    private static final String DATE \u003d \"date\";"
+        "content": ""
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    private static final String TIME \u003d \"time\";"
+        "content": "/**"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    private String date;"
+        "content": " * Stub class for AddAppointment class."
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    private String time;"
+        "content": " */"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "public class AddAppointmentCommandStub extends AddAppointmentCommand {"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    public AddAppointmentCommandStub(Map\u003cString, String\u003e appointmentInfo) {"
+        "content": ""
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        this.date \u003d appointmentInfo.get(DATE);"
+        "content": "    private static final String DATE \u003d \"date\";"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        this.time \u003d appointmentInfo.get(TIME);"
+        "content": "    private static final String TIME \u003d \"time\";"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    }"
+        "content": "    private String date;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "    private String time;"
       },
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "Yukilite"
+          "gitId": "andy-aw-why"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 19,
         "author": {
-          "gitId": "Yukilite"
+          "gitId": "andy-aw-why"
         },
-        "content": "     * This method is a stub."
+        "content": "    /**"
       },
       {
         "lineNumber": 20,
         "author": {
-          "gitId": "JustinnT"
+          "gitId": "andy-aw-why"
         },
-        "content": "     *"
+        "content": "     * Constructor thing."
       },
       {
         "lineNumber": 21,
         "author": {
-          "gitId": "Yukilite"
+          "gitId": "andy-aw-why"
         },
-        "content": "     * @see AddAppointmentCommand"
+        "content": "     * @param appointmentInfo fake map of info."
       },
       {
         "lineNumber": 22,
         "author": {
-          "gitId": "Yukilite"
+          "gitId": "andy-aw-why"
         },
         "content": "     */"
       },
@@ -20674,164 +20810,241 @@
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    public static Map\u003cString, String\u003e generateMap(int choice) {"
+        "content": "    public AddAppointmentCommandStub(Map\u003cString, String\u003e appointmentInfo) {"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        Map\u003cString, String\u003e tempMap \u003d new HashMap\u003c\u003e();"
+        "content": "        super(appointmentInfo);"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        if (choice \u003d\u003d 1) {"
+        "content": "        this.date \u003d appointmentInfo.get(DATE);"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            tempMap.put(\"date\", \"asd\");"
+        "content": "        this.time \u003d appointmentInfo.get(TIME);"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            tempMap.put(\"time\", \"asdsds\");"
+        "content": "    }"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        } else if (choice \u003d\u003d 2) {"
-      },
-      {
-        "lineNumber": 29,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "            tempMap.put(\"date\", \"\");"
-      },
-      {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "            tempMap.put(\"time\", \"\");"
-      },
-      {
-        "lineNumber": 31,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 32,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        return tempMap;"
-      },
-      {
-        "lineNumber": 33,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 34,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
         "content": ""
       },
       {
-        "lineNumber": 35,
+        "lineNumber": 29,
         "author": {
           "gitId": "Yukilite"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 36,
+        "lineNumber": 30,
         "author": {
           "gitId": "Yukilite"
         },
         "content": "     * This method is a stub."
       },
       {
-        "lineNumber": 37,
+        "lineNumber": 31,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 38,
+        "lineNumber": 32,
         "author": {
           "gitId": "Yukilite"
         },
         "content": "     * @see AddAppointmentCommand"
       },
       {
-        "lineNumber": 39,
+        "lineNumber": 33,
         "author": {
           "gitId": "Yukilite"
         },
         "content": "     */"
       },
       {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    public static Map\u003cString, String\u003e generateMap(int choice) {"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        Map\u003cString, String\u003e tempMap \u003d new HashMap\u003c\u003e();"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        if (choice \u003d\u003d 1) {"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "            tempMap.put(\"date\", \"asd\");"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "            tempMap.put(\"time\", \"asdsds\");"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        } else if (choice \u003d\u003d 2) {"
+      },
+      {
         "lineNumber": 40,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    public void execute(int ui, int storage) {"
+        "content": "            tempMap.put(\"date\", \"\");"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        AppointmentStub newAppointment \u003d new AppointmentStub(this.date, this.time);"
+        "content": "            tempMap.put(\"time\", \"\");"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        AppointmentListStub.createList(1);"
+        "content": "        return tempMap;"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        AppointmentListStub.getAppointmentList().add(newAppointment);"
+        "content": "    }"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 46,
+        "author": {
+          "gitId": "Yukilite"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "Yukilite"
+        },
+        "content": "     * This method is a stub."
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "JustinnT"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "Yukilite"
+        },
+        "content": "     * @see AddAppointmentCommand"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "Yukilite"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    public void execute(Ui ui, Storage storage) {"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        AppointmentStub newAppointment \u003d new AppointmentStub(this.date, this.time);"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        AppointmentListStub.createList(1);"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        AppointmentListStub.getAppointmentList().add(newAppointment);"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 57,
         "author": {
           "gitId": "andy-aw-why"
         },
@@ -20841,7 +21054,7 @@
     "authorContributionMap": {
       "Yukilite": 8,
       "JustinnT": 2,
-      "andy-aw-why": 36
+      "andy-aw-why": 47
     }
   },
   {
@@ -20874,577 +21087,598 @@
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "import seedu.duke.storage.Storage;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "import java.util.HashMap;"
+        "content": "import seedu.duke.ui.Ui;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "import java.util.Map;"
+        "content": ""
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "import java.io.IOException;"
       },
       {
         "lineNumber": 8,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "import java.util.HashMap;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "import java.util.Map;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
       },
       {
-        "lineNumber": 9,
+        "lineNumber": 12,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
       },
       {
-        "lineNumber": 10,
+        "lineNumber": 13,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "import static org.junit.jupiter.api.Assertions.fail;"
       },
       {
-        "lineNumber": 11,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 12,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "class AddAppointmentCommandTest {"
-      },
-      {
-        "lineNumber": 13,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "    @Test"
-      },
-      {
         "lineNumber": 14,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    void testNormalInput() {"
+        "content": ""
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        Map\u003cString, String\u003e tempMap \u003d new HashMap\u003c\u003e();"
+        "content": "class AddAppointmentCommandTest {"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        tempMap.put(\"date\", \"asdasd\");"
+        "content": "    @Test"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        tempMap.put(\"time\", \"lklklk\");"
+        "content": "    void testNormalInput() {"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        try {"
+        "content": "        Map\u003cString, String\u003e tempMap \u003d new HashMap\u003c\u003e();"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            AddAppointmentCommand addAppointmentCommand \u003d new AddAppointmentCommand(tempMap);"
+        "content": "        tempMap.put(\"date\", \"asdasd\");"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            String date \u003d \"asdasd\";"
+        "content": "        tempMap.put(\"time\", \"lklklk\");"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            String time \u003d \"lklklk\";"
+        "content": "        try {"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            assertEquals(date, addAppointmentCommand.getDate());"
+        "content": "            AddAppointmentCommand addAppointmentCommand \u003d new AddAppointmentCommand(tempMap);"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            assertEquals(time, addAppointmentCommand.getTime());"
+        "content": "            String date \u003d \"asdasd\";"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        } catch (Exception e) {"
+        "content": "            String time \u003d \"lklklk\";"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            fail();"
+        "content": "            assertEquals(date, addAppointmentCommand.getDate());"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        }"
+        "content": "            assertEquals(time, addAppointmentCommand.getTime());"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    }"
+        "content": "        } catch (Exception e) {"
       },
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "JustinnT"
+          "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "            fail();"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    @Test"
+        "content": "        }"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    void testEmptyString() {"
+        "content": "    }"
       },
       {
         "lineNumber": 31,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        Map\u003cString, String\u003e tempMap \u003d new HashMap\u003c\u003e();"
-      },
-      {
-        "lineNumber": 32,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        tempMap.put(\"date\", \"\");"
-      },
-      {
-        "lineNumber": 33,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        tempMap.put(\"time\", \"\");"
-      },
-      {
-        "lineNumber": 34,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        try {"
-      },
-      {
-        "lineNumber": 35,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "            AddAppointmentCommand addAppointmentCommand \u003d new AddAppointmentCommand(tempMap);"
-      },
-      {
-        "lineNumber": 36,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "            assertTrue(true);"
-      },
-      {
-        "lineNumber": 37,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        } catch (Exception e) {"
-      },
-      {
-        "lineNumber": 38,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "            fail(e);"
-      },
-      {
-        "lineNumber": 39,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 40,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 41,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 42,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "    @Test"
-      },
-      {
-        "lineNumber": 43,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "    void testEmptyStringValue() {"
-      },
-      {
-        "lineNumber": 44,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        Map\u003cString, String\u003e tempMap \u003d new HashMap\u003c\u003e();"
-      },
-      {
-        "lineNumber": 45,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        tempMap.put(\"date\", \"\");"
-      },
-      {
-        "lineNumber": 46,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        tempMap.put(\"time\", \"\");"
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        try {"
-      },
-      {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "            String date \u003d \"\";"
-      },
-      {
-        "lineNumber": 49,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "            String time \u003d \"\";"
-      },
-      {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "            AddAppointmentCommand addAppointmentCommand \u003d new AddAppointmentCommand(tempMap);"
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "            assertEquals(date, addAppointmentCommand.getDate());"
-      },
-      {
-        "lineNumber": 52,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "            assertEquals(time, addAppointmentCommand.getTime());"
-      },
-      {
-        "lineNumber": 53,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        } catch (Exception e) {"
-      },
-      {
-        "lineNumber": 54,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "            fail(e);"
-      },
-      {
-        "lineNumber": 55,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 56,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 57,
         "author": {
           "gitId": "JustinnT"
         },
         "content": ""
       },
       {
-        "lineNumber": 58,
+        "lineNumber": 32,
         "author": {
           "gitId": "andy-aw-why"
         },
         "content": "    @Test"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    void testEmptyString() {"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        Map\u003cString, String\u003e tempMap \u003d new HashMap\u003c\u003e();"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        tempMap.put(\"date\", \"\");"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        tempMap.put(\"time\", \"\");"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "            AddAppointmentCommand addAppointmentCommand \u003d new AddAppointmentCommand(tempMap);"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "            assertTrue(true);"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        } catch (Exception e) {"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "            fail(e);"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    void testEmptyStringValue() {"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        Map\u003cString, String\u003e tempMap \u003d new HashMap\u003c\u003e();"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        tempMap.put(\"date\", \"\");"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        tempMap.put(\"time\", \"\");"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "            String date \u003d \"\";"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "            String time \u003d \"\";"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "            AddAppointmentCommand addAppointmentCommand \u003d new AddAppointmentCommand(tempMap);"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "            assertEquals(date, addAppointmentCommand.getDate());"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "            assertEquals(time, addAppointmentCommand.getTime());"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        } catch (Exception e) {"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "            fail(e);"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        }"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    void testAddNormalString() {"
+        "content": "    }"
       },
       {
         "lineNumber": 60,
         "author": {
-          "gitId": "andy-aw-why"
+          "gitId": "JustinnT"
         },
-        "content": "        int ui \u003d 1;"
+        "content": ""
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        int storage \u003d 1;"
+        "content": "    @Test"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        Map\u003cString, String\u003e tempMap \u003d AddAppointmentCommandStub.generateMap(1);"
+        "content": "    void testAddNormalString() throws IOException {"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        AddAppointmentCommandStub addCommand \u003d new AddAppointmentCommandStub(tempMap);"
+        "content": "        Ui ui \u003d null;"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        addCommand.execute(ui, storage);"
+        "content": "        Storage storage \u003d null;"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        AppointmentStub tempAppointment \u003d"
+        "content": "        Map\u003cString, String\u003e tempMap \u003d AddAppointmentCommandStub.generateMap(1);"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "                AppointmentListStub.getAppointmentList().get(AppointmentListStub.getTotalAppointments() - 1);"
+        "content": "        AddAppointmentCommand addCommand \u003d new AddAppointmentCommandStub(tempMap);"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        AppointmentStub newAppointment \u003d new AppointmentStub(\"asd\", \"asdsds\");"
+        "content": "        addCommand.execute(ui, storage);"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        assertEquals(tempAppointment.getDate(), newAppointment.getDate());"
+        "content": "        AppointmentStub tempAppointment \u003d"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        assertEquals(tempAppointment.getTime(), newAppointment.getTime());"
+        "content": "                AppointmentListStub.getAppointmentList().get(AppointmentListStub.getTotalAppointments() - 1);"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    }"
+        "content": "        AppointmentStub newAppointment \u003d new AppointmentStub(\"asd\", \"asdsds\");"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "        assertEquals(tempAppointment.getDate(), newAppointment.getDate());"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    @Test"
+        "content": "        assertEquals(tempAppointment.getTime(), newAppointment.getTime());"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    void testAddEmptyString() {"
+        "content": "    }"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        int ui \u003d 1;"
+        "content": ""
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        int storage \u003d 1;"
+        "content": "    @Test"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        Map\u003cString, String\u003e tempMap \u003d AddAppointmentCommandStub.generateMap(2);"
+        "content": "    void testAddEmptyString() throws IOException {"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        AddAppointmentCommandStub addCommand \u003d new AddAppointmentCommandStub(tempMap);"
+        "content": "        Ui ui \u003d null;"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        addCommand.execute(ui, storage);"
+        "content": "        Storage storage \u003d null;"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        AppointmentStub tempAppointment \u003d"
+        "content": "        Map\u003cString, String\u003e tempMap \u003d AddAppointmentCommandStub.generateMap(2);"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "                AppointmentListStub.getAppointmentList().get(AppointmentListStub.getTotalAppointments() - 1);"
+        "content": "        AddAppointmentCommandStub addCommand \u003d new AddAppointmentCommandStub(tempMap);"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        AppointmentStub newAppointment \u003d new AppointmentStub(\"\", \"\");"
+        "content": "        addCommand.execute(ui, storage);"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        assertEquals(tempAppointment.getDate(), newAppointment.getDate());"
+        "content": "        AppointmentStub tempAppointment \u003d"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        assertEquals(tempAppointment.getTime(), newAppointment.getTime());"
+        "content": "                AppointmentListStub.getAppointmentList().get(AppointmentListStub.getTotalAppointments() - 1);"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    }"
+        "content": "        AppointmentStub newAppointment \u003d new AppointmentStub(\"\", \"\");"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "        assertEquals(tempAppointment.getDate(), newAppointment.getDate());"
       },
       {
         "lineNumber": 86,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        assertEquals(tempAppointment.getTime(), newAppointment.getTime());"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 89,
         "author": {
           "gitId": "andy-aw-why"
         },
@@ -21453,7 +21687,7 @@
     ],
     "authorContributionMap": {
       "JustinnT": 5,
-      "andy-aw-why": 81
+      "andy-aw-why": 84
     }
   },
   {
@@ -21486,14 +21720,14 @@
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "import java.util.HashMap;"
+        "content": "import seedu.duke.storage.Storage;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "import java.util.Map;"
+        "content": "import seedu.duke.ui.Ui;"
       },
       {
         "lineNumber": 6,
@@ -21507,371 +21741,371 @@
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "/**"
+        "content": "import java.util.HashMap;"
       },
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "Yukilite"
+          "gitId": "andy-aw-why"
         },
-        "content": " * Stub class for fake addCommand class."
+        "content": "import java.util.Map;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": " */"
+        "content": ""
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "class AddPatientCommandStub {"
+        "content": "/**"
       },
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "andy-aw-why"
+          "gitId": "Yukilite"
         },
-        "content": ""
+        "content": " * Stub class for fake addCommand class."
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    private static final String PATIENT_NAME \u003d \"name\";"
+        "content": " */"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    private static final String AGE \u003d \"age\";"
+        "content": "class AddPatientCommandStub extends AddPatientCommand {"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    private static final String ADDRESS \u003d \"address\";"
+        "content": ""
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    private static final String CONTACT_NUMBER \u003d \"phone\";"
+        "content": "    private static final String PATIENT_NAME \u003d \"name\";"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    private String contactNumber;"
+        "content": "    private static final String AGE \u003d \"age\";"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    private String address;"
+        "content": "    private static final String ADDRESS \u003d \"address\";"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    private String patientName;"
+        "content": "    private static final String CONTACT_NUMBER \u003d \"phone\";"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    private int age;"
+        "content": "    private String contactNumber;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "    private String address;"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    public AddPatientCommandStub(Map\u003cString, String\u003e patientInfo) {"
+        "content": "    private String patientName;"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        this.patientName \u003d patientInfo.get(PATIENT_NAME);"
+        "content": "    private int age;"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        if (patientInfo.get(AGE).isBlank()) {"
+        "content": ""
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            this.age \u003d -1;"
+        "content": "    public AddPatientCommandStub(Map\u003cString, String\u003e patientInfo) {"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        } else {"
+        "content": "        super(patientInfo);"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            try {"
+        "content": "        this.patientName \u003d patientInfo.get(PATIENT_NAME);"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "                this.age \u003d Integer.parseInt(patientInfo.get(AGE));"
+        "content": "        if (patientInfo.get(AGE).isBlank()) {"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            } catch (NumberFormatException e) {"
+        "content": "            this.age \u003d -1;"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "                this.age \u003d -1;"
+        "content": "        } else {"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            }"
+        "content": "            try {"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "                this.age \u003d Integer.parseInt(patientInfo.get(AGE));"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        }"
+        "content": "            } catch (NumberFormatException e) {"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        this.address \u003d patientInfo.get(ADDRESS);"
+        "content": "                this.age \u003d -1;"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        this.contactNumber \u003d patientInfo.get(CONTACT_NUMBER);"
+        "content": "            }"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    public static Map\u003cString, String\u003e generateMap(int choice) {"
+        "content": "        this.address \u003d patientInfo.get(ADDRESS);"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        Map\u003cString, String\u003e tempMap \u003d new HashMap\u003c\u003e();"
+        "content": "        this.contactNumber \u003d patientInfo.get(CONTACT_NUMBER);"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        if (choice \u003d\u003d 1) {"
+        "content": "    }"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            tempMap.put(\"name\", \"asd\");"
+        "content": ""
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            tempMap.put(\"age\", \"23\");"
+        "content": "    /**"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            tempMap.put(\"address\", \"asdsds\");"
+        "content": "     * Just to generate the fake map of information."
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            tempMap.put(\"phone\", \"asdsadsad\");"
+        "content": "     * @param choice the type of fake map to generate"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        } else if (choice \u003d\u003d 2) {"
+        "content": "     * @return the fake map of information"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            tempMap.put(\"name\", \"\");"
+        "content": "     */"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            tempMap.put(\"age\", \"\");"
+        "content": "    public static Map\u003cString, String\u003e generateMap(int choice) {"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            tempMap.put(\"address\", \"\");"
+        "content": "        Map\u003cString, String\u003e tempMap \u003d new HashMap\u003c\u003e();"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            tempMap.put(\"phone\", \"\");"
+        "content": "        if (choice \u003d\u003d 1) {"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        }"
+        "content": "            tempMap.put(\"name\", \"asd\");"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        return tempMap;"
+        "content": "            tempMap.put(\"age\", \"23\");"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "            tempMap.put(\"address\", \"asdsds\");"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    }"
+        "content": "            tempMap.put(\"phone\", \"asdsadsad\");"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "        } else if (choice \u003d\u003d 2) {"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "            tempMap.put(\"name\", \"\");"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    public void execute(int ui, int storage) {"
+        "content": "            tempMap.put(\"age\", \"\");"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        PatientStub newPatient \u003d new PatientStub(this.patientName, this.age, this.address, this.contactNumber);"
+        "content": "            tempMap.put(\"address\", \"\");"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "            tempMap.put(\"phone\", \"\");"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        PatientListStub.createList(1);"
+        "content": "        }"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        PatientListStub.getPatientList().add(newPatient);"
+        "content": "        return tempMap;"
       },
       {
         "lineNumber": 60,
@@ -21892,12 +22126,110 @@
         "author": {
           "gitId": "andy-aw-why"
         },
+        "content": ""
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "     * To act as a stub for execute."
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "     * @param ui      ui object for displaying information"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "     * @param storage storage object to do auto saving"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    public void execute(Ui ui, Storage storage) {"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        PatientStub newPatient \u003d new PatientStub(this.patientName, this.age, this.address, this.contactNumber);"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        PatientListStub.createList(1);"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        PatientListStub.getPatientList().add(newPatient);"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
         "content": "}"
       }
     ],
     "authorContributionMap": {
       "Yukilite": 1,
-      "andy-aw-why": 61
+      "andy-aw-why": 75
     }
   },
   {
@@ -21937,843 +22269,864 @@
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "import seedu.duke.storage.Storage;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "import java.util.HashMap;"
+        "content": "import seedu.duke.ui.Ui;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "import java.util.Map;"
+        "content": ""
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "import java.io.IOException;"
       },
       {
         "lineNumber": 9,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "import java.util.HashMap;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "import java.util.Map;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
       },
       {
-        "lineNumber": 10,
+        "lineNumber": 13,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "import static org.junit.jupiter.api.Assertions.assertTrue;"
       },
       {
-        "lineNumber": 11,
+        "lineNumber": 14,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "import static org.junit.jupiter.api.Assertions.fail;"
       },
       {
-        "lineNumber": 12,
+        "lineNumber": 15,
         "author": {
           "gitId": "andy-aw-why"
         },
         "content": ""
       },
       {
-        "lineNumber": 13,
+        "lineNumber": 16,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "class AddPatientCommandTest {"
       },
       {
-        "lineNumber": 14,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 15,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "    Patient newPatient1 \u003d new Patient(\"s;dlskd;l\", 23, \"Li\", \"121\");"
-      },
-      {
-        "lineNumber": 16,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "    Patient newPatient2 \u003d new Patient(\" \", 15, \" \", \"15454455\");"
-      },
-      {
         "lineNumber": 17,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    Patient newPatient3 \u003d new Patient(\"ewuioaiwoe\", 33, \"Lo\", \"1989\");"
+        "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    Patient newPatient4 \u003d new Patient(\"aeiwae\", 13, \"to\", \" \");"
+        "content": "    Patient newPatient1 \u003d new Patient(\"s;dlskd;l\", 23, \"Li\", \"121\");"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    Patient newPatient5 \u003d new Patient(\"LSDs\", -1, \"Lis\", \"12\");"
+        "content": "    Patient newPatient2 \u003d new Patient(\" \", 15, \" \", \"15454455\");"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "    Patient newPatient3 \u003d new Patient(\"ewuioaiwoe\", 33, \"Lo\", \"1989\");"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "    Patient newPatient4 \u003d new Patient(\"aeiwae\", 13, \"to\", \" \");"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    @Test"
+        "content": "    Patient newPatient5 \u003d new Patient(\"LSDs\", -1, \"Lis\", \"12\");"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    void testNormalInput() {"
+        "content": ""
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        Map\u003cString, String\u003e tempMap \u003d new HashMap\u003c\u003e();"
+        "content": ""
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        tempMap.put(\"name\", \"asdasd\");"
+        "content": "    @Test"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        tempMap.put(\"age\", \"12\");"
+        "content": "    void testNormalInput() {"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        tempMap.put(\"address\", \"asdasd\");"
+        "content": "        Map\u003cString, String\u003e tempMap \u003d new HashMap\u003c\u003e();"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        tempMap.put(\"phone\", \"asdsad\");"
+        "content": "        tempMap.put(\"name\", \"asdasd\");"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        try {"
+        "content": "        tempMap.put(\"age\", \"12\");"
       },
       {
         "lineNumber": 30,
         "author": {
-          "gitId": "JustinnT"
+          "gitId": "andy-aw-why"
         },
-        "content": "            AddPatientCommand addPatientCommand \u003d new AddPatientCommand(tempMap);"
+        "content": "        tempMap.put(\"address\", \"asdasd\");"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            int number \u003d 12;"
+        "content": "        tempMap.put(\"phone\", \"asdsad\");"
       },
       {
         "lineNumber": 32,
         "author": {
-          "gitId": "JustinnT"
+          "gitId": "andy-aw-why"
         },
-        "content": "            assertEquals(number, addPatientCommand.getAge());"
+        "content": "        try {"
       },
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "andy-aw-why"
+          "gitId": "JustinnT"
         },
-        "content": "        } catch (Exception e) {"
+        "content": "            AddPatientCommand addPatientCommand \u003d new AddPatientCommand(tempMap);"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            fail();"
+        "content": "            int number \u003d 12;"
       },
       {
         "lineNumber": 35,
         "author": {
-          "gitId": "andy-aw-why"
+          "gitId": "JustinnT"
         },
-        "content": "        }"
+        "content": "            assertEquals(number, addPatientCommand.getAge());"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    }"
+        "content": "        } catch (Exception e) {"
       },
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "JustinnT"
+          "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "            fail();"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    @Test"
+        "content": "        }"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    void testEmptyString() {"
+        "content": "    }"
       },
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "andy-aw-why"
+          "gitId": "JustinnT"
         },
-        "content": "        Map\u003cString, String\u003e tempMap \u003d new HashMap\u003c\u003e();"
+        "content": ""
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        tempMap.put(\"name\", \"\");"
+        "content": "    @Test"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        tempMap.put(\"age\", \"\");"
+        "content": "    void testEmptyString() {"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        tempMap.put(\"address\", \"\");"
+        "content": "        Map\u003cString, String\u003e tempMap \u003d new HashMap\u003c\u003e();"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        tempMap.put(\"phone\", \"\");"
+        "content": "        tempMap.put(\"name\", \"\");"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        try {"
-      },
-      {
-        "lineNumber": 46,
-        "author": {
-          "gitId": "JustinnT"
-        },
-        "content": "            AddPatientCommand addPatientCommand \u003d new AddPatientCommand(tempMap);"
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "            assertTrue(true);"
-      },
-      {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        } catch (Exception e) {"
-      },
-      {
-        "lineNumber": 49,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "            fail();"
-      },
-      {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 52,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 53,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "    @Test"
-      },
-      {
-        "lineNumber": 54,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "    void testAge() {"
-      },
-      {
-        "lineNumber": 55,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        Map\u003cString, String\u003e tempMap \u003d new HashMap\u003c\u003e();"
-      },
-      {
-        "lineNumber": 56,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        tempMap.put(\"name\", \"\");"
-      },
-      {
-        "lineNumber": 57,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
         "content": "        tempMap.put(\"age\", \"\");"
       },
       {
-        "lineNumber": 58,
+        "lineNumber": 46,
         "author": {
           "gitId": "andy-aw-why"
         },
         "content": "        tempMap.put(\"address\", \"\");"
       },
       {
-        "lineNumber": 59,
+        "lineNumber": 47,
         "author": {
           "gitId": "andy-aw-why"
         },
         "content": "        tempMap.put(\"phone\", \"\");"
       },
       {
-        "lineNumber": 60,
+        "lineNumber": 48,
         "author": {
           "gitId": "andy-aw-why"
         },
         "content": "        try {"
       },
       {
-        "lineNumber": 61,
+        "lineNumber": 49,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "            AddPatientCommand addPatientCommand \u003d new AddPatientCommand(tempMap);"
       },
       {
-        "lineNumber": 62,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "            int number \u003d -1;"
-      },
-      {
-        "lineNumber": 63,
-        "author": {
-          "gitId": "JustinnT"
-        },
-        "content": "            assertEquals(number, addPatientCommand.getAge());"
-      },
-      {
-        "lineNumber": 64,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        } catch (Exception e) {"
-      },
-      {
-        "lineNumber": 65,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "            fail();"
-      },
-      {
-        "lineNumber": 66,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 67,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 68,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 69,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "    @Test"
-      },
-      {
-        "lineNumber": 70,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "    void testNonIntAge() {"
-      },
-      {
-        "lineNumber": 71,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        Map\u003cString, String\u003e tempMap \u003d new HashMap\u003c\u003e();"
-      },
-      {
-        "lineNumber": 72,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        tempMap.put(\"name\", \"asdsad\");"
-      },
-      {
-        "lineNumber": 73,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        tempMap.put(\"age\", \"asdsada\");"
-      },
-      {
-        "lineNumber": 74,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        tempMap.put(\"address\", \"asdsds\");"
-      },
-      {
-        "lineNumber": 75,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        tempMap.put(\"phone\", \"asdsadsad\");"
-      },
-      {
-        "lineNumber": 76,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        try {"
-      },
-      {
-        "lineNumber": 77,
-        "author": {
-          "gitId": "JustinnT"
-        },
-        "content": "            AddPatientCommand addPatientCommand \u003d new AddPatientCommand(tempMap);"
-      },
-      {
-        "lineNumber": 78,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "            int number \u003d -1;"
-      },
-      {
-        "lineNumber": 79,
-        "author": {
-          "gitId": "JustinnT"
-        },
-        "content": "            assertEquals(number, addPatientCommand.getAge());"
-      },
-      {
-        "lineNumber": 80,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        } catch (Exception e) {"
-      },
-      {
-        "lineNumber": 81,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "            fail();"
-      },
-      {
-        "lineNumber": 82,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 83,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 84,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 85,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "    @Test"
-      },
-      {
-        "lineNumber": 86,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "    void testEmptyMap() {"
-      },
-      {
-        "lineNumber": 87,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        Map\u003cString, String\u003e tempMap \u003d new HashMap\u003c\u003e();"
-      },
-      {
-        "lineNumber": 88,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        try {"
-      },
-      {
-        "lineNumber": 89,
-        "author": {
-          "gitId": "JustinnT"
-        },
-        "content": "            AddPatientCommand addPatientCommand \u003d new AddPatientCommand(tempMap);"
-      },
-      {
-        "lineNumber": 90,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "            fail();"
-      },
-      {
-        "lineNumber": 91,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        } catch (Exception e) {"
-      },
-      {
-        "lineNumber": 92,
+        "lineNumber": 50,
         "author": {
           "gitId": "andy-aw-why"
         },
         "content": "            assertTrue(true);"
       },
       {
-        "lineNumber": 93,
+        "lineNumber": 51,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        } catch (Exception e) {"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "            fail();"
+      },
+      {
+        "lineNumber": 53,
         "author": {
           "gitId": "andy-aw-why"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 94,
+        "lineNumber": 54,
         "author": {
           "gitId": "andy-aw-why"
         },
         "content": "    }"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    void testAge() {"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        Map\u003cString, String\u003e tempMap \u003d new HashMap\u003c\u003e();"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        tempMap.put(\"name\", \"\");"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        tempMap.put(\"age\", \"\");"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        tempMap.put(\"address\", \"\");"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        tempMap.put(\"phone\", \"\");"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "JustinnT"
+        },
+        "content": "            AddPatientCommand addPatientCommand \u003d new AddPatientCommand(tempMap);"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "            int number \u003d -1;"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "JustinnT"
+        },
+        "content": "            assertEquals(number, addPatientCommand.getAge());"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        } catch (Exception e) {"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "            fail();"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    void testNonIntAge() {"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        Map\u003cString, String\u003e tempMap \u003d new HashMap\u003c\u003e();"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        tempMap.put(\"name\", \"asdsad\");"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        tempMap.put(\"age\", \"asdsada\");"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        tempMap.put(\"address\", \"asdsds\");"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        tempMap.put(\"phone\", \"asdsadsad\");"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "JustinnT"
+        },
+        "content": "            AddPatientCommand addPatientCommand \u003d new AddPatientCommand(tempMap);"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "            int number \u003d -1;"
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "JustinnT"
+        },
+        "content": "            assertEquals(number, addPatientCommand.getAge());"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        } catch (Exception e) {"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "            fail();"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    void testEmptyMap() {"
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        Map\u003cString, String\u003e tempMap \u003d new HashMap\u003c\u003e();"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "JustinnT"
+        },
+        "content": "            AddPatientCommand addPatientCommand \u003d new AddPatientCommand(tempMap);"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "            fail();"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        } catch (Exception e) {"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "            assertTrue(true);"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    @Test"
+        "content": "        }"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    void testAddNormalString() {"
+        "content": "    }"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        int ui \u003d 1;"
+        "content": ""
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        int storage \u003d 1;"
+        "content": "    @Test"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        Map\u003cString,String\u003e tempMap \u003d AddPatientCommandStub.generateMap(1);"
+        "content": "    void testAddNormalString() throws IOException {"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        AddPatientCommandStub addCommand \u003d new AddPatientCommandStub(tempMap);"
+        "content": "        Ui ui \u003d null;"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        addCommand.execute(ui,storage);"
+        "content": "        Storage storage \u003d null;"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        PatientStub temppatient \u003d PatientListStub.getPatientList().get(PatientListStub.getTotalPatients() - 1);"
+        "content": "        Map\u003cString,String\u003e tempMap \u003d AddPatientCommandStub.generateMap(1);"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        PatientStub newPatient \u003d new PatientStub(\"asd\", 23,\"asdsds\",\"asdsadsad\");"
+        "content": "        AddPatientCommand addCommand \u003d new AddPatientCommandStub(tempMap);"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        assertEquals(temppatient.getName(),newPatient.getName());"
+        "content": "        addCommand.execute(ui,storage);"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        assertEquals(temppatient.getAge(),newPatient.getAge());"
+        "content": "        PatientStub temppatient \u003d PatientListStub.getPatientList().get(PatientListStub.getTotalPatients() - 1);"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        assertEquals(temppatient.getAddress(),newPatient.getAddress());"
+        "content": "        PatientStub newPatient \u003d new PatientStub(\"asd\", 23,\"asdsds\",\"asdsadsad\");"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        assertEquals(temppatient.getContactNumber(),newPatient.getContactNumber());"
+        "content": "        assertEquals(temppatient.getName(),newPatient.getName());"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    }"
+        "content": "        assertEquals(temppatient.getAge(),newPatient.getAge());"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "        assertEquals(temppatient.getAddress(),newPatient.getAddress());"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    @Test"
+        "content": "        assertEquals(temppatient.getContactNumber(),newPatient.getContactNumber());"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    void testAddEmptyString()  {"
+        "content": "    }"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        int ui \u003d 1;"
+        "content": ""
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        int storage \u003d 1;"
+        "content": "    @Test"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        Map\u003cString,String\u003e tempMap \u003d AddPatientCommandStub.generateMap(2);"
+        "content": "    void testAddEmptyString() throws IOException {"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        AddPatientCommandStub addCommand \u003d new AddPatientCommandStub(tempMap);"
+        "content": "        Ui ui \u003d null;"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        addCommand.execute(ui,storage);"
+        "content": "        Storage storage \u003d null;"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        PatientStub temppatient \u003d PatientListStub.getPatientList().get(PatientListStub.getTotalPatients() - 1);"
+        "content": "        Map\u003cString,String\u003e tempMap \u003d AddPatientCommandStub.generateMap(2);"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        PatientStub newPatient \u003d new PatientStub(\"\", -1,\"\",\"\");"
+        "content": "        AddPatientCommand addCommand \u003d new AddPatientCommandStub(tempMap);"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        assertEquals(temppatient.getName(),newPatient.getName());"
+        "content": "        addCommand.execute(ui,storage);"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        assertEquals(temppatient.getAge(),newPatient.getAge());"
+        "content": "        PatientStub temppatient \u003d PatientListStub.getPatientList().get(PatientListStub.getTotalPatients() - 1);"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        assertEquals(temppatient.getAddress(),newPatient.getAddress());"
+        "content": "        PatientStub newPatient \u003d new PatientStub(\"\", -1,\"\",\"\");"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        assertEquals(temppatient.getContactNumber(),newPatient.getContactNumber());"
+        "content": "        assertEquals(temppatient.getName(),newPatient.getName());"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    }"
+        "content": "        assertEquals(temppatient.getAge(),newPatient.getAge());"
       },
       {
         "lineNumber": 125,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        assertEquals(temppatient.getAddress(),newPatient.getAddress());"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        assertEquals(temppatient.getContactNumber(),newPatient.getContactNumber());"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 128,
         "author": {
           "gitId": "andy-aw-why"
         },
@@ -22782,7 +23135,7 @@
     ],
     "authorContributionMap": {
       "JustinnT": 13,
-      "andy-aw-why": 112
+      "andy-aw-why": 115
     }
   },
   {
@@ -24617,150 +24970,171 @@
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "import java.util.List;"
+        "content": "import seedu.duke.storage.Storage;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "import seedu.duke.ui.Ui;"
       },
       {
         "lineNumber": 5,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "import java.util.List;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "/**"
       },
       {
-        "lineNumber": 6,
+        "lineNumber": 9,
         "author": {
           "gitId": "JustinnT"
         },
         "content": " * Stub class for ListAppointmentCommandTest."
       },
       {
-        "lineNumber": 7,
+        "lineNumber": 10,
         "author": {
           "gitId": "JustinnT"
         },
         "content": " */"
       },
       {
-        "lineNumber": 8,
+        "lineNumber": 11,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "public class ListAppointmentCommandStub {"
+        "content": "public class ListAppointmentCommandStub extends ListAppointmentCommand {"
       },
       {
-        "lineNumber": 9,
+        "lineNumber": 12,
         "author": {
           "gitId": "andy-aw-why"
         },
         "content": "    public ListAppointmentCommandStub() {"
       },
       {
-        "lineNumber": 10,
+        "lineNumber": 13,
         "author": {
           "gitId": "andy-aw-why"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 11,
+        "lineNumber": 14,
         "author": {
           "gitId": "andy-aw-why"
         },
         "content": ""
       },
       {
-        "lineNumber": 12,
+        "lineNumber": 15,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 13,
+        "lineNumber": 16,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "     * Stub to simulate adding appointments into list."
       },
       {
-        "lineNumber": 14,
+        "lineNumber": 17,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 15,
+        "lineNumber": 18,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "     * @param ui      stub ui"
       },
       {
-        "lineNumber": 16,
+        "lineNumber": 19,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "     * @param storage stub storage"
       },
       {
-        "lineNumber": 17,
+        "lineNumber": 20,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 18,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "    public void execute(int ui, int storage) {"
-      },
-      {
-        "lineNumber": 19,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        List\u003cAppointmentStub\u003e appointmentStubList \u003d AppointmentListStub.getAppointmentList();"
-      },
-      {
-        "lineNumber": 20,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        for (AppointmentStub a : appointmentStubList) {"
-      },
-      {
         "lineNumber": 21,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            System.out.println(a);"
+        "content": "    public void execute(Ui ui, Storage storage) {"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        }"
+        "content": "        List\u003cAppointmentStub\u003e appointmentStubList \u003d AppointmentListStub.getAppointmentList();"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    }"
+        "content": "        for (AppointmentStub a : appointmentStubList) {"
       },
       {
         "lineNumber": 24,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "            System.out.println(a);"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 27,
         "author": {
           "gitId": "andy-aw-why"
         },
@@ -24769,7 +25143,7 @@
     ],
     "authorContributionMap": {
       "JustinnT": 9,
-      "andy-aw-why": 15
+      "andy-aw-why": 18
     }
   },
   {
@@ -24802,35 +25176,35 @@
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "import seedu.duke.storage.Storage;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "import java.io.ByteArrayOutputStream;"
+        "content": "import seedu.duke.ui.Ui;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "import java.io.PrintStream;"
+        "content": ""
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "import java.io.ByteArrayOutputStream;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "class ListAppointmentCommandTest {"
+        "content": "import java.io.PrintStream;"
       },
       {
         "lineNumber": 9,
@@ -24844,196 +25218,196 @@
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    private static final String EMPTY \u003d \"\";"
+        "content": "class ListAppointmentCommandTest {"
       },
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "JustinnT"
+          "gitId": "andy-aw-why"
         },
-        "content": "    private static final String EXPECTED_OUTPUT \u003d \"{[Date]: s;dlskd;l |[Time]: Li}\" + System.lineSeparator()"
+        "content": ""
       },
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "JustinnT"
+          "gitId": "andy-aw-why"
         },
-        "content": "            + \"{[Date]:   |[Time]:  }\" + System.lineSeparator()"
+        "content": "    private static final String EMPTY \u003d \"\";"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            + \"{[Date]: ewuioaiwoe |[Time]: Lo}\" + System.lineSeparator()"
+        "content": "    private static final String EXPECTED_OUTPUT \u003d \"{[Date]: s;dlskd;l |[Time]: Li}\" + System.lineSeparator()"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            + \"{[Date]: aeiwae |[Time]: to}\" + System.lineSeparator()"
+        "content": "            + \"{[Date]:   |[Time]:  }\" + System.lineSeparator()"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "            + \"{[Date]: LSDs |[Time]: Lis}\" + System.lineSeparator();"
+        "content": "            + \"{[Date]: ewuioaiwoe |[Time]: Lo}\" + System.lineSeparator()"
       },
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "andy-aw-why"
+          "gitId": "JustinnT"
         },
-        "content": ""
+        "content": "            + \"{[Date]: aeiwae |[Time]: to}\" + System.lineSeparator()"
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "andy-aw-why"
+          "gitId": "JustinnT"
         },
-        "content": "    @Test"
+        "content": "            + \"{[Date]: LSDs |[Time]: Lis}\" + System.lineSeparator();"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    void testListWithPatients() {"
+        "content": ""
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        int ui \u003d 1;"
+        "content": "    @Test"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        int storage \u003d 1;"
+        "content": "    void testListWithPatients() {"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        int savedAppointmentList \u003d 1;"
+        "content": "        Ui ui \u003d null;"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        AppointmentListStub.createList(savedAppointmentList);"
+        "content": "        Storage storage \u003d null;"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        ListAppointmentCommandStub listAppointmentCommandStub \u003d new ListAppointmentCommandStub();"
+        "content": "        int savedAppointmentList \u003d 1;"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "        AppointmentListStub.createList(savedAppointmentList);"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        /** Reused from https://coderanch.com/t/587280/java/assertEquals-println **/"
+        "content": "        ListAppointmentCommand listAppointmentCommandStub \u003d new ListAppointmentCommandStub();"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        final ByteArrayOutputStream outContent \u003d new ByteArrayOutputStream();"
+        "content": ""
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        System.setOut(new PrintStream(outContent));"
+        "content": "        /** Reused from https://coderanch.com/t/587280/java/assertEquals-println **/"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        listAppointmentCommandStub.execute(ui, storage);"
+        "content": "        final ByteArrayOutputStream outContent \u003d new ByteArrayOutputStream();"
       },
       {
         "lineNumber": 29,
         "author": {
-          "gitId": "JustinnT"
+          "gitId": "andy-aw-why"
         },
-        "content": "        //assertEquals(EXPECTED_OUTPUT, outContent.toString()); todo test failed"
+        "content": "        System.setOut(new PrintStream(outContent));"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    }"
+        "content": "        listAppointmentCommandStub.execute(ui, storage);"
       },
       {
         "lineNumber": 31,
         "author": {
-          "gitId": "andy-aw-why"
+          "gitId": "JustinnT"
         },
-        "content": ""
+        "content": "        //assertEquals(EXPECTED_OUTPUT, outContent.toString()); todo test failed"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    @Test"
+        "content": "    }"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    void testListWithoutPatients() {"
+        "content": ""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        int ui \u003d 1;"
+        "content": "    @Test"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        int storage \u003d 1;"
+        "content": "    void testListWithoutPatients() {"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "        Ui ui \u003d null;"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        int savedAppointmentList \u003d 2;"
+        "content": "        Storage storage \u003d null;"
       },
       {
         "lineNumber": 38,
@@ -25047,66 +25421,80 @@
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        PatientListStub.createList(savedAppointmentList);"
+        "content": "        int savedAppointmentList \u003d 2;"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        ListAppointmentCommandStub listAppointmentCommandStub \u003d new ListAppointmentCommandStub();"
+        "content": ""
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "        PatientListStub.createList(savedAppointmentList);"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        /** Reused from https://coderanch.com/t/587280/java/assertEquals-println **/"
+        "content": "        ListAppointmentCommand listAppointmentCommandStub \u003d new ListAppointmentCommandStub();"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        final ByteArrayOutputStream outContent \u003d new ByteArrayOutputStream();"
+        "content": ""
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        System.setOut(new PrintStream(outContent));"
+        "content": "        /** Reused from https://coderanch.com/t/587280/java/assertEquals-println **/"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        listAppointmentCommandStub.execute(ui, storage);"
+        "content": "        final ByteArrayOutputStream outContent \u003d new ByteArrayOutputStream();"
       },
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "JustinnT"
+          "gitId": "andy-aw-why"
         },
-        "content": "        //assertEquals(EMPTY, outContent.toString()); todo test failed"
+        "content": "        System.setOut(new PrintStream(outContent));"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    }"
+        "content": "        listAppointmentCommandStub.execute(ui, storage);"
       },
       {
         "lineNumber": 48,
+        "author": {
+          "gitId": "JustinnT"
+        },
+        "content": "        //assertEquals(EMPTY, outContent.toString()); todo test failed"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 50,
         "author": {
           "gitId": "andy-aw-why"
         },
@@ -25115,7 +25503,7 @@
     ],
     "authorContributionMap": {
       "JustinnT": 7,
-      "andy-aw-why": 41
+      "andy-aw-why": 43
     }
   },
   {
@@ -25141,150 +25529,171 @@
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "import java.util.List;"
+        "content": "import seedu.duke.storage.Storage;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "import seedu.duke.ui.Ui;"
       },
       {
         "lineNumber": 5,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "import java.util.List;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "/**"
       },
       {
-        "lineNumber": 6,
+        "lineNumber": 9,
         "author": {
           "gitId": "JustinnT"
         },
         "content": " * Stub class for ListPatientCommand."
       },
       {
-        "lineNumber": 7,
+        "lineNumber": 10,
         "author": {
           "gitId": "JustinnT"
         },
         "content": " */"
       },
       {
-        "lineNumber": 8,
+        "lineNumber": 11,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "public class ListPatientCommandStub {"
+        "content": "public class ListPatientCommandStub extends ListPatientCommand {"
       },
       {
-        "lineNumber": 9,
+        "lineNumber": 12,
         "author": {
           "gitId": "andy-aw-why"
         },
         "content": "    public ListPatientCommandStub() {"
       },
       {
-        "lineNumber": 10,
+        "lineNumber": 13,
         "author": {
           "gitId": "andy-aw-why"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 11,
+        "lineNumber": 14,
         "author": {
           "gitId": "andy-aw-why"
         },
         "content": ""
       },
       {
-        "lineNumber": 12,
+        "lineNumber": 15,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 13,
+        "lineNumber": 16,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "     * Stub to simulate adding patients into list."
       },
       {
-        "lineNumber": 14,
+        "lineNumber": 17,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 15,
+        "lineNumber": 18,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "     * @param ui      stub ui"
       },
       {
-        "lineNumber": 16,
+        "lineNumber": 19,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "     * @param storage stub storage"
       },
       {
-        "lineNumber": 17,
+        "lineNumber": 20,
         "author": {
           "gitId": "JustinnT"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 18,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "    public void execute(int ui, int storage) {"
-      },
-      {
-        "lineNumber": 19,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        List\u003cPatientStub\u003e patientListStub \u003d PatientListStub.getPatientList(); //getPatientList() method by @Brandonnn"
-      },
-      {
-        "lineNumber": 20,
-        "author": {
-          "gitId": "andy-aw-why"
-        },
-        "content": "        for (PatientStub p : patientListStub) {"
-      },
-      {
         "lineNumber": 21,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "            System.out.println(p); //override Patient class toString by @Sammmmm"
+        "content": "    public void execute(Ui ui, Storage storage) {"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        }"
+        "content": "        List\u003cPatientStub\u003e patientListStub \u003d PatientListStub.getPatientList(); //getPatientList() method by @Brandonnn"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    }"
+        "content": "        for (PatientStub p : patientListStub) {"
       },
       {
         "lineNumber": 24,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "            System.out.println(p); //override Patient class toString by @Sammmmm"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 27,
         "author": {
           "gitId": "andy-aw-why"
         },
@@ -25293,7 +25702,7 @@
     ],
     "authorContributionMap": {
       "JustinnT": 9,
-      "andy-aw-why": 15
+      "andy-aw-why": 18
     }
   },
   {
@@ -25326,35 +25735,35 @@
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "import seedu.duke.storage.Storage;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "import java.io.ByteArrayOutputStream;"
+        "content": "import seedu.duke.ui.Ui;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "import java.io.PrintStream;"
+        "content": ""
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "import java.io.ByteArrayOutputStream;"
       },
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "JustinnT"
+          "gitId": "andy-aw-why"
         },
-        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+        "content": "import java.io.PrintStream;"
       },
       {
         "lineNumber": 9,
@@ -25368,7 +25777,7 @@
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "class ListPatientCommandTest {"
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
       },
       {
         "lineNumber": 11,
@@ -25380,177 +25789,177 @@
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "andy-aw-why"
+          "gitId": "JustinnT"
         },
-        "content": "    private static final String EXPECTED_OUTPUT \u003d"
+        "content": "class ListPatientCommandTest {"
       },
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "JustinnT"
+          "gitId": "andy-aw-why"
         },
-        "content": "            \"{[Name]: s;dlskd;l | [Age]: 23 | [Address]: Li | [Contact Number]: 121}\" + System.lineSeparator()"
+        "content": ""
       },
       {
         "lineNumber": 14,
         "author": {
-          "gitId": "JustinnT"
+          "gitId": "andy-aw-why"
         },
-        "content": "                    + \"{[Name]:   | [Age]: 15 | [Address]:   | [Contact Number]: 15454455}\" + System.lineSeparator()"
+        "content": "    private static final String EXPECTED_OUTPUT \u003d"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "                    + \"{[Name]: ewuioaiwoe | [Age]: 33 | [Address]: Lo | [Contact Number]: 1989}\""
+        "content": "            \"{[Name]: s;dlskd;l | [Age]: 23 | [Address]: Li | [Contact Number]: 121}\" + System.lineSeparator()"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "                    + System.lineSeparator()"
+        "content": "                    + \"{[Name]:   | [Age]: 15 | [Address]:   | [Contact Number]: 15454455}\" + System.lineSeparator()"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "                    + \"{[Name]: aeiwae | [Age]: 13 | [Address]: to | [Contact Number]:  }\" + System.lineSeparator()"
+        "content": "                    + \"{[Name]: ewuioaiwoe | [Age]: 33 | [Address]: Lo | [Contact Number]: 1989}\""
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "JustinnT"
         },
-        "content": "                    + \"{[Name]: LSDs | [Age]: -1 | [Address]: Lis | [Contact Number]: 12}\" + System.lineSeparator();"
+        "content": "                    + System.lineSeparator()"
       },
       {
         "lineNumber": 19,
         "author": {
-          "gitId": "andy-aw-why"
+          "gitId": "JustinnT"
         },
-        "content": "    private static final String EMPTY \u003d \"\";"
+        "content": "                    + \"{[Name]: aeiwae | [Age]: 13 | [Address]: to | [Contact Number]:  }\" + System.lineSeparator()"
       },
       {
         "lineNumber": 20,
         "author": {
-          "gitId": "andy-aw-why"
+          "gitId": "JustinnT"
         },
-        "content": ""
+        "content": "                    + \"{[Name]: LSDs | [Age]: -1 | [Address]: Lis | [Contact Number]: 12}\" + System.lineSeparator();"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    @Test"
+        "content": "    private static final String EMPTY \u003d \"\";"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    void testListWithPatients() {"
+        "content": ""
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        int ui \u003d 1;"
+        "content": "    @Test"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        int storage \u003d 1;"
+        "content": "    void testListWithPatients() {"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        int savedPatientList \u003d 1;"
+        "content": "        Ui ui \u003d null;"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        PatientListStub.createList(savedPatientList);"
+        "content": "        Storage storage \u003d null;"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        ListPatientCommandStub listPatientCommandStub \u003d new ListPatientCommandStub();"
+        "content": "        int savedPatientList \u003d 1;"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "        PatientListStub.createList(savedPatientList);"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        /** Reused from https://coderanch.com/t/587280/java/assertEquals-println **/"
+        "content": "        ListPatientCommandStub listPatientCommandStub \u003d new ListPatientCommandStub();"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        final ByteArrayOutputStream outContent \u003d new ByteArrayOutputStream();"
+        "content": ""
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        System.setOut(new PrintStream(outContent));"
+        "content": "        /** Reused from https://coderanch.com/t/587280/java/assertEquals-println **/"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        listPatientCommandStub.execute(ui, storage);"
+        "content": "        final ByteArrayOutputStream outContent \u003d new ByteArrayOutputStream();"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        assertEquals(EXPECTED_OUTPUT, outContent.toString());"
+        "content": "        System.setOut(new PrintStream(outContent));"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "        listPatientCommandStub.execute(ui, storage);"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "        assertEquals(EXPECTED_OUTPUT, outContent.toString());"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 37,
@@ -25564,42 +25973,42 @@
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    @Test"
+        "content": "    }"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    void testListWithoutPatients() {"
+        "content": ""
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        int ui \u003d 1;"
+        "content": "    @Test"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        int storage \u003d 1;"
+        "content": "    void testListWithoutPatients() {"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "        Ui ui \u003d null;"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        int savedPatientList \u003d 2;"
+        "content": "        Storage storage \u003d null;"
       },
       {
         "lineNumber": 44,
@@ -25613,80 +26022,94 @@
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        PatientListStub.createList(savedPatientList);"
+        "content": "        int savedPatientList \u003d 2;"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        ListPatientCommandStub listPatientCommandStub \u003d new ListPatientCommandStub();"
+        "content": ""
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "        PatientListStub.createList(savedPatientList);"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        /** Reused from https://coderanch.com/t/587280/java/assertEquals-println **/"
+        "content": "        ListPatientCommandStub listPatientCommandStub \u003d new ListPatientCommandStub();"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        final ByteArrayOutputStream outContent \u003d new ByteArrayOutputStream();"
+        "content": ""
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        System.setOut(new PrintStream(outContent));"
+        "content": "        /** Reused from https://coderanch.com/t/587280/java/assertEquals-println **/"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        listPatientCommandStub.execute(ui, storage);"
+        "content": "        final ByteArrayOutputStream outContent \u003d new ByteArrayOutputStream();"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "        assertEquals(EMPTY, outContent.toString());"
+        "content": "        System.setOut(new PrintStream(outContent));"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "        listPatientCommandStub.execute(ui, storage);"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": ""
+        "content": "        assertEquals(EMPTY, outContent.toString());"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "andy-aw-why"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 56,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "andy-aw-why"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 58,
         "author": {
           "gitId": "andy-aw-why"
         },
@@ -25695,7 +26118,7 @@
     ],
     "authorContributionMap": {
       "JustinnT": 8,
-      "andy-aw-why": 48
+      "andy-aw-why": 50
     }
   },
   {

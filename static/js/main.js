@@ -1,4 +1,3 @@
-window.BASE_URL = 'https://github.com';
 window.REPORT_ZIP = null;
 window.REPOS = {};
 window.isMacintosh = navigator.platform.includes('Mac');
@@ -255,12 +254,15 @@ window.app = new window.Vue({
       return 'http://reposense.org';
     },
 
-    getUserGuideVersionLink() {
+    getRepoSenseVersionLink() {
       const version = window.app.repoSenseVersion;
       if (!version) {
-        return `${window.BASE_URL}/reposense/RepoSense`;
+        return 'https://github.com/reposense/RepoSense';
       }
-      return `${window.BASE_URL}/reposense/RepoSense/blob/${version}/docs/UserGuide.md`;
+      if (version.startsWith('v')) {
+        return `https://github.com/reposense/RepoSense/releases/tag/${version}`;
+      }
+      return `https://github.com/reposense/RepoSense/commits/${version}`;
     },
 
     receiveDates(dates) {

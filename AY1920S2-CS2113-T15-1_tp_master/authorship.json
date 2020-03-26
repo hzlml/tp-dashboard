@@ -978,35 +978,35 @@
         "author": {
           "gitId": "siuhian"
         },
-        "content": ""
-      },
-      {
-        "lineNumber": 86,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 87,
-        "author": {
-          "gitId": "siuhian"
-        },
         "content": "### 3.2 Storage feature"
       },
       {
-        "lineNumber": 88,
+        "lineNumber": 86,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "The Storage class represents the back-end of Jikan, handling the creation, saving and loading of data. "
       },
       {
-        "lineNumber": 89,
+        "lineNumber": 87,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "Jikan uses a `.csv` file to store its data, formatted in the following way:"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "`entry-name, start-time, end-time, tags`"
       },
       {
         "lineNumber": 90,
@@ -1020,7 +1020,7 @@
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "`entry-name, start-time, end-time, tags`"
+        "content": "All tags are saved in the same cell, separated by a white space; this design decision was taken to make sure that each entry occupies the same number of cells regardless of each entry’s number of tags. The tags are then separately parsed when the data is loaded."
       },
       {
         "lineNumber": 92,
@@ -1034,7 +1034,7 @@
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "All tags are saved in the same cell, separated by a white space; this design decision was taken to make sure that each entry occupies the same number of cells regardless of each entry’s number of tags. The tags are then separately parsed when the data is loaded."
+        "content": "Each Storage objects contains the path to the data file (`Storage.dataFilePath`), the File object representing the data file (`Storage.dataFile`), and an activityList populated with the data from the data file (`Storage.activityList`). Storage optionally supports multiple data files at the same time, allowing implementation of features like multiple sessions and multiple user profiles. "
       },
       {
         "lineNumber": 94,
@@ -1048,210 +1048,210 @@
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "Each Storage objects contains the path to the data file (`Storage.dataFilePath`), the File object representing the data file (`Storage.dataFile`), and an activityList populated with the data from the data file (`Storage.activityList`). Storage optionally supports multiple data files at the same time, allowing implementation of features like multiple sessions and multiple user profiles. "
+        "content": "Storage provides the following functions:"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "- Constructing a Storage object via `Storage(String dataFilePath)`, which takes in the path to the desired data file (or the path where the user wants to create the data file) as a String object."
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "Storage provides the following functions:"
+        "content": "- Creating a data file via `createDataFile`."
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "- Constructing a Storage object via `Storage(String dataFilePath)`, which takes in the path to the desired data file (or the path where the user wants to create the data file) as a String object."
+        "content": "- Writing to a data file via `writeToFile`. This function takes a single string as parameter and writes it to the data file. It is recommended to only pass single-line strings to keep the file nicely formatted. "
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "- Creating a data file via `createDataFile`."
+        "content": "Loading a pre-existing data file via `loadFile`. If a data file already exists for the provided data file path, the function will return `true`; if the specified data file did not previously exist, this function will call the `createDataFile` method and returns `false`. The return value is useful so that the application knows whether or not this is the first session with a specific data file or if data already exists."
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "- Writing to a data file via `writeToFile`. This function takes a single string as parameter and writes it to the data file. It is recommended to only pass single-line strings to keep the file nicely formatted. "
+        "content": "- Creating an ActivityList via `createActivityList`. This function calls `loadFile()` to check whether the file already existed or not; if the data file previously existed, it will construct an ActivityList object by passing the data from the data file to it, and return this populated ActivityList object; if the data file did not previously exist, it will return an empty activityList object."
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "Loading a pre-existing data file via `loadFile`. If a data file already exists for the provided data file path, the function will return `true`; if the specified data file did not previously exist, this function will call the `createDataFile` method and returns `false`. The return value is useful so that the application knows whether or not this is the first session with a specific data file or if data already exists."
-      },
-      {
-        "lineNumber": 102,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "- Creating an ActivityList via `createActivityList`. This function calls `loadFile()` to check whether the file already existed or not; if the data file previously existed, it will construct an ActivityList object by passing the data from the data file to it, and return this populated ActivityList object; if the data file did not previously exist, it will return an empty activityList object."
-      },
-      {
-        "lineNumber": 103,
-        "author": {
-          "gitId": "rdimaio"
-        },
         "content": ""
       },
       {
-        "lineNumber": 104,
+        "lineNumber": 102,
         "author": {
           "gitId": "siuhian"
         },
         "content": "### 3.3 Storage handler"
       },
       {
-        "lineNumber": 105,
+        "lineNumber": 103,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "The StorageHandler class functions as a support to the main Storage class, allowing the Jikan application to manipulate the stored data file. Its main provided functions are:"
       },
       {
-        "lineNumber": 106,
+        "lineNumber": 104,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "- Removing an entry from the data file via `removeLine`. This function takes in the number of the line to remove."
       },
       {
-        "lineNumber": 107,
+        "lineNumber": 105,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "- Replacing an entry in the data file via `replaceLine`. This function takes in the number of the line to replace, along with the String object that needs to be written to the data file in place of the replaced line."
       },
       {
-        "lineNumber": 108,
+        "lineNumber": 106,
         "author": {
           "gitId": "rdimaio"
         },
         "content": ""
       },
       {
-        "lineNumber": 109,
+        "lineNumber": 107,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "### 3.4 Edit feature"
       },
       {
-        "lineNumber": 110,
+        "lineNumber": 108,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "The edit feature allows the user to make changes to activities that have been saved in the activity list. This is to allow the user to rectify any mistakes that may have been made during the initial recording of the activity. "
       },
       {
-        "lineNumber": 111,
+        "lineNumber": 109,
         "author": {
           "gitId": "nigellenl"
         },
         "content": ""
       },
       {
-        "lineNumber": 112,
+        "lineNumber": 110,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "#### 3.4.1 Current Implementation"
       },
       {
-        "lineNumber": 113,
+        "lineNumber": 111,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "The following sequence diagram shows how the edit feature works."
       },
       {
-        "lineNumber": 114,
+        "lineNumber": 112,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "![image_info](./pictures/EditSequenceDiagram.png)"
       },
       {
-        "lineNumber": 115,
+        "lineNumber": 113,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "The current implementation of the edit feature allows the user to edit only the name parameter of the activity. When the user wants to edit an activity using the edit command, the Parser creates a new EditCommand object. The executeCommand() method of the EditCommand object is called and the specified parameters are updated accordingly."
       },
       {
-        "lineNumber": 116,
+        "lineNumber": 114,
         "author": {
           "gitId": "nigellenl"
         },
         "content": ""
       },
       {
-        "lineNumber": 117,
+        "lineNumber": 115,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "The order of method calls to edit the activity details is as follows if the specified activity exists (meaning index !\u003d -1) else an exception is thrown:"
       },
       {
-        "lineNumber": 118,
+        "lineNumber": 116,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "1. The updateName() method of the ActivityList class is called, with the user-specified parameters of the activity index and new activity name"
       },
       {
-        "lineNumber": 119,
+        "lineNumber": 117,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "2. The get() method is self-invoked by the ActivityList class to obtain the activity at the given index "
       },
       {
-        "lineNumber": 120,
+        "lineNumber": 118,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "3. The setName() method of the Activity class is called to edit the activity name to the user-specified name"
       },
       {
-        "lineNumber": 121,
+        "lineNumber": 119,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "4. The activity with the updated name is returned to the activityList  "
       },
       {
-        "lineNumber": 122,
+        "lineNumber": 120,
         "author": {
           "gitId": "nigellenl"
         },
         "content": ""
       },
       {
-        "lineNumber": 123,
+        "lineNumber": 121,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "#### 3.4.2 Additional Implementations"
       },
       {
-        "lineNumber": 124,
+        "lineNumber": 122,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "The current implementation of the edit feature only allows the user to edit the activity name. Hence, additional implementations of the edit feature should allow the user to edit other parameters of the activity such as the tags and the start and end dates. "
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "This will require the implementation of more update methods in the ActivityList class to allow for the changes to be updated in the activityList after it has been edited. "
       },
       {
         "lineNumber": 125,
@@ -1265,33 +1265,33 @@
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "This will require the implementation of more update methods in the ActivityList class to allow for the changes to be updated in the activityList after it has been edited. "
+        "content": "#### 3.4.3 Design Considerations"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "By letting the user edit the name and tags of the activity, it will allow them to correct any mistakes made during the data entry. This ensures that there is an accurate record of activities such as in cases where the user may be trying to record the same activity but has misspelled it, resulting in the program regarding it as a different activity where there would be multiple unnecessary new entries in the activity list, making the analysis of the time spent more tedious and inaccurate."
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "#### 3.4.3 Design Considerations"
+        "content": ""
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "By letting the user edit the name and tags of the activity, it will allow them to correct any mistakes made during the data entry. This ensures that there is an accurate record of activities such as in cases where the user may be trying to record the same activity but has misspelled it, resulting in the program regarding it as a different activity where there would be multiple unnecessary new entries in the activity list, making the analysis of the time spent more tedious and inaccurate."
+        "content": "However, by allowing the user to edit the start date and time, there may be potential inaccuracies in the actual activity recording. This is due to the fact that the time recorded in the program is based on the LocalDateTime. By introducing user input, the dates and time may be recorded incorrectly, defeating the purpose of the time tracking program. "
       },
       {
         "lineNumber": 130,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "rdimaio"
         },
         "content": ""
       },
@@ -1300,49 +1300,49 @@
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "However, by allowing the user to edit the start date and time, there may be potential inaccuracies in the actual activity recording. This is due to the fact that the time recorded in the program is based on the LocalDateTime. By introducing user input, the dates and time may be recorded incorrectly, defeating the purpose of the time tracking program. "
-      },
-      {
-        "lineNumber": 132,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 133,
-        "author": {
-          "gitId": "nigellenl"
-        },
         "content": "### 3.5 Continue Feature"
       },
       {
-        "lineNumber": 134,
+        "lineNumber": 132,
         "author": {
           "gitId": "btricec"
         },
         "content": "The continue feature allows the user to continue a previously ended activity."
       },
       {
-        "lineNumber": 135,
+        "lineNumber": 133,
         "author": {
           "gitId": "btricec"
         },
         "content": ""
       },
       {
-        "lineNumber": 136,
+        "lineNumber": 134,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "#### 3.5.1 Current Implementation"
       },
       {
-        "lineNumber": 137,
+        "lineNumber": 135,
         "author": {
           "gitId": "btricec"
         },
         "content": "![Continue command sequence diagram](https://i.imgur.com/MuaxFts.png)"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "**Continuing an activity:**"
       },
       {
         "lineNumber": 138,
@@ -1356,7 +1356,7 @@
         "author": {
           "gitId": "btricec"
         },
-        "content": "**Continuing an activity:**"
+        "content": "When the user enters the command to continue an activity, a *ContinueCommand* object is created in *Parser*. The method *executeCommand()* of the *ContinueCommand* object is then called and does the following:"
       },
       {
         "lineNumber": 140,
@@ -1370,112 +1370,112 @@
         "author": {
           "gitId": "btricec"
         },
-        "content": "When the user enters the command to continue an activity, a *ContinueCommand* object is created in *Parser*. The method *executeCommand()* of the *ContinueCommand* object is then called and does the following:"
+        "content": " 1. Checks if the given activity name exists in the activityList by calling *findActivity()* (if it doesn’t an exception is thrown, omitted in the sequence diagram above)"
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "btricec"
         },
-        "content": ""
+        "content": " 2. Gets the *name* and *tags* of the activity to be continued and saves it to a public static variable of *Parser* object"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "btricec"
         },
-        "content": " 1. Checks if the given activity name exists in the activityList by calling *findActivity()* (if it doesn’t an exception is thrown, omitted in the sequence diagram above)"
+        "content": " 3. Gets the current time and saves it to a public static variable of *Parser* object"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "btricec"
         },
-        "content": " 2. Gets the *name* and *tags* of the activity to be continued and saves it to a public static variable of *Parser* object"
+        "content": " "
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "btricec"
         },
-        "content": " 3. Gets the current time and saves it to a public static variable of *Parser* object"
+        "content": " ![End command sequence diagram](https://i.imgur.com/soaCCXk.png)"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "btricec"
         },
-        "content": " "
+        "content": ""
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "btricec"
         },
-        "content": " ![End command sequence diagram](https://i.imgur.com/soaCCXk.png)"
+        "content": " **Ending a continued activity:**"
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "btricec"
         },
-        "content": ""
+        "content": " "
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "btricec"
         },
-        "content": " **Ending a continued activity:**"
+        "content": "When the user wants to end the continued activity, an *EndCommand* object is created in *Parser.* The method *executeCommand()* of the *ContinueCommand* object is then called and it in turn executes the *saveActivity()* method of the *ActivityList* class. The continued activity is then saved by executing the following:"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "btricec"
         },
-        "content": " "
+        "content": ""
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "btricec"
         },
-        "content": "When the user wants to end the continued activity, an *EndCommand* object is created in *Parser.* The method *executeCommand()* of the *ContinueCommand* object is then called and it in turn executes the *saveActivity()* method of the *ActivityList* class. The continued activity is then saved by executing the following:"
+        "content": " 1. Gets the current time and saves it to a public static variable of *Parser* object"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "btricec"
         },
-        "content": ""
+        "content": "2.  Calculates the elapsed time using *between()* method of *Duration* class"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "btricec"
         },
-        "content": " 1. Gets the current time and saves it to a public static variable of *Parser* object"
+        "content": "3.  Adds the elapsed time with the previous duration of the activity to get the *newDuration* using *plus()* method of Duration class"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "btricec"
         },
-        "content": "2.  Calculates the elapsed time using *between()* method of *Duration* class"
+        "content": "4.  Calls the *updateDuration()* method, which updates the *duration* attribute of the continued activity in the *activityList* as well as the data.csv file"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "btricec"
         },
-        "content": "3.  Adds the elapsed time with the previous duration of the activity to get the *newDuration* using *plus()* method of Duration class"
+        "content": ""
       },
       {
         "lineNumber": 156,
         "author": {
-          "gitId": "btricec"
+          "gitId": "nigellenl"
         },
-        "content": "4.  Calls the *updateDuration()* method, which updates the *duration* attribute of the continued activity in the *activityList* as well as the data.csv file"
+        "content": "#### 3.5.2 Design Considerations"
       },
       {
         "lineNumber": 157,
@@ -1487,380 +1487,380 @@
       {
         "lineNumber": 158,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "btricec"
         },
-        "content": "#### 3.5.2 Design Considerations"
+        "content": "**Execution:**"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "btricec"
         },
-        "content": ""
+        "content": " - Continue by activity name (current implementation)"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "btricec"
         },
-        "content": "**Execution:**"
+        "content": " **Cons:** Activity names have to be unique."
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "btricec"
         },
-        "content": " - Continue by activity name (current implementation)"
+        "content": " **Pros:** More versatile, resistant to changes in the activity list"
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "btricec"
         },
-        "content": " **Cons:** Activity names have to be unique."
+        "content": " - Continue by activity index"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "btricec"
         },
-        "content": " **Pros:** More versatile, resistant to changes in the activity list"
+        "content": " **Cons:** need to add an additional index field to the Activity class, "
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "btricec"
         },
-        "content": " - Continue by activity index"
+        "content": " index is not fixed, changes when an activity is deleted"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "btricec"
         },
-        "content": " **Cons:** need to add an additional index field to the Activity class, "
+        "content": " **Pros:** Can reuse activity names."
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "btricec"
         },
-        "content": " index is not fixed, changes when an activity is deleted"
+        "content": " "
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "btricec"
         },
-        "content": " **Pros:** Can reuse activity names."
+        "content": "Although the current implementation of the continue feature disallows users to have multiple activities with the same name, we felt that the versatility of this choice outweighed the cons. Firstly because if the activityList got too big, it would be hard for the user to get the index of the task he/she wanted to continue. Also, the index would constantly be changing when changes are made to the list."
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "btricec"
         },
-        "content": " "
-      },
-      {
-        "lineNumber": 169,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "Although the current implementation of the continue feature disallows users to have multiple activities with the same name, we felt that the versatility of this choice outweighed the cons. Firstly because if the activityList got too big, it would be hard for the user to get the index of the task he/she wanted to continue. Also, the index would constantly be changing when changes are made to the list."
-      },
-      {
-        "lineNumber": 170,
-        "author": {
-          "gitId": "btricec"
-        },
         "content": ""
       },
       {
-        "lineNumber": 171,
+        "lineNumber": 169,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "#### 3.5.3 Additional Features"
       },
       {
-        "lineNumber": 172,
+        "lineNumber": 170,
         "author": {
           "gitId": "btricec"
         },
         "content": "As users can only have activities with unique names, when a user wants to start an activity which already exists in the activityList, he/she will be given the option to continue the stated activity."
       },
       {
-        "lineNumber": 173,
+        "lineNumber": 171,
         "author": {
           "gitId": "btricec"
         },
         "content": "![decision flowchart](https://i.imgur.com/mCCPuun.png)"
       },
       {
-        "lineNumber": 174,
+        "lineNumber": 172,
         "author": {
           "gitId": "btricec"
         },
         "content": ""
       },
       {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "### 3.6 Find Feature"
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "This command accepts a keyword and searches the activity list for activities with names that contain the keyword."
+      },
+      {
         "lineNumber": 175,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "## 4. Appendix"
+        "content": ""
       },
       {
         "lineNumber": 176,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "### Product Scope"
+        "content": "#### 3.6.1 Current Implementation"
       },
       {
         "lineNumber": 177,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "#### Target user profile"
+        "content": "* This feature is called by the user when the “find” command is entered into the command line. The string following the command is the keyword to match activity names to."
       },
       {
         "lineNumber": 178,
         "author": {
-          "gitId": "-"
+          "gitId": "ananda-lye"
         },
-        "content": ""
+        "content": "* The Parser will create a FindCommand object."
       },
       {
         "lineNumber": 179,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "* Students with time management issues/poor time management skills."
+        "content": "* The FindCommand will invoke its own executeCommand() method."
       },
       {
         "lineNumber": 180,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "* Users who are reasonably comfortable using CLI apps."
+        "content": "    * The Parser\u0027s lastShownList will be cleared."
       },
       {
         "lineNumber": 181,
         "author": {
-          "gitId": "-"
+          "gitId": "ananda-lye"
         },
-        "content": ""
+        "content": "    * Then it will loop through activityList to find activities with names that contain the keyword."
       },
       {
         "lineNumber": 182,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "#### Value proposition"
+        "content": "    * If one is found, it will be added to lastShownList."
       },
       {
         "lineNumber": 183,
         "author": {
-          "gitId": "-"
+          "gitId": "ananda-lye"
         },
-        "content": ""
+        "content": "    * printResults() of the Ui will be called:"
       },
       {
         "lineNumber": 184,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "Allow users to record their daily activities and track their time usage in a user-friendly manner. "
+        "content": "        * If lastShownList is not empty, it will print the matching activities."
       },
       {
         "lineNumber": 185,
         "author": {
-          "gitId": "-"
+          "gitId": "ananda-lye"
         },
-        "content": ""
+        "content": "        * Else, it will respond to the user that there are no tasks which match the given keyword."
       },
       {
         "lineNumber": 186,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "### User Stories"
+        "content": ""
       },
       {
         "lineNumber": 187,
         "author": {
-          "gitId": "-"
+          "gitId": "ananda-lye"
         },
         "content": ""
       },
       {
         "lineNumber": 188,
         "author": {
-          "gitId": "-"
+          "gitId": "ananda-lye"
         },
-        "content": "|Version| As a ... | I want to ... | So that I can ...|"
+        "content": "![find seq diagram](https://imgur.com/Icg5rdB.png)"
       },
       {
         "lineNumber": 189,
         "author": {
-          "gitId": "-"
+          "gitId": "ananda-lye"
         },
-        "content": "|--------|----------|---------------|------------------|"
+        "content": "### 3.7 Filter Feature"
       },
       {
         "lineNumber": 190,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "|v1.0|user|start a new activity|track the time spent on the activity|"
+        "content": "This feature accepts multiple space-separated keywords to search for activities with tags matching each keyword."
       },
       {
         "lineNumber": 191,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "|v1.0|user|end an activity|track the total time i spent on the activity|"
+        "content": ""
       },
       {
         "lineNumber": 192,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "|v1.0|user|abort an activity|record a different activity|"
+        "content": "#### 3.7.1 Current Implementation"
       },
       {
         "lineNumber": 193,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "|v1.0|user|store the completed activities in a list|analyse how I spent my time|"
+        "content": "* This feature is called by the user when the “filter” command is entered into the command line. The space separated strings following the command are the keywords to match activity tags with."
       },
       {
         "lineNumber": 194,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "|v2.0|user|delete an activity|remove activities that I do not want to track|"
+        "content": "* The Parser will create a FilterCommand object."
       },
       {
         "lineNumber": 195,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "|v2.0|user|search by activity name|view similar activities|"
+        "content": "* The FindCommand will invoke its own executeCommand() method."
       },
       {
         "lineNumber": 196,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "|v2.0|user|filter activities by tags|view activities of the same category|"
+        "content": "* The Parser\u0027s lastShownList will be cleared."
       },
       {
         "lineNumber": 197,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "|v2.0|user|view the activities by date|see how much time I have spent on different activities|"
+        "content": "* For each keyword:"
       },
       {
         "lineNumber": 198,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "|v2.0|user|continue my activities at another time|do other things between activities|"
+        "content": "    * Then it will loop through activityList to find activities with tags that contain the keyword."
       },
       {
         "lineNumber": 199,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "|v2.0|user|edit past activities|keep a more accurate record of activities|"
+        "content": "    * If one is found, it will be added to lastShownList."
       },
       {
         "lineNumber": 200,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "|v2.0|user|automate the deletion of old activities|keep a more concise log of activities|"
+        "content": "    * printResults() method of the Ui will be called"
       },
       {
         "lineNumber": 201,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": ""
+        "content": "        * If lastShownList is not empty, it will print the matching activities."
       },
       {
         "lineNumber": 202,
         "author": {
-          "gitId": "-"
+          "gitId": "ananda-lye"
         },
-        "content": ""
+        "content": "        * Else, it will respond to the user that there are no tasks which match the given keyword."
       },
       {
         "lineNumber": 203,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "### Non-Functional Requirements"
+        "content": ""
       },
       {
         "lineNumber": 204,
         "author": {
-          "gitId": "-"
+          "gitId": "ananda-lye"
         },
         "content": ""
       },
       {
         "lineNumber": 205,
         "author": {
-          "gitId": "-"
+          "gitId": "ananda-lye"
         },
-        "content": "{Give non-functional requirements}"
+        "content": "![filter seq diagram](https://imgur.com/hybT3R9.png)"
       },
       {
         "lineNumber": 206,
         "author": {
-          "gitId": "-"
+          "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "## 4. Appendix"
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "### Glossary"
+        "content": "### Product Scope"
       },
       {
         "lineNumber": 208,
         "author": {
-          "gitId": "-"
+          "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "#### Target user profile"
       },
       {
         "lineNumber": 209,
         "author": {
           "gitId": "-"
         },
-        "content": "* *glossary item* - Definition"
+        "content": ""
       },
       {
         "lineNumber": 210,
         "author": {
-          "gitId": "-"
+          "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "* Students with time management issues/poor time management skills."
       },
       {
         "lineNumber": 211,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "### Instructions for Manual Testing"
+        "content": "* Users who are reasonably comfortable using CLI apps."
       },
       {
         "lineNumber": 212,
@@ -1872,6 +1872,223 @@
       {
         "lineNumber": 213,
         "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "#### Value proposition"
+      },
+      {
+        "lineNumber": 214,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 215,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "Allow users to record their daily activities and track their time usage in a user-friendly manner. "
+      },
+      {
+        "lineNumber": 216,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 217,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "### User Stories"
+      },
+      {
+        "lineNumber": 218,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 219,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|Version| As a ... | I want to ... | So that I can ...|"
+      },
+      {
+        "lineNumber": 220,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|--------|----------|---------------|------------------|"
+      },
+      {
+        "lineNumber": 221,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "|v1.0|user|start a new activity|track the time spent on the activity|"
+      },
+      {
+        "lineNumber": 222,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "|v1.0|user|end an activity|track the total time i spent on the activity|"
+      },
+      {
+        "lineNumber": 223,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "|v1.0|user|abort an activity|record a different activity|"
+      },
+      {
+        "lineNumber": 224,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "|v1.0|user|store the completed activities in a list|analyse how I spent my time|"
+      },
+      {
+        "lineNumber": 225,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "|v2.0|user|delete an activity|remove activities that I do not want to track|"
+      },
+      {
+        "lineNumber": 226,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "|v2.0|user|search by activity name|view similar activities|"
+      },
+      {
+        "lineNumber": 227,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "|v2.0|user|filter activities by tags|view activities of the same category|"
+      },
+      {
+        "lineNumber": 228,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "|v2.0|user|view the activities by date|see how much time I have spent on different activities|"
+      },
+      {
+        "lineNumber": 229,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "|v2.0|user|continue my activities at another time|do other things between activities|"
+      },
+      {
+        "lineNumber": 230,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "|v2.0|user|edit past activities|keep a more accurate record of activities|"
+      },
+      {
+        "lineNumber": 231,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "|v2.0|user|automate the deletion of old activities|keep a more concise log of activities|"
+      },
+      {
+        "lineNumber": 232,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 233,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 234,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "### Non-Functional Requirements"
+      },
+      {
+        "lineNumber": 235,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 236,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "{Give non-functional requirements}"
+      },
+      {
+        "lineNumber": 237,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 238,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "### Glossary"
+      },
+      {
+        "lineNumber": 239,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 240,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "* *glossary item* - Definition"
+      },
+      {
+        "lineNumber": 241,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 242,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "### Instructions for Manual Testing"
+      },
+      {
+        "lineNumber": 243,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 244,
+        "author": {
           "gitId": "-"
         },
         "content": "{Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing}"
@@ -1880,9 +2097,10 @@
     "authorContributionMap": {
       "rdimaio": 21,
       "btricec": 38,
-      "siuhian": 57,
+      "siuhian": 55,
       "nigellenl": 72,
-      "-": 25
+      "-": 25,
+      "ananda-lye": 33
     }
   },
   {
