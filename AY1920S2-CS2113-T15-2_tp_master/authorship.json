@@ -373,6 +373,591 @@
     }
   },
   {
+    "path": "docs/DeveloperGuide.md",
+    "fileType": "md",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "# Developer Guide"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Design \u0026 Implementation"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "1. Architecture"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "The Duke class is the main class of the product.It is responsible for,"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "\tAt app launch: Initializes the components in the correct sequence, and connects them up with each other."
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "\tAt shut down: Shuts down the components and invokes storage method where necessary.\t"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "The product also contains the following components as well:"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "cards: Holds the data in the type of Card and relative operations"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "subjects: Holds the data in the type of Subject and relative operations"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "score: Holds the data in the type of Score and relative operations"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "commands: Deals with user input and communicate CLI to relative methods"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "exceptions: Deals with illegal inputs"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "parser: Convert CLI inputs into command keywords"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "In these components, cards and subjects have similar structure. Both of them contains a Card/Subject class and CardList/SubjectList class."
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "Duke, along with all command class and Parser form the logic box of the product"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "\u003cbr /\u003e![](images/logicuml.jpg)"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "\u003cbr /\u003eLogic box interacts with data box, ie Card, CardList, Subject, SubjectList, ScoreList."
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "\u003cbr /\u003e![](images/modeluml.jpg)"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "\u003cbr /\u003eFinally the storage box, ie Storage class will handle writing and reading the files."
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "\u003cbr /\u003e{insert image here}"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Product Scope"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "### Target user profile"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "The product is intended for students preparing for exams. Students can store practice question and model answers in the product."
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "Also, the product offers students to quiz themselves to practice for exams"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "### Value proposition"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "The product aims to provide students with more convient way of doing revision. By using the product students can categorize questions into different subjects and practice more effectively."
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## User Stories"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|Version| As a ... | I want to ... | So that I can ...|"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|--------|----------|---------------|------------------|"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "|v1.0|user|add new cards|view cards and answers to revise|"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "|v1.0|user|delete cards|organize cards better|"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "|v1.0|user|quiz myself|practice the questions|"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "|v1.0|user|list cards|organize the cards|"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "|v2.0|user|add cards with subjects|categorize the cards better|"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "|v2.0|user|list cards by subjects|organize the cards|"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "|v2.0|user|delete subjects|organize subjects better|"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "|v2.0|user|view my score|see how I performed|"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "|v2.0|user|view my test history|see how I performed|"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Non-Functional Requirements"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "\u003cbr /\u003e1.The product should be able to run on any platform that has JDK11"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "\u003cbr /\u003e2.The product should be able to hold up to 1000 cards"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Glossary"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "* *glossary item* - Definition"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Instructions for Manual Testing"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "\u003cbr /\u003e1. Running Tests"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "\u003cbr /\u003eThere are two ways to run tests."
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "\u003cbr /\u003eMethod 1: Using IntelliJ JUnit test runner"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "\u003cbr /\u003eTo run all tests, right-click on the src/test/java folder and choose Run \u0027All Tests\u0027"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "\u003cbr /\u003eMethod 2: Using Gradle"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "\u003cbr /\u003eOpen a console and run the command gradlew clean test (Mac/Linux: ./gradlew clean test)"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "\u003cbr /\u003eSee UsingGradle.adoc for more info on how to run tests using Gradle."
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "\u003cbr /\u003e2. Types of tests"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "\u003cbr /\u003eWe have three types of tests:"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "\u003cbr /\u003eUnit tests targeting the lowest level methods/classes."
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "\u003cbr /\u003ee.g. seedu.cards.CardTest"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "\u003cbr /\u003eIntegration tests that are checking the integration of multiple code units (those code units are assumed to be working)."
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "\u003cbr /\u003ee.g. seedu.cards.CardListTest"
+      }
+    ],
+    "authorContributionMap": {
+      "alexlim510": 2,
+      "Jeremy733": 55,
+      "-": 25
+    }
+  },
+  {
     "path": "docs/README.md",
     "fileType": "md",
     "lines": [
@@ -1178,6 +1763,1010 @@
     "authorContributionMap": {
       "kcubey": 112,
       "-": 2
+    }
+  },
+  {
+    "path": "docs/UserGuide.md",
+    "fileType": "md",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "# User Guide"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Introduction"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "The Exam Study Companion (ESC) is for students who want to improve on their grades by quizzing themselves through flashcards. ESC is a command line (CLI) program, with a simple, no frills user interface that is quick and easy to use."
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "ESC is a flashcard study program, where you are able to create cards and categorise them, and you can also quiz yourself using your flashcards."
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "ESC is meant to help students be able to study more effectively using the medium that they prefer, providing a simple, easy to use interface for the timestrapped student who prefers using CLI based applications and are able to type quickly. "
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Quick Start"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "1. Ensure that you have Java 11 or above installed on your computer."
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "2. Download the latest version of `ESC` from [here](http://link.to/duke)."
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "3. Run ESC on your command terminal using this command: `java -jar \u003cdirectory\u003e/duke.jar`"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "## Quick Use"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "1. Create a subject."
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "    * `addsubject s/\u003cname\u003e`"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "2. Create cards to add to your subject. "
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "    * `addcard s/\u003cindex\u003e q/\u003cquestion\u003e a/\u003canswer\u003e`"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "3. Start a quiz to test yourself."
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "    * `quiz s/\u003cindex\u003e`"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "    "
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "A more detailed explanation of the features are covered in the following sections. "
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Features "
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "### Creating a Subject: `addsubject`"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Creates a subject for categorisation of cards."
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Format: `addsubject s/\u003cSUBJECTNAME\u003e`"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* The `SUBJECTNAME` can be in a natural language format."
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Example of usage: "
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* `addsubject s/biology`"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* `addsubject s/CHEM`"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "### Listing all Subjects"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Lists all the current subjects."
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Format \u0026 Usage: `listsubject`"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "### Deleting a Subject"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Deletes the specified subject AND all the cards in the subject."
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Format: `deletesubject s/\u003cINDEX\u003e`"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* The `INDEX` is based on the index of the subject. This can be found using the `listsubject` command."
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Example of usage:"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* `deletesubject s/1`"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* `deletesubject s/4`"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "\u003chr\u003e"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "### Creating a Card"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Creates a card and adds it to the specified subject."
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Format: `addcard s/\u003cINDEX\u003e q/\u003cQUESTION\u003e a/\u003cANSWER\u003e`"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* The `INDEX` is based on the index of the subject. This can be found using the `listsubject` command."
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Example of Usage:"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* `addcard s/2 q/What year was NUS established? a/1980`"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* `addcard s/1 q/How many electrons does oxygen have? a/8`"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "### Listing Cards in a Subject"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Lists all the cards in the specified subject."
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Format: `listcard s/\u003cINDEX\u003e`"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* The `INDEX` is based on the index of the subject. This can be found using the `listsubject` command."
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Example of Usage:"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* `listcard s/1`"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* `listcard s/2`"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "### Deleting a Card"
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Deletes the specified card from the specified category "
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Format: `deletecard s/\u003cS-INDEX\u003e c/\u003cC-INDEX\u003e`"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* The `S-INDEX` is based on the index of the subject. This can be found using the `listsubject` command."
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* The `C-INDEX` is based on the index of the card. This can be found using the `listcard s/\u003cS-INDEX\u003e` command."
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Example of Usage:"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* `deletecard s/2 c/1`"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* `deletecard s/5 c/17`"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "\u003chr\u003e"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "### Starting a Quiz"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Starts a quiz of the specified number of questions from the specified subject."
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Format: `quiz s/\u003cINDEX\u003e n/\u003cNUMBER\u003e`"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* The `INDEX` is based on the index of the subject. This can be found using the `listsubject` command."
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* The `NUMBER` is the number of questions the user wishes to be quizzed on."
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Example of Usage:"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* `quiz s/2 n/15`"
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* `quiz s/1 n/5`"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "### Viewing Past Scores"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Shows the previous scores of quizzes from the specified subject "
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Format: `score s/\u003cINDEX\u003e`"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* The `INDEX` is based on the index of the subject. This can be found using the `listsubject` command."
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Example of Usage:"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* `score s/1`"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* `score s/2`"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "\u003chr\u003e"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "### Displaying the Help Page"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Displays the list of available commands."
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Format \u0026 Usage: `help`"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "### Exiting the Program"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Closes the program "
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "Format \u0026 Usage: `exit` "
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## FAQ"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "**Q**: Can I import question packs from other people?"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "**A**: At the current stage, no, but it is in the development list for if we continue with this in future!"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "\u003chr\u003e"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "**Q**: If I exit the program, will all my existing cards be saved?"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "**A**: Yes! All your subjects, cards and scores are saved. To ensure that your data is not lost, do not delete the folder called \u0027data\u0027 that is created when you first run the program."
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "## Command Summary"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* Add a subject `addsubject s/\u003cSUBJECTNAME\u003e`"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* List all subjects `listsubject`"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* Delete a subject and all its cards `deletesubject s/\u003cINDEX\u003e`                    "
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* Add a card into the specified subject `addcard s/\u003cINDEX\u003e q/\u003cQUESTION\u003e a/\u003cANSWER\u003e`"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* List all cards in specified subject `listcard s/\u003cINDEX\u003e`"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* Delete the specified card from the specified category `deletecard s/\u003cINDEX\u003e c/\u003cINDEX\u003e`"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* Start a quiz from the specified subject `quiz s/\u003cINDEX\u003e`"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* Get previous scores of quizzes from specified subject `score s/\u003cINDEX\u003e`"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* Displays the help page `help`"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "* Exits the program `exit` "
+      }
+    ],
+    "authorContributionMap": {
+      "kcubey": 113,
+      "-": 29
     }
   },
   {
@@ -4813,97 +6402,188 @@
       {
         "lineNumber": 20,
         "author": {
-          "gitId": "alexlim510"
+          "gitId": "JeremiasLiew"
         },
-        "content": "    public QuizCommand(int subjectIndex) {"
+        "content": "    private int numToQuiz;"
       },
       {
         "lineNumber": 21,
         "author": {
-          "gitId": "alexlim510"
+          "gitId": "JeremiasLiew"
         },
-        "content": "        this.subjectIndex \u003d subjectIndex - 1;"
+        "content": ""
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    }"
+        "content": "    public QuizCommand(int subjectIndex) {"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": ""
+        "content": "        this.subjectIndex \u003d subjectIndex - 1;"
       },
       {
         "lineNumber": 24,
         "author": {
-          "gitId": "alexlim510"
+          "gitId": "JeremiasLiew"
         },
-        "content": "    /**"
+        "content": "        this.numToQuiz \u003d -1;"
       },
       {
         "lineNumber": 25,
         "author": {
-          "gitId": "alexlim510"
+          "gitId": "JeremiasLiew"
         },
-        "content": "     * Chooses a random card and displays it\u0027s question and answer."
+        "content": "    }"
       },
       {
         "lineNumber": 26,
         "author": {
-          "gitId": "alexlim510"
+          "gitId": "JeremiasLiew"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 27,
         "author": {
-          "gitId": "alexlim510"
+          "gitId": "JeremiasLiew"
         },
-        "content": "    @Override"
+        "content": "    public QuizCommand(int subjectIndex, int numToQuiz) {"
       },
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "alexlim510"
+          "gitId": "JeremiasLiew"
         },
-        "content": "    public void execute(SubjectList subjectList) throws EscException {"
+        "content": "        this.subjectIndex \u003d subjectIndex - 1;"
       },
       {
         "lineNumber": 29,
         "author": {
-          "gitId": "alexlim510"
+          "gitId": "JeremiasLiew"
         },
-        "content": "        Subject chosenSubject \u003d subjectList.getSubject(this.subjectIndex);"
+        "content": "        this.numToQuiz \u003d numToQuiz;"
       },
       {
         "lineNumber": 30,
-        "author": {
-          "gitId": "JeremiasLiew"
-        },
-        "content": "        Quiz.quizQuestion(chosenSubject);"
-      },
-      {
-        "lineNumber": 31,
         "author": {
           "gitId": "alexlim510"
         },
         "content": "    }"
       },
       {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": ""
+      },
+      {
         "lineNumber": 32,
         "author": {
           "gitId": "alexlim510"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "     * Chooses a random card and displays it\u0027s question and answer."
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "    public void execute(SubjectList subjectList) throws EscException {"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "        Subject chosenSubject \u003d subjectList.getSubject(this.subjectIndex);"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        int numQuestions \u003d chosenSubject.getCardList().size();"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        if (numToQuiz \u003e numQuestions) {"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            Quiz.quizQuestion(chosenSubject, numQuestions);"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            Quiz.quizQuestion(chosenSubject, numToQuiz);"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "JeremiasLiew"
         },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "JeremiasLiew": 1,
+      "JeremiasLiew": 14,
       "alexlim510": 31
     }
   },
@@ -4928,58 +6608,58 @@
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "alexlim510"
+          "gitId": "JeremiasLiew"
         },
-        "content": "import seedu.subjects.SubjectList;"
+        "content": "import seedu.exception.EscException;"
       },
       {
         "lineNumber": 4,
         "author": {
-          "gitId": "alexlim510"
+          "gitId": "JeremiasLiew"
         },
-        "content": ""
+        "content": "import seedu.subjects.Subject;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "/**"
+        "content": "import seedu.subjects.SubjectList;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": " * Command class for the ScoreCommand."
+        "content": ""
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": " */"
+        "content": "/**"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "public class ScoreCommand extends Command {"
+        "content": " * Command class for the ScoreCommand."
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": ""
+        "content": " */"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    public static final String COMMAND_WORD \u003d \"score\";"
+        "content": "public class ScoreCommand extends Command {"
       },
       {
         "lineNumber": 11,
@@ -4993,28 +6673,28 @@
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    public static final String MESSAGE_USAGE \u003d \"To view score history of a subject, \""
+        "content": "    public static final String COMMAND_WORD \u003d \"score\";"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "            + \"type command: score s/[SUBJECT INDEX]\";"
+        "content": ""
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": ""
+        "content": "    public static final String MESSAGE_USAGE \u003d \"To view score history of a subject, \""
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    private int subjectIndex;"
+        "content": "            + \"type command: score s/[SUBJECT INDEX]\";"
       },
       {
         "lineNumber": 16,
@@ -5028,108 +6708,129 @@
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    /**"
+        "content": "    private int subjectIndex;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "     * Initialises the parameters for score command."
+        "content": ""
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    public ScoreCommand(int subjectIndex) {"
+        "content": "     * Initialises the parameters for score command."
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        this.subjectIndex \u003d subjectIndex - 1;"
+        "content": "     */"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    }"
+        "content": "    public ScoreCommand(int subjectIndex) {"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": ""
+        "content": "        this.subjectIndex \u003d subjectIndex - 1;"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "     * View all the scores attained for a subject."
+        "content": ""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    @Override"
+        "content": "     * View all the scores attained for a subject."
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    public void execute(SubjectList subjectList) {"
+        "content": "     */"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": ""
+        "content": "    @Override"
       },
       {
         "lineNumber": 30,
         "author": {
-          "gitId": "alexlim510"
+          "gitId": "JeremiasLiew"
         },
-        "content": "        //Duke.listCards(cards.getCards());"
+        "content": "    public void execute(SubjectList subjectList) throws EscException {"
       },
       {
         "lineNumber": 31,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        Subject subject \u003d subjectList.getSubject(subjectIndex);"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        subject.showScores();;"
+      },
+      {
+        "lineNumber": 33,
         "author": {
           "gitId": "alexlim510"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 32,
+        "lineNumber": 34,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
         "author": {
           "gitId": "alexlim510"
         },
@@ -5137,7 +6838,8 @@
       }
     ],
     "authorContributionMap": {
-      "alexlim510": 32
+      "JeremiasLiew": 6,
+      "alexlim510": 29
     }
   },
   {
@@ -5812,7 +7514,7 @@
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    public static void quizQuestion(Subject subject) throws EscException {"
+        "content": "    public static void quizQuestion(Subject subject, int numToQuiz) throws EscException {"
       },
       {
         "lineNumber": 50,
@@ -5882,7 +7584,7 @@
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        while (attempted \u003c max) {"
+        "content": "        while (attempted \u003c max \u0026\u0026 attempted !\u003d numToQuiz) {"
       },
       {
         "lineNumber": 60,
@@ -5896,332 +7598,451 @@
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "                score +\u003d quizNext(cards, set);"
+        "content": "                double obtainedScore \u003d quizNext(cards, set);"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "                attempted++;"
+        "content": "                if (obtainedScore \u003d\u003d -1.0) {"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "            } catch (EscException e) {"
+        "content": "                    break;"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "                System.out.println(e.getMessage());"
+        "content": "                }"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "            }"
+        "content": "                score +\u003d obtainedScore;"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        }"
+        "content": "                attempted++;"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        double percentage \u003d score / attempted;"
+        "content": "            } catch (EscException e) {"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        double percentageScore \u003d (double) Math.round(percentage * 10000) / 100;"
+        "content": "                System.out.println(e.getMessage());"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        scores.add(percentageScore);"
+        "content": "            }"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        System.out.println(\"Quiz Finished!\");"
+        "content": "        }"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        System.out.println(\"You Scored: \" + percentageScore + \"%\");"
+        "content": "        double percentage \u003d score / attempted;"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    }"
+        "content": "        double percentageScore \u003d (double) Math.round(percentage * 10000) / 100;"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": ""
+        "content": "        scores.add(percentageScore);"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    /**"
+        "content": "        System.out.println(\"Quiz Finished!\");"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "     * Outputs a random question that hasn\u0027t been quizzed."
+        "content": "        System.out.println(\"You Scored: \" + percentageScore + \"%\");"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "     * @param cards Stack of cards to quiz from."
+        "content": "    }"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "     * @param set Set of cards that has already been quizzed."
+        "content": ""
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "     * @return Score obtained from question."
+        "content": "    /**"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "     * @throws EscException when input format is incorrect."
+        "content": "     * Outputs a random question that hasn\u0027t been quizzed."
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "     */"
+        "content": "     * @param cards Stack of cards to quiz from."
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    public static double quizNext(CardList cards, HashSet\u003cCard\u003e set) throws EscException {"
+        "content": "     * @param set Set of cards that has already been quizzed."
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        double score;"
+        "content": "     * @return Score obtained from question."
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        Card questionCard \u003d retrieveCard(cards);"
+        "content": "     */"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        while (set.contains(questionCard)) {"
+        "content": "    public static double quizNext(CardList cards, HashSet\u003cCard\u003e set) throws EscException {"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "            questionCard \u003d retrieveCard(cards);"
+        "content": "        Card questionCard \u003d retrieveCard(cards);"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        }"
+        "content": "        while (set.contains(questionCard)) {"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        set.add(questionCard);"
+        "content": "            questionCard \u003d retrieveCard(cards);"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        UI ui \u003d new UI();"
+        "content": "        }"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        ui.showLine();"
+        "content": "        set.add(questionCard);"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        String question \u003d questionCard.getQuestion();"
+        "content": "        UI ui \u003d new UI();"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        System.out.println(\"Question: \" + question);"
+        "content": "        ui.showLine();"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        ui.readAnswer();"
+        "content": "        String question \u003d questionCard.getQuestion();"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        String answer \u003d questionCard.getAnswer();"
+        "content": "        System.out.println(\"Question: \" + question);"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        System.out.println(\"Your Answer: \" + answer);"
+        "content": "        String userAnswer \u003d ui.readAnswer();"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        String check \u003d ui.checkCorrectness();"
+        "content": "        if (userAnswer.equals(\"exitquiz\")) {"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        if (check.equals(\"Y\")) {"
+        "content": "            return -1.0;"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "            score \u003d 1.0;"
+        "content": "        }"
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "            System.out.println(\"Answer marked as correct.\");"
+        "content": "        String answer \u003d questionCard.getAnswer();"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        } else if (check.equals(\"N\")) {"
+        "content": "        System.out.println(\"Correct Answer: \" + answer);"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "            score \u003d 0;"
+        "content": "        double score \u003d markCorrectness();"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "            System.out.println(\"Answer marked as incorrect.\");"
+        "content": "        return score;"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        } else {"
+        "content": "    }"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "            throw new EscException(\"Wrong input format.\");"
+        "content": ""
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        }"
+        "content": "    /**"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        return score;"
+        "content": "     * Mark the correctness of the answer."
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    }"
+        "content": "     * @return Score of the question."
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": ""
+        "content": "     * @throws EscException if marking format is wrong."
       },
       {
         "lineNumber": 108,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    public static double markCorrectness() throws EscException {"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        UI ui \u003d new UI();"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        double score;"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        String check \u003d ui.checkCorrectness();"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        if (check.equals(\"Y\")) {"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            score \u003d 1.0;"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            System.out.println(\"Answer marked as correct.\");"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        } else if (check.equals(\"N\")) {"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            score \u003d 0;"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            System.out.println(\"Answer marked as incorrect.\");"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            throw new EscException(\"Wrong input format.\");"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        return score;"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 125,
         "author": {
           "gitId": "JeremiasLiew"
         },
@@ -6229,7 +8050,7 @@
       }
     ],
     "authorContributionMap": {
-      "JeremiasLiew": 107,
+      "JeremiasLiew": 124,
       "alexlim510": 1
     }
   },
@@ -7147,222 +8968,222 @@
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        while (!userInput.equals(\"Y\") \u0026\u0026 !userInput.equals(\"N\")) {"
+        "content": "        userInput \u003d userInput.toUpperCase();"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "            System.out.println(\"Please enter only (Y/N):\");"
+        "content": "        while (!userInput.equals(\"Y\") \u0026\u0026 !userInput.equals(\"N\")) {"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "            userInput \u003d in.nextLine();"
+        "content": "            System.out.println(\"Please enter only (Y/N):\");"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        }"
+        "content": "            userInput \u003d in.nextLine();"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        return userInput;"
+        "content": "            userInput \u003d userInput.toUpperCase();"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": ""
+        "content": "        return userInput;"
       },
       {
         "lineNumber": 66,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "JeremiasLiew"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 67,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "JeremiasLiew"
         },
-        "content": "     *  Prints a list of commands used in the programme."
+        "content": ""
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "    public static void printHelp() {"
+        "content": "     *  Prints a list of commands used in the programme."
       },
       {
         "lineNumber": 70,
         "author": {
-          "gitId": "kcubey"
+          "gitId": "Jeremy733"
         },
-        "content": "        String helpMessage \u003d \"Here\u0027s a list of things you can do:\\n\""
+        "content": "     */"
       },
       {
         "lineNumber": 71,
         "author": {
-          "gitId": "kcubey"
+          "gitId": "Jeremy733"
         },
-        "content": "                + \"\\taddsubject s/\u003cSUBJECTNAME\u003e                 Add a subject\\n\""
+        "content": "    public static void printHelp() {"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "                + \"\\tdeletesubject s/\u003cINDEX\u003e                    Delete a subject and all its cards\\n\""
+        "content": "        String helpMessage \u003d \"Here\u0027s a list of things you can do:\\n\""
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "                + \"\\tlistsubject                                List all subjects\\n\""
+        "content": "                + \"\\taddsubject s/\u003cSUBJECTNAME\u003e                 Add a subject\\n\""
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "                + \"\\n\""
+        "content": "                + \"\\tlistsubject                                List all subjects\\n\""
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "                + \"\\taddcard s/\u003cINDEX\u003e q/\u003cQUESTION\u003e a/\u003cANSWER\u003e  Add a card into the specified subject\\n\""
+        "content": "                + \"\\tdeletesubject s/\u003cINDEX\u003e                    Delete a subject and all its cards\\n\""
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "                + \"\\tdeletecard s/\u003cINDEX\u003e c/\u003cINDEX\u003e             Delete the specified card from the specified category\\n\""
+        "content": "                + \"\\n\""
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "                + \"\\tlistcard s/\u003cINDEX\u003e                         List all cards in specified subject\\n\""
+        "content": "                + \"\\taddcard s/\u003cINDEX\u003e q/\u003cQUESTION\u003e a/\u003cANSWER\u003e  Add a card into the specified subject\\n\""
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "                + \"\\n\""
+        "content": "                + \"\\tlistcard s/\u003cINDEX\u003e                         List all cards in specified subject\\n\""
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "                + \"\\tquiz s/\u003cINDEX\u003e                             Start a quiz from the specified subject\\n\""
+        "content": "                + \"\\tdeletecard s/\u003cINDEX\u003e c/\u003cINDEX\u003e             Delete the specified card from the specified category\\n\""
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "                + \"\\tscore s/\u003cINDEX\u003e                            Get previous scores of quizzes from specified subject\\n\""
+        "content": "                + \"\\n\""
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "                + \"\\n\""
+        "content": "                + \"\\tquiz s/\u003cINDEX\u003e n/\u003cNUMBER\u003e                  Start a quiz of the specified number of questions from\""
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "                + \"\\thelp                                       Displays the help page\\n\""
+        "content": "                        + \" the specified subject\\n\""
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "                + \"\\texit                                       Exits the program\";"
+        "content": "                + \"\\tscore s/\u003cINDEX\u003e                            View previous scores of quizzes from specified \""
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "        //+ \"\\t\u003e View Answer: ​       answer [INDEX] e.g. answer 1\\n\""
+        "content": "                        + \"subject\\n\""
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "        //+ \"\\tselect \u003cINDEX\u003e Select a subject by subject index\\n\";"
+        "content": "                + \"\\n\""
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "kcubey"
         },
-        "content": ""
+        "content": "                + \"\\thelp                                       Displays the help page\\n\""
       },
       {
         "lineNumber": 87,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
-        "content": "        System.out.println(helpMessage);"
+        "content": "                + \"\\texit                                       Exits the program\";"
       },
       {
         "lineNumber": 88,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
-        "content": "    }"
+        "content": "        //+ \"\\t\u003e View Answer: ​       answer [INDEX] e.g. answer 1\\n\""
       },
       {
         "lineNumber": 89,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
-        "content": ""
+        "content": "        //+ \"\\tselect \u003cINDEX\u003e Select a subject by subject index\\n\";"
       },
       {
         "lineNumber": 90,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
         "content": ""
       },
@@ -7371,14 +9192,14 @@
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": ""
+        "content": "        System.out.println(helpMessage);"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 93,
@@ -7390,61 +9211,89 @@
       {
         "lineNumber": 94,
         "author": {
-          "gitId": "kcubey"
+          "gitId": "Jeremy733"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 95,
         "author": {
-          "gitId": "kcubey"
+          "gitId": "Jeremy733"
         },
-        "content": "     * Exits the ESC program."
+        "content": ""
       },
       {
         "lineNumber": 96,
         "author": {
-          "gitId": "kcubey"
+          "gitId": "Jeremy733"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "    public static void exitEsc() {"
+        "content": ""
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "        showLine();"
+        "content": "    /**"
       },
       {
         "lineNumber": 99,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "kcubey"
         },
-        "content": "        System.out.println(\"Bye. Hope to see you again soon!\");"
+        "content": "     * Exits the ESC program."
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "kcubey"
         },
-        "content": "        showLine();"
+        "content": "     */"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "    }"
+        "content": "    public static void exitEsc() {"
       },
       {
         "lineNumber": 102,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "        showLine();"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "        System.out.println(\"Bye. Hope to see you again soon!\");"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "kcubey"
+        },
+        "content": "        showLine();"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 106,
         "author": {
           "gitId": "Jeremy733"
         },
@@ -7452,9 +9301,9 @@
       }
     ],
     "authorContributionMap": {
-      "JeremiasLiew": 26,
+      "JeremiasLiew": 28,
       "Jeremy733": 49,
-      "kcubey": 27
+      "kcubey": 29
     }
   },
   {
@@ -8628,338 +10477,338 @@
       {
         "lineNumber": 156,
         "author": {
-          "gitId": "alexlim510"
+          "gitId": "JeremiasLiew"
         },
-        "content": ""
+        "content": "        if (arguments[1].split(\" \").length \u003d\u003d 2) {"
       },
       {
         "lineNumber": 157,
         "author": {
-          "gitId": "alexlim510"
+          "gitId": "JeremiasLiew"
         },
-        "content": "        return new QuizCommand(subjectIndex);"
+        "content": "            int numToQuiz \u003d getNumberToQuiz(arguments[1]);"
       },
       {
         "lineNumber": 158,
         "author": {
-          "gitId": "alexlim510"
+          "gitId": "JeremiasLiew"
         },
-        "content": "    }"
+        "content": "            return new QuizCommand(subjectIndex, numToQuiz);"
       },
       {
         "lineNumber": 159,
         "author": {
-          "gitId": "alexlim510"
+          "gitId": "JeremiasLiew"
         },
-        "content": ""
+        "content": "        } else {"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    /**"
+        "content": "            return new QuizCommand(subjectIndex);"
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "     * Parses the user input into arguments for the Quiz command."
+        "content": "        }"
       },
       {
         "lineNumber": 162,
         "author": {
-          "gitId": "alexlim510"
+          "gitId": "JeremiasLiew"
         },
-        "content": "     * @return Quiz Command."
+        "content": "    }"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    private static Command prepareScore(String[] arguments) throws EscException {"
+        "content": "    /**"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        checkNumberOfArguments(arguments, ScoreCommand.MESSAGE_USAGE);"
+        "content": "     * Parses the user input into arguments for the Quiz command."
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        checkArgumentPrefixes(arguments[1], ScoreCommand.MESSAGE_USAGE, SUBJECT_ARG);"
+        "content": "     * @return Quiz Command."
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        int subjectIndex \u003d getSubjectIndex(arguments[1]);"
+        "content": "     */"
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": ""
+        "content": "    private static Command prepareScore(String[] arguments) throws EscException {"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        return new ScoreCommand(subjectIndex);"
+        "content": "        checkNumberOfArguments(arguments, ScoreCommand.MESSAGE_USAGE);"
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    }"
+        "content": "        checkArgumentPrefixes(arguments[1], ScoreCommand.MESSAGE_USAGE, SUBJECT_ARG);"
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": ""
+        "content": "        int subjectIndex \u003d getSubjectIndex(arguments[1]);"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "     * Returns the subject index from the user input."
+        "content": "        return new ScoreCommand(subjectIndex);"
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "     * @return the subject index integer."
+        "content": "    }"
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "     * @throws EscException if the subject index is absent or non-integer."
+        "content": ""
       },
       {
         "lineNumber": 176,
         "author": {
-          "gitId": "alexlim510"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 177,
-        "author": {
-          "gitId": "alexlim510"
-        },
-        "content": "    private static int getSubjectIndex(String argument) throws EscException {"
-      },
-      {
-        "lineNumber": 178,
-        "author": {
-          "gitId": "alexlim510"
-        },
-        "content": "        String argWithoutPrefixes \u003d argument.split(QUESTION_ARG)[0].split(CARD_ARG)[0];"
-      },
-      {
-        "lineNumber": 179,
-        "author": {
-          "gitId": "alexlim510"
-        },
-        "content": "        String subjectIndexString \u003d argWithoutPrefixes.replace(SUBJECT_ARG,\"\").trim();"
-      },
-      {
-        "lineNumber": 180,
-        "author": {
-          "gitId": "alexlim510"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 181,
-        "author": {
-          "gitId": "alexlim510"
-        },
-        "content": "        if (subjectIndexString.trim().isEmpty()) {"
-      },
-      {
-        "lineNumber": 182,
-        "author": {
-          "gitId": "alexlim510"
-        },
-        "content": "            throw new EscException(\"The subject index is required.\");"
-      },
-      {
-        "lineNumber": 183,
-        "author": {
-          "gitId": "alexlim510"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 184,
-        "author": {
-          "gitId": "alexlim510"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 185,
-        "author": {
-          "gitId": "alexlim510"
-        },
-        "content": "        try {"
-      },
-      {
-        "lineNumber": 186,
-        "author": {
-          "gitId": "alexlim510"
-        },
-        "content": "            return Integer.parseInt(subjectIndexString);"
-      },
-      {
-        "lineNumber": 187,
-        "author": {
-          "gitId": "alexlim510"
-        },
-        "content": "        } catch (NumberFormatException  e) {"
-      },
-      {
-        "lineNumber": 188,
-        "author": {
-          "gitId": "alexlim510"
-        },
-        "content": "            throw new EscException(\"The subject index has to be an integer.\");"
-      },
-      {
-        "lineNumber": 189,
-        "author": {
-          "gitId": "alexlim510"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 190,
-        "author": {
-          "gitId": "alexlim510"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 191,
-        "author": {
-          "gitId": "alexlim510"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 192,
-        "author": {
-          "gitId": "alexlim510"
+          "gitId": "JeremiasLiew"
         },
         "content": "    /**"
       },
       {
+        "lineNumber": 177,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "     * Returns the number of questions to quiz from the user input."
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "     * @return the number of questions to quiz."
+      },
+      {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "     * @throws EscException if the input number is a non-integer."
+      },
+      {
+        "lineNumber": 180,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 181,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    private static int getNumberToQuiz(String argument) throws EscException {"
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        String num \u003d argument.split(\" \")[1];"
+      },
+      {
+        "lineNumber": 183,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        int numToQuiz \u003d 0;"
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            numToQuiz \u003d Integer.parseInt(num);"
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        } catch (NumberFormatException e) {"
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            throw new EscException(\"Number of questions to quiz has to be an integer.\");"
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 189,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        if (numToQuiz \u003d\u003d 0) {"
+      },
+      {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            throw new EscException(\"Number of questions to quiz has to be a positive integer.\");"
+      },
+      {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 192,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        return numToQuiz;"
+      },
+      {
         "lineNumber": 193,
         "author": {
-          "gitId": "alexlim510"
+          "gitId": "JeremiasLiew"
         },
-        "content": "     * Returns the card index from the user input."
+        "content": "    }"
       },
       {
         "lineNumber": 194,
         "author": {
-          "gitId": "alexlim510"
+          "gitId": "JeremiasLiew"
         },
-        "content": "     * @return the card index integer."
+        "content": ""
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "     * @throws EscException if the card index is absent or non-integer."
+        "content": "    /**"
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "     */"
+        "content": "     * Returns the subject index from the user input."
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    private static int getCardIndex(String argument) throws EscException {"
+        "content": "     * @return the subject index integer."
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        String argWithoutPrefixes \u003d argument.split(CARD_ARG)[1];"
+        "content": "     * @throws EscException if the subject index is absent or non-integer."
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        String cardIndexString \u003d argWithoutPrefixes.replace(CARD_ARG,\"\").trim();"
+        "content": "     */"
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": ""
+        "content": "    private static int getSubjectIndex(String argument) throws EscException {"
       },
       {
         "lineNumber": 201,
         "author": {
-          "gitId": "alexlim510"
+          "gitId": "JeremiasLiew"
         },
-        "content": "        if (cardIndexString.trim().isEmpty()) {"
+        "content": "        argument \u003d argument.split(\" \")[0];"
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "            throw new EscException(\"The card index is required\");"
+        "content": "        String argWithoutPrefixes \u003d argument.split(QUESTION_ARG)[0].split(CARD_ARG)[0];"
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        }"
+        "content": "        String subjectIndexString \u003d argWithoutPrefixes.replace(SUBJECT_ARG,\"\").trim();"
       },
       {
         "lineNumber": 204,
@@ -8973,238 +10822,238 @@
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        try {"
+        "content": "        if (subjectIndexString.trim().isEmpty()) {"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "            return Integer.parseInt(cardIndexString);"
+        "content": "            throw new EscException(\"The subject index is required.\");"
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        } catch (NumberFormatException  e) {"
+        "content": "        }"
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "            throw new EscException(\"The card index has to be an integer.\");"
+        "content": ""
       },
       {
         "lineNumber": 209,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        }"
+        "content": "        try {"
       },
       {
         "lineNumber": 210,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    }"
+        "content": "            return Integer.parseInt(subjectIndexString);"
       },
       {
         "lineNumber": 211,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": ""
+        "content": "        } catch (NumberFormatException  e) {"
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    /**"
+        "content": "            throw new EscException(\"The subject index has to be an integer.\");"
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "     * Ensure that the number of arguments in the user input is valid."
+        "content": "        }"
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "     * @throws EscException if the user input contains the wrong number of inputs."
+        "content": "    }"
       },
       {
         "lineNumber": 215,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 216,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    private static void checkNumberOfArguments(String[] arguments, String errorMessage) throws EscException {"
+        "content": "    /**"
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        if (arguments.length \u003c 2) {"
+        "content": "     * Returns the card index from the user input."
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "            throw new EscException(errorMessage);"
+        "content": "     * @return the card index integer."
       },
       {
         "lineNumber": 219,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        }"
+        "content": "     * @throws EscException if the card index is absent or non-integer."
       },
       {
         "lineNumber": 220,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    }"
+        "content": "     */"
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": ""
+        "content": "    private static int getCardIndex(String argument) throws EscException {"
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    /**"
+        "content": "        String argWithoutPrefixes \u003d argument.split(CARD_ARG)[1];"
       },
       {
         "lineNumber": 223,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "     * Checks that the user input has the required prefixes."
+        "content": "        String cardIndexString \u003d argWithoutPrefixes.replace(CARD_ARG,\"\").trim();"
       },
       {
         "lineNumber": 224,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "     * @throws EscException if there are missing prefixes."
+        "content": ""
       },
       {
         "lineNumber": 225,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "     */"
+        "content": "        if (cardIndexString.trim().isEmpty()) {"
       },
       {
         "lineNumber": 226,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    private static void checkArgumentPrefixes(String argument, String errorMessage, String...prefixes)"
+        "content": "            throw new EscException(\"The card index is required\");"
       },
       {
         "lineNumber": 227,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "            throws EscException {"
+        "content": "        }"
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        for (String p : prefixes) {"
+        "content": ""
       },
       {
         "lineNumber": 229,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "            if (!argument.contains(p)) {"
+        "content": "        try {"
       },
       {
         "lineNumber": 230,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "                throw new EscException(errorMessage);"
+        "content": "            return Integer.parseInt(cardIndexString);"
       },
       {
         "lineNumber": 231,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "            }"
+        "content": "        } catch (NumberFormatException  e) {"
       },
       {
         "lineNumber": 232,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        }"
+        "content": "            throw new EscException(\"The card index has to be an integer.\");"
       },
       {
         "lineNumber": 233,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 235,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 236,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "     * Returns the question and answer from the user input."
+        "content": "    /**"
       },
       {
         "lineNumber": 237,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "     * @return String array containing the question and the answer."
+        "content": "     * Ensure that the number of arguments in the user input is valid."
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "     * @throws EscException if the user input is missing the question or answer."
+        "content": "     * @throws EscException if the user input contains the wrong number of inputs."
       },
       {
         "lineNumber": 239,
@@ -9218,115 +11067,283 @@
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    private static String[] getQuestionAndAnswer(String argument, String errorMessage) throws EscException {"
+        "content": "    private static void checkNumberOfArguments(String[] arguments, String errorMessage) throws EscException {"
       },
       {
         "lineNumber": 241,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        String secondaryArgs \u003d argument.split(QUESTION_ARG)[1];"
+        "content": "        if (arguments.length \u003c 2) {"
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        String [] cardArgs \u003d secondaryArgs.split(ANSWER_ARG);"
+        "content": "            throw new EscException(errorMessage);"
       },
       {
         "lineNumber": 243,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 244,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        if (cardArgs.length \u003c 2) {"
+        "content": "    }"
       },
       {
         "lineNumber": 245,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "            throw new EscException(errorMessage);"
+        "content": ""
       },
       {
         "lineNumber": 246,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        }"
+        "content": "    /**"
       },
       {
         "lineNumber": 247,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": ""
+        "content": "     * Checks that the user input has the required prefixes."
       },
       {
         "lineNumber": 248,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        cardArgs[0] \u003d cardArgs[0].trim();"
+        "content": "     * @throws EscException if there are missing prefixes."
       },
       {
         "lineNumber": 249,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        cardArgs[1] \u003d cardArgs[1].trim();"
+        "content": "     */"
       },
       {
         "lineNumber": 250,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": ""
+        "content": "    private static void checkArgumentPrefixes(String argument, String errorMessage, String...prefixes)"
       },
       {
         "lineNumber": 251,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        if (cardArgs[0].isEmpty() || cardArgs[1].isEmpty()) {"
+        "content": "            throws EscException {"
       },
       {
         "lineNumber": 252,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "            throw new EscException(errorMessage);"
+        "content": "        for (String p : prefixes) {"
       },
       {
         "lineNumber": 253,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        }"
+        "content": "            if (!argument.contains(p)) {"
       },
       {
         "lineNumber": 254,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "        return cardArgs;"
+        "content": "                throw new EscException(errorMessage);"
       },
       {
         "lineNumber": 255,
         "author": {
           "gitId": "alexlim510"
         },
-        "content": "    }"
+        "content": "            }"
       },
       {
         "lineNumber": 256,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 257,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 258,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 259,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 260,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "     * Returns the question and answer from the user input."
+      },
+      {
+        "lineNumber": 261,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "     * @return String array containing the question and the answer."
+      },
+      {
+        "lineNumber": 262,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "     * @throws EscException if the user input is missing the question or answer."
+      },
+      {
+        "lineNumber": 263,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 264,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "    private static String[] getQuestionAndAnswer(String argument, String errorMessage) throws EscException {"
+      },
+      {
+        "lineNumber": 265,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "        String secondaryArgs \u003d argument.split(QUESTION_ARG)[1];"
+      },
+      {
+        "lineNumber": 266,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "        String [] cardArgs \u003d secondaryArgs.split(ANSWER_ARG);"
+      },
+      {
+        "lineNumber": 267,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 268,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "        if (cardArgs.length \u003c 2) {"
+      },
+      {
+        "lineNumber": 269,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "            throw new EscException(errorMessage);"
+      },
+      {
+        "lineNumber": 270,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 271,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 272,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "        cardArgs[0] \u003d cardArgs[0].trim();"
+      },
+      {
+        "lineNumber": 273,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "        cardArgs[1] \u003d cardArgs[1].trim();"
+      },
+      {
+        "lineNumber": 274,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 275,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "        if (cardArgs[0].isEmpty() || cardArgs[1].isEmpty()) {"
+      },
+      {
+        "lineNumber": 276,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "            throw new EscException(errorMessage);"
+      },
+      {
+        "lineNumber": 277,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 278,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "        return cardArgs;"
+      },
+      {
+        "lineNumber": 279,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 280,
         "author": {
           "gitId": "alexlim510"
         },
@@ -9334,7 +11351,8 @@
       }
     ],
     "authorContributionMap": {
-      "alexlim510": 256
+      "JeremiasLiew": 25,
+      "alexlim510": 255
     }
   },
   {
@@ -9360,7 +11378,7 @@
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "import java.util.ArrayList;"
+        "content": "import seedu.exception.EscException;"
       },
       {
         "lineNumber": 4,
@@ -9374,192 +11392,325 @@
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "/**"
+        "content": "import java.util.ArrayList;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": " * Contains the scores for all quizzes taken."
+        "content": ""
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": " */"
+        "content": "/**"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "public class ScoreList {"
+        "content": " * Contains the scores for all quizzes taken."
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    private ArrayList\u003cDouble\u003e scores \u003d new ArrayList\u003c\u003e();"
+        "content": " */"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": ""
+        "content": "public class ScoreList {"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    /**"
+        "content": "    private ArrayList\u003cDouble\u003e scores \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "     * Adds a score to the ScoreList."
+        "content": ""
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "     * @param score Score to be added."
+        "content": "    /**"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "     */"
+        "content": "     * Adds a score to the ScoreList."
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    public void add(double score) {"
+        "content": "     * @param score Score to be added."
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        this.scores.add(score);"
+        "content": "     */"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    }"
+        "content": "    public void add(double score) {"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": ""
+        "content": "        this.scores.add(score);"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "     * Returns the average of all stored scores."
+        "content": ""
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "     * @return avgScore Average of all scores."
+        "content": "    /**"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "     */"
+        "content": "     * Returns the average of all stored scores."
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    public double getAvg() {"
+        "content": "     * @return avgScore Average of all scores."
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        double totalScore \u003d 0;"
+        "content": "     */"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        for (double score : scores) {"
+        "content": "    public double getAvg() {"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "            totalScore +\u003d score;"
+        "content": "        double totalScore \u003d 0;"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        }"
+        "content": "        for (double score : scores) {"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        double avgScore \u003d totalScore / scores.size();"
+        "content": "            totalScore +\u003d score;"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "        return avgScore;"
+        "content": "        }"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "    }"
+        "content": "        double avgScore \u003d totalScore / scores.size();"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": ""
+        "content": "        return avgScore;"
       },
       {
         "lineNumber": 32,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "     * Prints out all the past score history for selected subject."
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    public void listScores() throws EscException {"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        if (scores.isEmpty()) {"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            throw new EscException(\"No test history yet.\");"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        System.out.println(\"Past test history:\");"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        String msg;"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        int counter \u003d 1;"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        for (double score : scores) {"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            System.out.println(counter + \") \" + score);"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "            counter++;"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        System.out.println(\"Average Score: \" + getAvg());"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 51,
         "author": {
           "gitId": "JeremiasLiew"
         },
@@ -9567,7 +11718,7 @@
       }
     ],
     "authorContributionMap": {
-      "JeremiasLiew": 32
+      "JeremiasLiew": 51
     }
   },
   {
@@ -9600,199 +11751,255 @@
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": "import seedu.score.ScoreList;"
+        "content": "import seedu.exception.EscException;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "JeremiasLiew"
         },
-        "content": ""
+        "content": "import seedu.score.ScoreList;"
       },
       {
         "lineNumber": 6,
         "author": {
-          "gitId": "Jeremy733"
+          "gitId": "JeremiasLiew"
         },
-        "content": "import java.io.Serializable;"
+        "content": ""
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": ""
+        "content": "import java.io.Serializable;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": " * Flashcard object used to store a question and its answer."
+        "content": "/**"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": " */"
+        "content": " * Flashcard object used to store a question and its answer."
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "public class Subject implements Serializable {"
+        "content": " */"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "    private final String name;"
+        "content": "public class Subject implements Serializable {"
       },
       {
         "lineNumber": 13,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": "    private final String name;"
+      },
+      {
+        "lineNumber": 14,
         "author": {
           "gitId": "alexlim510"
         },
         "content": "    private CardList cardList \u003d new CardList();"
       },
       {
-        "lineNumber": 14,
+        "lineNumber": 15,
         "author": {
           "gitId": "JeremiasLiew"
         },
         "content": "    private ScoreList scoreList \u003d new ScoreList();"
       },
       {
-        "lineNumber": 15,
-        "author": {
-          "gitId": "Jeremy733"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 16,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "    public Subject(String name) {"
+        "content": ""
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "        this.name \u003d name;"
+        "content": "    public Subject(String name) {"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "    }"
+        "content": "        this.name \u003d name;"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "    public String getSubject() {"
+        "content": ""
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "        return this.name;"
+        "content": "    public String getSubject() {"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": "    }"
+        "content": "        return this.name;"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "Jeremy733"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 24,
-        "author": {
-          "gitId": "alexlim510"
-        },
-        "content": "    public CardList getCardList() {"
-      },
-      {
-        "lineNumber": 25,
-        "author": {
-          "gitId": "JeremiasLiew"
-        },
-        "content": "        return cardList;"
-      },
-      {
-        "lineNumber": 26,
-        "author": {
-          "gitId": "JeremiasLiew"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 27,
-        "author": {
-          "gitId": "JeremiasLiew"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 28,
-        "author": {
-          "gitId": "JeremiasLiew"
-        },
-        "content": "    public ScoreList getScoreList() {"
-      },
-      {
-        "lineNumber": 29,
-        "author": {
-          "gitId": "JeremiasLiew"
-        },
-        "content": "        return this.scoreList;"
-      },
-      {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "alexlim510"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 31,
         "author": {
           "gitId": "Jeremy733"
         },
         "content": ""
       },
       {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "    public CardList getCardList() {"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        return cardList;"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    public ScoreList getScoreList() {"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        return this.scoreList;"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "alexlim510"
+        },
+        "content": "    }"
+      },
+      {
         "lineNumber": 32,
+        "author": {
+          "gitId": "Jeremy733"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "     * Shows all the past score history for this subject."
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    public void showScores() throws EscException  {"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "        this.scoreList.listScores();"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "JeremiasLiew"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 40,
         "author": {
           "gitId": "Jeremy733"
         },
@@ -9800,7 +12007,7 @@
       }
     ],
     "authorContributionMap": {
-      "JeremiasLiew": 8,
+      "JeremiasLiew": 16,
       "alexlim510": 4,
       "Jeremy733": 20
     }
