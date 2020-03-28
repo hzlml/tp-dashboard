@@ -1006,7 +1006,7 @@
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "`entry-name, start-time, end-time, tags`"
+        "content": "`entry-name, start-time, end-time, duration, tags`"
       },
       {
         "lineNumber": 90,
@@ -2299,250 +2299,271 @@
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "siuhian"
+          "gitId": "btricec"
         },
-        "content": "    /** Ui to handle printing. */"
+        "content": "    public static ActivityList lastShownList \u003d new ActivityList();"
       },
       {
         "lineNumber": 29,
         "author": {
-          "gitId": "siuhian"
+          "gitId": "btricec"
         },
-        "content": "    private static Ui ui \u003d new Ui();"
+        "content": ""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "siuhian"
         },
-        "content": ""
+        "content": "    /** Ui to handle printing. */"
       },
       {
         "lineNumber": 31,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "siuhian"
         },
-        "content": "    /** Parser to parse commands. */"
+        "content": "    private static Ui ui \u003d new Ui();"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "siuhian"
         },
-        "content": "    private static Parser parser \u003d new Parser();"
+        "content": ""
       },
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "siuhian"
+          "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "    /** Parser to parse commands. */"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "siuhian"
         },
-        "content": "    /** CLeaner to delete entries in data.csv when it gets too long */"
+        "content": "    private static Parser parser \u003d new Parser();"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "siuhian"
         },
-        "content": "    private static StorageCleaner cleaner;"
+        "content": ""
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "siuhian"
         },
-        "content": ""
+        "content": "    /** CLeaner to delete entries in data.csv when it gets too long */"
       },
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "siuhian"
         },
-        "content": "    public static final Scanner in \u003d new Scanner(System.in);"
+        "content": "    private static StorageCleaner cleaner;"
       },
       {
         "lineNumber": 38,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "siuhian"
         },
         "content": ""
       },
       {
         "lineNumber": 39,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "nigellenl"
         },
-        "content": "    /**"
+        "content": "    public static final Scanner in \u003d new Scanner(System.in);"
       },
       {
         "lineNumber": 40,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "     * Main entry-point for the Jikan application."
-      },
-      {
-        "lineNumber": 41,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "     */"
-      },
-      {
-        "lineNumber": 42,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "    public static void main(String[] args) throws InvalidTimeFrameException, IOException {"
-      },
-      {
-        "lineNumber": 43,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "        ui.printGreeting();"
-      },
-      {
-        "lineNumber": 44,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "        storage \u003d new Storage(DATA_FILE_PATH);"
-      },
-      {
-        "lineNumber": 45,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "        cleaner \u003d new StorageCleaner(storage);"
-      },
-      {
-        "lineNumber": 46,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "        cleaner.autoClean();"
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "        activityList \u003d storage.createActivityList();"
-      },
-      {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "        activityList.storage \u003d storage;"
-      },
-      {
-        "lineNumber": 49,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "        //public static final Scanner in \u003d new Scanner(System.in);"
-      },
-      {
-        "lineNumber": 50,
         "author": {
           "gitId": "nigellenl"
         },
         "content": ""
       },
       {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "     * Main entry-point for the Jikan application."
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    public static void main(String[] args) throws InvalidTimeFrameException, IOException {"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        ui.printGreeting();"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        storage \u003d new Storage(DATA_FILE_PATH);"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        cleaner \u003d new StorageCleaner(storage);"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        cleaner.autoClean();"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        activityList \u003d storage.createActivityList();"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        activityList.storage \u003d storage;"
+      },
+      {
         "lineNumber": 51,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "btricec"
         },
-        "content": "        while (true) {"
+        "content": "        lastShownList.activities.addAll(activityList.activities);"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            Command command \u003d parser.parseUserCommands(in,activityList,cleaner);"
+        "content": "        //public static final Scanner in \u003d new Scanner(System.in);"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            if (command \u003d\u003d null) {"
+        "content": ""
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                continue;"
+        "content": "        while (true) {"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            }"
+        "content": "            Command command \u003d parser.parseUserCommands(in,activityList,cleaner);"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            if (ByeCommand.isExit(command)) {"
+        "content": "            if (command \u003d\u003d null) {"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                command.executeCommand(activityList);"
+        "content": "                continue;"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                break;"
+        "content": "            }"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            }"
+        "content": "            if (ByeCommand.isExit(command)) {"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            command.executeCommand(activityList);"
+        "content": "                command.executeCommand(activityList);"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        }"
+        "content": "                break;"
       },
       {
         "lineNumber": 62,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "            command.executeCommand(activityList);"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 65,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 63,
+        "lineNumber": 66,
         "author": {
           "gitId": "ananda-lye"
         },
@@ -2551,7 +2572,7 @@
     ],
     "authorContributionMap": {
       "rdimaio": 15,
-      "btricec": 2,
+      "btricec": 5,
       "siuhian": 20,
       "nigellenl": 17,
       "ananda-lye": 9
@@ -8071,7 +8092,7 @@
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "btricec"
         },
         "content": "import jikan.ui.Ui;"
       },
@@ -8085,334 +8106,523 @@
       {
         "lineNumber": 9,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "btricec"
         },
-        "content": "import static jikan.parser.Parser.lastShownList;"
+        "content": "import static jikan.Jikan.lastShownList;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import static jikan.parser.Parser.tokenizedInputs;"
+        "content": ""
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "/**"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "/**"
+        "content": " * Represents a command to filter activities based on user-specified criterias."
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": " * Represents a command to filter activities based on user-specified criterias."
+        "content": " */"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": " */"
+        "content": "public class FilterCommand extends Command {"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "public class FilterCommand extends Command {"
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    /**"
+        "content": "     * Constructor to create a new filter command."
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * Constructor to create a new filter command."
-      },
-      {
-        "lineNumber": 19,
-        "author": {
-          "gitId": "nigellenl"
-        },
         "content": "     */"
       },
       {
-        "lineNumber": 20,
+        "lineNumber": 19,
         "author": {
           "gitId": "btricec"
         },
         "content": "    public FilterCommand(String parameters) {"
       },
       {
-        "lineNumber": 21,
+        "lineNumber": 20,
         "author": {
           "gitId": "btricec"
         },
         "content": "        super(parameters);"
       },
       {
-        "lineNumber": 22,
+        "lineNumber": 21,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 23,
+        "lineNumber": 22,
         "author": {
           "gitId": "nigellenl"
         },
         "content": ""
       },
       {
-        "lineNumber": 24,
+        "lineNumber": 23,
         "author": {
           "gitId": "btricec"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 25,
+        "lineNumber": 24,
         "author": {
           "gitId": "btricec"
         },
         "content": "     * Shows the user all past activities that has tags which match the keywords queried by the user."
       },
       {
-        "lineNumber": 26,
+        "lineNumber": 25,
         "author": {
           "gitId": "btricec"
         },
         "content": "     * @param activityList the activity list to search for matching activities"
       },
       {
-        "lineNumber": 27,
+        "lineNumber": 26,
         "author": {
           "gitId": "btricec"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 28,
+        "lineNumber": 27,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "    @Override"
       },
       {
-        "lineNumber": 29,
+        "lineNumber": 28,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "    public void executeCommand(ActivityList activityList) {"
       },
       {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "        if (parameters.contains(\"-s\")) {"
+      },
+      {
         "lineNumber": 30,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            filterSubList();"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            filterFullList(activityList);"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "    private void filterFullList(ActivityList activityList) {"
+      },
+      {
+        "lineNumber": 37,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "        try {"
       },
       {
-        "lineNumber": 31,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            // Parser.parseFilter(activityList, lastShownList, tokenizedInputs[1]);"
-      },
-      {
-        "lineNumber": 32,
+        "lineNumber": 38,
         "author": {
           "gitId": "btricec"
         },
         "content": "            String query \u003d parameters;"
       },
       {
-        "lineNumber": 33,
+        "lineNumber": 39,
         "author": {
           "gitId": "btricec"
         },
         "content": "            if (query.length() \u003c 1) {"
       },
       {
-        "lineNumber": 34,
+        "lineNumber": 40,
         "author": {
           "gitId": "btricec"
         },
         "content": "                throw new EmptyQueryException();"
       },
       {
-        "lineNumber": 35,
+        "lineNumber": 41,
         "author": {
           "gitId": "btricec"
         },
         "content": "            } else {"
       },
       {
-        "lineNumber": 36,
+        "lineNumber": 42,
         "author": {
           "gitId": "btricec"
         },
         "content": "                lastShownList.activities.clear();"
       },
       {
-        "lineNumber": 37,
+        "lineNumber": 43,
         "author": {
           "gitId": "btricec"
         },
         "content": "                String[] keywords \u003d query.split(\" \");"
       },
       {
-        "lineNumber": 38,
+        "lineNumber": 44,
         "author": {
           "gitId": "btricec"
         },
         "content": ""
       },
       {
-        "lineNumber": 39,
+        "lineNumber": 45,
         "author": {
           "gitId": "btricec"
         },
         "content": "                for (String keyword : keywords) {"
       },
       {
-        "lineNumber": 40,
+        "lineNumber": 46,
         "author": {
           "gitId": "btricec"
         },
         "content": "                    populateLastShownList(activityList, lastShownList, keyword);"
       },
       {
-        "lineNumber": 41,
+        "lineNumber": 47,
         "author": {
           "gitId": "btricec"
         },
         "content": "                }"
       },
       {
-        "lineNumber": 42,
+        "lineNumber": 48,
         "author": {
           "gitId": "btricec"
         },
         "content": "                Ui.printResults(lastShownList);"
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 49,
         "author": {
           "gitId": "btricec"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 50,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "        } catch (ArrayIndexOutOfBoundsException | EmptyQueryException e) {"
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 51,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "            Ui.printDivider(\"No keyword was given.\");"
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 52,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 53,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "    }"
-      },
-      {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 49,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "    private void populateLastShownList(ActivityList activityList, ActivityList lastShownList, String keyword) {"
-      },
-      {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "        for (Activity i : activityList.activities) {"
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            if (!lastShownList.activities.contains(i) \u0026\u0026 i.getTags().contains(keyword)) {"
-      },
-      {
-        "lineNumber": 52,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                lastShownList.activities.add(i);"
-      },
-      {
-        "lineNumber": 53,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            }"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "btricec"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 55,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "    private void filterSubList() {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            String query \u003d parameters.replace(\"-s \", \"\");"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            ActivityList prevList \u003d new ActivityList();"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            prevList.activities.addAll(lastShownList.activities);"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            if (query.length() \u003c 1) {"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "                throw new EmptyQueryException();"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "                lastShownList.activities.clear();"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "                String[] keywords \u003d query.split(\" \");"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "                for (String keyword : keywords) {"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "                    populateLastShownList(prevList, lastShownList, keyword);"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "                Ui.printResults(lastShownList);"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "        } catch (ArrayIndexOutOfBoundsException | EmptyQueryException e) {"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            Ui.printDivider(\"No keyword was given.\");"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "    private void populateLastShownList(ActivityList targetList, ActivityList lastShownList, String keyword) {"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "        for (Activity i : targetList.activities) {"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            if (!lastShownList.activities.contains(i) \u0026\u0026 i.getTags().contains(keyword)) {"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                lastShownList.activities.add(i);"
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 82,
         "author": {
           "gitId": "btricec"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 56,
+        "lineNumber": 83,
         "author": {
           "gitId": "nigellenl"
         },
@@ -8420,8 +8630,9 @@
       }
     ],
     "authorContributionMap": {
-      "btricec": 28,
-      "nigellenl": 28
+      "btricec": 27,
+      "nigellenl": 25,
+      "ananda-lye": 31
     }
   },
   {
@@ -8487,16 +8698,16 @@
       {
         "lineNumber": 9,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "btricec"
         },
-        "content": "import static jikan.parser.Parser.lastShownList;"
+        "content": "import static jikan.Jikan.lastShownList;"
       },
       {
         "lineNumber": 10,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "import static jikan.parser.Parser.tokenizedInputs;"
+        "content": "import java.util.ArrayList;"
       },
       {
         "lineNumber": 11,
@@ -8538,227 +8749,423 @@
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    /**"
+        "content": "     * Constructor to create a new find command."
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * Constructor to create a new find command."
-      },
-      {
-        "lineNumber": 19,
-        "author": {
-          "gitId": "nigellenl"
-        },
         "content": "     */"
       },
       {
-        "lineNumber": 20,
+        "lineNumber": 19,
         "author": {
           "gitId": "btricec"
         },
         "content": "    public FindCommand(String parameters) {"
       },
       {
-        "lineNumber": 21,
+        "lineNumber": 20,
         "author": {
           "gitId": "btricec"
         },
         "content": "        super(parameters);"
       },
       {
-        "lineNumber": 22,
+        "lineNumber": 21,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 23,
+        "lineNumber": 22,
         "author": {
           "gitId": "nigellenl"
         },
         "content": ""
       },
       {
-        "lineNumber": 24,
+        "lineNumber": 23,
         "author": {
           "gitId": "btricec"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 25,
+        "lineNumber": 24,
         "author": {
           "gitId": "btricec"
         },
         "content": "     * Shows the user all past activities that has names which match the keyword queried by the user."
       },
       {
-        "lineNumber": 26,
+        "lineNumber": 25,
         "author": {
           "gitId": "btricec"
         },
         "content": "     * @param activityList the activity list to search for matching activities"
       },
       {
-        "lineNumber": 27,
+        "lineNumber": 26,
         "author": {
           "gitId": "btricec"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 28,
+        "lineNumber": 27,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "    @Override"
       },
       {
-        "lineNumber": 29,
+        "lineNumber": 28,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "    public void executeCommand(ActivityList activityList) {"
       },
       {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "        if (parameters.contains(\"-s\")) {"
+      },
+      {
         "lineNumber": 30,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            findSubList();"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            findFullList(activityList);"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "    private void findFullList(ActivityList activityList) {"
+      },
+      {
+        "lineNumber": 37,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "        try {"
       },
       {
-        "lineNumber": 31,
+        "lineNumber": 38,
         "author": {
           "gitId": "btricec"
         },
         "content": "            // Parser.parseFind(activityList, lastShownList, tokenizedInputs[1]);"
       },
       {
-        "lineNumber": 32,
+        "lineNumber": 39,
         "author": {
           "gitId": "btricec"
         },
         "content": "            String keyword \u003d parameters;"
       },
       {
-        "lineNumber": 33,
+        "lineNumber": 40,
         "author": {
           "gitId": "btricec"
         },
         "content": "            if (keyword.length() \u003c 1) {"
       },
       {
-        "lineNumber": 34,
+        "lineNumber": 41,
         "author": {
           "gitId": "btricec"
         },
         "content": "                throw new EmptyQueryException();"
       },
       {
-        "lineNumber": 35,
+        "lineNumber": 42,
         "author": {
           "gitId": "btricec"
         },
         "content": "            } else {"
       },
       {
-        "lineNumber": 36,
+        "lineNumber": 43,
         "author": {
           "gitId": "btricec"
         },
         "content": "                lastShownList.activities.clear();"
       },
       {
-        "lineNumber": 37,
+        "lineNumber": 44,
         "author": {
           "gitId": "btricec"
         },
         "content": "                for (Activity i : activityList.activities) {"
       },
       {
-        "lineNumber": 38,
+        "lineNumber": 45,
         "author": {
           "gitId": "btricec"
         },
         "content": "                    if (i.getName().contains(keyword)) {"
       },
       {
-        "lineNumber": 39,
+        "lineNumber": 46,
         "author": {
           "gitId": "btricec"
         },
         "content": "                        lastShownList.activities.add(i);"
       },
       {
-        "lineNumber": 40,
+        "lineNumber": 47,
         "author": {
           "gitId": "btricec"
         },
         "content": "                    }"
       },
       {
-        "lineNumber": 41,
+        "lineNumber": 48,
         "author": {
           "gitId": "btricec"
         },
         "content": "                }"
       },
       {
-        "lineNumber": 42,
+        "lineNumber": 49,
         "author": {
           "gitId": "btricec"
         },
         "content": "                Ui.printResults(lastShownList);"
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 50,
         "author": {
           "gitId": "btricec"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 51,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "        } catch (ArrayIndexOutOfBoundsException | EmptyQueryException e) {"
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 52,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "            Ui.printDivider(\"No keyword was given.\");"
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 53,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 54,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 48,
+        "lineNumber": 55,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "    private void findSubList() {"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            String keyword \u003d parameters.replace(\"-s \", \"\");"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            ArrayList\u003cActivity\u003e prevList \u003d new ArrayList\u003c\u003e();"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            prevList.addAll(lastShownList.activities);"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            if (keyword.length() \u003c 1) {"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "                throw new EmptyQueryException();"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "                lastShownList.activities.clear();"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "                for (Activity i : prevList) {"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "                    if (i.getName().contains(keyword)) {"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "                        lastShownList.activities.add(i);"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "                    }"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            Ui.printResults(lastShownList);"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "        } catch (ArrayIndexOutOfBoundsException | EmptyQueryException e) {"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            Ui.printDivider(\"No keyword was given.\");"
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 76,
         "author": {
           "gitId": "nigellenl"
         },
@@ -8766,8 +9173,438 @@
       }
     ],
     "authorContributionMap": {
-      "btricec": 20,
-      "nigellenl": 28
+      "btricec": 21,
+      "nigellenl": 25,
+      "ananda-lye": 30
+    }
+  },
+  {
+    "path": "src/main/java/jikan/command/GraphCommand.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "package jikan.command;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "import jikan.activity.Activity;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "import jikan.activity.ActivityList;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "import jikan.ui.Ui;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "import java.time.Duration;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "import java.util.HashMap;"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "import java.util.Set;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "import static jikan.Jikan.lastShownList;"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "public class GraphCommand extends Command {"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "     * Constructor to create a new command."
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "     * @param parameters Either time interval for graph or \u0027tags\u0027 flag"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "     *                   to graph by tags"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    public GraphCommand(String parameters) {"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        super(parameters);"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    public void executeCommand(ActivityList activityList) {"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            if (parameters.equals(\"tags\")) {"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                graphTags();"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                int interval \u003d Integer.parseInt(parameters);"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                Ui.printActivityGraph(interval);"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        } catch (ArrayIndexOutOfBoundsException e) {"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            Ui.printDivider(\"Please include the time interval for graphing.\\n\");"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        } catch (NumberFormatException e) {"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            Ui.printDivider(\"Please input an integer for the time interval.\\n\""
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                    + \"If you\u0027d like to graph by tags, enter the command \u003cgraph tags\u003e.\");"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    private void graphTags() {"
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        HashMap\u003cString, Duration\u003e tags \u003d new HashMap\u003c\u003e();"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        for (Activity activity : lastShownList.activities) {"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            extractTags(tags, activity);"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        Ui.printTagsGraph(tags);"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    private void extractTags(HashMap\u003cString, Duration\u003e tags, Activity activity) {"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        Set\u003cString\u003e activityTags \u003d activity.getTags();"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        for (String tag : activityTags) {"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            if (tags.containsKey(tag)) {"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                Duration oldDuration \u003d tags.get(tag);"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                Duration newDuration \u003d oldDuration.plus(activity.getDuration());"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                tags.put(tag, newDuration);"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                tags.put(tag, activity.getDuration());"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "btricec": 60
     }
   },
   {
@@ -9022,26 +9859,33 @@
       {
         "lineNumber": 36,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "rdimaio"
         },
-        "content": "            Ui.printDivider(\"Please input your dates as either yyyy-MM-dd or dd/MM/yyyy.\");"
+        "content": "            Ui.printDivider(\"Please input your dates as either yyyy-MM-dd or dd/MM/yyyy.\\n\""
       },
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "rdimaio"
         },
-        "content": "        }"
+        "content": "                + \" Alternatively, you can use \u0027day\u0027, \u0027week\u0027, or \u0027month\u0027 to get the respective reports.\");"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 39,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 40,
         "author": {
           "gitId": "nigellenl"
         },
@@ -9050,7 +9894,8 @@
     ],
     "authorContributionMap": {
       "btricec": 6,
-      "nigellenl": 33
+      "rdimaio": 2,
+      "nigellenl": 32
     }
   },
   {
@@ -10037,1251 +10882,1657 @@
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "import jikan.command.AbortCommand;"
-      },
-      {
-        "lineNumber": 4,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "import jikan.command.ByeCommand;"
-      },
-      {
-        "lineNumber": 5,
-        "author": {
-          "gitId": "nigellenl"
+          "gitId": "btricec"
         },
         "content": "import jikan.command.Command;"
       },
       {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "import jikan.command.AbortCommand;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "import jikan.command.ByeCommand;"
+      },
+      {
         "lineNumber": 6,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "btricec"
         },
         "content": "import jikan.command.CleanCommand;"
       },
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "btricec"
         },
         "content": "import jikan.command.ContinueCommand;"
       },
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "btricec"
         },
         "content": "import jikan.command.DeleteCommand;"
       },
       {
         "lineNumber": 9,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "btricec"
         },
         "content": "import jikan.command.EditCommand;"
       },
       {
         "lineNumber": 10,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "btricec"
         },
         "content": "import jikan.command.EndCommand;"
       },
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "import jikan.command.FindCommand;"
-      },
-      {
-        "lineNumber": 12,
-        "author": {
-          "gitId": "nigellenl"
+          "gitId": "btricec"
         },
         "content": "import jikan.command.FilterCommand;"
       },
       {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "import jikan.command.FindCommand;"
+      },
+      {
         "lineNumber": 13,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "btricec"
         },
-        "content": "import jikan.command.ListCommand;"
+        "content": "import jikan.command.GraphCommand;"
       },
       {
         "lineNumber": 14,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "btricec"
         },
-        "content": "import jikan.command.StartCommand;"
+        "content": "import jikan.command.ListCommand;"
       },
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "btricec"
         },
-        "content": ""
+        "content": "import jikan.command.StartCommand;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import jikan.exception.EmptyNameException;"
+        "content": ""
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "nigellenl"
         },
-        "content": "import jikan.activity.Activity;"
+        "content": "import jikan.exception.EmptyNameException;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "import jikan.activity.ActivityList;"
+        "content": "import jikan.activity.Activity;"
       },
       {
         "lineNumber": 19,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "import jikan.activity.ActivityList;"
+      },
+      {
+        "lineNumber": 20,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": "import jikan.exception.EmptyQueryException;"
       },
       {
-        "lineNumber": 20,
+        "lineNumber": 21,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "import jikan.exception.InvalidTimeFrameException;"
       },
       {
-        "lineNumber": 21,
+        "lineNumber": 22,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "import jikan.exception.NoSuchActivityException;"
       },
       {
-        "lineNumber": 22,
+        "lineNumber": 23,
         "author": {
           "gitId": "siuhian"
         },
         "content": "import jikan.storage.StorageCleaner;"
       },
       {
-        "lineNumber": 23,
+        "lineNumber": 24,
         "author": {
           "gitId": "siuhian"
         },
         "content": "import jikan.ui.Ui;"
       },
       {
-        "lineNumber": 24,
+        "lineNumber": 25,
         "author": {
           "gitId": "btricec"
         },
         "content": "import jikan.Log;"
       },
       {
-        "lineNumber": 25,
+        "lineNumber": 26,
         "author": {
           "gitId": "rdimaio"
         },
         "content": ""
       },
       {
-        "lineNumber": 26,
+        "lineNumber": 27,
         "author": {
           "gitId": "siuhian"
         },
         "content": "import java.io.IOException;"
       },
       {
-        "lineNumber": 27,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "import java.time.Duration;"
-      },
-      {
         "lineNumber": 28,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "import java.time.LocalDate;"
+        "content": "import java.time.DayOfWeek;"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "btricec"
         },
-        "content": "import java.time.LocalDateTime;"
+        "content": "import java.time.Duration;"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "import java.time.format.DateTimeFormatter;"
+        "content": "import java.time.LocalDate;"
       },
       {
         "lineNumber": 31,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "import java.time.LocalDateTime;"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "import java.time.format.DateTimeFormatter;"
+      },
+      {
+        "lineNumber": 33,
         "author": {
           "gitId": "rdimaio"
         },
         "content": "import java.time.format.DateTimeParseException;"
       },
       {
-        "lineNumber": 32,
+        "lineNumber": 34,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "import java.time.temporal.TemporalAdjusters;"
+      },
+      {
+        "lineNumber": 35,
         "author": {
           "gitId": "btricec"
         },
         "content": "import java.util.Arrays;"
       },
       {
-        "lineNumber": 33,
+        "lineNumber": 36,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": "import java.util.HashSet;"
       },
       {
-        "lineNumber": 34,
+        "lineNumber": 37,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": "import java.util.Scanner;"
       },
       {
-        "lineNumber": 35,
+        "lineNumber": 38,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": "import java.util.Set;"
       },
       {
-        "lineNumber": 36,
+        "lineNumber": 39,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": ""
       },
       {
-        "lineNumber": 37,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "/**"
-      },
-      {
-        "lineNumber": 38,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": " * Represents the object which parses user input to relevant functions for the execution of commands."
-      },
-      {
-        "lineNumber": 39,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": " */"
-      },
-      {
         "lineNumber": 40,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "public class Parser {"
+        "content": "import static jikan.Jikan.lastShownList;"
       },
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
         "content": ""
       },
       {
         "lineNumber": 42,
         "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "/**"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": " * Represents the object which parses user input to relevant functions for the execution of commands."
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": " */"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "public class Parser {"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 47,
+        "author": {
           "gitId": "btricec"
         },
         "content": "    public static LocalDateTime startTime \u003d null;"
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 48,
         "author": {
           "gitId": "btricec"
         },
         "content": "    public static LocalDateTime endTime \u003d null;"
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 49,
         "author": {
           "gitId": "btricec"
         },
         "content": "    public static String activityName \u003d null;"
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 50,
         "author": {
           "gitId": "btricec"
         },
         "content": "    public static Set\u003cString\u003e tags \u003d new HashSet\u003c\u003e();"
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 51,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "    private static Ui ui \u003d new Ui();"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 52,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "    private static StorageCleaner cleaner;"
       },
       {
-        "lineNumber": 48,
+        "lineNumber": 53,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "    public static String[] tokenizedInputs;"
       },
       {
-        "lineNumber": 49,
+        "lineNumber": 54,
         "author": {
           "gitId": "siuhian"
         },
         "content": "    String instruction;"
       },
       {
-        "lineNumber": 50,
+        "lineNumber": 55,
         "author": {
           "gitId": "siuhian"
         },
         "content": "    private static Log logger \u003d new Log();"
       },
       {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "    // public static ActivityList lastShownList \u003d new ActivityList();"
-      },
-      {
-        "lineNumber": 52,
+        "lineNumber": 56,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "    public static ActivityList lastShownList \u003d new ActivityList();"
       },
       {
-        "lineNumber": 53,
+        "lineNumber": 57,
         "author": {
           "gitId": "btricec"
         },
         "content": "    // flag to check if the current activity is a continued one"
       },
       {
-        "lineNumber": 54,
+        "lineNumber": 58,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "    public static int continuedIndex \u003d -1;"
       },
       {
-        "lineNumber": 55,
+        "lineNumber": 59,
         "author": {
           "gitId": "btricec"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 56,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 57,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "     * Parses user commands to relevant functions to carry out the commands."
-      },
-      {
-        "lineNumber": 58,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "     * @param scanner scanner object which reads user input"
-      },
-      {
-        "lineNumber": 59,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "     * @param activityList the list of activities"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 61,
         "author": {
-          "gitId": "siuhian"
+          "gitId": "ananda-lye"
         },
-        "content": "    public Command parseUserCommands(Scanner scanner, ActivityList activityList, StorageCleaner cleaner) {"
+        "content": "     * Parses user commands to relevant functions to carry out the commands."
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "btricec"
         },
-        "content": "        Log.makeInfoLog(\"Starting to parse inputs.\");"
+        "content": "     *"
       },
       {
         "lineNumber": 63,
         "author": {
-          "gitId": "btricec"
+          "gitId": "ananda-lye"
         },
-        "content": "        Parser.cleaner \u003d cleaner;"
+        "content": "     * @param scanner      scanner object which reads user input"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "        /*lastShownList is initialised here to facilitate subsequent delete and edit commands"
+        "content": "     * @param activityList the list of activities"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "        referencing by index of this list."
+        "content": "     */"
       },
       {
         "lineNumber": 66,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "    public Command parseUserCommands(Scanner scanner, ActivityList activityList, StorageCleaner cleaner) {"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        Log.makeInfoLog(\"Starting to parse inputs.\");"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        Parser.cleaner \u003d cleaner;"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "        /*lastShownList is initialised here to facilitate subsequent delete and edit commands"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "        referencing by index of this list."
+      },
+      {
+        "lineNumber": 71,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": "         */"
       },
       {
-        "lineNumber": 67,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "        lastShownList.activities.addAll(activityList.activities);"
-      },
-      {
-        "lineNumber": 68,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "        String userInput \u003d scanner.nextLine();"
-      },
-      {
-        "lineNumber": 69,
+        "lineNumber": 72,
         "author": {
           "gitId": "btricec"
         },
-        "content": "        tokenizedInputs \u003d userInput.split(\" \", 2);"
-      },
-      {
-        "lineNumber": 70,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "        instruction \u003d tokenizedInputs[0];"
-      },
-      {
-        "lineNumber": 71,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "        Command command \u003d null;"
-      },
-      {
-        "lineNumber": 72,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": ""
+        "content": "        // lastShownList.activities.addAll(activityList.activities);"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "        switch (instruction) {"
+        "content": "        String userInput \u003d scanner.nextLine();"
       },
       {
         "lineNumber": 74,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "rdimaio"
         },
-        "content": "        case \"bye\":"
+        "content": "        tokenizedInputs \u003d userInput.split(\" \", 2);"
       },
       {
         "lineNumber": 75,
         "author": {
-          "gitId": "btricec"
+          "gitId": "siuhian"
         },
-        "content": "            command \u003d new ByeCommand(null);"
+        "content": "        instruction \u003d tokenizedInputs[0];"
       },
       {
         "lineNumber": 76,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "nigellenl"
         },
-        "content": "            break;"
+        "content": "        Command command \u003d null;"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "        case \"start\":"
+        "content": ""
       },
       {
         "lineNumber": 78,
         "author": {
-          "gitId": "btricec"
+          "gitId": "ananda-lye"
         },
-        "content": "            command \u003d new StartCommand(tokenizedInputs[1], scanner);"
+        "content": "        switch (instruction) {"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "            break;"
+        "content": "        case \"bye\":"
       },
       {
         "lineNumber": 80,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "        case \"end\":"
+        "content": "            command \u003d new ByeCommand(null);"
       },
       {
         "lineNumber": 81,
         "author": {
-          "gitId": "btricec"
+          "gitId": "ananda-lye"
         },
-        "content": "            command \u003d new EndCommand(null);"
+        "content": "            break;"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "            break;"
+        "content": "        case \"start\":"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "btricec"
         },
-        "content": "        case \"abort\":"
+        "content": "            command \u003d new StartCommand(tokenizedInputs[1], scanner);"
       },
       {
         "lineNumber": 84,
         "author": {
-          "gitId": "btricec"
+          "gitId": "ananda-lye"
         },
-        "content": "            command \u003d new AbortCommand(null);"
+        "content": "            break;"
       },
       {
         "lineNumber": 85,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "ananda-lye"
         },
-        "content": "            break;"
+        "content": "        case \"end\":"
       },
       {
         "lineNumber": 86,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "btricec"
         },
-        "content": "        case \"list\":"
+        "content": "            command \u003d new EndCommand(null);"
       },
       {
         "lineNumber": 87,
         "author": {
-          "gitId": "btricec"
+          "gitId": "ananda-lye"
         },
-        "content": "            command \u003d new ListCommand(null);"
+        "content": "            break;"
       },
       {
         "lineNumber": 88,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "            break;"
+        "content": "        case \"abort\":"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "btricec"
         },
-        "content": "        case \"delete\":"
+        "content": "            command \u003d new AbortCommand(null);"
       },
       {
         "lineNumber": 90,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "            break;"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "        case \"list\":"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            command \u003d new ListCommand(null);"
+      },
+      {
+        "lineNumber": 93,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            break;"
+      },
+      {
+        "lineNumber": 94,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        case \"delete\":"
+      },
+      {
+        "lineNumber": 95,
         "author": {
           "gitId": "btricec"
         },
         "content": "            command \u003d new DeleteCommand(tokenizedInputs[1]);"
       },
       {
-        "lineNumber": 91,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            break;"
-      },
-      {
-        "lineNumber": 92,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "        case \"find\":"
-      },
-      {
-        "lineNumber": 93,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            command \u003d new FindCommand(tokenizedInputs[1]);"
-      },
-      {
-        "lineNumber": 94,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "            break;"
-      },
-      {
-        "lineNumber": 95,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "        case \"filter\":"
-      },
-      {
         "lineNumber": 96,
         "author": {
           "gitId": "btricec"
         },
-        "content": "            command \u003d new FilterCommand(tokenizedInputs[1]);"
+        "content": "            break;"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "            break;"
+        "content": "        case \"find\":"
       },
       {
         "lineNumber": 98,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            command \u003d new FindCommand(tokenizedInputs[1]);"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            break;"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "        case \"filter\":"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            command \u003d new FilterCommand(tokenizedInputs[1]);"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            break;"
+      },
+      {
+        "lineNumber": 103,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "        case \"edit\":"
       },
       {
-        "lineNumber": 99,
+        "lineNumber": 104,
         "author": {
           "gitId": "btricec"
         },
         "content": "            command \u003d new EditCommand(tokenizedInputs[1]);"
       },
       {
-        "lineNumber": 100,
+        "lineNumber": 105,
         "author": {
           "gitId": "btricec"
         },
         "content": "            break;"
       },
       {
-        "lineNumber": 101,
+        "lineNumber": 106,
         "author": {
           "gitId": "siuhian"
         },
         "content": "        case \"clean\":"
       },
       {
-        "lineNumber": 102,
+        "lineNumber": 107,
         "author": {
           "gitId": "btricec"
         },
         "content": "            command \u003d new CleanCommand(tokenizedInputs[1], cleaner);"
       },
       {
-        "lineNumber": 103,
+        "lineNumber": 108,
         "author": {
           "gitId": "siuhian"
         },
         "content": "            break;"
       },
       {
-        "lineNumber": 104,
+        "lineNumber": 109,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "        case \"continue\":"
       },
       {
-        "lineNumber": 105,
+        "lineNumber": 110,
         "author": {
           "gitId": "btricec"
         },
         "content": "            command \u003d new ContinueCommand(tokenizedInputs[1]);"
       },
       {
-        "lineNumber": 106,
+        "lineNumber": 111,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "            break;"
       },
       {
-        "lineNumber": 107,
+        "lineNumber": 112,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        case \"graph\":"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            command \u003d new GraphCommand(tokenizedInputs[1]);"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            break;"
+      },
+      {
+        "lineNumber": 115,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": "        default:"
       },
       {
-        "lineNumber": 108,
+        "lineNumber": 116,
         "author": {
           "gitId": "siuhian"
         },
         "content": "            parseDefault();"
       },
       {
-        "lineNumber": 109,
+        "lineNumber": 117,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": "            break;"
       },
       {
-        "lineNumber": 110,
+        "lineNumber": 118,
         "author": {
           "gitId": "ananda-lye"
         },
         "content": "        }"
-      },
-      {
-        "lineNumber": 111,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "        return command;"
-      },
-      {
-        "lineNumber": 112,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 113,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 114,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 115,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     * Parse a list command. The user can specify either a single date or a specific time frame."
-      },
-      {
-        "lineNumber": 116,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     *"
-      },
-      {
-        "lineNumber": 117,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     * @param activityList The activity list to search for matching activities."
-      },
-      {
-        "lineNumber": 118,
-        "author": {
-          "gitId": "rdimaio"
-        },
-        "content": "     */"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    public static void parseList(ActivityList activityList) throws InvalidTimeFrameException, DateTimeParseException {"
+        "content": "        return command;"
       },
       {
         "lineNumber": 120,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "ananda-lye"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 121,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "siuhian"
         },
-        "content": "        // If no time frame is specified, print the entire list"
+        "content": ""
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        if (tokenizedInputs.length \u003d\u003d 1) {"
+        "content": "    /**"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            lastShownList.activities.clear();"
+        "content": "     * Parse a list command. The user can specify either a single date or a specific time frame."
       },
       {
         "lineNumber": 124,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "            Ui.printList(activityList);"
+        "content": "     *"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "     * @param activityList The activity list to search for matching activities."
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            // Can\u0027t do lastShownList \u003d activityList, otherwise we just copy"
+        "content": "     */"
       },
       {
         "lineNumber": 127,
         "author": {
-          "gitId": "btricec"
+          "gitId": "nigellenl"
         },
-        "content": "            lastShownList.activities.addAll(activityList.activities);"
+        "content": "    public static void parseList(ActivityList activityList) throws InvalidTimeFrameException, DateTimeParseException {"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            return;"
+        "content": ""
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        }"
+        "content": "        // If no time frame is specified, print the entire list"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "        if (tokenizedInputs.length \u003d\u003d 1) {"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        lastShownList.activities.clear();"
+        "content": "            lastShownList.activities.clear();"
       },
       {
         "lineNumber": 132,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": ""
+        "content": "            Ui.printList(activityList);"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        // Parse either format"
+        "content": ""
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        DateTimeFormatter parser \u003d DateTimeFormatter.ofPattern(\"[dd/MM/yyyy][yyyy-MM-dd]\");"
+        "content": "            // Can\u0027t do lastShownList \u003d activityList, otherwise we just copy"
       },
       {
         "lineNumber": 135,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "        LocalDate startDate \u003d LocalDate.parse(tokenizedInputs[1], parser);"
+        "content": "            lastShownList.activities.addAll(activityList.activities);"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "            return;"
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        // Only one date is specified; return all entries with start date coinciding with that date"
+        "content": "        }"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        if (tokenizedInputs.length \u003d\u003d 2) {"
+        "content": ""
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            for (Activity i : activityList.activities) {"
+        "content": "        String[] listInputs;"
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "                if (i.getDate().equals(startDate)) {"
+        "content": "        listInputs \u003d tokenizedInputs[1].split(\" \", 2);"
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "                    lastShownList.activities.add(i);"
+        "content": ""
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "                }"
+        "content": "        lastShownList.activities.clear();"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 144,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "            Ui.printList(lastShownList);"
+        "content": "        LocalDate startDate \u003d null;"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            // Both start and end dates are specified"
+        "content": "        LocalDate endDate \u003d null;"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        } else if (tokenizedInputs.length \u003d\u003d 3) {"
+        "content": ""
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            LocalDate endDate \u003d LocalDate.parse(tokenizedInputs[2], parser);"
+        "content": "        // Parse either format"
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "        DateTimeFormatter parser \u003d DateTimeFormatter.ofPattern(\"[dd/MM/yyyy][yyyy-MM-dd]\");"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            if (endDate.isBefore(startDate)) {"
+        "content": ""
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "                throw new InvalidTimeFrameException();"
+        "content": "        // Check if the user has given a verbal input"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            }"
+        "content": "        // (User can either say day or daily and get the same output)"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "        switch (listInputs[0]) {"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            for (Activity i : activityList.activities) {"
+        "content": "        case \"day\":"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "                if (i.isWithinDateFrame(startDate, endDate)) {"
+        "content": "            // Fallthrough"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "                    lastShownList.activities.add(i);"
+        "content": "        case \"daily\":"
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "                }"
+        "content": "            startDate \u003d LocalDate.now();"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            }"
+        "content": "            break;"
       },
       {
         "lineNumber": 158,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "            Ui.printList(lastShownList);"
+        "content": "        case \"week\":"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        } else {"
+        "content": "            // Fallthrough"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "            throw new InvalidTimeFrameException();"
+        "content": "        case \"weekly\":"
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "        }"
+        "content": "            // If user has input a specific date to obtain the week from, use that;"
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "            // (eg. the input is list week 2020-05-20)"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "rdimaio"
         },
-        "content": "    }"
+        "content": "            // Otherwise get current date"
       },
       {
         "lineNumber": 164,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "            if (listInputs.length \u003d\u003d 2) {"
       },
       {
         "lineNumber": 165,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "    /** Method to parse user inputs that are not recognised. */"
+        "content": "                startDate \u003d LocalDate.parse(listInputs[1], parser);"
       },
       {
         "lineNumber": 166,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "    private void parseDefault() {"
+        "content": "            } else {"
       },
       {
         "lineNumber": 167,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "        String line \u003d \"☹ OOPS!!! I\u0027m sorry, but I don\u0027t know what that means :-(\";"
+        "content": "                startDate \u003d LocalDate.now();"
       },
       {
         "lineNumber": 168,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "        Log.makeInfoLog(\"Invalid command entered\");"
+        "content": "            }"
       },
       {
         "lineNumber": 169,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "        Ui.printDivider(line);"
+        "content": ""
       },
       {
         "lineNumber": 170,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
         },
-        "content": "    }"
+        "content": "            // Set current Monday and Sunday as time range"
       },
       {
         "lineNumber": 171,
         "author": {
-          "gitId": "btricec"
+          "gitId": "rdimaio"
+        },
+        "content": "            startDate \u003d startDate.with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY));"
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            endDate \u003d startDate.with(TemporalAdjusters.nextOrSame(DayOfWeek.SUNDAY));"
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            break;"
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        case \"month\":"
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            // Fallthrough"
+      },
+      {
+        "lineNumber": 176,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        case \"monthly\":"
+      },
+      {
+        "lineNumber": 177,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            // If user has input a specific date to obtain the month from, use that;"
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            // Otherwise get current date"
+      },
+      {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            if (listInputs.length \u003d\u003d 2) {"
+      },
+      {
+        "lineNumber": 180,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                startDate \u003d LocalDate.parse(listInputs[1], parser);"
+      },
+      {
+        "lineNumber": 181,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            } else {"
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                startDate \u003d LocalDate.now();"
+      },
+      {
+        "lineNumber": 183,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "rdimaio"
         },
         "content": ""
       },
       {
-        "lineNumber": 172,
+        "lineNumber": 185,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            // Set first and last day of month as time range"
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            startDate \u003d startDate.withDayOfMonth(1);"
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            endDate \u003d startDate.with(TemporalAdjusters.lastDayOfMonth());"
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            break;"
+      },
+      {
+        "lineNumber": 189,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        default:"
+      },
+      {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            startDate \u003d LocalDate.parse(listInputs[0], parser);"
+      },
+      {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            if (listInputs.length \u003d\u003d 2) {"
+      },
+      {
+        "lineNumber": 192,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                endDate \u003d LocalDate.parse(listInputs[1], parser);"
+      },
+      {
+        "lineNumber": 193,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 194,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            break;"
+      },
+      {
+        "lineNumber": 195,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 196,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 197,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        // Only one date is specified; return all entries with start date coinciding with that date"
+      },
+      {
+        "lineNumber": 198,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        if (endDate \u003d\u003d null) {"
+      },
+      {
+        "lineNumber": 199,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            for (Activity i : activityList.activities) {"
+      },
+      {
+        "lineNumber": 200,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                if (i.getDate().equals(startDate)) {"
+      },
+      {
+        "lineNumber": 201,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                    lastShownList.activities.add(i);"
+      },
+      {
+        "lineNumber": 202,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 203,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 204,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            Ui.printList(lastShownList);"
+      },
+      {
+        "lineNumber": 205,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            // Both start and end dates are specified"
+      },
+      {
+        "lineNumber": 206,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 207,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 208,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            if (endDate.isBefore(startDate)) {"
+      },
+      {
+        "lineNumber": 209,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                throw new InvalidTimeFrameException();"
+      },
+      {
+        "lineNumber": 210,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 211,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 212,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            for (Activity i : activityList.activities) {"
+      },
+      {
+        "lineNumber": 213,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                if (i.isWithinDateFrame(startDate, endDate)) {"
+      },
+      {
+        "lineNumber": 214,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                    lastShownList.activities.add(i);"
+      },
+      {
+        "lineNumber": 215,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 216,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 217,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            Ui.printList(lastShownList);"
+      },
+      {
+        "lineNumber": 218,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 219,
+        "author": {
+          "gitId": "rdimaio"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 220,
         "author": {
           "gitId": "btricec"
         },
         "content": ""
       },
       {
-        "lineNumber": 173,
+        "lineNumber": 221,
         "author": {
           "gitId": "btricec"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 174,
+        "lineNumber": 222,
         "author": {
           "gitId": "btricec"
         },
-        "content": "     * Resets parameters, called when an activity is ended or aborted."
+        "content": "     * Method to parse user inputs that are not recognised."
       },
       {
-        "lineNumber": 175,
+        "lineNumber": 223,
         "author": {
           "gitId": "btricec"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 176,
+        "lineNumber": 224,
         "author": {
           "gitId": "btricec"
         },
-        "content": "    public static void resetInfo() {"
+        "content": "    private void parseDefault() {"
       },
       {
-        "lineNumber": 177,
+        "lineNumber": 225,
         "author": {
           "gitId": "btricec"
         },
-        "content": "        startTime \u003d null;"
+        "content": "        String line \u003d \"☹ OOPS!!! I\u0027m sorry, but I don\u0027t know what that means :-(\";"
       },
       {
-        "lineNumber": 178,
+        "lineNumber": 226,
         "author": {
           "gitId": "btricec"
         },
-        "content": "        activityName \u003d null;"
+        "content": "        Log.makeInfoLog(\"Invalid command entered\");"
       },
       {
-        "lineNumber": 179,
+        "lineNumber": 227,
         "author": {
           "gitId": "btricec"
         },
-        "content": "        tags \u003d new HashSet\u003c\u003e();"
+        "content": "        Ui.printDivider(line);"
       },
       {
-        "lineNumber": 180,
+        "lineNumber": 228,
         "author": {
           "gitId": "btricec"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 181,
+        "lineNumber": 229,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 230,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 231,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 232,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "     * Resets parameters, called when an activity is ended or aborted."
+      },
+      {
+        "lineNumber": 233,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 234,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    public static void resetInfo() {"
+      },
+      {
+        "lineNumber": 235,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        startTime \u003d null;"
+      },
+      {
+        "lineNumber": 236,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        activityName \u003d null;"
+      },
+      {
+        "lineNumber": 237,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        tags \u003d new HashSet\u003c\u003e();"
+      },
+      {
+        "lineNumber": 238,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 239,
         "author": {
           "gitId": "ananda-lye"
         },
@@ -11289,11 +12540,11 @@
       }
     ],
     "authorContributionMap": {
-      "rdimaio": 54,
-      "btricec": 50,
+      "rdimaio": 105,
+      "btricec": 70,
       "siuhian": 11,
-      "nigellenl": 28,
-      "ananda-lye": 38
+      "nigellenl": 16,
+      "ananda-lye": 37
     }
   },
   {
@@ -14454,93 +15705,93 @@
       {
         "lineNumber": 3,
         "author": {
-          "gitId": "siuhian"
+          "gitId": "btricec"
         },
-        "content": "import jikan.activity.ActivityList;"
+        "content": "import jikan.activity.Activity;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "siuhian"
         },
-        "content": "import java.util.concurrent.TimeUnit;"
+        "content": "import jikan.activity.ActivityList;"
       },
       {
         "lineNumber": 5,
         "author": {
-          "gitId": "siuhian"
+          "gitId": "btricec"
         },
         "content": ""
       },
       {
         "lineNumber": 6,
         "author": {
-          "gitId": "siuhian"
+          "gitId": "btricec"
         },
-        "content": "public class Ui {"
+        "content": "import java.time.Duration;"
       },
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "btricec"
         },
-        "content": "    public static final String GREETING \u003d \"Jikan\";"
+        "content": "import java.util.HashMap;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "siuhian"
         },
-        "content": ""
+        "content": "import java.util.concurrent.TimeUnit;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "siuhian"
         },
-        "content": "    public static final String DIVIDER \u003d \"-----------------------------------------------------------------\";"
+        "content": ""
       },
       {
         "lineNumber": 10,
         "author": {
-          "gitId": "siuhian"
+          "gitId": "btricec"
         },
-        "content": ""
+        "content": "import static jikan.Jikan.lastShownList;"
       },
       {
         "lineNumber": 11,
         "author": {
-          "gitId": "siuhian"
+          "gitId": "btricec"
         },
-        "content": "    /** Prints the logo and greeting so users know the app is working. */"
+        "content": ""
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "siuhian"
         },
-        "content": "    public void printGreeting() {"
+        "content": "public class Ui {"
       },
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "siuhian"
+          "gitId": "rdimaio"
         },
-        "content": "        System.out.println(GREETING);"
+        "content": "    public static final String GREETING \u003d \"Jikan\";"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "siuhian"
         },
-        "content": "        System.out.println(DIVIDER);"
+        "content": ""
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "siuhian"
         },
-        "content": "    }"
+        "content": "    public static final String DIVIDER \u003d \"-----------------------------------------------------------------\";"
       },
       {
         "lineNumber": 16,
@@ -14554,70 +15805,70 @@
         "author": {
           "gitId": "siuhian"
         },
-        "content": "    /** Prints exit message and exits the app. */"
+        "content": "    /** Prints the logo and greeting so users know the app is working. */"
       },
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "siuhian"
         },
-        "content": "    public static void exitFromApp() {"
+        "content": "    public void printGreeting() {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "siuhian"
         },
-        "content": "        System.out.println(DIVIDER);"
+        "content": "        System.out.println(GREETING);"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "siuhian"
         },
-        "content": "        System.out.println(\" Bye! See you again.\");"
+        "content": "        System.out.println(DIVIDER);"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "siuhian"
         },
-        "content": "        System.out.println(DIVIDER);"
+        "content": "    }"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "siuhian"
         },
-        "content": "        System.exit(0);"
+        "content": ""
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "siuhian"
         },
-        "content": "    }"
+        "content": "    /** Prints exit message and exits the app. */"
       },
       {
         "lineNumber": 24,
         "author": {
-          "gitId": "siuhian"
+          "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "    public static void exitFromApp() {"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "siuhian"
         },
-        "content": "    /** Prints divider between user input and app feedback. */"
+        "content": "        System.out.println(DIVIDER);"
       },
       {
         "lineNumber": 26,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "siuhian"
         },
-        "content": "    public static void printDivider(String line) {"
+        "content": "        System.out.println(\" Bye! See you again.\");"
       },
       {
         "lineNumber": 27,
@@ -14631,147 +15882,147 @@
         "author": {
           "gitId": "siuhian"
         },
-        "content": "        System.out.println(line);"
+        "content": "        System.exit(0);"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "siuhian"
         },
-        "content": "        System.out.println(DIVIDER);"
+        "content": "    }"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "siuhian"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "siuhian"
         },
-        "content": ""
+        "content": "    /** Prints divider between user input and app feedback. */"
       },
       {
         "lineNumber": 32,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "nigellenl"
         },
-        "content": "    private static void printTableFormat(ActivityList activityList, int index, boolean gotTags) {"
+        "content": "    public static void printDivider(String line) {"
       },
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "btricec"
+          "gitId": "siuhian"
         },
-        "content": "        long durationInNanos \u003d (activityList.get(index).getDuration()).toNanos();"
+        "content": "        System.out.println(DIVIDER);"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "siuhian"
         },
-        "content": "        String duration \u003d String.format(\"%02d:%02d:%02d\","
+        "content": "        System.out.println(line);"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "siuhian"
         },
-        "content": "                TimeUnit.NANOSECONDS.toHours(durationInNanos),"
+        "content": "        System.out.println(DIVIDER);"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "siuhian"
         },
-        "content": "                TimeUnit.NANOSECONDS.toMinutes(durationInNanos)"
+        "content": "    }"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "siuhian"
         },
-        "content": "                        - TimeUnit.HOURS.toMinutes(TimeUnit.NANOSECONDS.toHours(durationInNanos)),"
+        "content": ""
       },
       {
         "lineNumber": 38,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "    private static void printTableFormat(ActivityList activityList, int index, boolean gotTags) {"
+      },
+      {
+        "lineNumber": 39,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        long durationInNanos \u003d (activityList.get(index).getDuration()).toNanos();"
+      },
+      {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "        String duration \u003d String.format(\"%02d:%02d:%02d\","
+      },
+      {
+        "lineNumber": 41,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "                TimeUnit.NANOSECONDS.toHours(durationInNanos),"
+      },
+      {
+        "lineNumber": 42,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "                TimeUnit.NANOSECONDS.toMinutes(durationInNanos)"
+      },
+      {
+        "lineNumber": 43,
+        "author": {
+          "gitId": "siuhian"
+        },
+        "content": "                        - TimeUnit.HOURS.toMinutes(TimeUnit.NANOSECONDS.toHours(durationInNanos)),"
+      },
+      {
+        "lineNumber": 44,
         "author": {
           "gitId": "siuhian"
         },
         "content": "                TimeUnit.NANOSECONDS.toSeconds(durationInNanos)"
       },
       {
-        "lineNumber": 39,
+        "lineNumber": 45,
         "author": {
           "gitId": "siuhian"
         },
         "content": "                        - TimeUnit.MINUTES.toSeconds(TimeUnit.NANOSECONDS.toMinutes(durationInNanos)));"
       },
       {
-        "lineNumber": 40,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "        if (gotTags) {"
-      },
-      {
-        "lineNumber": 41,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            System.out.println(String.format(\"%d %s %-25s %s %-10s %s %-10s %s %-100s\","
-      },
-      {
-        "lineNumber": 42,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                    index + 1, \"|\", activityList.get(index).getName(), \"|\", duration, \"|\","
-      },
-      {
-        "lineNumber": 43,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                    activityList.get(index).getDate().toString(), \"|\","
-      },
-      {
-        "lineNumber": 44,
-        "author": {
-          "gitId": "ananda-lye"
-        },
-        "content": "                    activityList.get(index).getTags().toString()));"
-      },
-      {
-        "lineNumber": 45,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "        } else {"
-      },
-      {
         "lineNumber": 46,
         "author": {
           "gitId": "btricec"
         },
-        "content": "            System.out.println(String.format(\"%d %s %-25s %s %-10s %s %-10s %s %s\","
+        "content": "        String printIndex \u003d String.valueOf(index + 1);"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "btricec"
         },
-        "content": "                    index + 1, \"|\", activityList.get(index).getName(), \"|\", duration, \"|\","
+        "content": "        if (index \u003c 9) {"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "btricec"
         },
-        "content": "                    activityList.get(index).getDate().toString(), \"|\", \"\"));"
+        "content": "            printIndex \u003d String.valueOf(index + 1) + \" \";"
       },
       {
         "lineNumber": 49,
@@ -14785,283 +16036,633 @@
         "author": {
           "gitId": "btricec"
         },
-        "content": "    }"
+        "content": "        if (gotTags) {"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "btricec"
         },
-        "content": ""
+        "content": "            System.out.println(String.format(\"%s %s %-25s %s %-10s %s %-10s %s %-100s\","
       },
       {
         "lineNumber": 52,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "    /**"
+        "content": "                    printIndex, \"|\", activityList.get(index).getName(), \"|\", duration, \"|\","
       },
       {
         "lineNumber": 53,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "     * Prints the results from a \u0027find\u0027 or \u0027filter\u0027 command."
+        "content": "                    activityList.get(index).getDate().toString(), \"|\","
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "     * @param lastShownList the list of activities to print"
+        "content": "                    activityList.get(index).getTags().toString()));"
       },
       {
         "lineNumber": 55,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "     */"
+        "content": "        } else {"
       },
       {
         "lineNumber": 56,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "    public static void printResults(ActivityList lastShownList) {"
+        "content": "            System.out.println(String.format(\"%s %s %-25s %s %-10s %s %-10s %s %s\","
       },
       {
         "lineNumber": 57,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "        if (lastShownList.activities.size() \u003e 0) {"
+        "content": "                    printIndex, \"|\", activityList.get(index).getName(), \"|\", duration, \"|\","
       },
       {
         "lineNumber": 58,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "            System.out.println(DIVIDER);"
+        "content": "                    activityList.get(index).getDate().toString(), \"|\", \"\"));"
       },
       {
         "lineNumber": 59,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "            System.out.println(\"Here are the matching activities in your list:\\n\");"
+        "content": "        }"
       },
       {
         "lineNumber": 60,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "            System.out.println(String.format(\"  %s %-25s %s %-10s %s %-10s %s %-30s\","
+        "content": "    }"
       },
       {
         "lineNumber": 61,
         "author": {
-          "gitId": "ananda-lye"
+          "gitId": "btricec"
         },
-        "content": "                    \"|\", \"Name\", \"|\", \"Duration\", \"|\", \"Date\", \"|\", \"Tags\"));"
+        "content": ""
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "            for (int i \u003d 0; i \u003c lastShownList.getSize(); i++) {"
+        "content": "    /**"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "                if (lastShownList.get(i).getTags() !\u003d null \u0026\u0026 !lastShownList.get(i).getTags().isEmpty()) {"
+        "content": "     * Prints the results from a \u0027find\u0027 or \u0027filter\u0027 command."
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "                    printTableFormat(lastShownList, i, true);"
+        "content": "     * @param resultsList the list of activities to print"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "                } else {"
+        "content": "     */"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "                    printTableFormat(lastShownList, i, false);"
+        "content": "    public static void printResults(ActivityList resultsList) {"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "                }"
+        "content": "        if (resultsList.activities.size() \u003e 0) {"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "            }"
+        "content": "            System.out.println(DIVIDER);"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "            System.out.println(DIVIDER);"
+        "content": "            System.out.println(\"Here are the matching activities in your list:\\n\");"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "        } else {"
+        "content": "            System.out.println(String.format(\"   %s %-25s %s %-10s %s %-10s %s %-30s\","
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "            System.out.println(\"There are no activities matching that description.\\n\");"
+        "content": "                    \"|\", \"Name\", \"|\", \"Duration\", \"|\", \"Date\", \"|\", \"Tags\"));"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "        }"
+        "content": "            for (int i \u003d 0; i \u003c resultsList.getSize(); i++) {"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "    }"
+        "content": "                if (resultsList.get(i).getTags() !\u003d null \u0026\u0026 !resultsList.get(i).getTags().isEmpty()) {"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": ""
+        "content": "                    printTableFormat(resultsList, i, true);"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "    /** Prints all the activities in a list. */"
+        "content": "                } else {"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "    public static void printList(ActivityList activityList) {"
+        "content": "                    printTableFormat(resultsList, i, false);"
       },
       {
         "lineNumber": 77,
         "author": {
-          "gitId": "btricec"
+          "gitId": "ananda-lye"
         },
-        "content": "        System.out.println(DIVIDER);"
+        "content": "                }"
       },
       {
         "lineNumber": 78,
         "author": {
-          "gitId": "btricec"
+          "gitId": "ananda-lye"
         },
-        "content": "        System.out.println(\"Your completed activities:\");"
+        "content": "            }"
       },
       {
         "lineNumber": 79,
         "author": {
-          "gitId": "btricec"
+          "gitId": "ananda-lye"
         },
-        "content": "        System.out.println(String.format(\"  %s %-25s %s %-10s %s %-10s %s %-30s\","
+        "content": "            System.out.println(DIVIDER);"
       },
       {
         "lineNumber": 80,
         "author": {
-          "gitId": "btricec"
+          "gitId": "ananda-lye"
         },
-        "content": "                \"|\", \"Name\", \"|\", \"Duration\", \"|\", \"Date\", \"|\", \"Tags\"));"
+        "content": "        } else {"
       },
       {
         "lineNumber": 81,
         "author": {
-          "gitId": "btricec"
+          "gitId": "ananda-lye"
         },
-        "content": "        for (int i \u003d 0; i \u003c activityList.getSize(); i++) {"
+        "content": "            System.out.println(\"There are no activities matching that description.\\n\");"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "ananda-lye"
         },
-        "content": "            if (activityList.get(i).getTags() !\u003d null \u0026\u0026 !activityList.get(i).getTags().isEmpty()) {"
+        "content": "        }"
       },
       {
         "lineNumber": 83,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 84,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "    /** Prints all the activities in a list. */"
+      },
+      {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "    public static void printList(ActivityList activityList) {"
+      },
+      {
+        "lineNumber": 87,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        System.out.println(DIVIDER);"
+      },
+      {
+        "lineNumber": 88,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        System.out.println(\"Your completed activities:\");"
+      },
+      {
+        "lineNumber": 89,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        System.out.println(String.format(\"   %s %-25s %s %-10s %s %-10s %s %-30s\","
+      },
+      {
+        "lineNumber": 90,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                \"|\", \"Name\", \"|\", \"Duration\", \"|\", \"Date\", \"|\", \"Tags\"));"
+      },
+      {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        for (int i \u003d 0; i \u003c activityList.getSize(); i++) {"
+      },
+      {
+        "lineNumber": 92,
+        "author": {
+          "gitId": "ananda-lye"
+        },
+        "content": "            if (activityList.get(i).getTags() !\u003d null \u0026\u0026 !activityList.get(i).getTags().isEmpty()) {"
+      },
+      {
+        "lineNumber": 93,
         "author": {
           "gitId": "btricec"
         },
         "content": "                printTableFormat(activityList, i, true);"
       },
       {
-        "lineNumber": 84,
+        "lineNumber": 94,
         "author": {
           "gitId": "siuhian"
         },
         "content": "            } else {"
       },
       {
-        "lineNumber": 85,
+        "lineNumber": 95,
         "author": {
           "gitId": "btricec"
         },
         "content": "                printTableFormat(activityList, i, false);"
       },
       {
-        "lineNumber": 86,
+        "lineNumber": 96,
         "author": {
           "gitId": "siuhian"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 87,
+        "lineNumber": 97,
         "author": {
           "gitId": "siuhian"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 88,
+        "lineNumber": 98,
         "author": {
           "gitId": "siuhian"
         },
         "content": "        System.out.println(DIVIDER);"
       },
       {
-        "lineNumber": 89,
+        "lineNumber": 99,
         "author": {
           "gitId": "siuhian"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 90,
+        "lineNumber": 100,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "     * Prints a graph of the last shown list."
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "     * @param interval The time interval for the graph."
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    public static void printActivityGraph(int interval) {"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        System.out.println(DIVIDER);"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        System.out.println(String.format(\"%-25s %s %-100s\", \"Name\", \"|\", \"Duration\"));"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        for (int i \u003d 0; i \u003c lastShownList.getSize(); i++) {"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            Activity activity \u003d lastShownList.get(i);"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            Duration duration \u003d activity.getDuration();"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            double minutes \u003d duration.toMinutes() / (double) interval;"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            int scaledMinutes \u003d (int) Math.round(minutes);"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            System.out.print(String.format(\"%-25s %s\", activity.getName(), \"|\"));"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            for (int j \u003d 0; j \u003c scaledMinutes; j++) {"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                System.out.print(\"*\");"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            System.out.println(\"\");"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        System.out.println(DIVIDER);"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "     * Prints a graph based on activity tags."
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "     * @param tags The set of tags to be graphed."
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    public static void printTagsGraph(HashMap\u003cString, Duration\u003e tags) {"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        System.out.println(DIVIDER);"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        System.out.println(String.format(\"%-10s %s %-100s\", \"Tag\", \"|\", \"Duration\"));"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        tags.forEach((key,value) -\u003e {"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            double minutes \u003d value.toMinutes() / 10.0;"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            int scaledMinutes \u003d (int) Math.round(minutes);"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            System.out.print(String.format(\"%-10s %s\", key, \"|\"));"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            for (int j \u003d 0; j \u003c scaledMinutes; j++) {"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "                System.out.print(\"*\");"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "            System.out.println(\"\");"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        });"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "        System.out.println(DIVIDER);"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "btricec"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 140,
         "author": {
           "gitId": "siuhian"
         },
@@ -15069,8 +16670,8 @@
       }
     ],
     "authorContributionMap": {
+      "btricec": 69,
       "rdimaio": 1,
-      "btricec": 19,
       "siuhian": 40,
       "nigellenl": 2,
       "ananda-lye": 28
@@ -17071,179 +18672,6 @@
     ],
     "authorContributionMap": {
       "rdimaio": 74
-    }
-  },
-  {
-    "path": "text-ui-test/data/LogRecord.txt",
-    "fileType": "txt",
-    "lines": [
-      {
-        "lineNumber": 1,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 2,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "Mar 23, 2020 1:58:04 AM jikan.Log makeInfoLog"
-      },
-      {
-        "lineNumber": 3,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "INFO: Starting to parse inputs."
-      },
-      {
-        "lineNumber": 4,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "Mar 23, 2020 1:58:04 AM jikan.Log makeInfoLog"
-      },
-      {
-        "lineNumber": 5,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "INFO: Could not start activity due to already ongoing activity."
-      },
-      {
-        "lineNumber": 6,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "Mar 23, 2020 1:58:20 AM jikan.Log makeInfoLog"
-      },
-      {
-        "lineNumber": 7,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "INFO: Starting to parse inputs."
-      },
-      {
-        "lineNumber": 8,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "Mar 23, 2020 1:58:20 AM jikan.Log makeInfoLog"
-      },
-      {
-        "lineNumber": 9,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "INFO: Could not start activity due to already ongoing activity."
-      },
-      {
-        "lineNumber": 10,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "Mar 23, 2020 2:00:14 AM jikan.Log makeInfoLog"
-      },
-      {
-        "lineNumber": 11,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "INFO: Starting to parse inputs."
-      },
-      {
-        "lineNumber": 12,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "Mar 23, 2020 2:00:14 AM jikan.Log makeInfoLog"
-      },
-      {
-        "lineNumber": 13,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "INFO: Could not start activity due to already ongoing activity."
-      },
-      {
-        "lineNumber": 14,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "Mar 23, 2020 2:05:41 AM jikan.Log makeInfoLog"
-      },
-      {
-        "lineNumber": 15,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "INFO: Starting to parse inputs."
-      },
-      {
-        "lineNumber": 16,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "Mar 23, 2020 2:05:41 AM jikan.Log makeInfoLog"
-      },
-      {
-        "lineNumber": 17,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "INFO: Could not start activity due to already ongoing activity."
-      },
-      {
-        "lineNumber": 18,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "Mar 23, 2020 2:07:09 AM jikan.Log makeInfoLog"
-      },
-      {
-        "lineNumber": 19,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "INFO: Starting to parse inputs."
-      },
-      {
-        "lineNumber": 20,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "Mar 23, 2020 2:07:10 AM jikan.Log makeInfoLog"
-      },
-      {
-        "lineNumber": 21,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "INFO: Could not start activity due to already ongoing activity."
-      }
-    ],
-    "authorContributionMap": {
-      "btricec": 1,
-      "siuhian": 20
-    }
-  },
-  {
-    "path": "text-ui-test/data/recycled/status.txt",
-    "fileType": "txt",
-    "lines": [
-      {
-        "lineNumber": 1,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "0"
-      }
-    ],
-    "authorContributionMap": {
-      "siuhian": 1
     }
   },
   {
