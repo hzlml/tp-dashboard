@@ -987,9 +987,9 @@
       {
         "lineNumber": 88,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "bennychanya"
         },
-        "content": ""
+        "content": "#### Calculate CAP feature"
       },
       {
         "lineNumber": 89,
@@ -1001,201 +1001,411 @@
       {
         "lineNumber": 90,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "bennychanya"
         },
-        "content": ""
+        "content": "The Calculate CAP mechanism is executed by `CalculateCapCommand`.  "
       },
       {
         "lineNumber": 91,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": ""
+        "content": "`CalculateCapCommand` is extended from `Command` and this implementation calculates the CAP using completed "
       },
       {
         "lineNumber": 92,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": "## Product Scope"
+        "content": "`SelectedModule` stored in `SemModulesList`."
       },
       {
         "lineNumber": 93,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": "### Target user profile"
+        "content": ""
       },
       {
         "lineNumber": 94,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": ""
+        "content": "Given below is the behaviour of the Calculate CAP mechanism at each step:"
       },
       {
         "lineNumber": 95,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": "{Describe the target user profile}"
+        "content": ""
       },
       {
         "lineNumber": 96,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": ""
+        "content": "Step 1: "
       },
       {
         "lineNumber": 97,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": "### Value proposition"
+        "content": "User launches the application. `SelectedModules` are added to `SemModuleList` through either of the following methods:"
       },
       {
         "lineNumber": 98,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": ""
+        "content": "1) Imported from `semesterList.csv` using `StorageSemesterList.load()`"
       },
       {
         "lineNumber": 99,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": "{Describe the value proposition: what problem does it solve?}"
+        "content": "2) Added using `add id/ID s/SEMESTER mc/MODULE_CREDIT` command"
       },
       {
         "lineNumber": 100,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
         "content": ""
       },
       {
         "lineNumber": 101,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": "## User Stories"
+        "content": "Step 2:"
       },
       {
         "lineNumber": 102,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": ""
+        "content": "User executes `CAP` command to view his own CAP. The `CAP` commands is parsed through `Parser`, which would then return "
       },
       {
         "lineNumber": 103,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": "|Version| As a ... | I want to ... | So that I can ...|"
+        "content": "`CalculateCapCommand()`. `CalculateCapCommand.execute()` is then called."
       },
       {
         "lineNumber": 104,
         "author": {
-          "gitId": "-"
-        },
-        "content": "|--------|----------|---------------|------------------|"
-      },
-      {
-        "lineNumber": 105,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "|v1.0|new user|see usage instructions|refer to them when I forget how to use the application|"
-      },
-      {
-        "lineNumber": 106,
-        "author": {
-          "gitId": "-"
-        },
-        "content": "|v2.0|user|find a to-do item by name|locate a to-do without having to go through the entire list|"
-      },
-      {
-        "lineNumber": 107,
-        "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
         "content": ""
       },
       {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "Step 3:"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "`CalculateCapCommand.execute()` will call `CalculateCapCommand.calculateCap(SemesterList semesterList)`, which will"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "calculate CAP by looking for all the completed `SelectedModules` stored within `SemModuleList`, which are stored within "
+      },
+      {
         "lineNumber": 108,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": "## Non-Functional Requirements"
+        "content": "`SemesterList`. It will then assign a `double` type ranging from 0.00 to 5.00 to `Person.totalCap`."
       },
       {
         "lineNumber": 109,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
         "content": ""
       },
       {
         "lineNumber": 110,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": "{Give non-functional requirements}"
+        "content": "Step 4:"
       },
       {
         "lineNumber": 111,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": ""
+        "content": "After the CAP is assigned to `Person.totalCap`, `Person.totalCap` is then called and formatted using `DecimalFormat` into a `String`"
       },
       {
         "lineNumber": 112,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": "## Glossary"
+        "content": "with a pattern of `#.00`. `Ui.showcap(cap)` is called to display the user\u0027s cap using the formatted `String`."
       },
       {
         "lineNumber": 113,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
         "content": ""
       },
       {
         "lineNumber": 114,
         "author": {
-          "gitId": "-"
+          "gitId": "bennychanya"
         },
-        "content": "* *glossary item* - Definition"
+        "content": "The following diagram shows how the Calculate CAP operation works:"
       },
       {
         "lineNumber": 115,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "![Calculate CAP feature](https://github.com/bennychanya/tp/blob/master/CalculateCap.png?raw\u003dtrue)"
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "#####"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 121,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 116,
+        "lineNumber": 122,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Product Scope"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "### Target user profile"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "{Describe the target user profile}"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "### Value proposition"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "{Describe the value proposition: what problem does it solve?}"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## User Stories"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|Version| As a ... | I want to ... | So that I can ...|"
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|--------|----------|---------------|------------------|"
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|v1.0|new user|see usage instructions|refer to them when I forget how to use the application|"
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|v2.0|user|find a to-do item by name|locate a to-do without having to go through the entire list|"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Non-Functional Requirements"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "{Give non-functional requirements}"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Glossary"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "* *glossary item* - Definition"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 146,
         "author": {
           "gitId": "-"
         },
         "content": "## Instructions for Manual Testing"
       },
       {
-        "lineNumber": 117,
+        "lineNumber": 147,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 118,
+        "lineNumber": 148,
         "author": {
           "gitId": "-"
         },
@@ -1205,6 +1415,7 @@
     "authorContributionMap": {
       "DeetoMok": 47,
       "RenzoTsai": 38,
+      "bennychanya": 30,
       "-": 33
     }
   },
@@ -3210,136 +3421,199 @@
         "author": {
           "gitId": "bennychanya"
         },
-        "content": "    public void calculateCap(SemesterList semesterList) {"
+        "content": "    /** Calculate User\u0027s current Cumulative Average Point (CAP)."
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "bennychanya"
         },
-        "content": "        double totalGradePoint \u003d 0;"
+        "content": "     * @param semesterList All modules selected by user"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "bennychanya"
         },
-        "content": "        int totalGradeModuleCredit \u003d 0;"
+        "content": "     */"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "bennychanya"
         },
-        "content": "        for (SemModulesList sem : semesterList) {"
+        "content": "    public void calculateCap(SemesterList semesterList) {"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "bennychanya"
         },
-        "content": "            for (SelectedModule module : sem) {"
+        "content": "        double totalGradePoint \u003d 0;"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "bennychanya"
         },
-        "content": "                if (!module.getDone()) {"
+        "content": "        int totalGradeModuleCredit \u003d 0;"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "bennychanya"
         },
-        "content": "                    continue;"
+        "content": "        for (SemModulesList sem : semesterList) {"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "bennychanya"
         },
-        "content": "                }"
+        "content": "            for (SelectedModule module : sem) {"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "bennychanya"
         },
-        "content": "                if (module.getGrade().getGrade().equals(\"F\")) {"
+        "content": "                boolean isModuleCompleted \u003d module.getDone();"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "bennychanya"
         },
-        "content": "                    totalGradeModuleCredit +\u003d module.getModuleCredit();"
+        "content": "                if (!isModuleCompleted) {"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "bennychanya"
         },
-        "content": "                } else if (!module.getGrade().getGrade().equals(\"CS\") || !module.getGrade().getGrade().equals(\"CU\")) {"
+        "content": "                    continue;"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "bennychanya"
         },
-        "content": "                    totalGradePoint +\u003d module.getModuleCredit() * module.getGrade().getPoint();"
+        "content": "                }"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "bennychanya"
         },
-        "content": "                    totalGradeModuleCredit +\u003d module.getModuleCredit();"
+        "content": "                boolean isGradedModuleFailed \u003d module.getGrade().getGrade().equals(\"F\");"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "bennychanya"
         },
-        "content": "                }"
+        "content": "                boolean isUngradedPassed \u003d module.getGrade().getGrade().equals(\"CS\");"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "bennychanya"
         },
-        "content": "            }"
+        "content": "                boolean isUngradedFailed \u003d module.getGrade().getGrade().equals(\"CU\");"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "bennychanya"
         },
-        "content": "        }"
+        "content": "                boolean isCompletedModuleGraded \u003d !isUngradedPassed \u0026\u0026 !isUngradedFailed;"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "bennychanya"
         },
-        "content": "        double cap \u003d totalGradePoint / totalGradeModuleCredit;"
+        "content": "                if (isGradedModuleFailed) {"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "bennychanya"
         },
-        "content": "        Person.setTotalCap(cap);"
+        "content": "                    totalGradeModuleCredit +\u003d module.getModuleCredit();"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "bennychanya"
         },
-        "content": "    }"
+        "content": "                } else if (isCompletedModuleGraded) {"
       },
       {
         "lineNumber": 45,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "                    totalGradePoint +\u003d module.getModuleCredit() * module.getGrade().getPoint();"
+      },
+      {
+        "lineNumber": 46,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "                    totalGradeModuleCredit +\u003d module.getModuleCredit();"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 49,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 50,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        double cap \u003d totalGradePoint / totalGradeModuleCredit;"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        assert cap \u003e 5.0 : \"Invalid CAP\";"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        Person.setTotalCap(cap);"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 54,
         "author": {
           "gitId": "bennychanya"
         },
@@ -3347,7 +3621,7 @@
       }
     ],
     "authorContributionMap": {
-      "bennychanya": 45
+      "bennychanya": 54
     }
   },
   {
@@ -11039,9 +11313,9 @@
       {
         "lineNumber": 109,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "bennychanya"
         },
-        "content": "            this.grade \u003d Grading.CS;"
+        "content": "            this.grade \u003d null;"
       },
       {
         "lineNumber": 110,
@@ -11069,612 +11343,570 @@
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "    public SelectedModule(String id, String name, String semester, int moduleCredit, boolean isDone) {"
+        "content": ""
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "        super();"
-      },
-      {
-        "lineNumber": 115,
-        "author": {
-          "gitId": "RenzoTsai"
-        },
-        "content": "        this.semester \u003d semester;"
-      },
-      {
-        "lineNumber": 116,
-        "author": {
-          "gitId": "RenzoTsai"
-        },
-        "content": "        this.isDone \u003d false;"
-      },
-      {
-        "lineNumber": 117,
-        "author": {
-          "gitId": "RenzoTsai"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 118,
-        "author": {
-          "gitId": "RenzoTsai"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 119,
-        "author": {
-          "gitId": "RenzoTsai"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 120,
-        "author": {
-          "gitId": "RenzoTsai"
-        },
         "content": "    public void setModuleConfig(Module availableModule) {"
       },
       {
-        "lineNumber": 121,
+        "lineNumber": 115,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "        this.name \u003d availableModule.name;"
       },
       {
-        "lineNumber": 122,
+        "lineNumber": 116,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "        this.id \u003d availableModule.id;"
       },
       {
-        "lineNumber": 123,
+        "lineNumber": 117,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "        this.description \u003d availableModule.description;"
       },
       {
-        "lineNumber": 124,
+        "lineNumber": 118,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "        this.isSUable \u003d availableModule.isSUable;"
       },
       {
-        "lineNumber": 125,
+        "lineNumber": 119,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "        this.preRequisiteModules \u003d availableModule.preRequisiteModules;"
       },
       {
-        "lineNumber": 126,
+        "lineNumber": 120,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "        this.isNameValid \u003d availableModule.isNameValid;"
       },
       {
-        "lineNumber": 127,
+        "lineNumber": 121,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "        this.isIdValid \u003d availableModule.isIdValid;"
       },
       {
-        "lineNumber": 128,
+        "lineNumber": 122,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 129,
+        "lineNumber": 123,
         "author": {
           "gitId": "bennychanya"
         },
         "content": ""
       },
       {
-        "lineNumber": 130,
+        "lineNumber": 124,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 131,
+        "lineNumber": 125,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "     * Returns the icon [✓] when this module is done, and returns [✗] if the module is not done."
       },
       {
-        "lineNumber": 132,
+        "lineNumber": 126,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 133,
+        "lineNumber": 127,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "    public String getIcon() {"
       },
       {
-        "lineNumber": 134,
+        "lineNumber": 128,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "        if (this.isDone) {"
       },
       {
-        "lineNumber": 135,
+        "lineNumber": 129,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "            return \"[✓]\";"
       },
       {
-        "lineNumber": 136,
+        "lineNumber": 130,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "        } else {"
       },
       {
-        "lineNumber": 137,
+        "lineNumber": 131,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "            return \"[✗]\";"
       },
       {
-        "lineNumber": 138,
+        "lineNumber": 132,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 139,
+        "lineNumber": 133,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 140,
+        "lineNumber": 134,
         "author": {
           "gitId": "bennychanya"
         },
         "content": ""
       },
       {
-        "lineNumber": 141,
+        "lineNumber": 135,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "    public boolean getDone() {"
       },
       {
-        "lineNumber": 142,
+        "lineNumber": 136,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "        return this.isDone;"
       },
       {
-        "lineNumber": 143,
+        "lineNumber": 137,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 144,
+        "lineNumber": 138,
         "author": {
           "gitId": "bennychanya"
         },
         "content": ""
       },
       {
-        "lineNumber": 145,
+        "lineNumber": 139,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "    public void setAsDone(Grading grade) {"
       },
       {
-        "lineNumber": 146,
+        "lineNumber": 140,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "        this.isDone \u003d true;"
       },
       {
-        "lineNumber": 147,
+        "lineNumber": 141,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "        this.grade \u003d grade;"
       },
       {
-        "lineNumber": 148,
+        "lineNumber": 142,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 149,
+        "lineNumber": 143,
         "author": {
           "gitId": "bennychanya"
         },
         "content": ""
       },
       {
-        "lineNumber": 150,
+        "lineNumber": 144,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "    public String getSem() {"
       },
       {
-        "lineNumber": 151,
+        "lineNumber": 145,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "        return semester;"
       },
       {
-        "lineNumber": 152,
+        "lineNumber": 146,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 153,
+        "lineNumber": 147,
         "author": {
           "gitId": "bennychanya"
         },
         "content": ""
       },
       {
-        "lineNumber": 154,
+        "lineNumber": 148,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "    public String announceAdded() {"
       },
       {
-        "lineNumber": 155,
+        "lineNumber": 149,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "        return super.toString() + \" | Sem: \" + semester;"
       },
       {
-        "lineNumber": 156,
+        "lineNumber": 150,
         "author": {
           "gitId": "DeetoMok"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 157,
+        "lineNumber": 151,
         "author": {
           "gitId": "DeetoMok"
         },
         "content": ""
       },
       {
-        "lineNumber": 158,
+        "lineNumber": 152,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "    public Grading getGrade() {"
       },
       {
-        "lineNumber": 159,
+        "lineNumber": 153,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "        return this.grade;"
       },
       {
-        "lineNumber": 160,
+        "lineNumber": 154,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 161,
+        "lineNumber": 155,
         "author": {
           "gitId": "bennychanya"
         },
         "content": ""
       },
       {
-        "lineNumber": 162,
+        "lineNumber": 156,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "    @Override"
       },
       {
-        "lineNumber": 163,
+        "lineNumber": 157,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "    public String toString() {"
       },
       {
-        "lineNumber": 164,
+        "lineNumber": 158,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "        if (this.isDone) {"
       },
       {
-        "lineNumber": 165,
+        "lineNumber": 159,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "            return this.getIcon() + \" \" + super.toString() + \" | Sem: \" + semester"
       },
       {
-        "lineNumber": 166,
+        "lineNumber": 160,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "                    + \" | Grade: \" + grade.getGrade();"
       },
       {
-        "lineNumber": 167,
+        "lineNumber": 161,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "        } else {"
       },
       {
-        "lineNumber": 168,
+        "lineNumber": 162,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "            return this.getIcon() + \" \" + super.toString() + \" | Sem: \" + semester;"
       },
       {
-        "lineNumber": 169,
+        "lineNumber": 163,
         "author": {
           "gitId": "bennychanya"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 170,
+        "lineNumber": 164,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 171,
+        "lineNumber": 165,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": ""
       },
       {
-        "lineNumber": 172,
+        "lineNumber": 166,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "    @Override"
       },
       {
-        "lineNumber": 173,
+        "lineNumber": 167,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "    public String toStorageString() {"
       },
       {
-        "lineNumber": 174,
+        "lineNumber": 168,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "        StringBuilder storageString \u003d new StringBuilder();"
       },
       {
-        "lineNumber": 175,
+        "lineNumber": 169,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": ""
       },
       {
-        "lineNumber": 176,
+        "lineNumber": 170,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "        if (isIdValid) {"
       },
       {
-        "lineNumber": 177,
+        "lineNumber": 171,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "            storageString.append(id);"
       },
       {
-        "lineNumber": 178,
+        "lineNumber": 172,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "        } else {"
       },
       {
-        "lineNumber": 179,
+        "lineNumber": 173,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "            storageString.append(\"/\");"
       },
       {
-        "lineNumber": 180,
+        "lineNumber": 174,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 181,
+        "lineNumber": 175,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "        storageString.append(\",\");"
       },
       {
-        "lineNumber": 182,
+        "lineNumber": 176,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": ""
       },
       {
-        "lineNumber": 183,
+        "lineNumber": 177,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "        if (isNameValid) {"
       },
       {
-        "lineNumber": 184,
+        "lineNumber": 178,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "            storageString.append(name);"
       },
       {
-        "lineNumber": 185,
+        "lineNumber": 179,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "        } else {"
       },
       {
-        "lineNumber": 186,
+        "lineNumber": 180,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "            storageString.append(\"/\");"
       },
       {
-        "lineNumber": 187,
+        "lineNumber": 181,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 188,
+        "lineNumber": 182,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "        storageString.append(\",\");"
       },
       {
-        "lineNumber": 189,
+        "lineNumber": 183,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": ""
       },
       {
-        "lineNumber": 190,
+        "lineNumber": 184,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "        storageString.append(moduleCredit).append(\",\");"
       },
       {
-        "lineNumber": 191,
+        "lineNumber": 185,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "        storageString.append(semester).append(\",\");"
       },
       {
-        "lineNumber": 192,
+        "lineNumber": 186,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "        storageString.append(isDone).append(\",\");"
       },
       {
-        "lineNumber": 193,
+        "lineNumber": 187,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "        if (isDone) {"
       },
       {
-        "lineNumber": 194,
+        "lineNumber": 188,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "            storageString.append(grade.getGrade());"
       },
       {
-        "lineNumber": 195,
+        "lineNumber": 189,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "        } else {"
       },
       {
-        "lineNumber": 196,
+        "lineNumber": 190,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "            storageString.append(\"/\");"
       },
       {
-        "lineNumber": 197,
+        "lineNumber": 191,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 198,
+        "lineNumber": 192,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "        return storageString.toString();"
       },
       {
-        "lineNumber": 199,
+        "lineNumber": 193,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 200,
+        "lineNumber": 194,
         "author": {
           "gitId": "RenzoTsai"
         },
@@ -11683,8 +11915,8 @@
     ],
     "authorContributionMap": {
       "DeetoMok": 2,
-      "RenzoTsai": 138,
-      "bennychanya": 60
+      "RenzoTsai": 131,
+      "bennychanya": 61
     }
   },
   {
@@ -15903,9 +16135,9 @@
       {
         "lineNumber": 81,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "bennychanya"
         },
-        "content": "        boolean isDone \u003d Boolean.valueOf(moduleInfoWords[4]).booleanValue();"
+        "content": "        boolean isDone \u003d Boolean.parseBoolean(moduleInfoWords[4]);"
       },
       {
         "lineNumber": 82,
@@ -16329,7 +16561,8 @@
       }
     ],
     "authorContributionMap": {
-      "RenzoTsai": 141
+      "RenzoTsai": 140,
+      "bennychanya": 1
     }
   },
   {
@@ -17413,6 +17646,169 @@
       "DeetoMok": 47,
       "RenzoTsai": 27,
       "bennychanya": 35
+    }
+  },
+  {
+    "path": "src/test/java/seedu/duke/data/PersonTest.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "package seedu.duke.data;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "import org.junit.jupiter.api.Test;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "import static org.junit.jupiter.api.Assertions.assertEquals;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "public class PersonTest {"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    void getPersonName() {"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        Person person \u003d new Person(\"Duke\", 2018);"
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        String name \u003d \"Duke\";"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        assertEquals(name, Person.getName());"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    @Test"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    void getPersonYear() {"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        Person person \u003d new Person(\"Duke\", 2018);"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        int matricYear \u003d 2018;"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "        assertEquals(matricYear, Person.getMatricYear());"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "bennychanya": 22
     }
   },
   {
