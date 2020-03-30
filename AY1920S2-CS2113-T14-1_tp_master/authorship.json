@@ -502,7 +502,7 @@
         "author": {
           "gitId": "Zhilin-Huang"
         },
-        "content": "{Description for Parser Component}"
+        "content": "The structure of the Parser Component is illustrated in the following diagram:"
       },
       {
         "lineNumber": 20,
@@ -516,7 +516,7 @@
         "author": {
           "gitId": "Zhilin-Huang"
         },
-        "content": "#### Storage Component"
+        "content": "![ParserComponentDiagram](images/ParserComponent.png)"
       },
       {
         "lineNumber": 22,
@@ -530,7 +530,7 @@
         "author": {
           "gitId": "Zhilin-Huang"
         },
-        "content": "{Description for Storage Component}"
+        "content": "API : `Parser.java`"
       },
       {
         "lineNumber": 24,
@@ -544,147 +544,147 @@
         "author": {
           "gitId": "Zhilin-Huang"
         },
-        "content": "### Implementation"
+        "content": "1. The `Main` class (not shown in the diagram above) uses the `Parser` class to parse the user command."
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "Zhilin-Huang"
         },
-        "content": ""
+        "content": "2. The `Parser` class depends on multiple classes including the `FlashcardFactory`, `FlashcardList`, `GroupFactory"
       },
       {
         "lineNumber": 27,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "#### Set Priority Feature"
+        "content": "`, `GroupList`, `StudyPlanList` and `Ui` classes to create a `Command` object from user input."
       },
       {
         "lineNumber": 28,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
-        "content": ""
+        "content": "3. The resulting `Command` object which then can be executed by the `Main` class."
       },
       {
         "lineNumber": 29,
         "author": {
-          "gitId": "g-lilian"
-        },
-        "content": "The Set Priority feature allows users to mark a flashcard with a specified priority level. The priority level is"
-      },
-      {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "g-lilian"
-        },
-        "content": "then reflected when the user requests a list of existing flashcards."
-      },
-      {
-        "lineNumber": 31,
-        "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
         "content": ""
       },
       {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "Zhilin-Huang"
+        },
+        "content": "Given below is the Sequence Diagram for interactions between the `Parser` and `Command` components for the"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "Zhilin-Huang"
+        },
+        "content": "`parseCommand` API call from `Main` class. We use the interaction between the `Parser` and `DeleteCommand` class as"
+      },
+      {
         "lineNumber": 32,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "##### Proposed Implementation"
+        "content": " an example: "
       },
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
         "content": ""
       },
       {
         "lineNumber": 34,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "`PriorityLevel` is stored as an enum with four fields: LOW, MEDIUM, HIGH and DEFAULT."
+        "content": "![ParserAndCommandSequenceDiagram](images/ParserAndCommandSequenceDiagram.png)"
       },
       {
         "lineNumber": 35,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
         "content": ""
       },
       {
         "lineNumber": 36,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "The feature implements the following operations:"
+        "content": "#### Storage Component"
       },
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
         "content": ""
       },
       {
         "lineNumber": 38,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "- `Flashcard#setPriorityLevel()` - Sets a flashcard to a specified priority level (LOW/MEDIUM/HIGH)."
+        "content": "{Description for Storage Component}"
       },
       {
         "lineNumber": 39,
         "author": {
-          "gitId": "g-lilian"
-        },
-        "content": "- `Flashcard#getPriorityAsString()` - Return an icon indicating the flashcard\u0027s priority level."
-      },
-      {
-        "lineNumber": 40,
-        "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
         "content": ""
       },
       {
+        "lineNumber": 40,
+        "author": {
+          "gitId": "Zhilin-Huang"
+        },
+        "content": "### Implementation"
+      },
+      {
         "lineNumber": 41,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "The following class diagram shows the structures relevant to the Set Priority feature:"
+        "content": ""
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": ""
+        "content": "#### Set Priority Feature"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "![SetPriorityFeatureClassDiagram](images/SetPriorityFeatureClassDiagram.png)"
+        "content": ""
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": ""
+        "content": "The Set Priority feature allows users to mark a flashcard with a specified priority level. The priority level is"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "Given below is an example usage scenario and how the set priority mechanism behaves at each step."
+        "content": "then reflected when the user requests a list of existing flashcards."
       },
       {
         "lineNumber": 46,
@@ -698,56 +698,56 @@
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "Step 1. The user launches the application and creates a new `Flashcard` (of type Event, Person, or Other), "
+        "content": "##### Proposed Implementation"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "with a default priority level of DEFAULT."
+        "content": ""
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": ""
+        "content": "`PriorityLevel` is stored as an enum with four fields: LOW, MEDIUM, HIGH and DEFAULT."
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "Step 2. The user executes `priority [flashcard index] [priority level]` command and the `setPriorityLevel` "
+        "content": ""
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "operation is invoked. Subsequently, the flashcard of specified index is retrieved from the main `FlashcardList` "
+        "content": "The feature implements the following operations:"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "instance. Its priority level is set to the specified priority."
+        "content": ""
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": ""
+        "content": "- `Flashcard#setPriorityLevel()` - Sets a flashcard to a specified priority level (LOW/MEDIUM/HIGH)."
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "The following sequence diagram shows the relevant interactions behind `setPriorityLevel`:"
+        "content": "- `Flashcard#getPriorityAsString()` - Return an icon indicating the flashcard\u0027s priority level."
       },
       {
         "lineNumber": 55,
@@ -761,7 +761,7 @@
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "![setPriorityLevelSequenceDiagram](images/setPriorityLevelSequenceDiagram.png)"
+        "content": "The following class diagram shows the structures relevant to the Set Priority feature:"
       },
       {
         "lineNumber": 57,
@@ -773,142 +773,142 @@
       {
         "lineNumber": 58,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": "#### Study Plan Feature"
+        "content": "![SetPriorityFeatureClassDiagram](images/SetPriorityFeatureClassDiagram.png)"
       },
       {
         "lineNumber": 59,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
         "content": ""
       },
       {
         "lineNumber": 60,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": "##### Proposed Implementation"
+        "content": "Given below is an example usage scenario and how the set priority mechanism behaves at each step."
       },
       {
         "lineNumber": 61,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
         "content": ""
       },
       {
         "lineNumber": 62,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": "The Study Plan feature is facilitated by `StudyPlanList`."
+        "content": "Step 1. The user launches the application and creates a new `Flashcard` (of type Event, Person, or Other), "
       },
       {
         "lineNumber": 63,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": ""
+        "content": "with a default priority level of DEFAULT."
       },
       {
         "lineNumber": 64,
         "author": {
-          "gitId": "Zhilin-Huang"
-        },
-        "content": "Internally, it implements a `TreeMap`, with date as key and the list of flashcard indexes to study as value. "
-      },
-      {
-        "lineNumber": 65,
-        "author": {
-          "gitId": "Zhilin-Huang"
-        },
-        "content": "Key-value pairs in the `TreeMap` are sorted by dates."
-      },
-      {
-        "lineNumber": 66,
-        "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
         "content": ""
       },
       {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "Step 2. The user executes `priority [flashcard index] [priority level]` command and the `setPriorityLevel` "
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "operation is invoked. Subsequently, the flashcard of specified index is retrieved from the main `FlashcardList` "
+      },
+      {
         "lineNumber": 67,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": "It implements the following operations:"
+        "content": "instance. Its priority level is set to the specified priority."
       },
       {
         "lineNumber": 68,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
         "content": ""
       },
       {
         "lineNumber": 69,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": "- `StudyPlanList#updateStudyPlan()` - Updates the study plan list."
+        "content": "The following sequence diagram shows the relevant interactions behind `setPriorityLevel`:"
       },
       {
         "lineNumber": 70,
         "author": {
-          "gitId": "Zhilin-Huang"
-        },
-        "content": "- `StudyPlanList#getStudyPlanList()` - Gets the list of study plans."
-      },
-      {
-        "lineNumber": 71,
-        "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
         "content": ""
       },
       {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "![setPriorityLevelSequenceDiagram](images/setPriorityLevelSequenceDiagram.png)"
+      },
+      {
         "lineNumber": 72,
         "author": {
-          "gitId": "Zhilin-Huang"
+          "gitId": "g-lilian"
         },
-        "content": "Given below is an example usage scenario and how the study plan mechanism behaves at each step."
+        "content": ""
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "Zhilin-Huang"
         },
-        "content": ""
+        "content": "#### Study Plan Feature"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "Zhilin-Huang"
         },
-        "content": "Step 1. The user launches the application and an empty `StudyPlanList` is initialized."
+        "content": ""
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "Zhilin-Huang"
         },
-        "content": ""
+        "content": "##### Proposed Implementation"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "Zhilin-Huang"
         },
-        "content": "Step 2. The user executes `plan` command and the `updateStudyPlan` operation is invoked. The application prompts the"
+        "content": ""
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "Zhilin-Huang"
         },
-        "content": "user for date and the corresponding list of flashcards indexes."
+        "content": "The Study Plan feature is facilitated by `StudyPlanList`."
       },
       {
         "lineNumber": 78,
@@ -922,189 +922,189 @@
         "author": {
           "gitId": "Zhilin-Huang"
         },
-        "content": "The following sequence diagram shows how the `updateStudyPlan` operation works:"
+        "content": "Internally, it implements a `TreeMap`, with date as key and the list of flashcard indexes to study as value. "
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "Zhilin-Huang"
         },
-        "content": ""
+        "content": "Key-value pairs in the `TreeMap` are sorted by dates."
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "Zhilin-Huang"
         },
-        "content": "![updateStudyPlanSequenceDiagram](images/updateStudyPlanSequenceDiagram.png)"
+        "content": ""
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "Zhilin-Huang"
         },
-        "content": ""
+        "content": "It implements the following operations:"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "Zhilin-Huang"
         },
-        "content": "Step 3. The user executes `show-plan` command and the `getStudyPlanList` operation is invoked. The application"
+        "content": ""
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "Zhilin-Huang"
         },
-        "content": "displays the user\u0027s study plan list."
+        "content": "- `StudyPlanList#updateStudyPlan()` - Updates the study plan list."
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "Zhilin-Huang"
         },
-        "content": ""
+        "content": "- `StudyPlanList#getStudyPlanList()` - Gets the list of study plans."
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "Zhilin-Huang"
         },
-        "content": "The following sequence diagram shows how the `getStudyPlanList` operation works:"
+        "content": ""
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "Zhilin-Huang"
         },
-        "content": ""
+        "content": "Given below is an example usage scenario and how the study plan mechanism behaves at each step."
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "Zhilin-Huang"
         },
-        "content": "![getStudyPlanListSequenceDiagram](images/getStudyPlanListSequenceDiagram.png)"
+        "content": ""
       },
       {
         "lineNumber": 89,
         "author": {
-          "gitId": "-"
+          "gitId": "Zhilin-Huang"
         },
-        "content": ""
+        "content": "Step 1. The user launches the application and an empty `StudyPlanList` is initialized."
       },
       {
         "lineNumber": 90,
         "author": {
-          "gitId": "sliu107"
-        },
-        "content": "#### Random Review Feature"
-      },
-      {
-        "lineNumber": 91,
-        "author": {
-          "gitId": "sliu107"
+          "gitId": "Zhilin-Huang"
         },
         "content": ""
       },
       {
+        "lineNumber": 91,
+        "author": {
+          "gitId": "Zhilin-Huang"
+        },
+        "content": "Step 2. The user executes `plan` command and the `updateStudyPlan` operation is invoked. The application prompts the"
+      },
+      {
         "lineNumber": 92,
         "author": {
-          "gitId": "sliu107"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "##### Proposed Implementation"
+        "content": "user for date and the corresponding list of flashcards indexes."
       },
       {
         "lineNumber": 93,
         "author": {
-          "gitId": "sliu107"
+          "gitId": "Zhilin-Huang"
         },
         "content": ""
       },
       {
         "lineNumber": 94,
         "author": {
-          "gitId": "sliu107"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "The random review mechanism is facilitated by `FlashcardList`.It stores an `List\u003cFlashcard\u003e` internally which contains"
+        "content": "The following sequence diagram shows how the `updateStudyPlan` operation works:"
       },
       {
         "lineNumber": 95,
         "author": {
-          "gitId": "sliu107"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "all the flashcards created by the user."
+        "content": ""
       },
       {
         "lineNumber": 96,
         "author": {
-          "gitId": "sliu107"
+          "gitId": "Zhilin-Huang"
         },
-        "content": ""
+        "content": "![updateStudyPlanSequenceDiagram](images/updateStudyPlanSequenceDiagram.png)"
       },
       {
         "lineNumber": 97,
         "author": {
-          "gitId": "sliu107"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "It implements the following operation:"
+        "content": ""
       },
       {
         "lineNumber": 98,
         "author": {
-          "gitId": "sliu107"
+          "gitId": "Zhilin-Huang"
         },
-        "content": ""
+        "content": "Step 3. The user executes `show-plan` command and the `getStudyPlanList` operation is invoked. The application"
       },
       {
         "lineNumber": 99,
         "author": {
-          "gitId": "sliu107"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "- `FlashcardList#reviewRandomFlashcards()` -Randomize all the flashcards, then display the details of them one by one "
+        "content": "displays the user\u0027s study plan list."
       },
       {
         "lineNumber": 100,
         "author": {
-          "gitId": "sliu107"
+          "gitId": "Zhilin-Huang"
         },
-        "content": "to the user. And update the review status of the flashcards corresponding to the user\u0027s\u0027 responses."
+        "content": ""
       },
       {
         "lineNumber": 101,
         "author": {
-          "gitId": "sliu107"
+          "gitId": "Zhilin-Huang"
         },
-        "content": ""
+        "content": "The following sequence diagram shows how the `getStudyPlanList` operation works:"
       },
       {
         "lineNumber": 102,
         "author": {
-          "gitId": "sliu107"
-        },
-        "content": "Given below is an example usage scenario and how the random review mechanism behaves at each step."
-      },
-      {
-        "lineNumber": 103,
-        "author": {
-          "gitId": "sliu107"
+          "gitId": "Zhilin-Huang"
         },
         "content": ""
       },
       {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "Zhilin-Huang"
+        },
+        "content": "![getStudyPlanListSequenceDiagram](images/getStudyPlanListSequenceDiagram.png)"
+      },
+      {
         "lineNumber": 104,
         "author": {
-          "gitId": "sliu107"
+          "gitId": "-"
         },
-        "content": "Step 1. The user launches the application for the first time. The `FlashcardsList` will be initialized with the empty "
+        "content": ""
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "sliu107"
         },
-        "content": "flashcards list."
+        "content": "#### Random Review Feature"
       },
       {
         "lineNumber": 106,
@@ -1118,486 +1118,591 @@
         "author": {
           "gitId": "sliu107"
         },
-        "content": "Step 2. The user executes `event/person/other commands` to add multiple flashcards to the flashcard list "
+        "content": "##### Proposed Implementation"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "sliu107"
         },
-        "content": "(The detailed implementation of creating flashcards explained in the Flashcard Creation Feature)"
+        "content": ""
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "sliu107"
         },
-        "content": ""
+        "content": "The random review mechanism is facilitated by `FlashcardList`.It stores an `List\u003cFlashcard\u003e` internally which contains"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "sliu107"
         },
-        "content": "Step 3. The user executes `random command` and `reviewRandomFlashcards()` operation is invoked. The application prompts "
+        "content": "all the flashcards created by the user."
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "sliu107"
         },
-        "content": "responses for each unreviewed flashcard that whether the user want to mark it as reviewed or not."
+        "content": ""
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "sliu107"
         },
-        "content": ""
+        "content": "It implements the following operation:"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "sliu107"
         },
-        "content": "The following sequence diagram shows how the   `reviewRandomFlashcards()` operation works:"
+        "content": ""
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "sliu107"
         },
-        "content": ""
+        "content": "- `FlashcardList#reviewRandomFlashcards()` -Randomize all the flashcards, then display the details of them one by one "
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "sliu107"
         },
-        "content": "![randomReviewSequenceDiagram](images/randomReviewSequenceDiagram.png)"
+        "content": "to the user. And update the review status of the flashcards corresponding to the user\u0027s\u0027 responses."
       },
       {
         "lineNumber": 116,
         "author": {
-          "gitId": "-"
+          "gitId": "sliu107"
         },
         "content": ""
       },
       {
         "lineNumber": 117,
         "author": {
-          "gitId": "-"
+          "gitId": "sliu107"
         },
-        "content": "## Product Scope"
+        "content": "Given below is an example usage scenario and how the random review mechanism behaves at each step."
       },
       {
         "lineNumber": 118,
         "author": {
-          "gitId": "-"
+          "gitId": "sliu107"
         },
-        "content": "### Target user profile"
+        "content": ""
       },
       {
         "lineNumber": 119,
         "author": {
-          "gitId": "-"
+          "gitId": "sliu107"
         },
-        "content": ""
+        "content": "Step 1. The user launches the application for the first time. The `FlashcardsList` will be initialized with the empty "
       },
       {
         "lineNumber": 120,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "History Flashcard (HF) is for those who are studying history subjects to create flashcards which summarize "
+        "content": "flashcards list."
       },
       {
         "lineNumber": 121,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "the most important information for historical events, figures and artifacts. HF is optimized for those who "
+        "content": ""
       },
       {
         "lineNumber": 122,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "prefer to use a simple Command Line Interface (CLI). "
+        "content": "Step 2. The user executes `event/person/other commands` to add multiple flashcards to the flashcard list "
       },
       {
         "lineNumber": 123,
         "author": {
-          "gitId": "-"
+          "gitId": "sliu107"
         },
-        "content": ""
+        "content": "(The detailed implementation of creating flashcards explained in the Flashcard Creation Feature)"
       },
       {
         "lineNumber": 124,
         "author": {
-          "gitId": "-"
-        },
-        "content": "### Value proposition"
-      },
-      {
-        "lineNumber": 125,
-        "author": {
-          "gitId": "-"
+          "gitId": "sliu107"
         },
         "content": ""
       },
       {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "sliu107"
+        },
+        "content": "Step 3. The user executes `random command` and `reviewRandomFlashcards()` operation is invoked. The application prompts "
+      },
+      {
         "lineNumber": 126,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "History is a subject that usually relies on heavy memorisation of a large amount of content. In order to "
+        "content": "responses for each unreviewed flashcard that whether the user want to mark it as reviewed or not."
       },
       {
         "lineNumber": 127,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "make revision easier for history students, HF includes features that help with memory retention and organises "
+        "content": ""
       },
       {
         "lineNumber": 128,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "information in a way that makes it convenient to review."
+        "content": "The following sequence diagram shows how the   `reviewRandomFlashcards()` operation works:"
       },
       {
         "lineNumber": 129,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
         "content": ""
       },
       {
         "lineNumber": 130,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "sliu107"
         },
-        "content": "In HF, information can be entered in the form of flashcards with different fields, such as the name of the "
+        "content": "![randomReviewSequenceDiagram](images/randomReviewSequenceDiagram.png)"
       },
       {
         "lineNumber": 131,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "-"
         },
-        "content": "historical event/person, the relevant dates, and a summary. Flashcards can be categorised into user-defined groups"
+        "content": ""
       },
       {
         "lineNumber": 132,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "-"
         },
-        "content": " to enable students to organise their knowledge better. Users can also create daily study plans."
+        "content": "## Product Scope"
       },
       {
         "lineNumber": 133,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "-"
         },
-        "content": " "
+        "content": "### Target user profile"
       },
       {
         "lineNumber": 134,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "-"
         },
-        "content": " In addition, the user can shuffle and display random flashcards for revision."
+        "content": ""
       },
       {
         "lineNumber": 135,
         "author": {
-          "gitId": "-"
+          "gitId": "g-lilian"
         },
-        "content": ""
+        "content": "History Flashcard (HF) is for those who are studying history subjects to create flashcards which summarize "
       },
       {
         "lineNumber": 136,
         "author": {
-          "gitId": "-"
+          "gitId": "g-lilian"
         },
-        "content": "## User Stories"
+        "content": "the most important information for historical events, figures and artifacts. HF is optimized for those who "
       },
       {
         "lineNumber": 137,
         "author": {
-          "gitId": "-"
+          "gitId": "g-lilian"
         },
-        "content": ""
+        "content": "prefer to use a simple Command Line Interface (CLI). "
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "-"
         },
-        "content": "|Version| As a ... | I want to ... | So that I can ...|"
+        "content": ""
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "-"
         },
-        "content": "|--------|----------|---------------|------------------|"
+        "content": "### Value proposition"
       },
       {
         "lineNumber": 140,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "-"
         },
-        "content": "|v1.0|student|add a Person flashcard|record the details about a historical figure|"
+        "content": ""
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "|v1.0|student|add an Event flashcard|record the details about a historical event|"
+        "content": "History is a subject that usually relies on heavy memorisation of a large amount of content. In order to "
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "|v1.0|student|add an Other flashcard|record the details about any other historical item|"
+        "content": "make revision easier for history students, HF includes features that help with memory retention and organises "
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "|v1.0|student|list all flashcards|get an overview of all my existing flashcards|"
+        "content": "information in a way that makes it convenient to review."
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "|v1.0|student|delete a flashcard|remove the flashcards that I no longer need|"
+        "content": ""
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "|v1.0|student|view all the fields of a flashcard|review the details of a specific flashcard|"
+        "content": "In HF, information can be entered in the form of flashcards with different fields, such as the name of the "
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "|v1.0|student|mark a flashcard as Reviewed|keep track of my learning progress|"
+        "content": "historical event/person, the relevant dates, and a summary. Flashcards can be categorised into user-defined groups"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "|v1.0|student|assign priority to flashcards|identify the relative importance of flashcards for review|"
+        "content": " to enable students to organise their knowledge better. Users can also create daily study plans."
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "|v1.0|student|view a timeline of all events and people|better organize my knowledge|"
+        "content": " "
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "|v1.0|student|make groups for flashcards|group related flashcards together for more organized revision|"
+        "content": " In addition, the user can shuffle and display random flashcards for revision."
       },
       {
         "lineNumber": 150,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "-"
         },
-        "content": "|v1.0|student|see all the commands available|find out what commands are available, and their format|"
+        "content": ""
       },
       {
         "lineNumber": 151,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "-"
         },
-        "content": "|v2.0|student|set a daily study plan|keep myself motivated to review flashcards every day|"
+        "content": "## User Stories"
       },
       {
         "lineNumber": 152,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "-"
         },
-        "content": "|v2.0|student|list the flashcards which have been reviewed|keep track of my learning progress|"
+        "content": ""
       },
       {
         "lineNumber": 153,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "-"
         },
-        "content": "|v2.0|student|list all existing flashcard groups|view all the groups I have created|"
+        "content": "|Version| As a ... | I want to ... | So that I can ...|"
       },
       {
         "lineNumber": 154,
         "author": {
-          "gitId": "g-lilian"
+          "gitId": "-"
         },
-        "content": "|v2.0|student|list flashcards from a particular group|quickly identify the flashcards belonging to a group|"
+        "content": "|--------|----------|---------------|------------------|"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "|v2.0|student|search for flashcards using a keyword|quickly find the flashcard I am looking for|"
+        "content": "|v1.0|student|add a Person flashcard|record the details about a historical figure|"
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "|v2.0|student|save flashcards to a storage file|flashcards are not lost when I exit the app|"
+        "content": "|v1.0|student|add an Event flashcard|record the details about a historical event|"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "|v2.0|student|read in flashcards from a storage file|flashcards can be loaded when I enter the app|"
+        "content": "|v1.0|student|add an Other flashcard|record the details about any other historical item|"
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "|v2.0|student|save my daily study plan to a storage file|study plans are not lost when I exit the app|"
+        "content": "|v1.0|student|list all flashcards|get an overview of all my existing flashcards|"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "|v2.0|student|read in study plans from a storage file|study plans can be loaded when I enter the app|"
+        "content": "|v1.0|student|delete a flashcard|remove the flashcards that I no longer need|"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "|v2.0|student|save flashcard groups to a storage file|groups are not lost when I exit the app|"
+        "content": "|v1.0|student|view all the fields of a flashcard|review the details of a specific flashcard|"
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "|v2.0|student|read in flashcard groups from a storage file|groups can be loaded when I enter the app|"
+        "content": "|v1.0|student|mark a flashcard as Reviewed|keep track of my learning progress|"
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "|v2.0|student|restrict the timeline to a fixed period|keep track of flashcards belonging to a certain time period|"
+        "content": "|v1.0|student|assign priority to flashcards|identify the relative importance of flashcards for review|"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "g-lilian"
         },
-        "content": "|v2.0|student|shuffle and display random flashcards|test my knowledge using random flashcards|"
+        "content": "|v1.0|student|view a timeline of all events and people|better organize my knowledge|"
       },
       {
         "lineNumber": 164,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v1.0|student|make groups for flashcards|group related flashcards together for more organized revision|"
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v1.0|student|see all the commands available|find out what commands are available, and their format|"
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|set a daily study plan|keep myself motivated to review flashcards every day|"
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|list the flashcards which have been reviewed|keep track of my learning progress|"
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|list all existing flashcard groups|view all the groups I have created|"
+      },
+      {
+        "lineNumber": 169,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|list flashcards from a particular group|quickly identify the flashcards belonging to a group|"
+      },
+      {
+        "lineNumber": 170,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|search for flashcards using a keyword|quickly find the flashcard I am looking for|"
+      },
+      {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|save flashcards to a storage file|flashcards are not lost when I exit the app|"
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|read in flashcards from a storage file|flashcards can be loaded when I enter the app|"
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|save my daily study plan to a storage file|study plans are not lost when I exit the app|"
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|read in study plans from a storage file|study plans can be loaded when I enter the app|"
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|save flashcard groups to a storage file|groups are not lost when I exit the app|"
+      },
+      {
+        "lineNumber": 176,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|read in flashcard groups from a storage file|groups can be loaded when I enter the app|"
+      },
+      {
+        "lineNumber": 177,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|restrict the timeline to a fixed period|keep track of flashcards belonging to a certain time period|"
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "|v2.0|student|shuffle and display random flashcards|test my knowledge using random flashcards|"
+      },
+      {
+        "lineNumber": 179,
         "author": {
           "gitId": "sliu107"
         },
         "content": "|v2.0|student|reset all the flashcards as unreviewed|review flashcards for multiple times"
       },
       {
-        "lineNumber": 165,
+        "lineNumber": 180,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 166,
+        "lineNumber": 181,
         "author": {
           "gitId": "-"
         },
         "content": "## Non-Functional Requirements"
       },
       {
-        "lineNumber": 167,
+        "lineNumber": 182,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 168,
+        "lineNumber": 183,
         "author": {
           "gitId": "-"
         },
         "content": "{Give non-functional requirements}"
       },
       {
-        "lineNumber": 169,
+        "lineNumber": 184,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 170,
+        "lineNumber": 185,
         "author": {
           "gitId": "-"
         },
         "content": "## Glossary"
       },
       {
-        "lineNumber": 171,
+        "lineNumber": 186,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 172,
+        "lineNumber": 187,
         "author": {
           "gitId": "-"
         },
         "content": "* *glossary item* - Definition"
       },
       {
-        "lineNumber": 173,
+        "lineNumber": 188,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 174,
+        "lineNumber": 189,
         "author": {
           "gitId": "-"
         },
         "content": "## Instructions for Manual Testing"
       },
       {
-        "lineNumber": 175,
+        "lineNumber": 190,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 176,
+        "lineNumber": 191,
         "author": {
           "gitId": "-"
         },
@@ -1605,10 +1710,76 @@
       }
     ],
     "authorContributionMap": {
-      "Zhilin-Huang": 50,
+      "Zhilin-Huang": 65,
       "sliu107": 27,
       "g-lilian": 67,
       "-": 32
+    }
+  },
+  {
+    "path": "docs/README.md",
+    "fileType": "md",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "# Duke"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "{Give product intro here}"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "Useful links:"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "* [User Guide](UserGuide.md)"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "g-lilian"
+        },
+        "content": "* [Developer Guide](DeveloperGuide.md)"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "* [About Us](AboutUs.md)"
+      }
+    ],
+    "authorContributionMap": {
+      "g-lilian": 1,
+      "-": 7
     }
   },
   {
