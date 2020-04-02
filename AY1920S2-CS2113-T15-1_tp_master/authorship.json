@@ -11362,56 +11362,56 @@
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import jikan.exception.ExistingTagGoalException;"
+        "content": "import jikan.activity.ActivityList;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import jikan.exception.InvalidTimeFrameException;"
+        "content": "import jikan.exception.EmptyNameException;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import jikan.exception.NegativeDurationException;"
+        "content": "import jikan.exception.ExistingTagGoalException;"
       },
       {
         "lineNumber": 6,
-        "author": {
-          "gitId": "siuhian"
-        },
-        "content": "import jikan.log.Log;"
-      },
-      {
-        "lineNumber": 7,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "import jikan.activity.ActivityList;"
-      },
-      {
-        "lineNumber": 8,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "import jikan.exception.EmptyNameException;"
-      },
-      {
-        "lineNumber": 9,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "import jikan.exception.InvalidEditFormatException;"
       },
       {
-        "lineNumber": 10,
+        "lineNumber": 7,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "import jikan.exception.InvalidTimeFrameException;"
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "import jikan.exception.NegativeDurationException;"
+      },
+      {
+        "lineNumber": 9,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "import jikan.exception.NoSuchActivityException;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "import jikan.log.Log;"
       },
       {
         "lineNumber": 11,
@@ -11453,28 +11453,28 @@
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import java.util.HashSet;"
+        "content": "import java.util.Arrays;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import java.util.Set;"
+        "content": "import java.util.HashSet;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "import java.util.Set;"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import static jikan.Jikan.tagFile;"
+        "content": ""
       },
       {
         "lineNumber": 20,
@@ -11628,651 +11628,651 @@
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            // edit name"
+        "content": "            String newName \u003d \"\";"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            if (delimiter !\u003d -1 \u0026\u0026 tagDelim \u003d\u003d -1 \u0026\u0026 allocDelim \u003d\u003d -1)  {"
-      },
-      {
-        "lineNumber": 43,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                Parser.activityName \u003d parameters.substring(0, delimiter).strip();"
-      },
-      {
-        "lineNumber": 44,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 45,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "                //edit tag"
-      },
-      {
-        "lineNumber": 46,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "            } else if (delimiter \u003d\u003d -1 \u0026\u0026 tagDelim !\u003d -1 \u0026\u0026 allocDelim \u003d\u003d -1) {"
-      },
-      {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "                Parser.activityName \u003d parameters.substring(0, tagDelim).strip();"
-      },
-      {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 49,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "                //edit allocatedTime"
-      },
-      {
-        "lineNumber": 50,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "            } else {"
-      },
-      {
-        "lineNumber": 51,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "                Parser.activityName \u003d parameters.substring(0, allocDelim).strip();"
-      },
-      {
-        "lineNumber": 52,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 53,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 54,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            if (Parser.activityName.isEmpty()) {"
-      },
-      {
-        "lineNumber": 55,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "                throw new EmptyNameException();"
-      },
-      {
-        "lineNumber": 56,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 57,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 58,
-        "author": {
-          "gitId": "btricec"
-        },
-        "content": "            int index \u003d activityList.findActivity(Parser.activityName);"
-      },
-      {
-        "lineNumber": 59,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "            String newName \u003d \"\";"
-      },
-      {
-        "lineNumber": 60,
-        "author": {
-          "gitId": "nigellenl"
-        },
         "content": "            String[] tmpTags;"
       },
       {
-        "lineNumber": 61,
+        "lineNumber": 43,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "            String tmpAlloc \u003d \"\";"
       },
       {
-        "lineNumber": 62,
+        "lineNumber": 44,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "            Duration newAllocTime \u003d null;"
       },
       {
-        "lineNumber": 63,
+        "lineNumber": 45,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "            Set\u003cString\u003e newTags \u003d new HashSet\u003cString\u003e();"
       },
       {
-        "lineNumber": 64,
+        "lineNumber": 46,
         "author": {
           "gitId": "nigellenl"
         },
         "content": ""
       },
       {
-        "lineNumber": 65,
+        "lineNumber": 47,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "            //edit name"
       },
       {
-        "lineNumber": 66,
+        "lineNumber": 48,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            if (delimiter !\u003d -1 \u0026\u0026 tagDelim \u003d\u003d -1 \u0026\u0026 allocDelim \u003d\u003d -1) {"
+        "content": "            if (delimiter !\u003d -1)  {"
       },
       {
-        "lineNumber": 67,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "                newName \u003d parameters.substring(delimiter + 4);"
-      },
-      {
-        "lineNumber": 68,
+        "lineNumber": 49,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "                Parser.activityName \u003d parameters.substring(0, delimiter).strip();"
       },
       {
-        "lineNumber": 69,
+        "lineNumber": 50,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                newName \u003d parameters.substring(delimiter + 4).strip();"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                if (newName.isEmpty()) {"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                    Ui.printDivider(\"New activity name cannot be empty!\");"
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                    throw new EmptyNameException();"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 55,
         "author": {
           "gitId": "nigellenl"
         },
         "content": ""
       },
       {
-        "lineNumber": 70,
+        "lineNumber": 56,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "                //edit tag"
       },
       {
-        "lineNumber": 71,
+        "lineNumber": 57,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            } else if (delimiter \u003d\u003d -1 \u0026\u0026 tagDelim !\u003d -1 \u0026\u0026 allocDelim \u003d\u003d -1) {"
+        "content": "            } else if (tagDelim !\u003d -1) {"
       },
       {
-        "lineNumber": 72,
+        "lineNumber": 58,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                Parser.activityName \u003d parameters.substring(0, tagDelim).strip();"
+      },
+      {
+        "lineNumber": 59,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "                tmpTags \u003d (parameters.substring(tagDelim + 4).split(\" \"));"
       },
       {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                newTags.addAll(Arrays.asList(tmpTags));"
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "            //edit allocated time"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "            } else if (allocDelim !\u003d -1) {"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                Parser.activityName \u003d parameters.substring(0, allocDelim).strip();"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                tmpAlloc \u003d parameters.substring(allocDelim + 4).strip();"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                if (tmpAlloc.isEmpty()) {"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                    throw new InvalidTimeFrameException();"
+      },
+      {
+        "lineNumber": 68,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "                newAllocTime \u003d parseDuration(tmpAlloc);"
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "            //invalid format"
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "            } else {"
+      },
+      {
         "lineNumber": 73,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                for (String t : tmpTags) {"
+        "content": "                throw new InvalidEditFormatException();"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                    newTags.add(t);"
+        "content": "            }"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                }"
+        "content": ""
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "            if (Parser.activityName.isEmpty()) {"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                //edit allocatedTime"
+        "content": "                Ui.printDivider(\"Activity name cannot be empty!\");"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            } else {"
+        "content": "                throw new EmptyNameException();"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                tmpAlloc \u003d parameters.substring(allocDelim + 4);"
+        "content": "            }"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                try {"
+        "content": ""
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                    newAllocTime \u003d parseDuration(tmpAlloc);"
+        "content": "            int index \u003d activityList.findActivity(Parser.activityName);"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                } catch (InvalidTimeFrameException e) {"
-      },
-      {
-        "lineNumber": 83,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "                    Ui.printDivider(\"Invalid time frame entered!\");"
-      },
-      {
-        "lineNumber": 84,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "                }"
-      },
-      {
-        "lineNumber": 85,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 86,
-        "author": {
-          "gitId": "nigellenl"
-        },
         "content": ""
       },
       {
-        "lineNumber": 87,
+        "lineNumber": 83,
         "author": {
           "gitId": "btricec"
         },
         "content": "            if (index !\u003d -1) {"
       },
       {
-        "lineNumber": 88,
+        "lineNumber": 84,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "                if (!(newName.isEmpty() \u0026\u0026 newTags.isEmpty() \u0026\u0026 tmpAlloc.isEmpty())) {"
       },
       {
-        "lineNumber": 89,
+        "lineNumber": 85,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "                    if (!newName.isEmpty()) {"
       },
       {
-        "lineNumber": 90,
+        "lineNumber": 86,
         "author": {
           "gitId": "btricec"
         },
         "content": "                        activityList.updateName(index, newName);"
       },
       {
-        "lineNumber": 91,
+        "lineNumber": 87,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                    }"
+        "content": "                    } else if (!newTags.isEmpty()) {"
       },
       {
-        "lineNumber": 92,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "                    if (!newTags.isEmpty()) {"
-      },
-      {
-        "lineNumber": 93,
+        "lineNumber": 88,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "                        if (existsInTag(activityList.get(index).getTags())) {"
       },
       {
-        "lineNumber": 94,
+        "lineNumber": 89,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "                            throw new ExistingTagGoalException();"
       },
       {
-        "lineNumber": 95,
+        "lineNumber": 90,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "                        } else {"
       },
       {
-        "lineNumber": 96,
+        "lineNumber": 91,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "                            activityList.updateTags(index, newTags);"
       },
       {
-        "lineNumber": 97,
+        "lineNumber": 92,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "                        }"
       },
       {
-        "lineNumber": 98,
+        "lineNumber": 93,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "                    } else {"
       },
       {
-        "lineNumber": 99,
+        "lineNumber": 94,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                    }"
+        "content": "                        assert newAllocTime !\u003d null;"
       },
       {
-        "lineNumber": 100,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "                    if (!tmpAlloc.isEmpty()) {"
-      },
-      {
-        "lineNumber": 101,
+        "lineNumber": 95,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "                        if (newAllocTime.isNegative()) {"
       },
       {
-        "lineNumber": 102,
+        "lineNumber": 96,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "                            throw new NegativeDurationException();"
       },
       {
-        "lineNumber": 103,
+        "lineNumber": 97,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "                        } else {"
       },
       {
-        "lineNumber": 104,
+        "lineNumber": 98,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "                            activityList.updateAlloc(index, newAllocTime);"
       },
       {
-        "lineNumber": 105,
+        "lineNumber": 99,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "                        }"
       },
       {
-        "lineNumber": 106,
+        "lineNumber": 100,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "                    }"
       },
       {
-        "lineNumber": 107,
+        "lineNumber": 101,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "                } else {"
       },
       {
-        "lineNumber": 108,
+        "lineNumber": 102,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "                    // no new details provided"
       },
       {
-        "lineNumber": 109,
+        "lineNumber": 103,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "                    throw new InvalidEditFormatException();"
       },
       {
-        "lineNumber": 110,
+        "lineNumber": 104,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "                }"
       },
       {
-        "lineNumber": 111,
+        "lineNumber": 105,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "                Ui.printDivider(\"Activity named \" + Parser.activityName + \" has been updated!\");"
       },
       {
-        "lineNumber": 112,
+        "lineNumber": 106,
         "author": {
           "gitId": "nigellenl"
         },
         "content": ""
       },
       {
-        "lineNumber": 113,
+        "lineNumber": 107,
         "author": {
           "gitId": "btricec"
         },
         "content": "            } else {"
       },
       {
-        "lineNumber": 114,
+        "lineNumber": 108,
         "author": {
           "gitId": "btricec"
         },
         "content": "                // activity is not found"
       },
       {
-        "lineNumber": 115,
+        "lineNumber": 109,
         "author": {
           "gitId": "btricec"
         },
         "content": "                throw new NoSuchActivityException();"
       },
       {
-        "lineNumber": 116,
+        "lineNumber": 110,
         "author": {
           "gitId": "btricec"
         },
         "content": "            }"
       },
       {
-        "lineNumber": 117,
+        "lineNumber": 111,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "        } catch (NoSuchActivityException e) {"
       },
       {
-        "lineNumber": 118,
+        "lineNumber": 112,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "            Ui.printDivider(\"No activity with this name exists!\");"
       },
       {
-        "lineNumber": 119,
+        "lineNumber": 113,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "            Log.makeInfoLog(\"Edit command failed as there was no such activity saved.\");"
       },
       {
-        "lineNumber": 120,
+        "lineNumber": 114,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "        } catch (EmptyNameException e) {"
       },
       {
-        "lineNumber": 121,
-        "author": {
-          "gitId": "nigellenl"
-        },
-        "content": "            Ui.printDivider(\"Activity name cannot be empty!\");"
-      },
-      {
-        "lineNumber": 122,
+        "lineNumber": 115,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "            Log.makeInfoLog(\"Edit command failed as there was no activity name provided.\");"
       },
       {
-        "lineNumber": 123,
+        "lineNumber": 116,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        } catch (StringIndexOutOfBoundsException | InvalidEditFormatException e) {"
+        "content": "        } catch (StringIndexOutOfBoundsException | ArrayIndexOutOfBoundsException | InvalidEditFormatException e) {"
       },
       {
-        "lineNumber": 124,
+        "lineNumber": 117,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            Ui.printDivider(\"New details not provided!\");"
+        "content": "            Ui.printDivider(\"Incorrect edit command format entered!\");"
       },
       {
-        "lineNumber": 125,
+        "lineNumber": 118,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            Log.makeInfoLog(\"Edit command failed as there was no updated activity detail provided.\");"
+        "content": "            Log.makeInfoLog(\"Edit command failed as an incorrect format was provided.\");"
       },
       {
-        "lineNumber": 126,
+        "lineNumber": 119,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "        } catch (ExistingTagGoalException e) {"
       },
       {
-        "lineNumber": 127,
+        "lineNumber": 120,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "            Ui.printDivider(\"Tag cannot be edited as there is an existing tag goal!\");"
       },
       {
-        "lineNumber": 128,
+        "lineNumber": 121,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "            Log.makeInfoLog(\"Edit command failed as there was an existing tag goal tied to the tag.\");"
       },
       {
-        "lineNumber": 129,
+        "lineNumber": 122,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "        } catch (IOException e) {"
       },
       {
-        "lineNumber": 130,
+        "lineNumber": 123,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "            Ui.printDivider(\"Error in loading the tag file!\");"
       },
       {
-        "lineNumber": 131,
+        "lineNumber": 124,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "            Log.makeInfoLog(\"Edit command failed as there was an error in loading the tag file.\");"
       },
       {
-        "lineNumber": 132,
+        "lineNumber": 125,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "        } catch (NegativeDurationException e) {"
       },
       {
-        "lineNumber": 133,
+        "lineNumber": 126,
         "author": {
           "gitId": "nigellenl"
         },
         "content": "            Ui.printDivider(\"Please enter a positive target time!\");"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "            Log.makeInfoLog(\"Edit command failed as a negative target time was provided.\");"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "        } catch (InvalidTimeFrameException e) {"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "            Ui.printDivider(\"New target time cannot be empty!\");"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "            Log.makeInfoLog(\"Edit command failed as an empty target time was provided\");"
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "        } catch (NumberFormatException e) {"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "            Ui.printDivider(\"Please enter integers in the format HH:MM:SS\");"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "            Log.makeInfoLog(\"Edit command failed as an incorrect format for the target time was provided.\");"
       },
       {
         "lineNumber": 134,
@@ -12409,9 +12409,8 @@
       }
     ],
     "authorContributionMap": {
-      "btricec": 13,
-      "siuhian": 1,
-      "nigellenl": 138
+      "btricec": 8,
+      "nigellenl": 144
     }
   },
   {
@@ -14095,147 +14094,147 @@
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import jikan.exception.EmptyTagException;"
+        "content": "import jikan.exception.EmptyGoalException;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import jikan.exception.InvalidTimeFrameException;"
+        "content": "import jikan.exception.EmptyTagException;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import jikan.exception.NegativeDurationException;"
+        "content": "import jikan.exception.InvalidGoalCommandException;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import jikan.exception.NoSuchTagException;"
+        "content": "import jikan.exception.InvalidTimeFrameException;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import jikan.ui.Ui;"
+        "content": "import jikan.exception.NegativeDurationException;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "import jikan.exception.NoSuchTagException;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import java.io.BufferedReader;"
+        "content": "import jikan.log.Log;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import java.io.File;"
+        "content": "import jikan.ui.Ui;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import java.io.FileReader;"
+        "content": ""
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import java.io.FileWriter;"
+        "content": "import java.io.BufferedReader;"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import java.io.IOException;"
+        "content": "import java.io.File;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import java.nio.charset.StandardCharsets;"
+        "content": "import java.io.FileReader;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import java.nio.file.Files;"
+        "content": "import java.io.FileWriter;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import java.nio.file.Paths;"
+        "content": "import java.io.IOException;"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import java.time.Duration;"
+        "content": "import java.nio.charset.StandardCharsets;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import java.util.ArrayList;"
+        "content": "import java.nio.file.Files;"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import java.util.List;"
+        "content": "import java.nio.file.Paths;"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import java.util.Scanner;"
+        "content": "import java.time.Duration;"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "import java.util.ArrayList;"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "import static java.lang.Integer.valueOf;"
+        "content": "import java.util.List;"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "import java.util.Scanner;"
       },
       {
         "lineNumber": 26,
@@ -14249,273 +14248,273 @@
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "/**"
+        "content": "import static java.lang.Integer.valueOf;"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": " * Represents a command to set a goal for activities with a specific tag in the activity list."
+        "content": ""
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": " */"
+        "content": ""
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "/**"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "public class GoalCommand extends Command {"
+        "content": " * Represents a command to set a goal for activities with a specific tag in the activity list."
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    private static Scanner scanner;"
+        "content": " */"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    private static final String TAG_FILE_PATH \u003d \"data/tag/tag.csv\";"
+        "content": ""
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "public class GoalCommand extends Command {"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    /**"
+        "content": "    private static Scanner scanner;"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * Constructor to create a new goal command."
+        "content": "    private static final String TAG_FILE_PATH \u003d \"data/tag/tag.csv\";"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * @param parameters the parameters of the goal command."
+        "content": ""
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * @param scanner to read the user input."
+        "content": "    /**"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     */"
+        "content": "     * Constructor to create a new goal command."
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    public GoalCommand(String parameters, Scanner scanner) {"
+        "content": "     * @param parameters the parameters of the goal command."
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        super(parameters);"
+        "content": "     * @param scanner to read the user input."
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        this.scanner \u003d scanner;"
+        "content": "     */"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    }"
+        "content": "    public GoalCommand(String parameters, Scanner scanner) {"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "        super(parameters);"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    @Override"
+        "content": "        this.scanner \u003d scanner;"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    public void executeCommand(ActivityList activityList) {"
+        "content": "    }"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        try {"
+        "content": ""
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            int delimiter \u003d parameters.indexOf(\"/g\");"
+        "content": "    @Override"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            int deleteDelim \u003d parameters.indexOf(\"/d\");"
+        "content": "    public void executeCommand(ActivityList activityList) {"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            String tagName \u003d \"\";"
+        "content": "        try {"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            int index;"
+        "content": "            int delimiter \u003d parameters.indexOf(\"/g\");"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            if (delimiter !\u003d -1) {"
+        "content": "            int deleteDelim \u003d parameters.indexOf(\"/d\");"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                tagName \u003d parameters.substring(0, delimiter - 1).strip();"
+        "content": "            String tagName \u003d \"\";"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                index \u003d checkIfExists(tagName);"
+        "content": "            int index;"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                String tmpTime \u003d parameters.substring(delimiter + 3);"
+        "content": "            if (delimiter !\u003d -1) {"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                Duration goalTime \u003d parseDuration(tmpTime);"
+        "content": "                tagName \u003d parameters.substring(0, delimiter - 1).strip();"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "                if (tagName.isEmpty()) {"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                if (goalTime.isNegative()) {"
+        "content": "                    throw new EmptyTagException();"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                    throw new NegativeDurationException();"
+        "content": "                }"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                }"
+        "content": "                index \u003d checkIfExists(tagName);"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "                String tmpTime \u003d parameters.substring(delimiter + 3);"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                if (index !\u003d -1) {"
+        "content": "                if (tmpTime.isEmpty()) {"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                    Ui.printDivider(\"The goal for this tag already exists, do you want to update the goal?\");"
+        "content": "                    throw new EmptyGoalException();"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                    String userInput \u003d scanner.nextLine();"
+        "content": "                }"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                    updateGoal(userInput, tagName, goalTime, index);"
+        "content": "                Duration goalTime \u003d parseDuration(tmpTime);"
       },
       {
         "lineNumber": 66,
@@ -14529,119 +14528,119 @@
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                } else {"
+        "content": "                if (goalTime.isNegative()) {"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                    // tag does not exist in the activity list."
+        "content": "                    throw new NegativeDurationException();"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                    if (!existInActivity(activityList, tagName)) {"
+        "content": "                }"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                        throw new NoSuchTagException();"
+        "content": ""
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                    } else {"
+        "content": "                if (index !\u003d -1) {"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                        addTagLine(tagName + \",\" + goalTime);"
+        "content": "                    Ui.printDivider(\"The goal for this tag already exists, do you want to update the goal?\");"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                        Ui.printDivider(\"The goal for \" + tagName + \" has been added!\");"
+        "content": "                    String userInput \u003d scanner.nextLine();"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                    }"
+        "content": "                    updateGoal(userInput, tagName, goalTime, index);"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                }"
+        "content": ""
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            } else if (deleteDelim !\u003d -1) {"
+        "content": "                } else {"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                tagName \u003d parameters.substring(0, deleteDelim - 1).strip();"
+        "content": "                    // tag does not exist in the activity list."
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                index \u003d checkIfExists(tagName);"
+        "content": "                    if (!existInActivity(activityList, tagName)) {"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                if (index !\u003d -1) {"
+        "content": "                        throw new NoSuchTagException();"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                    Ui.printDivider(\"The goal for this tag has been deleted!\");"
+        "content": "                    } else {"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                    removeLine(index);"
+        "content": "                        addTagLine(tagName + \",\" + goalTime);"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                } else {"
+        "content": "                        Ui.printDivider(\"The goal for \" + tagName + \" has been added!\");"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                    throw new NoSuchTagException();"
+        "content": "                    }"
       },
       {
         "lineNumber": 84,
@@ -14655,1116 +14654,1193 @@
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            } else {"
+        "content": "            } else if (deleteDelim !\u003d -1) {"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                throw new InvalidTimeFrameException();"
+        "content": "                tagName \u003d parameters.substring(0, deleteDelim - 1).strip();"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            }"
+        "content": "                index \u003d checkIfExists(tagName);"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            if (tagName.isEmpty()) {"
+        "content": "                if (index !\u003d -1) {"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                throw new EmptyTagException();"
+        "content": "                    Ui.printDivider(\"The goal for this tag has been deleted!\");"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            }"
+        "content": "                    removeLine(index);"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "                } else {"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        } catch (EmptyTagException | StringIndexOutOfBoundsException e) {"
+        "content": "                    throw new NoSuchTagException();"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            Ui.printDivider(\"Tag name cannot be empty!\");"
+        "content": "                }"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        } catch (InvalidTimeFrameException e) {"
+        "content": "            } else {"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            Ui.printDivider(\"Goal cannot be empty!\");"
+        "content": "                throw new InvalidGoalCommandException();"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        } catch (IOException e) {"
+        "content": "            }"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            Ui.printDivider(\"Error reading the file!\");"
+        "content": ""
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        } catch (NoSuchTagException e) {"
+        "content": "        } catch (EmptyTagException e) {"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            Ui.printDivider(\"There is no such tag!\");"
+        "content": "            Ui.printDivider(\"Tag name cannot be empty!\");"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {"
+        "content": "            Log.makeInfoLog(\"Goal command failed as no tag name was provided.\");"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            Ui.printDivider(\"Please enter the goal in the format HH:MM:SS\");"
+        "content": "        } catch (InvalidGoalCommandException e) {"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        } catch (NegativeDurationException e) {"
+        "content": "            Ui.printDivider(\"Invalid command format entered!\");"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            Ui.printDivider(\"Please enter a positive goal time!\");"
+        "content": "            Log.makeInfoLog(\"Goal command failed as an incorrect format was provided.\");"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        }"
+        "content": "        } catch (IOException e) {"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    }"
+        "content": "            Ui.printDivider(\"Error reading the file!\");"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "        } catch (NoSuchTagException e) {"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    /**"
+        "content": "            Ui.printDivider(\"There is no such tag!\");"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * Creates a new tag file."
+        "content": "            Log.makeInfoLog(\"Goal command failed as there was no such tag saved.\");"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * @param filePath the filepath of the tag file."
+        "content": "        } catch (ArrayIndexOutOfBoundsException | StringIndexOutOfBoundsException | EmptyGoalException | NumberFormatException e) {"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * @param tagFile the File object."
+        "content": "            Ui.printDivider(\"Please enter the goal in the format HH:MM:SS\");"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     */"
+        "content": "            Log.makeInfoLog(\"Goal command failed as an incorrect format for the goal time was provided.\");"
       },
       {
         "lineNumber": 112,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "nigellenl"
         },
-        "content": "    public static void createFile(String filePath, File tagFile) {"
+        "content": "        } catch (NegativeDurationException e) {"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        tagFile \u003d new File(filePath);"
+        "content": "            Ui.printDivider(\"Please enter a positive goal time!\");"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        try {"
+        "content": "            Log.makeInfoLog(\"Goal command failed as a negative goal time was provided.\");"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            if (!tagFile.exists()) {"
+        "content": "        }"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                tagFile.getParentFile().mkdirs(); // Create data directory (does nothing if directory already exists)"
+        "content": "    }"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                tagFile.createNewFile();"
+        "content": ""
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            }"
+        "content": "    /**"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        } catch (IOException e) {"
+        "content": "     * Creates a new tag file."
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            System.out.println(\"Error loading/creating file\");"
+        "content": "     * @param filePath the filepath of the tag file."
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        }"
+        "content": "     * @param tagFile the File object."
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    }"
+        "content": "     */"
       },
       {
         "lineNumber": 123,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "rdimaio"
         },
-        "content": ""
+        "content": "    public static void createFile(String filePath, File tagFile) {"
       },
       {
         "lineNumber": 124,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "        tagFile \u003d new File(filePath);"
       },
       {
         "lineNumber": 125,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "        try {"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    /**"
+        "content": "            if (!tagFile.exists()) {"
       },
       {
         "lineNumber": 127,
         "author": {
-          "gitId": "rdimaio"
+          "gitId": "nigellenl"
         },
-        "content": "     * Check that tag exists in the tag list."
+        "content": "                tagFile.getParentFile().mkdirs(); // Create data directory (does nothing if directory already exists)"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * @param tagName the tag name."
+        "content": "                tagFile.createNewFile();"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * @return index the index of the tag in the tag list."
+        "content": "            }"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * @throws IOException when there is an error loading/creating the file."
+        "content": "        } catch (IOException e) {"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     */"
+        "content": "            System.out.println(\"Error loading/creating file\");"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    public static int checkIfExists(String tagName) throws IOException {"
+        "content": "        }"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        BufferedReader br \u003d new BufferedReader(new FileReader(TAG_FILE_PATH));"
+        "content": "    }"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        int index \u003d 0;"
+        "content": ""
       },
       {
         "lineNumber": 135,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "rdimaio"
         },
-        "content": "        int status \u003d 0;"
+        "content": ""
       },
       {
         "lineNumber": 136,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "rdimaio"
         },
-        "content": "        try {"
+        "content": ""
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            StringBuilder sb \u003d new StringBuilder();"
+        "content": "    /**"
       },
       {
         "lineNumber": 138,
         "author": {
-          "gitId": "nigellenl"
+          "gitId": "rdimaio"
         },
-        "content": "            String line \u003d br.readLine();"
+        "content": "     * Check that tag exists in the tag list."
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            String[] name;"
+        "content": "     * @param tagName the tag name."
       },
       {
         "lineNumber": 140,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            while (line !\u003d null) {"
+        "content": "     * @return index the index of the tag in the tag list."
       },
       {
         "lineNumber": 141,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                name \u003d line.split(\",\");"
+        "content": "     * @throws IOException when there is an error loading/creating the file."
       },
       {
         "lineNumber": 142,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                if (name[0].equals(tagName)) {"
+        "content": "     */"
       },
       {
         "lineNumber": 143,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                    status \u003d 1;"
+        "content": "    public static int checkIfExists(String tagName) throws IOException {"
       },
       {
         "lineNumber": 144,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                    break;"
+        "content": "        BufferedReader br \u003d new BufferedReader(new FileReader(TAG_FILE_PATH));"
       },
       {
         "lineNumber": 145,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                }"
+        "content": "        int index \u003d 0;"
       },
       {
         "lineNumber": 146,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                sb.append(line);"
+        "content": "        int status \u003d 0;"
       },
       {
         "lineNumber": 147,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                sb.append(\"\\n\");"
+        "content": "        try {"
       },
       {
         "lineNumber": 148,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                line \u003d br.readLine();"
+        "content": "            StringBuilder sb \u003d new StringBuilder();"
       },
       {
         "lineNumber": 149,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                index++;"
+        "content": "            String line \u003d br.readLine();"
       },
       {
         "lineNumber": 150,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            }"
+        "content": "            String[] name;"
       },
       {
         "lineNumber": 151,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        } finally {"
+        "content": "            while (line !\u003d null) {"
       },
       {
         "lineNumber": 152,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            br.close();"
+        "content": "                name \u003d line.split(\",\");"
       },
       {
         "lineNumber": 153,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        }"
+        "content": "                if (name[0].equals(tagName)) {"
       },
       {
         "lineNumber": 154,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        if (status \u003d\u003d 0) {"
+        "content": "                    status \u003d 1;"
       },
       {
         "lineNumber": 155,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            index \u003d -1;"
+        "content": "                    break;"
       },
       {
         "lineNumber": 156,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        }"
+        "content": "                }"
       },
       {
         "lineNumber": 157,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        return index;"
+        "content": "                sb.append(line);"
       },
       {
         "lineNumber": 158,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    }"
+        "content": "                sb.append(\"\\n\");"
       },
       {
         "lineNumber": 159,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "                line \u003d br.readLine();"
       },
       {
         "lineNumber": 160,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    /**"
+        "content": "                index++;"
       },
       {
         "lineNumber": 161,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * Update the goal for the existing specified tag."
+        "content": "            }"
       },
       {
         "lineNumber": 162,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * @param userInput the user response."
+        "content": "        } finally {"
       },
       {
         "lineNumber": 163,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * @param tagName the tag name."
+        "content": "            br.close();"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * @param goalTime the amount of time the user wants to assign to the tag."
+        "content": "        }"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * @param index the index of the tag in the tag list."
+        "content": "        if (status \u003d\u003d 0) {"
       },
       {
         "lineNumber": 166,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     */"
+        "content": "            index \u003d -1;"
       },
       {
         "lineNumber": 167,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    private static void updateGoal(String userInput, String tagName, Duration goalTime, int index) throws IOException {"
+        "content": "        }"
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        if (userInput.equalsIgnoreCase(\"yes\") || userInput.equalsIgnoreCase(\"y\")) {"
+        "content": "        return index;"
       },
       {
         "lineNumber": 169,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            removeLine(index);"
+        "content": "    }"
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            writeToFile(tagName + \",\" + goalTime);"
+        "content": ""
       },
       {
         "lineNumber": 171,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            Ui.printDivider(\"The goal for \" + tagName + \" was updated\");"
+        "content": "    /**"
       },
       {
         "lineNumber": 172,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        } else {"
+        "content": "     * Update the goal for the existing specified tag."
       },
       {
         "lineNumber": 173,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            Ui.printDivider(\"Okay then, what else can I do for you?\");"
+        "content": "     * @param userInput the user response."
       },
       {
         "lineNumber": 174,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        }"
+        "content": "     * @param tagName the tag name."
       },
       {
         "lineNumber": 175,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    }"
+        "content": "     * @param goalTime the amount of time the user wants to assign to the tag."
       },
       {
         "lineNumber": 176,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "     * @param index the index of the tag in the tag list."
       },
       {
         "lineNumber": 177,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    /**"
+        "content": "     */"
       },
       {
         "lineNumber": 178,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * Updates tag file with new tag."
+        "content": "    private static void updateGoal(String userInput, String tagName, Duration goalTime, int index) throws IOException {"
       },
       {
         "lineNumber": 179,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     *"
+        "content": "        if (userInput.equalsIgnoreCase(\"yes\") || userInput.equalsIgnoreCase(\"y\")) {"
       },
       {
         "lineNumber": 180,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * @param dataLine Line to write to file."
+        "content": "            removeLine(index);"
       },
       {
         "lineNumber": 181,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     */"
+        "content": "            writeToFile(tagName + \",\" + goalTime);"
       },
       {
         "lineNumber": 182,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    public static void addTagLine(String dataLine) {"
+        "content": "            Ui.printDivider(\"The goal for \" + tagName + \" was updated\");"
       },
       {
         "lineNumber": 183,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        try {"
+        "content": "        } else {"
       },
       {
         "lineNumber": 184,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            writeToFile(dataLine);"
+        "content": "            Ui.printDivider(\"Okay then, what else can I do for you?\");"
       },
       {
         "lineNumber": 185,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        } catch (IOException e) {"
+        "content": "        }"
       },
       {
         "lineNumber": 186,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            System.out.println(\"Error saving tag to tag file.\");"
+        "content": "    }"
       },
       {
         "lineNumber": 187,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 188,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    }"
+        "content": "    /**"
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "     * Updates tag file with new tag."
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    /**"
+        "content": "     *"
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * Removes the line whose index matches lineNumber from file."
+        "content": "     * @param dataLine Line to write to file."
       },
       {
         "lineNumber": 192,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     *"
+        "content": "     */"
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * @param lineNumber Index of line to remove."
+        "content": "    public static void addTagLine(String dataLine) {"
       },
       {
         "lineNumber": 194,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * @throws IOException If an error occurs while writing the new list to file."
+        "content": "        try {"
       },
       {
         "lineNumber": 195,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     */"
+        "content": "            writeToFile(dataLine);"
       },
       {
         "lineNumber": 196,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    public static void removeLine(int lineNumber) throws IOException {"
+        "content": "        } catch (IOException e) {"
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        // Read file into list of strings, where each string is a line in the file"
+        "content": "            System.out.println(\"Error saving tag to tag file.\");"
       },
       {
         "lineNumber": 198,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        List\u003cString\u003e fileContent \u003d new ArrayList\u003c\u003e(Files.readAllLines(Paths.get(TAG_FILE_PATH),"
+        "content": "        }"
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                StandardCharsets.UTF_8));"
+        "content": "    }"
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        fileContent.remove(lineNumber);"
+        "content": ""
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    }"
+        "content": "    /**"
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "     * Removes the line whose index matches lineNumber from file."
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    /**"
+        "content": "     *"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * Writes the input string to file."
+        "content": "     * @param lineNumber Index of line to remove."
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     *"
+        "content": "     * @throws IOException If an error occurs while writing the new list to file."
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * @param s The input string."
+        "content": "     */"
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * @throws IOException If an error occurs while writing."
+        "content": "    public static void removeLine(int lineNumber) throws IOException {"
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     */"
+        "content": "        // Read file into list of strings, where each string is a line in the file"
       },
       {
         "lineNumber": 209,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    public static void writeToFile(String s) throws IOException {"
+        "content": "        List\u003cString\u003e fileContent \u003d new ArrayList\u003c\u003e(Files.readAllLines(Paths.get(TAG_FILE_PATH),"
       },
       {
         "lineNumber": 210,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        FileWriter fw \u003d new FileWriter(TAG_FILE_PATH, true);"
+        "content": "                StandardCharsets.UTF_8));"
       },
       {
         "lineNumber": 211,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        fw.write(s + System.lineSeparator());"
+        "content": "        fileContent.remove(lineNumber);"
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        fw.close();"
+        "content": "    }"
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "    /**"
       },
       {
         "lineNumber": 215,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    /**"
+        "content": "     * Writes the input string to file."
       },
       {
         "lineNumber": 216,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * Check if the tag exists in the activity list."
+        "content": "     *"
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * @param targetList the activity list to check."
+        "content": "     * @param s The input string."
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * @param tagName the specified tag name."
+        "content": "     * @throws IOException If an error occurs while writing."
       },
       {
         "lineNumber": 219,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * @return true or false."
+        "content": "     */"
       },
       {
         "lineNumber": 220,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     */"
+        "content": "    public static void writeToFile(String s) throws IOException {"
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    private boolean existInActivity(ActivityList targetList, String tagName) {"
+        "content": "        FileWriter fw \u003d new FileWriter(TAG_FILE_PATH, true);"
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        for (Activity i : targetList.activities) {"
+        "content": "        fw.write(s + System.lineSeparator());"
       },
       {
         "lineNumber": 223,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            if (i.getTags().contains(tagName)) {"
+        "content": "        fw.close();"
       },
       {
         "lineNumber": 224,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "                return true;"
+        "content": "    }"
       },
       {
         "lineNumber": 225,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            }"
+        "content": ""
       },
       {
         "lineNumber": 226,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        }"
+        "content": "    /**"
       },
       {
         "lineNumber": 227,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        return false;"
+        "content": "     * Check if the tag exists in the activity list."
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    }"
+        "content": "     * @param targetList the activity list to check."
       },
       {
         "lineNumber": 229,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": ""
+        "content": "     * @param tagName the specified tag name."
       },
       {
         "lineNumber": 230,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    /**"
+        "content": "     * @return true or false."
       },
       {
         "lineNumber": 231,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * Converts the user input into a duration object."
+        "content": "     */"
       },
       {
         "lineNumber": 232,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * @param input the user input."
+        "content": "    private boolean existInActivity(ActivityList targetList, String tagName) {"
       },
       {
         "lineNumber": 233,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     * @return the duration object."
+        "content": "        for (Activity i : targetList.activities) {"
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "     */"
+        "content": "            if (i.getTags().contains(tagName)) {"
       },
       {
         "lineNumber": 235,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    public static Duration parseDuration(String input) throws InvalidTimeFrameException,"
+        "content": "                return true;"
       },
       {
         "lineNumber": 236,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "            ArrayIndexOutOfBoundsException {"
+        "content": "            }"
       },
       {
         "lineNumber": 237,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        String[] fields \u003d input.split(\":\");"
+        "content": "        }"
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        int colonIndex \u003d input.indexOf(\u0027:\u0027);"
+        "content": "        return false;"
       },
       {
         "lineNumber": 239,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        String hh \u003d fields[0];"
+        "content": "    }"
       },
       {
         "lineNumber": 240,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        String mm \u003d fields[1];"
+        "content": ""
       },
       {
         "lineNumber": 241,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        String ss \u003d fields[2];"
+        "content": "    /**"
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "        return Duration.ofHours(valueOf(hh)).plusMinutes(valueOf(mm)).plusSeconds(valueOf(ss));"
+        "content": "     * Converts the user input into a duration object."
       },
       {
         "lineNumber": 243,
         "author": {
           "gitId": "nigellenl"
         },
-        "content": "    }"
+        "content": "     * @param input the user input."
       },
       {
         "lineNumber": 244,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "     * @return the duration object."
+      },
+      {
+        "lineNumber": 245,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 246,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "    public static Duration parseDuration(String input) throws"
+      },
+      {
+        "lineNumber": 247,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "            ArrayIndexOutOfBoundsException {"
+      },
+      {
+        "lineNumber": 248,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "        String[] fields \u003d input.split(\":\");"
+      },
+      {
+        "lineNumber": 249,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "        int colonIndex \u003d input.indexOf(\u0027:\u0027);"
+      },
+      {
+        "lineNumber": 250,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "        String hh \u003d fields[0];"
+      },
+      {
+        "lineNumber": 251,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "        String mm \u003d fields[1];"
+      },
+      {
+        "lineNumber": 252,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "        String ss \u003d fields[2];"
+      },
+      {
+        "lineNumber": 253,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "        return Duration.ofHours(valueOf(hh)).plusMinutes(valueOf(mm)).plusSeconds(valueOf(ss));"
+      },
+      {
+        "lineNumber": 254,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 255,
         "author": {
           "gitId": "nigellenl"
         },
@@ -15773,7 +15849,7 @@
     ],
     "authorContributionMap": {
       "rdimaio": 4,
-      "nigellenl": 240
+      "nigellenl": 251
     }
   },
   {
@@ -19132,6 +19208,43 @@
     }
   },
   {
+    "path": "src/main/java/jikan/exception/EmptyGoalException.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "package jikan.exception;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "public class EmptyGoalException extends Exception {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "nigellenl": 4
+    }
+  },
+  {
     "path": "src/main/java/jikan/exception/EmptyNameException.java",
     "fileType": "java",
     "lines": [
@@ -19382,6 +19495,43 @@
           "gitId": "nigellenl"
         },
         "content": "public class InvalidEditFormatException extends Exception {"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "nigellenl": 4
+    }
+  },
+  {
+    "path": "src/main/java/jikan/exception/InvalidGoalCommandException.java",
+    "fileType": "java",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "package jikan.exception;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "nigellenl"
+        },
+        "content": "public class InvalidGoalCommandException extends Exception {"
       },
       {
         "lineNumber": 4,

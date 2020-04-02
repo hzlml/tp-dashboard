@@ -10305,84 +10305,84 @@
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    /**"
+        "content": "    private boolean isCircle \u003d false;"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "     * Constructs the Command object."
+        "content": ""
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "     * @param command the command prompt entered by the user."
+        "content": "    /**"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "     * @param description the command description entered by the user."
+        "content": "     * Constructs the Command object."
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "     */"
+        "content": "     * @param command the command prompt entered by the user."
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": ""
+        "content": "     * @param description the command description entered by the user."
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    public CalculateCaloriesCommand(String command, String description) throws InvalidFormatException {"
+        "content": "     */"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        super(command);"
+        "content": ""
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        this.noDescription \u003d false;"
+        "content": "    public CalculateCaloriesCommand(String command, String description) throws InvalidFormatException {"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        this.isInvalidDate \u003d false;"
+        "content": "        super(command);"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": ""
+        "content": "        this.noDescription \u003d false;"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        this.sum \u003d 0.00;"
+        "content": "        this.isInvalidDate \u003d false;"
       },
       {
         "lineNumber": 52,
@@ -10396,612 +10396,689 @@
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        try {"
+        "content": "        this.sum \u003d 0.00;"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            String[] descriptionArray \u003d Parser.parseDescription(description, ARGUMENTS_REQUIRED);"
+        "content": ""
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            String[] timeDescription \u003d descriptionArray[0].split(\"-\u003e\");"
+        "content": "        try {"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": ""
+        "content": "            String[] descriptionArray \u003d Parser.parseDescription(description, ARGUMENTS_REQUIRED);"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            this.begin \u003d timeDescription[0].trim().toUpperCase();"
+        "content": "            String[] timeDescription \u003d descriptionArray[0].split(\"-\u003e\");"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            Weekday.valueOf(this.begin);"
+        "content": ""
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": ""
+        "content": "            this.begin \u003d timeDescription[0].trim().toUpperCase();"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            switch (timeDescription.length) {"
+        "content": "            Weekday.valueOf(this.begin);"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            case 1:"
+        "content": ""
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "                isOneDay \u003d true;"
+        "content": "            switch (timeDescription.length) {"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "                break;"
+        "content": "            case 1:"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            case 2:"
+        "content": "                isOneDay \u003d true;"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "                this.end \u003d timeDescription[1].trim().toUpperCase();"
+        "content": "                break;"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "                Weekday.valueOf(this.end);"
+        "content": "            case 2:"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "                isOneDay \u003d false;"
+        "content": "                this.end \u003d timeDescription[1].trim().toUpperCase();"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "                break;"
+        "content": "                Weekday.valueOf(this.end);"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            default:"
+        "content": "                isOneDay \u003d false;"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "                isOneDay \u003d false;"
+        "content": "                break;"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "                break;"
+        "content": "            default:"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            }"
+        "content": "                isOneDay \u003d false;"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        } catch (NullPointerException e) {"
+        "content": "                break;"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            this.noDescription \u003d true;"
+        "content": "            }"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        } catch (IllegalArgumentException e) {"
+        "content": "        } catch (NullPointerException e) {"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            this.isInvalidDate \u003d true;"
+        "content": "            this.noDescription \u003d true;"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        }"
+        "content": "        } catch (IllegalArgumentException e) {"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    }"
+        "content": "            this.isInvalidDate \u003d true;"
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "     * Calculates the calories intake during given time period."
+        "content": ""
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "     *"
+        "content": "    /**"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "     * @param profile the object containing user profile information."
+        "content": "     * Calculates the calories intake during given time period."
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "     * @param ui      the object containing user interface functions."
+        "content": "     *"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "     */"
+        "content": "     * @param profile the object containing user profile information."
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": ""
+        "content": "     * @param ui      the object containing user interface functions."
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    @Override"
+        "content": "     */"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    public void execute(Profile profile, UI ui) {"
+        "content": ""
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        if (this.noDescription | this.isInvalidDate) {"
+        "content": "    @Override"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            saveResult(profile);"
+        "content": "    public void execute(Profile profile, UI ui) {"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            return;"
+        "content": "        if (this.noDescription | this.isInvalidDate) {"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        }"
+        "content": "            saveResult(profile);"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        if (this.isOneDay) {"
+        "content": "            return;"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            DailyFoodRecord record \u003d profile.getRecordOfDay(this.begin);"
+        "content": "        }"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": ""
+        "content": "        if (this.isOneDay) {"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            if (record.getDailyCalories().isPresent()) {"
+        "content": "            DailyFoodRecord record \u003d profile.getRecordOfDay(this.begin);"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "                assert record.getDailyCalories().isPresent();"
+        "content": ""
       },
       {
         "lineNumber": 98,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "                sum +\u003d record.getDailyCalories().get();"
+        "content": "            if (record.getDailyCalories().isPresent()) {"
       },
       {
         "lineNumber": 99,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            }"
+        "content": "                assert record.getDailyCalories().isPresent();"
       },
       {
         "lineNumber": 100,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        } else {"
+        "content": "                sum +\u003d record.getDailyCalories().get();"
       },
       {
         "lineNumber": 101,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            Weekday firstDay;"
+        "content": "            }"
       },
       {
         "lineNumber": 102,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            Weekday lastDay;"
+        "content": "        } else {"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            DailyFoodRecord curRecord;"
+        "content": "            Weekday firstDay;"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": ""
+        "content": "            Weekday lastDay;"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            firstDay \u003d Weekday.valueOf(this.begin);"
+        "content": "            DailyFoodRecord curRecord;"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            lastDay \u003d Weekday.valueOf(this.end);"
+        "content": ""
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": ""
+        "content": "            firstDay \u003d Weekday.valueOf(this.begin);"
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            for (Weekday day : Weekday.values()) {"
+        "content": "            lastDay \u003d Weekday.valueOf(this.end);"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "                int curIndex \u003d day.getIndex();"
+        "content": ""
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "                if (curIndex \u003e\u003d firstDay.getIndex() \u0026\u0026 curIndex \u003c\u003d lastDay.getIndex()) {"
+        "content": "            if (lastDay.getIndex() \u003c firstDay.getIndex()) {"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "                    curRecord \u003d profile.getRecordOfDay(day.getName());"
+        "content": "                lastDay \u003d Weekday.valueOf(\"SUNDAY\");"
       },
       {
         "lineNumber": 112,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": ""
+        "content": "                isCircle \u003d true;"
       },
       {
         "lineNumber": 113,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "                    if (curRecord.getDailyCalories().isPresent()) {"
+        "content": "            }"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "                        assert curRecord.getDailyCalories().isPresent();"
+        "content": ""
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "                        sum +\u003d curRecord.getDailyCalories().get();"
+        "content": "            for (Weekday day : Weekday.values()) {"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "                    }"
+        "content": "                int curIndex \u003d day.getIndex();"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "                } else if (curIndex \u003e lastDay.getIndex()) {"
+        "content": "                if (curIndex \u003e\u003d firstDay.getIndex() \u0026\u0026 curIndex \u003c\u003d lastDay.getIndex()) {"
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "                    break;"
+        "content": "                    curRecord \u003d profile.getRecordOfDay(day.getName());"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "                }"
+        "content": ""
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            }"
+        "content": "                    if (curRecord.getDailyCalories().isPresent()) {"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        }"
+        "content": "                        assert curRecord.getDailyCalories().isPresent();"
       },
       {
         "lineNumber": 122,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        saveResult(profile);"
+        "content": "                        sum +\u003d curRecord.getDailyCalories().get();"
       },
       {
         "lineNumber": 123,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    }"
+        "content": "                    }"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": ""
+        "content": "                } else if (curIndex \u003e lastDay.getIndex()) {"
       },
       {
         "lineNumber": 125,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    /**"
+        "content": "                    break;"
       },
       {
         "lineNumber": 126,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "     * Saves the execution result to the command."
+        "content": "                }"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "     * @param profile the profile that the command is dealing with."
+        "content": "            }"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "     */"
+        "content": "        }"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": ""
+        "content": "        saveResult(profile);"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    @Override"
+        "content": "    }"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    public void saveResult(Profile profile) {"
+        "content": ""
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        if (this.noDescription) {"
+        "content": "    /**"
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            this.result \u003d MessageBank.NO_DESCRIPTION_MESSAGE;"
+        "content": "     * Saves the execution result to the command."
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        } else if (this.isInvalidDate) {"
+        "content": "     * @param profile the profile that the command is dealing with."
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            this.result \u003d MessageBank.INVALID_DATE_MESSAGE;"
+        "content": "     */"
       },
       {
         "lineNumber": 136,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        } else {"
+        "content": ""
       },
       {
         "lineNumber": 137,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            this.result \u003d MessageBank.CALCULATE_CALORIES_MESSAGE + String.format(\"%.2f.\",sum);"
+        "content": "    @Override"
       },
       {
         "lineNumber": 138,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        }"
+        "content": "    public void saveResult(Profile profile) {"
       },
       {
         "lineNumber": 139,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    }"
+        "content": "        if (this.noDescription) {"
       },
       {
         "lineNumber": 140,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "            this.result \u003d MessageBank.NO_DESCRIPTION_MESSAGE;"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        } else if (this.isInvalidDate) {"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "            this.result \u003d MessageBank.INVALID_DATE_MESSAGE;"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "            if (isCircle) {"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "                this.result \u003d String.format(\"%s is ahead of %s, so only calories from %s to SUNDAY is calculated\","
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "                        this.end, this.begin, this.begin) + System.lineSeparator();"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "            this.result +\u003d MessageBank.CALCULATE_CALORIES_MESSAGE + String.format(\"%.2f.\",sum);"
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 151,
         "author": {
           "gitId": "DDzuikeai"
         },
@@ -11009,7 +11086,7 @@
       }
     ],
     "authorContributionMap": {
-      "DDzuikeai": 140
+      "DDzuikeai": 151
     }
   },
   {
@@ -15336,7 +15413,7 @@
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "            foodDescriptionSplit \u003d singleFoodDescription.trim().split(\" -- \");"
+        "content": "            foodDescriptionSplit \u003d singleFoodDescription.trim().split(\"--\");"
       },
       {
         "lineNumber": 76,
@@ -15446,51 +15523,51 @@
       {
         "lineNumber": 91,
         "author": {
-          "gitId": "lamyuewei"
+          "gitId": "DDzuikeai"
         },
-        "content": "                    foodList.add(new Food(foodName, foodCalories));"
+        "content": "                    if (foodCalories \u003c 0) {"
       },
       {
         "lineNumber": 92,
         "author": {
-          "gitId": "lamyuewei"
+          "gitId": "DDzuikeai"
         },
-        "content": "                } catch (NumberFormatException e) {"
+        "content": "                        throw new NumberFormatException();"
       },
       {
         "lineNumber": 93,
         "author": {
-          "gitId": "lamyuewei"
+          "gitId": "DDzuikeai"
         },
-        "content": "                    isValidFoodFormat \u003d false;"
+        "content": "                    }"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "                }"
+        "content": "                    foodList.add(new Food(foodName, foodCalories));"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "                break;"
+        "content": "                } catch (NumberFormatException e) {"
       },
       {
         "lineNumber": 96,
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "            default:"
+        "content": "                    isValidFoodFormat \u003d false;"
       },
       {
         "lineNumber": 97,
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "                isValidFoodFormat \u003d false;"
+        "content": "                }"
       },
       {
         "lineNumber": 98,
@@ -15504,91 +15581,91 @@
         "author": {
           "gitId": "lamyuewei"
         },
-        "content": "            }"
+        "content": "            default:"
       },
       {
         "lineNumber": 100,
         "author": {
-          "gitId": "DDzuikeai"
+          "gitId": "lamyuewei"
         },
-        "content": "        }"
+        "content": "                isValidFoodFormat \u003d false;"
       },
       {
         "lineNumber": 101,
         "author": {
-          "gitId": "DDzuikeai"
+          "gitId": "lamyuewei"
         },
-        "content": "        record.recordMeals(mealType,foodList);"
+        "content": "                break;"
       },
       {
         "lineNumber": 102,
         "author": {
-          "gitId": "DDzuikeai"
+          "gitId": "lamyuewei"
         },
-        "content": "        saveResult(profile);"
+        "content": "            }"
       },
       {
         "lineNumber": 103,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 104,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": ""
+        "content": "        record.recordMeals(mealType,foodList);"
       },
       {
         "lineNumber": 105,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    @Override"
+        "content": "        saveResult(profile);"
       },
       {
         "lineNumber": 106,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    public void saveResult(Profile profile) {"
+        "content": "    }"
       },
       {
         "lineNumber": 107,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        if (this.noDescription) {"
+        "content": ""
       },
       {
         "lineNumber": 108,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            this.result \u003d MessageBank.NO_DESCRIPTION_MESSAGE;"
+        "content": "    @Override"
       },
       {
         "lineNumber": 109,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            return;"
+        "content": "    public void saveResult(Profile profile) {"
       },
       {
         "lineNumber": 110,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        } else if (this.isInvalidDate) {"
+        "content": "        if (this.noDescription) {"
       },
       {
         "lineNumber": 111,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            this.result \u003d MessageBank.INVALID_DATE_MESSAGE;"
+        "content": "            this.result \u003d MessageBank.NO_DESCRIPTION_MESSAGE;"
       },
       {
         "lineNumber": 112,
@@ -15602,63 +15679,63 @@
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        }"
+        "content": "        } else if (this.isInvalidDate) {"
       },
       {
         "lineNumber": 114,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": ""
+        "content": "            this.result \u003d MessageBank.INVALID_DATE_MESSAGE;"
       },
       {
         "lineNumber": 115,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        boolean isValidType \u003d true;"
+        "content": "            return;"
       },
       {
         "lineNumber": 116,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        switch (mealType) {"
+        "content": "        }"
       },
       {
         "lineNumber": 117,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        case \"morning\":"
+        "content": ""
       },
       {
         "lineNumber": 118,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            this.result \u003d MessageBank.BREAKFAST_RECORD_MESSAGE;"
+        "content": "        boolean isValidType \u003d true;"
       },
       {
         "lineNumber": 119,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            break;"
+        "content": "        switch (mealType) {"
       },
       {
         "lineNumber": 120,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        case \"afternoon\":"
+        "content": "        case \"morning\":"
       },
       {
         "lineNumber": 121,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            this.result \u003d MessageBank.LUNCH_RECORD_MESSAGE;"
+        "content": "            this.result \u003d MessageBank.BREAKFAST_RECORD_MESSAGE;"
       },
       {
         "lineNumber": 122,
@@ -15672,14 +15749,14 @@
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        case \"night\":"
+        "content": "        case \"afternoon\":"
       },
       {
         "lineNumber": 124,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            this.result \u003d MessageBank.DINNER_RECORD_MESSAGE;"
+        "content": "            this.result \u003d MessageBank.LUNCH_RECORD_MESSAGE;"
       },
       {
         "lineNumber": 125,
@@ -15693,49 +15770,49 @@
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        default:"
+        "content": "        case \"night\":"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            isValidType \u003d false;"
+        "content": "            this.result \u003d MessageBank.DINNER_RECORD_MESSAGE;"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            this.result \u003d MessageBank.MEAL_TYPE_ERROR;"
+        "content": "            break;"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            break;"
+        "content": "        default:"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        }"
+        "content": "            isValidType \u003d false;"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        if (isValidType) {"
+        "content": "            this.result \u003d MessageBank.MEAL_TYPE_ERROR;"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            this.result \u003d this.result + date + \".\";"
+        "content": "            break;"
       },
       {
         "lineNumber": 133,
@@ -15749,14 +15826,14 @@
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "        if (!isValidFoodFormat) {"
+        "content": "        if (isValidType) {"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "            this.result \u003d this.result + System.lineSeparator() + MessageBank.INVALID_FOOD_FORMAT_ERROR;"
+        "content": "            this.result \u003d this.result + date + \".\";"
       },
       {
         "lineNumber": 136,
@@ -15770,10 +15847,31 @@
         "author": {
           "gitId": "DDzuikeai"
         },
-        "content": "    }"
+        "content": "        if (!isValidFoodFormat) {"
       },
       {
         "lineNumber": 138,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "            this.result \u003d this.result + System.lineSeparator() + MessageBank.INVALID_FOOD_FORMAT_ERROR;"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 141,
         "author": {
           "gitId": "DDzuikeai"
         },
@@ -15782,7 +15880,7 @@
     ],
     "authorContributionMap": {
       "lamyuewei": 30,
-      "DDzuikeai": 108
+      "DDzuikeai": 111
     }
   },
   {
@@ -17435,44 +17533,44 @@
       {
         "lineNumber": 34,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "DDzuikeai"
         },
-        "content": "            this.name \u003d descriptionArray[0];"
+        "content": "            this.name \u003d descriptionArray[0].trim();"
       },
       {
         "lineNumber": 35,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "DDzuikeai"
         },
-        "content": "            this.age \u003d Integer.parseInt(descriptionArray[1]);"
+        "content": "            this.age \u003d Integer.parseInt(descriptionArray[1].trim());"
       },
       {
         "lineNumber": 36,
         "author": {
-          "gitId": "lamyuewei"
+          "gitId": "DDzuikeai"
         },
-        "content": "            this.gender \u003d Parser.parseGender(descriptionArray[2]);"
+        "content": "            this.gender \u003d Parser.parseGender(descriptionArray[2].trim());"
       },
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "DDzuikeai"
         },
-        "content": "            this.height \u003d Double.parseDouble(descriptionArray[3]);"
+        "content": "            this.height \u003d Double.parseDouble(descriptionArray[3].trim());"
       },
       {
         "lineNumber": 38,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "DDzuikeai"
         },
-        "content": "            this.weight \u003d Double.parseDouble(descriptionArray[4]);"
+        "content": "            this.weight \u003d Double.parseDouble(descriptionArray[4].trim());"
       },
       {
         "lineNumber": 39,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "DDzuikeai"
         },
-        "content": "            this.weightGoal \u003d Double.parseDouble(descriptionArray[5]);"
+        "content": "            this.weightGoal \u003d Double.parseDouble(descriptionArray[5].trim());"
       },
       {
         "lineNumber": 40,
@@ -17630,9 +17728,9 @@
       }
     ],
     "authorContributionMap": {
-      "dejunnn": 37,
-      "lamyuewei": 4,
-      "DDzuikeai": 20
+      "dejunnn": 32,
+      "lamyuewei": 3,
+      "DDzuikeai": 26
     }
   },
   {
@@ -19394,9 +19492,9 @@
       {
         "lineNumber": 78,
         "author": {
-          "gitId": "dejunnn"
+          "gitId": "DDzuikeai"
         },
-        "content": "        String[] descriptionArray \u003d description.trim().split(\" \", argumentsRequired);"
+        "content": "        String[] descriptionArray \u003d description.trim().split(\"\\\\s+\", argumentsRequired);"
       },
       {
         "lineNumber": 79,
@@ -20114,9 +20212,9 @@
       }
     ],
     "authorContributionMap": {
-      "dejunnn": 110,
+      "dejunnn": 109,
       "lamyuewei": 31,
-      "DDzuikeai": 26,
+      "DDzuikeai": 27,
       "yuxianglim": 13
     }
   },
@@ -20631,9 +20729,9 @@
       {
         "lineNumber": 73,
         "author": {
-          "gitId": "lamyuewei"
+          "gitId": "DDzuikeai"
         },
-        "content": "    public static String INVALID_FOOD_FORMAT_ERROR \u003d \"Some food/foods are not added due to invalid format.\\n\";"
+        "content": "    public static String INVALID_FOOD_FORMAT_ERROR \u003d \"Some food/foods are not added due to invalid calories info.\\n\";"
       },
       {
         "lineNumber": 74,
@@ -20813,6 +20911,20 @@
       {
         "lineNumber": 99,
         "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "DDzuikeai"
+        },
+        "content": "    public static String SPLIT_LINE \u003d \"----------------------------------------------------------------\";"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
           "gitId": "dejunnn"
         },
         "content": "}"
@@ -20820,8 +20932,8 @@
     ],
     "authorContributionMap": {
       "dejunnn": 18,
-      "lamyuewei": 12,
-      "DDzuikeai": 61,
+      "lamyuewei": 11,
+      "DDzuikeai": 64,
       "yuxianglim": 8
     }
   },

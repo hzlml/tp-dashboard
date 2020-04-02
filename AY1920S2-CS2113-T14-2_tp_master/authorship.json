@@ -2140,9 +2140,9 @@
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "-"
+          "gitId": "alaukiknpant"
         },
-        "content": ""
+        "content": "* Note that if the input from the user is a valid command followed by arbitrary input, the programme will just ignore the arbitrary input and execute the valid command. For example, a command like `view article ls;dgljfg` will only read `view article` and ignore the gibberish command that follows the valid part."
       },
       {
         "lineNumber": 48,
@@ -2245,7 +2245,7 @@
       {
         "lineNumber": 62,
         "author": {
-          "gitId": "alaukiknpant"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -5312,7 +5312,7 @@
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        assert (CommonMethods.isLong(timeStamp)) : \"Timestamp should be of long type\";"
+        "content": "        assert (CommonMethods.checkIsLong(timeStamp)) : \"Timestamp should be of long type\";"
       },
       {
         "lineNumber": 19,
@@ -6151,7 +6151,7 @@
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        assert (CommonMethods.isLong(timeStamp)) : \"Timestamp should be of long type\";"
+        "content": "        assert (CommonMethods.checkIsLong(timeStamp)) : \"Timestamp should be of long type\";"
       },
       {
         "lineNumber": 20,
@@ -7055,325 +7055,332 @@
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "import seedu.techtoday.common.TimeStampToDateConverter;"
+        "content": "import seedu.techtoday.common.CommonMethods;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "import seedu.techtoday.objects.Article;"
+        "content": "import seedu.techtoday.common.TimeStampToDateConverter;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": ""
+        "content": "import seedu.techtoday.objects.Article;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "/** Class that represents a command used to print an article. */"
+        "content": ""
       },
       {
         "lineNumber": 7,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "/** Class that represents a command used to print an article. */"
+      },
+      {
+        "lineNumber": 8,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "public class ArticlePrinter {"
       },
       {
-        "lineNumber": 8,
+        "lineNumber": 9,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": ""
       },
       {
-        "lineNumber": 9,
+        "lineNumber": 10,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "    /**"
-      },
-      {
-        "lineNumber": 10,
-        "author": {
-          "gitId": "alaukiknpant"
-        },
-        "content": "     * Executes the printing of an article."
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "     *"
+        "content": "     * Executes the printing of an article."
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "     * @param taskCounter - Index of the information in the information list."
+        "content": "     *"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "     * @param article - Article representing an article object."
+        "content": "     * @param taskCounter - Index of the information in the information list."
       },
       {
         "lineNumber": 14,
         "author": {
-          "gitId": "melylopez99"
+          "gitId": "alaukiknpant"
         },
-        "content": "     */"
+        "content": "     * @param article - Article representing an article object."
       },
       {
         "lineNumber": 15,
         "author": {
-          "gitId": "alaukiknpant"
+          "gitId": "melylopez99"
         },
-        "content": "    public static void execute(int taskCounter, Article article) {"
+        "content": "     */"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        String timeStamp \u003d article.getTimeStamp();"
+        "content": "    public static void execute(int taskCounter, Article article) {"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        String date \u003d TimeStampToDateConverter.execute(timeStamp);"
+        "content": "        String timeStamp \u003d article.getTimeStamp();"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        String title \u003d article.getTitle();"
+        "content": "        String date \u003d TimeStampToDateConverter.execute(timeStamp);"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        String url \u003d article.getUrl();"
+        "content": "        String title \u003d article.getTitle();"
       },
       {
         "lineNumber": 20,
         "author": {
-          "gitId": "katelo731"
+          "gitId": "alaukiknpant"
         },
-        "content": "        String category \u003d article.getCategory();"
+        "content": "        String url \u003d article.getUrl();"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "katelo731"
         },
-        "content": "        String extract \u003d article.getExtract();"
+        "content": "        String category \u003d article.getCategory();"
       },
       {
         "lineNumber": 22,
         "author": {
-          "gitId": "alaukiknpant"
+          "gitId": "katelo731"
         },
-        "content": "        String upToNCharacters \u003d extract.substring(0, Math.min(extract.length(), 100)) + \"...\";"
+        "content": "        String extract \u003d article.getExtract();"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        System.out.println(taskCounter + \". Title: \" + title + System.lineSeparator()"
+        "content": "        String upToNCharacters \u003d CommonMethods.returnUptoNcharacters(extract);"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                                + \"   Date: \" + date + System.lineSeparator()"
+        "content": "        System.out.println(taskCounter + \". Title: \" + title + System.lineSeparator()"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                                + \"   Category: \" + category + System.lineSeparator()"
+        "content": "                                + \"   Date: \" + date + System.lineSeparator()"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                                + \"   Url: \" + url + System.lineSeparator()"
+        "content": "                                + \"   Category: \" + category + System.lineSeparator()"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                                + \"   Extract: \" + upToNCharacters);"
+        "content": "                                + \"   Url: \" + url + System.lineSeparator()"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "    }"
+        "content": "                                + \"   Extract: \" + upToNCharacters);"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 30,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 31,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 31,
+        "lineNumber": 32,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "     * Prints an article outside the setting of a article list."
       },
       {
-        "lineNumber": 32,
+        "lineNumber": 33,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 33,
+        "lineNumber": 34,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "     * @param article - Article representing an article object."
       },
       {
-        "lineNumber": 34,
+        "lineNumber": 35,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 35,
+        "lineNumber": 36,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "    public static void printIsolatedArticle(Article article) {"
       },
       {
-        "lineNumber": 36,
+        "lineNumber": 37,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "        String timeStamp \u003d article.getTimeStamp();"
       },
       {
-        "lineNumber": 37,
+        "lineNumber": 38,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "        String date \u003d TimeStampToDateConverter.execute(timeStamp);"
       },
       {
-        "lineNumber": 38,
+        "lineNumber": 39,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "        String title \u003d article.getTitle();"
       },
       {
-        "lineNumber": 39,
+        "lineNumber": 40,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "        String url \u003d article.getUrl();"
       },
       {
-        "lineNumber": 40,
+        "lineNumber": 41,
         "author": {
           "gitId": "katelo731"
         },
         "content": "        String category \u003d article.getCategory();"
       },
       {
-        "lineNumber": 41,
+        "lineNumber": 42,
         "author": {
           "gitId": "katelo731"
         },
         "content": "        String extract \u003d article.getExtract();"
       },
       {
-        "lineNumber": 42,
-        "author": {
-          "gitId": "alaukiknpant"
-        },
-        "content": "        String upToNCharacters \u003d extract.substring(0, Math.min(extract.length(), 100)) + \"...\";"
-      },
-      {
         "lineNumber": 43,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        System.out.println(\"   Title: \" + title + System.lineSeparator()"
+        "content": "        String upToNCharacters \u003d CommonMethods.returnUptoNcharacters(extract);"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                                + \"   Date: \" + date + System.lineSeparator()"
+        "content": "        System.out.println(\"   Title: \" + title + System.lineSeparator()"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                                + \"   Category: \" + category + System.lineSeparator()"
+        "content": "                                + \"   Date: \" + date + System.lineSeparator()"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                                + \"   Url: \" + url + System.lineSeparator()"
+        "content": "                                + \"   Category: \" + category + System.lineSeparator()"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                                + \"   Extract: \" + upToNCharacters);"
+        "content": "                                + \"   Url: \" + url + System.lineSeparator()"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "    }"
+        "content": "                                + \"   Extract: \" + upToNCharacters);"
       },
       {
         "lineNumber": 49,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 50,
         "author": {
           "gitId": "alaukiknpant"
         },
@@ -7383,7 +7390,7 @@
     "authorContributionMap": {
       "melylopez99": 6,
       "katelo731": 4,
-      "alaukiknpant": 39
+      "alaukiknpant": 40
     }
   },
   {
@@ -8114,7 +8121,7 @@
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        System.out.println(Messages.SPLIT_LINE);"
+        "content": "        Messages.printStraightLine();"
       },
       {
         "lineNumber": 12,
@@ -8501,35 +8508,35 @@
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                Article article \u003d SavedArticleList.savedArticleList.get(index);"
+        "content": "                addInfoToArticle(index, extract);"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                article.setExtract(article, extract);"
+        "content": "                break;"
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                System.out.println(\"Done, the article description now looks like the following \\n\");"
+        "content": "            }"
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                ArticlePrinter.printIsolatedArticle(article);"
+        "content": "            case \"job\": {"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                Messages.printStraightLine();"
+        "content": "                addInfoToJob(index, extract);"
       },
       {
         "lineNumber": 57,
@@ -8550,49 +8557,49 @@
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            case \"job\": {"
+        "content": "            case \"note\": {"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                Job job \u003d SavedJobList.savedJobList.get(index);"
+        "content": "                addInfoToNote(index, extract);"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                System.out.println(\"Done, the job description now looks like the following \\n\");"
+        "content": "                break;"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                job.setExtract(job, extract);"
+        "content": "            }"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                JobPrinter.printIsolatedJob(job);"
+        "content": "            default: {"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                Messages.printStraightLine();"
+        "content": "                Messages.printAddInfoException(\" addinfo [article / job / note] INDEX_NUMBER EXTRACT\");"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                break;"
+        "content": "            }"
       },
       {
         "lineNumber": 66,
@@ -8606,168 +8613,168 @@
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            case \"note\": {"
+        "content": "            LOGGER.log(Level.INFO, \"\\n Successful \\n\");"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                Note note \u003d SavedNoteList.savedNoteList.get(index);"
+        "content": "        } catch (IndexOutOfBoundsException e) {"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                System.out.println(\"Done, the note description now looks like the following \\n\");"
+        "content": "            LOGGER.log(Level.INFO, \"\\n Index out of bounds for Information Adder. \\n\");"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                note.setExtract(note, extract);"
+        "content": "            Messages.printAddInfoException(\" addinfo [article / job / note] INDEX_NUMBER EXTRACT\");"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                NotePrinter.printIsolatedNote(note);"
+        "content": "        } catch (NumberFormatException e) {"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                Messages.printStraightLine();"
+        "content": "            LOGGER.log(Level.INFO, \"\\n Incorrect format alltogether for Information Adder.. \\n\");"
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                break;"
+        "content": "            Messages.printAddInfoException(\" addinfo [article / job / note] INDEX_NUMBER EXTRACT\");"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            }"
+        "content": "        }"
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            default: {"
+        "content": "    }"
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                System.out.println(\"addinfo should be of the following form: \\n\");"
+        "content": ""
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                Messages.printInCenter(\"5. addinfo [article / job / note] [index number] [extract]\");"
+        "content": "    /**"
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                Messages.printStraightLine();"
+        "content": "     * Adds extract to an existing Note."
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            }"
+        "content": "     * @param index - Index of the article in the note list."
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            }"
+        "content": "     * @param extract - Extract to be added."
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            LOGGER.log(Level.INFO, \"\\n Successful \\n\");"
+        "content": "     */"
       },
       {
         "lineNumber": 82,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        } catch (IndexOutOfBoundsException e) {"
+        "content": "    public static void addInfoToNote(int index, String extract) {"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            LOGGER.log(Level.INFO, \"\\n Index out of bounds for Information Adder. \\n\");"
+        "content": "        try {"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            System.out.println(\"Sorry! You can only add extract to article/job/note with valid index number! \""
+        "content": "            Note note \u003d SavedNoteList.savedNoteList.get(index);"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                    + \"Your command format is incorrect. Try again \");"
+        "content": "            System.out.println(\"Done, the note description now looks like the following \\n\");"
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            Messages.printStraightLine();"
+        "content": "            note.setExtract(note, extract);"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        } catch (NumberFormatException e) {"
+        "content": "            NotePrinter.printIsolatedNote(note);"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            LOGGER.log(Level.INFO, \"\\n Incorrect format alltogether for Information Adder.. \\n\");"
+        "content": "            Messages.printStraightLine();"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            System.out.println(\"Sorry! Incorrect command to add extract to \""
+        "content": "        } catch (IndexOutOfBoundsException e) {"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                    + \"article/job/note with valid index number!\");"
+        "content": "            System.out.println(\"Sorry, Index number is incorrect!\");"
       },
       {
         "lineNumber": 91,
@@ -8795,11 +8802,263 @@
         "author": {
           "gitId": "alaukiknpant"
         },
+        "content": ""
+      },
+      {
+        "lineNumber": 95,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 96,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "     * Adds extract to an existing job."
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "     * @param index - Index of the article in the job list."
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "     * @param extract - Extract to be added."
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "    public static void addInfoToJob(int index, String extract) {"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "            Job job \u003d SavedJobList.savedJobList.get(index);"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "            System.out.println(\"Done, the job description now looks like the following \\n\");"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "            job.setExtract(job, extract);"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "            JobPrinter.printIsolatedJob(job);"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "            Messages.printStraightLine();"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "        } catch (IndexOutOfBoundsException e) {"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "            System.out.println(\"Sorry, Index number is incorrect!\");"
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "            Messages.printStraightLine();"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "     * Adds extract to an existing article."
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "     * @param index - Index of the article in the article list."
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "     * @param extract - Extract to be added."
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "    public static void addInfoToArticle(int index, String extract) {"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "        try {"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "            Article article \u003d SavedArticleList.savedArticleList.get(index);"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "            article.setExtract(article, extract);"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "            System.out.println(\"Done, the article description now looks like the following \\n\");"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "            ArticlePrinter.printIsolatedArticle(article);"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "            Messages.printStraightLine();"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "        } catch (IndexOutOfBoundsException e) {"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "            System.out.println(\"Sorry, Index number is incorrect!\");"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "            Messages.printStraightLine();"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "alaukiknpant": 94
+      "alaukiknpant": 130
     }
   },
   {
@@ -9938,14 +10197,14 @@
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "import seedu.techtoday.common.Messages;"
+        "content": "import seedu.techtoday.articlelist.ViewedArticleList;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "import seedu.techtoday.exception.TechTodayException;"
+        "content": "import seedu.techtoday.common.Messages;"
       },
       {
         "lineNumber": 7,
@@ -9959,297 +10218,367 @@
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": ""
+        "content": "import seedu.techtoday.joblist.ViewedJobList;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "/** Class representing the saving of articles, jobs and notes from their respective lists. */"
+        "content": ""
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "public class InformationSaver {"
+        "content": ""
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": ""
+        "content": "/** Class representing the saving of articles, jobs and notes from their respective lists. */"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "    /**"
+        "content": "public class InformationSaver {"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "     * Executes the saving of a note/article/job."
+        "content": ""
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "     * @param userResponse - Input of the user in the command line."
+        "content": "    /**"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "     */"
+        "content": "     * Executes the saving of a note/article/job."
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "    public static void execute(String userResponse) throws TechTodayException {"
+        "content": "     * @param userResponse - Input of the user in the command line."
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        try {"
+        "content": "     */"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            String type \u003d userResponse.split(\" \")[1];"
+        "content": "    public static void execute(String userResponse) {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            switch (type) {"
+        "content": "        try {"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            case \"article\": {"
+        "content": "            String type \u003d userResponse.split(\" \")[1];"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                ArticleSaver.execute(SavedArticleList.savedArticleList, userResponse);"
+        "content": "            switch (type) {"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                Messages.printStraightLine();"
+        "content": "            case \"article\": {"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                break;"
+        "content": "                if (ViewedArticleList.viewedArticleList.size() \u003d\u003d 0) {"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            }"
+        "content": "                    System.out.println(\"Sorry, you have not viewed any article to save.\");"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            case \"job\": {"
+        "content": "                    System.out.println(\"Try \\\"view article\\\" first\");"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                seedu.techtoday.joblist.JobSaver.execute(SavedJobList.savedJobList, userResponse);"
+        "content": "                    Messages.printStraightLine();"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                Messages.printStraightLine();"
+        "content": "                } else {"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                break;"
+        "content": "                    ArticleSaver.execute(SavedArticleList.savedArticleList, userResponse);"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            }"
+        "content": "                    Messages.printStraightLine();"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            default: {"
+        "content": "                }"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                System.out.println(\"Save command or its index number is incorrect. \""
+        "content": "                break;"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                        + \"It should be of the following form: \\n\");"
+        "content": "            }"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                Messages.printInCenter(\"save [article / job] [index number (optional)]\");"
+        "content": "            case \"job\": {"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                Messages.printStraightLine();"
+        "content": "                if (ViewedJobList.viewedJobList.size() \u003d\u003d 0) {"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            }"
+        "content": "                    System.out.println(\"Sorry, you have not viewed any job to save.\");"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            }"
+        "content": "                    System.out.println(\"Try \\\"view job\\\" first\");"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            return;"
+        "content": "                    Messages.printStraightLine();"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        } catch (IndexOutOfBoundsException e) {"
+        "content": "                } else {"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            System.out.println(\"Sorry! You can only save article/job with valid index number!\\n\""
+        "content": "                    seedu.techtoday.joblist.JobSaver.execute(SavedJobList.savedJobList, userResponse);"
       },
       {
         "lineNumber": 40,
         "author": {
-          "gitId": "yolanmz"
+          "gitId": "alaukiknpant"
         },
-        "content": "                    + \"Maybe you haven\u0027t viewed any articles to save \\n\\n\""
+        "content": "                    Messages.printStraightLine();"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                    + \"Try \\\" view [article \\\\ job] \\\" or a differnt command\");"
+        "content": "                }"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            Messages.printStraightLine();"
+        "content": "                break;"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            return;"
+        "content": "            }"
       },
       {
         "lineNumber": 44,
         "author": {
-          "gitId": "yolanmz"
+          "gitId": "alaukiknpant"
         },
-        "content": "        } catch (NumberFormatException e) {"
+        "content": "            default: {"
       },
       {
         "lineNumber": 45,
         "author": {
-          "gitId": "yolanmz"
+          "gitId": "alaukiknpant"
         },
-        "content": "            System.out.println(\"Sorry! Please enter a valid index number for the save command. Try again.\");"
+        "content": "                System.out.println(\"Save command is incorrect. \""
       },
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "yolanmz"
+          "gitId": "alaukiknpant"
         },
-        "content": "            Messages.printStraightLine();"
+        "content": "                        + \"It should be of the following form: \\n\");"
       },
       {
         "lineNumber": 47,
         "author": {
-          "gitId": "yolanmz"
+          "gitId": "alaukiknpant"
         },
-        "content": "            return;"
+        "content": "                Messages.printInCenter(\"save [article / job] INDEX_NUMBER\");"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        }"
+        "content": "                Messages.printStraightLine();"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "    }"
+        "content": "            }"
       },
       {
         "lineNumber": 50,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 51,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "        } catch (IndexOutOfBoundsException e) {"
+      },
+      {
+        "lineNumber": 52,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "            System.out.println(\"Sorry! You can only save article/job with valid index number!\\n\""
+      },
+      {
+        "lineNumber": 53,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "                    + \"Try \\\"save [article \\\\ job] VALID_INDEX_NUMBER\\\"\");"
+      },
+      {
+        "lineNumber": 54,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "            Messages.printStraightLine();"
+      },
+      {
+        "lineNumber": 55,
+        "author": {
+          "gitId": "yolanmz"
+        },
+        "content": "        } catch (NumberFormatException e) {"
+      },
+      {
+        "lineNumber": 56,
+        "author": {
+          "gitId": "yolanmz"
+        },
+        "content": "            System.out.println(\"Sorry! Please enter a valid index number for the save command. Try again.\");"
+      },
+      {
+        "lineNumber": 57,
+        "author": {
+          "gitId": "yolanmz"
+        },
+        "content": "            Messages.printStraightLine();"
+      },
+      {
+        "lineNumber": 58,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 60,
         "author": {
           "gitId": "alaukiknpant"
         },
@@ -10257,8 +10586,8 @@
       }
     ],
     "authorContributionMap": {
-      "yolanmz": 5,
-      "alaukiknpant": 45
+      "yolanmz": 3,
+      "alaukiknpant": 57
     }
   },
   {
@@ -10312,49 +10641,49 @@
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "import seedu.techtoday.common.Messages;"
+        "content": "import seedu.techtoday.articlelist.ViewedArticleList;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "import seedu.techtoday.joblist.JobListPrinter;"
+        "content": "import seedu.techtoday.common.Messages;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "import seedu.techtoday.joblist.SavedJobList;"
+        "content": "import seedu.techtoday.joblist.JobListPrinter;"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "import seedu.techtoday.storage.InBuiltArticleListGenerator;"
+        "content": "import seedu.techtoday.joblist.SavedJobList;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "import seedu.techtoday.storage.InBuiltJobListGenerator;"
+        "content": "import seedu.techtoday.joblist.ViewedJobList;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": ""
+        "content": "import seedu.techtoday.storage.InBuiltArticleListGenerator;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "import java.io.IOException;"
+        "content": "import seedu.techtoday.storage.InBuiltJobListGenerator;"
       },
       {
         "lineNumber": 14,
@@ -10368,273 +10697,273 @@
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "/** Class representing the viewing of articles, jobs and notes from their respective lists. */"
+        "content": "import java.io.IOException;"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "public class InformationViewer {"
+        "content": ""
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": ""
+        "content": "/** Class representing the viewing of articles, jobs and notes from their respective lists. */"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "    /**"
+        "content": "public class InformationViewer {"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "     * Executes the viewing of a note/article/job."
+        "content": ""
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "     * @param userResponse - Input of the user in the command line."
+        "content": "    /**"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "     */"
+        "content": "     * Executes the viewing of a note/article/job."
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "    public static void execute(String userResponse) {"
+        "content": "     * @param userResponse - Input of the user in the command line."
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        try {"
+        "content": "     */"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            String type \u003d userResponse.split(\" \")[1];"
+        "content": "    public static void execute(String userResponse) {"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            System.out.println(\"Loading information from the internet... \\n\");"
+        "content": "        try {"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            if (type.equals(\"job\")) {"
+        "content": "            String type \u003d userResponse.split(\" \")[1];"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                try {"
+        "content": "            System.out.println(\"Loading information from the internet... \\n\");"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                    JsonJobsReader.viewNewJobs();"
+        "content": "            if (type.equals(\"job\")) {"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                } catch (IOException e) {"
+        "content": "                try {"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                    System.out.println(\"Your device is not connected to the internet, \""
+        "content": "                    JsonJobsReader.viewNewJobs();"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                            + \"we will load pre-existing jobs\");"
+        "content": "                } catch (IOException e) {"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                    InBuiltJobListGenerator.execute();"
+        "content": "                    System.out.println(\"Your device is not connected to the internet, \""
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                    JobListPrinter.execute(SavedJobList.savedJobList);"
+        "content": "                            + \"we will load pre-existing jobs\");"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                }"
+        "content": "                    InBuiltJobListGenerator.execute();"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            } else if (type.equals(\"article\")) {"
+        "content": "                    JobListPrinter.execute(ViewedJobList.viewedJobList);"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                try {"
+        "content": "                }"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                    JsonNewsReader.viewNewNews();"
+        "content": "            } else if (type.equals(\"article\")) {"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                } catch (IOException e) {"
+        "content": "                try {"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                    System.out.println(\"Your device is not connected to the internet, \""
+        "content": "                    JsonNewsReader.viewNewNews();"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                            + \"we will load pre-existing articles \\n\");"
+        "content": "                } catch (IOException e) {"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                    InBuiltArticleListGenerator.execute();"
+        "content": "                    System.out.println(\"Your device is not connected to the internet, \""
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                    ArticleListPrinter.execute(SavedArticleList.savedArticleList);"
+        "content": "                            + \"we will load pre-existing articles \\n\");"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                }"
+        "content": "                    InBuiltArticleListGenerator.execute();"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            } else {"
+        "content": "                    ArticleListPrinter.execute(ViewedArticleList.viewedArticleList);"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                System.out.print(\"Sorry! You can only view article/job! \""
+        "content": "                }"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                        + \"Your command format is incorrect. Try again \\n\");"
+        "content": "            } else {"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                return;"
+        "content": "                System.out.print(\"Sorry! You can only view article/job! \""
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            }"
+        "content": "                        + \"Your command format is incorrect. Try again \\n\");"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            return;"
+        "content": "                return;"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        } catch (IndexOutOfBoundsException e) {"
+        "content": "            }"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            System.out.println(\"View command is incorrect. It should be of the following form: \\n\");"
+        "content": "        } catch (IndexOutOfBoundsException e) {"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            Messages.printInCenter(\"1. view [article / job]\");"
+        "content": "            System.out.println(\"View command is incorrect. It should be of the following form: \\n\");"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "            return;"
+        "content": "            Messages.printInCenter(\"1. view [article / job]\");"
       },
       {
         "lineNumber": 54,
@@ -11380,7 +11709,7 @@
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "    public static boolean isLong(String longer) {"
+        "content": "    public static boolean checkIsLong(String longer) {"
       },
       {
         "lineNumber": 12,
@@ -11450,11 +11779,116 @@
         "author": {
           "gitId": "alaukiknpant"
         },
+        "content": ""
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "     * Returns upto the first 100 characters of a sting."
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "     * @param string - String that is to be formatted."
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "     * @return - String that is reduced in size."
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "    public static String returnUptoNcharacters(String string) {"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "        String upToNCharacters;"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "        if (string.length() \u003c\u003d 100) {"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "            upToNCharacters \u003d string;"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "            upToNCharacters \u003d string.substring(0, Math.min(string.length(), 100)) + \"...\";"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "        return upToNCharacters;"
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "alaukiknpant": 21
+      "alaukiknpant": 36
     }
   },
   {
@@ -11863,6 +12297,76 @@
       {
         "lineNumber": 58,
         "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "     * Prints Exception Message when addInfo Command is incorrect."
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "     * @param s - Message to be printed in the center."
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "    public static void printAddInfoException(String s) {"
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "        System.out.println(\"addinfo should be of the following form: \\n\");"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "        Messages.printInCenter(s);"
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "        Messages.printStraightLine();"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 68,
+        "author": {
           "gitId": "katelo731"
         },
         "content": "}"
@@ -11870,7 +12374,7 @@
     ],
     "authorContributionMap": {
       "katelo731": 24,
-      "alaukiknpant": 34
+      "alaukiknpant": 44
     }
   },
   {
@@ -13389,304 +13893,318 @@
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "import seedu.techtoday.common.TimeStampToDateConverter;"
+        "content": "import seedu.techtoday.common.CommonMethods;"
       },
       {
         "lineNumber": 4,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "import seedu.techtoday.objects.Job;"
+        "content": "import seedu.techtoday.common.TimeStampToDateConverter;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": ""
+        "content": "import seedu.techtoday.objects.Job;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "/** Class representing a method used to print a job. */"
+        "content": ""
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "public class JobPrinter {"
+        "content": "/** Class representing a method used to print a job. */"
       },
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "melylopez99"
+          "gitId": "alaukiknpant"
         },
-        "content": "    /**"
+        "content": "public class JobPrinter {"
       },
       {
         "lineNumber": 9,
         "author": {
-          "gitId": "alaukiknpant"
+          "gitId": "melylopez99"
         },
-        "content": "     * Executes the printing of a job."
+        "content": "    /**"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "     * @param taskCounter - Index number of jobs in jobList."
+        "content": "     * Executes the printing of a job."
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "     * @param job - Job object representing a job."
+        "content": "     * @param taskCounter - Index number of jobs in jobList."
       },
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "melylopez99"
+          "gitId": "alaukiknpant"
         },
-        "content": "     */"
+        "content": "     * @param job - Job object representing a job."
       },
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "alaukiknpant"
+          "gitId": "melylopez99"
         },
-        "content": "    public static void execute(int taskCounter, Job job) {"
+        "content": "     */"
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        String timeStamp \u003d job.getTimeStamp();"
+        "content": "    public static void execute(int taskCounter, Job job) {"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        String date \u003d TimeStampToDateConverter.execute(timeStamp);"
+        "content": "        String timeStamp \u003d job.getTimeStamp();"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        String title \u003d job.getTitle();"
+        "content": "        String date \u003d TimeStampToDateConverter.execute(timeStamp);"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        String text \u003d job.getText();"
+        "content": "        String title \u003d job.getTitle();"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        String upToNCharactersText \u003d text.substring(0, Math.min(text.length(), 100)) + \"...\";"
+        "content": "        String text \u003d job.getText();"
       },
       {
         "lineNumber": 19,
         "author": {
-          "gitId": "katelo731"
+          "gitId": "alaukiknpant"
         },
-        "content": "        String category \u003d job.getCategory();"
+        "content": "        String upToNCharactersText \u003d text.substring(0, Math.min(text.length(), 100)) + \"...\";"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "katelo731"
         },
-        "content": "        String extract \u003d job.getExtract();"
+        "content": "        String category \u003d job.getCategory();"
       },
       {
         "lineNumber": 21,
         "author": {
-          "gitId": "alaukiknpant"
+          "gitId": "katelo731"
         },
-        "content": "        String upToNCharactersExtarct \u003d extract.substring(0, Math.min(extract.length(), 100)) + \"...\";"
+        "content": "        String extract \u003d job.getExtract();"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        System.out.println(taskCounter + \". Title: \" + title + System.lineSeparator()"
+        "content": "        String upToNCharacters \u003d CommonMethods.returnUptoNcharacters(extract);"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                            + \"   Date: \" + date + System.lineSeparator()"
+        "content": "        System.out.println(taskCounter + \". Title: \" + title + System.lineSeparator()"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                            + \"   Category: \" + category + System.lineSeparator()"
+        "content": "                            + \"   Date: \" + date + System.lineSeparator()"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                            + \"   Text: \" + upToNCharactersText + System.lineSeparator()"
+        "content": "                            + \"   Category: \" + category + System.lineSeparator()"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                            + \"   Extract: \" + upToNCharactersExtarct);"
+        "content": "                            + \"   Text: \" + upToNCharactersText + System.lineSeparator()"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "    }"
+        "content": "                            + \"   Extract: \" + upToNCharacters);"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 29,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 30,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 30,
+        "lineNumber": 31,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "     * Prints a job outside the context of a jobList."
       },
       {
-        "lineNumber": 31,
+        "lineNumber": 32,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "     * @param job - Job object representing a job."
       },
       {
-        "lineNumber": 32,
+        "lineNumber": 33,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 33,
+        "lineNumber": 34,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "    public static void printIsolatedJob(Job job) {"
       },
       {
-        "lineNumber": 34,
+        "lineNumber": 35,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "        String timeStamp \u003d job.getTimeStamp();"
       },
       {
-        "lineNumber": 35,
+        "lineNumber": 36,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "        String date \u003d TimeStampToDateConverter.execute(timeStamp);"
       },
       {
-        "lineNumber": 36,
+        "lineNumber": 37,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "        String title \u003d job.getTitle();"
       },
       {
-        "lineNumber": 37,
+        "lineNumber": 38,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "        String text \u003d job.getText();"
       },
       {
-        "lineNumber": 38,
+        "lineNumber": 39,
         "author": {
           "gitId": "katelo731"
         },
         "content": "        String category \u003d job.getCategory();"
       },
       {
-        "lineNumber": 39,
+        "lineNumber": 40,
         "author": {
           "gitId": "katelo731"
         },
         "content": "        String extract \u003d job.getExtract();"
       },
       {
-        "lineNumber": 40,
-        "author": {
-          "gitId": "alaukiknpant"
-        },
-        "content": "        System.out.println(\"   Title: \" + title + System.lineSeparator()"
-      },
-      {
         "lineNumber": 41,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                + \"   Date: \" + date + System.lineSeparator()"
+        "content": "        String upToNCharacters \u003d CommonMethods.returnUptoNcharacters(extract);"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                + \"   Category: \" + category + System.lineSeparator()"
+        "content": "        System.out.println(\"   Title: \" + title + System.lineSeparator()"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                + \"   Text: \" + text + System.lineSeparator()"
+        "content": "                + \"   Date: \" + date + System.lineSeparator()"
       },
       {
         "lineNumber": 44,
         "author": {
-          "gitId": "katelo731"
+          "gitId": "alaukiknpant"
         },
-        "content": "                + \"   Extract: \" + extract);"
+        "content": "                + \"   Category: \" + category + System.lineSeparator()"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "    }"
+        "content": "                + \"   Text: \" + text + System.lineSeparator()"
       },
       {
         "lineNumber": 46,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "                + \"   Extract: \" + upToNCharacters);"
+      },
+      {
+        "lineNumber": 47,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 48,
         "author": {
           "gitId": "alaukiknpant"
         },
@@ -13695,8 +14213,8 @@
     ],
     "authorContributionMap": {
       "melylopez99": 5,
-      "katelo731": 5,
-      "alaukiknpant": 36
+      "katelo731": 4,
+      "alaukiknpant": 39
     }
   },
   {
@@ -14654,297 +15172,318 @@
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "import seedu.techtoday.common.TimeStampToDateConverter;"
+        "content": "import seedu.techtoday.common.CommonMethods;"
       },
       {
         "lineNumber": 4,
         "author": {
-          "gitId": "katelo731"
+          "gitId": "alaukiknpant"
         },
-        "content": "import seedu.techtoday.objects.Note;"
+        "content": "import seedu.techtoday.common.TimeStampToDateConverter;"
       },
       {
         "lineNumber": 5,
         "author": {
           "gitId": "katelo731"
         },
-        "content": ""
+        "content": "import seedu.techtoday.objects.Note;"
       },
       {
         "lineNumber": 6,
+        "author": {
+          "gitId": "katelo731"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 7,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "/** Represents command that is used to call a method to print note from noteList. */"
       },
       {
-        "lineNumber": 7,
+        "lineNumber": 8,
         "author": {
           "gitId": "katelo731"
         },
         "content": "public class NotePrinter {"
       },
       {
-        "lineNumber": 8,
+        "lineNumber": 9,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "    /**"
-      },
-      {
-        "lineNumber": 9,
-        "author": {
-          "gitId": "alaukiknpant"
-        },
-        "content": "     * Prints a particular note."
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "     * @param taskCounter - Index of the note in noteList."
+        "content": "     * Prints a particular note."
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "     * @param note - Objecting representing note."
+        "content": "     * @param taskCounter - Index of the note in noteList."
       },
       {
         "lineNumber": 12,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "     * @param note - Objecting representing note."
+      },
+      {
+        "lineNumber": 13,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 13,
+        "lineNumber": 14,
         "author": {
           "gitId": "katelo731"
         },
         "content": "    public static void execute(int taskCounter, Note note) {"
       },
       {
-        "lineNumber": 14,
+        "lineNumber": 15,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "        String timeStamp \u003d note.getTimeStamp();"
       },
       {
-        "lineNumber": 15,
+        "lineNumber": 16,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "        String date \u003d TimeStampToDateConverter.execute(timeStamp);"
-      },
-      {
-        "lineNumber": 16,
-        "author": {
-          "gitId": "katelo731"
-        },
-        "content": "        String title \u003d note.getTitle();"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "katelo731"
         },
-        "content": "        String extract \u003d note.getExtract();"
+        "content": "        String title \u003d note.getTitle();"
       },
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "alaukiknpant"
+          "gitId": "katelo731"
         },
-        "content": "        String category \u003d note.getCategory();"
+        "content": "        String extract \u003d note.getExtract();"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        String url \u003d note.getUrl();"
+        "content": "        String upToNCharacters \u003d CommonMethods.returnUptoNcharacters(extract);"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        System.out.println(taskCounter + \". Title: \" + title + System.lineSeparator()"
+        "content": "        String category \u003d note.getCategory();"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                                + \"   Date: \" + date + System.lineSeparator()"
+        "content": "        String url \u003d note.getUrl();"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                                + \"   Text: \" + extract + System.lineSeparator()"
+        "content": "        System.out.println(taskCounter + \". Title: \" + title + System.lineSeparator()"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                                + \"   Category: \" + category + System.lineSeparator()"
+        "content": "                                + \"   Date: \" + date + System.lineSeparator()"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                                + \"   URL: \" + url);"
+        "content": "                                + \"   Category: \" + category + System.lineSeparator()"
       },
       {
         "lineNumber": 25,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "                                + \"   URL: \" + url + System.lineSeparator()"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "                                + \"   Extract: \" + upToNCharacters);"
+      },
+      {
+        "lineNumber": 27,
         "author": {
           "gitId": "katelo731"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 26,
+        "lineNumber": 28,
         "author": {
           "gitId": "katelo731"
         },
         "content": ""
       },
       {
-        "lineNumber": 27,
+        "lineNumber": 29,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 28,
+        "lineNumber": 30,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "     * Prints a note outside the scope of a noteList."
       },
       {
-        "lineNumber": 29,
+        "lineNumber": 31,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "     * @param note - Object representing note."
       },
       {
-        "lineNumber": 30,
+        "lineNumber": 32,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 31,
+        "lineNumber": 33,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "    public static void printIsolatedNote(Note note) {"
       },
       {
-        "lineNumber": 32,
+        "lineNumber": 34,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "        String timeStamp \u003d note.getTimeStamp();"
       },
       {
-        "lineNumber": 33,
+        "lineNumber": 35,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "        String date \u003d TimeStampToDateConverter.execute(timeStamp);"
       },
       {
-        "lineNumber": 34,
+        "lineNumber": 36,
         "author": {
           "gitId": "katelo731"
         },
         "content": "        String title \u003d note.getTitle();"
       },
       {
-        "lineNumber": 35,
+        "lineNumber": 37,
         "author": {
           "gitId": "katelo731"
         },
         "content": "        String extract \u003d note.getExtract();"
       },
       {
-        "lineNumber": 36,
-        "author": {
-          "gitId": "alaukiknpant"
-        },
-        "content": "        String category \u003d note.getCategory();"
-      },
-      {
-        "lineNumber": 37,
-        "author": {
-          "gitId": "alaukiknpant"
-        },
-        "content": "        String url \u003d note.getUrl();"
-      },
-      {
         "lineNumber": 38,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        System.out.println(\"   Title: \" + title + System.lineSeparator()"
+        "content": "        String upToNCharacters \u003d CommonMethods.returnUptoNcharacters(extract);"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                + \"   Date: \" + date + System.lineSeparator()"
+        "content": "        String category \u003d note.getCategory();"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                + \"   Text: \" + extract + System.lineSeparator()"
+        "content": "        String url \u003d note.getUrl();"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                + \"   Category: \" + category + System.lineSeparator()"
+        "content": "        System.out.println(\"   Title: \" + title + System.lineSeparator()"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "                + \"   URL: \" + url);"
+        "content": "                + \"   Date: \" + date + System.lineSeparator()"
       },
       {
         "lineNumber": 43,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "                + \"   Category: \" + category + System.lineSeparator()"
+      },
+      {
+        "lineNumber": 44,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "                + \"   URL: \" + url + System.lineSeparator()"
+      },
+      {
+        "lineNumber": 45,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "                + \"   Extract: \" + upToNCharacters);"
+      },
+      {
+        "lineNumber": 46,
         "author": {
           "gitId": "katelo731"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 47,
         "author": {
           "gitId": "katelo731"
         },
         "content": "}"
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 48,
         "author": {
           "gitId": "alaukiknpant"
         },
@@ -14954,7 +15493,7 @@
     "authorContributionMap": {
       "melylopez99": 5,
       "katelo731": 13,
-      "alaukiknpant": 27
+      "alaukiknpant": 30
     }
   },
   {
@@ -16736,402 +17275,409 @@
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "import seedu.techtoday.objects.Article;"
+        "content": "import seedu.techtoday.articlelist.ViewedArticleList;"
       },
       {
         "lineNumber": 5,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "import seedu.techtoday.objects.Article;"
+      },
+      {
+        "lineNumber": 6,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "import seedu.techtoday.articlelist.ArticleAdder;"
       },
       {
-        "lineNumber": 6,
-        "author": {
-          "gitId": "alaukiknpant"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 7,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "/**"
+        "content": ""
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": " * Class representing method to generate an article list when there is no internet."
+        "content": "/**"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": " */"
+        "content": " * Class representing method to generate an article list when there is no internet."
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "public class InBuiltArticleListGenerator {"
+        "content": " */"
       },
       {
         "lineNumber": 11,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "public class InBuiltArticleListGenerator {"
+      },
+      {
+        "lineNumber": 12,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 12,
+        "lineNumber": 13,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "     * Executes the generation of articles from existing information."
       },
       {
-        "lineNumber": 13,
+        "lineNumber": 14,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 14,
+        "lineNumber": 15,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "    public static void execute() {"
       },
       {
-        "lineNumber": 15,
-        "author": {
-          "gitId": "alaukiknpant"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 16,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        String timeStampToday \u003d \"1584768812\";"
+        "content": ""
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": ""
+        "content": "        String timeStampToday \u003d \"1584768812\";"
       },
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "melylopez99"
+          "gitId": "alaukiknpant"
         },
-        "content": "        // article 1"
+        "content": ""
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        String title1 \u003d \"How Tailscale Works\";"
+        "content": "        // article 1"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        String url1 \u003d \"https://tailscale.com/blog/how-tailscale-works/\";"
+        "content": "        String title1 \u003d \"How Tailscale Works\";"
       },
       {
         "lineNumber": 21,
         "author": {
-          "gitId": "alaukiknpant"
+          "gitId": "melylopez99"
         },
-        "content": "        Article article1 \u003d new Article(title1, url1, \"default\");"
+        "content": "        String url1 \u003d \"https://tailscale.com/blog/how-tailscale-works/\";"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        article1.setTime(timeStampToday);"
+        "content": "        Article article1 \u003d new Article(title1, url1, \"default\");"
       },
       {
         "lineNumber": 23,
         "author": {
-          "gitId": "melylopez99"
+          "gitId": "alaukiknpant"
         },
-        "content": ""
+        "content": "        article1.setTime(timeStampToday);"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        // article 2"
+        "content": ""
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        String title2 \u003d \"Tesla Model 3 Vulnerability – Disable Autopilot Notifications, Speedometer, etc.\";"
+        "content": "        // article 2"
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        String url2 \u003d \"https://safekeepsecurity.com/about/cve-2020-10558/\";"
+        "content": "        String title2 \u003d \"Tesla Model 3 Vulnerability – Disable Autopilot Notifications, Speedometer, etc.\";"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        Article article2 \u003d new Article(title2, url2, \"default\");"
+        "content": "        String url2 \u003d \"https://safekeepsecurity.com/about/cve-2020-10558/\";"
       },
       {
         "lineNumber": 28,
+        "author": {
+          "gitId": "melylopez99"
+        },
+        "content": "        Article article2 \u003d new Article(title2, url2, \"default\");"
+      },
+      {
+        "lineNumber": 29,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "        article2.setTime(timeStampToday);"
       },
       {
-        "lineNumber": 29,
-        "author": {
-          "gitId": "melylopez99"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 30,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        // article 3"
+        "content": ""
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        String title3 \u003d \"It never makes sense to use foldl on lists\";"
+        "content": "        // article 3"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        String url3 \u003d \"https://github.com/hasura/graphql-engine/pull/2933#discussion_r328821960\";"
+        "content": "        String title3 \u003d \"It never makes sense to use foldl on lists\";"
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        Article article3 \u003d new Article(title3, url3, \"default\");"
+        "content": "        String url3 \u003d \"https://github.com/hasura/graphql-engine/pull/2933#discussion_r328821960\";"
       },
       {
         "lineNumber": 34,
+        "author": {
+          "gitId": "melylopez99"
+        },
+        "content": "        Article article3 \u003d new Article(title3, url3, \"default\");"
+      },
+      {
+        "lineNumber": 35,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "        article3.setTime(timeStampToday);"
       },
       {
-        "lineNumber": 35,
-        "author": {
-          "gitId": "melylopez99"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 36,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        // article 4"
+        "content": ""
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        String title4 \u003d \"George Gershwin, Then and Now\";"
+        "content": "        // article 4"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        String url4 \u003d \"https://www.the-tls.co.uk/articles/summertime-crawford-cambridge-companion-to-gerschwin-calenza-review-russell-davies/\";"
+        "content": "        String title4 \u003d \"George Gershwin, Then and Now\";"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        Article article4 \u003d new Article(title4, url4, \"default\");"
+        "content": "        String url4 \u003d \"https://www.the-tls.co.uk/articles/summertime-crawford-cambridge-companion-to-gerschwin-calenza-review-russell-davies/\";"
       },
       {
         "lineNumber": 40,
+        "author": {
+          "gitId": "melylopez99"
+        },
+        "content": "        Article article4 \u003d new Article(title4, url4, \"default\");"
+      },
+      {
+        "lineNumber": 41,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "        article4.setTime(timeStampToday);"
       },
       {
-        "lineNumber": 41,
-        "author": {
-          "gitId": "melylopez99"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 42,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        // article 5"
+        "content": ""
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        String title5 \u003d \"AI for generative design: Plain text to 3D Designs\";"
+        "content": "        // article 5"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        String url5 \u003d \"https://blog.insightdatascience.com/ai-for-3d-generative-design-17503d0b3943\";"
+        "content": "        String title5 \u003d \"AI for generative design: Plain text to 3D Designs\";"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        Article article5 \u003d new Article(title5, url5, \"default\");"
+        "content": "        String url5 \u003d \"https://blog.insightdatascience.com/ai-for-3d-generative-design-17503d0b3943\";"
       },
       {
         "lineNumber": 46,
+        "author": {
+          "gitId": "melylopez99"
+        },
+        "content": "        Article article5 \u003d new Article(title5, url5, \"default\");"
+      },
+      {
+        "lineNumber": 47,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "        article5.setTime(timeStampToday);"
       },
       {
-        "lineNumber": 47,
-        "author": {
-          "gitId": "melylopez99"
-        },
-        "content": ""
-      },
-      {
         "lineNumber": 48,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        // article 6"
+        "content": ""
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        String title6 \u003d \"Furstenberg and Margulis awarded 2020 Abel Prize\";"
+        "content": "        // article 6"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        String url6 \u003d \"https://www.nature.com/articles/d41586-020-00799-7\";"
+        "content": "        String title6 \u003d \"Furstenberg and Margulis awarded 2020 Abel Prize\";"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        Article article6 \u003d new Article(title6, url6, \"default\");"
+        "content": "        String url6 \u003d \"https://www.nature.com/articles/d41586-020-00799-7\";"
       },
       {
         "lineNumber": 52,
         "author": {
-          "gitId": "alaukiknpant"
+          "gitId": "melylopez99"
         },
-        "content": "        article6.setTime(timeStampToday);"
+        "content": "        Article article6 \u003d new Article(title6, url6, \"default\");"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": ""
+        "content": "        article6.setTime(timeStampToday);"
       },
       {
         "lineNumber": 54,
         "author": {
-          "gitId": "melylopez99"
+          "gitId": "alaukiknpant"
         },
-        "content": "        ArticleAdder.execute(SavedArticleList.savedArticleList, article1);"
+        "content": ""
       },
       {
         "lineNumber": 55,
         "author": {
-          "gitId": "melylopez99"
+          "gitId": "alaukiknpant"
         },
-        "content": "        ArticleAdder.execute(SavedArticleList.savedArticleList, article2);"
+        "content": "        ArticleAdder.execute(ViewedArticleList.viewedArticleList, article1);"
       },
       {
         "lineNumber": 56,
         "author": {
-          "gitId": "melylopez99"
+          "gitId": "alaukiknpant"
         },
-        "content": "        ArticleAdder.execute(SavedArticleList.savedArticleList, article3);"
+        "content": "        ArticleAdder.execute(ViewedArticleList.viewedArticleList, article2);"
       },
       {
         "lineNumber": 57,
         "author": {
-          "gitId": "melylopez99"
+          "gitId": "alaukiknpant"
         },
-        "content": "        ArticleAdder.execute(SavedArticleList.savedArticleList, article4);"
+        "content": "        ArticleAdder.execute(ViewedArticleList.viewedArticleList, article3);"
       },
       {
         "lineNumber": 58,
         "author": {
-          "gitId": "melylopez99"
+          "gitId": "alaukiknpant"
         },
-        "content": "        ArticleAdder.execute(SavedArticleList.savedArticleList, article5);"
+        "content": "        ArticleAdder.execute(ViewedArticleList.viewedArticleList, article4);"
       },
       {
         "lineNumber": 59,
         "author": {
-          "gitId": "melylopez99"
+          "gitId": "alaukiknpant"
         },
-        "content": "        ArticleAdder.execute(SavedArticleList.savedArticleList, article6);"
+        "content": "        ArticleAdder.execute(ViewedArticleList.viewedArticleList, article5);"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "    }"
+        "content": "        ArticleAdder.execute(ViewedArticleList.viewedArticleList, article6);"
       },
       {
         "lineNumber": 61,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 62,
         "author": {
           "gitId": "alaukiknpant"
         },
@@ -17139,8 +17685,8 @@
       }
     ],
     "authorContributionMap": {
-      "melylopez99": 38,
-      "alaukiknpant": 23
+      "melylopez99": 32,
+      "alaukiknpant": 30
     }
   },
   {
@@ -17164,359 +17710,359 @@
       {
         "lineNumber": 3,
         "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "import seedu.techtoday.articlelist.ViewedArticleList;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
           "gitId": "melylopez99"
         },
         "content": "import seedu.techtoday.joblist.JobAdder;"
       },
       {
-        "lineNumber": 4,
+        "lineNumber": 5,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "import seedu.techtoday.objects.Job;"
-      },
-      {
-        "lineNumber": 5,
-        "author": {
-          "gitId": "melylopez99"
-        },
-        "content": "import seedu.techtoday.joblist.SavedJobList;"
+        "content": "import seedu.techtoday.joblist.ViewedJobList;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": ""
+        "content": "import seedu.techtoday.objects.Job;"
       },
       {
         "lineNumber": 7,
         "author": {
-          "gitId": "alaukiknpant"
+          "gitId": "melylopez99"
         },
-        "content": "public class InBuiltJobListGenerator {"
+        "content": "import seedu.techtoday.joblist.SavedJobList;"
       },
       {
         "lineNumber": 8,
         "author": {
-          "gitId": "melylopez99"
+          "gitId": "alaukiknpant"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "     * Method to add jobs to viewedJobList in case of no internet."
+        "content": "public class InBuiltJobListGenerator {"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "     */"
+        "content": "    /**"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "    public static void execute() {"
+        "content": "     * Method to add jobs to viewedJobList in case of no internet."
       },
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "alaukiknpant"
+          "gitId": "melylopez99"
         },
-        "content": ""
+        "content": "     */"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        String timeStampToday \u003d \"1584768812\";"
+        "content": "    public static void execute() {"
       },
       {
         "lineNumber": 14,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 15,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "        String timeStampOfToday \u003d \"1584768812\";"
       },
       {
-        "lineNumber": 15,
+        "lineNumber": 16,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": ""
-      },
-      {
-        "lineNumber": 16,
-        "author": {
-          "gitId": "melylopez99"
-        },
-        "content": "        // job 1"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        String job1 \u003d \"Tech jobs after COVID-19\";"
+        "content": "        // job 1"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "        String text1 \u003d \"With the COVID-19 outbreak, many companies were forced to rethink the way they operate \""
+        "content": "        String job1 \u003d \"Tech jobs after COVID-19\";"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "                + \"and how to use those technologies in order to establish a new way of working to reach their goals.\";"
+        "content": "        String text1 \u003d \"With the COVID-19 outbreak, many companies were forced to rethink the way they operate \""
       },
       {
         "lineNumber": 20,
+        "author": {
+          "gitId": "melylopez99"
+        },
+        "content": "                + \"and how to use those technologies in order to establish a new way of working to reach their goals.\";"
+      },
+      {
+        "lineNumber": 21,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "        Job jobOne \u003d new Job(job1, text1, \"default\");"
       },
       {
-        "lineNumber": 21,
+        "lineNumber": 22,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "        jobOne.setTime(timeStampOfToday);"
       },
       {
-        "lineNumber": 22,
+        "lineNumber": 23,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "        // job 2"
       },
       {
-        "lineNumber": 23,
+        "lineNumber": 24,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "        String job2 \u003d \"What are the best blogging platforms for developers in 2020?\";"
       },
       {
-        "lineNumber": 24,
+        "lineNumber": 25,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "        String text2 \u003d \"Medium, Towards Data Science, HackerNet, GeekForGeek.\";"
       },
       {
-        "lineNumber": 25,
+        "lineNumber": 26,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "        Job jobTwo \u003d new Job(job2, text2, \"default\");"
       },
       {
-        "lineNumber": 26,
+        "lineNumber": 27,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "        jobTwo.setTime(timeStampOfToday);"
       },
       {
-        "lineNumber": 27,
+        "lineNumber": 28,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "        // job 3"
       },
       {
-        "lineNumber": 28,
+        "lineNumber": 29,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "        String job3 \u003d \"What is the average Salary of a Silicon Valley Software Engineer?\";"
       },
       {
-        "lineNumber": 29,
+        "lineNumber": 30,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "        String text3 \u003d \"$104,000\";"
       },
       {
-        "lineNumber": 30,
+        "lineNumber": 31,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "        Job jobThree \u003d new Job(job3, text3, \"default\");"
       },
       {
-        "lineNumber": 31,
+        "lineNumber": 32,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "        jobThree.setTime(timeStampOfToday);"
       },
       {
-        "lineNumber": 32,
+        "lineNumber": 33,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "        // job 4"
       },
       {
-        "lineNumber": 33,
+        "lineNumber": 34,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "        String job4 \u003d \"How to Excel as a Software Engineer in developing countries?\";"
       },
       {
-        "lineNumber": 34,
+        "lineNumber": 35,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "        String text4 \u003d \"(FROM Quora): When I was working in China for awhile (a few years ago), I noticed that the \""
       },
       {
-        "lineNumber": 35,
+        "lineNumber": 36,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "                + \"biggest mismatch wasn\u0027t so much in coding skills, but in what would be called project management \""
       },
       {
-        "lineNumber": 36,
+        "lineNumber": 37,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "                + \"skills in the US.  Several groups I encountered didn\u0027t use source code control for code and didn\u0027t \""
       },
       {
-        "lineNumber": 37,
+        "lineNumber": 38,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "                + \"have a clue about configuration and release management.  When things broke, they\u0027d have a \""
       },
       {
-        "lineNumber": 38,
+        "lineNumber": 39,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "                + \"massive shouting match to figure out who to blame, followed by a \""
       },
       {
-        "lineNumber": 39,
+        "lineNumber": 40,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "                + \"fire-drill to try to put things back together.\" + System.lineSeparator();"
       },
       {
-        "lineNumber": 40,
+        "lineNumber": 41,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "        Job jobFour \u003d new Job(job4, text4, \"default\");"
       },
       {
-        "lineNumber": 41,
+        "lineNumber": 42,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "        jobFour.setTime(timeStampOfToday);"
       },
       {
-        "lineNumber": 42,
+        "lineNumber": 43,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "        // job 5"
       },
       {
-        "lineNumber": 43,
+        "lineNumber": 44,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "        String job5 \u003d \"Outreach for Covid-19 longitudinal study proposal?\";"
       },
       {
-        "lineNumber": 44,
+        "lineNumber": 45,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "        String text5 \u003d \"I\u0026#x27;m failing at finding development help for a COVID-19 study initiative. I could\""
       },
       {
-        "lineNumber": 45,
+        "lineNumber": 46,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "                + \" use your ideas and critiques.\";"
       },
       {
-        "lineNumber": 46,
+        "lineNumber": 47,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "        Job jobFive \u003d new Job(job5, text5, \"default\");"
       },
       {
-        "lineNumber": 47,
+        "lineNumber": 48,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "        jobFive.setTime(timeStampOfToday);"
       },
       {
-        "lineNumber": 48,
+        "lineNumber": 49,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "        // job 6"
       },
       {
-        "lineNumber": 49,
+        "lineNumber": 50,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "        String job6 \u003d \"What\u0027s your favorite technical book to read during this time of home quarantine?\";"
       },
       {
-        "lineNumber": 50,
+        "lineNumber": 51,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "        String text6 \u003d \"Mine is Elements of Programming\";"
       },
       {
-        "lineNumber": 51,
+        "lineNumber": 52,
         "author": {
           "gitId": "alaukiknpant"
         },
         "content": "        Job jobSix \u003d new Job(job6, text6, \"default\");"
       },
       {
-        "lineNumber": 52,
+        "lineNumber": 53,
         "author": {
           "gitId": "melylopez99"
         },
         "content": "        jobSix.setTime(timeStampOfToday);"
-      },
-      {
-        "lineNumber": 53,
-        "author": {
-          "gitId": "alaukiknpant"
-        },
-        "content": ""
       },
       {
         "lineNumber": 54,
@@ -17530,52 +18076,59 @@
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        JobAdder.execute(SavedJobList.savedJobList, jobOne);"
+        "content": ""
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        JobAdder.execute(SavedJobList.savedJobList, jobTwo);"
+        "content": "        JobAdder.execute(ViewedJobList.viewedJobList, jobOne);"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        JobAdder.execute(SavedJobList.savedJobList, jobThree);"
+        "content": "        JobAdder.execute(ViewedJobList.viewedJobList, jobTwo);"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        JobAdder.execute(SavedJobList.savedJobList, jobFour);"
+        "content": "        JobAdder.execute(ViewedJobList.viewedJobList, jobThree);"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        JobAdder.execute(SavedJobList.savedJobList, jobFive);"
+        "content": "        JobAdder.execute(ViewedJobList.viewedJobList, jobFour);"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "        JobAdder.execute(SavedJobList.savedJobList,jobSix);"
+        "content": "        JobAdder.execute(ViewedJobList.viewedJobList, jobFive);"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "alaukiknpant"
         },
-        "content": "    }"
+        "content": "        JobAdder.execute(ViewedJobList.viewedJobList, jobSix);"
       },
       {
         "lineNumber": 62,
+        "author": {
+          "gitId": "alaukiknpant"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 63,
         "author": {
           "gitId": "alaukiknpant"
         },
@@ -17584,7 +18137,7 @@
     ],
     "authorContributionMap": {
       "melylopez99": 35,
-      "alaukiknpant": 27
+      "alaukiknpant": 28
     }
   },
   {
@@ -21003,9 +21556,9 @@
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "melylopez99"
+          "gitId": "alaukiknpant"
         },
-        "content": "                + \"   Extract: ...\""
+        "content": "                + \"   Extract: \""
       },
       {
         "lineNumber": 42,
@@ -21037,7 +21590,8 @@
       }
     ],
     "authorContributionMap": {
-      "melylopez99": 45
+      "melylopez99": 44,
+      "alaukiknpant": 1
     }
   },
   {
@@ -21334,9 +21888,9 @@
       {
         "lineNumber": 42,
         "author": {
-          "gitId": "melylopez99"
+          "gitId": "alaukiknpant"
         },
-        "content": "                + \"   Extract: ...\""
+        "content": "                + \"   Extract: \""
       },
       {
         "lineNumber": 43,
@@ -21410,7 +21964,8 @@
       }
     ],
     "authorContributionMap": {
-      "melylopez99": 52
+      "melylopez99": 51,
+      "alaukiknpant": 1
     }
   },
   {
@@ -23002,7 +23557,7 @@
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "                + \"   Text: \""
+        "content": "                + \"   Category: null\""
       },
       {
         "lineNumber": 39,
@@ -23016,21 +23571,21 @@
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "                + \"   Category: null\""
+        "content": "                + \"   URL: null\""
       },
       {
         "lineNumber": 41,
         "author": {
-          "gitId": "melylopez99"
+          "gitId": "alaukiknpant"
         },
         "content": "                + System.lineSeparator()"
       },
       {
         "lineNumber": 42,
         "author": {
-          "gitId": "melylopez99"
+          "gitId": "alaukiknpant"
         },
-        "content": "                + \"   URL: null\""
+        "content": "                + \"   Extract: \""
       },
       {
         "lineNumber": 43,
@@ -23042,19 +23597,26 @@
       {
         "lineNumber": 44,
         "author": {
-          "gitId": "melylopez99"
+          "gitId": "alaukiknpant"
         },
-        "content": "        assertEquals(expectedOutput, outContent.toString());"
+        "content": ""
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "melylopez99"
         },
-        "content": "    }"
+        "content": "        assertEquals(expectedOutput, outContent.toString());"
       },
       {
         "lineNumber": 46,
+        "author": {
+          "gitId": "melylopez99"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 47,
         "author": {
           "gitId": "melylopez99"
         },
@@ -23062,7 +23624,8 @@
       }
     ],
     "authorContributionMap": {
-      "melylopez99": 46
+      "melylopez99": 44,
+      "alaukiknpant": 3
     }
   },
   {
