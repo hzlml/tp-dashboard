@@ -1225,315 +1225,315 @@
       {
         "lineNumber": 122,
         "author": {
-          "gitId": "bennychanya"
+          "gitId": "chengTzeNing"
         },
-        "content": "#####"
+        "content": "`Delete from Semester` feature"
       },
       {
         "lineNumber": 123,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
         "content": ""
       },
       {
         "lineNumber": 124,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "The `Delete from Semester` mechanism is facilitated by `DeleteFromSemCommand`, which extends extends from `AddCommand`."
       },
       {
         "lineNumber": 125,
         "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "It allows  `ModuleManager` to delete a module from a `SemModulesList`."
       },
       {
         "lineNumber": 126,
         "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
-        "content": "## Product Scope"
+        "content": "By doing so, the following operations are carried out:"
       },
       {
         "lineNumber": 127,
         "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
-        "content": "### Target user profile"
+        "content": ""
       },
       {
         "lineNumber": 128,
         "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "##### Step 1:"
       },
       {
         "lineNumber": 129,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "chengTzeNing"
         },
-        "content": "* A computer science undergraduate of NUS with a need to manage modules"
+        "content": "When a user enters a delete from semester command, e.g `delete id/IS4241 s/4`, this command is being parsed in `Parser`."
       },
       {
         "lineNumber": 130,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "chengTzeNing"
         },
-        "content": "* Prefer desktop apps over other types"
+        "content": "`Parser` then returns a `DeleteFromSemCommand`, which calls "
       },
       {
         "lineNumber": 131,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "chengTzeNing"
         },
-        "content": "* Able to type quickly"
+        "content": "`Command.execute(SemesterList semesterList, AvailableModulesList availableModulesList)`, in this context,"
       },
       {
         "lineNumber": 132,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "chengTzeNing"
         },
-        "content": "* Prefers to control apps with typing rather than a mouse"
+        "content": "`DeleteFromSemCommand.execute(SemesterList semesterList, AvailableModulesList availableModulesList)`."
       },
       {
         "lineNumber": 133,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "chengTzeNing"
         },
-        "content": "* Comfortable using Command Line Input apps"
+        "content": ""
       },
       {
         "lineNumber": 134,
         "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "##### Step 2:"
       },
       {
         "lineNumber": 135,
         "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
-        "content": "### Value proposition"
+        "content": "`DeleteFromSemCommand.execute` then calls its own method `checkModuleExistInCorrectSem(selectedModulesList)`."
       },
       {
         "lineNumber": 136,
         "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "`checkModuleExistInCorrectSem(selectedModulesList)` returns a boolean value regarding whether there is such "
       },
       {
         "lineNumber": 137,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "chengTzeNing"
         },
-        "content": "Manage and plan modules quickly with CLI, faster than a mouse or GUI driven app "
+        "content": "a module in the semester stated by the user."
       },
       {
         "lineNumber": 138,
         "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "If the module does not exist in that semester, a `RuntimeException` is thrown."
       },
       {
         "lineNumber": 139,
         "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
-        "content": "## User Stories"
+        "content": "Otherwise, it will run through the `semModulesList` in the `selectedModulesList` to find the semester indicated."
       },
       {
         "lineNumber": 140,
         "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "It then calls a method of `SemModulesList`, `getModule(moduleIdentifier)`, which returns the corresponding module,"
       },
       {
         "lineNumber": 141,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "chengTzeNing"
         },
-        "content": "|Priority| As a ... | I want to ... | So that I can ...|"
+        "content": "based on either the `moduleId` or `moduleName`."
       },
       {
         "lineNumber": 142,
         "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
-        "content": "|--------|----------|---------------|------------------|"
+        "content": "Following, it then calls another method of `SemModulesList`, `remove(module)`, which removes the corresponding module."
       },
       {
         "lineNumber": 143,
         "author": {
-          "gitId": "DeetoMok"
-        },
-        "content": "|***|User|View my study plan|Keep track of what is my study plan when I forget about it|"
-      },
-      {
-        "lineNumber": 144,
-        "author": {
-          "gitId": "DeetoMok"
-        },
-        "content": "|***|User|Add and assign modules to different semesters|Update my study plan|"
-      },
-      {
-        "lineNumber": 145,
-        "author": {
-          "gitId": "DeetoMok"
-        },
-        "content": "|***|User|Add modules to available module list|Add the module to my study plan when I plan to in the future|"
-      },
-      {
-        "lineNumber": 146,
-        "author": {
-          "gitId": "DeetoMok"
-        },
-        "content": "|***|User|Delete study plans in specific semesters|Update my study plan according to my new plan in mind|"
-      },
-      {
-        "lineNumber": 147,
-        "author": {
-          "gitId": "DeetoMok"
-        },
-        "content": "|***|New user|see usage instructions|Refer to instructions when I forgot how to use the App|"
-      },
-      {
-        "lineNumber": 148,
-        "author": {
-          "gitId": "DeetoMok"
-        },
-        "content": "|***|User|Mark module as done|Update my study plan according to modules that I have completed|"
-      },
-      {
-        "lineNumber": 149,
-        "author": {
-          "gitId": "DeetoMok"
-        },
-        "content": "|**|User|Calculate cap|Check my current cap based on modules I have completed|"
-      },
-      {
-        "lineNumber": 150,
-        "author": {
-          "gitId": "DeetoMok"
-        },
-        "content": "|**|User|find a module by name or module code|Locate a module and its module code without having to go through all the modules|"
-      },
-      {
-        "lineNumber": 151,
-        "author": {
-          "gitId": "DeetoMok"
+          "gitId": "chengTzeNing"
         },
         "content": ""
       },
       {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": "##### Step 3:"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": "`DeleteFromSemCommand.execute` finally calls `Ui.showDeleteFromSemMessage(String.format("
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": "\"Module %s has been deleted from semester %s\", moduleIdentifier, yearSemester));`"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": "This tells the user the module that has been deleted from the corresponding semester."
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": "The sequence diagram below shows the mechanics of `DeleteFromSemCommand`:"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": "![Sequence Diagram](https://github.com/chengTzeNing/tp/blob/DG/docs/images/Sequence%20Diagram.png)"
+      },
+      {
         "lineNumber": 152,
         "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
         "content": ""
       },
       {
         "lineNumber": 153,
         "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
-        "content": "## Non-Functional Requirements"
+        "content": ""
       },
       {
         "lineNumber": 154,
+        "author": {
+          "gitId": "bennychanya"
+        },
+        "content": "#####"
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 157,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 155,
-        "author": {
-          "gitId": "DeetoMok"
-        },
-        "content": "1. Should work on any mainstream OS as long as it has Java `11` or above installed."
-      },
-      {
-        "lineNumber": 156,
-        "author": {
-          "gitId": "DeetoMok"
-        },
-        "content": "2. Should be able to hold up to 1000 modules in the available module list without a noticeable sluggishness in"
-      },
-      {
-        "lineNumber": 157,
-        "author": {
-          "gitId": "DeetoMok"
-        },
-        "content": " performance for typical usage."
-      },
-      {
         "lineNumber": 158,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "-"
         },
-        "content": " 3. A user with above average typing speed for regular English text (i.e. not code, not system admin commands)"
+        "content": "## Product Scope"
       },
       {
         "lineNumber": 159,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "-"
         },
-        "content": "  should be able to accomplish most of the tasks faster using commands than using the mouse."
+        "content": "### Target user profile"
       },
       {
         "lineNumber": 160,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 161,
         "author": {
-          "gitId": "-"
+          "gitId": "DeetoMok"
         },
-        "content": ""
+        "content": "* A computer science undergraduate of NUS with a need to manage modules"
       },
       {
         "lineNumber": 162,
         "author": {
-          "gitId": "-"
+          "gitId": "DeetoMok"
         },
-        "content": "## Glossary"
+        "content": "* Prefer desktop apps over other types"
       },
       {
         "lineNumber": 163,
         "author": {
-          "gitId": "-"
+          "gitId": "DeetoMok"
         },
-        "content": ""
+        "content": "* Able to type quickly"
       },
       {
         "lineNumber": 164,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "**Mainstream OS** - Windows, Linux, Unix, OS-X"
+        "content": "* Prefers to control apps with typing rather than a mouse"
       },
       {
         "lineNumber": 165,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": ""
+        "content": "* Comfortable using Command Line Input apps"
       },
       {
         "lineNumber": 166,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -1542,38 +1542,262 @@
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "### Value proposition"
       },
       {
         "lineNumber": 168,
         "author": {
           "gitId": "-"
         },
-        "content": "## Instructions for Manual Testing"
+        "content": ""
       },
       {
         "lineNumber": 169,
         "author": {
-          "gitId": "-"
+          "gitId": "DeetoMok"
         },
-        "content": ""
+        "content": "Manage and plan modules quickly with CLI, faster than a mouse or GUI driven app "
       },
       {
         "lineNumber": 170,
         "author": {
           "gitId": "-"
         },
-        "content": "{Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing}"
+        "content": ""
       },
       {
         "lineNumber": 171,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## User Stories"
+      },
+      {
+        "lineNumber": 172,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 173,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "|Priority| As a ... | I want to ... | So that I can ...|"
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "|--------|----------|---------------|------------------|"
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "|***|User|View my study plan|Keep track of what is my study plan when I forget about it|"
+      },
+      {
+        "lineNumber": 176,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "|***|User|Add and assign modules to different semesters|Update my study plan|"
+      },
+      {
+        "lineNumber": 177,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "|***|User|Add modules to available module list|Add the module to my study plan when I plan to in the future|"
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "|***|User|Delete study plans in specific semesters|Update my study plan according to my new plan in mind|"
+      },
+      {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "|***|New user|see usage instructions|Refer to instructions when I forgot how to use the App|"
+      },
+      {
+        "lineNumber": 180,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "|***|User|Mark module as done|Update my study plan according to modules that I have completed|"
+      },
+      {
+        "lineNumber": 181,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "|**|User|Calculate cap|Check my current cap based on modules I have completed|"
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "|**|User|find a module by name or module code|Locate a module and its module code without having to go through all the modules|"
+      },
+      {
+        "lineNumber": 183,
         "author": {
           "gitId": "DeetoMok"
         },
         "content": ""
       },
       {
-        "lineNumber": 172,
+        "lineNumber": 184,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Non-Functional Requirements"
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "1. Should work on any mainstream OS as long as it has Java `11` or above installed."
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "2. Should be able to hold up to 1000 modules in the available module list without a noticeable sluggishness in"
+      },
+      {
+        "lineNumber": 189,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": " performance for typical usage."
+      },
+      {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": " 3. A user with above average typing speed for regular English text (i.e. not code, not system admin commands)"
+      },
+      {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "  should be able to accomplish most of the tasks faster using commands than using the mouse."
+      },
+      {
+        "lineNumber": 192,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 193,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 194,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Glossary"
+      },
+      {
+        "lineNumber": 195,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 196,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "**Mainstream OS** - Windows, Linux, Unix, OS-X"
+      },
+      {
+        "lineNumber": 197,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 198,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 199,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 200,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Instructions for Manual Testing"
+      },
+      {
+        "lineNumber": 201,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 202,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "{Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing}"
+      },
+      {
+        "lineNumber": 203,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 204,
         "author": {
           "gitId": "DeetoMok"
         },
@@ -1581,6 +1805,7 @@
       }
     ],
     "authorContributionMap": {
+      "chengTzeNing": 32,
       "DeetoMok": 76,
       "RenzoTsai": 40,
       "bennychanya": 30,
@@ -1732,28 +1957,28 @@
         "author": {
           "gitId": "-"
         },
-        "content": ""
+        "content": "1. Ensure that you have Java 11 or above installed."
       },
       {
         "lineNumber": 12,
         "author": {
-          "gitId": "-"
+          "gitId": "RenzoTsai"
         },
-        "content": "1. Ensure that you have Java 11 or above installed."
+        "content": "2. Down the latest version of `Duke` from [here](https://github.com/AY1920S2-CS2113-T15-3/tp/releases)."
       },
       {
         "lineNumber": 13,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 14,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "-"
         },
-        "content": "2. Down the latest version of `Duke` from [here](https://github.com/AY1920S2-CS2113-T15-3/tp/releases)."
+        "content": "## Features"
       },
       {
         "lineNumber": 15,
@@ -1765,79 +1990,79 @@
       {
         "lineNumber": 16,
         "author": {
-          "gitId": "-"
+          "gitId": "RenzoTsai"
         },
-        "content": "## Features "
+        "content": "### Command Format"
       },
       {
         "lineNumber": 17,
         "author": {
-          "gitId": "-"
+          "gitId": "RenzoTsai"
         },
         "content": ""
       },
       {
         "lineNumber": 18,
         "author": {
-          "gitId": "RenzoTsai"
-        },
-        "content": "### Command Format"
-      },
-      {
-        "lineNumber": 19,
-        "author": {
-          "gitId": "RenzoTsai"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 20,
-        "author": {
           "gitId": "DeetoMok"
         },
         "content": "- Words in `[XXX]` are the parameters to be supplied by the user."
       },
       {
-        "lineNumber": 21,
+        "lineNumber": 19,
         "author": {
           "gitId": "DeetoMok"
         },
         "content": "- `[module code]` is to be entered in alpha-numeric uppercase characters i.e.`CS2113`"
       },
       {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": "- `[module name]` is to be entered in alpha-numeric characters i.e.`Software Engineering \u0026 Object-Oriented Programming`"
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": "- `[semester]` is to be entered in numeric characters between 1-8 i.e.`5`"
+      },
+      {
         "lineNumber": 22,
-        "author": {
-          "gitId": "DeetoMok"
-        },
-        "content": "- `[module name` is to be entered in alpha-numeric characters i.e.`Software Engineering \u0026 Object-Oriented Programming`"
-      },
-      {
-        "lineNumber": 23,
-        "author": {
-          "gitId": "DeetoMok"
-        },
-        "content": "- \u0027[semester]\u0027 is to be entered in numeric characters between 1-8 i.e.`5`"
-      },
-      {
-        "lineNumber": 24,
         "author": {
           "gitId": "DeetoMok"
         },
         "content": "- `[credit]` is to be entered in numeric characters i.e. `4`"
       },
       {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": "- `[grade]` is to be entered in alpha **uppercase** characters i.e. `A+`"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
         "lineNumber": 25,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "RenzoTsai"
         },
-        "content": "- `[grade` is to be entered in alpha **uppercase** characters i.e. `A+`"
+        "content": "For example: in `​add id/[module code] s/[semester] mc/[credit]`, `[module code]` is the parameter of a specific "
       },
       {
         "lineNumber": 26,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "RenzoTsai"
         },
-        "content": ""
+        "content": "module’s code which can be used as `add id/CS2113 s/4 mc/4`."
       },
       {
         "lineNumber": 27,
@@ -1851,357 +2076,357 @@
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "For example: in `​add id/[module code] s/[semester] mc/[credit]`, `[module code]` is the parameter of a specific "
+        "content": "### Adding modules: add"
       },
       {
         "lineNumber": 29,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "module’s code which can be used as `add id/CS2113 s/4 mc/4`."
+        "content": "You can add a module to a semester or to the list of available modules."
       },
       {
         "lineNumber": 30,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
         "content": ""
       },
       {
         "lineNumber": 31,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "### Adding modules: add"
+        "content": "#### Adds a specific module to a specific semester."
       },
       {
         "lineNumber": 32,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "Adds a specific module to a specific semester."
+        "content": "You can do so by based on the module code or the module name."
       },
       {
         "lineNumber": 33,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "The module to be added must be in the existing list of available modules."
       },
       {
         "lineNumber": 34,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "Format:​ "
+        "content": ""
       },
       {
         "lineNumber": 35,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "`add id/[module code] s/[semester] mc/[credit]` or `add n/[module name] s/[semester] mc/[credit]`"
+        "content": "##### Based on module code"
       },
       {
         "lineNumber": 36,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "Format: `add id/[module code] s/[semester] mc/[credit]`"
       },
       {
         "lineNumber": 37,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "Example:​ `add n/Software Engineering \u0026 Object-Oriented Programming s/4 mc/4`"
+        "content": ""
       },
       {
         "lineNumber": 38,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "Example:​ `add id/IS4241 s/4 mc/4`"
       },
       {
         "lineNumber": 39,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "Example:​ `add id/CS2113 s/4 mc/4`"
+        "content": ""
       },
       {
         "lineNumber": 40,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": "Expected output: "
+      },
+      {
+        "lineNumber": 41,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": ""
       },
       {
-        "lineNumber": 41,
-        "author": {
-          "gitId": "DeetoMok"
-        },
-        "content": "Adds a specific module to available module list. "
-      },
-      {
         "lineNumber": 42,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "`Okay! I have added this module to your semester\u0027s module list:`"
       },
       {
         "lineNumber": 43,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "RenzoTsai"
         },
-        "content": "Format:"
+        "content": ""
       },
       {
         "lineNumber": 44,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "chengTzeNing"
         },
-        "content": "`add id/[module code] n/[name of module] mc/[module credit] pre/[pre requisites]`"
+        "content": "`ID: IS4241 Name: Social Media Network Analysis | Module Credit: 4 | Sem: Y2S2`"
       },
       {
         "lineNumber": 45,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "RenzoTsai"
         },
         "content": ""
       },
       {
         "lineNumber": 46,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "chengTzeNing"
         },
-        "content": "Example: `add id/CS2113 n/Software Engineering \u0026 Object-Oriented Programming mc/4 pre/CS2040C`"
+        "content": "##### Based on module name"
       },
       {
         "lineNumber": 47,
         "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": "Format: `add n/[module name] s/[semester] mc/[credit]`"
+      },
+      {
+        "lineNumber": 48,
+        "author": {
           "gitId": "DeetoMok"
         },
         "content": ""
       },
       {
-        "lineNumber": 48,
-        "author": {
-          "gitId": "RenzoTsai"
-        },
-        "content": "### Marking as done: done"
-      },
-      {
         "lineNumber": 49,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "Example:​ `add n/Social Media Network Analysis s/3 mc/4`"
       },
       {
         "lineNumber": 50,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "Marks a module as done to show that it has been completed. "
+        "content": ""
       },
       {
         "lineNumber": 51,
         "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "Example of expected output:"
       },
       {
         "lineNumber": 52,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "Format:​ `done n/[module name] g/[grade]` or `done id/[module code] g/[grade]`"
+        "content": ""
       },
       {
         "lineNumber": 53,
         "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "`Okay! I have added this module to your semester\u0027s module list:`"
       },
       {
         "lineNumber": 54,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "Example:​ done n/Software Engineering \u0026 Object-Oriented Programming g/A+"
+        "content": ""
       },
       {
         "lineNumber": 55,
         "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "`ID: IS4241 Name: Social Media Network Analysis | Module Credit: 4 | Sem: Y2S1`"
       },
       {
         "lineNumber": 56,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "Example:​ done id/CS2113 g/SU"
+        "content": ""
       },
       {
         "lineNumber": 57,
         "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "#### Adds a specific module to available module list. "
       },
       {
         "lineNumber": 58,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "DeetoMok"
         },
-        "content": "### Viewing modules: view"
+        "content": "Format:"
       },
       {
         "lineNumber": 59,
         "author": {
-          "gitId": "-"
+          "gitId": "DeetoMok"
         },
-        "content": ""
+        "content": "`add id/[module code] n/[name of module] mc/[module credit] pre/[pre requisites]`"
       },
       {
         "lineNumber": 60,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "DeetoMok"
         },
-        "content": "#### Viewing all available modules"
+        "content": ""
       },
       {
         "lineNumber": 61,
         "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "Example: `add id/IS4241 n/Social Media Network Analysis mc/4 pre/CS1010 IS1103`"
       },
       {
         "lineNumber": 62,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "DeetoMok"
         },
-        "content": "Display all available modules."
+        "content": ""
       },
       {
         "lineNumber": 63,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "Example of expected output:"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "Format:​ `view`"
+        "content": ""
       },
       {
         "lineNumber": 65,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "`Okay! I have added this module to the available modules to choose from:`"
       },
       {
         "lineNumber": 66,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "#### Viewing done modules"
+        "content": ""
       },
       {
         "lineNumber": 67,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "`ID: IS4241 Name: Social Media Network Analysis | Modular Credit: 4 | Prerequisites: CS1010`"
       },
       {
         "lineNumber": 68,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "Display all finished modules."
+        "content": ""
       },
       {
         "lineNumber": 69,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "### Marking as done: done"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "Format: ​`view /dm`"
+        "content": "Marks a module as done to show that it has been completed."
       },
       {
         "lineNumber": 71,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "You can do it based on a module code or the module name."
       },
       {
         "lineNumber": 72,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "#### Viewing module plan"
+        "content": ""
       },
       {
         "lineNumber": 73,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "Display user\u0027s module plan."
+        "content": "#### Based on module code"
       },
       {
         "lineNumber": 74,
         "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "Format:​ `done id/[module name] g/[grade]`"
       },
       {
         "lineNumber": 75,
         "author": {
-          "gitId": "RenzoTsai"
-        },
-        "content": "Format:​ `view /mp`"
-      },
-      {
-        "lineNumber": 76,
-        "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
         "content": ""
       },
       {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": "Example:​ `done id/Software Engineering \u0026 Object-Oriented Programming g/A+`"
+      },
+      {
         "lineNumber": 77,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "#### Viewing completed modules\u0027 credits"
+        "content": ""
       },
       {
         "lineNumber": 78,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "Display modules\u0027 credits the user completed."
+        "content": "Example of expected output:"
       },
       {
         "lineNumber": 79,
@@ -2213,9 +2438,9 @@
       {
         "lineNumber": 80,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "Format: ​`view /cc`"
+        "content": "`Okay, I\u0027ve marked the module as done!`"
       },
       {
         "lineNumber": 81,
@@ -2227,65 +2452,65 @@
       {
         "lineNumber": 82,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "chengTzeNing"
         },
-        "content": "#### Viewing cap "
+        "content": "#### Based on module name"
       },
       {
         "lineNumber": 83,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "-"
         },
-        "content": "Display the user\u0027s current CAP"
+        "content": ""
       },
       {
         "lineNumber": 84,
         "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": "Format: `done n/[module code] g/[grade]`"
       },
       {
         "lineNumber": 85,
         "author": {
-          "gitId": "DeetoMok"
-        },
-        "content": "Format: `CAP`"
-      },
-      {
-        "lineNumber": 86,
-        "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
         "content": ""
       },
       {
+        "lineNumber": 86,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": "Example:​ `done n/CS2113 g/SU`"
+      },
+      {
         "lineNumber": 87,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "### Help"
+        "content": ""
       },
       {
         "lineNumber": 88,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "Display the help list."
+        "content": "Example of expected output:"
       },
       {
         "lineNumber": 89,
         "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
         "content": ""
       },
       {
         "lineNumber": 90,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "chengTzeNing"
         },
-        "content": "Format: `help`"
+        "content": "`Okay, I\u0027ve marked the module as done!`"
       },
       {
         "lineNumber": 91,
@@ -2297,9 +2522,9 @@
       {
         "lineNumber": 92,
         "author": {
-          "gitId": "-"
+          "gitId": "RenzoTsai"
         },
-        "content": "## FAQ"
+        "content": "### Viewing modules: view"
       },
       {
         "lineNumber": 93,
@@ -2311,9 +2536,9 @@
       {
         "lineNumber": 94,
         "author": {
-          "gitId": "-"
+          "gitId": "RenzoTsai"
         },
-        "content": "**Q**: How do I transfer my data to another computer? "
+        "content": "#### Viewing all available modules"
       },
       {
         "lineNumber": 95,
@@ -2325,140 +2550,140 @@
       {
         "lineNumber": 96,
         "author": {
-          "gitId": "-"
+          "gitId": "chengTzeNing"
         },
-        "content": "**A**: Well, write the User Guide in active voice anyway."
+        "content": "Display all the available modules you can choose from."
       },
       {
         "lineNumber": 97,
         "author": {
-          "gitId": "-"
+          "gitId": "RenzoTsai"
         },
         "content": ""
       },
       {
         "lineNumber": 98,
         "author": {
-          "gitId": "-"
+          "gitId": "RenzoTsai"
         },
-        "content": "## Command Summary"
+        "content": "Format:​ `view`"
       },
       {
         "lineNumber": 99,
         "author": {
-          "gitId": "-"
+          "gitId": "RenzoTsai"
         },
         "content": ""
       },
       {
         "lineNumber": 100,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "### Add"
+        "content": "Example of expected output:"
       },
       {
         "lineNumber": 101,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
         "content": ""
       },
       {
         "lineNumber": 102,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "Command: "
+        "content": "`Okay! Here are your available modules in database:`"
       },
       {
         "lineNumber": 103,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
         "content": ""
       },
       {
         "lineNumber": 104,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "`add id/[module code] s/[semester] mc/[credit]` "
+        "content": "`---------------------------------------------------`"
       },
       {
         "lineNumber": 105,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
         "content": ""
       },
       {
         "lineNumber": 106,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "or"
+        "content": "`|  01 | CS1010   | Programming Methodology                                       | 4             | None                    |`"
       },
       {
         "lineNumber": 107,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 108,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "`add n/[module name] s/[semester] mc/[credit]`"
+        "content": "`|  02 | CS2030   | Programming Methodology II                                    | 4             | CS1010                  |`"
       },
       {
         "lineNumber": 109,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 110,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "chengTzeNing"
         },
-        "content": "Command:"
+        "content": "`|  03 | CS2040   | Data Structures and Algorithms                                | 4             | CS1010                  |`"
       },
       {
         "lineNumber": 111,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 112,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "RenzoTsai"
         },
-        "content": "`add id/[module code] n/[name of module] mc/[module credit] pre/[pre requisites]`"
+        "content": "#### Viewing done modules"
       },
       {
         "lineNumber": 113,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 114,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "### Done"
+        "content": "Display all the modules that you have completed."
       },
       {
         "lineNumber": 115,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "-"
         },
         "content": ""
       },
@@ -2467,91 +2692,91 @@
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "Command: "
+        "content": "Format: ​`view /dm`"
       },
       {
         "lineNumber": 117,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 118,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "`done n/[module name] g/[grade]` "
+        "content": "Example of expected output:"
       },
       {
         "lineNumber": 119,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "-"
         },
         "content": ""
       },
       {
         "lineNumber": 120,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "or "
+        "content": "`Okay! Here are your completed modules:`"
       },
       {
         "lineNumber": 121,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": " `Y2S1`"
       },
       {
         "lineNumber": 122,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "`done id/[module code] g/[grade]`"
+        "content": "`1.[✓] ID: CS1010 Name: Programming Methodology | Module Credit: 4 | Sem: Y2S1 | Grade: A+`"
       },
       {
         "lineNumber": 123,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": " "
       },
       {
         "lineNumber": 124,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "### View"
+        "content": " `Y2S2`"
       },
       {
         "lineNumber": 125,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": " `1.[✓] ID: IS4241 Name: Social Media Network Analysis | Module Credit: 4 | Sem: Y2S2 | Grade: A-`"
       },
       {
         "lineNumber": 126,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "-"
         },
-        "content": "Command: "
+        "content": ""
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": ""
+        "content": "#### Viewing module plan"
       },
       {
         "lineNumber": 128,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "`view`"
+        "content": "Display your module plan, categorised based on the semester that the module was allocated to."
       },
       {
         "lineNumber": 129,
@@ -2565,7 +2790,7 @@
         "author": {
           "gitId": "RenzoTsai"
         },
-        "content": "or"
+        "content": "Format:​ `view /mp`"
       },
       {
         "lineNumber": 131,
@@ -2577,117 +2802,698 @@
       {
         "lineNumber": 132,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "`view /cm` "
+        "content": "Example of expected output:"
       },
       {
         "lineNumber": 133,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
         "content": ""
       },
       {
         "lineNumber": 134,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "or"
+        "content": "`Okay! Here is your module plan:`"
       },
       {
         "lineNumber": 135,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
         "content": ""
       },
       {
         "lineNumber": 136,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "`view /dm` "
+        "content": " `Y2S1`"
       },
       {
         "lineNumber": 137,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": " "
       },
       {
         "lineNumber": 138,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "or"
+        "content": " `1.[✓] ID: CS1010 Name: Programming Methodology | Module Credit: 4 | Sem: Y2S1 | Grade: A+`"
       },
       {
         "lineNumber": 139,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": " "
       },
       {
         "lineNumber": 140,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "`view /mp`"
+        "content": " `2.[✗] ID: CS1231 Name: Discrete Structures | Module Credit: 4 | Sem: Y2S1`"
       },
       {
         "lineNumber": 141,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": " "
       },
       {
         "lineNumber": 142,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "or "
+        "content": " "
       },
       {
         "lineNumber": 143,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": ""
+        "content": " `Y2S2`"
       },
       {
         "lineNumber": 144,
         "author": {
-          "gitId": "RenzoTsai"
+          "gitId": "chengTzeNing"
         },
-        "content": "`view /cc`"
+        "content": " "
       },
       {
         "lineNumber": 145,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": " `1.[✗] ID: CS2113 Name: Software Engineering \u0026 Object-Oriented Programming | Module Credit: 4 | Sem: Y2S2`"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": " "
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": " `2.[✗] ID: IS4241 Name: Social Media Network Analysis | Module Credit: 4 | Sem: Y2S2`"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "#### Viewing completed modules\u0027 credits"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": "Display the number of modular credits you have completed."
+      },
+      {
+        "lineNumber": 151,
         "author": {
           "gitId": "RenzoTsai"
         },
         "content": ""
       },
       {
-        "lineNumber": 146,
+        "lineNumber": 152,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "Format: ​`view /cc`"
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": "Example of expected output:"
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": "`You have completed this amount of credits:`"
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": " `4`"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 160,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "or"
+        "content": "#### Viewing cap "
       },
       {
-        "lineNumber": 147,
+        "lineNumber": 161,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": "Display your current CAP."
+      },
+      {
+        "lineNumber": 162,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 163,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "Format: `CAP`"
+      },
+      {
+        "lineNumber": 164,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 165,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": "Example of expected output:"
+      },
+      {
+        "lineNumber": 166,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 167,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": "`Your current CAP is:`"
+      },
+      {
+        "lineNumber": 168,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": "`4.75`"
+      },
+      {
+        "lineNumber": 169,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 170,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "### Help"
+      },
+      {
+        "lineNumber": 171,
+        "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": "Display the list of commands that you can input."
+      },
+      {
+        "lineNumber": 172,
         "author": {
           "gitId": "-"
         },
         "content": ""
       },
       {
-        "lineNumber": 148,
+        "lineNumber": 173,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "Format: `help`"
+      },
+      {
+        "lineNumber": 174,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 175,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## FAQ"
+      },
+      {
+        "lineNumber": 176,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 177,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "**Q**: How do I transfer my data to another computer? "
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "**A**: Well, write the User Guide in active voice anyway."
+      },
+      {
+        "lineNumber": 180,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 181,
+        "author": {
+          "gitId": "-"
+        },
+        "content": "## Command Summary"
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 183,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "### Add"
+      },
+      {
+        "lineNumber": 184,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 185,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "Command: "
+      },
+      {
+        "lineNumber": 186,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 187,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "`add id/[module code] s/[semester] mc/[credit]` "
+      },
+      {
+        "lineNumber": 188,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 189,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "or"
+      },
+      {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "`add n/[module name] s/[semester] mc/[credit]`"
+      },
+      {
+        "lineNumber": 192,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 193,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "Command:"
+      },
+      {
+        "lineNumber": 194,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 195,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "`add id/[module code] n/[name of module] mc/[module credit] pre/[pre requisites]`"
+      },
+      {
+        "lineNumber": 196,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 197,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "### Done"
+      },
+      {
+        "lineNumber": 198,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 199,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "Command: "
+      },
+      {
+        "lineNumber": 200,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 201,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "`done n/[module name] g/[grade]` "
+      },
+      {
+        "lineNumber": 202,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 203,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "or "
+      },
+      {
+        "lineNumber": 204,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 205,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "`done id/[module code] g/[grade]`"
+      },
+      {
+        "lineNumber": 206,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 207,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "### View"
+      },
+      {
+        "lineNumber": 208,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 209,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "Command: "
+      },
+      {
+        "lineNumber": 210,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 211,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "`view`"
+      },
+      {
+        "lineNumber": 212,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 213,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "or"
+      },
+      {
+        "lineNumber": 214,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 215,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "`view /cm` "
+      },
+      {
+        "lineNumber": 216,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 217,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "or"
+      },
+      {
+        "lineNumber": 218,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 219,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "`view /dm` "
+      },
+      {
+        "lineNumber": 220,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 221,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "or"
+      },
+      {
+        "lineNumber": 222,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 223,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "`view /mp`"
+      },
+      {
+        "lineNumber": 224,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 225,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "or "
+      },
+      {
+        "lineNumber": 226,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 227,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": "`view /cc`"
+      },
+      {
+        "lineNumber": 228,
+        "author": {
+          "gitId": "RenzoTsai"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 229,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "or"
+      },
+      {
+        "lineNumber": 230,
+        "author": {
+          "gitId": "-"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 231,
         "author": {
           "gitId": "DeetoMok"
         },
@@ -2695,9 +3501,10 @@
       }
     ],
     "authorContributionMap": {
-      "DeetoMok": 25,
-      "RenzoTsai": 90,
-      "-": 33
+      "chengTzeNing": 101,
+      "DeetoMok": 20,
+      "RenzoTsai": 76,
+      "-": 34
     }
   },
   {
@@ -15204,534 +16011,534 @@
       {
         "lineNumber": 194,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "chengTzeNing"
         },
-        "content": "            return new AddToDataCommand((new NewModule(moduleId, moduleName, moduleCredit, preRequisiteModules)));"
+        "content": "            for (String prereq : preRequisiteModules) {"
       },
       {
         "lineNumber": 195,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "chengTzeNing"
         },
-        "content": "        } catch (NumberFormatException e) {"
+        "content": "                if (prereq.equals(moduleId)) {"
       },
       {
         "lineNumber": 196,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "chengTzeNing"
         },
-        "content": "            Ui.showInputError();"
+        "content": "                    throw new InputException(\"invalid \u0027add\u0027 command: Prerequisites of a module cannot be itself!\","
       },
       {
         "lineNumber": 197,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "chengTzeNing"
         },
-        "content": "        }"
+        "content": "                            \"add id/ID n/NAME mc/MODULE_CREDIT pre/PREREQMODULES\");"
       },
       {
         "lineNumber": 198,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "chengTzeNing"
         },
-        "content": "        return null;"
+        "content": "                }"
       },
       {
         "lineNumber": 199,
         "author": {
-          "gitId": "DeetoMok"
+          "gitId": "chengTzeNing"
         },
-        "content": "    }"
+        "content": "            }"
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": ""
+        "content": "            return new AddToDataCommand((new NewModule(moduleId, moduleName, moduleCredit, preRequisiteModules)));"
       },
       {
         "lineNumber": 201,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "    private static ViewCommand processViewCommand(String args) {"
+        "content": "        } catch (NumberFormatException e) {"
       },
       {
         "lineNumber": 202,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        if (args.contains(\"/cm\")) {"
+        "content": "            Ui.showInputError();"
       },
       {
         "lineNumber": 203,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "            return new ViewCommand(ViewCommand.VIEW_COMPULSORY_MODULES);"
+        "content": "        }"
       },
       {
         "lineNumber": 204,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        } else if (args.contains(\"/dm\")) {"
+        "content": "        return null;"
       },
       {
         "lineNumber": 205,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "            return new ViewCommand(ViewCommand.VIEW_DONE_MODULES);"
+        "content": "    }"
       },
       {
         "lineNumber": 206,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        } else if (args.contains(\"/mp\")) {"
+        "content": ""
       },
       {
         "lineNumber": 207,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "            return new ViewCommand(ViewCommand.VIEW_MODULE_PLAN);"
+        "content": "    private static ViewCommand processViewCommand(String args) {"
       },
       {
         "lineNumber": 208,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        } else if (args.contains(\"n/\")) {"
+        "content": "        if (args.contains(\"/cm\")) {"
       },
       {
         "lineNumber": 209,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "            String moduleToBeViewed \u003d args.replace(\"n/\",\"\");                    //.toUpperCase().trim()"
+        "content": "            return new ViewCommand(ViewCommand.VIEW_COMPULSORY_MODULES);"
       },
       {
         "lineNumber": 210,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "            return new ViewCommand(ViewCommand.VIEW_SPECIFIC_MODULE, moduleToBeViewed);"
+        "content": "        } else if (args.contains(\"/dm\")) {"
       },
       {
         "lineNumber": 211,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        } else if (args.contains(\"id/\")) {"
+        "content": "            return new ViewCommand(ViewCommand.VIEW_DONE_MODULES);"
       },
       {
         "lineNumber": 212,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "            String moduleToBeViewed \u003d args.replace(\"id/\",\"\");                   //.toUpperCase().trim()"
+        "content": "        } else if (args.contains(\"/mp\")) {"
       },
       {
         "lineNumber": 213,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "            return new ViewCommand(ViewCommand.VIEW_SPECIFIC_MODULE, moduleToBeViewed);"
+        "content": "            return new ViewCommand(ViewCommand.VIEW_MODULE_PLAN);"
       },
       {
         "lineNumber": 214,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        } else if (args.contains(\"/cc\")) {"
+        "content": "        } else if (args.contains(\"n/\")) {"
       },
       {
         "lineNumber": 215,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "            return new ViewCommand(ViewCommand.VIEW_COMPLETED_CREDITS);"
+        "content": "            String moduleToBeViewed \u003d args.replace(\"n/\",\"\");                    //.toUpperCase().trim()"
       },
       {
         "lineNumber": 216,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        }"
+        "content": "            return new ViewCommand(ViewCommand.VIEW_SPECIFIC_MODULE, moduleToBeViewed);"
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        return new ViewCommand(ViewCommand.VIEW_AVAILABLE_MODULES);"
+        "content": "        } else if (args.contains(\"id/\")) {"
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "    }"
+        "content": "            String moduleToBeViewed \u003d args.replace(\"id/\",\"\");                   //.toUpperCase().trim()"
       },
       {
         "lineNumber": 219,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": ""
+        "content": "            return new ViewCommand(ViewCommand.VIEW_SPECIFIC_MODULE, moduleToBeViewed);"
       },
       {
         "lineNumber": 220,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "    private static ExitCommand processExitCommand() {"
+        "content": "        } else if (args.contains(\"/cc\")) {"
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        return new ExitCommand();"
+        "content": "            return new ViewCommand(ViewCommand.VIEW_COMPLETED_CREDITS);"
       },
       {
         "lineNumber": 222,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 223,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": ""
+        "content": "        return new ViewCommand(ViewCommand.VIEW_AVAILABLE_MODULES);"
       },
       {
         "lineNumber": 224,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "    private static HelpingCommand processHelpCommand() {"
+        "content": "    }"
       },
       {
         "lineNumber": 225,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        return new HelpingCommand();"
+        "content": ""
       },
       {
         "lineNumber": 226,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "    }"
+        "content": "    private static ExitCommand processExitCommand() {"
       },
       {
         "lineNumber": 227,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": ""
+        "content": "        return new ExitCommand();"
       },
       {
         "lineNumber": 228,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "    private static FindCommand processFindCommand(String args) {"
+        "content": "    }"
       },
       {
         "lineNumber": 229,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        return new FindCommand(args);"
+        "content": ""
       },
       {
         "lineNumber": 230,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "    }"
+        "content": "    private static HelpingCommand processHelpCommand() {"
       },
       {
         "lineNumber": 231,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": ""
+        "content": "        return new HelpingCommand();"
       },
       {
         "lineNumber": 232,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "    private static CalculateCapCommand processCalculateCapCommand() {"
+        "content": "    }"
       },
       {
         "lineNumber": 233,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        return new CalculateCapCommand();"
+        "content": ""
       },
       {
         "lineNumber": 234,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "    }"
+        "content": "    private static FindCommand processFindCommand(String args) {"
       },
       {
         "lineNumber": 235,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": ""
+        "content": "        return new FindCommand(args);"
       },
       {
         "lineNumber": 236,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "    private static DeleteCommand processDeleteCommand(String args) throws InputException {"
+        "content": "    }"
       },
       {
         "lineNumber": 237,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        if (args.contains(\"s/\")) {"
+        "content": ""
       },
       {
         "lineNumber": 238,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "            return processDeleteFromSemCommand(args);"
+        "content": "    private static CalculateCapCommand processCalculateCapCommand() {"
       },
       {
         "lineNumber": 239,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        } else {"
+        "content": "        return new CalculateCapCommand();"
       },
       {
         "lineNumber": 240,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "            return processDeleteFromAvailableCommand(args);"
+        "content": "    }"
       },
       {
         "lineNumber": 241,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "    }"
+        "content": "    private static DeleteCommand processDeleteCommand(String args) throws InputException {"
       },
       {
         "lineNumber": 243,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": ""
+        "content": "        if (args.contains(\"s/\")) {"
       },
       {
         "lineNumber": 244,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "    private static DeleteFromSemCommand processDeleteFromSemCommand(String args) throws InputException {"
+        "content": "            return processDeleteFromSemCommand(args);"
       },
       {
         "lineNumber": 245,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        String[] moduleWords \u003d args.split(\" s/\");"
+        "content": "        } else {"
       },
       {
         "lineNumber": 246,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        if (args.contains(\"id/\")) {"
+        "content": "            return processDeleteFromAvailableCommand(args);"
       },
       {
         "lineNumber": 247,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "            String moduleId \u003d moduleWords[0].replace(\"id/\", \"\");      //.toUpperCase().trim()"
+        "content": "        }"
       },
       {
         "lineNumber": 248,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "            String semester \u003d moduleWords[1];                                           //.trim()"
+        "content": "    }"
       },
       {
         "lineNumber": 249,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "            return new DeleteFromSemCommand(moduleId, semester, \"id\");"
+        "content": ""
       },
       {
         "lineNumber": 250,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        } else if (args.contains(\"n/\")) {"
+        "content": "    private static DeleteFromSemCommand processDeleteFromSemCommand(String args) throws InputException {"
       },
       {
         "lineNumber": 251,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "            String moduleName \u003d moduleWords[0].replace(\"n/\", \"\");       //.toUpperCase().trim()"
+        "content": "        String[] moduleWords \u003d args.split(\" s/\");"
       },
       {
         "lineNumber": 252,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "            String semester \u003d moduleWords[1];                                              //.trim()"
+        "content": "        if (args.contains(\"id/\")) {"
       },
       {
         "lineNumber": 253,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "            return new DeleteFromSemCommand(moduleName, semester, \"name\");"
+        "content": "            String moduleId \u003d moduleWords[0].replace(\"id/\", \"\");      //.toUpperCase().trim()"
       },
       {
         "lineNumber": 254,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        }"
+        "content": "            String semester \u003d moduleWords[1];                                           //.trim()"
       },
       {
         "lineNumber": 255,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        throw new InputException(\"invalid \u0027delete\u0027 command to delete from Selected Modules\","
+        "content": "            return new DeleteFromSemCommand(moduleId, semester, \"id\");"
       },
       {
         "lineNumber": 256,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "                \"delete id/ID s/SEM OR delete n/NAME s/SEM\");"
+        "content": "        } else if (args.contains(\"n/\")) {"
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "    }"
+        "content": "            String moduleName \u003d moduleWords[0].replace(\"n/\", \"\");       //.toUpperCase().trim()"
       },
       {
         "lineNumber": 258,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": ""
+        "content": "            String semester \u003d moduleWords[1];                                              //.trim()"
       },
       {
         "lineNumber": 259,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "    private static DeleteFromAvailableCommand processDeleteFromAvailableCommand(String args) throws InputException {"
+        "content": "            return new DeleteFromSemCommand(moduleName, semester, \"name\");"
       },
       {
         "lineNumber": 260,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        String[] moduleWords \u003d args.split(\"/\", 2);"
+        "content": "        }"
       },
       {
         "lineNumber": 261,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        if (moduleWords.length !\u003d 2) {"
+        "content": "        throw new InputException(\"invalid \u0027delete\u0027 command to delete from Selected Modules\","
       },
       {
         "lineNumber": 262,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "            throw new InputException(\"invalid \u0027delete\u0027 command to delete from Available Modules\","
+        "content": "                \"delete id/ID s/SEM OR delete n/NAME s/SEM\");"
       },
       {
         "lineNumber": 263,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "                    \"delete id/ID OR delete n/NAME\");"
+        "content": "    }"
       },
       {
         "lineNumber": 264,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 265,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        String moduleIdentifier \u003d moduleWords[1];                               //.toUpperCase().trim()"
+        "content": "    private static DeleteFromAvailableCommand processDeleteFromAvailableCommand(String args) throws InputException {"
       },
       {
         "lineNumber": 266,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        if (moduleWords[0].equals(\"id\")) {"
+        "content": "        String[] moduleWords \u003d args.split(\"/\", 2);"
       },
       {
         "lineNumber": 267,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "            return new DeleteFromAvailableCommand(moduleIdentifier, \"id\");"
+        "content": "        if (moduleWords.length !\u003d 2) {"
       },
       {
         "lineNumber": 268,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        } else if (moduleWords[0].equals(\"n\")) {"
+        "content": "            throw new InputException(\"invalid \u0027delete\u0027 command to delete from Available Modules\","
       },
       {
         "lineNumber": 269,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "            return new DeleteFromAvailableCommand(moduleIdentifier, \"name\");"
+        "content": "                    \"delete id/ID OR delete n/NAME\");"
       },
       {
         "lineNumber": 270,
@@ -15745,24 +16552,66 @@
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "        throw new InputException(\"invalid \u0027delete\u0027 command to delete from Available Modules\","
+        "content": "        String moduleIdentifier \u003d moduleWords[1];                               //.toUpperCase().trim()"
       },
       {
         "lineNumber": 272,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "                \"delete id/ID OR delete n/NAME\");"
+        "content": "        if (moduleWords[0].equals(\"id\")) {"
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "DeetoMok"
         },
-        "content": "    }"
+        "content": "            return new DeleteFromAvailableCommand(moduleIdentifier, \"id\");"
       },
       {
         "lineNumber": 274,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "        } else if (moduleWords[0].equals(\"n\")) {"
+      },
+      {
+        "lineNumber": 275,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "            return new DeleteFromAvailableCommand(moduleIdentifier, \"name\");"
+      },
+      {
+        "lineNumber": 276,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 277,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "        throw new InputException(\"invalid \u0027delete\u0027 command to delete from Available Modules\","
+      },
+      {
+        "lineNumber": 278,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "                \"delete id/ID OR delete n/NAME\");"
+      },
+      {
+        "lineNumber": 279,
+        "author": {
+          "gitId": "DeetoMok"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 280,
         "author": {
           "gitId": "DeetoMok"
         },
@@ -15770,6 +16619,7 @@
       }
     ],
     "authorContributionMap": {
+      "chengTzeNing": 6,
       "DeetoMok": 274
     }
   },
@@ -20654,13 +21504,20 @@
       {
         "lineNumber": 26,
         "author": {
+          "gitId": "chengTzeNing"
+        },
+        "content": "add id/CS9999 n/hello mc/4 pre/CS9999"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
           "gitId": "RenzoTsai"
         },
         "content": "bye"
       }
     ],
     "authorContributionMap": {
-      "chengTzeNing": 8,
+      "chengTzeNing": 9,
       "DeetoMok": 2,
       "RenzoTsai": 4,
       "bennychanya": 12
