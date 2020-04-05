@@ -18352,56 +18352,56 @@
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "import seedu.command.performance.ListStudentPerformance;"
+        "content": "import seedu.command.performance.EditPerformance;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "import seedu.command.performance.SortPerformanceListByName;"
+        "content": "import seedu.command.performance.ViewStudentPerformance;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "import seedu.command.performance.SortPerformanceListByGrade;"
+        "content": "import seedu.command.performance.SortPerformanceListByName;"
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "import seedu.event.EventList;"
+        "content": "import seedu.command.performance.SortPerformanceListByGrade;"
       },
       {
         "lineNumber": 10,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "import seedu.event.EventList;"
+      },
+      {
+        "lineNumber": 11,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": "import seedu.exception.PacException;"
       },
       {
-        "lineNumber": 11,
+        "lineNumber": 12,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "import seedu.performance.PerformanceList;"
       },
       {
-        "lineNumber": 12,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "import seedu.ui.UI;"
-      },
-      {
         "lineNumber": 13,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": ""
+        "content": "import seedu.ui.UI;"
       },
       {
         "lineNumber": 14,
@@ -18415,430 +18415,451 @@
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "public class PerformanceCommandInterpreter extends CommandInterpreter {"
+        "content": ""
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    PerformanceList performances;"
+        "content": "public class PerformanceCommandInterpreter extends CommandInterpreter {"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    String eventName;"
+        "content": "    PerformanceList performances;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    UI ui;"
+        "content": "    String eventName;"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": ""
+        "content": "    UI ui;"
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    public PerformanceCommandInterpreter(EventList eventList) {"
+        "content": ""
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        super(eventList);"
+        "content": "    public PerformanceCommandInterpreter(EventList eventList) {"
       },
       {
         "lineNumber": 22,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        this.ui \u003d new UI();"
+        "content": "        super(eventList);"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    }"
+        "content": "        this.ui \u003d new UI();"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     * Execute the command from userInput."
+        "content": "    /**"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     *"
+        "content": "     * Execute the command from userInput."
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     * @param commandDescription The userInput from the Ui."
+        "content": "     *"
       },
       {
         "lineNumber": 29,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "     * @param commandDescription The userInput from the Ui."
+      },
+      {
+        "lineNumber": 30,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": "     * @throws PacException If the command is undefined."
       },
       {
-        "lineNumber": 30,
+        "lineNumber": 31,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 31,
+        "lineNumber": 32,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": "    public Command decideCommand(String commandDescription) throws PacException {"
       },
       {
-        "lineNumber": 32,
+        "lineNumber": 33,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "        String commandType \u003d getFirstWord(commandDescription);"
       },
       {
-        "lineNumber": 33,
+        "lineNumber": 34,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "        eventName \u003d ui.getEventName(); // to know under which event the user want to edit the performance"
       },
       {
-        "lineNumber": 34,
+        "lineNumber": 35,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "        performances \u003d getPerformances(eventName); //performance list to be edited"
       },
       {
-        "lineNumber": 35,
+        "lineNumber": 36,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "        switch (commandType) {"
       },
       {
-        "lineNumber": 36,
+        "lineNumber": 37,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "        case \"add\":"
       },
       {
-        "lineNumber": 37,
+        "lineNumber": 38,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "            return new AddPerformance(performances, eventName);"
       },
       {
-        "lineNumber": 38,
+        "lineNumber": 39,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "        case \"delete\":"
       },
       {
-        "lineNumber": 39,
+        "lineNumber": 40,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "            return new DeletePerformance(performances, eventName);"
       },
       {
-        "lineNumber": 40,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "        case \"list\":"
-      },
-      {
         "lineNumber": 41,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "            return new ListStudentPerformance(performances);"
+        "content": "        case \"edit\":"
       },
       {
         "lineNumber": 42,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        case \"sort\":"
+        "content": "            return new EditPerformance(performances, eventName);"
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "            return getSortCommand();"
+        "content": "        case \"list\":"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        default:"
+        "content": "            return new ViewStudentPerformance(performances);"
       },
       {
         "lineNumber": 45,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "            throw new PacException(\"Performance: Unknown command.\");"
+        "content": "        case \"sort\":"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        }"
+        "content": "            return getSortCommand();"
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    }"
+        "content": "        default:"
       },
       {
         "lineNumber": 48,
         "author": {
-          "gitId": "Anqi-nus"
+          "gitId": "lowjiayee"
         },
-        "content": ""
+        "content": "            throw new PacException(\"Performance: Unknown command.\");"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    /**"
+        "content": "        }"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     * This method determines the type of Sorting command the user want, by"
+        "content": "    }"
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     * getting a String input and parse it to return respective sorting Command."
+        "content": ""
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     *"
+        "content": "    /**"
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     * @return A Command with respect to the type of sorting command the user intend to execute."
+        "content": "     * This method determines the type of Sorting command the user want, by"
       },
       {
         "lineNumber": 54,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "     * @throws PacException Throws PacException when the user input a not recognizable sorting"
+        "content": "     * getting a String input and parse it to return respective sorting Command."
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     *                       command."
+        "content": "     *"
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     */"
+        "content": "     * @return A Command with respect to the type of sorting command the user intend to execute."
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    private Command getSortCommand() throws PacException {"
+        "content": "     * @throws PacException Throws PacException when the user input a not recognizable sorting"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        String type \u003d ui.getSortType();"
+        "content": "     *                       command."
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        if (type.equals(\"name\")) {"
+        "content": "     */"
       },
       {
         "lineNumber": 60,
         "author": {
-          "gitId": "Anqi-nus"
+          "gitId": "lowjiayee"
         },
-        "content": "            return new SortPerformanceListByName(performances, eventName);"
+        "content": "    private Command getSortCommand() throws PacException {"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        } else if (type.equals(\"grade\")) {"
+        "content": "        String type \u003d ui.getSortType();"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "            return new SortPerformanceListByGrade(performances, eventName);"
+        "content": "        if (type.equals(\"name\")) {"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        }"
+        "content": "            return new SortPerformanceListByName(performances, eventName);"
       },
       {
         "lineNumber": 64,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "        throw new PacException(\"Performance sort: Unknown command. Enter \u0027name\u0027 or \u0027student\u0027.\");"
+        "content": "        } else if (type.equals(\"grade\")) {"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    }"
+        "content": "            return new SortPerformanceListByGrade(performances, eventName);"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    /**"
+        "content": "        throw new PacException(\"Performance sort: Unknown sort type. Enter \u0027name\u0027 or \u0027student\u0027.\");"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     * This get the performance list under the event input by user."
+        "content": "    }"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     * @return The PerformanceList under specific event."
+        "content": ""
       },
       {
         "lineNumber": 70,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "     * @throws PacException Throws PacException when the event is"
+        "content": "    /**"
       },
       {
         "lineNumber": 71,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     *                       not found in the EventList."
+        "content": "     * This get the performance list under the event input by user."
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     */"
+        "content": "     * @return The PerformanceList under specific event."
       },
       {
         "lineNumber": 73,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    private PerformanceList getPerformances(String eventName) throws PacException {"
+        "content": "     * @throws PacException Throws PacException when the event is"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        return eventList.getEvent(eventName).getPerformanceList();"
+        "content": "     *                       not found in the EventList."
       },
       {
         "lineNumber": 75,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    }"
+        "content": "     */"
       },
       {
         "lineNumber": 76,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "    private PerformanceList getPerformances(String eventName) throws PacException {"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        return eventList.getEvent(eventName).getPerformanceList();"
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 79,
         "author": {
           "gitId": "Anqi-nus"
         },
@@ -18846,8 +18867,8 @@
       }
     ],
     "authorContributionMap": {
-      "Anqi-nus": 67,
-      "lowjiayee": 9
+      "Anqi-nus": 71,
+      "lowjiayee": 8
     }
   },
   {
@@ -20729,7 +20750,7 @@
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        String parameter \u003d ui.getPerformanceParameter();"
+        "content": "        String parameter \u003d ui.getPerformanceParameterToAdd();"
       },
       {
         "lineNumber": 61,
@@ -21342,94 +21363,87 @@
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        Performance performance \u003d performances.getPerformance(studentName);"
+        "content": "        return performances.getPerformance(studentName);"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        return performance;"
-      },
-      {
-        "lineNumber": 30,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
         "content": "    }"
       },
       {
-        "lineNumber": 31,
+        "lineNumber": 30,
         "author": {
           "gitId": "benchan911"
         },
         "content": ""
       },
       {
-        "lineNumber": 32,
+        "lineNumber": 31,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": "    private void deleteFromList() throws PacException {"
       },
       {
-        "lineNumber": 33,
+        "lineNumber": 32,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "        performance \u003d getPerformance();"
       },
       {
-        "lineNumber": 34,
+        "lineNumber": 33,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "        performances.deletePerformance(performance, eventName);"
       },
       {
-        "lineNumber": 35,
+        "lineNumber": 34,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 36,
+        "lineNumber": 35,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": ""
       },
       {
-        "lineNumber": 37,
+        "lineNumber": 36,
         "author": {
           "gitId": "benchan911"
         },
         "content": "    @Override"
       },
       {
-        "lineNumber": 38,
+        "lineNumber": 37,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": "    public void execute() throws PacException {"
       },
       {
-        "lineNumber": 39,
+        "lineNumber": 38,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "        deleteFromList();"
       },
       {
-        "lineNumber": 40,
+        "lineNumber": 39,
         "author": {
           "gitId": "benchan911"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 41,
+        "lineNumber": 40,
         "author": {
           "gitId": "Anqi-nus"
         },
@@ -21437,13 +21451,13 @@
       }
     ],
     "authorContributionMap": {
-      "Anqi-nus": 33,
+      "Anqi-nus": 32,
       "lowjiayee": 5,
       "benchan911": 3
     }
   },
   {
-    "path": "src/main/java/seedu/command/performance/ListStudentPerformance.java",
+    "path": "src/main/java/seedu/command/performance/EditPerformance.java",
     "fileType": "functional-code",
     "lines": [
       {
@@ -21470,7 +21484,7 @@
       {
         "lineNumber": 4,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
         "content": "import seedu.exception.PacException;"
       },
@@ -21479,143 +21493,241 @@
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "import seedu.performance.PerformanceList;"
+        "content": "import seedu.performance.Performance;"
       },
       {
         "lineNumber": 6,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "import seedu.ui.UI;"
+        "content": "import seedu.performance.PerformanceList;"
       },
       {
         "lineNumber": 7,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": ""
+        "content": "import seedu.ui.UI;"
       },
       {
         "lineNumber": 8,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "public class ListStudentPerformance extends Command {"
+        "content": ""
       },
       {
         "lineNumber": 9,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    UI ui;"
+        "content": "public class EditPerformance extends Command {"
       },
       {
         "lineNumber": 10,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    private PerformanceList performances;"
+        "content": "    PerformanceList performances;"
       },
       {
         "lineNumber": 11,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": ""
+        "content": "    String eventName;"
       },
       {
         "lineNumber": 12,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    /**"
+        "content": "    UI ui;"
       },
       {
         "lineNumber": 13,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     * Constructor for ViewAssignmentResultCommand. Takes in the"
+        "content": ""
       },
       {
         "lineNumber": 14,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     * performance list."
+        "content": "    public EditPerformance(PerformanceList performances, String eventName) {"
       },
       {
         "lineNumber": 15,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     */"
+        "content": "        this.ui \u003d new UI();"
       },
       {
         "lineNumber": 16,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    public ListStudentPerformance(PerformanceList performances) {"
+        "content": "        this.performances \u003d performances;"
       },
       {
         "lineNumber": 17,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        this.performances \u003d performances;"
+        "content": "        this.eventName \u003d eventName;"
       },
       {
         "lineNumber": 18,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        this.ui \u003d new UI();"
+        "content": "    }"
       },
       {
         "lineNumber": 19,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 20,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": ""
+        "content": "    private Performance getPerformance() throws PacException {"
       },
       {
         "lineNumber": 21,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    @Override"
+        "content": "        String studentName \u003d ui.getStudentName(\"edit his/her performance\");"
       },
       {
         "lineNumber": 22,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "    public void execute() throws PacException {"
+        "content": "        return performances.getPerformance(studentName);"
       },
       {
         "lineNumber": 23,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        performances.printList();"
+        "content": "    }"
       },
       {
         "lineNumber": 24,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 25,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    private void edit() throws PacException {"
+      },
+      {
+        "lineNumber": 26,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        Performance performance \u003d getPerformance();"
+      },
+      {
+        "lineNumber": 27,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        String editType \u003d ui.getPerformanceParameter();"
+      },
+      {
+        "lineNumber": 28,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        if (editType.toLowerCase().trim().equals(\"name\")) { // edit name"
+      },
+      {
+        "lineNumber": 29,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "            performances.edit(performance, \"name\");"
+      },
+      {
+        "lineNumber": 30,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        } else if (editType.toLowerCase().trim().equals(\"result\")) { // edit result"
+      },
+      {
+        "lineNumber": 31,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "            performances.edit(performance, \"result\");"
+      },
+      {
+        "lineNumber": 32,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 33,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 34,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 35,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 36,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    public void execute() throws PacException {"
+      },
+      {
+        "lineNumber": 37,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        edit();"
+      },
+      {
+        "lineNumber": 38,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 39,
         "author": {
           "gitId": "Anqi-nus"
         },
@@ -21623,8 +21735,7 @@
       }
     ],
     "authorContributionMap": {
-      "Anqi-nus": 23,
-      "lowjiayee": 2
+      "Anqi-nus": 39
     }
   },
   {
@@ -22191,6 +22302,191 @@
     "authorContributionMap": {
       "Anqi-nus": 36,
       "lowjiayee": 3
+    }
+  },
+  {
+    "path": "src/main/java/seedu/command/performance/ViewStudentPerformance.java",
+    "fileType": "functional-code",
+    "lines": [
+      {
+        "lineNumber": 1,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "package seedu.command.performance;"
+      },
+      {
+        "lineNumber": 2,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 3,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "import seedu.command.Command;"
+      },
+      {
+        "lineNumber": 4,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "import seedu.exception.PacException;"
+      },
+      {
+        "lineNumber": 5,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "import seedu.performance.PerformanceList;"
+      },
+      {
+        "lineNumber": 6,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "import seedu.ui.UI;"
+      },
+      {
+        "lineNumber": 7,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 8,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "public class ViewStudentPerformance extends Command {"
+      },
+      {
+        "lineNumber": 9,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    UI ui;"
+      },
+      {
+        "lineNumber": 10,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    private PerformanceList performances;"
+      },
+      {
+        "lineNumber": 11,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 12,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 13,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "     * Constructor for ViewAssignmentResultCommand. Takes in the"
+      },
+      {
+        "lineNumber": 14,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "     * performance list."
+      },
+      {
+        "lineNumber": 15,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 16,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    public ViewStudentPerformance(PerformanceList performances) {"
+      },
+      {
+        "lineNumber": 17,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        this.performances \u003d performances;"
+      },
+      {
+        "lineNumber": 18,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        this.ui \u003d new UI();"
+      },
+      {
+        "lineNumber": 19,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 20,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 21,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    @Override"
+      },
+      {
+        "lineNumber": 22,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "    public void execute() throws PacException {"
+      },
+      {
+        "lineNumber": 23,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        performances.printList();"
+      },
+      {
+        "lineNumber": 24,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 25,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "}"
+      }
+    ],
+    "authorContributionMap": {
+      "Anqi-nus": 23,
+      "lowjiayee": 2
     }
   },
   {
@@ -23863,9 +24159,9 @@
       {
         "lineNumber": 25,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "        Collections.sort(Pac.studentListCollection, listNameComparator);"
+        "content": "        Pac.studentListCollection.sort(listNameComparator);"
       },
       {
         "lineNumber": 26,
@@ -23925,9 +24221,9 @@
       }
     ],
     "authorContributionMap": {
-      "Anqi-nus": 2,
+      "Anqi-nus": 3,
       "benchan911": 26,
-      "lowjiayee": 5
+      "lowjiayee": 4
     }
   },
   {
@@ -27828,255 +28124,269 @@
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "            if (event.getName().equals(eventName)) {"
+        "content": "            String eventNameToCompare \u003d eventName.toLowerCase().trim();"
       },
       {
         "lineNumber": 189,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "                return event;"
+        "content": "            String eventNameOriginal \u003d event.getName().toLowerCase().trim();"
       },
       {
         "lineNumber": 190,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "            }"
+        "content": "            if (eventNameToCompare.equals(eventNameOriginal)) {"
       },
       {
         "lineNumber": 191,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        }"
+        "content": "                return event;"
       },
       {
         "lineNumber": 192,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "        throw new PacException(\"Event is not found in the list.\");"
+        "content": "            }"
       },
       {
         "lineNumber": 193,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 194,
         "author": {
-          "gitId": "Anqi-nus"
+          "gitId": "lowjiayee"
         },
-        "content": ""
+        "content": "        throw new PacException(\"Event is not found in the list.\");"
       },
       {
         "lineNumber": 195,
         "author": {
-          "gitId": "harithadiv"
+          "gitId": "Anqi-nus"
         },
-        "content": "    /**"
+        "content": "    }"
       },
       {
         "lineNumber": 196,
         "author": {
-          "gitId": "harithadiv"
+          "gitId": "Anqi-nus"
         },
-        "content": "     * Lists all types of events."
+        "content": ""
       },
       {
         "lineNumber": 197,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "     *"
+        "content": "    /**"
       },
       {
         "lineNumber": 198,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "harithadiv"
         },
-        "content": "     * @throws PacException If list is empty."
+        "content": "     * Lists all types of events."
       },
       {
         "lineNumber": 199,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "     */"
+        "content": "     *"
       },
       {
         "lineNumber": 200,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    public void listEvent() throws PacException {"
-      },
-      {
-        "lineNumber": 201,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "        if (list.isEmpty()) {"
-      },
-      {
-        "lineNumber": 202,
-        "author": {
-          "gitId": "lowjiayee"
-        },
-        "content": "            throw new PacException(\"The event list is empty.\");"
-      },
-      {
-        "lineNumber": 203,
-        "author": {
-          "gitId": "harithadiv"
-        },
-        "content": "        }"
-      },
-      {
-        "lineNumber": 204,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "        displayList.printEventList(list, \"event\");"
-      },
-      {
-        "lineNumber": 205,
-        "author": {
-          "gitId": "harithadiv"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 206,
-        "author": {
-          "gitId": "harithadiv"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 207,
-        "author": {
-          "gitId": "harithadiv"
-        },
-        "content": "    /**"
-      },
-      {
-        "lineNumber": 208,
-        "author": {
-          "gitId": "harithadiv"
-        },
-        "content": "     * Lists out events that are of seminar type only."
-      },
-      {
-        "lineNumber": 209,
-        "author": {
-          "gitId": "harithadiv"
-        },
-        "content": "     *"
-      },
-      {
-        "lineNumber": 210,
-        "author": {
-          "gitId": "lowjiayee"
-        },
         "content": "     * @throws PacException If list is empty."
       },
       {
-        "lineNumber": 211,
+        "lineNumber": 201,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 212,
+        "lineNumber": 202,
         "author": {
           "gitId": "lowjiayee"
         },
-        "content": "    public void listSeminar() throws PacException {"
+        "content": "    public void listEvent() throws PacException {"
       },
       {
-        "lineNumber": 213,
+        "lineNumber": 203,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "        if (list.isEmpty()) {"
       },
       {
-        "lineNumber": 214,
+        "lineNumber": 204,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": "            throw new PacException(\"The event list is empty.\");"
       },
       {
-        "lineNumber": 215,
+        "lineNumber": 205,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 216,
+        "lineNumber": 206,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        displayList.printEventList(list, \"event\");"
+      },
+      {
+        "lineNumber": 207,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        ArrayList\u003cEvent\u003e seminarList \u003d new ArrayList\u003c\u003e();"
+        "content": "    }"
+      },
+      {
+        "lineNumber": 208,
+        "author": {
+          "gitId": "harithadiv"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 209,
+        "author": {
+          "gitId": "harithadiv"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 210,
+        "author": {
+          "gitId": "harithadiv"
+        },
+        "content": "     * Lists out events that are of seminar type only."
+      },
+      {
+        "lineNumber": 211,
+        "author": {
+          "gitId": "harithadiv"
+        },
+        "content": "     *"
+      },
+      {
+        "lineNumber": 212,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "     * @throws PacException If list is empty."
+      },
+      {
+        "lineNumber": 213,
+        "author": {
+          "gitId": "harithadiv"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 214,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "    public void listSeminar() throws PacException {"
+      },
+      {
+        "lineNumber": 215,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        if (list.isEmpty()) {"
+      },
+      {
+        "lineNumber": 216,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "            throw new PacException(\"The event list is empty.\");"
       },
       {
         "lineNumber": 217,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        for (Event item : list) {"
+        "content": "        }"
       },
       {
         "lineNumber": 218,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "            if (item instanceof Seminar) {"
+        "content": "        ArrayList\u003cEvent\u003e seminarList \u003d new ArrayList\u003c\u003e();"
       },
       {
         "lineNumber": 219,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "                seminarList.add(item);"
+        "content": "        for (Event item : list) {"
       },
       {
         "lineNumber": 220,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "            }"
+        "content": "            if (item instanceof Seminar) {"
       },
       {
         "lineNumber": 221,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        }"
+        "content": "                seminarList.add(item);"
       },
       {
         "lineNumber": 222,
+        "author": {
+          "gitId": "harithadiv"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 223,
+        "author": {
+          "gitId": "harithadiv"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 224,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "        displayList.printEventList(seminarList, \"seminar\");"
       },
       {
-        "lineNumber": 223,
+        "lineNumber": 225,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 224,
+        "lineNumber": 226,
         "author": {
           "gitId": "lowjiayee"
         },
@@ -28084,7 +28394,7 @@
       }
     ],
     "authorContributionMap": {
-      "Anqi-nus": 30,
+      "Anqi-nus": 32,
       "lowjiayee": 100,
       "harithadiv": 94
     }
@@ -32565,507 +32875,955 @@
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        performanceList.add(performance);"
+        "content": "        if (isRepeated(performance)) {"
       },
       {
         "lineNumber": 25,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        ui.addPerformanceMessage(performance.studentName, eventName);"
+        "content": "            UI.display(\"You have already stored \" + performance.studentName + \"\u0027s result. If you wish \""
       },
       {
         "lineNumber": 26,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    }"
+        "content": "                    + \"to edit, please input: Performance edit\");"
       },
       {
         "lineNumber": 27,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": ""
+        "content": "        } else {"
       },
       {
         "lineNumber": 28,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    public ArrayList\u003cPerformance\u003e getPerformanceList() {"
+        "content": "            performanceList.add(performance);"
       },
       {
         "lineNumber": 29,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        return performanceList;"
+        "content": "            ui.addPerformanceMessage(performance.studentName, eventName);"
       },
       {
         "lineNumber": 30,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 31,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 32,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    /**"
+        "content": ""
       },
       {
         "lineNumber": 33,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     * Delete the student\u0027s performance from the performance list."
+        "content": "    private boolean isRepeated(Performance performance) {"
       },
       {
         "lineNumber": 34,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     * It detects whether the current list is empty, contains the"
+        "content": "        if (isEmpty()) {"
       },
       {
         "lineNumber": 35,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     * input student\u0027s performance, and delete whenever is allowed."
+        "content": "            return false;"
       },
       {
         "lineNumber": 36,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     *"
+        "content": "        }"
       },
       {
         "lineNumber": 37,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     * @param performance The Performance of student to be deleted."
+        "content": "        for (Performance p : performanceList) {"
       },
       {
         "lineNumber": 38,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     */"
+        "content": "            return isSame(p.getStudent(), performance.getStudent());"
       },
       {
         "lineNumber": 39,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "    public void deletePerformance(Performance performance, String eventName) throws PacException {"
+        "content": "        }"
       },
       {
         "lineNumber": 40,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        boolean hasDeleted \u003d false;"
+        "content": "        return false;"
       },
       {
         "lineNumber": 41,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        if (isEmpty()) {"
+        "content": "    }"
       },
       {
         "lineNumber": 42,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "            throw new PacException(\"No performance list under this event\");"
+        "content": ""
       },
       {
         "lineNumber": 43,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        }"
+        "content": "    private boolean isSame(String string1, String string2) {"
       },
       {
         "lineNumber": 44,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        for (Performance p : performanceList) {"
+        "content": "        return string1.toLowerCase().equals(string2.toLowerCase());"
       },
       {
         "lineNumber": 45,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "            if (p !\u003d null \u0026\u0026 performance.getStudent().equals(p.getStudent())) {"
+        "content": "    }"
       },
       {
         "lineNumber": 46,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "                performanceList.remove(p);"
+        "content": ""
       },
       {
         "lineNumber": 47,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "                hasDeleted \u003d true;"
+        "content": "    public ArrayList\u003cPerformance\u003e getPerformanceList() {"
       },
       {
         "lineNumber": 48,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "                break;"
+        "content": "        return performanceList;"
       },
       {
         "lineNumber": 49,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "            }"
+        "content": "    }"
       },
       {
         "lineNumber": 50,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        }"
+        "content": ""
       },
       {
         "lineNumber": 51,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        ui.deletePerformanceMessage(performance, eventName, hasDeleted);"
+        "content": "    /**"
       },
       {
         "lineNumber": 52,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    }"
+        "content": "     * Delete the student\u0027s performance from the performance list."
       },
       {
         "lineNumber": 53,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": ""
+        "content": "     * It detects whether the current list is empty, contains the"
       },
       {
         "lineNumber": 54,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "    public void printList() throws PacException {"
+        "content": "     * input student\u0027s performance, and delete whenever is allowed."
       },
       {
         "lineNumber": 55,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        if (isEmpty()) {"
+        "content": "     *"
       },
       {
         "lineNumber": 56,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "            throw new PacException(\"No performance list under this event\");"
+        "content": "     * @param performance The Performance of student to be deleted."
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        }"
+        "content": "     */"
       },
       {
         "lineNumber": 58,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        int i \u003d 1;"
+        "content": "    public void deletePerformance(Performance performance, String eventName) {"
       },
       {
         "lineNumber": 59,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        displayTable.printHeaderOfThree(\"index\", \"Name of Student\", \"Result\");"
+        "content": "        boolean hasDeleted \u003d false;"
       },
       {
         "lineNumber": 60,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        for (Performance performance : performanceList) {"
+        "content": "        if (isEmpty()) {"
       },
       {
         "lineNumber": 61,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "            displayTable.printBodyOfThree(i, performance.studentName, performance.getResult());"
+        "content": "            UI.display(\"No performance list under this event\");"
       },
       {
         "lineNumber": 62,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "            i++;"
+        "content": "        }"
       },
       {
         "lineNumber": 63,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        }"
+        "content": "        for (Performance p : performanceList) {"
       },
       {
         "lineNumber": 64,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    }"
+        "content": "            if (p !\u003d null \u0026\u0026 isSame(p.getStudent(), performance.getStudent())) {"
       },
       {
         "lineNumber": 65,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": ""
+        "content": "                performanceList.remove(p);"
       },
       {
         "lineNumber": 66,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    /**"
+        "content": "                hasDeleted \u003d true;"
       },
       {
         "lineNumber": 67,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     * This method compares the input String student name with Performance.studentName"
+        "content": "                break;"
       },
       {
         "lineNumber": 68,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     * and returns the Performance when the two Strings are equal."
+        "content": "            }"
       },
       {
         "lineNumber": 69,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     * @param studentName A String input to be compared."
+        "content": "        }"
       },
       {
         "lineNumber": 70,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     * @return The Performance with studentName matches input String."
+        "content": "        ui.deletePerformanceMessage(performance, eventName, hasDeleted);"
       },
       {
         "lineNumber": 71,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "     * @throws PacException Throws"
+        "content": "    }"
       },
       {
         "lineNumber": 72,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "     */"
+        "content": ""
       },
       {
         "lineNumber": 73,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "    public Performance getPerformance(String studentName) throws PacException {"
+        "content": "    /**"
       },
       {
         "lineNumber": 74,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        if (isEmpty()) {"
+        "content": "     * This method edit the parameters in Performance. The type of parameter to change is"
       },
       {
         "lineNumber": 75,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "            throw new PacException(\"No performance list under this event\");"
+        "content": "     * determined by the String type passed into this method."
       },
       {
         "lineNumber": 76,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        }"
+        "content": "     *"
       },
       {
         "lineNumber": 77,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        for (Performance performance: performanceList) {"
+        "content": "     * @param performance The Performance to be edited."
       },
       {
         "lineNumber": 78,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "            if (performance.studentName.equals(studentName)) {"
+        "content": "     * @param type        The type of parameter to be edited."
       },
       {
         "lineNumber": 79,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "                return performance;"
+        "content": "     */"
       },
       {
         "lineNumber": 80,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "            }"
+        "content": "    public void edit(Performance performance, String type) {"
       },
       {
         "lineNumber": 81,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        }"
+        "content": "        boolean hasEdited \u003d false;"
       },
       {
         "lineNumber": 82,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "        throw new PacException(\"There is no record for \" + studentName + \"\u0027s performance.\");"
+        "content": "        if (isEmpty()) {"
       },
       {
         "lineNumber": 83,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    }"
+        "content": "            UI.display(\"No performance list under this event\");"
       },
       {
         "lineNumber": 84,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": ""
+        "content": "        }"
       },
       {
         "lineNumber": 85,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    public boolean isEmpty() {"
+        "content": ""
       },
       {
         "lineNumber": 86,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        return performanceList.isEmpty();"
+        "content": "        for (Performance p : performanceList) {"
       },
       {
         "lineNumber": 87,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    }"
+        "content": "            if (p !\u003d null \u0026\u0026 isSame(p.getStudent(), performance.getStudent()) \u0026\u0026 isSame(type, \"name\")) {"
       },
       {
         "lineNumber": 88,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": ""
+        "content": "                editName(p);"
       },
       {
         "lineNumber": 89,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    public void sortByName() {"
+        "content": "                hasEdited \u003d true;"
       },
       {
         "lineNumber": 90,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        performanceList.sort(performanceListNameComparator);"
+        "content": "                break;"
       },
       {
         "lineNumber": 91,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    }"
+        "content": "            } else if (p !\u003d null \u0026\u0026 isSame(p.getStudent(), performance.getStudent()) \u0026\u0026 isSame(type, \"result\")) {"
       },
       {
         "lineNumber": 92,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": ""
+        "content": "                editResult(p);"
       },
       {
         "lineNumber": 93,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    public void sortByGrade() {"
+        "content": "                hasEdited \u003d true;"
       },
       {
         "lineNumber": 94,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        performanceList.sort(performanceListGradeComparator);"
+        "content": "            }"
       },
       {
         "lineNumber": 95,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    }"
+        "content": "        }"
       },
       {
         "lineNumber": 96,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 97,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        if (!hasEdited) {"
+      },
+      {
+        "lineNumber": 98,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "            UI.display(\"Performance not found in list\");"
+      },
+      {
+        "lineNumber": 99,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 100,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 101,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 102,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    private void editName(Performance performance) {"
+      },
+      {
+        "lineNumber": 103,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        performance.studentName \u003d ui.getPerformanceName(\"name\");"
+      },
+      {
+        "lineNumber": 104,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        ui.editPerformanceMessage(performance, \"name\");"
+      },
+      {
+        "lineNumber": 105,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        performanceList.remove(performance);"
+      },
+      {
+        "lineNumber": 106,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        performanceList.add(performance);"
+      },
+      {
+        "lineNumber": 107,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 108,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 109,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    public void editResult(Performance performance) {"
+      },
+      {
+        "lineNumber": 110,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        performance.result \u003d ui.getPerformanceName(\"result\");"
+      },
+      {
+        "lineNumber": 111,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        ui.editPerformanceMessage(performance, \"result\");"
+      },
+      {
+        "lineNumber": 112,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        performanceList.remove(performance);"
+      },
+      {
+        "lineNumber": 113,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        performanceList.add(performance);"
+      },
+      {
+        "lineNumber": 114,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 115,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 116,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 117,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "     * This method iterates and prints the Performance list in a table format."
+      },
+      {
+        "lineNumber": 118,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 119,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    public void printList() {"
+      },
+      {
+        "lineNumber": 120,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        if (isEmpty()) {"
+      },
+      {
+        "lineNumber": 121,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "            UI.display(\"No performance list under this event\");"
+      },
+      {
+        "lineNumber": 122,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 123,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        int i \u003d 1;"
+      },
+      {
+        "lineNumber": 124,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        displayTable.printHeaderOfThree(\"index\", \"Name of Student\", \"Result\");"
+      },
+      {
+        "lineNumber": 125,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        for (Performance performance : performanceList) {"
+      },
+      {
+        "lineNumber": 126,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "            displayTable.printBodyOfThree(i, performance.studentName, performance.getResult());"
+      },
+      {
+        "lineNumber": 127,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "            i++;"
+      },
+      {
+        "lineNumber": 128,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 129,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 130,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 131,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    /**"
+      },
+      {
+        "lineNumber": 132,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "     * This method compares the input String student name with Performance.studentName"
+      },
+      {
+        "lineNumber": 133,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "     * and returns the Performance when the two Strings are equal."
+      },
+      {
+        "lineNumber": 134,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "     * @param studentName A String input to be compared."
+      },
+      {
+        "lineNumber": 135,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "     * @return The Performance with studentName matches input String."
+      },
+      {
+        "lineNumber": 136,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "     */"
+      },
+      {
+        "lineNumber": 137,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "    public Performance getPerformance(String studentName) throws PacException {"
+      },
+      {
+        "lineNumber": 138,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        if (isEmpty()) {"
+      },
+      {
+        "lineNumber": 139,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "            throw new PacException(\"No performance list under this event\");"
+      },
+      {
+        "lineNumber": 140,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 141,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        for (Performance performance: performanceList) {"
+      },
+      {
+        "lineNumber": 142,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "            if (performance.studentName.equals(studentName)) {"
+      },
+      {
+        "lineNumber": 143,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "                return performance;"
+      },
+      {
+        "lineNumber": 144,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 145,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 146,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "        throw new PacException(\"There is no record for \" + studentName + \"\u0027s performance.\");"
+      },
+      {
+        "lineNumber": 147,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 148,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 149,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    public boolean isEmpty() {"
+      },
+      {
+        "lineNumber": 150,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        return performanceList.isEmpty();"
+      },
+      {
+        "lineNumber": 151,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 152,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 153,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    public void sortByName() {"
+      },
+      {
+        "lineNumber": 154,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        performanceList.sort(performanceListNameComparator);"
+      },
+      {
+        "lineNumber": 155,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 156,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 157,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    public void sortByGrade() {"
+      },
+      {
+        "lineNumber": 158,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        performanceList.sort(performanceListGradeComparator);"
+      },
+      {
+        "lineNumber": 159,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 160,
         "author": {
           "gitId": "Anqi-nus"
         },
@@ -33073,8 +33831,8 @@
       }
     ],
     "authorContributionMap": {
-      "Anqi-nus": 87,
-      "lowjiayee": 9
+      "Anqi-nus": 157,
+      "lowjiayee": 3
     }
   },
   {
@@ -37550,222 +38308,236 @@
       {
         "lineNumber": 53,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "        display(\"To sort a student\u0027s performance list under an event, input:\\n\\t\""
+        "content": "        display(\"To edit a student\u0027s performance under an event, input:\\n\\t\""
       },
       {
         "lineNumber": 54,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "                + \"Performance sort\\n\");"
+        "content": "                + \"Performance edit\\n\");"
       },
       {
         "lineNumber": 55,
         "author": {
-          "gitId": "Anqi-nus"
+          "gitId": "lowjiayee"
         },
-        "content": "    }"
+        "content": "        display(\"To sort a student\u0027s performance list under an event, input:\\n\\t\""
       },
       {
         "lineNumber": 56,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": ""
+        "content": "                + \"Performance sort\\n\");"
       },
       {
         "lineNumber": 57,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    public void printAttendanceHelp() {"
-      },
-      {
-        "lineNumber": 58,
-        "author": {
-          "gitId": "lowjiayee"
-        },
-        "content": "        display(\"All attendance list should exist under an existing event.\""
-      },
-      {
-        "lineNumber": 59,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "                + \"Follow step-by-step commands after the following commands are input.\");"
-      },
-      {
-        "lineNumber": 60,
-        "author": {
-          "gitId": "lowjiayee"
-        },
-        "content": "        display(\"To add students\u0027 attendance, input:\\n\\t\""
-      },
-      {
-        "lineNumber": 61,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "                + \"Attendance add\\n\");"
-      },
-      {
-        "lineNumber": 62,
-        "author": {
-          "gitId": "lowjiayee"
-        },
-        "content": "        display(\"To delete a student\u0027s attendance, input:\\n\\t\""
-      },
-      {
-        "lineNumber": 63,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "                + \"Attendance delete\\n\");"
-      },
-      {
-        "lineNumber": 64,
-        "author": {
-          "gitId": "lowjiayee"
-        },
-        "content": "        display(\"To sort a student\u0027s attendance list, input:\\n\\t\""
-      },
-      {
-        "lineNumber": 65,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "                + \"Attendance sort\\n\");"
-      },
-      {
-        "lineNumber": 66,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
         "content": "    }"
       },
       {
-        "lineNumber": 67,
+        "lineNumber": 58,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": ""
       },
       {
+        "lineNumber": 59,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    public void printAttendanceHelp() {"
+      },
+      {
+        "lineNumber": 60,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "        display(\"All attendance list should exist under an existing event.\""
+      },
+      {
+        "lineNumber": 61,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "                + \"Follow step-by-step commands after the following commands are input.\");"
+      },
+      {
+        "lineNumber": 62,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "        display(\"To add students\u0027 attendance, input:\\n\\t\""
+      },
+      {
+        "lineNumber": 63,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "                + \"Attendance add\\n\");"
+      },
+      {
+        "lineNumber": 64,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "        display(\"To delete a student\u0027s attendance, input:\\n\\t\""
+      },
+      {
+        "lineNumber": 65,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "                + \"Attendance delete\\n\");"
+      },
+      {
+        "lineNumber": 66,
+        "author": {
+          "gitId": "lowjiayee"
+        },
+        "content": "        display(\"To sort a student\u0027s attendance list, input:\\n\\t\""
+      },
+      {
+        "lineNumber": 67,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "                + \"Attendance sort\\n\");"
+      },
+      {
         "lineNumber": 68,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "    public void printStudentListHelp() {"
-      },
-      {
-        "lineNumber": 69,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "        System.out.print(\"To create a new studentList for future events, input:\\n\\t\""
-      },
-      {
-        "lineNumber": 70,
-        "author": {
-          "gitId": "benchan911"
-        },
-        "content": "                + \"student.list add\\n\\n\");"
-      },
-      {
-        "lineNumber": 71,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "        System.out.print(\"To delete an existing studentList, input:\\n\\t\""
-      },
-      {
-        "lineNumber": 72,
-        "author": {
-          "gitId": "benchan911"
-        },
-        "content": "                + \"student.list delete (index)\\n\\n\");"
-      },
-      {
-        "lineNumber": 73,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "        System.out.print(\"To clear all existing studentList, input:\\n\\t\""
-      },
-      {
-        "lineNumber": 74,
-        "author": {
-          "gitId": "benchan911"
-        },
-        "content": "                + \"student.list clear\\n\\n\");"
-      },
-      {
-        "lineNumber": 75,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "        System.out.print(\"To find an existing studentList, input:\\n\\t\""
-      },
-      {
-        "lineNumber": 76,
-        "author": {
-          "gitId": "benchan911"
-        },
-        "content": "                + \"student.list find\\n\\n\");"
-      },
-      {
-        "lineNumber": 77,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "        System.out.print(\"To list all existing studentList, input:\\n\\t\""
-      },
-      {
-        "lineNumber": 78,
-        "author": {
-          "gitId": "benchan911"
-        },
-        "content": "                + \"student.list list\\n\\n\");"
-      },
-      {
-        "lineNumber": 79,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "        System.out.print(\"To sort all existing studentList by their names, input:\\n\\t\""
-      },
-      {
-        "lineNumber": 80,
-        "author": {
-          "gitId": "benchan911"
-        },
-        "content": "                + \"student.list sort/by/name\\n\\n\");"
-      },
-      {
-        "lineNumber": 81,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "        System.out.print(\"To sort all name within the existing studentList, input:\\n\\t\""
-      },
-      {
-        "lineNumber": 82,
-        "author": {
-          "gitId": "benchan911"
-        },
-        "content": "                + \"student.list sort/by/list\\n\\n\");"
-      },
-      {
-        "lineNumber": 83,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "    }"
       },
       {
+        "lineNumber": 69,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 70,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    public void printStudentListHelp() {"
+      },
+      {
+        "lineNumber": 71,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        display(\"To create a new studentList for future events, input:\\n\\t\""
+      },
+      {
+        "lineNumber": 72,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "                + \"student.list add\\n\\n\");"
+      },
+      {
+        "lineNumber": 73,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        display(\"To delete an existing studentList, input:\\n\\t\""
+      },
+      {
+        "lineNumber": 74,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "                + \"student.list delete (index)\\n\\n\");"
+      },
+      {
+        "lineNumber": 75,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        display(\"To clear all existing studentList, input:\\n\\t\""
+      },
+      {
+        "lineNumber": 76,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "                + \"student.list clear\\n\\n\");"
+      },
+      {
+        "lineNumber": 77,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        display(\"To find an existing studentList, input:\\n\\t\""
+      },
+      {
+        "lineNumber": 78,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "                + \"student.list find\\n\\n\");"
+      },
+      {
+        "lineNumber": 79,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        display(\"To list all existing studentList, input:\\n\\t\""
+      },
+      {
+        "lineNumber": 80,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "                + \"student.list list\\n\\n\");"
+      },
+      {
+        "lineNumber": 81,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        display(\"To sort all existing studentList by their names, input:\\n\\t\""
+      },
+      {
+        "lineNumber": 82,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "                + \"student.list sort/by/name\\n\\n\");"
+      },
+      {
+        "lineNumber": 83,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        display(\"To sort all name within the existing studentList, input:\\n\\t\""
+      },
+      {
         "lineNumber": 84,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "                + \"student.list sort/by/list\\n\\n\");"
+      },
+      {
+        "lineNumber": 85,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 86,
         "author": {
           "gitId": "Anqi-nus"
         },
@@ -37773,7 +38545,7 @@
       }
     ],
     "authorContributionMap": {
-      "Anqi-nus": 34,
+      "Anqi-nus": 36,
       "lowjiayee": 43,
       "benchan911": 7
     }
@@ -38625,35 +39397,35 @@
       {
         "lineNumber": 121,
         "author": {
-          "gitId": "harithadiv"
+          "gitId": "Anqi-nus"
         },
         "content": "    public void printInvalidDateTimeFormat() {"
       },
       {
         "lineNumber": 122,
         "author": {
-          "gitId": "harithadiv"
+          "gitId": "Anqi-nus"
         },
         "content": "        System.out.println(\"Datetime is not set. If you wish to add datetime, please enter the correct format:\""
       },
       {
         "lineNumber": 123,
         "author": {
-          "gitId": "harithadiv"
+          "gitId": "Anqi-nus"
         },
         "content": "                + \"yyyy-MM-dd HHmm\");"
       },
       {
         "lineNumber": 124,
         "author": {
-          "gitId": "harithadiv"
+          "gitId": "Anqi-nus"
         },
         "content": "    }"
       },
       {
         "lineNumber": 125,
         "author": {
-          "gitId": "harithadiv"
+          "gitId": "Anqi-nus"
         },
         "content": ""
       },
@@ -38662,399 +39434,399 @@
         "author": {
           "gitId": "harithadiv"
         },
-        "content": ""
+        "content": "    public void printCalendarHeading(int semesterOneYear, int semesterTwoYear, int semester) {"
       },
       {
         "lineNumber": 127,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": ""
+        "content": "        printCalendarHorizontalLine();"
       },
       {
         "lineNumber": 128,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "    public void printCalendarHeading(int semesterOneYear, int semesterTwoYear, int semester) {"
+        "content": "        String line \u003d \"SEMESTER \" + semester + \" AY \" + semesterOneYear + \"/\" + semesterTwoYear;"
       },
       {
         "lineNumber": 129,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        printCalendarHorizontalLine();"
+        "content": "        System.out.printf(\" %75s %n\", line);"
       },
       {
         "lineNumber": 130,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        String line \u003d \"SEMESTER \" + semester + \" AY \" + semesterOneYear + \"/\" + semesterTwoYear;"
+        "content": "        printCalendarHorizontalLine();"
       },
       {
         "lineNumber": 131,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        System.out.printf(\" %75s %n\", line);"
+        "content": "    }"
       },
       {
         "lineNumber": 132,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "        printCalendarHorizontalLine();"
+        "content": ""
       },
       {
         "lineNumber": 133,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": "    }"
+        "content": "    public void printCalendarHorizontalLine() {"
       },
       {
         "lineNumber": 134,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": ""
+        "content": "        Stream.generate(() -\u003e \" _\").limit(1).forEach(System.out::print);"
       },
       {
         "lineNumber": 135,
         "author": {
           "gitId": "harithadiv"
         },
-        "content": ""
-      },
-      {
-        "lineNumber": 136,
-        "author": {
-          "gitId": "harithadiv"
-        },
-        "content": "    public void printCalendarHorizontalLine() {"
-      },
-      {
-        "lineNumber": 137,
-        "author": {
-          "gitId": "harithadiv"
-        },
-        "content": "        Stream.generate(() -\u003e \" _\").limit(1).forEach(System.out::print);"
-      },
-      {
-        "lineNumber": 138,
-        "author": {
-          "gitId": "harithadiv"
-        },
         "content": "        Stream.generate(() -\u003e \"_\").limit(130).forEach(System.out::print);"
       },
       {
-        "lineNumber": 139,
+        "lineNumber": 136,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": "        UI.display(\" \");"
       },
       {
-        "lineNumber": 140,
+        "lineNumber": 137,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 141,
+        "lineNumber": 138,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": ""
       },
       {
-        "lineNumber": 142,
-        "author": {
-          "gitId": "harithadiv"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 143,
+        "lineNumber": 139,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "    public void printCalendarHeader(int semesterOneYear, int semesterTwoYear,"
       },
       {
-        "lineNumber": 144,
+        "lineNumber": 140,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "                                     int semester) {"
       },
       {
-        "lineNumber": 145,
+        "lineNumber": 141,
         "author": {
           "gitId": "lowjiayee"
         },
         "content": "        UI.display(\"\");"
       },
       {
-        "lineNumber": 146,
+        "lineNumber": 142,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "        printCalendarHeading(semesterOneYear, semesterTwoYear, semester);"
       },
       {
-        "lineNumber": 147,
+        "lineNumber": 143,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "        printCalendarMonthsHeading(semester);"
       },
       {
-        "lineNumber": 148,
+        "lineNumber": 144,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 149,
+        "lineNumber": 145,
         "author": {
           "gitId": "harithadiv"
         },
         "content": ""
       },
       {
-        "lineNumber": 150,
+        "lineNumber": 146,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "    public void printCalendarMonthsHeading(int semester) {"
       },
       {
-        "lineNumber": 151,
+        "lineNumber": 147,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "        ArrayList\u003cString\u003e months \u003d new ArrayList\u003c\u003e();"
       },
       {
-        "lineNumber": 152,
+        "lineNumber": 148,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "        if (semester \u003d\u003d 1) {"
       },
       {
-        "lineNumber": 153,
+        "lineNumber": 149,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "            months.add(0, \"JUL\");"
       },
       {
-        "lineNumber": 154,
+        "lineNumber": 150,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "            months.add(1, \"AUG\");"
       },
       {
-        "lineNumber": 155,
+        "lineNumber": 151,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "            months.add(2, \"SEP\");"
       },
       {
-        "lineNumber": 156,
+        "lineNumber": 152,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "            months.add(3, \"OCT\");"
       },
       {
-        "lineNumber": 157,
+        "lineNumber": 153,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "            months.add(4, \"NOV\");"
       },
       {
-        "lineNumber": 158,
+        "lineNumber": 154,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "            months.add(5, \"DEC\");"
       },
       {
-        "lineNumber": 159,
+        "lineNumber": 155,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "        } else {"
       },
       {
-        "lineNumber": 160,
+        "lineNumber": 156,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "            months.add(0, \"JAN\");"
       },
       {
-        "lineNumber": 161,
+        "lineNumber": 157,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "            months.add(1, \"FEB\");"
       },
       {
-        "lineNumber": 162,
+        "lineNumber": 158,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "            months.add(2, \"MAR\");"
       },
       {
-        "lineNumber": 163,
+        "lineNumber": 159,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "            months.add(3, \"APR\");"
       },
       {
-        "lineNumber": 164,
+        "lineNumber": 160,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "            months.add(4, \"MAY\");"
       },
       {
-        "lineNumber": 165,
+        "lineNumber": 161,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "            months.add(5, \"JUN\");"
       },
       {
-        "lineNumber": 166,
+        "lineNumber": 162,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 167,
+        "lineNumber": 163,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "        DisplayTable.printBodyOfSix(months);"
       },
       {
-        "lineNumber": 168,
+        "lineNumber": 164,
         "author": {
           "gitId": "harithadiv"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 169,
+        "lineNumber": 165,
         "author": {
           "gitId": "harithadiv"
         },
         "content": ""
       },
       {
-        "lineNumber": 170,
+        "lineNumber": 166,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "    /**"
       },
       {
-        "lineNumber": 171,
+        "lineNumber": 167,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "     * The message showed to the user after successful deletion of a performance."
       },
       {
-        "lineNumber": 172,
+        "lineNumber": 168,
         "author": {
           "gitId": "benchan911"
         },
         "content": "     *"
       },
       {
-        "lineNumber": 173,
+        "lineNumber": 169,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "     * @param performance The Performance deleted."
       },
       {
-        "lineNumber": 174,
+        "lineNumber": 170,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "     */"
       },
       {
-        "lineNumber": 175,
+        "lineNumber": 171,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    public void deletePerformanceMessage(Performance performance, String eventName,"
+        "content": "    public void deletePerformanceMessage(Performance performance, String eventName, boolean hasDeleted) {"
       },
       {
-        "lineNumber": 176,
-        "author": {
-          "gitId": "lowjiayee"
-        },
-        "content": "                                         boolean hasDeleted) throws PacException {"
-      },
-      {
-        "lineNumber": 177,
+        "lineNumber": 172,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "        if (!hasDeleted) {"
       },
       {
-        "lineNumber": 178,
+        "lineNumber": 173,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "            throw new PacException(\"Performance not found in list\");"
+        "content": "            display(\"Performance not found in list\");"
       },
       {
-        "lineNumber": 179,
+        "lineNumber": 174,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "        }"
       },
       {
-        "lineNumber": 180,
+        "lineNumber": 175,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "        String studentName \u003d performance.getStudent();"
       },
       {
-        "lineNumber": 181,
+        "lineNumber": 176,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "        System.out.printf(\"The result of student %s has been deleted \""
       },
       {
-        "lineNumber": 182,
+        "lineNumber": 177,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "                + \"successfully under event %s.\\n\", studentName, eventName);"
+      },
+      {
+        "lineNumber": 178,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 179,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 180,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    public void editPerformanceMessage(Performance performance, String type) {"
+      },
+      {
+        "lineNumber": 181,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        String studentName \u003d performance.getStudent();"
+      },
+      {
+        "lineNumber": 182,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        System.out.printf(\"The student %s has been changed to %s successfully.\\n\", type, studentName);"
       },
       {
         "lineNumber": 183,
@@ -39075,238 +39847,238 @@
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    public String getResultOfStudent(String studentName) {"
+        "content": "    public String getPerformanceName(String type) {"
       },
       {
         "lineNumber": 186,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "        UI.display(\"Please key in the result for student \" + studentName);"
+        "content": "        System.out.printf(\"Please key in the student\u0027s new %s\", type);"
       },
       {
         "lineNumber": 187,
-        "author": {
-          "gitId": "benchan911"
-        },
-        "content": "        readUserInput();"
-      },
-      {
-        "lineNumber": 188,
-        "author": {
-          "gitId": "benchan911"
-        },
-        "content": "        return getUserInput();"
-      },
-      {
-        "lineNumber": 189,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 190,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 191,
-        "author": {
-          "gitId": "benchan911"
-        },
-        "content": "    public String getAttendanceStatusOfStudent(String studentName) {"
-      },
-      {
-        "lineNumber": 192,
-        "author": {
-          "gitId": "lowjiayee"
-        },
-        "content": "        UI.display(\"Please key in the attendance status for student \" + studentName + \"[Y/N]\");"
-      },
-      {
-        "lineNumber": 193,
-        "author": {
-          "gitId": "benchan911"
-        },
-        "content": "        readUserInput();"
-      },
-      {
-        "lineNumber": 194,
-        "author": {
-          "gitId": "benchan911"
-        },
-        "content": "        return getUserInput();"
-      },
-      {
-        "lineNumber": 195,
-        "author": {
-          "gitId": "benchan911"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 196,
-        "author": {
-          "gitId": "benchan911"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 197,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "    public String getPerformanceParameter() {"
-      },
-      {
-        "lineNumber": 198,
-        "author": {
-          "gitId": "lowjiayee"
-        },
-        "content": "        UI.display(\"Please key in student name and result in the following format:\");"
-      },
-      {
-        "lineNumber": 199,
-        "author": {
-          "gitId": "lowjiayee"
-        },
-        "content": "        UI.display(\"n/Student_Name r/result. If you are finished, enter done.\");"
-      },
-      {
-        "lineNumber": 200,
-        "author": {
-          "gitId": "benchan911"
-        },
-        "content": "        readUserInput();"
-      },
-      {
-        "lineNumber": 201,
-        "author": {
-          "gitId": "benchan911"
-        },
-        "content": "        return getUserInput();"
-      },
-      {
-        "lineNumber": 202,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 203,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 204,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "    public String getStudentName(String typeCommand) {"
-      },
-      {
-        "lineNumber": 205,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "        System.out.printf(\"Please key in the name of student that you wish to %s \\n\", typeCommand);"
-      },
-      {
-        "lineNumber": 206,
-        "author": {
-          "gitId": "benchan911"
-        },
-        "content": "        readUserInput();"
-      },
-      {
-        "lineNumber": 207,
-        "author": {
-          "gitId": "benchan911"
-        },
-        "content": "        return getUserInput();"
-      },
-      {
-        "lineNumber": 208,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "    }"
-      },
-      {
-        "lineNumber": 209,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": ""
-      },
-      {
-        "lineNumber": 210,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "    public String getTypeOfAddPerformance() {"
-      },
-      {
-        "lineNumber": 211,
-        "author": {
-          "gitId": "lowjiayee"
-        },
-        "content": "        UI.display(\"Would you like to import an existing student list? \""
-      },
-      {
-        "lineNumber": 212,
-        "author": {
-          "gitId": "Anqi-nus"
-        },
-        "content": "                + \"If yes, input \u0027yes\u0027. Else, input anything.\");"
-      },
-      {
-        "lineNumber": 213,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "        return getStringInput();"
       },
       {
-        "lineNumber": 214,
+        "lineNumber": 188,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 215,
+        "lineNumber": 189,
         "author": {
           "gitId": "Anqi-nus"
         },
         "content": ""
       },
       {
+        "lineNumber": 190,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    public String getResultOfStudent(String studentName) {"
+      },
+      {
+        "lineNumber": 191,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        display(\"Please key in the result for student \" + studentName);"
+      },
+      {
+        "lineNumber": 192,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        readUserInput();"
+      },
+      {
+        "lineNumber": 193,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        return getUserInput();"
+      },
+      {
+        "lineNumber": 194,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 195,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 196,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "    public String getAttendanceStatusOfStudent(String studentName) {"
+      },
+      {
+        "lineNumber": 197,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        display(\"Please key in the attendance status for student \" + studentName + \"[Y/N]\");"
+      },
+      {
+        "lineNumber": 198,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        readUserInput();"
+      },
+      {
+        "lineNumber": 199,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        return getUserInput();"
+      },
+      {
+        "lineNumber": 200,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 201,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 202,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    public String getPerformanceParameter() {"
+      },
+      {
+        "lineNumber": 203,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        display(\"Please key in the type of performance parameter you want to edit: name / result\");"
+      },
+      {
+        "lineNumber": 204,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        readUserInput();"
+      },
+      {
+        "lineNumber": 205,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        return getUserInput();"
+      },
+      {
+        "lineNumber": 206,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 207,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 208,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    public String getPerformanceParameterToAdd() {"
+      },
+      {
+        "lineNumber": 209,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        display(\"Please key in the performance you want to add in this format: n/name r/result\");"
+      },
+      {
+        "lineNumber": 210,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        display(\"When you are finished, input \u0027done\u0027 \");"
+      },
+      {
+        "lineNumber": 211,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        readUserInput();"
+      },
+      {
+        "lineNumber": 212,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        return getUserInput();"
+      },
+      {
+        "lineNumber": 213,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 214,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 215,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    public String getStudentName(String typeCommand) {"
+      },
+      {
         "lineNumber": 216,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    public boolean isImportList() {"
+        "content": "        System.out.printf(\"Please key in the name of student that you wish to %s \\n\", typeCommand);"
       },
       {
         "lineNumber": 217,
         "author": {
-          "gitId": "Anqi-nus"
+          "gitId": "benchan911"
         },
-        "content": "        String userInput \u003d getTypeOfAddPerformance();"
+        "content": "        readUserInput();"
       },
       {
         "lineNumber": 218,
         "author": {
-          "gitId": "Anqi-nus"
+          "gitId": "benchan911"
         },
-        "content": "        return userInput.equals(\"yes\");"
+        "content": "        return getUserInput();"
       },
       {
         "lineNumber": 219,
@@ -39327,236 +40099,236 @@
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    public String getEventName() {"
+        "content": "    public String getTypeOfAddPerformance() {"
       },
       {
         "lineNumber": 222,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "        UI.display(\"Please key in the name of event that \""
+        "content": "        display(\"Would you like to import an existing student list? \""
       },
       {
         "lineNumber": 223,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "                + \"you wish to access to its student\u0027s performance.\");"
+        "content": "                + \"If yes, input \u0027yes\u0027. Else, input anything.\");"
       },
       {
         "lineNumber": 224,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "Anqi-nus"
         },
-        "content": "        readUserInput();"
+        "content": "        return getStringInput();"
       },
       {
         "lineNumber": 225,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "Anqi-nus"
         },
-        "content": "        return getUserInput();"
+        "content": "    }"
       },
       {
         "lineNumber": 226,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 227,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": ""
+        "content": "    public String getTypeOfParameterToEdit() {"
       },
       {
         "lineNumber": 228,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "Anqi-nus"
         },
-        "content": "    public String getEventNameForAttendance() {"
+        "content": "        display(\"Would you like to import an existing student list? \""
       },
       {
         "lineNumber": 229,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "        UI.display(\"Please key in the name of event.\");"
+        "content": "                + \"If yes, input \u0027yes\u0027. Else, input anything.\");"
       },
       {
         "lineNumber": 230,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "Anqi-nus"
         },
-        "content": "        readUserInput();"
+        "content": "        return getStringInput();"
       },
       {
         "lineNumber": 231,
         "author": {
-          "gitId": "benchan911"
-        },
-        "content": "        return getUserInput();"
-      },
-      {
-        "lineNumber": 232,
-        "author": {
-          "gitId": "benchan911"
+          "gitId": "Anqi-nus"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 233,
+        "lineNumber": 232,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "Anqi-nus"
         },
         "content": ""
       },
       {
+        "lineNumber": 233,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    public boolean isImportList() {"
+      },
+      {
         "lineNumber": 234,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "Anqi-nus"
         },
-        "content": "    public void clearAttendanceMessage(String eventName) {"
+        "content": "        String userInput \u003d getTypeOfAddPerformance();"
       },
       {
         "lineNumber": 235,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "        UI.display(\"Attendance List cleared for Event: \" + eventName);"
+        "content": "        return userInput.equals(\"yes\");"
       },
       {
         "lineNumber": 236,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "Anqi-nus"
         },
         "content": "    }"
       },
       {
         "lineNumber": 237,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "Anqi-nus"
         },
         "content": ""
       },
       {
         "lineNumber": 238,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "Anqi-nus"
         },
-        "content": "    public void sortAttendanceByStatus(String eventName) {"
+        "content": "    public String getEventName() {"
       },
       {
         "lineNumber": 239,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "        UI.display(\"Attendance List is sorted by name for Event: \" + eventName);"
+        "content": "        display(\"Please key in the name of event that \""
       },
       {
         "lineNumber": 240,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "Anqi-nus"
         },
-        "content": "    }"
+        "content": "                + \"you wish to access to its student\u0027s performance.\");"
       },
       {
         "lineNumber": 241,
         "author": {
           "gitId": "benchan911"
         },
-        "content": ""
+        "content": "        readUserInput();"
       },
       {
         "lineNumber": 242,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "    public void sortAttendanceByName(String eventName) {"
+        "content": "        return getUserInput();"
       },
       {
         "lineNumber": 243,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "Anqi-nus"
         },
-        "content": "        UI.display(\"Attendance List is sorted by attendance status for Event:  \" + eventName);"
+        "content": "    }"
       },
       {
         "lineNumber": 244,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "Anqi-nus"
         },
-        "content": "    }"
+        "content": ""
       },
       {
         "lineNumber": 245,
         "author": {
           "gitId": "benchan911"
         },
-        "content": ""
+        "content": "    public String getEventNameForAttendance() {"
       },
       {
         "lineNumber": 246,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "    public void sortPerformanceByName(String eventName) {"
+        "content": "        display(\"Please key in the name of event.\");"
       },
       {
         "lineNumber": 247,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "benchan911"
         },
-        "content": "        UI.display(\"Performance List is sorted by Performance name for Event:  \" + eventName);"
+        "content": "        readUserInput();"
       },
       {
         "lineNumber": 248,
         "author": {
-          "gitId": "Anqi-nus"
+          "gitId": "benchan911"
         },
-        "content": "    }"
+        "content": "        return getUserInput();"
       },
       {
         "lineNumber": 249,
         "author": {
-          "gitId": "Anqi-nus"
+          "gitId": "benchan911"
         },
-        "content": ""
+        "content": "    }"
       },
       {
         "lineNumber": 250,
         "author": {
-          "gitId": "Anqi-nus"
+          "gitId": "benchan911"
         },
-        "content": "    public String getSortType() {"
+        "content": ""
       },
       {
         "lineNumber": 251,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "benchan911"
         },
-        "content": "        UI.display(\"Do you want to sort by students\u0027 name or grade?\");"
+        "content": "    public void clearAttendanceMessage(String eventName) {"
       },
       {
         "lineNumber": 252,
         "author": {
           "gitId": "Anqi-nus"
         },
-        "content": "        return getStringInput().toLowerCase();"
+        "content": "        display(\"Attendance List cleared for Event: \" + eventName);"
       },
       {
         "lineNumber": 253,
         "author": {
-          "gitId": "Anqi-nus"
+          "gitId": "benchan911"
         },
         "content": "    }"
       },
       {
         "lineNumber": 254,
         "author": {
-          "gitId": "Anqi-nus"
+          "gitId": "benchan911"
         },
         "content": ""
       },
@@ -39565,259 +40337,259 @@
         "author": {
           "gitId": "benchan911"
         },
-        "content": "    public void addStudent(StudentList studentList) throws PacException {"
+        "content": "    public void sortAttendanceByStatus(String eventName) {"
       },
       {
         "lineNumber": 256,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "Anqi-nus"
         },
-        "content": "        String studentName \u003d \"\";"
+        "content": "        display(\"Attendance List is sorted by name for Event: \" + eventName);"
       },
       {
         "lineNumber": 257,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        do {"
+        "content": "    }"
       },
       {
         "lineNumber": 258,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "benchan911"
         },
-        "content": "            UI.display(\"Please enter a student Name. If you are finished, enter done\");"
+        "content": ""
       },
       {
         "lineNumber": 259,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "            readUserInput();"
+        "content": "    public void sortAttendanceByName(String eventName) {"
       },
       {
         "lineNumber": 260,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "Anqi-nus"
         },
-        "content": "            studentName \u003d getUserInput().trim();"
+        "content": "        display(\"Attendance List is sorted by attendance status for Event:  \" + eventName);"
       },
       {
         "lineNumber": 261,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "            if (studentName.equals(\"done\")) {"
+        "content": "    }"
       },
       {
         "lineNumber": 262,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "                break;"
+        "content": ""
       },
       {
         "lineNumber": 263,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "Anqi-nus"
         },
-        "content": "            } else if (studentList.isDuplicate(studentName)) {"
+        "content": "    public void sortPerformanceByName(String eventName) {"
       },
       {
         "lineNumber": 264,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "Anqi-nus"
         },
-        "content": "                throw new PacException(\"Duplicated Student Name found.\\nStudent List Add Command Failed\");"
+        "content": "        display(\"Performance List is sorted by Performance name for Event:  \" + eventName);"
       },
       {
         "lineNumber": 265,
         "author": {
-          "gitId": "benchan911"
-        },
-        "content": "            } else {"
-      },
-      {
-        "lineNumber": 266,
-        "author": {
-          "gitId": "benchan911"
-        },
-        "content": "                studentList.addToList(studentName);"
-      },
-      {
-        "lineNumber": 267,
-        "author": {
-          "gitId": "benchan911"
-        },
-        "content": "            }"
-      },
-      {
-        "lineNumber": 268,
-        "author": {
-          "gitId": "benchan911"
-        },
-        "content": "        } while (!studentName.equals(\"done\"));"
-      },
-      {
-        "lineNumber": 269,
-        "author": {
-          "gitId": "benchan911"
+          "gitId": "Anqi-nus"
         },
         "content": "    }"
       },
       {
-        "lineNumber": 270,
+        "lineNumber": 266,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "Anqi-nus"
         },
         "content": ""
       },
       {
+        "lineNumber": 267,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    public String getSortType() {"
+      },
+      {
+        "lineNumber": 268,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        display(\"Do you want to sort by students\u0027 name or grade?\");"
+      },
+      {
+        "lineNumber": 269,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "        return getStringInput().toLowerCase();"
+      },
+      {
+        "lineNumber": 270,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "    }"
+      },
+      {
         "lineNumber": 271,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "Anqi-nus"
         },
-        "content": "    public String getListName() {"
+        "content": ""
       },
       {
         "lineNumber": 272,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "benchan911"
         },
-        "content": "        UI.display(\"What is the name of your list?\");"
+        "content": "    public void addStudent(StudentList studentList) throws PacException {"
       },
       {
         "lineNumber": 273,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        readUserInput();"
+        "content": "        String studentName \u003d \"\";"
       },
       {
         "lineNumber": 274,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        return getUserInput();"
+        "content": "        do {"
       },
       {
         "lineNumber": 275,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "Anqi-nus"
         },
-        "content": "    }"
+        "content": "            display(\"Please enter a student Name. If you are finished, enter done\");"
       },
       {
         "lineNumber": 276,
         "author": {
           "gitId": "benchan911"
         },
-        "content": ""
+        "content": "            readUserInput();"
       },
       {
         "lineNumber": 277,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "    public void printStudentListCollection() {"
+        "content": "            studentName \u003d getUserInput().trim();"
       },
       {
         "lineNumber": 278,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        if (studentListCollection.isEmpty()) {"
+        "content": "            if (studentName.equals(\"done\")) {"
       },
       {
         "lineNumber": 279,
         "author": {
-          "gitId": "lowjiayee"
+          "gitId": "benchan911"
         },
-        "content": "            UI.display(\"The student list collection is currently empty\");"
+        "content": "                break;"
       },
       {
         "lineNumber": 280,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        } else {"
+        "content": "            } else if (studentList.isDuplicate(studentName)) {"
       },
       {
         "lineNumber": 281,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "            DisplayTable displayTable \u003d new DisplayTable();"
+        "content": "                throw new PacException(\"Duplicated Student Name found.\\nStudent List Add Command Failed\");"
       },
       {
         "lineNumber": 282,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "            for (int i \u003d 0; i \u003c studentListCollection.size(); i++) {"
+        "content": "            } else {"
       },
       {
         "lineNumber": 283,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "                displayTable.printHeaderOfTwo(\"List #\" + (i + 1),"
+        "content": "                studentList.addToList(studentName);"
       },
       {
         "lineNumber": 284,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "                        studentListCollection.get(i).getListName());"
+        "content": "            }"
       },
       {
         "lineNumber": 285,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "                int index \u003d 1;"
+        "content": "        } while (!studentName.equals(\"done\"));"
       },
       {
         "lineNumber": 286,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "                for (String name : studentListCollection.get(i).getStudentList()) {"
+        "content": "    }"
       },
       {
         "lineNumber": 287,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "                    displayTable.printBodyOfTwo(index, name);"
+        "content": ""
       },
       {
         "lineNumber": 288,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "                    index++;"
+        "content": "    public String getListName() {"
       },
       {
         "lineNumber": 289,
         "author": {
-          "gitId": "benchan911"
+          "gitId": "Anqi-nus"
         },
-        "content": "                }"
+        "content": "        display(\"What is the name of your list?\");"
       },
       {
         "lineNumber": 290,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "            }"
+        "content": "        readUserInput();"
       },
       {
         "lineNumber": 291,
         "author": {
           "gitId": "benchan911"
         },
-        "content": "        }"
+        "content": "        return getUserInput();"
       },
       {
         "lineNumber": 292,
@@ -39829,15 +40601,134 @@
       {
         "lineNumber": 293,
         "author": {
+          "gitId": "benchan911"
+        },
+        "content": ""
+      },
+      {
+        "lineNumber": 294,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "    public void printStudentListCollection() {"
+      },
+      {
+        "lineNumber": 295,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        if (studentListCollection.isEmpty()) {"
+      },
+      {
+        "lineNumber": 296,
+        "author": {
+          "gitId": "Anqi-nus"
+        },
+        "content": "            display(\"The student list collection is currently empty\");"
+      },
+      {
+        "lineNumber": 297,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        } else {"
+      },
+      {
+        "lineNumber": 298,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "            DisplayTable displayTable \u003d new DisplayTable();"
+      },
+      {
+        "lineNumber": 299,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "            for (int i \u003d 0; i \u003c studentListCollection.size(); i++) {"
+      },
+      {
+        "lineNumber": 300,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "                displayTable.printHeaderOfTwo(\"List #\" + (i + 1),"
+      },
+      {
+        "lineNumber": 301,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "                        studentListCollection.get(i).getListName());"
+      },
+      {
+        "lineNumber": 302,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "                int index \u003d 1;"
+      },
+      {
+        "lineNumber": 303,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "                for (String name : studentListCollection.get(i).getStudentList()) {"
+      },
+      {
+        "lineNumber": 304,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "                    displayTable.printBodyOfTwo(index, name);"
+      },
+      {
+        "lineNumber": 305,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "                    index++;"
+      },
+      {
+        "lineNumber": 306,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "                }"
+      },
+      {
+        "lineNumber": 307,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "            }"
+      },
+      {
+        "lineNumber": 308,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "        }"
+      },
+      {
+        "lineNumber": 309,
+        "author": {
+          "gitId": "benchan911"
+        },
+        "content": "    }"
+      },
+      {
+        "lineNumber": 310,
+        "author": {
           "gitId": "Anqi-nus"
         },
         "content": "}"
       }
     ],
     "authorContributionMap": {
-      "Anqi-nus": 127,
-      "lowjiayee": 27,
-      "harithadiv": 55,
+      "Anqi-nus": 170,
+      "lowjiayee": 10,
+      "harithadiv": 46,
       "benchan911": 84
     }
   },
